@@ -10,7 +10,7 @@ const Navbar = ({ show, click }: any) => {
       <div className={s.logo}>
         <Link href="/" passHref>
           <div>
-            reglini.dz{" "}
+            reglini.dz -{" "}
             {router.locale === "en"
               ? "english"
               : router.locale === "fr"
