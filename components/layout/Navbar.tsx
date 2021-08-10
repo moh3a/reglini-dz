@@ -34,7 +34,7 @@ const Navbar = ({ show, click }: any) => {
       <div className={styles.logo}>
         <Link href="/" passHref>
           <div>
-            reglini.dz preview -{" "}
+            reglini.dz staging -{" "}
             {router.locale === "en"
               ? "english"
               : router.locale === "fr"
