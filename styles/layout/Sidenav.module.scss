@@ -1,0 +1,43 @@
+.showSidenav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 60%;
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex: 1;
+      padding: 1rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    li:hover {
+      cursor: pointer;
+      background-color: #ffe2e2;
+    }
+  }
+}
+.hideSidenav {
+  display: none;
+}
+
+@media screen and (min-width: 650px) {
+  .showSidenav {
+    display: none;
+  }
+}
