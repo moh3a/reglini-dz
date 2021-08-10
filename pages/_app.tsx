@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import type { AppProps } from "next/app";
-import { Provider } from "next-auth/client";
 import { Provider as ReduxProvider } from "react-redux";
 
 import "../styles/globals.css";
@@ -24,11 +23,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           referrerPolicy="no-referrer"
         />
       </Head>
-      <Provider session={pageProps.session}>
-        <ReduxProvider store={store}>
-          {getLayout(<Component {...pageProps} />)}
-        </ReduxProvider>
-      </Provider>
+      <ReduxProvider store={store}>
+        {getLayout(<Component {...pageProps} />)}
+      </ReduxProvider>
     </>
   );
 };
