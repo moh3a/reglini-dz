@@ -12,17 +12,8 @@ import { getProducts, selectProducts } from "../utils/redux/productsSlice";
 import { selectUser, getUser } from "../utils/redux/userSlice";
 import { IProduct } from "../types/productType";
 
-import {
-  Card,
-  CardContent,
-  CardActions,
-  Typography,
-  Button,
-} from "@material-ui/core";
-
 import styles from "../styles/screens/HomeScreen.module.scss";
-import LogoMini from "../components/layout/LogoMini";
-import ProductCard from "../components/ProductCard";
+import Product from "../components/Product";
 
 const HomeScreen = ({ session }: any) => {
   const dispatch = useDispatch();
@@ -91,21 +82,15 @@ const HomeScreen = ({ session }: any) => {
             ) : error ? (
               <h2>{error}</h2>
             ) : (
-              products.map((product: any) => (
-                // <Product
-                //   key={product._id}
-                //   productId={product._id}
-                //   slug={product.slug}
-                //   name={product.name}
-                //   // description={product.description}
-                //   price={product.price}
-                //   imageUrl={product.imageUrl}
-                // />
-                <ProductCard
+              products.map((product: IProduct) => (
+                <Product
                   key={product._id}
+                  productId={product._id}
+                  slug={product.slug}
                   name={product.name}
-                  description={product.description}
+                  // description={product.description}
                   price={product.price}
+                  imageUrl={product.imageUrl}
                 />
               ))
             )}
