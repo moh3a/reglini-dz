@@ -6,7 +6,16 @@ import { useSelector } from "react-redux";
 import { useSession } from "next-auth/client";
 import { selectUser } from "../../utils/redux/userSlice";
 
-import styles from "../../styles/layout/Navbar.module.scss";
+import { Badge, IconButton } from "@material-ui/core";
+
+import {
+  ShoppingCart,
+  FavoriteOutlined,
+  AccountCircle,
+} from "@material-ui/icons";
+
+import s from "../../styles/layout/Navbar.module.scss";
+import Logo from "./Logo";
 
 const Navbar = ({ show, click }: any) => {
   const router = useRouter();
@@ -29,25 +38,57 @@ const Navbar = ({ show, click }: any) => {
   };
 
   return (
-    <nav className={styles.navbar}>
-      {/* Logo */}
-      <div className={styles.logo}>
-        <Link href="/" passHref>
-          <div>
-            reglini.dz staging -{" "}
-            {router.locale === "en"
-              ? "english"
-              : router.locale === "fr"
-              ? "francais"
-              : router.locale === "ar"
-              ? "mar7aba"
-              : ""}{" "}
+    <nav className={s.navbar}>
+      <div className={s.navbarWrapper}>
+        <div className={s.topLeft}>
+          <Logo />
+        </div>
+        <div className={s.topRight}>
+          <div className={s.navbarIconContainer}>
+            <Link href="/wishlist" passHref>
+              {/* <div className={router.pathname === "/wishlist" ? s.activeLink : ""}> */}
+              <IconButton>
+                <FavoriteOutlined />
+              </IconButton>
+            </Link>
           </div>
-        </Link>
+
+          <div className={s.navbarIconContainer}>
+            <Link href="/cart" passHref>
+              {/* <div className={router.pathname === "/cart" ? s.activeLink : ""}> */}
+              <IconButton>
+                {isAuthenticated ? (
+                  <Badge badgeContent={user.cart.count} color="error">
+                    <ShoppingCart />
+                  </Badge>
+                ) : (
+                  <ShoppingCart />
+                )}
+              </IconButton>
+            </Link>
+          </div>
+
+          <div className={s.navbarIconContainer}>
+            {session ? (
+              <Link href="/profile" passHref>
+                {/* <div className={router.pathname === "/profile" ? s.activeLink : ""}> */}
+                <IconButton>
+                  <AccountCircle />
+                </IconButton>
+                {session.user?.name}
+              </Link>
+            ) : (
+              <Link href="/login" passHref>
+                {/* <div className={router.pathname === "/login" ? s.activeLink : ""}> */}
+                <IconButton>Login</IconButton>
+              </Link>
+            )}
+          </div>
+        </div>
       </div>
 
       {/* search bar */}
-      <div className={styles.searchbar}>
+      {/* <div className={styles.searchbar}>
         <label className={styles.hidden} htmlFor="search">
           Search
         </label>
@@ -61,10 +102,10 @@ const Navbar = ({ show, click }: any) => {
         <button type="submit" className={styles.search}>
           <i className="fas fa-search"></i>
         </button>
-      </div>
+      </div> */}
 
       {/* Hamburger menu */}
-      <div className={styles.hamburger} onClick={click}>
+      {/* <div className={styles.hamburger} onClick={click}>
         {show ? (
           <div>
             <i className="fas fa-times"></i>
@@ -74,56 +115,7 @@ const Navbar = ({ show, click }: any) => {
             <i className="fas fa-bars"></i>
           </div>
         )}
-      </div>
-
-      {/* Links */}
-      <div className={styles.links}>
-        <Link href="/wishlist" passHref>
-          <li
-            className={router.pathname === "/wishlist" ? styles.activeLink : ""}
-          >
-            <div>
-              <i className="far fa-heart"></i>
-            </div>
-            <div>Wishlist</div>
-          </li>
-        </Link>
-        <Link href="/cart" passHref>
-          <li className={router.pathname === "/cart" ? styles.activeLink : ""}>
-            <div>
-              <i className="fas fa-shopping-cart"></i>
-            </div>
-            <div>Cart</div>
-            {isAuthenticated ? <div>{user.cart.count}</div> : ""}
-          </li>
-        </Link>
-        {session ? (
-          <Link href="/profile" passHref>
-            <li
-              className={
-                router.pathname === "/profile" ? styles.activeLink : ""
-              }
-            >
-              <div>
-                <i className="fas fa-user-alt"></i>
-              </div>
-              {/* <Image src={session.user.image} alt="User image" /> */}
-              <div>{session.user?.name}</div>
-            </li>
-          </Link>
-        ) : (
-          <Link href="/login" passHref>
-            <li
-              className={router.pathname === "/login" ? styles.activeLink : ""}
-            >
-              <div>
-                <i className="fas fa-user-alt"></i>
-              </div>
-              <div>Login</div>
-            </li>
-          </Link>
-        )}
-      </div>
+      </div> */}
 
       {/* may add a dark theme toggle, and changing language */}
     </nav>
