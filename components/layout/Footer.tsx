@@ -20,11 +20,9 @@ export default function Footer() {
         <p>Select language: </p>
         <ul>
           {router.locales?.map((locale) => (
-            <li key={locale}>
-              <Link href={router.asPath} locale={locale}>
-                {locale}
-              </Link>
-            </li>
+            <Link key={locale} href={router.asPath} locale={locale} passHref>
+              <li>{locale}</li>
+            </Link>
           ))}
         </ul>
       </div>
