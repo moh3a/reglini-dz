@@ -20,7 +20,7 @@ const LoginScreen = ({ providers, csrfToken }: any) => {
           <div className="container mx-auto">
             <div className="flex justify-center px-2 py-6 ">
               <div className="w-full max-w-sm px-8 py-24 bg-white dark:bg-grim rounded-lg border-gray-800  lg:rounded-l-none s lg:shadow-xl">
-                <div className="relative z-10 text-left ">
+                <div className="relative z-0 text-left ">
                   <h1 className="text-3xl font-semibold text-center text-gray-800 dark:text-gray-100">
                     Sign In
                   </h1>

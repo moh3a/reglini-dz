@@ -15,8 +15,8 @@ import { IProduct } from "../types/productType";
 
 import styles from "../styles/screens/HomeScreen.module.scss";
 import Product from "../components/Product";
-import SessionBanner from "../components/banners/SessionBanner";
-import AliexpressBanner from "../components/banners/AliexpressBanner";
+import SessionBanner from "../components/sections/SessionBanner";
+import AliexpressBanner from "../components/sections/AliexpressBanner";
 import ProductList from "../components/store/ProductList";
 
 const HomeScreen = ({ session }: any) => {

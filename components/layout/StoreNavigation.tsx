@@ -33,12 +33,12 @@ export default function Example() {
   // };
 
   return (
-    <div className="bg-white dark:bg-grim z-90">
+    <div className="bg-white dark:bg-grim z-0">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
-          className="fixed inset-0 flex z-40 lg:hidden"
+          className="fixed inset-0 flex z-0 lg:hidden"
           onClose={setOpen}
         >
           <Transition.Child
@@ -115,7 +115,7 @@ export default function Example() {
                   {navigation.categories.map((category: any) => (
                     <Tab.Panel
                       key={category.name}
-                      className="pt-10 pb-8 px-4 space-y-10 z-90"
+                      className="pt-10 pb-8 px-4 space-y-10 z-0"
                     >
                       <div className="grid grid-cols-2 gap-x-4">
                         {category.featured.map((item: any) => (
@@ -135,7 +135,7 @@ export default function Example() {
                               className="mt-6 block font-medium text-gray-800 dark:text-gray-100"
                             >
                               <span
-                                className="absolute z-90 inset-0"
+                                className="absolute z-0 inset-0"
                                 aria-hidden="true"
                               />
                               {item.name}
@@ -180,7 +180,7 @@ export default function Example() {
                 </Tab.Panels>
               </Tab.Group>
 
-              <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-90">
+              <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">
                 {navigation.pages.map((page: any) => (
                   <div key={page.name} className="flow-root">
                     <a
@@ -204,7 +204,7 @@ export default function Example() {
 
         <nav
           aria-label="Top"
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-90"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-0"
         >
           <div className="border-b border-gray-200">
             <div className="h-16 flex items-center">
@@ -229,7 +229,7 @@ export default function Example() {
 
               {/* Flyout menus */}
               <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
-                <div className="h-full flex space-x-8 z-90">
+                <div className="h-full flex space-x-8 z-0">
                   {navigation.categories.map((category: any) => (
                     <Popover key={category.name} className="flex">
                       {({ open }) => (
@@ -240,7 +240,7 @@ export default function Example() {
                                 open
                                   ? "border-indigo-800 text-indigo-800"
                                   : "border-transparent text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400",
-                                "relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px"
+                                "relative z-0 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px"
                               )}
                             >
                               {category.name}
@@ -256,7 +256,7 @@ export default function Example() {
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0"
                           >
-                            <Popover.Panel className="absolute top-full inset-x-0 text-sm text-gray-500">
+                            <Popover.Panel className="absolute top-full z-30 inset-x-0 text-sm text-gray-500">
                               {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                               <div
                                 className="absolute inset-0 top-1/2 bg-white shadow"
@@ -284,7 +284,7 @@ export default function Example() {
                                             className="mt-6 block font-medium text-gray-800 dark:text-gray-100"
                                           >
                                             <span
-                                              className="absolute z-10 inset-0"
+                                              className="absolute z-0 inset-0"
                                               aria-hidden="true"
                                             />
                                             {item.name}

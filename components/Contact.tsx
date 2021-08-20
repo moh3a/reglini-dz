@@ -26,7 +26,7 @@ const Contact = () => {
             />
           </svg>
 
-          <span className="mt-2">121 Street, NY</span>
+          <span className="mt-2">Algiers, DZ</span>
         </a>
 
         <a
