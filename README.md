@@ -4,7 +4,9 @@
 
 ### AUTH0 IS USED ONLY DEV, INSTAGRAM NEEDS GRANTS FOR PRODUCTION
 
-##### when logging in next-auth, /login route remains accessible
+### LOGIN AND FORGOT/RESET PASSWORD WORKS FINE
+
+### NEED TO WORK ON REGISTER
 
 ##### redux user slice only works in / and doesnt persist
 

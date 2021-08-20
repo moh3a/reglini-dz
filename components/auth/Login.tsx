@@ -1,11 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import ForgotPasswordModal from "./ForgotPasswordModal";
 
 const Login = ({ csrfToken }: any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const router = useRouter();
 
   return (
     <>
@@ -14,7 +13,6 @@ const Login = ({ csrfToken }: any) => {
         autoComplete="off"
         method="POST"
         action="/api/auth/callback/credentials"
-        // onSubmit={() => router.push("/")}
       >
         <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
         <div className="mt-4">
@@ -64,16 +62,7 @@ const Login = ({ csrfToken }: any) => {
           Login
         </button>
       </form>
-      <p className="mt-2 text-center">
-        <Link href="/forgotpassword" passHref>
-          <span
-            tabIndex={4}
-            className="font-semibold text-gray-800 dark:text-gray-100 hover:text-black cursor-pointer"
-          >
-            Forgot password?
-          </span>
-        </Link>
-      </p>
+      <ForgotPasswordModal />
       <p className="mt-2 mb-8 text-center">
         Don&apos;t have an account?{" "}
         <Link href="/register" passHref>

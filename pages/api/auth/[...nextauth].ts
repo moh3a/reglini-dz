@@ -22,9 +22,11 @@ export default NextAuth({
           account: "credentials",
           email: credentials.email,
         }).select("+password");
-        const isMatch = await finduser.matchPasswords(credentials.password);
-        if (!isMatch) {
-          throw `/error/${"invalid_credentials"}`;
+        if (finduser) {
+          const isMatch = await finduser.matchPasswords(credentials.password);
+          if (!isMatch) {
+            throw `/error/${"invalid_credentials"}`;
+          }
         }
         const name = credentials.email.split("@")[0];
         const user = {
