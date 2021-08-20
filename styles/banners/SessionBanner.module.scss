@@ -1,0 +1,11 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.sessionmodule {
+  @include moduleContainer;
+  background-color: $greenishgray;
+  button {
+    @include buttonMixin;
+    background-color: white;
+  }
+}

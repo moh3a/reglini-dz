@@ -1,7 +1,11 @@
-import styles from "../styles/screens/HomeScreen.module.scss";
+import Contact from "../components/Contact";
 
 const Support = () => {
-  return <div className={styles.homescreen}>Support</div>;
+  return (
+    <>
+      <Contact />
+    </>
+  );
 };
 
 import Layout from "../components/layout/Layout";

@@ -1,17 +1,18 @@
-const Logo = ({ width, height }: any) => {
-  return (
-    <>
-      <svg
+<svg
         cursor="pointer"
         xmlns="http://www.w3.org/2000/svg"
-        // xmlns:xlink="http://www.w3.org/1999/xlink"
-        // xmlns:v="http://vecta.io"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:v="http://vecta.io"
         width={width}
         height={height}
         viewBox="0 0 39 45"
-        // v:json='{"_titleBlocks_dataCompany":"Dankl.net GmbH","_titleBlocks_dataProject":"EV-Tankstelle","_titleBlocks_dataClient":"","_titleBlocks_dataDrawingNo":"1125-2021"}'
+        v:json='{"_titleBlocks_dataCompany":"Dankl.net GmbH","_titleBlocks_dataProject":"EV-Tankstelle","_titleBlocks_dataClient":"","_titleBlocks_dataDrawingNo":"1125-2021"}'
       >
         <defs>
+          <style>
+            @import
+            url("https://fonts.googleapis.com/css?family=Ubuntu:300i,400i,500i,700i,300i,400i,500i,700i");
+          </style>
           <linearGradient
             id="L05010050004e000100100db0004100.grad"
             x1="0%"
@@ -81,8 +82,3 @@ const Logo = ({ width, height }: any) => {
           </g>
         </g>
       </svg>
-    </>
-  );
-};
-
-export default Logo;
