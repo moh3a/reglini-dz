@@ -10,13 +10,14 @@ export default NextAuth({
       name: "credentials",
       credentials: {
         email: {
-          label: "Email",
+          label: "email",
           type: "text",
           placeholder: "user@example.com",
         },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
+        console.log(credentials);
         const finduser = await User.findOne({
           account: "credentials",
           email: credentials.email,

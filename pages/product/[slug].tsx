@@ -52,6 +52,7 @@ const ProductScreen = ({}) => {
   };
 
   return (
+    //<ProductDetails />
     <div className={styles.productscreen}>
       <div>
         <Link href="/">

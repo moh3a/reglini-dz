@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import type { AppProps } from "next/app";
+import { ThemeProvider } from "next-themes";
 import { Provider } from "next-auth/client";
 import { Provider as ReduxProvider } from "react-redux";
 
@@ -25,9 +26,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
       <Provider session={pageProps.session}>
-        <ReduxProvider store={store}>
-          {getLayout(<Component {...pageProps} />)}
-        </ReduxProvider>
+        <ThemeProvider attribute="class">
+          <ReduxProvider store={store}>
+            {getLayout(<Component {...pageProps} />)}
+          </ReduxProvider>
+        </ThemeProvider>
       </Provider>
     </>
   );

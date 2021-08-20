@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import mongoose from "mongoose";
+import Head from "next/head";
 import { getSession } from "next-auth/client";
 
 // import connectDB from "../config/db";
@@ -16,6 +17,7 @@ import styles from "../styles/screens/HomeScreen.module.scss";
 import Product from "../components/Product";
 import SessionBanner from "../components/banners/SessionBanner";
 import AliexpressBanner from "../components/banners/AliexpressBanner";
+import ProductList from "../components/store/ProductList";
 
 const HomeScreen = ({ session }: any) => {
   const dispatch = useDispatch();
@@ -45,10 +47,15 @@ const HomeScreen = ({ session }: any) => {
 
   return (
     <>
+      <Head>
+        <title>reglini.dz</title>
+        <meta name="description" content="reglini-dz.com homepage" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <AliexpressBanner />
       <SessionBanner session={session} />
-
-      <div className={styles.homescreen}>
+      <ProductList />
+      {/* <div className={styles.homescreen}>
         <div>
           <h2 className={styles.homescreenTitle}>Latest Products</h2>
           <div className={styles.homescreenProducts}>
@@ -71,7 +78,7 @@ const HomeScreen = ({ session }: any) => {
             )}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
