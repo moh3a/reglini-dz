@@ -1,22 +1,18 @@
 import User from "../models/User";
 
 const CustomSignInCallbackMethod = async (user: any, account: any) => {
-  if (account.type === "credentials") {
-    const getuser = await User.findOne({
+  if (account.id === "login-credentials") {
+    return;
+  } else if (account.id === "register-credentials") {
+    await User.create({
       account: account.type,
+      verified: false,
+      name: user.name,
       email: user.email,
+      password: user.password,
+      cart: {},
+      wishlist: [],
     });
-    if (!getuser) {
-      await User.create({
-        account: account.type,
-        verified: false,
-        name: user.name,
-        email: user.email,
-        password: user.password,
-        cart: {},
-        wishlist: [],
-      });
-    }
   } else if (account.type === "oauth") {
     const getuser = await User.findOne({
       account: account.type,

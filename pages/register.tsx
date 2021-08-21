@@ -1,13 +1,10 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Link from "next/link";
-import { providers, getSession, csrfToken, useSession } from "next-auth/client";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { providers, getSession, csrfToken } from "next-auth/client";
 import { useRouter } from "next/router";
 
-import { selectUser } from "../utils/redux/userSlice";
 import { register } from "../utils/redux/authAsyncActions";
 import LoginSocialMedia from "../components/auth/LoginSocialMedia";
-import styles from "../styles/screens/RegisterScreen.module.scss";
 import Register from "../components/auth/Register";
 
 const RegisterScreen = ({ providers, csrfToken }: any) => {
@@ -19,13 +16,13 @@ const RegisterScreen = ({ providers, csrfToken }: any) => {
 
   const dispatch = useDispatch();
   const router = useRouter();
-  const { isAuthenticated, status } = useSelector(selectUser);
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      router.push("/");
-    }
-  }, [isAuthenticated, router]);
+  // const { isAuthenticated, status } = useSelector(selectUser);
+  // useEffect(() => {
+  //   if (isAuthenticated) {
+  //     router.push("/");
+  //   }
+  // }, [isAuthenticated, router]);
 
   const registerHandler = (e: any) => {
     e.preventDefault();

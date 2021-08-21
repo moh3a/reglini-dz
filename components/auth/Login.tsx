@@ -12,9 +12,10 @@ const Login = ({ csrfToken }: any) => {
         className="mt-6"
         autoComplete="off"
         method="POST"
-        action="/api/auth/callback/credentials"
+        action="/api/auth/callback/login-credentials"
       >
         <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
+
         <div className="mt-4">
           <label
             htmlFor="email"
@@ -35,6 +36,7 @@ const Login = ({ csrfToken }: any) => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
+
         <div className="mt-4">
           <label
             className="text-base font-medium leading-relaxed text-gray-800 dark:text-gray-300"
@@ -54,6 +56,7 @@ const Login = ({ csrfToken }: any) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+
         <button
           type="submit"
           className="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-grim hover:bg-gray-600 dark:bg-gray-600 dark:hover:bg-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 hover:to-black"
@@ -62,6 +65,7 @@ const Login = ({ csrfToken }: any) => {
           Login
         </button>
       </form>
+
       <ForgotPasswordModal />
       <p className="mt-2 mb-8 text-center">
         Don&apos;t have an account?{" "}
