@@ -25,11 +25,11 @@ export default NextAuth({
         if (user) {
           const isMatch = await user.matchPasswords(credentials.password);
           if (!isMatch) {
-            throw `/error/${"invalid_credentials"}`;
+            throw `/login/${"invalid_credentials"}`;
           }
           return user;
         } else {
-          throw `/error/${"user_not_found"}`;
+          throw `/login/${"user_not_found"}`;
         }
       },
     }),
@@ -47,14 +47,14 @@ export default NextAuth({
           name: credentials.name,
         });
         if (checkname) {
-          throw `/error/${"Username already taken."}`;
+          throw `/register/${"username_taken"}`;
         }
         const checkemail = await User.findOne({
           account: "credentials",
           email: credentials.email,
         });
         if (checkemail) {
-          throw `/error/${"Account with this email already exists."}`;
+          throw `/register/${"email_exists"}`;
         }
         if (!credentials.name) {
           credentials.name = credentials.email.split("@")[0];
@@ -72,11 +72,11 @@ export default NextAuth({
       },
     }),
     // generic auth0 provider for testing purposes
-    Providers.Auth0({
-      clientId: process.env.AUTH0_GCLIENT_ID,
-      clientSecret: process.env.AUTH0_GCLIENT_SECRET,
-      domain: process.env.AUTH0_GDOMAIN,
-    }),
+    // Providers.Auth0({
+    //   clientId: process.env.AUTH0_GCLIENT_ID,
+    //   clientSecret: process.env.AUTH0_GCLIENT_SECRET,
+    //   domain: process.env.AUTH0_GDOMAIN,
+    // }),
     Providers.Facebook({
       clientId: process.env.FACEBOOK_CLIENT_ID,
       clientSecret: process.env.FACEBOOK_SECRET,
@@ -143,7 +143,7 @@ export default NextAuth({
   },
   pages: {
     // verifyRequest,
-    newUser: "/newuser",
+    // newUser,
     // signOut,
     signIn: "/login",
   },
