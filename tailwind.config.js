@@ -10,6 +10,12 @@ module.exports = {
         orange: colors.orange,
         facebook: "#1876f2",
       },
+      backgroundImage: (theme) => ({
+        aliexpress: "url('/aliexpress-ar21.svg')",
+      }),
+      spacing: {
+        128: "32rem",
+      },
     },
     backgroundColor: (theme) => ({
       ...theme("colors"),

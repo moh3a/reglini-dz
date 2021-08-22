@@ -5,7 +5,6 @@ import { signOut, useSession } from "next-auth/client";
 
 import { selectUser, logout, getUser } from "../utils/redux/userSlice";
 import Loading from "../components/Loading";
-import styles from "../styles/screens/Profile.module.scss";
 
 const Profile = () => {
   const router = useRouter();
@@ -30,35 +29,11 @@ const Profile = () => {
 
   return (
     <>
-      <div onClick={() => router.back()}>Go back.</div>
       {loading ? (
         <Loading />
       ) : (
         <>
-          {user.isAuthenticated ? (
-            <div className={styles.profile}>
-              <h1 className={styles.username}> {user.user.name} </h1>
-
-              <div className={styles.userinfo}>
-                <div>Username: {user.user.name}</div>
-                <div>
-                  Account: {user.user.account}{" "}
-                  {user.user.account === "oauth" ? (
-                    <span>, from {user.user.provider}</span>
-                  ) : (
-                    <></>
-                  )}{" "}
-                </div>
-                <div>Email: {user.user.email}</div>
-                <div>Role: {user.user.role}</div>
-              </div>
-              <div className={styles.btn}>
-                <button onClick={logoutHandler}>Log out</button>
-              </div>
-            </div>
-          ) : (
-            <div>You have to log in to view the profile.</div>
-          )}
+          <Tabs session={session} />
         </>
       )}
     </>
@@ -66,6 +41,7 @@ const Profile = () => {
 };
 
 import Layout from "../components/layout/Layout";
+import Tabs from "../components/layout/Tabs";
 Profile.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

@@ -9,7 +9,7 @@ export default function Cart() {
 
   return (
     <>
-      <div className="ml-4 flow-root lg:ml-6">
+      <div className="ml-2 flow-root lg:ml-6">
         <div
           className="group -m-2 p-2 flex items-center cursor-pointer"
           onClick={() => setOpen(true)}

@@ -1,0 +1,89 @@
+[
+  {
+    "exchange": "DZDEUR",
+    "historical": [
+      {
+        "time": 20210822,
+        "official": { "sale": 158.43 },
+        "parallel": {
+          "purchase": 209.5,
+          "sale": 211
+        }
+      },
+      {
+        "time": 20201228,
+        "official": {},
+        "parallel": {
+          "purchase": 206,
+          "sale": 209
+        }
+      },
+      {
+        "time": 20201221,
+        "official": {},
+        "parallel": {
+          "purchase": 211,
+          "sale": 214
+        }
+      }
+    ]
+  },
+  {
+    "exchange": "DZDUSD",
+    "historical": [
+      {
+        "time": 20210822,
+        "official": { "sale": 135.48 },
+        "parallel": {
+          "purchase": 176,
+          "sale": 180
+        }
+      },
+      {
+        "time": 20201228,
+        "official": {},
+        "parallel": {
+          "purchase": 169,
+          "sale": 172
+        }
+      },
+      {
+        "time": 20201221,
+        "official": {},
+        "parallel": {
+          "purchase": 172,
+          "sale": 175
+        }
+      }
+    ]
+  },
+  {
+    "exchange": "DZDGBP",
+    "historical": [
+      {
+        "time": 20210822,
+        "official": { "sale": 185.25 },
+        "parallel": {
+          "purchase": 236,
+          "sale": 239
+        }
+      },
+      {
+        "time": 20201228,
+        "official": {},
+        "parallel": {
+          "purchase": 224,
+          "sale": 228
+        }
+      },
+      {
+        "time": 20201221,
+        "official": {},
+        "parallel": {
+          "purchase": 225,
+          "sale": 230
+        }
+      }
+    ]
+  }
+]

@@ -16,6 +16,8 @@ const LoginError = ({ csrfToken, providers }: any) => {
       setError(
         "No user was found, please register following <Link href='/register'>this link<Link>."
       );
+    } else if (message === "login_to_view_wishlist") {
+      setError("You have to be logged in to view or edit your wishlist.");
     } else {
       router.push("/login");
     }

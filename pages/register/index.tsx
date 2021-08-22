@@ -17,7 +17,7 @@ const RegisterScreen = ({ providers, csrfToken, children }: any) => {
     <>
       {children}
       {!loading && !session && (
-        <section className="flex flex-col items-center my-8 md:flex-row">
+        <section className="flex flex-col items-center lg:my-8 sm:my-4 md:flex-row">
           <div className="container mx-auto">
             <div className="flex justify-center px-2 py-6 ">
               <div className="flex w-full rounded-lg xl:w-3/4 lg:w-11/12 lg:shadow-xl ">

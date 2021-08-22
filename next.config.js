@@ -5,6 +5,7 @@ module.exports = {
   images: {
     domains: [
       "localhost",
+      "https://tailwindui.com/img",
       "images.unsplash.com",
       "lh3.googleusercontent.com",
       "platform-lookaside.fbsbx.com",
