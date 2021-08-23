@@ -11,7 +11,6 @@ export default async function handler(
   if (req.method === "GET") {
     try {
       const data = await Currency.find();
-      console.log(data);
       res.status(200).json({ success: true, data });
     } catch (e) {
       res

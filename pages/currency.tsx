@@ -17,16 +17,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!mongoose.connection.readyState) {
     await dbConnect();
   }
-  const { data } = await axios.get(
-    `http://localhost:${process.env.PORT}/api/currency`
-  );
+
+  const { req, res } = context;
+  const { data } = await axios.get(`http://${req.headers.host}/api/currency`);
   const currency = data.data;
   return {
     props: { currency },
   };
 };
 
-const ExchangeRate = ({ currency }: any) => {
+const Currency = ({ currency }: any) => {
   return (
     <>
       <Head>
@@ -260,8 +260,8 @@ const ExchangeRate = ({ currency }: any) => {
 };
 
 import Layout from "../components/layout/Layout";
-ExchangeRate.getLayout = function getLayout(page: any) {
+Currency.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };
 
-export default ExchangeRate;
+export default Currency;
