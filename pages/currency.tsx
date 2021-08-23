@@ -17,8 +17,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!mongoose.connection.readyState) {
     await dbConnect();
   }
-  const { data } = await axios.get(`${process.env.NEXTAUTH_URL}/api/currency`);
-  console.log(data);
+  const { data } = await axios.get(
+    `http://localhost:${process.env.PORT}/api/currency`
+  );
   const currency = data.data;
   return {
     props: { currency },
