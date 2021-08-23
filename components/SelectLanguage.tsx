@@ -47,7 +47,7 @@ export default function SelectLanguage() {
             <Listbox.Button className="relative w-50 bg-white dark:bg-grim border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-800 focus:border-indigo-800 sm:text-sm">
               <span className="flex items-center">
                 <CogIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                <span className="ml-3 block truncate">Lang: {selected}</span>
+                <span className="ml-3 block truncate">{selected}</span>
               </span>
               <span className="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                 <SelectorIcon

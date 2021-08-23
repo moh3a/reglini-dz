@@ -1,4 +1,5 @@
-import { signIn, signOut } from "next-auth/client";
+import Link from "next/link";
+import { signOut } from "next-auth/client";
 
 const SessionCTA = ({ session }: any) => {
   return (
@@ -32,13 +33,12 @@ const SessionCTA = ({ session }: any) => {
                 </span>
               </div>
             ) : (
-              <div
-                className="max-w-sm bg-white rounded-lg dark:bg-gray-800"
-                onClick={() => signIn()}
-              >
-                <span className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 cursor-pointer">
-                  Sign in
-                </span>
+              <div className="max-w-sm bg-white rounded-lg dark:bg-gray-800">
+                <Link href="/login" passHref>
+                  <span className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 cursor-pointer">
+                    Sign in
+                  </span>
+                </Link>
               </div>
             )}
           </div>

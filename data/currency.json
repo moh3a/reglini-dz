@@ -3,11 +3,11 @@
     "exchange": "DZDEUR",
     "historical": [
       {
-        "time": 20210822,
-        "official": { "sale": 158.43 },
+        "time": 20201221,
+        "official": {},
         "parallel": {
-          "purchase": 209.5,
-          "sale": 211
+          "purchase": 211,
+          "sale": 214
         }
       },
       {
@@ -19,11 +19,19 @@
         }
       },
       {
-        "time": 20201221,
-        "official": {},
+        "time": 20210822,
+        "official": { "sale": 158.43 },
         "parallel": {
-          "purchase": 211,
-          "sale": 214
+          "purchase": 209.5,
+          "sale": 211
+        }
+      },
+      {
+        "time": 20210823,
+        "official": { "sale": 158.1 },
+        "parallel": {
+          "purchase": 209.5,
+          "sale": 211
         }
       }
     ]
@@ -32,11 +40,11 @@
     "exchange": "DZDUSD",
     "historical": [
       {
-        "time": 20210822,
-        "official": { "sale": 135.48 },
+        "time": 20201221,
+        "official": {},
         "parallel": {
-          "purchase": 176,
-          "sale": 180
+          "purchase": 172,
+          "sale": 175
         }
       },
       {
@@ -48,11 +56,19 @@
         }
       },
       {
-        "time": 20201221,
-        "official": {},
+        "time": 20210822,
+        "official": { "sale": 135.48 },
         "parallel": {
-          "purchase": 172,
-          "sale": 175
+          "purchase": 176,
+          "sale": 180
+        }
+      },
+      {
+        "time": 20210823,
+        "official": { "sale": 135.46 },
+        "parallel": {
+          "purchase": 176,
+          "sale": 179
         }
       }
     ]
@@ -61,11 +77,11 @@
     "exchange": "DZDGBP",
     "historical": [
       {
-        "time": 20210822,
-        "official": { "sale": 185.25 },
+        "time": 20201221,
+        "official": {},
         "parallel": {
-          "purchase": 236,
-          "sale": 239
+          "purchase": 225,
+          "sale": 230
         }
       },
       {
@@ -77,11 +93,19 @@
         }
       },
       {
-        "time": 20201221,
-        "official": {},
+        "time": 20210822,
+        "official": { "sale": 185.25 },
         "parallel": {
-          "purchase": 225,
-          "sale": 230
+          "purchase": 236,
+          "sale": 239
+        }
+      },
+      {
+        "time": 20210823,
+        "official": { "sale": 184.37 },
+        "parallel": {
+          "purchase": 236,
+          "sale": 238
         }
       }
     ]
