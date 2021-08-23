@@ -115,6 +115,7 @@ export const navigation = {
     // },
   ],
   pages: [
+    { name: "Currency exchange", href: "/currency" },
     { name: "Support", href: "/support" },
     { name: "FAQ", href: "/faq" },
   ],
