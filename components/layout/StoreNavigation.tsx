@@ -606,7 +606,7 @@ export default function StoreNavigation() {
                     </div>
 
                     {/* Cart */}
-                    <Cart />
+                    <Cart session={session} />
                   </div>
                 </div>
               </div>

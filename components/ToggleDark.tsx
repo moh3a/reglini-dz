@@ -35,9 +35,9 @@ const ToggleDark = () => {
               />
             </div>
           </div>
-          <div className="ml-3 text-gray-700 font-medium dark:text-gray-100">
+          {/* <div className="ml-3 text-gray-700 font-medium dark:text-gray-100">
             Dark mode!
-          </div>
+          </div> */}
         </label>
       </div>
     </>

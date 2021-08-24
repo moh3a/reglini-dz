@@ -2,14 +2,19 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import slugify from "slugify";
 
+import {
+  SuccessMessage,
+  WarningMessage,
+  DangerMessage,
+} from "../../components/AlertMessages";
 import { selectAEApi } from "../../utils/redux/aeapiSlice";
 import {
   searchAEProductByName,
   getAEProductInfo,
 } from "../../utils/redux/aeapiAsyncActions";
 
-import styles from "../../styles/screens/Aliexpress.module.scss";
 import ProductDetails from "../../components/store/ProductDetails";
+import ProductList from "../../components/store/ProductList";
 
 const Aliexpress = () => {
   const [name, setName] = useState("");
@@ -40,112 +45,52 @@ const Aliexpress = () => {
 
   return (
     <>
-      <div className={styles.productcontainer}>
-        <div className={styles.desc}>
-          Are you browsing{" "}
-          <span className={styles.aliexpress}> AliExpress </span>
-          from the web browser or the mobile app?
-        </div>
-        <div className={styles.options}>
-          <div className={styles.option}>Web Browser</div>
-          <div className={styles.option}>Mobile App</div>
-        </div>
-
-        <div className={styles.productcontainer}>
-          {/* FROM MOBILE APP */}
-          <h2>
-            <span className={styles.aliexpress}>AliExpress</span> Mobile App
-          </h2>
-          <div className={styles.desc}>
-            Since you are browsing the{" "}
-            <span className={styles.aliexpress}>AliExpress</span> mobile app,
-            you can get the product you want to purchase simply by selecting the
-            product and copying its name.
-          </div>
-          <div className={styles.fromMobileApp}>
+      <section className="bg-gray-100 dark:bg-gray-900">
+        {error && <DangerMessage message={error} />}
+        <div className="container flex flex-col px-5 py-8 mx-auto lg:items-center">
+          <div className="flex flex-col w-full mb-8 text-left lg:text-center">
+            <h2 className="mb-4 text-xs font-semibold tracking-widest text-center uppercase title-font">
+              Here starts everything.
+            </h2>
+            <h1 className="mx-auto mb-6 text-4xl text-center font-semibold leading-none tracking-tighter text-aliexpress lg:w-1/2 lg:text-6xl title-font">
+              Did you find something you like?
+            </h1>
+            <p className="mx-auto text-base text-center lg:text-lg font-medium leading-relaxed text-blueGray-700 lg:w-2/3">
+              You can browse Aliexpress webapp or mobile app, and whenever you
+              find an item that you like, you can simply paste the URL here, and
+              we&apos;ll take care of the rest.
+            </p>
             <form
-              onSubmit={searchByNameQueryHandler}
-              className={styles.formgroup}
+              onSubmit={getByIdQueryHandler}
+              className="flex flex-col md:flex-row items-center mt-12 lg:mx-auto justify-center lg:w-1/2"
             >
-              <label className={styles.hidden} htmlFor="productId">
-                Enter AliExpress product name:{" "}
-              </label>
-              <input
-                type="text"
-                required
-                id="name"
-                autoComplete="off"
-                placeholder="Enter-name-here..."
-                value={name}
-                onChange={(e) => setName(slugify(e.target.value))}
-              />
-            </form>
-            {search ? (
-              search.totalCount === 0 ? (
-                <div className={styles.product}>
-                  No results for what you are looking for.
-                </div>
-              ) : (
-                <div className={styles.product}>
-                  The product ID of the most prominent result is{" "}
-                  {search.items[0].productId}
-                </div>
-              )
-            ) : (
-              <div className={styles.product}>
-                Waiting for you to look up some products!
+              <div className="relative w-2/4 mr-4 text-left lg:w-full xl:w-1/2 md:w-full">
+                <input
+                  className="flex-grow w-full px-4 py-2 mb-4 mr-4 text-base text-black transition duration-650 ease-in-out transform rounded-lg bg-gray-200 focus:outline-none focus:border-red-500 md:mb-0 focus:bg-white focus:shadow-outline focus:ring-2 focus:ring-red-500 ring-offset-current ring-offset-2"
+                  type="text"
+                  id="url"
+                  name="url"
+                  placeholder="https://www.aliexpress.com/item/xxxxxxx"
+                  autoComplete="off"
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
+                />
               </div>
-            )}
+              <button
+                className="flex items-center px-6 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform bg-aliexpress rounded-lg hover:opacity-60 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2"
+                type="submit"
+              >
+                Find
+              </button>
+            </form>
+            <p className="mt-2 mb-8 text-xs lg:text-sm text-center lg:mx-auto lg:w-1/3 ">
+              Happy shopping!
+            </p>
           </div>
         </div>
-
-        <div className={styles.productcontainer}>
-          {/* FROM BROWSER */}
-          <h2>
-            <span className={styles.aliexpress}>AliExpress</span> Web App
-          </h2>
-          <div className={styles.desc}>
-            Since you are browsing the{" "}
-            <span className={styles.aliexpress}>AliExpress</span> web app, you
-            can get the product you want to purchase simply by selecting the
-            product and copying its URL address.
-          </div>
-          <div className={styles.fromBrowser}>
-            {/* error */}
-            {error && <div className={styles.errormessage}> {error} </div>}
-            <form onSubmit={getByIdQueryHandler} className={styles.formgroup}>
-              <label className={styles.hidden} htmlFor="productId">
-                Enter AliExpress product URL:{" "}
-              </label>
-              <input
-                type="text"
-                required
-                id="productId"
-                placeholder="https://www.aliexpress.com/item/xxxxxxxxxxx"
-                value={url}
-                autoComplete="off"
-                onChange={(e) => setUrl(e.target.value)}
-              />
-            </form>
-            {product ? (
-              product.status === "productNotFound" ? (
-                <div className={styles.product}>
-                  The product you are looking for doesn&apos;t exist.
-                </div>
-              ) : (
-                <div className={styles.product}>
-                  The title of your product is {product.title}
-                </div>
-              )
-            ) : (
-              <div className={styles.product}>
-                Waiting for you to look up some products!
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-      <ProductDetails />
+      </section>
+      {product && <ProductDetails product={product} />}
+      <ProductList />
     </>
   );
 };

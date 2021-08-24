@@ -10,6 +10,7 @@ import dbConnect from "../config/db";
 import { selectUser, getUser } from "../utils/redux/userSlice";
 import SessionCTA from "../components/sections/SessionCTA";
 import AliexpressCTA from "../components/sections/AliexpressCTA";
+import AppCTA from "../components/sections/AppCTA";
 
 const HomeScreen = ({ session }: any) => {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ const HomeScreen = ({ session }: any) => {
       </Head>
       <AliexpressCTA />
       <SessionCTA session={session} />
+      <AppCTA />
     </>
   );
 };

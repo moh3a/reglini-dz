@@ -1,8 +1,4 @@
 const mongoose = require("mongoose");
-// const uniqueValidator = require("mongoose-unique-validator");
-// const slug = require("mongoose-slug-updater");
-
-// mongoose.plugin(slug)
 
 const productSchema = new mongoose.Schema({
   name: {
@@ -14,7 +10,6 @@ const productSchema = new mongoose.Schema({
     required: true,
     index: true,
     unique: true,
-    // slug: 'name'
   },
   description: {
     type: String,
