@@ -96,25 +96,19 @@ export default function StoreNavigation() {
                       <>
                         <div className="flow-root">
                           <Link href="/profile" passHref>
-                            <>
-                              <div className="max-w-xs rounded-full flex items-center text-sm focus:outline-none hover:bg-gray-200 dark:hover:bg-gray-800">
-                                <span className="sr-only">Open user menu</span>
-                                <Image
-                                  className="h-10 w-10 rounded-full"
-                                  src="/profile.jpg"
-                                  alt="profile picture"
-                                  height={50}
-                                  width={50}
-                                />
-                                {/* <UserCircleIcon
-                                  className="h-12 w-12 rounded-full"
-                                  aria-hidden="true"
-                                /> */}
-                                <span className="-m-2 p-2 ml-6 block font-medium text-gray-800 dark:text-gray-100 cursor-pointer">
-                                  {session.user?.name}
-                                </span>
-                              </div>
-                            </>
+                            <div className="max-w-xs p-2 rounded-full flex items-center text-sm focus:outline-none hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer">
+                              <span className="sr-only">Open user menu</span>
+                              <Image
+                                className="h-10 w-10 rounded-full"
+                                src={session.user?.image || "/user-icon.png"}
+                                alt={session.user?.name || "user profile image"}
+                                height={30}
+                                width={30}
+                              />
+                              <span className="-m-2 p-2 ml-6 block font-medium text-gray-800 dark:text-gray-100 ">
+                                {session.user?.name}
+                              </span>
+                            </div>
                           </Link>
                         </div>
                         <div className="flow-root">
@@ -459,15 +453,15 @@ export default function StoreNavigation() {
                                   </span>
                                   <Image
                                     className="h-10 w-10 rounded-full"
-                                    src="/profile.jpg"
-                                    alt="profile picture"
+                                    src={
+                                      session.user?.image || "/user-icon.png"
+                                    }
+                                    alt={
+                                      session.user?.name || "user profile image"
+                                    }
                                     height={30}
                                     width={30}
                                   />
-                                  {/* <UserCircleIcon
-                                    className="h-8 w-8 rounded-full"
-                                    aria-hidden="true"
-                                  /> */}
                                 </Menu.Button>
                               </div>
                               <Transition

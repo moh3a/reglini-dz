@@ -21,9 +21,9 @@ export default function Tabs({ session }: any) {
                 <Tab key={category} disabled className="w-full overflow-hidden">
                   <div className="flex justify-center items-center">
                     <Image
-                      className="rounded-full"
-                      src="/profile.jpg"
-                      alt="profile picture"
+                      className="h-10 w-10 rounded-full"
+                      src={session.user?.image || "/user-icon.png"}
+                      alt={session.user?.name || "user profile image"}
                       height={25}
                       width={25}
                     />
@@ -52,7 +52,6 @@ export default function Tabs({ session }: any) {
           })}
         </Tab.List>
         <Tab.Panels className="mt-2">
-          {/* dashboard tab */}
           <Tab.Panel>Nothing to show here.</Tab.Panel>
 
           {/* account tab */}

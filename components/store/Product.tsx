@@ -1,17 +1,20 @@
+import Image from "next/image";
 import Link from "next/link";
 import { HeartIcon, ShoppingCartIcon } from "@heroicons/react/outline";
 
 const Product = ({ product }: any) => {
   return (
     <div>
-      {/* <Image
-          src={product.imageSrc}
-          alt={product.imageAlt}
-          className="w-full h-full object-center object-cover group-hover:opacity-75 "
-        /> */}
       <div className="relative w-50 aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden z-0">
+        <Image
+          // src={product.imageSrc}
+          src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
+          alt={product.imageAlt}
+          layout="fill"
+          className="w-full h-full object-center object-cover group-hover:opacity-75 "
+        />
         <HeartIcon
-          className="w-10 hover:text-red-500 cursor-pointer"
+          className="absolute bottom-0 w-10 hover:text-red-500 cursor-pointer"
           aria-hidden="true"
         />
         <ShoppingCartIcon
