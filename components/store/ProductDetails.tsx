@@ -116,7 +116,7 @@ const ProductDetails = ({ product }: any) => {
                   </div>
                 </div>
               ) : (
-                <>{product.price.app.originalPrice.value}</>
+                <>$ {product.price.app.originalPrice.value}</>
               )}
             </div>
             <div className="mt-4 flex">

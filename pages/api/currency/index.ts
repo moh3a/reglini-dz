@@ -32,9 +32,8 @@ export default async function handler(
       100;
 
     data.historical.push(live);
-
     data.live = {
-      date: live.date,
+      time: live.time,
       rate: {
         parallelsalerate,
         parallelpurchaserate,
