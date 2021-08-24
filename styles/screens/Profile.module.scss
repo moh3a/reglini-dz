@@ -1,0 +1,48 @@
+.profile {
+  height: 75vh;
+  width: 95%;
+  margin: auto;
+  margin-top: 25px;
+  border: 1px solid #ffe2e2;
+  .username {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    width: 95%;
+    margin: auto;
+    padding: 10px;
+  }
+  .userinfo {
+    margin: auto;
+    width: 95%;
+    padding: 10px;
+  }
+  .btn {
+    width: 95%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    button {
+      padding: 5px;
+    }
+  }
+}
+@media screen and (min-width: 750px) {
+  .profile {
+    width: 75%;
+    .username {
+      width: 80%;
+      padding: 20px;
+    }
+    .userinfo {
+      width: 80%;
+      padding: 20px;
+    }
+    .btn {
+      width: 80%;
+      padding: 20px;
+      button {
+        padding: 10px;
+      }
+    }
+  }
+}

@@ -2,6 +2,10 @@
 
 .minilogoContainer {
   margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   background-color: #1b1f23;
   user-select: none;
@@ -11,7 +15,7 @@
   font-family: "Ubuntu", sans-serif;
   color: #e1e3e6;
   font-weight: bold;
-  font-size: 250px;
+  font-size: 15px;
   cursor: pointer;
   .minilogoTransparentPart {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#33bc0d+0,ff2626+100 */
@@ -36,5 +40,18 @@
     -webkit-background-clip: text;
 
     -webkit-text-fill-color: transparent;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .minilogo {
+    position: relative;
+    top: -480px;
+    left: 50px;
+    font-size: 500px;
+    color: #e1e3e6;
+    .minilogoTransparentPart {
+      font-size: 900px;
+    }
   }
 }

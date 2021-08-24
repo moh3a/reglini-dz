@@ -9,6 +9,7 @@ export const getAEProductInfo = createAsyncThunk(
         method: "GET",
         url: `/api/aliexpress/${id}`,
       });
+      console.log(data.data);
       return data.data;
     } catch (error) {
       return rejectWithValue(error.response);

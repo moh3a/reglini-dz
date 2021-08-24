@@ -1,6 +1,8 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import type { AppProps } from "next/app";
+import { ThemeProvider } from "next-themes";
+import { Provider } from "next-auth/client";
 import { Provider as ReduxProvider } from "react-redux";
 
 import "../styles/globals.css";
@@ -14,7 +16,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
+        <title>reglini.dz</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="facebook-domain-verification"
+          content="tqch8yg7c5a548rbwp8vepozlepnap"
+        />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -23,9 +30,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           referrerPolicy="no-referrer"
         />
       </Head>
-      <ReduxProvider store={store}>
-        {getLayout(<Component {...pageProps} />)}
-      </ReduxProvider>
+      <Provider session={pageProps.session}>
+        <ThemeProvider attribute="class">
+          <ReduxProvider store={store}>
+            {getLayout(<Component {...pageProps} />)}
+          </ReduxProvider>
+        </ThemeProvider>
+      </Provider>
     </>
   );
 };

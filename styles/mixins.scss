@@ -1,0 +1,21 @@
+@import "./variables.scss";
+
+@mixin moduleContainer {
+  margin: 0;
+  padding: 5%;
+  width: 100%;
+  color: $gray;
+  font-family: "Ubuntu", sans-serif;
+}
+
+@mixin buttonMixin {
+  display: block;
+  padding: 12px;
+  border-radius: 7%;
+  margin: auto;
+  &:hover {
+    background-color: $dark;
+    color: $grimbrown;
+    cursor: pointer;
+  }
+}
