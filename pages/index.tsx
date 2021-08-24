@@ -1,29 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GetServerSideProps } from "next";
-import { useRouter } from "next/router";
 import mongoose from "mongoose";
 import Head from "next/head";
 import { getSession } from "next-auth/client";
 
-// import connectDB from "../config/db";
 import dbConnect from "../config/db";
 
-import { getProducts, selectProducts } from "../utils/redux/productsSlice";
 import { selectUser, getUser } from "../utils/redux/userSlice";
-import { IProduct } from "../types/productType";
-
-import styles from "../styles/screens/HomeScreen.module.scss";
-import Product from "../components/Product";
-import SessionBanner from "../components/sections/SessionBanner";
-import AliexpressBanner from "../components/sections/AliexpressBanner";
-import ProductList from "../components/store/ProductList";
+import SessionCTA from "../components/sections/SessionCTA";
+import AliexpressCTA from "../components/sections/AliexpressCTA";
+import AppCTA from "../components/sections/AppCTA";
 
 const HomeScreen = ({ session }: any) => {
   const dispatch = useDispatch();
-  const router = useRouter();
   const user = useSelector(selectUser);
-  const { products, status, error } = useSelector(selectProducts);
 
   // TEMPORARY FOR LOGGING OUT WHEN CLOSING WINDOW
   if (typeof window !== "undefined") {
@@ -41,10 +32,6 @@ const HomeScreen = ({ session }: any) => {
     }
   }, [session, dispatch, user]);
 
-  useEffect(() => {
-    if (status === "idle") dispatch(getProducts());
-  }, [dispatch, status]);
-
   return (
     <>
       <Head>
@@ -52,33 +39,9 @@ const HomeScreen = ({ session }: any) => {
         <meta name="description" content="reglini-dz.com homepage" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AliexpressBanner />
-      <SessionBanner session={session} />
-      <ProductList />
-      {/* <div className={styles.homescreen}>
-        <div>
-          <h2 className={styles.homescreenTitle}>Latest Products</h2>
-          <div className={styles.homescreenProducts}>
-            {status === "loading" ? (
-              <h2>Loading...</h2>
-            ) : error ? (
-              <h2>{error}</h2>
-            ) : (
-              products.map((product: IProduct) => (
-                <Product
-                  key={product._id}
-                  productId={product._id}
-                  slug={product.slug}
-                  name={product.name}
-                  // description={product.description}
-                  price={product.price}
-                  imageUrl={product.imageUrl}
-                />
-              ))
-            )}
-          </div>
-        </div>
-      </div> */}
+      <AliexpressCTA />
+      <SessionCTA session={session} />
+      <AppCTA />
     </>
   );
 };

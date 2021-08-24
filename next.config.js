@@ -5,9 +5,12 @@ module.exports = {
   images: {
     domains: [
       "localhost",
-      "images.unsplash.com",
-      "lh3.googleusercontent.com",
-      "platform-lookaside.fbsbx.com",
+      "tailwindui.com",
+      "unsplash.com",
+      "googleusercontent.com",
+      "fbsbx.com",
+      "alicdn.com",
+      "ae01.alicdn.com",
     ],
   },
   typescript: {

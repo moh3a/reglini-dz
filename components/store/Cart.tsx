@@ -1,15 +1,62 @@
 import { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
 import { XIcon, ShoppingBagIcon } from "@heroicons/react/outline";
 
-import { products } from "../../data/cartProducts";
+import { selectUser, getUser } from "../../utils/redux/userSlice";
 
-export default function Cart() {
+export default function Cart({ session }: any) {
   const [open, setOpen] = useState(false);
+  const [items, setItems] = useState([
+    {
+      _id: "",
+      name: "",
+      slug: "",
+      price: 0,
+      countInStock: 0,
+      imageUrl: "",
+      quantity: 0,
+    },
+  ]);
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const { isAuthenticated, status, user } = useSelector(selectUser);
+
+  useEffect(() => {
+    if (!isAuthenticated && session && status !== "loading") {
+      const email = session.user?.email;
+      const type = session.user?.type;
+      const provider = session.user?.provider || undefined;
+      dispatch(getUser({ email, account: type, provider }));
+    }
+  }, [router, session, dispatch, isAuthenticated, status]);
+
+  useEffect(() => {
+    if (user) {
+      setItems(user.cart.cartItems);
+    }
+  }, [user]);
+
+  // const qtyChangeHandler = (
+  //   productId: ICartItem["productId"],
+  //   quantity: ICartItem["quantity"],
+  //   token: IAuth["token"] = authtoken
+  // ) => {
+  //   dispatch(updateItemQuantity({ productId, quantity, token }));
+  // };
+
+  // const removeFromCartHandler = (
+  //   productId: ICartItem["productId"],
+  //   token: IAuth["token"] = authtoken
+  // ) => {
+  //   dispatch(removeItemFromCart({ productId, token }));
+  // };
 
   return (
     <>
-      <div className="ml-4 flow-root lg:ml-6">
+      <div className="ml-3 flow-root lg:ml-6">
         <div
           className="group -m-2 p-2 flex items-center cursor-pointer"
           onClick={() => setOpen(true)}
@@ -19,7 +66,7 @@ export default function Cart() {
             aria-hidden="true"
           />
           <span className="ml-2 text-sm font-medium text-gray-800 dark:text-gray-100 group-hover:text-grim dark:group-hover:text-gray-400">
-            0
+            {user ? user.cart.count : "0"}
           </span>
           <span className="sr-only">items in cart, view bag</span>
         </div>
@@ -79,47 +126,50 @@ export default function Cart() {
                             role="list"
                             className="-my-6 divide-y divide-gray-200"
                           >
-                            {products.map((product) => (
-                              <li key={product.id} className="py-6 flex">
-                                <div className="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
-                                  {/* <img
-                                    src={product.imageSrc}
-                                    alt={product.imageAlt}
-                                    className="w-full h-full object-center object-cover"
-                                  /> */}
-                                </div>
-
-                                <div className="ml-4 flex-1 flex flex-col">
-                                  <div>
-                                    <div className="flex justify-between text-base font-medium text-gray-800 dark:text-gray-100">
-                                      <h3>
-                                        <a href={product.href}>
-                                          {product.name}
-                                        </a>
-                                      </h3>
-                                      <p className="ml-4">{product.price}</p>
-                                    </div>
-                                    <p className="mt-1 text-sm text-gray-600 dark:text-gray-200">
-                                      {product.color}
-                                    </p>
+                            {items.length > 0 ? (
+                              items.map((item) => (
+                                <li key={item._id} className="py-6 flex">
+                                  <div className="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
+                                    <Image
+                                      src={item.imageUrl}
+                                      alt={item.name}
+                                      layout="fill"
+                                      className="w-full h-full object-center object-cover"
+                                    />
                                   </div>
-                                  <div className="flex-1 flex items-end justify-between text-sm">
-                                    <p className="text-gray-600 dark:text-gray-200">
-                                      Qty {product.quantity}
-                                    </p>
 
-                                    <div className="flex">
-                                      <button
-                                        type="button"
-                                        className="font-medium text-red-600 hover:text-red-500"
-                                      >
-                                        Remove
-                                      </button>
+                                  <div className="ml-4 flex-1 flex flex-col">
+                                    <div>
+                                      <div className="flex justify-between text-base font-medium text-gray-800 dark:text-gray-100">
+                                        <h3>
+                                          <a href={item.slug}>{item.name}</a>
+                                        </h3>
+                                        <p className="ml-4">{item.price}</p>
+                                      </div>
+                                      {/* <p className="mt-1 text-sm text-gray-600 dark:text-gray-200">
+                                      {item.color}
+                                    </p> */}
+                                    </div>
+                                    <div className="flex-1 flex items-end justify-between text-sm">
+                                      <p className="text-gray-600 dark:text-gray-200">
+                                        Qty {item.quantity}
+                                      </p>
+
+                                      <div className="flex">
+                                        <button
+                                          type="button"
+                                          className="font-medium text-red-600 hover:text-red-500"
+                                        >
+                                          Remove
+                                        </button>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </li>
-                            ))}
+                                </li>
+                              ))
+                            ) : (
+                              <li className="py-6 flex">Your cart is empty.</li>
+                            )}
                           </ul>
                         </div>
                       </div>
@@ -128,7 +178,7 @@ export default function Cart() {
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-800 dark:text-gray-100">
                         <p>Subtotal</p>
-                        <p>$262.00</p>
+                        <p>{user ? user.cart.subtotal : "0"} DZD</p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-800 dark:text-gray-100">
                         Shipping and taxes calculated at checkout.

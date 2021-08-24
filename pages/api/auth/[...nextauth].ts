@@ -7,7 +7,8 @@ import CustomSignInCallbackMethod from "../../../utils/nextAuthSignInCallback";
 export default NextAuth({
   providers: [
     Providers.Credentials({
-      name: "credentials",
+      id: "login-credentials",
+      name: "Login",
       credentials: {
         email: {
           label: "email",
@@ -17,20 +18,49 @@ export default NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        console.log(credentials);
-        const finduser = await User.findOne({
+        const user = await User.findOne({
           account: "credentials",
           email: credentials.email,
         }).select("+password");
-        if (finduser) {
-          const isMatch = await finduser.matchPasswords(credentials.password);
+        if (user) {
+          const isMatch = await user.matchPasswords(credentials.password);
           if (!isMatch) {
-            throw `/error/${"invalid_credentials"}`;
+            throw `/login/${"invalid_credentials"}`;
           }
+          return user;
+        } else {
+          throw `/login/${"user_not_found"}`;
         }
-        const name = credentials.email.split("@")[0];
+      },
+    }),
+    Providers.Credentials({
+      id: "register-credentials",
+      name: "Register",
+      credentials: {
+        name: { label: "name", type: "text" },
+        email: { label: "email", type: "text" },
+        password: { label: "password", type: "password" },
+      },
+      async authorize(credentials) {
+        const checkname = await User.findOne({
+          account: "credentials",
+          name: credentials.name,
+        });
+        if (checkname) {
+          throw `/register/${"username_taken"}`;
+        }
+        const checkemail = await User.findOne({
+          account: "credentials",
+          email: credentials.email,
+        });
+        if (checkemail) {
+          throw `/register/${"email_exists"}`;
+        }
+        if (!credentials.name) {
+          credentials.name = credentials.email.split("@")[0];
+        }
         const user = {
-          name,
+          name: credentials.name,
           email: credentials.email,
           password: credentials.password,
         };
@@ -42,11 +72,11 @@ export default NextAuth({
       },
     }),
     // generic auth0 provider for testing purposes
-    Providers.Auth0({
-      clientId: process.env.AUTH0_GCLIENT_ID,
-      clientSecret: process.env.AUTH0_GCLIENT_SECRET,
-      domain: process.env.AUTH0_GDOMAIN,
-    }),
+    // Providers.Auth0({
+    //   clientId: process.env.AUTH0_GCLIENT_ID,
+    //   clientSecret: process.env.AUTH0_GCLIENT_SECRET,
+    //   domain: process.env.AUTH0_GDOMAIN,
+    // }),
     Providers.Facebook({
       clientId: process.env.FACEBOOK_CLIENT_ID,
       clientSecret: process.env.FACEBOOK_SECRET,
@@ -106,6 +136,9 @@ export default NextAuth({
       // Add property to session, like an access_token from a provider.
       session.user = token;
       return session;
+    },
+    async redirect(url, baseUrl) {
+      return url.startsWith(baseUrl) ? url : baseUrl;
     },
   },
   pages: {

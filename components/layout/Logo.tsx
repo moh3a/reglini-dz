@@ -1,4 +1,4 @@
-const Logo = ({ width, height }: any) => {
+const Logo = ({ width, height, loading }: any) => {
   return (
     <>
       <svg
@@ -9,6 +9,7 @@ const Logo = ({ width, height }: any) => {
         width={width}
         height={height}
         viewBox="0 0 39 45"
+        className={loading ? "animate-pulse select-none" : ""}
         // v:json='{"_titleBlocks_dataCompany":"Dankl.net GmbH","_titleBlocks_dataProject":"EV-Tankstelle","_titleBlocks_dataClient":"","_titleBlocks_dataDrawingNo":"1125-2021"}'
       >
         <defs>
@@ -33,7 +34,7 @@ const Logo = ({ width, height }: any) => {
                 rx="5mm"
                 ry="5mm"
                 stroke="#000"
-                strokeWidth="0.07142857142857142"
+                strokeWidth="0"
               />
             </g>
             <g transform="translate(18.8976 14.1732)">

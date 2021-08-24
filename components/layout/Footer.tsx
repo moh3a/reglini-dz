@@ -4,7 +4,7 @@ import ToggleDark from "../ToggleDark";
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-grim">
+    <footer className="relative bg-white dark:bg-grim">
       <div className="container px-6 py-4 mx-auto">
         <div className="lg:flex">
           <div className="w-full -mx-6 lg:w-2/5">

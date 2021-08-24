@@ -32,9 +32,8 @@ const reducer = combineReducers({
 const middleware = [thunk];
 
 // CREATE STORE FUNCTION
-function initStore(preloadedState = persistedState) {
+function initStore(preloadedState = initialState) {
   return createStore(
-    // persistedReducer,
     reducer,
     preloadedState,
     composeWithDevTools(applyMiddleware(...middleware))
@@ -65,11 +64,11 @@ export const initializeStore = (preloadedState: any) => {
 
 export function useStore(initialState: any) {
   const store = useMemo(() => initializeStore(initialState), [initialState]);
-  store.subscribe(
-    throttle(() => {
-      // saveState({ user: store.getState().user });
-    }, 1000)
-  );
+  // store.subscribe(
+  //   throttle(() => {
+  //     saveState({ user: store.getState().user });
+  //   }, 1000)
+  // );
   return store;
 }
 

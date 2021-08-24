@@ -15,8 +15,12 @@ const Wishlist = () => {
   const user = useSelector(selectUser);
 
   useEffect(() => {
-    if (!loading && !session && !user.isAuthenticated) router.push("/login");
-    if (!user.isAuthenticated && session && user.status !== "loading") {
+    if (!loading && !session)
+      router.push({
+        pathname: "/login/[message]",
+        query: { message: "login_to_view_wishlist" },
+      });
+    if (session) {
       const email = session.user?.email;
       const type = session.user?.type;
       const provider = session.user?.provider || undefined;
@@ -29,12 +33,14 @@ const Wishlist = () => {
       {loading ? (
         <Loading />
       ) : (
-        <>
-          <div onClick={() => router.back()}>Go back.</div>
-          <div className={styles.wishlist}>
-            <div className={styles.title}>Wishlist</div>
-          </div>
-        </>
+        session && (
+          <>
+            <div onClick={() => router.back()}>Go back.</div>
+            <div className={styles.wishlist}>
+              <div className={styles.title}>Wishlist</div>
+            </div>
+          </>
+        )
       )}
     </>
   );
