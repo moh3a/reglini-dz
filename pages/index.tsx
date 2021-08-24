@@ -58,4 +58,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
+import Layout from "../components/layout/Layout";
+HomeScreen.getLayout = function getLayout(page: any) {
+  return <Layout>{page}</Layout>;
+};
+
 export default HomeScreen;
