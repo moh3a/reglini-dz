@@ -86,7 +86,7 @@ const Currency = ({ currency }: any) => {
                     )}
                   </div>
                   <small className="text-xs">
-                    Updated: {convertTime(current.live.date)}{" "}
+                    Updated: {convertTime(current.live.time)}{" "}
                   </small>
                   <div className="flex flex-col justify-start">
                     <p className="text-gray-700 dark:text-gray-100 text-4xl text-left font-bold my-4">
@@ -157,7 +157,7 @@ const Currency = ({ currency }: any) => {
                     )}
                   </div>
                   <small className="text-xs">
-                    Updated: {convertTime(current.live.date)}{" "}
+                    Updated: {convertTime(current.live.time)}{" "}
                   </small>
 
                   <div className="flex flex-col justify-start">
@@ -241,7 +241,7 @@ const Currency = ({ currency }: any) => {
                     )}
                   </div>
                   <small className="text-xs">
-                    Updated: {convertTime(current.live.date)}{" "}
+                    Updated: {convertTime(current.live.time)}{" "}
                   </small>
                   <div className="flex flex-col justify-start">
                     <p className="text-gray-700 dark:text-gray-100 text-4xl text-left font-bold my-4">
