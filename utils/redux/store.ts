@@ -12,6 +12,7 @@ import productsSlice from "./productsSlice";
 // import authSlice from "./authSlice";
 import aeapiSlice from "./aeapiSlice";
 import userSlice from "./userSlice";
+import wishlistSlice from "./wishlistSlice";
 
 let store: any;
 
@@ -26,6 +27,7 @@ const reducer = combineReducers({
   // auth: authSlice,
   aeapi: aeapiSlice,
   user: userSlice,
+  wishlist: wishlistSlice,
 });
 
 // ADD THE REDUX THUNK MIDDLEWARE FOR ASYNC FUNCTIONS

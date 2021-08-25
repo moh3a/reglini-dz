@@ -1,5 +1,4 @@
 import Head from "next/head";
-import styles from "../styles/screens/HomeScreen.module.scss";
 
 const TermsOfService = () => {
   return (
@@ -9,7 +8,7 @@ const TermsOfService = () => {
         <meta name="description" content="reglini-dz.com homepage" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.homescreen}>Terms of Service</div>
+      <div>Terms of Service</div>
     </>
   );
 };

@@ -41,6 +41,14 @@
           "purchase": 209,
           "sale": 210.5
         }
+      },
+      {
+        "time": 20210825,
+        "official": { "sale": 159.11 },
+        "parallel": {
+          "purchase": 209,
+          "sale": 210.5
+        }
       }
     ]
   },
@@ -86,6 +94,14 @@
           "purchase": 176,
           "sale": 179
         }
+      },
+      {
+        "time": 20210825,
+        "official": { "sale": 135.52 },
+        "parallel": {
+          "purchase": 177,
+          "sale": 180
+        }
       }
     ]
   },
@@ -127,6 +143,14 @@
       {
         "time": 20210824,
         "official": { "sale": 185.53 },
+        "parallel": {
+          "purchase": 236,
+          "sale": 238
+        }
+      },
+      {
+        "time": 20210825,
+        "official": { "sale": 185.91 },
         "parallel": {
           "purchase": 236,
           "sale": 238

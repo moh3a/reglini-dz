@@ -1,5 +1,4 @@
 import Head from "next/head";
-import styles from "../styles/screens/HomeScreen.module.scss";
 
 const PrivacyPolicy = () => {
   return (
@@ -9,7 +8,7 @@ const PrivacyPolicy = () => {
         <meta name="description" content="reglini-dz.com homepage" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.homescreen}>Privacy Policy</div>
+      <div>Privacy Policy</div>
     </>
   );
 };

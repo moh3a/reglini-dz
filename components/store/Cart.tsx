@@ -5,7 +5,8 @@ import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { XIcon, ShoppingBagIcon } from "@heroicons/react/outline";
 
-import { selectUser, getUser } from "../../utils/redux/userSlice";
+import { selectUser } from "../../utils/redux/userSlice";
+import { getUser } from "../../utils/redux/userAsyncActions";
 
 export default function Cart({ session }: any) {
   const [open, setOpen] = useState(false);

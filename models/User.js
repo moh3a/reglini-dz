@@ -39,6 +39,25 @@ const ItemSchema = new mongoose.Schema(
   }
 );
 
+const WishlistSchema = new mongoose.Schema({
+  productId: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  imageUrl: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+});
+
 const CartSchema = new mongoose.Schema(
   {
     cartItems: [ItemSchema],
@@ -106,22 +125,7 @@ const UserSchema = new mongoose.Schema({
     type: CartSchema,
     required: true,
   },
-  wishlist: [
-    {
-      productId: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-      },
-      name: {
-        type: String,
-        required: true,
-      },
-      imageUrl: {
-        type: String,
-        required: true,
-      },
-    },
-  ],
+  wishlist: [WishlistSchema],
 });
 
 // MIDDLEWARE TO BE USED BEFORE CREATING A NEW PASSWORD

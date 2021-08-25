@@ -1,6 +1,6 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
+import { getUser } from "./userAsyncActions";
 
 interface IUser {
   isAuthenticated: boolean;
@@ -9,34 +9,12 @@ interface IUser {
   error?: string;
 }
 
-interface IGetUser {
-  email: string;
-  account: string;
-  provider?: string;
-}
-
 const initialState: IUser = {
   isAuthenticated: false,
   user: undefined,
   status: "idle",
   error: undefined,
 };
-
-export const getUser = createAsyncThunk(
-  "user/getUser",
-  async ({ email, account, provider }: IGetUser, { rejectWithValue }) => {
-    try {
-      const { data } = await axios.post(`/api/auth/user/`, {
-        email,
-        account,
-        provider,
-      });
-      return data.data;
-    } catch (error) {
-      return rejectWithValue(error.response);
-    }
-  }
-);
 
 export const userSlice = createSlice({
   name: "user",

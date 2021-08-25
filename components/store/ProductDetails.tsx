@@ -1,16 +1,45 @@
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
+
+import { SuccessMessage, WarningMessage } from "../AlertMessages";
+import { addToWishlist } from "../../utils/redux/userAsyncActions";
+import { selectWishlist } from "../../utils/redux/wishlistSlice";
 
 const ProductDetails = ({ product }: any) => {
   const [showImage, setShowImage] = useState("/placeholder.png");
   const [selectedProperty, setSelectedProperty] = useState("");
 
+  const { message } = useSelector(selectWishlist);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     setShowImage(product.productImages[0]);
   }, [product.productImages]);
 
+  const addToWishlistHandler = (e: any) => {
+    e.preventDefault();
+    dispatch(
+      addToWishlist({
+        productId: product.productId,
+        name: product.title,
+        price: product.priceSummary
+          ? product.priceSummary.app.originalPrice.min.value
+          : product.price.app.originalPrice.value,
+        imageUrl: product.productImages[0],
+      })
+    );
+  };
+
   return (
     <section className="bg-red-50 dark:bg-red-900 text-gray-600 body-font overflow-hidden">
+      {message && message === "Item is already in the wishlist." && (
+        <WarningMessage message={message} />
+      )}
+      {message && message === "Item successfully added to wishlist." && (
+        <SuccessMessage message={message} />
+      )}
+
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
@@ -78,6 +107,7 @@ const ProductDetails = ({ product }: any) => {
                 </span>
               )}
             </div>
+            {/* <form> */}
             <p className="leading-relaxed text-gray-800 dark:text-gray-100">
               Category: {product.productCategory.name}
             </p>
@@ -89,6 +119,7 @@ const ProductDetails = ({ product }: any) => {
                       {" "}
                       {property.name} : {selectedProperty}{" "}
                     </div>
+
                     <div className="flex items-center flex-wrap">
                       {property.values.map((value: any) => {
                         return (
@@ -164,7 +195,10 @@ const ProductDetails = ({ product }: any) => {
               <button className="flex ml-4 text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded">
                 Cart
               </button>
-              <button className="rounded-full hover:bg-aliexpress h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 hover:text-gray-100 py-2 px-6 ml-4">
+              <button
+                onClick={addToWishlistHandler}
+                className="rounded-full hover:bg-aliexpress h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 hover:text-gray-100 py-2 px-6 ml-4"
+              >
                 <svg
                   fill="currentColor"
                   strokeLinecap="round"
@@ -178,6 +212,7 @@ const ProductDetails = ({ product }: any) => {
                 <span className="ml-1">{product.wishlistCount}</span>
               </button>
             </div>
+            {/* </form> */}
           </div>
         </div>
       </div>

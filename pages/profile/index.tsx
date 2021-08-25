@@ -8,9 +8,10 @@ import { signOut, getSession } from "next-auth/client";
 import dbConnect from "../../config/db";
 import Tabs from "../../components/layout/Tabs";
 
-import { selectUser, logout, getUser } from "../../utils/redux/userSlice";
+import { selectUser, logout } from "../../utils/redux/userSlice";
+import { getUser } from "../../utils/redux/userAsyncActions";
 
-const Profile = ({ session }) => {
+const Profile = ({ session }: any) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const user = useSelector(selectUser);

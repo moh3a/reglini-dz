@@ -1,7 +1,7 @@
 export const SuccessMessage = ({ message }: any) => {
   return (
     <div
-      className=" my-3 block text-sm text-left text-white bg-green-500 h-12 flex items-center p-5"
+      className="fixed top-12 w-full z-100 my-3 block text-sm text-left text-white bg-green-500 h-12 flex items-center p-5"
       role="alert"
     >
       <svg
@@ -25,7 +25,7 @@ export const SuccessMessage = ({ message }: any) => {
 export const WarningMessage = ({ message }: any) => {
   return (
     <div
-      className="my-3 block text-sm text-left text-white bg-yellow-500 h-12 flex items-center p-5"
+      className="fixed top-12 w-full z-100 my-3 block text-sm text-left text-white bg-yellow-500 h-12 flex items-center p-5"
       role="alert"
     >
       <svg
@@ -49,7 +49,7 @@ export const WarningMessage = ({ message }: any) => {
 export const DangerMessage = ({ message }: any) => {
   return (
     <div
-      className="my-3 block text-sm text-left text-white bg-red-500 h-12 flex items-center p-5"
+      className="fixed top-12 w-full z-100 my-3 block text-sm text-left text-white bg-red-500 h-12 flex items-center p-5"
       role="alert"
     >
       <svg
