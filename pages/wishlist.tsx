@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Head from "next/head";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -30,6 +31,11 @@ const Wishlist = () => {
 
   return (
     <>
+      <Head>
+        <title>Your Wishlist | reglini.dz</title>
+        <meta name="description" content="reglini-dz.com homepage" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {loading ? (
         <Loading />
       ) : (

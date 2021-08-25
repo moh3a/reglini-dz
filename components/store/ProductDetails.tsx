@@ -1,19 +1,49 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const ProductDetails = ({ product }: any) => {
+  const [showImage, setShowImage] = useState("/placeholder.png");
+  const [selectedProperty, setSelectedProperty] = useState("");
+
+  useEffect(() => {
+    setShowImage(product.productImages[0]);
+  }, [product.productImages]);
+
   return (
     <section className="bg-red-50 dark:bg-red-900 text-gray-600 body-font overflow-hidden">
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
-          <div className="lg:w-1/2 w-full object-cover object-center rounded overflow-hidden">
-            <Image
-              className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-              alt={product.title}
-              src={product.productImages[0]}
-              height={100}
-              width={100}
-              layout="responsive"
-            />
+          <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+            <div className="mb-4">
+              <Image
+                src={showImage}
+                alt="product image"
+                layout="responsive"
+                height={100}
+                width={100}
+              />
+            </div>
+            <div className="flex items-center flex-wrap">
+              {product.productImages.map((image: any) => {
+                return (
+                  <div
+                    key={image}
+                    onClick={() => setShowImage(image)}
+                    className="ml-2 p-1 border-2 text-center border-gray-300 hover:border-red-400 focus:outline-none cursor-pointer"
+                  >
+                    <div className="h-10 w-10">
+                      <Image
+                        src={image}
+                        alt={product.title}
+                        width={100}
+                        height={100}
+                        layout="responsive"
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-700 dark:text-gray-200 tracking-widest">
@@ -55,16 +85,23 @@ const ProductDetails = ({ product }: any) => {
               {product.properties.map((property: any) => {
                 return (
                   <div key={property.name} className="mt-4">
-                    <div> {property.name} </div>
+                    <div>
+                      {" "}
+                      {property.name} : {selectedProperty}{" "}
+                    </div>
                     <div className="flex items-center flex-wrap">
                       {property.values.map((value: any) => {
                         return (
                           <div
+                            onClick={() => setSelectedProperty(value.name)}
                             key={value.id}
                             className="ml-2 p-1 border-2 text-center border-gray-300 hover:border-red-400 focus:outline-none cursor-pointer"
                           >
                             {value.hasImage ? (
-                              <div className="h-10 w-10">
+                              <div
+                                className="h-10 w-10"
+                                onClick={() => setShowImage(value.imageUrl)}
+                              >
                                 <Image
                                   src={value.thumbnailImageUrl}
                                   alt={value.name}
@@ -91,6 +128,7 @@ const ProductDetails = ({ product }: any) => {
                     id="quantity"
                     name="quantity"
                     value={1}
+                    readOnly
                     className="p-1 mr-4 text-center w-20 rounded-full focus:ring-2 focus:ring-red-500 focus:border-red-500"
                   />
                   <span className="text-gray-400">
@@ -126,7 +164,7 @@ const ProductDetails = ({ product }: any) => {
               <button className="flex ml-4 text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded">
                 Cart
               </button>
-              <button className="rounded-full hover:bg-aliexpress w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 hover:text-gray-100 ml-4">
+              <button className="rounded-full hover:bg-aliexpress h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 hover:text-gray-100 py-2 px-6 ml-4">
                 <svg
                   fill="currentColor"
                   strokeLinecap="round"
@@ -137,6 +175,7 @@ const ProductDetails = ({ product }: any) => {
                 >
                   <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
                 </svg>
+                <span className="ml-1">{product.wishlistCount}</span>
               </button>
             </div>
           </div>

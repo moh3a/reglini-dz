@@ -1,17 +1,17 @@
 const AppCTA = () => {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-800 dark:text-gray-100 bg-yellow-50 dark:bg-gray-800 body-font">
       <div className="container px-5 py-24 mx-auto flex items-center md:flex-row flex-col">
         <div className="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center">
-          <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">
-            ROOF PARTY POLAROID
+          <h2 className="text-xs text-red-600 dark:text-red-400 tracking-widest font-medium title-font mb-1">
+            UNDER DEVELOPMENT
           </h2>
-          <h1 className="md:text-3xl text-2xl font-medium title-font text-gray-900">
-            Master Cleanse Reliac Heirloom
+          <h1 className="md:text-3xl text-2xl font-medium title-font">
+            To get even closer to you, we are be coming to your mobile!
           </h1>
         </div>
         <div className="flex md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4">
-          <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+          <button className="bg-gray-100 text-gray-800 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -21,11 +21,11 @@ const AppCTA = () => {
               <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
             </svg>
             <span className="ml-4 flex items-start flex-col leading-none">
-              <span className="text-xs text-gray-600 mb-1">GET IT ON</span>
+              <span className="text-xs mb-1">GET IT ON</span>
               <span className="title-font font-medium">Google Play</span>
             </span>
           </button>
-          <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+          <button className="bg-gray-100 text-gray-800 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
