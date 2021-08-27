@@ -10,6 +10,7 @@ import dbConnect from "../config/db";
 import { selectUser } from "../utils/redux/userSlice";
 import { getUser, addToWishlist } from "../utils/redux/userAsyncActions";
 import WishedItems from "../components/store/WishedItems";
+import Link from "next/link";
 
 const Wishlist = ({ session }: any) => {
   const [wishlist, setWishlist] = useState([]);
@@ -51,10 +52,10 @@ const Wishlist = ({ session }: any) => {
             {user && wishlist.length > 0 ? (
               <WishedItems wishlist={wishlist} />
             ) : (
-              <div>
+              <div className="text-center p-8 text-lg">
                 <div>You have no items in your wishlist.</div>
                 <div className="text-gray-700 hover:underline cursor-pointer">
-                  Continue shopping
+                  <Link href="/aliexpress">Continue shopping</Link>
                 </div>
               </div>
             )}

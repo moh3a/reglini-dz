@@ -16,7 +16,7 @@ export const getUser = createAsyncThunk(
         account,
         provider,
       });
-      return data.data;
+      return data;
     } catch (error) {
       return rejectWithValue(error.response);
     }
@@ -48,6 +48,54 @@ export const removeFromWishlist = createAsyncThunk(
       return data;
     } catch (error) {
       return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const addToCart = createAsyncThunk(
+  "user/addToCart",
+  async (
+    { productId, name, price, imageUrl, quantity }: any,
+    { rejectWithValue }
+  ) => {
+    try {
+      const { data } = await axios.post("/api/cart", {
+        productId,
+        name,
+        price,
+        imageUrl,
+        quantity,
+      });
+      return data;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+export const updateQuantity = createAsyncThunk(
+  "user/updateQuantity",
+  async ({ id, quantity }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.patch(`/api/cart/${id}`, {
+        quantity,
+      });
+      return data;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+export const removeFromCart = createAsyncThunk(
+  "user/removeFromCart",
+  async ({ id }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.delete(`/api/cart/${id}`);
+
+      return data;
+    } catch (error) {
+      return rejectWithValue(error);
     }
   }
 );

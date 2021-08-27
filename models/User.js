@@ -1,26 +1,17 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-const uniqueValidator = require("mongoose-unique-validator");
 
 const ItemSchema = new mongoose.Schema(
   {
     productId: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: String,
       required: true,
     },
     name: {
       type: String,
       required: true,
     },
-    slug: {
-      type: String,
-      required: true,
-    },
     price: {
-      type: Number,
-      required: true,
-    },
-    countInStock: {
       type: Number,
       required: true,
     },

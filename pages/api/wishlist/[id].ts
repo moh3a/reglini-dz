@@ -55,7 +55,7 @@ export default async function handler(
           await data.save();
           res.status(200).json({
             success: true,
-            message: "Item successfully deleted from cart.",
+            message: "Item successfully deleted from wishlist.",
             data,
           });
         }

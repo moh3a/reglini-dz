@@ -2,42 +2,97 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 
-import { SuccessMessage, WarningMessage } from "../AlertMessages";
-import { addToWishlist } from "../../utils/redux/userAsyncActions";
-import { selectWishlist } from "../../utils/redux/wishlistSlice";
+import DangerDialog from "../elements/DangerDialog";
+import WarningDialog from "../elements/WarningDialog";
+import SuccessDialog from "../elements/SuccessDialog";
+import { addToWishlist, addToCart } from "../../utils/redux/userAsyncActions";
+import { selectUser } from "../../utils/redux/userSlice";
 
-const ProductDetails = ({ product }: any) => {
+const ProductDetails = ({ product, session }: any) => {
   const [showImage, setShowImage] = useState("/placeholder.png");
   const [selectedProperty, setSelectedProperty] = useState("");
+  const [error, setError] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const [success, setSuccess] = useState("");
+  const [warning, setWarning] = useState("");
 
-  const { message } = useSelector(selectWishlist);
   const dispatch = useDispatch();
+  const { message } = useSelector(selectUser);
 
   useEffect(() => {
     setShowImage(product.productImages[0]);
   }, [product.productImages]);
 
+  useEffect(() => {
+    if (message === "Item is already in the wishlist.") {
+      setTimeout(() => {
+        setWarning("");
+      }, 3000);
+      setWarning("Item is already in the wishlist.");
+    } else if (message === "Item successfully added to wishlist.") {
+      setTimeout(() => {
+        setSuccess("");
+      }, 3000);
+      setSuccess("Item successfully added to wishlist.");
+    } else if (message === "Item successfully added to cart.") {
+      setTimeout(() => {
+        setSuccess("");
+      }, 3000);
+      setSuccess("Item successfully added to cart.");
+    }
+  }, [message]);
+
   const addToWishlistHandler = (e: any) => {
     e.preventDefault();
-    dispatch(
-      addToWishlist({
-        productId: product.productId,
-        name: product.title,
-        price: product.priceSummary
-          ? product.priceSummary.app.originalPrice.min.value
-          : product.price.app.originalPrice.value,
-        imageUrl: product.productImages[0],
-      })
-    );
+    if (!session) {
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+      setError("You should be logged in to add to wishlist.");
+    } else if (session) {
+      dispatch(
+        addToWishlist({
+          productId: product.productId,
+          name: product.title,
+          price: product.priceSummary
+            ? product.priceSummary.app.originalPrice.min.value
+            : product.price.app.originalPrice.value,
+          imageUrl: product.productImages[0],
+        })
+      );
+    }
+  };
+
+  const addToCartHandler = (e: any) => {
+    e.preventDefault();
+    if (!session) {
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+      setError("You should be logged in to add to cart.");
+    } else if (session) {
+      dispatch(
+        addToCart({
+          productId: product.productId,
+          name: product.title,
+          price: product.priceSummary
+            ? product.priceSummary.app.originalPrice.min.value
+            : product.price.app.originalPrice.value,
+          imageUrl: product.productImages[0],
+          quantity,
+        })
+      );
+    }
   };
 
   return (
     <section className="bg-red-50 dark:bg-red-900 text-gray-600 body-font overflow-hidden">
-      {message && message === "Item is already in the wishlist." && (
-        <WarningMessage message={message} />
-      )}
-      {message && message === "Item successfully added to wishlist." && (
-        <SuccessMessage message={message} />
+      {warning && <WarningDialog>{warning}</WarningDialog>}
+      {success && <SuccessDialog>{success}</SuccessDialog>}
+      {error && (
+        <DangerDialog action="Login" actionUrl="/login">
+          {error}
+        </DangerDialog>
       )}
 
       <div className="container px-5 py-24 mx-auto">
@@ -107,112 +162,115 @@ const ProductDetails = ({ product }: any) => {
                 </span>
               )}
             </div>
-            {/* <form> */}
-            <p className="leading-relaxed text-gray-800 dark:text-gray-100">
-              Category: {product.productCategory.name}
-            </p>
-            <div className="mt-6 text-gray-800 dark:text-gray-100 pb-5 mb-5">
-              {product.properties.map((property: any) => {
-                return (
-                  <div key={property.name} className="mt-4">
-                    <div>
-                      {" "}
-                      {property.name} : {selectedProperty}{" "}
-                    </div>
+            <form>
+              <p className="leading-relaxed text-gray-800 dark:text-gray-100">
+                Category: {product.productCategory.name}
+              </p>
+              <div className="mt-6 text-gray-800 dark:text-gray-100 pb-5 mb-5">
+                {product.properties.map((property: any) => {
+                  return (
+                    <div key={property.name} className="mt-4">
+                      <div>
+                        {" "}
+                        {property.name} : {selectedProperty}{" "}
+                      </div>
 
-                    <div className="flex items-center flex-wrap">
-                      {property.values.map((value: any) => {
-                        return (
-                          <div
-                            onClick={() => setSelectedProperty(value.name)}
-                            key={value.id}
-                            className="ml-2 p-1 border-2 text-center border-gray-300 hover:border-red-400 focus:outline-none cursor-pointer"
-                          >
-                            {value.hasImage ? (
-                              <div
-                                className="h-10 w-10"
-                                onClick={() => setShowImage(value.imageUrl)}
-                              >
-                                <Image
-                                  src={value.thumbnailImageUrl}
-                                  alt={value.name}
-                                  width={100}
-                                  height={100}
-                                  layout="responsive"
-                                />
-                              </div>
-                            ) : (
-                              value.name
-                            )}
-                          </div>
-                        );
-                      })}
+                      <div className="flex items-center flex-wrap">
+                        {property.values.map((value: any) => {
+                          return (
+                            <div
+                              onClick={() => setSelectedProperty(value.name)}
+                              key={value.id}
+                              className="ml-2 p-1 border-2 text-center border-gray-300 hover:border-red-400 focus:outline-none cursor-pointer"
+                            >
+                              {value.hasImage ? (
+                                <div
+                                  className="h-10 w-10"
+                                  onClick={() => setShowImage(value.imageUrl)}
+                                >
+                                  <Image
+                                    src={value.thumbnailImageUrl}
+                                    alt={value.name}
+                                    width={100}
+                                    height={100}
+                                    layout="responsive"
+                                  />
+                                </div>
+                              ) : (
+                                value.name
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
+                  );
+                })}
+                <div className="mt-4">
+                  <div>Quantity</div>
+                  <div className="flex">
+                    <input
+                      type="number"
+                      id="quantity"
+                      name="quantity"
+                      value={Math.round(quantity)}
+                      onChange={(e: any) => setQuantity(e.target.value)}
+                      className="p-1 mr-4 text-center w-20 rounded-full focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                    />
+                    <span className="text-gray-400">
+                      {product.totalStock} {product.unitNamePlural} available
+                    </span>
                   </div>
-                );
-              })}
-              <div className="mt-4">
-                <div>Quantity</div>
-                <div className="flex">
-                  <input
-                    type="number"
-                    id="quantity"
-                    name="quantity"
-                    value={1}
-                    readOnly
-                    className="p-1 mr-4 text-center w-20 rounded-full focus:ring-2 focus:ring-red-500 focus:border-red-500"
-                  />
-                  <span className="text-gray-400">
-                    {product.totalStock} {product.unitNamePlural} available
-                  </span>
                 </div>
               </div>
-            </div>
 
-            <div className="flex justify-center mt-6 title-font font-medium text-2xl text-gray-800 dark:text-gray-100">
-              {product.priceSummary ? (
-                <div className="bg-red-400 hover:bg-red-500 text-center font-bold text-gray-100 px-6 py-2">
-                  <div>
-                    $ {product.priceSummary.app.discountedPrice.min.value} -{" "}
-                    {product.priceSummary.app.discountedPrice.max.value}
+              <div className="flex justify-center mt-6 title-font font-medium text-2xl text-gray-800 dark:text-gray-100">
+                {product.priceSummary ? (
+                  <div className="bg-red-400 hover:bg-red-500 text-center font-bold text-gray-100 px-6 py-2">
+                    <div>
+                      $ {product.priceSummary.app.discountedPrice.min.value} -{" "}
+                      {product.priceSummary.app.discountedPrice.max.value}
+                    </div>
+                    <div className="text-xs lg:text-sm">
+                      <span className="line-through mr-4">
+                        $ {product.priceSummary.app.originalPrice.min.value} -{" "}
+                        {product.priceSummary.app.originalPrice.max.value}
+                      </span>{" "}
+                      {product.priceSummary.app.discountPercentage}% off
+                    </div>
                   </div>
-                  <div className="text-xs lg:text-sm">
-                    <span className="line-through mr-4">
-                      $ {product.priceSummary.app.originalPrice.min.value} -{" "}
-                      {product.priceSummary.app.originalPrice.max.value}
-                    </span>{" "}
-                    {product.priceSummary.app.discountPercentage}% off
-                  </div>
-                </div>
-              ) : (
-                <>$ {product.price.app.originalPrice.value}</>
-              )}
-            </div>
-            <div className="mt-4 flex">
-              <button className="flex ml-auto text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded">
-                Buy
-              </button>
-              <button className="flex ml-4 text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded">
-                Cart
-              </button>
-              <button
-                onClick={addToWishlistHandler}
-                className="rounded-full hover:bg-aliexpress h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 hover:text-gray-100 py-2 px-6 ml-4"
-              >
-                <svg
-                  fill="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="w-5 h-5 "
-                  viewBox="0 0 24 24"
+                ) : (
+                  <>$ {product.price.app.originalPrice.value}</>
+                )}
+              </div>
+              <div className="mt-4 flex">
+                <button className="flex ml-auto text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded">
+                  Buy
+                </button>
+                <button
+                  onClick={addToCartHandler}
+                  className="flex ml-4 text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded"
                 >
-                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
-                </svg>
-                <span className="ml-1">{product.wishlistCount}</span>
-              </button>
-            </div>
-            {/* </form> */}
+                  Cart
+                </button>
+                <button
+                  onClick={addToWishlistHandler}
+                  className="rounded-full hover:bg-aliexpress h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 hover:text-gray-100 py-2 px-6 ml-4"
+                >
+                  <svg
+                    fill="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    className="w-5 h-5 "
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
+                  </svg>
+                  <span className="ml-1">{product.wishlistCount}</span>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

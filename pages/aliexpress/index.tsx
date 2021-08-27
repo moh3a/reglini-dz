@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { GetServerSideProps } from "next";
+import mongoose from "mongoose";
+import Head from "next/head";
+import { getSession } from "next-auth/client";
 
-import {
-  SuccessMessage,
-  WarningMessage,
-  DangerMessage,
-} from "../../components/AlertMessages";
+import dbConnect from "../../config/db";
+
 import { selectAEApi } from "../../utils/redux/aeapiSlice";
 import {
   searchAEProductByName,
@@ -14,8 +15,9 @@ import {
 
 import ProductDetails from "../../components/store/ProductDetails";
 import ProductList from "../../components/store/ProductList";
+import DangerDialog from "../../components/elements/DangerDialog";
 
-const Aliexpress = () => {
+const Aliexpress = ({ session }: any) => {
   const [name, setName] = useState("");
   const [url, setUrl] = useState("");
   const [error, setError] = useState("");
@@ -45,7 +47,7 @@ const Aliexpress = () => {
   return (
     <>
       <section className="bg-gray-100 dark:bg-gray-900">
-        {error && <DangerMessage message={error} />}
+        {error && <DangerDialog>{error}</DangerDialog>}
         <div className="container flex flex-col px-5 py-8 mx-auto lg:items-center">
           <div className="flex flex-col w-full mb-8 text-left lg:text-center">
             <h2 className="mb-4 text-xs font-semibold tracking-widest text-center uppercase title-font">
@@ -88,10 +90,22 @@ const Aliexpress = () => {
           </div>
         </div>
       </section>
-      {product && <ProductDetails product={product} />}
+      {product && <ProductDetails session={session} product={product} />}
       <ProductList />
     </>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  if (!mongoose.connection.readyState) {
+    await dbConnect();
+  }
+  const { req, res } = context;
+  const session = await getSession({ req });
+
+  return {
+    props: { session },
+  };
 };
 
 import Layout from "../../components/layout/Layout";

@@ -1,18 +1,28 @@
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 
-import { SuccessMessage } from "../AlertMessages";
+import SuccessDialog from "../elements/SuccessDialog";
 import { removeFromWishlist } from "../../utils/redux/userAsyncActions";
-import { selectWishlist } from "../../utils/redux/wishlistSlice";
+import { selectUser } from "../../utils/redux/userSlice";
 
 const WishedItems = ({ wishlist }: any) => {
-  const { message } = useSelector(selectWishlist);
+  const [success, setSuccess] = useState("");
+  const { message } = useSelector(selectUser);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (message === "Item successfully deleted from wishlist.") {
+      setTimeout(() => {
+        setSuccess("");
+      }, 3000);
+      setSuccess("Item successfully deleted from wishlist.");
+    }
+  }, [message]);
+
   return (
     <div className="my-8 mx-2">
-      {message && message === "Item successfully deleted from wishlist." && (
-        <SuccessMessage message={message} />
-      )}
+      {success && <SuccessDialog>{success} </SuccessDialog>}
       <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
         {wishlist.map((item: any) => {
           return (

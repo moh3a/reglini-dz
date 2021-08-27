@@ -9,61 +9,8 @@ export default async function handler(
 ) {
   await dbConnect();
   const session = await getSession({ req });
-  //   const checkUser = async (session: any) => {
-  //     if (!session) {
-  //       res.status(403).json({ message: "Unauthorized to access this part." });
-  //     } else if (session.user) {
-  //         if (session.user.type === "credentials") {
-  //           const data = await User.findOne({
-  //             account: session.user.type,
-  //             email: session.user.email,
-  //           });
-  //           if (!data) throw Error("User does not exist");
-  //           return data
-  //         } else if (session.user.type === "oauth") {
-  //           const data = await User.findOne({
-  //             account: session.user.type,
-  //             provider: session.user.provider,
-  //             email: session.user.email,
-  //           });
-  //           if (!data) throw Error("User does not exist");
-  //           return data
-  //         }
-  //     }
-  //   };
 
-  if (req.method === "GET") {
-    try {
-      if (!session) {
-        res.status(403).json({ message: "Unauthorized to access this part." });
-      } else if (session.user) {
-        if (session.user.type === "credentials") {
-          const data = await User.findOne({
-            account: session.user.type,
-            email: session.user.email,
-          });
-          if (!data) throw Error("User does not exist");
-          res
-            .status(200)
-            .json({ success: true, data: data.wishlist, status: 200 });
-        } else if (session.user.type === "oauth") {
-          const data = await User.findOne({
-            account: session.user.type,
-            provider: session.user.provider,
-            email: session.user.email,
-          });
-          if (!data) throw Error("User does not exist");
-          res
-            .status(200)
-            .json({ success: true, data: data.wishlist, status: 200 });
-        }
-      }
-    } catch (error) {
-      res
-        .status(500)
-        .json({ message: error.message, success: true, status: 500 });
-    }
-  } else if (req.method === "POST") {
+  if (req.method === "POST") {
     const { productId, name, price, imageUrl } = req.body;
     try {
       if (!session) {
