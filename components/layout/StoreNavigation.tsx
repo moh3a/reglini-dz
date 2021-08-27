@@ -7,7 +7,6 @@ import {
   MenuIcon,
   SearchIcon,
   XIcon,
-  UserCircleIcon,
   HeartIcon,
 } from "@heroicons/react/outline";
 import { navigation } from "../../data/navigation";
@@ -21,21 +20,6 @@ function classNames(...classes: any) {
 export default function StoreNavigation() {
   const [session, loading] = useSession();
   const [open, setOpen] = useState(false);
-
-  // const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
-  //   e.preventDefault();
-  //   if (e.key === "Enter") {
-  //     const q = e.currentTarget.value;
-  //     router.push(
-  //       {
-  //         pathname: `/search`,
-  //         query: q ? { q } : {},
-  //       },
-  //       undefined,
-  //       { shallow: true }
-  //     );
-  //   }
-  // };
 
   return (
     <>
@@ -194,15 +178,15 @@ export default function StoreNavigation() {
                                 key={item.name}
                                 className="group relative text-sm"
                               >
-                                <div className="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75">
-                                  <div className="p-2 object-center object-cover">
-                                    <Image
-                                      src={item.imageSrc}
-                                      alt={item.imageAlt}
-                                      height={120}
-                                      width={120}
-                                    />
-                                  </div>
+                                <div className="p-2 aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden hover:opacity-75">
+                                  <Image
+                                    className="absolute inset-0 object-center object-cover"
+                                    src={item.imageSrc}
+                                    alt={item.imageAlt}
+                                    height={50}
+                                    width={50}
+                                    layout="responsive"
+                                  />
                                 </div>
                                 <a
                                   href={item.href}
@@ -272,10 +256,6 @@ export default function StoreNavigation() {
           </Transition.Root>
 
           <header className="relative bg-white dark:bg-grim">
-            {/* <p className="bg-indigo-600 h-10 flex items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
-          Get free delivery on orders over €100
-        </p> */}
-
             <nav
               aria-label="Top"
               className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-0"

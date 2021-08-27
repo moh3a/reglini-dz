@@ -1,10 +1,7 @@
 import dbConnect from "../../../config/db";
-
 import type { NextApiRequest, NextApiResponse } from "next";
-
 import User from "../../../models/User";
 import sendEmail from "../../../utils/sendEmail";
-import ErrorResponse from "../../../utils/errorResponse";
 
 export default async function handler(
   req: NextApiRequest,
@@ -18,12 +15,10 @@ export default async function handler(
       const user = await User.findOne({ email, account: "credentials" });
 
       if (!user) {
-        res
-          .status(200)
-          .json({
-            message: "No user with this email address.",
-            success: false,
-          });
+        res.status(200).json({
+          message: "No user with this email address.",
+          success: false,
+        });
       } else {
         // GENERATE A TOKEN FROM THE USER MODEL
         // SAVE IT IN THE DATABASE
@@ -39,6 +34,7 @@ export default async function handler(
         // SEND AN EMAIL FOR THE PASSWORD RESET
         try {
           await sendEmail({
+            from: process.env.SENDGRID_FROM,
             to: user.email,
             subject: "Password Reset Request",
             text: message,
