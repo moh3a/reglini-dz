@@ -14,6 +14,12 @@ export default async function handler(
         url: "https://api.zapiex.com/v3/product/details",
         data: {
           productId: id,
+          currency: "EUR",
+          shipTo: "DZ",
+          shipFrom: "CN",
+          getHtmlDescription: true,
+          getShipping: true,
+          getSellerDetails: true,
         },
         headers: {
           "x-api-key": process.env.ZAPIEX_KEY,

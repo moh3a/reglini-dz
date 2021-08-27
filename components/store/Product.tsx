@@ -1,31 +1,74 @@
 import Image from "next/image";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 import Link from "next/link";
-import { HeartIcon, ShoppingCartIcon } from "@heroicons/react/outline";
+import { HeartIcon } from "@heroicons/react/outline";
 
-const Product = ({ product }: any) => {
+import DangerDialog from "../elements/DangerDialog";
+import { addToWishlist } from "../../utils/redux/userAsyncActions";
+
+const Product = ({ product, session }: any) => {
+  const [error, setError] = useState("");
+  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const addToWishlistHandler = (e: any) => {
+    e.preventDefault();
+    if (!session) {
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+      setError("You should be logged in to add to wishlist.");
+    } else if (session) {
+      dispatch(
+        addToWishlist({
+          productId: product.productId,
+          name: product.title,
+          price: product.productMinPrice.value,
+          imageUrl: product.imageUrl,
+        })
+      );
+    }
+  };
+
   return (
     <div>
-      <div className="relative w-50 aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden z-0">
+      {error && <DangerDialog>{error} </DangerDialog>}
+      <div
+        onClick={() => router.push(`/aliexpress/product/${product.productId}`)}
+        className="w-50 bg-gray-200 cursor-pointer"
+      >
         <Image
-          // src={product.imageSrc}
-          src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
-          alt={product.imageAlt}
-          layout="fill"
-          className="w-full h-full object-center object-cover group-hover:opacity-75 "
-        />
-        <HeartIcon
-          className="absolute bottom-0 w-10 hover:text-red-500 cursor-pointer"
-          aria-hidden="true"
-        />
-        <ShoppingCartIcon
-          className="h-10 hover:text-green-500 cursor-pointer"
-          aria-hidden="true"
+          src={product.imageUrl}
+          alt={product.title}
+          layout="responsive"
+          height={50}
+          width={50}
+          className="w-full h-full object-center object-cover hover:opacity-75"
         />
       </div>
-      <h3 className="mt-4 text-sm text-gray-700">
-        <Link href={product.href}>{product.name}</Link>
-      </h3>
-      <p className="mt-1 text-lg font-medium text-gray-900">{product.price}</p>
+      <div className="relative">
+        <div>
+          <h3 className="mt-4 text-sm">
+            <Link href={`/aliexpress/product/${product.productId}`}>
+              {product.title}
+            </Link>
+          </h3>
+          <p className="mt-1 text-lg font-medium">
+            € {product.productMinPrice.value}
+          </p>
+        </div>
+        <div
+          onClick={addToWishlistHandler}
+          className="absolute right-0 top-0 pl-4 pb-5 bg-pink-50 dark:bg-grim"
+        >
+          <HeartIcon
+            className="w-5 hover:text-red-500 cursor-pointer"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
     </div>
   );
 };

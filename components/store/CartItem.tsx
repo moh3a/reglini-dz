@@ -10,10 +10,9 @@ const CartItem = ({ item }: any) => {
   const [quantity, setQuantity] = useState(item.quantity);
   const dispatch = useDispatch();
 
-  const updateQuantityHandler = (e: any) => {
-    setQuantity(parseInt(e.target.value));
+  useEffect(() => {
     dispatch(updateQuantity({ id: item.productId, quantity }));
-  };
+  }, [quantity, dispatch, item.productId]);
 
   return (
     <li className="py-6 flex">
@@ -40,12 +39,14 @@ const CartItem = ({ item }: any) => {
           <p className="text-gray-600 dark:text-gray-200">
             Qty{" "}
             <input
-              disabled // need to form validate it (shouldnt allow negative numbers) before enabling it
               type="number"
+              min="1"
+              onKeyDown={(e) => e.preventDefault()}
+              step="1"
               id="quantity"
               name="quantity"
               value={quantity}
-              onChange={(e) => updateQuantityHandler(e)}
+              onChange={(e) => setQuantity(parseInt(e.target.value))}
               className="p-1 mr-4 text-center w-20 rounded-full focus:ring-2 focus:ring-red-500 focus:border-red-500"
             />
           </p>

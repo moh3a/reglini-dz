@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const product = {
   name: "Basic Tee 6-Pack ",
-  price: "$192",
+  price: "€192",
   rating: 3.9,
   reviewCount: 117,
   href: "#",

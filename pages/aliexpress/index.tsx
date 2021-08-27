@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GetServerSideProps } from "next";
 import mongoose from "mongoose";
-import Head from "next/head";
 import { getSession } from "next-auth/client";
 
 import dbConnect from "../../config/db";
@@ -10,8 +9,10 @@ import dbConnect from "../../config/db";
 import { selectAEApi } from "../../utils/redux/aeapiSlice";
 import {
   searchAEProductByName,
+  searchAEProductByCategory,
   getAEProductInfo,
 } from "../../utils/redux/aeapiAsyncActions";
+import { categories } from "../../data/AliExpressCategories";
 
 import ProductDetails from "../../components/store/ProductDetails";
 import ProductList from "../../components/store/ProductList";
@@ -24,6 +25,16 @@ const Aliexpress = ({ session }: any) => {
 
   const dispatch = useDispatch();
   const { search, product } = useSelector(selectAEApi);
+
+  useEffect(() => {
+    if (!search) {
+      dispatch(
+        searchAEProductByCategory(
+          categories[Math.round(Math.random() * (100 / 3.5))].id
+        )
+      );
+    }
+  }, [search, dispatch]);
 
   const getByIdQueryHandler = (e: any) => {
     e.preventDefault();
@@ -91,7 +102,7 @@ const Aliexpress = ({ session }: any) => {
         </div>
       </section>
       {product && <ProductDetails session={session} product={product} />}
-      <ProductList />
+      {search && <ProductList session={session} search={search} />}
     </>
   );
 };

@@ -23,7 +23,22 @@ export const searchAEProductByName = createAsyncThunk(
     try {
       const { data } = await axios({
         method: "GET",
-        url: `/api/aliexpress/search/${name}`,
+        url: `/api/aliexpress/search/product/${name}`,
+      });
+      return data.data;
+    } catch (error) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const searchAEProductByCategory = createAsyncThunk(
+  "aeapi/searchAEProductByCategory",
+  async (category: string, { rejectWithValue }) => {
+    try {
+      const { data } = await axios({
+        method: "GET",
+        url: `/api/aliexpress/search/category/${category}`,
       });
       return data.data;
     } catch (error) {

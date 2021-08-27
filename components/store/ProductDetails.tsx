@@ -5,12 +5,12 @@ import Image from "next/image";
 import DangerDialog from "../elements/DangerDialog";
 import WarningDialog from "../elements/WarningDialog";
 import SuccessDialog from "../elements/SuccessDialog";
+import ProductProperty from "./ProductProperty";
 import { addToWishlist, addToCart } from "../../utils/redux/userAsyncActions";
 import { selectUser } from "../../utils/redux/userSlice";
 
 const ProductDetails = ({ product, session }: any) => {
   const [showImage, setShowImage] = useState("/placeholder.png");
-  const [selectedProperty, setSelectedProperty] = useState("");
   const [error, setError] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [success, setSuccess] = useState("");
@@ -169,41 +169,11 @@ const ProductDetails = ({ product, session }: any) => {
               <div className="mt-6 text-gray-800 dark:text-gray-100 pb-5 mb-5">
                 {product.properties.map((property: any) => {
                   return (
-                    <div key={property.name} className="mt-4">
-                      <div>
-                        {" "}
-                        {property.name} : {selectedProperty}{" "}
-                      </div>
-
-                      <div className="flex items-center flex-wrap">
-                        {property.values.map((value: any) => {
-                          return (
-                            <div
-                              onClick={() => setSelectedProperty(value.name)}
-                              key={value.id}
-                              className="ml-2 p-1 border-2 text-center border-gray-300 hover:border-red-400 focus:outline-none cursor-pointer"
-                            >
-                              {value.hasImage ? (
-                                <div
-                                  className="h-10 w-10"
-                                  onClick={() => setShowImage(value.imageUrl)}
-                                >
-                                  <Image
-                                    src={value.thumbnailImageUrl}
-                                    alt={value.name}
-                                    width={100}
-                                    height={100}
-                                    layout="responsive"
-                                  />
-                                </div>
-                              ) : (
-                                value.name
-                              )}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
+                    <ProductProperty
+                      setShowImage={setShowImage}
+                      property={property}
+                      key={property.name}
+                    />
                   );
                 })}
                 <div className="mt-4">
@@ -211,6 +181,9 @@ const ProductDetails = ({ product, session }: any) => {
                   <div className="flex">
                     <input
                       type="number"
+                      min="1"
+                      step="1"
+                      onKeyDown={(e) => e.preventDefault()}
                       id="quantity"
                       name="quantity"
                       value={Math.round(quantity)}
@@ -227,20 +200,40 @@ const ProductDetails = ({ product, session }: any) => {
               <div className="flex justify-center mt-6 title-font font-medium text-2xl text-gray-800 dark:text-gray-100">
                 {product.priceSummary ? (
                   <div className="bg-red-400 hover:bg-red-500 text-center font-bold text-gray-100 px-6 py-2">
-                    <div>
-                      $ {product.priceSummary.app.discountedPrice.min.value} -{" "}
-                      {product.priceSummary.app.discountedPrice.max.value}
-                    </div>
-                    <div className="text-xs lg:text-sm">
-                      <span className="line-through mr-4">
-                        $ {product.priceSummary.app.originalPrice.min.value} -{" "}
+                    {product.priceSummary.discroutPercentage ? (
+                      <>
+                        <div>
+                          € {product.priceSummary.app.discountedPrice.min.value}{" "}
+                          - {product.priceSummary.app.discountedPrice.max.value}
+                        </div>
+                        <div className="text-xs lg:text-sm">
+                          <span className="line-through mr-4">
+                            € {product.priceSummary.app.originalPrice.min.value}{" "}
+                            - {product.priceSummary.app.originalPrice.max.value}
+                          </span>{" "}
+                          {product.priceSummary.app.discountPercentage}% off
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        € {product.priceSummary.app.originalPrice.min.value} -{" "}
                         {product.priceSummary.app.originalPrice.max.value}
-                      </span>{" "}
-                      {product.priceSummary.app.discountPercentage}% off
-                    </div>
+                      </>
+                    )}
                   </div>
                 ) : (
-                  <>$ {product.price.app.originalPrice.value}</>
+                  <>€ {product.price.app.originalPrice.value}</>
+                )}
+              </div>
+              <div className="mt-4 text-center">
+                {product.shipping.isAvailableForSelectedCountries ? (
+                  <p className="text-green-500">
+                    THIS ITEM IS AVAILABLE FOR SHIPPING IN ALGERIA
+                  </p>
+                ) : (
+                  <p className="text-red-500">
+                    THIS ITEM IS NOT AVAILABLE FOR SHIPPING IN ALGERIA
+                  </p>
                 )}
               </div>
               <div className="mt-4 flex">
