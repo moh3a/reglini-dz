@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
-import DangerDialog from "./elements/DangerDialog";
-import SuccessDialog from "./elements/SuccessDialog";
+import { SuccessDialog, DangerDialog, WarningDialog } from "./elements/Dialog";
 
 const Contact = () => {
   const [subject, setSubject] = useState("");

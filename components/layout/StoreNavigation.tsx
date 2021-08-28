@@ -3,15 +3,11 @@ import { useSession, signOut } from "next-auth/client";
 import Link from "next/link";
 import Image from "next/image";
 import { Dialog, Popover, Tab, Transition, Menu } from "@headlessui/react";
-import {
-  MenuIcon,
-  SearchIcon,
-  XIcon,
-  HeartIcon,
-} from "@heroicons/react/outline";
+import { MenuIcon, XIcon, HeartIcon } from "@heroicons/react/outline";
 import { navigation } from "../../data/navigation";
 import Logo from "./Logo";
 import Cart from "../store/Cart";
+import Search from "../Search";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -456,66 +452,62 @@ export default function StoreNavigation() {
                                 <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-100 dark:bg-grim ring-1 ring-black ring-opacity-5 focus:outline-none">
                                   <Menu.Item>
                                     {({ active }) => (
-                                      <Link href="/profile" passHref>
-                                        <p
-                                          className={classNames(
-                                            active
-                                              ? "bg-gray-200 dark:bg-gray-800"
-                                              : "",
-                                            "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
-                                          )}
-                                        >
+                                      <p
+                                        className={classNames(
+                                          active
+                                            ? "bg-gray-200 dark:bg-gray-800"
+                                            : "",
+                                          "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
+                                        )}
+                                      >
+                                        <Link href="/profile">
                                           Your Profile
-                                        </p>
-                                      </Link>
+                                        </Link>
+                                      </p>
                                     )}
                                   </Menu.Item>
                                   <Menu.Item>
                                     {({ active }) => (
-                                      <Link href="/wishlist" passHref>
-                                        <p
-                                          className={classNames(
-                                            active
-                                              ? "bg-gray-200 dark:bg-gray-800"
-                                              : "",
-                                            "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
-                                          )}
-                                        >
+                                      <p
+                                        className={classNames(
+                                          active
+                                            ? "bg-gray-200 dark:bg-gray-800"
+                                            : "",
+                                          "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
+                                        )}
+                                      >
+                                        <Link href="/wishlist">
                                           Your Wishlist
-                                        </p>
-                                      </Link>
+                                        </Link>
+                                      </p>
                                     )}
                                   </Menu.Item>
                                   <Menu.Item>
                                     {({ active }) => (
-                                      <Link href="/orders" passHref>
-                                        <p
-                                          className={classNames(
-                                            active
-                                              ? "bg-gray-200 dark:bg-gray-800"
-                                              : "",
-                                            "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
-                                          )}
-                                        >
-                                          Your Orders
-                                        </p>
-                                      </Link>
+                                      <p
+                                        className={classNames(
+                                          active
+                                            ? "bg-gray-200 dark:bg-gray-800"
+                                            : "",
+                                          "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
+                                        )}
+                                      >
+                                        <Link href="/orders">Your Orders</Link>
+                                      </p>
                                     )}
                                   </Menu.Item>
                                   <Menu.Item>
                                     {({ active }) => (
-                                      <Link href="/settings" passHref>
-                                        <p
-                                          className={classNames(
-                                            active
-                                              ? "bg-gray-200 dark:bg-gray-800"
-                                              : "",
-                                            "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
-                                          )}
-                                        >
-                                          Settings
-                                        </p>
-                                      </Link>
+                                      <p
+                                        className={classNames(
+                                          active
+                                            ? "bg-gray-200 dark:bg-gray-800"
+                                            : "",
+                                          "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
+                                        )}
+                                      >
+                                        <Link href="/settings">Settings</Link>
+                                      </p>
                                     )}
                                   </Menu.Item>
                                   <Menu.Item>
@@ -559,15 +551,7 @@ export default function StoreNavigation() {
                     </div>
 
                     {/* Search */}
-                    <div className="flex lg:ml-6">
-                      <a
-                        href="#"
-                        className="p-2 text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400"
-                      >
-                        <span className="sr-only">Search</span>
-                        <SearchIcon className="w-6 h-6" aria-hidden="true" />
-                      </a>
-                    </div>
+                    <Search />
 
                     {/* Wishlist */}
                     <div className="flex lg:ml-4">

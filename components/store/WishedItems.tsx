@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 
-import SuccessDialog from "../elements/SuccessDialog";
+import { SuccessDialog } from "../elements/Dialog";
 import { removeFromWishlist } from "../../utils/redux/userAsyncActions";
 import { selectUser } from "../../utils/redux/userSlice";
 

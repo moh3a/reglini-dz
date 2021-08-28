@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 
-import DangerDialog from "../elements/DangerDialog";
-import WarningDialog from "../elements/WarningDialog";
-import SuccessDialog from "../elements/SuccessDialog";
+import { SuccessDialog, DangerDialog, WarningDialog } from "../elements/Dialog";
 import ProductProperty from "./ProductProperty";
 import { addToWishlist, addToCart } from "../../utils/redux/userAsyncActions";
 import { selectUser } from "../../utils/redux/userSlice";

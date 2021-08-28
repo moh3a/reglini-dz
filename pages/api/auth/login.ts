@@ -1,10 +1,6 @@
 import dbConnect from "../../../config/db";
-
 import type { NextApiRequest, NextApiResponse } from "next";
-
 import User from "../../../models/User";
-import sendToken from "../../../utils/sendToken";
-import ErrorResponse from "../../../utils/errorResponse";
 
 export default async function handler(
   req: NextApiRequest,
@@ -14,20 +10,16 @@ export default async function handler(
   if (req.method === "POST") {
     const { email, password } = req.body;
     if (!email || !password) {
-      return new ErrorResponse("Please provide an email and a password.", 400);
+      throw Error("Please provide an email and a password.");
     }
-
     try {
       const user = await User.findOne({ email }).select("+password");
-      // IF THE USER WAS NOT FOUND
       if (!user) {
-        return new ErrorResponse("Invalid credentials.", 401);
+        throw Error("Invalid credentials.");
       }
-
-      // COMPARE THE PASSWORDS IF IT MATCHES
       const isMatch = await user.matchPasswords(password);
       if (!isMatch) {
-        return new ErrorResponse("Invalid credentials.", 401);
+        throw Error("Invalid credentials.");
       }
       let token = user.getSignedToken();
       const data = await User.findOne({ email });

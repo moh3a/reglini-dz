@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { HeartIcon } from "@heroicons/react/outline";
 
-import DangerDialog from "../elements/DangerDialog";
+import { DangerDialog } from "../elements/Dialog";
 import { addToWishlist } from "../../utils/redux/userAsyncActions";
 
 const Product = ({ product, session }: any) => {

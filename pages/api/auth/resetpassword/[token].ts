@@ -1,10 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 const crypto = require("crypto");
-
 import dbConnect from "../../../../config/db";
-
 import User from "../../../../models/User";
-import ErrorResponse from "../../../../utils/errorResponse";
 
 export default async function handler(
   req: NextApiRequest,
@@ -25,7 +22,7 @@ export default async function handler(
         resetPasswordExpire: { $gt: Date.now() },
       });
       if (!user) {
-        return new ErrorResponse("Invalid reset token.", 400);
+        res.status(400).json({ message: "Invalid reset token." });
       }
       user.password = req.body.password;
       user.resetPasswordToken = undefined;

@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
+import Head from "next/head";
 import mongoose from "mongoose";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -33,6 +34,11 @@ const Profile = ({ session }: any) => {
 
   return (
     <>
+      <Head>
+        <title>{session.user.name}&apos;s profile | reglini.dz</title>
+        <meta name="description" content="reglini-dz.com homepage" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Tabs session={session} />
     </>
   );

@@ -1,68 +1,103 @@
-const features = [
-  { name: "Origin", description: "Designed by Good Goods, Inc." },
-  {
-    name: "Material",
-    description:
-      "Solid walnut base with rare earth magnets and powder coated steel card cover",
-  },
-  { name: "Dimensions", description: '6.25" x 3.55" x 1.15"' },
-  { name: "Finish", description: "Hand sanded and finished with natural oil" },
-  { name: "Includes", description: "Wood card tray and 3 refill packs" },
-  {
-    name: "Considerations",
-    description:
-      "Made from natural materials. Grain and color vary with each item.",
-  },
-];
+import Image from "next/image";
+import Link from "next/link";
 
-export default function ProductFeatures() {
+export default function ProductFeatures({ product }: any) {
   return (
     <div className="bg-white">
-      <div className="max-w-2xl mx-auto py-24 px-4 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2">
+      <div className="max-w-2xl mx-auto py-24 px-4 ">
         <div>
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Technical Specifications
+            Product Specifications
+          </h2>
+
+          <dl className="my-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+            {product.hasAttributes &&
+              product.attributes.map((attribute: any) => (
+                <div
+                  key={attribute.name}
+                  className="border-t border-gray-200 pt-4"
+                >
+                  <dt className="font-medium text-gray-900">
+                    {attribute.name}
+                  </dt>
+                  <dd className="mt-2 text-sm text-gray-500">
+                    {attribute.value.name}
+                  </dd>
+                </div>
+              ))}
+          </dl>
+          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            Seller Details
           </h2>
           <p className="mt-4 text-gray-500">
-            The walnut wood card tray is precision milled to perfectly fit a
-            stack of Focus cards. The powder coated steel divider separates
-            active cards from new ones, or can be used to archive important task
-            lists.
+            {product.sellerDetails.summary.contactPerson} from{" "}
+            {product.sellerDetails.summary.country}
           </p>
+          <Link href={product.sellerDetails.sellerDetailsUrl} passHref>
+            <span className="text-gray-500 cursor-pointer">
+              {product.sellerDetails.sellerDetailsUrl}
+            </span>
+          </Link>
+        </div>
+        {product.hasVariations && (
+          <div>
+            <h2 className="text-3xl my-16 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Variations of the product
+            </h2>
 
-          <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-            {features.map((feature) => (
-              <div key={feature.name} className="border-t border-gray-200 pt-4">
-                <dt className="font-medium text-gray-900">{feature.name}</dt>
-                <dd className="mt-2 text-sm text-gray-500">
-                  {feature.description}
-                </dd>
+            {product.variations.map((variation: any) => (
+              <div
+                key={variation.sku}
+                className="border-2 hover:bg-gray-200 my-4"
+              >
+                {variation.stock ? (
+                  <p className="text-green-500">{variation.stock} in stock.</p>
+                ) : (
+                  <p className="text-red-500">Out of Stock</p>
+                )}
+                <dl className="my-4 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+                  {variation.properties.map((property: any) => (
+                    <div
+                      key={property.id}
+                      className="border-t border-gray-200 pt-4"
+                    >
+                      <dt className="font-medium text-gray-900">
+                        {property.name}
+                      </dt>
+                      <dd className="mt-2 text-sm text-gray-500">
+                        {property.value.name}
+                      </dd>
+                    </div>
+                  ))}
+                  <div>
+                    <dt className="font-medium text-gray-900">Price</dt>
+                    <dd className="mt-2 text-sm text-gray-500">
+                      {variation.price.app.discountPercentage ? (
+                        <>
+                          {variation.price.app.discountedPrice.display} with{" "}
+                          {variation.price.app.discountPercentage}% discount
+                          from {variation.price.app.originalPrice.display}
+                        </>
+                      ) : (
+                        variation.price.app.originalPrice.display
+                      )}
+                    </dd>
+                  </div>
+                </dl>
+                <div>
+                  <Image
+                    src={variation.imageUrl}
+                    alt={variation.sku}
+                    layout="responsive"
+                    width={50}
+                    height={50}
+                    className="bg-gray-100 rounded-lg"
+                  />
+                </div>
               </div>
             ))}
-          </dl>
-        </div>
-        <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-          {/* <img
-            src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg"
-            alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
-            className="bg-gray-100 rounded-lg"
-          />
-          <img
-            src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg"
-            alt="Top down view of walnut card tray with embedded magnets and card groove."
-            className="bg-gray-100 rounded-lg"
-          />
-          <img
-            src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg"
-            alt="Side of walnut card tray with card groove and recessed card area."
-            className="bg-gray-100 rounded-lg"
-          />
-          <img
-            src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg"
-            alt="Walnut card tray filled with cards and card angled in dedicated groove."
-            className="bg-gray-100 rounded-lg"
-          /> */}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
