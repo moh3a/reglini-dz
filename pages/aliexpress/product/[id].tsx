@@ -7,13 +7,12 @@ import { getSession } from "next-auth/client";
 
 import { getAEProductInfo } from "../../../utils/redux/aeapiAsyncActions";
 import { selectAEApi } from "../../../utils/redux/aeapiSlice";
-import ProductDetails from "../../../components/store/ProductDetails";
-import ProductFeatures from "../../../components/store/ProductFeatures";
+import ProductDetails from "../../../components/aliexpress/ProductDetails";
 
 const AliexpressProduct = ({ session }: any) => {
   const dispatch = useDispatch();
   const router = useRouter();
-  const { product } = useSelector(selectAEApi);
+  const { product, status } = useSelector(selectAEApi);
   const { id } = router.query;
   useEffect(() => {
     if (!product && id) dispatch(getAEProductInfo(id));
@@ -22,12 +21,20 @@ const AliexpressProduct = ({ session }: any) => {
   return (
     <>
       <Head>
-        <title>{product.title} | Aliexpress | reglini.dz</title>
+        <title>
+          {product ? `${product.title} | ` : ``} Aliexpress | reglini.dz
+        </title>
         <meta name="description" content="reglini-dz.com homepage" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ProductDetails product={product} session={session} />
-      <ProductFeatures product={product} />
+      {status === "loading" && (
+        <Loading text="Fetching the data from Aliexpress..." />
+      )}
+      {product && (
+        <>
+          <ProductDetails product={product} session={session} />
+        </>
+      )}
     </>
   );
 };
@@ -46,6 +53,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 import Layout from "../../../components/layout/Layout";
+import Loading from "../../../components/Loading";
 AliexpressProduct.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

@@ -51,11 +51,13 @@ export default function ProductFeatures({ product }: any) {
                 className="border-2 hover:bg-gray-200 my-4"
               >
                 {variation.stock ? (
-                  <p className="text-green-500">{variation.stock} in stock.</p>
+                  <p className="text-green-500 px-4">
+                    {variation.stock} in stock.
+                  </p>
                 ) : (
-                  <p className="text-red-500">Out of Stock</p>
+                  <p className="text-red-500 px-4">Out of Stock</p>
                 )}
-                <dl className="my-4 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+                <dl className="my-4 px-4 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
                   {variation.properties.map((property: any) => (
                     <div
                       key={property.id}
@@ -84,16 +86,20 @@ export default function ProductFeatures({ product }: any) {
                     </dd>
                   </div>
                 </dl>
-                <div>
-                  <Image
-                    src={variation.imageUrl}
-                    alt={variation.sku}
-                    layout="responsive"
-                    width={50}
-                    height={50}
-                    className="bg-gray-100 rounded-lg"
-                  />
-                </div>
+                {variation.imageUrl ? (
+                  <div>
+                    <Image
+                      src={variation.imageUrl}
+                      alt={variation.sku}
+                      layout="responsive"
+                      width={50}
+                      height={50}
+                      className="bg-gray-100 rounded-lg"
+                    />
+                  </div>
+                ) : (
+                  ""
+                )}
               </div>
             ))}
           </div>

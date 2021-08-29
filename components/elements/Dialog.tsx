@@ -134,7 +134,7 @@ export const SuccessDialog = ({ children, action, actionUrl }: any) => {
                 <div className="sm:flex sm:items-start">
                   <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
                     <CheckIcon
-                      className="h-6 w-6 text-red-600"
+                      className="h-6 w-6 text-green-700"
                       aria-hidden="true"
                     />
                   </div>
@@ -222,7 +222,7 @@ export const WarningDialog = ({ children, action, actionUrl }: any) => {
                 <div className="sm:flex sm:items-start">
                   <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-yellow-100 sm:mx-0 sm:h-10 sm:w-10">
                     <ExclamationIcon
-                      className="h-6 w-6 text-red-600"
+                      className="h-6 w-6 text-yellow-700"
                       aria-hidden="true"
                     />
                   </div>

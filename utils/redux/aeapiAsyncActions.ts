@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getAEProductInfo = createAsyncThunk(
   "aeapi/getAEProductInfo",
-  async (id: string, { rejectWithValue }) => {
+  async (id: string | string[], { rejectWithValue }) => {
     try {
       const { data } = await axios({
         method: "GET",

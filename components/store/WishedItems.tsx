@@ -16,7 +16,7 @@ const WishedItems = ({ wishlist }: any) => {
       setTimeout(() => {
         setSuccess("");
       }, 3000);
-      setSuccess("Item successfully deleted from wishlist.");
+      setSuccess(message);
     }
   }, [message]);
 

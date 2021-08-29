@@ -9,11 +9,11 @@ import dbConnect from "../../config/db";
 import { categories } from "../../data/AliExpressCategories";
 import { selectAEApi } from "../../utils/redux/aeapiSlice";
 import SearchAE from "../../components/aliexpress/SearchAE";
-import ProductDetails from "../../components/store/ProductDetails";
+import ProductPreview from "../../components/aliexpress/ProductPreview";
 import ProductList from "../../components/store/ProductList";
 
 const Aliexpress = ({ session }: any) => {
-  const { search, product } = useSelector(selectAEApi);
+  const { search, product, status } = useSelector(selectAEApi);
   // useEffect(() => {
   //   if (!search) {
   //     dispatch(
@@ -32,7 +32,10 @@ const Aliexpress = ({ session }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SearchAE />
-      {product && <ProductDetails session={session} product={product} />}
+      {status === "loading" && (
+        <Loading text="Fetching data from Aliexpress..." />
+      )}
+      {product && <ProductPreview session={session} product={product} />}
       {search && <ProductList session={session} search={search} />}
     </>
   );
@@ -51,6 +54,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 import Layout from "../../components/layout/Layout";
+import Loading from "../../components/Loading";
 Aliexpress.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };
