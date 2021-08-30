@@ -4,19 +4,22 @@ import { useState } from "react";
 const ProductProperty = ({ property, setShowImage }: any) => {
   const [selectedProperty, setSelectedProperty] = useState({
     selected: false,
-    name: "",
+    name: property.name,
+    value: "",
   });
 
   const selectHandler = (value: any) => {
-    if (selectedProperty.name === value) {
+    if (selectedProperty.value === value) {
       setSelectedProperty({
         selected: false,
-        name: "",
+        name: property.name,
+        value: "",
       });
     } else {
       setSelectedProperty({
         selected: true,
-        name: value,
+        name: property.name,
+        value: value,
       });
     }
   };
@@ -35,7 +38,7 @@ const ProductProperty = ({ property, setShowImage }: any) => {
               onClick={() => selectHandler(value.name)}
               key={value.id}
               className={`${
-                selectedProperty.name === value.name ? "border-red-500" : ""
+                selectedProperty.value === value.name ? "border-red-500" : ""
               } ml-2 p-1 border-2 text-center border-gray-300 hover:border-red-400 focus:outline-none cursor-pointer`}
             >
               {value.hasImage ? (

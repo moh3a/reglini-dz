@@ -8,7 +8,7 @@ function classNames(...classes: any) {
 }
 
 const Currency = ({ currency }: any) => {
-  const tabname = ["Live Rate", "Convert", "Historical Rates"];
+  const tabname = ["Live Rate", "Convert", "Historical"];
   return (
     <Tab.Group>
       <Tab.List className="flex justify-center p-1 space-x-1  rounded-xl">
@@ -31,7 +31,7 @@ const Currency = ({ currency }: any) => {
           <LiveRate currency={currency} />
         </Tab.Panel>
         <Tab.Panel>
-          <ConvertCurrency />
+          <ConvertCurrency currency={currency} />
         </Tab.Panel>
         <Tab.Panel>
           <HistoricalRates />

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BlobBackground from "../BlobBackground";
 
 export default function AliexpressCTA() {
   return (
@@ -26,6 +27,7 @@ export default function AliexpressCTA() {
         </div>
       </div>
     </div>
+    // <BlobBackground>Hello</BlobBackground>
     // </div>
   );
 }
