@@ -1,9 +1,6 @@
 import dbConnect from "../../../config/db";
-
 import type { NextApiRequest, NextApiResponse } from "next";
-
 import User from "../../../models/User";
-import sendToken from "../../../utils/sendToken";
 
 export default async function handler(
   req: NextApiRequest,

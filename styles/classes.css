@@ -1,0 +1,50 @@
+.neu-bg {
+  background-color: #c9cfc4;
+}
+
+.card-flat {
+  border-radius: 50px;
+  background: #c9cfc4;
+  box-shadow: 25px 25px 50px #979b93, -25px -25px 50px #fbfff5;
+}
+
+.card-flat:hover {
+  border-radius: 50px;
+  background: #c9cfc4;
+  box-shadow: inset 25px 25px 50px #979b93, inset -25px -25px 50px #fbfff5;
+}
+
+.card-concave {
+  border-radius: 50px;
+  background: linear-gradient(145deg, #b5bab0, #d7ddd2);
+  box-shadow: 25px 25px 50px #979b93, -25px -25px 50px #fbfff5;
+}
+
+.card-concave:hover {
+  border-radius: 50px;
+  background: linear-gradient(145deg, #d7ddd2, #b5bab0);
+  box-shadow: 25px 25px 50px #979b93, -25px -25px 50px #fbfff5;
+}
+
+.glass-bg {
+  background-color: #395f5f;
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(176.77, 82%, 59%) 0,
+      transparent 59%
+    ),
+    radial-gradient(
+      at 82% 65%,
+      hsl(180, 56.00000000000001%, 11%) 0,
+      transparent 55%
+    );
+}
+
+.glass-card {
+  border-radius: 75px;
+  backdrop-filter: blur(15px) saturate(135%);
+  -webkit-backdrop-filter: blur(15px) saturate(135%);
+  background-color: rgba(116, 203, 213, 0.2);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}

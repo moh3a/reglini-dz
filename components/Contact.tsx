@@ -1,11 +1,43 @@
+import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useTranslations } from "next-intl";
+import axios from "axios";
+import { SuccessDialog, DangerDialog } from "./elements/Dialog";
+
 const Contact = () => {
+  const t = useTranslations("Contact");
+  const router = useRouter();
+
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+
+  const submitHandler = async (e: any) => {
+    e.preventDefault();
+    const data = await axios.post("/api/email", {
+      subject: subject,
+      message: message,
+    });
+    setSubject("");
+    setMessage("");
+    if (data.status === 200) {
+      setSuccess(data.data.message);
+    } else if (data.status === 400) {
+      setError(data.data.message);
+    }
+  };
+
   return (
-    <section className="w-full max-w-2xl px-6 py-4 mx-auto lg:my-8 sm:my-4 bg-white rounded-md shadow-md dark:bg-grim">
+    <section className="w-full max-w-2xl px-6 py-4 mx-auto lg:my-32 my-16 bg-white rounded-md shadow-md dark:bg-grim">
+      {success && <SuccessDialog>{success} </SuccessDialog>}
+      {error && <DangerDialog>{error} </DangerDialog>}
       <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-white">
-        Get in touch
+        {t("getInTouch")}
       </h2>
       <p className="mt-3 text-center text-gray-600 dark:text-gray-400">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        {t("yourFeedback")}
       </p>
 
       <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 md:grid-cols-3">
@@ -26,7 +58,7 @@ const Contact = () => {
             />
           </svg>
 
-          <span className="mt-2">Algiers, DZ</span>
+          <span className="mt-2">{t("address")}</span>
         </a>
 
         <a
@@ -62,48 +94,70 @@ const Contact = () => {
           <span className="mt-2">support@reglini-dz.com</span>
         </a>
       </div>
+      <p className="my-4 text-base text-center md:text-lg">
+        {t("haveAQuestion")}{" "}
+        <Link href="/faq" passHref>
+          <span className="cursor-pointer underline text-gray-700 dark:text-gray-400">
+            {t("checkFaq")}
+          </span>
+        </Link>
+      </p>
 
-      <div className="mt-6 ">
+      <form className="mt-6 " onSubmit={submitHandler}>
         <div className="items-center -mx-2 md:flex">
           <div className="w-full mx-2">
-            <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
-              Name
+            <label
+              htmlFor="subject"
+              className={`block ${
+                router.locale === "ar" ? "text-right" : ""
+              } mb-2 text-sm font-medium text-gray-600 dark:text-gray-200`}
+            >
+              {t("emailSubject")}
             </label>
 
             <input
-              placeholder="Your Name"
-              className="block w-full px-4 py-2 text-gray-800 bg-white border border-gray-300 rounded-md dark:bg-grim dark:text-gray-100 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+              placeholder={t("emailTitle")}
+              autoComplete="off"
+              className={`${
+                router.locale === "ar" ? "text-right" : ""
+              } block w-full px-4 py-2 text-gray-800 bg-white border border-gray-300 rounded-md dark:bg-grim dark:text-gray-100 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring`}
               type="text"
-            />
-          </div>
-
-          <div className="w-full mx-2 mt-4 md:mt-0">
-            <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
-              E-mail
-            </label>
-
-            <input
-              placeholder="user@example.com"
-              className="block w-full px-4 py-2 text-gray-800 bg-white border border-gray-300 rounded-md dark:bg-grim dark:text-gray-100 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-              type="email"
+              id="subject"
+              name="subject"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
             />
           </div>
         </div>
 
         <div className="w-full mt-4">
-          <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
-            Message
+          <label
+            htmlFor="message"
+            className={`${
+              router.locale === "ar" ? "text-right" : ""
+            } block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200`}
+          >
+            {t("message")}
           </label>
 
-          <textarea className="block w-full h-40 px-4 py-2 text-gray-800 bg-white border border-gray-300 rounded-md dark:bg-grim dark:text-gray-100 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"></textarea>
+          <textarea
+            id="message"
+            name="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="block w-full h-40 px-4 py-2 text-gray-800 bg-white border border-gray-300 rounded-md dark:bg-grim dark:text-gray-100 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+          ></textarea>
         </div>
 
         <div className="flex justify-center mt-6">
-          <button className="px-4 py-2 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
-            Send Message
+          <button
+            type="submit"
+            className="px-4 py-2 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+          >
+            {t("send")}
           </button>
         </div>
-      </div>
+      </form>
     </section>
   );
 };

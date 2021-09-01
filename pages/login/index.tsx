@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { providers, getSession, csrfToken, useSession } from "next-auth/client";
 
@@ -15,6 +16,11 @@ const LoginScreen = ({ providers, csrfToken, children }: any) => {
 
   return (
     <>
+      <Head>
+        <title>Login | reglini.dz</title>
+        <meta name="description" content="reglini-dz.com homepage" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {children}
 
       {!loading && !session && (

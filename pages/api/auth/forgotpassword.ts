@@ -1,10 +1,7 @@
 import dbConnect from "../../../config/db";
-
 import type { NextApiRequest, NextApiResponse } from "next";
-
 import User from "../../../models/User";
 import sendEmail from "../../../utils/sendEmail";
-import ErrorResponse from "../../../utils/errorResponse";
 
 export default async function handler(
   req: NextApiRequest,
@@ -13,32 +10,26 @@ export default async function handler(
   await dbConnect();
   if (req.method === "POST") {
     const { email } = req.body;
-
     try {
       const user = await User.findOne({ email, account: "credentials" });
 
       if (!user) {
-        res
-          .status(200)
-          .json({
-            message: "No user with this email address.",
-            success: false,
-          });
+        res.status(200).json({
+          message: "No user with this email address.",
+          success: false,
+        });
       } else {
-        // GENERATE A TOKEN FROM THE USER MODEL
-        // SAVE IT IN THE DATABASE
         const token = user.getResetPasswordToken();
         await user.save();
-        // REDIRECT TO THE FRONTEND WITH A MESSAGE
         const envUrl = process.env.NEXTAUTH_URL;
         const resetUrl = `${envUrl}/resetpassword/${token}`;
         const message = `
           <h1>Your have requested a password reset</h1>
           <p>Please go to <a href=${resetUrl} clicktracking=off>this link</a> to reset the password.</p>
           `;
-        // SEND AN EMAIL FOR THE PASSWORD RESET
         try {
           await sendEmail({
+            from: process.env.SENDGRID_FROM,
             to: user.email,
             subject: "Password Reset Request",
             text: message,

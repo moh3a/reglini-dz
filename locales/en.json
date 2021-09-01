@@ -1,0 +1,63 @@
+{
+  "AliexpressCTA": {
+    "onlineShopping": "International online shopping is complicated in Algeria, right?",
+    "solutionShopping": "You can now buy with DZD.",
+    "startNow": "Start buying from Aliexpress right now.",
+    "getStarted": "Get started"
+  },
+  "SessionCTA": {
+    "hey": "Hey, ",
+    "guest": "guest",
+    "enjoyTime": "We are hoping you are having a good time with us.",
+    "joinUs": "Join us and easily shop from the comfort of your home.",
+    "signIn": "Sign In",
+    "signOut": "Sign Out"
+  },
+  "AppCTA": {
+    "underDev": "UNDER DEVELOPMENT",
+    "closer": "To get even closer to you, we are coming to your mobile!",
+    "getIt": "GET IT ON",
+    "downloadOn": "Download on the"
+  },
+  "Contact": {
+    "getInTouch": "Get in touch",
+    "yourFeedback": "Your feedback is the most welcome.",
+    "address": "Algiers, DZ",
+    "haveAQuestion": "You have a question? We may have answered it already.",
+    "checkFaq": "Checkout the frequently asked questions",
+    "emailSubject": "Email Subject",
+    "emailTitle": "Email Title",
+    "message": "Message",
+    "send": "Send Message"
+  },
+  "Currency": {
+    "liveRate": {
+      "name": "Live Rate",
+      "inMarket": "Algerian Dinars (DZD) in the",
+      "parallel": "parallel",
+      "official": "official",
+      "market": "market",
+      "dailyRatesParallel": "Here we give you the daily prices of the big foreign currencies in the algerian parallel market.",
+      "dailyRatesOfficial": "Here we give you the daily prices of the big foreign currencies in the algerian official market.",
+      "purchase": "purchase",
+      "sale": "sale",
+      "dzd": "DZD",
+      "updated": "Updated",
+      "vsYesterday": "vs yesterday",
+      "sameYesterday": "Same as yesterday"
+    },
+    "convert": {
+      "name": "Convert",
+      "euroCurrency": "Euro",
+      "dollarCurrency": "US Dollars",
+      "poundCurrency": "UK Pound",
+      "dzd": "DZD",
+      "inParallelMarket": "Convert Algerian Dinars (DZD) to {devise} with the",
+      "parallel": "parallel",
+      "market": "market rates."
+    },
+    "historical": {
+      "name": "Historical"
+    }
+  }
+}

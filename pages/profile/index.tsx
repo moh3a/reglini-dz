@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
+import Head from "next/head";
 import mongoose from "mongoose";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,9 +9,10 @@ import { signOut, getSession } from "next-auth/client";
 import dbConnect from "../../config/db";
 import Tabs from "../../components/layout/Tabs";
 
-import { selectUser, logout, getUser } from "../../utils/redux/userSlice";
+import { selectUser, logout } from "../../utils/redux/userSlice";
+import { getUser } from "../../utils/redux/userAsyncActions";
 
-const Profile = ({ session }) => {
+const Profile = ({ session }: any) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
@@ -32,6 +34,11 @@ const Profile = ({ session }) => {
 
   return (
     <>
+      <Head>
+        <title>{session.user.name}&apos;s profile | reglini.dz</title>
+        <meta name="description" content="reglini-dz.com homepage" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Tabs session={session} />
     </>
   );
