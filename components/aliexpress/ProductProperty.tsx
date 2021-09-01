@@ -28,7 +28,7 @@ const ProductProperty = ({ property, setShowImage }: any) => {
     <div key={property.name} className="mt-4">
       <div>
         {" "}
-        {property.name} : {selectedProperty.name}{" "}
+        {property.name} : {selectedProperty.value}{" "}
       </div>
 
       <div className="flex items-center flex-wrap">

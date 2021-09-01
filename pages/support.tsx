@@ -1,7 +1,8 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Contact from "../components/Contact";
 
-const Support = () => {
+const Support = ({ messages }: any) => {
   return (
     <>
       <Head>
@@ -12,6 +13,14 @@ const Support = () => {
       <Contact />
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = ({ locale }) => {
+  return {
+    props: {
+      messages: require(`../locales/${locale}.json`),
+    },
+  };
 };
 
 import Layout from "../components/layout/Layout";

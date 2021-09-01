@@ -7,7 +7,9 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { id } = req.query;
-  if (req.method === "GET") {
+  const { locale } = req.body;
+
+  if (req.method === "POST") {
     try {
       const { data } = await axios({
         method: "POST",
@@ -16,6 +18,7 @@ export default async function handler(
           productId: id,
           currency: "EUR",
           shipTo: "DZ",
+          locale,
           shipFrom: "CN",
           getHtmlDescription: true,
           getShipping: true,

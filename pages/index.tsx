@@ -44,11 +44,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!mongoose.connection.readyState) {
     await dbConnect();
   }
-  const { req, res } = context;
+  const { req, res, locale } = context;
   const session = await getSession({ req });
 
   return {
-    props: { session },
+    props: {
+      session,
+      messages: require(`../locales/${locale}.json`),
+    },
   };
 };
 

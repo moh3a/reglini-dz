@@ -34,9 +34,11 @@ export default function ProductFeatures({ product }: any) {
             {product.sellerDetails.summary.country}
           </p>
           <Link href={product.sellerDetails.sellerDetailsUrl} passHref>
-            <span className="text-gray-500 cursor-pointer">
-              {product.sellerDetails.sellerDetailsUrl}
-            </span>
+            <a target="_blank">
+              <span className="text-gray-500 cursor-pointer">
+                {product.sellerDetails.sellerDetailsUrl}
+              </span>
+            </a>
           </Link>
         </div>
         {product.hasVariations && (

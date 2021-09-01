@@ -11,6 +11,7 @@ import { selectAEApi } from "../../utils/redux/aeapiSlice";
 import SearchAE from "../../components/aliexpress/SearchAE";
 import ProductPreview from "../../components/aliexpress/ProductPreview";
 import ProductList from "../../components/store/ProductList";
+import CategoryFilters from "../../components/store/CategoryFilters";
 
 const Aliexpress = ({ session }: any) => {
   const { search, product, status } = useSelector(selectAEApi);
@@ -37,6 +38,7 @@ const Aliexpress = ({ session }: any) => {
       )}
       {product && <ProductPreview session={session} product={product} />}
       {search && <ProductList session={session} search={search} />}
+      <CategoryFilters />
     </>
   );
 };

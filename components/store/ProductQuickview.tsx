@@ -2,32 +2,7 @@ import { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import { StarIcon } from "@heroicons/react/solid";
 import Image from "next/image";
-
-const product = {
-  name: "Basic Tee 6-Pack ",
-  price: "€192",
-  rating: 3.9,
-  reviewCount: 117,
-  href: "#",
-  imageSrc:
-    "https://tailwindui.com/img/ecommerce-images/product-quick-preview-02-detail.jpg",
-  imageAlt: "Two each of gray, white, and black shirts arranged on table.",
-  colors: [
-    { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
-    { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
-    { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
-  ],
-  sizes: [
-    { name: "XXS", inStock: true },
-    { name: "XS", inStock: true },
-    { name: "S", inStock: true },
-    { name: "M", inStock: true },
-    { name: "L", inStock: true },
-    { name: "XL", inStock: true },
-    { name: "XXL", inStock: true },
-    { name: "XXXL", inStock: false },
-  ],
-};
+import { ProductQuickview as product } from "../../data/StoreProducts";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -109,7 +84,7 @@ export default function ProductQuickview({}) {
                       Choose a color
                     </RadioGroup.Label>
                     <div className="flex items-center space-x-3">
-                      {product.colors.map((color) => (
+                      {product.colors.map((color: any) => (
                         <RadioGroup.Option
                           key={color.name}
                           value={color}
@@ -159,7 +134,7 @@ export default function ProductQuickview({}) {
                       Choose a size
                     </RadioGroup.Label>
                     <div className="grid grid-cols-4 gap-4">
-                      {product.sizes.map((size) => (
+                      {product.sizes.map((size: any) => (
                         <RadioGroup.Option
                           key={size.name}
                           value={size}

@@ -1,14 +1,16 @@
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useState, useEffect, useMemo } from "react";
+import { useTranslations } from "next-intl";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
-const currencies = [
-  { id: 1, name: "EURO" },
-  { id: 2, name: "US DOLLARS" },
-  { id: 3, name: "UK POUND" },
-];
-
 const ConvertCurrency = ({ currency }: any) => {
+  const t = useTranslations("Currency.convert");
+  const [currencies, setCurrencies] = useState([
+    { name: t("euroCurrency") },
+    { name: t("dollarCurrency") },
+    { name: t("poundCurrency") },
+  ]);
+
   const [money, setMoney] = useState({
     dzd: currency[0].live.parallel.purchase,
     devise: 1,
@@ -17,14 +19,14 @@ const ConvertCurrency = ({ currency }: any) => {
   const [rate, setRate] = useState<number>(1);
 
   useEffect(() => {
-    if (selectedDevise.name === "EURO") {
+    if (selectedDevise.name === currencies[0].name) {
       setRate(currency[0].live.parallel.purchase);
-    } else if (selectedDevise.name === "US DOLLARS") {
+    } else if (selectedDevise.name === currencies[1].name) {
       setRate(currency[1].live.parallel.purchase);
-    } else if (selectedDevise.name === "UK POUND") {
+    } else if (selectedDevise.name === currencies[2].name) {
       setRate(currency[2].live.parallel.purchase);
     }
-  }, [selectedDevise, currency]);
+  }, [selectedDevise, currency, currencies]);
 
   useEffect(() => {
     setMoney({ dzd: rate, devise: 1 });
@@ -33,11 +35,11 @@ const ConvertCurrency = ({ currency }: any) => {
   return (
     <div className="py-32 lg:py-44 px-4 flex flex-col items-center bg-gray-300 dark:bg-gray-700">
       <h2 className="text-center text-xl lg:text-4xl font-bold">
-        Convert Algerian Dinars (DZD) to {selectedDevise.name} with the{" "}
+        {t("inParallelMarket", { devise: selectedDevise.name })}{" "}
         <span className="underline text-gray-700 dark:text-gray-300">
-          parallel
+          {t("parallel")}
         </span>{" "}
-        market rates
+        {t("market")}
       </h2>
       <form className="mt-8 mx-auto lg:min-w-128 flex flex-col items-center lg:flex-row lg:justify-around">
         <div className="relative">
@@ -59,7 +61,7 @@ const ConvertCurrency = ({ currency }: any) => {
             className="relative mt-1 py-2 pl-3 pr-8 lg:mr-2 text-center bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
           />
           <span className="absolute inset-y-0 right-1 top-1 flex items-center pr-2 pointer-events-none text-gray-500">
-            DZD
+            {t("dzd")}
           </span>
         </div>
         <div className="relative">
@@ -81,9 +83,9 @@ const ConvertCurrency = ({ currency }: any) => {
             className="relative mt-1 py-2 pl-3 pr-8 text-center lg:mr-2 bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
           />
           <span className="absolute inset-y-0 right-2 top-1 flex items-center pr-2 pointer-events-none text-gray-500">
-            {selectedDevise.name === "EURO"
+            {selectedDevise.name === currencies[0].name
               ? "€"
-              : selectedDevise.name === "US DOLLARS"
+              : selectedDevise.name === currencies[1].name
               ? "$"
               : "£"}
           </span>

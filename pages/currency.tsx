@@ -10,15 +10,18 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!mongoose.connection.readyState) {
     await dbConnect();
   }
-  const { req, res } = context;
+  const { req, res, locale } = context;
   const { data } = await axios.get(`http://${req.headers.host}/api/currency`);
   const currency = data.data;
   return {
-    props: { currency },
+    props: {
+      currency,
+      messages: require(`../locales/${locale}.json`),
+    },
   };
 };
 
-const CurrencyView = ({ currency }: any) => {
+const CurrencyView = ({ currency, messages }: any) => {
   return (
     <>
       <Head>

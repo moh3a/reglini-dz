@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 import {
   searchAEProductByName,
   getAEProductInfo,
@@ -8,13 +9,22 @@ import {
 const SearchAE = () => {
   const [url, setUrl] = useState("");
   const dispatch = useDispatch();
+  const router = useRouter();
+  let locale = "en";
+  if (router.locale === "ar") {
+    locale = "ar_MA";
+  } else if (router.locale === "fr") {
+    locale = "fr_FR";
+  } else {
+    locale = "en_US";
+  }
 
   const getByIdQueryHandler = (e: any) => {
     e.preventDefault();
     if (url.includes("aliexpress.com/item/")) {
       const firstSplit = url.split("/item/");
       const secondSplit = firstSplit[1].split(".html");
-      dispatch(getAEProductInfo(secondSplit[0]));
+      dispatch(getAEProductInfo({ id: secondSplit[0], locale }));
     } else if (url.includes("https://a.aliexpress.com/")) {
       const newurl = "https://" + url.split("https://")[1];
       console.log(newurl);

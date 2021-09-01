@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import {
   CurrencyDollarIcon,
   CurrencyEuroIcon,
@@ -8,21 +9,22 @@ import {
 import { convertTime } from "../../utils/convertTime";
 
 const LiveRate = ({ currency }: any) => {
+  const t = useTranslations("Currency.liveRate");
+
   return (
     <>
       <div className="py-8 lg:py-16 px-4 flex flex-col items-center bg-gray-300 dark:bg-gray-700">
         <h2 className="text-center text-xl lg:text-4xl font-bold">
-          Algerian Dinars (DZD) in the{" "}
+          {t("inMarket")}{" "}
           <span className="underline text-gray-700 dark:text-gray-300">
-            parallel
+            {t("parallel")}
           </span>{" "}
-          market
+          {t("market")}
         </h2>
-        <div className="text-xs lg:text-sm">
-          Here we give you the daily prices of the big foreign currencies in the
-          algerian parallel market.
-        </div>
-        <h2 className="text-lg lg:text-xl font-semibold underline">purchase</h2>
+        <div className="text-xs lg:text-sm">{t("dailyRatesParallel")}</div>
+        <h2 className="text-lg lg:text-xl font-semibold underline">
+          {t("purchase")}
+        </h2>
         <div className="flex flex-wrap flex-center select-none">
           {currency.map((current: any) => {
             return (
@@ -59,19 +61,22 @@ const LiveRate = ({ currency }: any) => {
                     )}
                   </div>
                   <small className="text-xs">
-                    Updated: {convertTime(current.live.time)}{" "}
+                    {t("updated")}: {convertTime(current.live.time)}{" "}
                   </small>
                   <div className="flex flex-col justify-start">
                     <p className="text-gray-700 dark:text-gray-100 text-4xl text-left font-bold my-4">
                       {current.live.parallel.purchase}
-                      <span className="text-sm">DZD</span>
+                      <span className="text-sm">{t("dzd")}</span>
                     </p>
                     {current.live.rate.parallelpurchaserate > 1 ? (
                       <div className="flex items-center text-green-500 text-sm">
                         <ArrowUpIcon className="h-3" />
                         <span>
                           {current.live.rate.parallelpurchaserate} %{" "}
-                          <span className="text-gray-400"> vs yesterday</span>
+                          <span className="text-gray-400">
+                            {" "}
+                            {t("vsYesterday")}
+                          </span>
                         </span>
                       </div>
                     ) : current.live.rate.parallelpurchaserate < 1 ? (
@@ -79,12 +84,17 @@ const LiveRate = ({ currency }: any) => {
                         <ArrowDownIcon className="h-3" />
                         <span>
                           {current.live.rate.parallelpurchaserate} %{" "}
-                          <span className="text-gray-400"> vs yesterday</span>
+                          <span className="text-gray-400">
+                            {" "}
+                            {t("vsYesterday")}
+                          </span>
                         </span>
                       </div>
                     ) : (
                       <div className="flex items-center text-red-500 text-sm">
-                        <span className="text-gray-400">Same as yesterday</span>
+                        <span className="text-gray-400">
+                          {t("sameYesterday")}
+                        </span>
                       </div>
                     )}
                   </div>
@@ -93,7 +103,9 @@ const LiveRate = ({ currency }: any) => {
             );
           })}
         </div>
-        <h2 className="text-lg lg:text-xl font-semibold underline">sale</h2>
+        <h2 className="text-lg lg:text-xl font-semibold underline">
+          {t("sale")}
+        </h2>
         <div className="flex flex-wrap flex-center select-none">
           {currency.map((current: any) => {
             return (
@@ -130,20 +142,23 @@ const LiveRate = ({ currency }: any) => {
                     )}
                   </div>
                   <small className="text-xs">
-                    Updated: {convertTime(current.live.time)}{" "}
+                    {t("updated")}: {convertTime(current.live.time)}{" "}
                   </small>
 
                   <div className="flex flex-col justify-start">
                     <p className="text-gray-700 dark:text-gray-100 text-4xl text-left font-bold my-4">
                       {current.live.parallel.sale}
-                      <span className="text-sm">DZD</span>
+                      <span className="text-sm">{t("dzd")}</span>
                     </p>
                     {current.live.rate.parallelsalerate > 1 ? (
                       <div className="flex items-center text-green-500 text-sm">
                         <ArrowUpIcon className="h-3" />
                         <span>
                           {current.live.rate.parallelsalerate} %{" "}
-                          <span className="text-gray-400"> vs yesterday</span>
+                          <span className="text-gray-400">
+                            {" "}
+                            {t("vsYesterday")}
+                          </span>
                         </span>
                       </div>
                     ) : current.live.rate.parallelsalerate < 1 ? (
@@ -151,12 +166,17 @@ const LiveRate = ({ currency }: any) => {
                         <ArrowDownIcon className="h-3" />
                         <span>
                           {current.live.rate.parallelsalerate} %{" "}
-                          <span className="text-gray-400"> vs yesterday</span>
+                          <span className="text-gray-400">
+                            {" "}
+                            {t("vsYesterday")}
+                          </span>
                         </span>
                       </div>
                     ) : (
                       <div className="flex items-center text-red-500 text-sm">
-                        <span className="text-gray-400">Same as yesterday</span>
+                        <span className="text-gray-400">
+                          {t("sameYesterday")}
+                        </span>
                       </div>
                     )}
                   </div>
@@ -168,16 +188,13 @@ const LiveRate = ({ currency }: any) => {
       </div>
       <div className="py-8 lg:py-16 px-4 flex flex-col items-center bg-gray-200 dark:bg-gray-900">
         <h2 className="text-center text-xl lg:text-4xl font-bold">
-          Algerian Dinars (DZD) in the{" "}
+          {t("inMarket")}{" "}
           <span className="underline text-gray-700 dark:text-gray-300">
-            official
+            {t("official")}
           </span>{" "}
-          market
+          {t("market")}
         </h2>
-        <div className="text-xs lg:text-sm">
-          Here we give you the daily prices of the big foreign currencies in the
-          algerian official market.
-        </div>
+        <div className="text-xs lg:text-sm">{t("dailyRatesOfficial")}</div>
         <div className="flex flex-wrap flex-center select-none">
           {currency.map((current: any) => {
             return (
@@ -214,12 +231,12 @@ const LiveRate = ({ currency }: any) => {
                     )}
                   </div>
                   <small className="text-xs">
-                    Updated: {convertTime(current.live.time)}{" "}
+                    {t("updated")}: {convertTime(current.live.time)}{" "}
                   </small>
                   <div className="flex flex-col justify-start">
                     <p className="text-gray-700 dark:text-gray-100 text-4xl text-left font-bold my-4">
                       {current.live.official.sale}
-                      <span className="text-sm">DZD</span>
+                      <span className="text-sm">{t("dzd")}</span>
                     </p>
                   </div>
                 </div>

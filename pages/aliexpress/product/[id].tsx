@@ -12,11 +12,21 @@ import ProductDetails from "../../../components/aliexpress/ProductDetails";
 const AliexpressProduct = ({ session }: any) => {
   const dispatch = useDispatch();
   const router = useRouter();
+
+  let locale = "en";
+  if (router.locale === "ar") {
+    locale = "ar_MA";
+  } else if (router.locale === "fr") {
+    locale = "fr_FR";
+  } else {
+    locale = "en_US";
+  }
+
   const { product, status } = useSelector(selectAEApi);
   const { id } = router.query;
   useEffect(() => {
-    if (!product && id) dispatch(getAEProductInfo(id));
-  }, [id, dispatch, product]);
+    if (!product && id) dispatch(getAEProductInfo({ id, locale }));
+  }, [id, dispatch, product, locale]);
 
   return (
     <>

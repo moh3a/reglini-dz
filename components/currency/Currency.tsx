@@ -2,13 +2,16 @@ import { Tab } from "@headlessui/react";
 import ConvertCurrency from "./ConvertCurrency";
 import HistoricalRates from "./HistoricalRates";
 import LiveRate from "./LiveRate";
+import { useTranslations } from "next-intl";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
 const Currency = ({ currency }: any) => {
-  const tabname = ["Live Rate", "Convert", "Historical"];
+  const t = useTranslations("Currency");
+
+  const tabname = [t("liveRate.name"), t("convert.name"), t("historical.name")];
   return (
     <Tab.Group>
       <Tab.List className="flex justify-center p-1 space-x-1  rounded-xl">

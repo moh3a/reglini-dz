@@ -28,6 +28,7 @@
     "mongoose-unique-validator": "^2.0.3",
     "next": "11.0.1",
     "next-auth": "^3.27.3",
+    "next-intl": "^2.0.0",
     "next-themes": "^0.0.15",
     "nodemailer": "^6.6.3",
     "nodemon": "^2.0.12",
