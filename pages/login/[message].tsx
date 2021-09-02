@@ -18,6 +18,8 @@ const LoginError = ({ csrfToken, providers }: any) => {
       );
     } else if (message === "login_to_view_wishlist") {
       setError("You have to be logged in to view or edit your wishlist.");
+    } else if (message === "account_deleted") {
+      setError("Account successfully deleted.");
     } else {
       router.push("/login");
     }

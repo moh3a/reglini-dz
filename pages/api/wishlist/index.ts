@@ -16,65 +16,43 @@ export default async function handler(
       if (!session) {
         res.status(403).json({ message: "Unauthorized to access this part." });
       } else if (session.user) {
-        if (session.user.type === "credentials") {
-          const data = await User.findOne({
-            account: session.user.type,
-            email: session.user.email,
+        const email = session.user.email;
+        const account = session.user.type;
+        let provider = "";
+        if (account === "oauth") {
+          provider = session.user.provider;
+        }
+        const data = await User.findOne({
+          account,
+          email,
+          provider: provider || undefined,
+        });
+        if (!data)
+          res
+            .status(400)
+            .json({ success: false, message: "User does not exist" });
+        const index = data.wishlist.findIndex(
+          (item: any) => item.productId === productId
+        );
+        if (index === -1) {
+          data.wishlist.push({
+            productId,
+            name,
+            price,
+            imageUrl,
           });
-          if (!data) throw Error("User does not exist");
-          const index = data.wishlist.findIndex(
-            (item: any) => item.productId === productId
-          );
-          if (index === -1) {
-            data.wishlist.push({
-              productId,
-              name,
-              price,
-              imageUrl,
-            });
-            await data.save();
-            res.status(201).json({
-              success: true,
-              data,
-              message: "Item successfully added to wishlist.",
-              status: 201,
-            });
-          } else {
-            res.status(200).json({
-              success: false,
-              message: "Item is already in the wishlist.",
-            });
-          }
-        } else if (session.user.type === "oauth") {
-          const data = await User.findOne({
-            account: session.user.type,
-            provider: session.user.provider,
-            email: session.user.email,
+          await data.save();
+          res.status(201).json({
+            success: true,
+            data,
+            message: "Item successfully added to wishlist.",
+            status: 201,
           });
-          if (!data) throw Error("User does not exist");
-          const index = data.wishlist.findIndex(
-            (item: any) => item.productId.toString() === productId
-          );
-          if (index === -1) {
-            data.wishlist.push({
-              productId,
-              name,
-              price,
-              imageUrl,
-            });
-            await data.save();
-            res.status(201).json({
-              success: true,
-              data,
-              message: "Item added to wishlist.",
-              status: 201,
-            });
-          } else {
-            res.status(200).json({
-              success: false,
-              message: "Item is already in the wishlist.",
-            });
-          }
+        } else {
+          res.status(200).json({
+            success: false,
+            message: "Item is already in the wishlist.",
+          });
         }
       }
     } catch (error) {

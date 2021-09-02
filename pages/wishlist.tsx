@@ -8,7 +8,7 @@ import { getSession } from "next-auth/client";
 
 import dbConnect from "../config/db";
 import { selectUser } from "../utils/redux/userSlice";
-import { getUser, addToWishlist } from "../utils/redux/userAsyncActions";
+import { getUser } from "../utils/redux/userAsyncActions";
 import WishedItems from "../components/store/WishedItems";
 import Link from "next/link";
 

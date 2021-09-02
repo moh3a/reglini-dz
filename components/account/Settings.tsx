@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Settings() {
   return (
     <div className="bg-white shadow overflow-hidden sm:rounded-lg">
@@ -28,12 +30,11 @@ export default function Settings() {
                     DANGER! Your account will be permanently deleted.
                   </div>
                   <div className="ml-4 flex-shrink-0">
-                    <a
-                      href="#"
-                      className="font-medium text-red-600 hover:text-red-500"
-                    >
-                      DELETE
-                    </a>
+                    <Link href="/profile/delete" passHref>
+                      <span className="font-medium text-red-600 hover:text-red-500 cursor-pointer">
+                        DELETE
+                      </span>
+                    </Link>
                   </div>
                 </li>
               </ul>

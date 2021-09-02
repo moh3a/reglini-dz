@@ -24,8 +24,8 @@ export default async function handler(
         const envUrl = process.env.NEXTAUTH_URL;
         const resetUrl = `${envUrl}/resetpassword/${token}`;
         const message = `
-          <h1>Your have requested a password reset</h1>
-          <p>Please go to <a href=${resetUrl} clicktracking=off>this link</a> to reset the password.</p>
+          <h1>You have requested a password reset</h1>
+          <p>Please go to <a href=${resetUrl} clicktracking='off'>this link</a> to reset the password.</p>
           `;
         try {
           await sendEmail({

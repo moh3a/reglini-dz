@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import { SuccessDialog } from "../elements/Dialog";
 import { removeFromWishlist } from "../../utils/redux/userAsyncActions";
@@ -10,6 +11,7 @@ const WishedItems = ({ wishlist }: any) => {
   const [success, setSuccess] = useState("");
   const { message } = useSelector(selectUser);
   const dispatch = useDispatch();
+  const router = useRouter();
 
   useEffect(() => {
     if (message === "Item successfully deleted from wishlist.") {
@@ -82,7 +84,12 @@ const WishedItems = ({ wishlist }: any) => {
                 >
                   Remove
                 </button>
-                <button className="px-2 py-1 text-xs text-gray-900 uppercase transition-colors duration-200 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">
+                <button
+                  onClick={() =>
+                    router.push(`/aliexpress/product/${item.productId}`)
+                  }
+                  className="px-2 py-1 text-xs text-gray-900 uppercase transition-colors duration-200 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none"
+                >
                   View Details
                 </button>
               </div>

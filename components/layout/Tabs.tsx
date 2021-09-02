@@ -8,7 +8,7 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Tabs({ session }: any) {
+export default function Tabs({ user }: any) {
   let categories = ["Profile", "Account", "Orders", "Settings"];
 
   return (
@@ -22,14 +22,12 @@ export default function Tabs({ session }: any) {
                   <div className="flex justify-center items-center">
                     <Image
                       className="h-10 w-10 rounded-full"
-                      src={session.user?.image || "/user-icon.png"}
-                      alt={session.user?.name || "user profile image"}
+                      src={user.imageUrl || "/user-icon.png"}
+                      alt={user.name || "user profile image"}
                       height={25}
                       width={25}
                     />
-                    <span className="ml-4 hidden md:inline">
-                      {session.user?.name}
-                    </span>
+                    <span className="ml-4 hidden md:inline">{user.name}</span>
                   </div>
                 </Tab>
               );
@@ -56,7 +54,7 @@ export default function Tabs({ session }: any) {
 
           {/* account tab */}
           <Tab.Panel className="bg-white dark:bg-black p-3">
-            <AccountDetails session={session} />
+            <AccountDetails user={user} />
           </Tab.Panel>
 
           {/* orders tab */}
