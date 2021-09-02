@@ -28,7 +28,7 @@ const CurrencyView = ({ currency, messages }: any) => {
         <title>Currency exchange in the algerian market | reglini.dz</title>
         <meta
           name="description"
-          content="The parallel currency market in Algeria is really expenssive. And can go to over 200% the official rate."
+          content="The parallel currency market in Algeria is really expenssive. And can go to over 200% the official rate. Get the up to date daily rates."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

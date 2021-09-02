@@ -6,7 +6,10 @@ const Custom404 = () => {
     <>
       <Head>
         <title>Error | Not Found | reglini.dz</title>
-        <meta name="description" content="reglini-dz.com homepage" />
+        <meta
+          name="description"
+          content="An error have occured. Page not Found in reglini.dz"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="px-4 my-24 lg:my-40 mx-8 lg:mx-24 max-w-7xl">

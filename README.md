@@ -1,6 +1,6 @@
 ## TODO
 
-#### CURRENTLY ALLOWING TYPE ERRORS IN THE PRODUCTION BUILD JUST FOR TESTING
+##### locale reverts to english when changing page
 
 - selecting a property in aliexpress set property for all propertiess
 - AUTH0 IS USED ONLY DEV, INSTAGRAM NEEDS GRANTS FOR PRODUCTION

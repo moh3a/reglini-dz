@@ -1,12 +1,10 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 import mongoose from "mongoose";
 import { getSession } from "next-auth/client";
 
 import dbConnect from "../../config/db";
-import { categories } from "../../data/AliExpressCategories";
 import { selectAEApi } from "../../utils/redux/aeapiSlice";
 import SearchAE from "../../components/aliexpress/SearchAE";
 import ProductPreview from "../../components/aliexpress/ProductPreview";
@@ -15,21 +13,15 @@ import CategoryFilters from "../../components/store/CategoryFilters";
 
 const Aliexpress = ({ session }: any) => {
   const { search, product, status } = useSelector(selectAEApi);
-  // useEffect(() => {
-  //   if (!search) {
-  //     dispatch(
-  //       searchAEProductByCategory(
-  //         categories[Math.round(Math.random() * (100 / 3.5))].id
-  //       )
-  //     );
-  //   }
-  // }, [search, dispatch]);
 
   return (
     <>
       <Head>
         <title>Search Aliexpress items | reglini.dz</title>
-        <meta name="description" content="reglini-dz.com homepage" />
+        <meta
+          name="description"
+          content="Buying items from AliExpress and with Algerian Dinars? Now that's possible here in reglini.dz. Safe and reliable algerian online shopping."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SearchAE />
@@ -47,7 +39,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!mongoose.connection.readyState) {
     await dbConnect();
   }
-  const { req, res } = context;
+  const { req } = context;
   const session = await getSession({ req });
 
   return {

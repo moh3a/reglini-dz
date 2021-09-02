@@ -7,7 +7,10 @@ const Support = ({ messages }: any) => {
     <>
       <Head>
         <title>Contact Us | reglini.dz</title>
-        <meta name="description" content="reglini-dz.com homepage" />
+        <meta
+          name="description"
+          content="You liked our services, found a bug, or have anything you want to tell us? Your feedback is the most welcome here in reglini.dz."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Contact />

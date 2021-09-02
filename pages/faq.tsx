@@ -48,7 +48,10 @@ const Faq = () => {
     <>
       <Head>
         <title>FAQ | reglini.dz</title>
-        <meta name="description" content="reglini-dz.com homepage" />
+        <meta
+          name="description"
+          content="Frequently asked questions about the services provided by reglini.dz"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="px-4 my-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">

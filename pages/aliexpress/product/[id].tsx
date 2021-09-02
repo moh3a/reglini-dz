@@ -34,7 +34,12 @@ const AliexpressProduct = ({ session }: any) => {
         <title>
           {product ? `${product.title} | ` : ``} Aliexpress | reglini.dz
         </title>
-        <meta name="description" content="reglini-dz.com homepage" />
+        <meta
+          name="description"
+          content={`Whenever you find in Aliexpress an item that you like, you can simply copy the item's url, pay with algerian dinars and we'll get it for you. ${
+            product ? product.title : ``
+          }`}
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {status === "loading" && (

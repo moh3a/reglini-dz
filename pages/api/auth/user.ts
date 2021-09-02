@@ -1,4 +1,5 @@
 require("dotenv").config();
+import Cookies from "js-cookie";
 import dbConnect from "../../../config/db";
 import User from "../../../models/User";
 
@@ -11,18 +12,16 @@ export default async function handler(
   await dbConnect();
   if (req.method === "POST") {
     const { email, account, provider } = req.body;
-    if (account === "credentials") {
-      const user = await User.findOne({ account, email });
-      res
-        .status(200)
-        .json({ success: true, data: user, message: "User found." });
+    const user = await User.findOne({
+      account,
+      email,
+      provider: account === "oauth" ? provider : undefined,
+    });
+    if (!user) {
+      Cookies.remove("next-auth.session-token");
+      res.status(200).json({ success: false, message: "User not found." });
     }
-    if (account === "oauth") {
-      const user = await User.findOne({ account, email, provider });
-      res
-        .status(200)
-        .json({ success: true, data: user, message: "User found." });
-    }
+    res.status(200).json({ success: true, data: user, message: "User found." });
   } else {
     res.status(400).json({ message: "Page doesn't exist.", status: 400 });
   }

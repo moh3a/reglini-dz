@@ -103,15 +103,16 @@ const UserSchema = new mongoose.Schema({
     lowercase: true,
   },
   verified: Boolean,
+  verifyCredentialsToken: String,
   password: {
     type: String,
     // required: [true, "Please add a password."],
     minlength: 6,
     select: false,
   },
-  picture: String,
   resetPasswordToken: String,
   resetPasswordExpire: Date,
+  picture: String,
   cart: {
     type: CartSchema,
     required: true,
@@ -161,6 +162,17 @@ UserSchema.methods.getResetPasswordToken = function () {
     .digest("hex");
   this.resetPasswordExpire = Date.now() + 10 * (60 * 1000);
   return resetToken;
+};
+
+UserSchema.methods.verifySignUpCredentials = function () {
+  if (!this.verified) {
+    const verifyToken = crypto.randomBytes(20).toString("hex");
+    this.verifyCredentialsToken = crypto
+      .createHash("sha256")
+      .update(verifyToken)
+      .digest("hex");
+    return verifyToken;
+  }
 };
 
 // ADD A UNIQUE VALIDATION TO THE EMAIL AND USERNAME FIELDS
