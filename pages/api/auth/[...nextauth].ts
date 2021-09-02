@@ -109,7 +109,7 @@ export default NextAuth({
       if (isAllowedToSignIn) {
         return true;
       } else {
-        return "/error/blocked_from_signing_up";
+        return "/login/blocked_from_signing_up";
       }
     },
     async jwt(token, user, account, profile, isNewUser) {

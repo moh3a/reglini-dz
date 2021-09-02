@@ -1,5 +1,6 @@
 export interface IEmailOptions {
-  to: string;
+  from?: string;
+  to?: string | null;
   subject: string;
   text: string;
 }

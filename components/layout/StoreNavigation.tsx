@@ -3,16 +3,11 @@ import { useSession, signOut } from "next-auth/client";
 import Link from "next/link";
 import Image from "next/image";
 import { Dialog, Popover, Tab, Transition, Menu } from "@headlessui/react";
-import {
-  MenuIcon,
-  SearchIcon,
-  XIcon,
-  UserCircleIcon,
-  HeartIcon,
-} from "@heroicons/react/outline";
+import { MenuIcon, XIcon, HeartIcon } from "@heroicons/react/outline";
 import { navigation } from "../../data/navigation";
 import Logo from "./Logo";
 import Cart from "../store/Cart";
+import Search from "../Search";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -21,21 +16,6 @@ function classNames(...classes: any) {
 export default function StoreNavigation() {
   const [session, loading] = useSession();
   const [open, setOpen] = useState(false);
-
-  // const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
-  //   e.preventDefault();
-  //   if (e.key === "Enter") {
-  //     const q = e.currentTarget.value;
-  //     router.push(
-  //       {
-  //         pathname: `/search`,
-  //         query: q ? { q } : {},
-  //       },
-  //       undefined,
-  //       { shallow: true }
-  //     );
-  //   }
-  // };
 
   return (
     <>
@@ -194,15 +174,15 @@ export default function StoreNavigation() {
                                 key={item.name}
                                 className="group relative text-sm"
                               >
-                                <div className="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75">
-                                  <div className="p-2 object-center object-cover">
-                                    <Image
-                                      src={item.imageSrc}
-                                      alt={item.imageAlt}
-                                      height={120}
-                                      width={120}
-                                    />
-                                  </div>
+                                <div className="p-2 aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden hover:opacity-75">
+                                  <Image
+                                    className="absolute inset-0 object-center object-cover"
+                                    src={item.imageSrc}
+                                    alt={item.imageAlt}
+                                    height={50}
+                                    width={50}
+                                    layout="responsive"
+                                  />
                                 </div>
                                 <a
                                   href={item.href}
@@ -272,10 +252,6 @@ export default function StoreNavigation() {
           </Transition.Root>
 
           <header className="relative bg-white dark:bg-grim">
-            {/* <p className="bg-indigo-600 h-10 flex items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
-          Get free delivery on orders over $100
-        </p> */}
-
             <nav
               aria-label="Top"
               className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-0"
@@ -476,66 +452,62 @@ export default function StoreNavigation() {
                                 <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-100 dark:bg-grim ring-1 ring-black ring-opacity-5 focus:outline-none">
                                   <Menu.Item>
                                     {({ active }) => (
-                                      <Link href="/profile" passHref>
-                                        <p
-                                          className={classNames(
-                                            active
-                                              ? "bg-gray-200 dark:bg-gray-800"
-                                              : "",
-                                            "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
-                                          )}
-                                        >
+                                      <p
+                                        className={classNames(
+                                          active
+                                            ? "bg-gray-200 dark:bg-gray-800"
+                                            : "",
+                                          "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
+                                        )}
+                                      >
+                                        <Link href="/profile">
                                           Your Profile
-                                        </p>
-                                      </Link>
+                                        </Link>
+                                      </p>
                                     )}
                                   </Menu.Item>
                                   <Menu.Item>
                                     {({ active }) => (
-                                      <Link href="/wishlist" passHref>
-                                        <p
-                                          className={classNames(
-                                            active
-                                              ? "bg-gray-200 dark:bg-gray-800"
-                                              : "",
-                                            "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
-                                          )}
-                                        >
+                                      <p
+                                        className={classNames(
+                                          active
+                                            ? "bg-gray-200 dark:bg-gray-800"
+                                            : "",
+                                          "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
+                                        )}
+                                      >
+                                        <Link href="/wishlist">
                                           Your Wishlist
-                                        </p>
-                                      </Link>
+                                        </Link>
+                                      </p>
                                     )}
                                   </Menu.Item>
                                   <Menu.Item>
                                     {({ active }) => (
-                                      <Link href="/orders" passHref>
-                                        <p
-                                          className={classNames(
-                                            active
-                                              ? "bg-gray-200 dark:bg-gray-800"
-                                              : "",
-                                            "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
-                                          )}
-                                        >
-                                          Your Orders
-                                        </p>
-                                      </Link>
+                                      <p
+                                        className={classNames(
+                                          active
+                                            ? "bg-gray-200 dark:bg-gray-800"
+                                            : "",
+                                          "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
+                                        )}
+                                      >
+                                        <Link href="/orders">Your Orders</Link>
+                                      </p>
                                     )}
                                   </Menu.Item>
                                   <Menu.Item>
                                     {({ active }) => (
-                                      <Link href="/settings" passHref>
-                                        <p
-                                          className={classNames(
-                                            active
-                                              ? "bg-gray-200 dark:bg-gray-800"
-                                              : "",
-                                            "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
-                                          )}
-                                        >
-                                          Settings
-                                        </p>
-                                      </Link>
+                                      <p
+                                        className={classNames(
+                                          active
+                                            ? "bg-gray-200 dark:bg-gray-800"
+                                            : "",
+                                          "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
+                                        )}
+                                      >
+                                        <Link href="/settings">Settings</Link>
+                                      </p>
                                     )}
                                   </Menu.Item>
                                   <Menu.Item>
@@ -579,15 +551,7 @@ export default function StoreNavigation() {
                     </div>
 
                     {/* Search */}
-                    <div className="flex lg:ml-6">
-                      <a
-                        href="#"
-                        className="p-2 text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400"
-                      >
-                        <span className="sr-only">Search</span>
-                        <SearchIcon className="w-6 h-6" aria-hidden="true" />
-                      </a>
-                    </div>
+                    <Search />
 
                     {/* Wishlist */}
                     <div className="flex lg:ml-4">

@@ -1,0 +1,63 @@
+{
+  "AliexpressCTA": {
+    "onlineShopping": "Le online shopping est compliqué en Algérie? Surtout l'international.",
+    "solutionShopping": "Vous pouvez maintenant acheter en DZD.",
+    "startNow": "Commencer à acheter d'AliExpress dès maintenant.",
+    "getStarted": "Commencer"
+  },
+  "SessionCTA": {
+    "hey": "Hey ",
+    "guest": "invité(e)",
+    "enjoyTime": "Nous espérons que vous passez un bon moment avec nous.",
+    "joinUs": "Rejoignez-nous et faites votre shopping facilement dans le confort de votre maison.",
+    "signIn": "S'identifier",
+    "signOut": "Se déconnecter"
+  },
+  "AppCTA": {
+    "underDev": "EN DÉVELOPPEMENT",
+    "closer": "Pour être encore plus proche de vous, nous venons sur votre mobile !",
+    "getIt": "OBTENEZ-LE SUR",
+    "downloadOn": "Télécharger sur le"
+  },
+  "Contact": {
+    "getInTouch": "Entrez en contact",
+    "yourFeedback": "Vos commentaires sont les bienvenus.",
+    "address": "Alger, DZ",
+    "haveAQuestion": "Vous avez une question? Nous y avons peut-être déjà répondu.",
+    "checkFaq": "Consultez les questions fréquemment posées",
+    "emailSubject": "Sujet de l'email",
+    "emailTitle": "Titre de l'e-mail",
+    "message": "Message",
+    "send": "Envoyez le message"
+  },
+  "Currency": {
+    "liveRate": {
+      "name": "Taux en direct",
+      "inMarket": "Dinars algériens (DZD) sur le marché",
+      "parallel": "parallèle",
+      "official": "officiel",
+      "market": "",
+      "dailyRatesParallel": "Nous vous donnons ici les cours quotidiens des grandes devises étrangères sur le marché parallèle algérien.",
+      "dailyRatesOfficial": "Nous vous donnons ici les cours quotidiens des grandes devises étrangères sur le marché officiel algérien.",
+      "purchase": "achat",
+      "sale": "vente",
+      "dzd": "DZD",
+      "updated": "Mis à jour",
+      "vsYesterday": "vs hier",
+      "sameYesterday": "Pareil qu'hier"
+    },
+    "convert": {
+      "name": "Convertir",
+      "euroCurrency": "Euro",
+      "dollarCurrency": "Dollars américains",
+      "poundCurrency": "Livre sterling",
+      "dzd": "DZD",
+      "inParallelMarket": "Convertissez les dinars algériens (DZD) en {devise} aux taux du marché",
+      "parallel": "parallèle",
+      "market": ""
+    },
+    "historical": {
+      "name": "Historique"
+    }
+  }
+}

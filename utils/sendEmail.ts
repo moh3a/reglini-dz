@@ -3,8 +3,7 @@ import { IEmailOptions } from "../types/emailType";
 // USING SMTP RELAY
 
 const nodemailer = require("nodemailer");
-
-const SendEmail = (options: IEmailOptions) => {
+const SendEmail = ({ from, to, subject, text }: IEmailOptions) => {
   const transporter = nodemailer.createTransport({
     service: process.env.SENDGRID_SMTP_SERVICE,
     auth: {
@@ -12,14 +11,12 @@ const SendEmail = (options: IEmailOptions) => {
       pass: process.env.SENDGRID_SMTP_PASSWORD,
     },
   });
-
   const mailOptions = {
-    from: process.env.SENDGRID_FROM,
-    to: options.to,
-    subject: options.subject,
-    html: options.text,
+    from,
+    to,
+    subject,
+    html: text,
   };
-
   transporter.sendMail(mailOptions, function (err: any, info: any) {
     if (err) {
       console.log(err);
@@ -28,7 +25,6 @@ const SendEmail = (options: IEmailOptions) => {
     }
   });
 };
-
 export default SendEmail;
 
 // USING SENDGRID API

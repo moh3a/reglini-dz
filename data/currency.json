@@ -1,137 +1,35 @@
 [
   {
     "exchange": "DZDEUR",
-    "historical": [
-      {
-        "time": 20201221,
-        "official": {},
-        "parallel": {
-          "purchase": 211,
-          "sale": 214
-        }
-      },
-      {
-        "time": 20201228,
-        "official": {},
-        "parallel": {
-          "purchase": 206,
-          "sale": 209
-        }
-      },
-      {
-        "time": 20210822,
-        "official": { "sale": 158.43 },
-        "parallel": {
-          "purchase": 209.5,
-          "sale": 211
-        }
-      },
-      {
-        "time": 20210823,
-        "official": { "sale": 158.1 },
-        "parallel": {
-          "purchase": 209.5,
-          "sale": 211
-        }
-      },
-      {
-        "time": 20210824,
-        "official": { "sale": 158.88 },
-        "parallel": {
-          "purchase": 209,
-          "sale": 210.5
-        }
+    "live": {
+      "time": 20210827,
+      "official": { "sale": 159.49 },
+      "parallel": {
+        "purchase": 209,
+        "sale": 210.5
       }
-    ]
+    }
   },
   {
     "exchange": "DZDUSD",
-    "historical": [
-      {
-        "time": 20201221,
-        "official": {},
-        "parallel": {
-          "purchase": 172,
-          "sale": 175
-        }
-      },
-      {
-        "time": 20201228,
-        "official": {},
-        "parallel": {
-          "purchase": 169,
-          "sale": 172
-        }
-      },
-      {
-        "time": 20210822,
-        "official": { "sale": 135.48 },
-        "parallel": {
-          "purchase": 176,
-          "sale": 180
-        }
-      },
-      {
-        "time": 20210823,
-        "official": { "sale": 135.46 },
-        "parallel": {
-          "purchase": 176,
-          "sale": 179
-        }
-      },
-      {
-        "time": 20210824,
-        "official": { "sale": 135.59 },
-        "parallel": {
-          "purchase": 176,
-          "sale": 179
-        }
+    "live": {
+      "time": 20210827,
+      "official": { "sale": 135.5 },
+      "parallel": {
+        "purchase": 177,
+        "sale": 180
       }
-    ]
+    }
   },
   {
     "exchange": "DZDGBP",
-    "historical": [
-      {
-        "time": 20201221,
-        "official": {},
-        "parallel": {
-          "purchase": 225,
-          "sale": 230
-        }
-      },
-      {
-        "time": 20201228,
-        "official": {},
-        "parallel": {
-          "purchase": 224,
-          "sale": 228
-        }
-      },
-      {
-        "time": 20210822,
-        "official": { "sale": 185.25 },
-        "parallel": {
-          "purchase": 236,
-          "sale": 239
-        }
-      },
-      {
-        "time": 20210823,
-        "official": { "sale": 184.37 },
-        "parallel": {
-          "purchase": 236,
-          "sale": 238
-        }
-      },
-      {
-        "time": 20210824,
-        "official": { "sale": 185.53 },
-        "parallel": {
-          "purchase": 236,
-          "sale": 238
-        }
+    "live": {
+      "time": 20210827,
+      "official": { "sale": 186.08 },
+      "parallel": {
+        "purchase": 236,
+        "sale": 238
       }
-    ]
+    }
   }
 ]

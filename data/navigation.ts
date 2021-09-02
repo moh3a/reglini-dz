@@ -7,111 +7,63 @@ export const navigation = {
         {
           name: "Aliexpress",
           href: "/aliexpress",
-          imageSrc: "/aliexpress-icon.svg",
-          imageAlt: "Aliexpress icon svg.",
+          imageSrc: "/aliexpress-icon.png",
+          imageAlt: "Aliexpress icon.",
         },
         {
           name: "Netflix",
           href: "/netflix",
-          imageSrc: "/Netflix_N_logo.svg",
-          imageAlt: "Netflix icon svg.",
+          imageSrc: "/Netflix_N_logo.png",
+          imageAlt: "Netflix icon.",
         },
       ],
       sections: [
         {
-          id: "products",
-          name: "Products",
+          id: "aliexpress",
+          name: "Aliexpress",
           items: [
-            { name: "Aliexpress", href: "/aliexpress" },
-            { name: "Netflix", href: "/netflix" },
-            // { name: "Pants", href: "#" },
-            // { name: "Denim", href: "#" },
-            // { name: "Sweaters", href: "#" },
-            // { name: "T-Shirts", href: "#" },
-            // { name: "Jackets", href: "#" },
-            // { name: "Activewear", href: "#" },
-            // { name: "Browse All", href: "#" },
+            {
+              name: "Apparel Accessories",
+              href: "/aliexpress/category/205776616",
+            },
+            {
+              name: "Men's Clothing",
+              href: "/aliexpress/category/205776616",
+            },
+            {
+              name: "Women's Clothing",
+              href: "/aliexpress/category/100003109",
+            },
+            {
+              name: "Automobiles & Motorcycles",
+              href: "/aliexpress/category/34",
+            },
+            {
+              name: "Beauty & Health",
+              href: "/aliexpress/category/66",
+            },
+            {
+              name: "Cellphones & Telecommunications",
+              href: "/aliexpress/category/509",
+            },
+            {
+              name: "Computer & Office",
+              href: "/aliexpress/category/7",
+            },
           ],
         },
         // {
         //   id: "accessories",
         //   name: "Accessories",
-        //   items: [
-        //     { name: "Watches", href: "#" },
-        //     { name: "Wallets", href: "#" },
-        //     { name: "Bags", href: "#" },
-        //     { name: "Sunglasses", href: "#" },
-        //     { name: "Hats", href: "#" },
-        //     { name: "Belts", href: "#" },
-        //   ],
-        // },
-        // {
-        //   id: "brands",
-        //   name: "Brands",
-        //   items: [
-        //     { name: "Full Nelson", href: "#" },
-        //     { name: "My Way", href: "#" },
-        //     { name: "Re-Arranged", href: "#" },
-        //     { name: "Counterfeit", href: "#" },
-        //     { name: "Significant Other", href: "#" },
-        //   ],
-        // },
+        //   items: []
+        //  }
       ],
     },
     // {
     //   id: "categories",
     //   name: "Categories",
-    //   featured: [
-    //     {
-    //       name: "Aliexpress",
-    //       href: "/aliexpress",
-    //       imageSrc: "/aliexpress-icon.svg",
-    //       imageAlt: "Aliexpress icon svg.",
-    //     },
-    //     {
-    //       name: "Netflix",
-    //       href: "/netflix",
-    //       imageSrc: "/Netflix_N_logo.svg",
-    //       imageAlt: "Netflix icon svg.",
-    //     },
-    //   ],
-    //   sections: [
-    //     {
-    //       id: "clothing",
-    //       name: "Clothing",
-    //       items: [
-    //         { name: "Tops", href: "#" },
-    //         { name: "Pants", href: "#" },
-    //         { name: "Sweaters", href: "#" },
-    //         { name: "T-Shirts", href: "#" },
-    //         { name: "Jackets", href: "#" },
-    //         { name: "Activewear", href: "#" },
-    //         { name: "Browse All", href: "#" },
-    //       ],
-    //     },
-    //     {
-    //       id: "accessories",
-    //       name: "Accessories",
-    //       items: [
-    //         { name: "Watches", href: "#" },
-    //         { name: "Wallets", href: "#" },
-    //         { name: "Bags", href: "#" },
-    //         { name: "Sunglasses", href: "#" },
-    //         { name: "Hats", href: "#" },
-    //         { name: "Belts", href: "#" },
-    //       ],
-    //     },
-    //     {
-    //       id: "brands",
-    //       name: "Brands",
-    //       items: [
-    //         { name: "Re-Arranged", href: "#" },
-    //         { name: "Counterfeit", href: "#" },
-    //         { name: "Full Nelson", href: "#" },
-    //         { name: "My Way", href: "#" },
-    //       ],
-    //     },
-    //   ],
+    //   featured: [],
+    //   sections: [],
     // },
   ],
   pages: [

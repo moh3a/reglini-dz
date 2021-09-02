@@ -1,21 +1,20 @@
 import { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { XIcon, ShoppingBagIcon } from "@heroicons/react/outline";
 
-import { selectUser, getUser } from "../../utils/redux/userSlice";
+import CartItem from "./CartItem";
+import { selectUser } from "../../utils/redux/userSlice";
+import { getUser } from "../../utils/redux/userAsyncActions";
 
 export default function Cart({ session }: any) {
   const [open, setOpen] = useState(false);
   const [items, setItems] = useState([
     {
-      _id: "",
+      productId: "",
       name: "",
-      slug: "",
       price: 0,
-      countInStock: 0,
       imageUrl: "",
       quantity: 0,
     },
@@ -36,23 +35,10 @@ export default function Cart({ session }: any) {
   useEffect(() => {
     if (user) {
       setItems(user.cart.cartItems);
+    } else {
+      setItems([]);
     }
   }, [user]);
-
-  // const qtyChangeHandler = (
-  //   productId: ICartItem["productId"],
-  //   quantity: ICartItem["quantity"],
-  //   token: IAuth["token"] = authtoken
-  // ) => {
-  //   dispatch(updateItemQuantity({ productId, quantity, token }));
-  // };
-
-  // const removeFromCartHandler = (
-  //   productId: ICartItem["productId"],
-  //   token: IAuth["token"] = authtoken
-  // ) => {
-  //   dispatch(removeItemFromCart({ productId, token }));
-  // };
 
   return (
     <>
@@ -127,46 +113,11 @@ export default function Cart({ session }: any) {
                             className="-my-6 divide-y divide-gray-200"
                           >
                             {items.length > 0 ? (
-                              items.map((item) => (
-                                <li key={item._id} className="py-6 flex">
-                                  <div className="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
-                                    <Image
-                                      src={item.imageUrl}
-                                      alt={item.name}
-                                      layout="fill"
-                                      className="w-full h-full object-center object-cover"
-                                    />
-                                  </div>
-
-                                  <div className="ml-4 flex-1 flex flex-col">
-                                    <div>
-                                      <div className="flex justify-between text-base font-medium text-gray-800 dark:text-gray-100">
-                                        <h3>
-                                          <a href={item.slug}>{item.name}</a>
-                                        </h3>
-                                        <p className="ml-4">{item.price}</p>
-                                      </div>
-                                      {/* <p className="mt-1 text-sm text-gray-600 dark:text-gray-200">
-                                      {item.color}
-                                    </p> */}
-                                    </div>
-                                    <div className="flex-1 flex items-end justify-between text-sm">
-                                      <p className="text-gray-600 dark:text-gray-200">
-                                        Qty {item.quantity}
-                                      </p>
-
-                                      <div className="flex">
-                                        <button
-                                          type="button"
-                                          className="font-medium text-red-600 hover:text-red-500"
-                                        >
-                                          Remove
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </li>
-                              ))
+                              items.map((item) => {
+                                return (
+                                  <CartItem key={item.productId} item={item} />
+                                );
+                              })
                             ) : (
                               <li className="py-6 flex">Your cart is empty.</li>
                             )}

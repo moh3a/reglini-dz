@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { providers, getSession, csrfToken, useSession } from "next-auth/client";
 
@@ -15,6 +16,14 @@ const RegisterScreen = ({ providers, csrfToken, children }: any) => {
 
   return (
     <>
+      <Head>
+        <title>Create new account | reglini.dz</title>
+        <meta
+          name="description"
+          content="Join us and enjoy our services from easily shopping from Aliexpress in Algerian dinars to creating personnalized facebook ads."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {children}
       {!loading && !session && (
         <section className="flex flex-col items-center lg:my-8 sm:my-4 md:flex-row">

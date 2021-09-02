@@ -1,26 +1,17 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-const uniqueValidator = require("mongoose-unique-validator");
 
 const ItemSchema = new mongoose.Schema(
   {
     productId: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: String,
       required: true,
     },
     name: {
       type: String,
       required: true,
     },
-    slug: {
-      type: String,
-      required: true,
-    },
     price: {
-      type: Number,
-      required: true,
-    },
-    countInStock: {
       type: Number,
       required: true,
     },
@@ -38,6 +29,25 @@ const ItemSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+const WishlistSchema = new mongoose.Schema({
+  productId: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  imageUrl: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+});
 
 const CartSchema = new mongoose.Schema(
   {
@@ -93,35 +103,21 @@ const UserSchema = new mongoose.Schema({
     lowercase: true,
   },
   verified: Boolean,
+  verifyCredentialsToken: String,
   password: {
     type: String,
     // required: [true, "Please add a password."],
     minlength: 6,
     select: false,
   },
-  picture: String,
   resetPasswordToken: String,
   resetPasswordExpire: Date,
+  picture: String,
   cart: {
     type: CartSchema,
     required: true,
   },
-  wishlist: [
-    {
-      productId: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-      },
-      name: {
-        type: String,
-        required: true,
-      },
-      imageUrl: {
-        type: String,
-        required: true,
-      },
-    },
-  ],
+  wishlist: [WishlistSchema],
 });
 
 // MIDDLEWARE TO BE USED BEFORE CREATING A NEW PASSWORD
@@ -166,6 +162,17 @@ UserSchema.methods.getResetPasswordToken = function () {
     .digest("hex");
   this.resetPasswordExpire = Date.now() + 10 * (60 * 1000);
   return resetToken;
+};
+
+UserSchema.methods.verifySignUpCredentials = function () {
+  if (!this.verified) {
+    const verifyToken = crypto.randomBytes(20).toString("hex");
+    this.verifyCredentialsToken = crypto
+      .createHash("sha256")
+      .update(verifyToken)
+      .digest("hex");
+    return verifyToken;
+  }
 };
 
 // ADD A UNIQUE VALIDATION TO THE EMAIL AND USERNAME FIELDS

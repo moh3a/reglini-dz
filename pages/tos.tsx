@@ -1,7 +1,16 @@
-import styles from "../styles/screens/HomeScreen.module.scss";
+import Head from "next/head";
 
 const TermsOfService = () => {
-  return <div className={styles.homescreen}>Terms of Service</div>;
+  return (
+    <>
+      <Head>
+        <title>Terms of Service | reglini.dz</title>
+        <meta name="description" content="reglini.dz's terms of service." />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div>Terms of Service</div>
+    </>
+  );
 };
 
 import Layout from "../components/layout/Layout";

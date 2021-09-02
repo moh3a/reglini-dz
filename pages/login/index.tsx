@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { providers, getSession, csrfToken, useSession } from "next-auth/client";
 
@@ -15,6 +16,14 @@ const LoginScreen = ({ providers, csrfToken, children }: any) => {
 
   return (
     <>
+      <Head>
+        <title>Login | reglini.dz</title>
+        <meta
+          name="description"
+          content="Join us and enjoy our services from easily shopping from Aliexpress in Algerian dinars to creating personnalized facebook ads."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {children}
 
       {!loading && !session && (
@@ -47,9 +56,7 @@ const LoginScreen = ({ providers, csrfToken, children }: any) => {
 
 LoginScreen.getInitialProps = async (context: any) => {
   const { req, res } = context;
-  // check if user is logged in and not call everytime
   const session = await getSession({ req });
-  // if there s already a session there take back to home page and no need to be in signin page
   if (session && res && session.accessToken) {
     res.writeHead(302, {
       Location: "/",

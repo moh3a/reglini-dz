@@ -9,7 +9,6 @@ import { loadState, saveState } from "../localState";
 // REDUCERS
 import productSlice from "./productSlice";
 import productsSlice from "./productsSlice";
-// import authSlice from "./authSlice";
 import aeapiSlice from "./aeapiSlice";
 import userSlice from "./userSlice";
 
@@ -23,7 +22,6 @@ const persistedState = loadState();
 const reducer = combineReducers({
   product: productSlice,
   products: productsSlice,
-  // auth: authSlice,
   aeapi: aeapiSlice,
   user: userSlice,
 });

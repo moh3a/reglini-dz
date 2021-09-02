@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import { Provider } from "next-auth/client";
 import { Provider as ReduxProvider } from "react-redux";
+import { NextIntlProvider } from "next-intl";
 
 import "../styles/globals.css";
 import { useStore } from "../utils/redux/store";
@@ -17,6 +18,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <title>reglini.dz</title>
+        <meta
+          name="description"
+          content="Welcome to reglini.dz, where you'll be able to buy items from Aliexpress using the local algerian dinars or subscribe to the provided services."
+        />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="facebook-domain-verification"
@@ -32,9 +37,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </Head>
       <Provider session={pageProps.session}>
         <ThemeProvider attribute="class">
-          <ReduxProvider store={store}>
-            {getLayout(<Component {...pageProps} />)}
-          </ReduxProvider>
+          <NextIntlProvider messages={pageProps.messages}>
+            <ReduxProvider store={store}>
+              {getLayout(<Component {...pageProps} />)}
+            </ReduxProvider>
+          </NextIntlProvider>
         </ThemeProvider>
       </Provider>
     </>
