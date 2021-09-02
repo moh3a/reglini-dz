@@ -42,7 +42,10 @@ const Wishlist = ({ session }: any) => {
     <>
       <Head>
         <title>Your Wishlist | reglini.dz</title>
-        <meta name="description" content="reglini-dz.com homepage" />
+        <meta
+          name="description"
+          content="Add items you like to the wishlist so you'll find them whenever you need them."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {session && (

@@ -6,7 +6,10 @@ const Custom500 = () => {
     <>
       <Head>
         <title>Error | Internal Server Error | reglini.dz</title>
-        <meta name="description" content="reglini-dz.com homepage" />
+        <meta
+          name="description"
+          content="An internal server error have occured in reglini.dz. We apologize for the inconvenience. We're working on it."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section className="px-4 my-24 lg:my-40 mx-8 lg:mx-24 max-w-7xl">

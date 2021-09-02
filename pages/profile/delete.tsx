@@ -2,6 +2,7 @@ import { Fragment, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Dialog, Transition } from "@headlessui/react";
 import { GetServerSideProps } from "next";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { signOut, getSession } from "next-auth/client";
 import axios from "axios";
@@ -54,7 +55,7 @@ const DeleteAccount = ({ session }: any) => {
         signOut();
         router.push(`/login/account_deleted`);
       }
-    } catch (error) {
+    } catch (error: any) {
       setError(error.response.data.error);
       setTimeout(() => {
         setError("");
@@ -64,6 +65,20 @@ const DeleteAccount = ({ session }: any) => {
 
   return (
     <>
+      <Head>
+        <title>
+          Delete{" "}
+          {session && session.user.name
+            ? `${session.user.name}'s account | `
+            : ``}
+          reglini.dz
+        </title>
+        <meta
+          name="description"
+          content="Permanently delete all account info and data from reglini.dz. This action is irreversible."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {error && <DangerDialog>{error}</DangerDialog>}
       <div className="text-center mx-8 lg:mx-32 my-60">
         <p className="text-xl lg:text-4xl">

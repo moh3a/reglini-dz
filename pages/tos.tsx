@@ -5,7 +5,7 @@ const TermsOfService = () => {
     <>
       <Head>
         <title>Terms of Service | reglini.dz</title>
-        <meta name="description" content="reglini-dz.com homepage" />
+        <meta name="description" content="reglini.dz's terms of service." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>Terms of Service</div>

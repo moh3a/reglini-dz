@@ -18,7 +18,10 @@ const Aliexpress = ({ session }: any) => {
     <>
       <Head>
         <title>Search Aliexpress items | reglini.dz</title>
-        <meta name="description" content="reglini-dz.com homepage" />
+        <meta
+          name="description"
+          content="Buying items from AliExpress and with Algerian Dinars? Now that's possible here in reglini.dz. Safe and reliable algerian online shopping."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SearchAE />

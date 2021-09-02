@@ -18,6 +18,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <title>reglini.dz</title>
+        <meta
+          name="description"
+          content="Welcome to reglini.dz, where you'll be able to buy items from Aliexpress using the local algerian dinars or subscribe to the provided services."
+        />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="facebook-domain-verification"
