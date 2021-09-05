@@ -24,16 +24,11 @@ export default async function handler(
           "x-api-key": process.env.ZAPIEX_KEY,
         },
       });
-      res.status(200).json({ success: true, data: data.data, status: 200 });
-    } catch (error) {
-      console.error(error);
-      res
-        .status(500)
-        .json({ message: "server error", success: false, status: 500 });
+      res.status(200).json({ success: true, data: data.data });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message, success: false });
     }
   } else {
-    res
-      .status(400)
-      .json({ message: "Page doesn't exist.", succes: false, status: 400 });
+    res.status(400).json({ message: "Page doesn't exist.", succes: false });
   }
 }

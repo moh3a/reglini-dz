@@ -1,21 +1,22 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/client";
 import SendEmail from "../../../utils/sendEmail";
+import { IUser } from "../../../types/userType";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const session = await getSession({ req });
+  const session: IUser | null = await getSession({ req });
 
   if (req.method === "POST") {
     const { subject, message } = req.body;
 
     try {
-      let name,
-        email,
-        account,
-        provider = "";
+      let name: IUser["user.name"],
+        email: IUser["user.email"],
+        account: IUser["user.type"],
+        provider: IUser["user.provider"];
 
       if (session && session.user) {
         email = session.user.email;
@@ -36,7 +37,7 @@ export default async function handler(
       SendEmail({ from, to, subject, text });
 
       res.status(200).json({ message: "Email successfully sent." });
-    } catch (error) {
+    } catch (error: any) {
       res
         .status(400)
         .json({ message: error.message, success: false, status: 400 });

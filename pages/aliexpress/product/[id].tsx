@@ -55,7 +55,7 @@ const AliexpressProduct = ({ session }: any) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { req, res } = context;
+  const { req, res, locale } = context;
   const session = await getSession({ req });
   //   const id = req.url?.split("product/")[1];
   //   const { data } = await axios.get(
@@ -63,7 +63,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   //   );
   //   const product = data.data;
   return {
-    props: { session },
+    props: { session, messages: require(`../../../locales/${locale}.json`) },
   };
 };
 

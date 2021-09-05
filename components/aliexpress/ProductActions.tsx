@@ -23,8 +23,9 @@ export const BuyProduct = () => {
 export const ProductToCart = ({
   product,
   session,
-  quantity,
   setError,
+  selectedVariation,
+  selectedShipping,
 }: any) => {
   const dispatch = useDispatch();
   const addToCartHandler = (e: any) => {
@@ -35,17 +36,26 @@ export const ProductToCart = ({
       }, 3000);
       setError("You should be logged in to add to cart.");
     } else if (session) {
-      dispatch(
-        addToCart({
-          productId: product.productId,
-          name: product.title,
-          price: product.priceSummary
-            ? product.priceSummary.app.originalPrice.min.value
-            : product.price.app.originalPrice.value,
-          imageUrl: product.productImages[0],
-          quantity,
-        })
-      );
+      if (!selectedVariation.sku) {
+        setTimeout(() => {
+          setError("");
+        }, 3000);
+        setError("Please select the properties.");
+      } else if (selectedVariation.sku) {
+        dispatch(
+          addToCart({
+            productId: product.productId,
+            name: product.title,
+            price: selectedVariation.price.app.hasDiscount
+              ? selectedVariation.price.app.discountedPrice.value
+              : selectedVariation.price.app.originalPrice.value,
+            imageUrl: selectedVariation.imageUrl,
+            properties: selectedVariation.properties,
+            quantity: selectedVariation.quantity,
+            shipping: selectedShipping.company.id,
+          })
+        );
+      }
     }
   };
 

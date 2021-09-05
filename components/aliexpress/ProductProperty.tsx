@@ -1,12 +1,19 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const ProductProperty = ({ property, setShowImage }: any) => {
+const ProductProperty = ({ property, setShowImage, setProperties }: any) => {
   const [selectedProperty, setSelectedProperty] = useState({
     selected: false,
     name: property.name,
     value: "",
   });
+
+  useEffect(() => {
+    setProperties((properties: any) => [
+      ...properties,
+      { name: selectedProperty.name, value: selectedProperty.value },
+    ]);
+  }, [setProperties, selectedProperty]);
 
   const selectHandler = (value: any) => {
     if (selectedProperty.value === value) {

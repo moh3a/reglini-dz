@@ -15,7 +15,6 @@ export default async function handler(
     res.status(401).json({
       message: "No token, authorization denied",
       success: false,
-      status: 401,
     });
   // Verify token
   const decoded = jwt.verify(token, process.env.JWT_SECRET);
@@ -36,14 +35,10 @@ export default async function handler(
           stauts: 401,
         });
       }
-    } catch (error) {
-      res
-        .status(400)
-        .json({ message: error.message, success: false, status: 400 });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message, success: false });
     }
   } else {
-    res
-      .status(400)
-      .json({ message: "Page doesn't exist.", success: false, status: 400 });
+    res.status(400).json({ message: "Page doesn't exist.", success: false });
   }
 }

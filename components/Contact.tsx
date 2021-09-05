@@ -41,12 +41,9 @@ const Contact = () => {
       </p>
 
       <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 md:grid-cols-3">
-        <a
-          href="#"
-          className="flex flex-col items-center px-4 py-3 text-gray-700 rounded-md dark:text-gray-200 hover:bg-blue-200 dark:hover:bg-blue-500"
-        >
+        <a className="cursor-pointer flex flex-col items-center px-4 py-3 text-gray-700 rounded-md dark:text-gray-200 hover:bg-purple-200 dark:hover:bg-purple-800">
           <svg
-            className="w-5 h-5"
+            className="w-5 h-5 text-purple-600"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -61,28 +58,15 @@ const Contact = () => {
           <span className="mt-2">{t("address")}</span>
         </a>
 
-        <a
-          href="#"
-          className="flex flex-col items-center px-4 py-3 text-gray-700 rounded-md dark:text-gray-200 hover:bg-blue-200 dark:hover:bg-blue-500"
-        >
-          <svg
-            className="w-5 h-5"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-          </svg>
+        <a className="cursor-pointer flex flex-col items-center px-4 py-3 text-gray-700 rounded-md dark:text-gray-200 hover:bg-green-200 dark:hover:bg-green-800">
+          <i className="fab fa-whatsapp text-green-500"></i>
 
           <span className="mt-2">+213540861775</span>
         </a>
 
-        <a
-          href="#"
-          className="flex flex-col items-center px-4 py-3 text-gray-700 rounded-md dark:text-gray-200 hover:bg-blue-200 dark:hover:bg-blue-500 text-xs"
-        >
+        <a className="cursor-pointer flex flex-col items-center px-4 py-3 text-gray-700 rounded-md dark:text-gray-200 hover:bg-orange-200 dark:hover:bg-orange-800 text-xs">
           <svg
-            className="w-5 h-5"
+            className="w-5 h-5 text-orange-500"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
