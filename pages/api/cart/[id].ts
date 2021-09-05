@@ -3,13 +3,14 @@ import { getSession } from "next-auth/client";
 import type { NextApiRequest, NextApiResponse } from "next";
 import User from "../../../models/User";
 import { cartCount, cartSubtotal } from "../../../utils/cartMethods";
+import { IUser } from "../../../types/userType";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   await dbConnect();
-  const session = await getSession({ req });
+  const session: IUser | null = await getSession({ req });
   const { id } = req.query;
 
   if (req.method === "DELETE") {
@@ -19,7 +20,7 @@ export default async function handler(
       } else if (session.user) {
         const email = session.user.email;
         const account = session.user.type;
-        let provider = "";
+        let provider: IUser["user.provider"];
         if (account === "oauth") {
           provider = session.user.provider;
         }
@@ -50,7 +51,7 @@ export default async function handler(
           data,
         });
       }
-    } catch (error) {
+    } catch (error: any) {
       res
         .status(500)
         .json({ success: false, message: error.message, status: 500 });
@@ -63,7 +64,7 @@ export default async function handler(
       } else if (session.user) {
         const email = session.user.email;
         const account = session.user.type;
-        let provider = "";
+        let provider: IUser["user.provider"];
         if (account === "oauth") {
           provider = session.user.provider;
         }
@@ -94,7 +95,7 @@ export default async function handler(
           message: "Item quantity has been updated.",
         });
       }
-    } catch (error) {
+    } catch (error: any) {
       res
         .status(500)
         .json({ success: false, message: error.message, status: 500 });

@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-//
+
 import { RootState } from "./store";
 import { IProduct } from "../../types/productType";
-//
+
 const initialState: IProduct = {
   _id: "",
   name: "",
@@ -15,7 +15,7 @@ const initialState: IProduct = {
   status: "idle",
   error: undefined,
 };
-//
+
 export const getProduct = createAsyncThunk(
   "product/getProduct",
   async (slug: IProduct["slug"], { rejectWithValue }) => {
@@ -24,12 +24,12 @@ export const getProduct = createAsyncThunk(
         const { data } = await axios.get(`/api/products/${slug}`);
         return data.product;
       }
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.response);
     }
   }
 );
-//
+
 export const productSlice = createSlice({
   name: "product",
   initialState,

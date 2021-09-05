@@ -11,12 +11,12 @@ export default async function handler(
   if (req.method === "GET") {
     try {
       const products = await Product.find({});
-      res.status(200).json({ success: true, products, status: 200 });
+      res
+        .status(200)
+        .json({ success: true, products, message: "Products found." });
     } catch (error) {
       console.error(error);
-      res
-        .status(500)
-        .json({ message: "server error", success: false, status: 500 });
+      res.status(500).json({ message: "server error", success: false });
     }
   } else if (req.method === "POST") {
     try {
@@ -30,16 +30,15 @@ export default async function handler(
         countInStock,
         imageUrl,
       });
-      res.status(200).json({ success: true, product, status: 200 });
+      res.status(200).json({
+        success: true,
+        product,
+        message: "Product successfully created.",
+      });
     } catch (error) {
-      console.error(error);
-      res
-        .status(500)
-        .json({ message: "server error", success: false, status: 500 });
+      res.status(500).json({ message: "server error" });
     }
   } else {
-    res
-      .status(400)
-      .json({ message: "Page doesn't exist.", success: false, status: 400 });
+    res.status(400).json({ message: "Page doesn't exist." });
   }
 }

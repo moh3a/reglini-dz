@@ -2,6 +2,7 @@ import dbConnect from "../../../config/db";
 import type { NextApiRequest, NextApiResponse } from "next";
 import User from "../../../models/User";
 import { getSession } from "next-auth/client";
+import { IUser } from "../../../types/userType";
 
 import sendEmail from "../../../utils/sendEmail";
 
@@ -10,7 +11,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   await dbConnect();
-  const session = await getSession({ req });
+  const session: IUser | null = await getSession({ req });
 
   if (req.method === "POST") {
     try {
@@ -19,7 +20,7 @@ export default async function handler(
       } else if (session.user) {
         const email = session.user.email;
         const account = session.user.type;
-        let provider = "";
+        let provider: IUser["user.provider"];
         if (account === "oauth") {
           provider = session.user.provider;
         }
@@ -47,13 +48,12 @@ export default async function handler(
         res.status(200).json({
           success: true,
           message: "Account successfully deleted.",
-          status: 200,
         });
       }
-    } catch (error) {
-      throw error;
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
     }
   } else {
-    res.status(400).json({ message: "Page doesn't exist.", status: 400 });
+    res.status(400).json({ message: "Page doesn't exist." });
   }
 }

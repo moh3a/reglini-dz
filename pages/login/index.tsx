@@ -1,12 +1,27 @@
-import { useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { providers, getSession, csrfToken, useSession } from "next-auth/client";
+import {
+  providers,
+  getSession,
+  csrfToken,
+  useSession,
+  SessionProviderOptions,
+  ClientSafeProvider,
+} from "next-auth/client";
 
 import Login from "../../components/auth/Login";
 import LoginSocialMedia from "../../components/auth/LoginSocialMedia";
 
-const LoginScreen = ({ providers, csrfToken, children }: any) => {
+const LoginScreen = ({
+  providers,
+  csrfToken,
+  children,
+}: {
+  providers: SessionProviderOptions;
+  csrfToken: ClientSafeProvider;
+  children: ReactNode;
+}) => {
   const [session, loading] = useSession();
   const router = useRouter();
 

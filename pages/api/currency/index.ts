@@ -44,8 +44,6 @@ export default async function handler(
     await data.save();
     res.status(201).json({ success: true, data });
   } else {
-    res
-      .status(400)
-      .json({ message: "Page doesn't exist.", success: false, status: 400 });
+    res.status(400).json({ message: "Page doesn't exist.", success: false });
   }
 }
