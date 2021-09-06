@@ -37,7 +37,7 @@ const Login = ({ csrfToken }: any) => {
           return;
         }
       }
-    } catch (error) {
+    } catch (error: any) {
       setError(error.response.data.error);
       setEmail("");
       setTimeout(() => {
@@ -123,12 +123,12 @@ const Login = ({ csrfToken }: any) => {
       <p className="mt-2 mb-8 text-center">
         Don&apos;t have an account?{" "}
         <Link href="/register" passHref>
-          <span
+          <a
             tabIndex={4}
             className="font-semibold text-gray-800 dark:text-gray-100 hover:text-black cursor-pointer"
           >
             Create one
-          </span>
+          </a>
         </Link>
       </p>
     </>

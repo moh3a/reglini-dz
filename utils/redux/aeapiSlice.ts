@@ -43,6 +43,7 @@ export const aeapiSlice = createSlice({
       })
       .addCase(searchAEProductByName.fulfilled, (state, action) => {
         state.status = "complete";
+        state.product = undefined;
         state.search = action.payload;
       })
       .addCase(searchAEProductByName.rejected, (state, action) => {
@@ -58,6 +59,7 @@ export const aeapiSlice = createSlice({
       })
       .addCase(searchAEProductByCategory.rejected, (state, action) => {
         state.status = "failed";
+        state.product = undefined;
         state.error = action.error.message;
       });
   },

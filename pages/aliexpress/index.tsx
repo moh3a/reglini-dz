@@ -42,9 +42,9 @@ const Aliexpress = ({ messages }: any) => {
             {product.status === "productNotAvailableForShipToCountry" &&
               "Ooops... This item is not available for shipping to Algeria."}
             <Link href="/aliexpress" passHref>
-              <span className="text-gray-600 underline block text-base mt-4 hover:text-gray-500">
+              <a className="text-gray-600 underline block text-base mt-4 hover:text-gray-500">
                 Continue shopping
-              </span>
+              </a>
             </Link>
           </div>
         </section>

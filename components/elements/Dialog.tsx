@@ -73,14 +73,16 @@ export const DangerDialog = ({ children, action, actionUrl }: any) => {
                   OK
                 </button>
                 {action && actionUrl && (
-                  <button
-                    type="button"
-                    className="mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-600 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-                    onClick={() => setOpen(false)}
-                    ref={cancelButtonRef}
-                  >
-                    <Link href={actionUrl}>{action}</Link>
-                  </button>
+                  <Link href={actionUrl} passHref>
+                    <button
+                      type="button"
+                      className="mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-600 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                      onClick={() => setOpen(false)}
+                      ref={cancelButtonRef}
+                    >
+                      {action}
+                    </button>
+                  </Link>
                 )}
               </div>
             </div>
@@ -161,14 +163,16 @@ export const SuccessDialog = ({ children, action, actionUrl }: any) => {
                   OK
                 </button>
                 {action && actionUrl && (
-                  <button
-                    type="button"
-                    className="mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-600 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-                    onClick={() => setOpen(false)}
-                    ref={cancelButtonRef}
-                  >
-                    <Link href={actionUrl}>{action}</Link>
-                  </button>
+                  <Link href={actionUrl} passHref>
+                    <button
+                      type="button"
+                      className="mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-600 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                      onClick={() => setOpen(false)}
+                      ref={cancelButtonRef}
+                    >
+                      {action}
+                    </button>
+                  </Link>
                 )}
               </div>
             </div>
@@ -249,14 +253,16 @@ export const WarningDialog = ({ children, action, actionUrl }: any) => {
                   OK
                 </button>
                 {action && actionUrl && (
-                  <button
-                    type="button"
-                    className="mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-600 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-                    onClick={() => setOpen(false)}
-                    ref={cancelButtonRef}
-                  >
-                    <Link href={actionUrl}>{action}</Link>
-                  </button>
+                  <Link href={actionUrl} passHref>
+                    <button
+                      type="button"
+                      className="mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-600 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                      onClick={() => setOpen(false)}
+                      ref={cancelButtonRef}
+                    >
+                      {action}
+                    </button>
+                  </Link>
                 )}
               </div>
             </div>

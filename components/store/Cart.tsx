@@ -138,10 +138,10 @@ export default function Cart({ session }: any) {
                         Shipping and taxes calculated at checkout.
                       </p>
                       <div className="mt-6">
-                        <Link href="/order" passHref>
-                          <span className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium cursor-pointer text-white bg-green-800 hover:bg-green-900">
+                        <Link href="/order/new" passHref>
+                          <a className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium cursor-pointer text-white bg-green-800 hover:bg-green-900">
                             Place Order
-                          </span>
+                          </a>
                         </Link>
                       </div>
                       <div className="mt-6 flex justify-center text-sm text-center text-gray-800 dark:text-gray-100">

@@ -82,9 +82,9 @@ const Faq = () => {
             <p className="text-base text-center md:text-lg">
               Want to ask another question? You can do that from{" "}
               <Link href="/support" passHref>
-                <span className="cursor-pointer text-gray-700 dark:text-gray-400">
+                <a className="cursor-pointer text-gray-500 dark:text-gray-400">
                   this page
-                </span>
+                </a>
               </Link>
               .
             </p>

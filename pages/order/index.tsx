@@ -11,12 +11,12 @@ const OrderScreen = () => {
 export const getStaticProps: GetStaticProps = ({ locale }) => {
   return {
     props: {
-      messages: require(`../locales/${locale}.json`),
+      messages: require(`../../locales/${locale}.json`),
     },
   };
 };
 
-import Layout from "../components/layout/Layout";
+import Layout from "../../components/layout/Layout";
 OrderScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };
