@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
@@ -92,6 +93,14 @@ const Faq = () => {
       </div>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = ({ locale }) => {
+  return {
+    props: {
+      messages: require(`../locales/${locale}.json`),
+    },
+  };
 };
 
 import Layout from "../components/layout/Layout";

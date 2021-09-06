@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useEffect } from "react";
@@ -40,6 +41,14 @@ const Profile = () => {
       {user && <Tabs user={user} />}
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      messages: require(`../../locales/${locale}.json`),
+    },
+  };
 };
 
 import Layout from "../../components/layout/Layout";

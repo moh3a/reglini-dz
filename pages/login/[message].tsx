@@ -35,7 +35,7 @@ const LoginError = ({ csrfToken, providers }: any) => {
 };
 
 LoginError.getInitialProps = async (context: any) => {
-  const { req, res } = context;
+  const { req, res, locale } = context;
   const session = await getSession({ req });
   if (session && res && session.accessToken) {
     res.writeHead(302, {
@@ -48,6 +48,7 @@ LoginError.getInitialProps = async (context: any) => {
     session: undefined,
     providers: await providers(),
     csrfToken: await csrfToken(context),
+    messages: require(`../../locales/${locale}.json`),
   };
 };
 

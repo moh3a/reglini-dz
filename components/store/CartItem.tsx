@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useDispatch } from "react-redux";
 import {
   removeFromCart,
@@ -30,7 +31,9 @@ const CartItem = ({ item }: any) => {
         <div>
           <div className="flex justify-between text-base font-medium text-gray-800 dark:text-gray-100">
             <h3>
-              <a href={`/aliexpress/product/${item.productId}`}>{item.name}</a>
+              <Link href={`/aliexpress/product/${item.productId}`}>
+                {item.name}
+              </Link>
             </h3>
             <p className="ml-4">€{item.price}</p>
           </div>

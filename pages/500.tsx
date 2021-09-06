@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -36,6 +37,14 @@ const Custom500 = () => {
       </section>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = ({ locale }) => {
+  return {
+    props: {
+      messages: require(`../locales/${locale}.json`),
+    },
+  };
 };
 
 import Layout from "../components/layout/Layout";

@@ -11,7 +11,6 @@ import { useStore } from "../utils/redux/store";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const store = useStore(pageProps.initialReduxState);
-  // GET LAYOUT FOR SINGLE PAGE APP BEHAVIOUR
   const getLayout = (Component as any).getLayout || ((page: NextPage) => page);
 
   return (
@@ -34,6 +33,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+        <link rel="alternate" hrefLang="en" href="https://reglini-dz.com/en" />
+        <link rel="alternate" hrefLang="fr" href="https://reglini-dz.com/fe" />
+        <link rel="alternate" hrefLang="ar" href="https://reglini-dz.com/ar" />
       </Head>
       <Provider session={pageProps.session}>
         <ThemeProvider attribute="class">

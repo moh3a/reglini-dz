@@ -1,3 +1,4 @@
+import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import ResetPassword from "../../components/auth/ResetPassword";
@@ -19,6 +20,14 @@ const ResetPasswordScreen = ({}) => {
       <ResetPassword token={token} />
     </>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  return {
+    props: {
+      messages: require(`../../locales/${locale}.json`),
+    },
+  };
 };
 
 import Layout from "../../components/layout/Layout";

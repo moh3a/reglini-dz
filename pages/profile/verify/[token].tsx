@@ -1,3 +1,4 @@
+import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import AccountVerification from "../../../components/account/AccountVerification";
@@ -20,6 +21,14 @@ const AccountVerificationScreen = () => {
       <Profile />
     </>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  return {
+    props: {
+      messages: require(`../../../locales/${locale}.json`),
+    },
+  };
 };
 
 import Layout from "../../../components/layout/Layout";

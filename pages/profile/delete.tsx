@@ -1,6 +1,7 @@
 import { Fragment, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Dialog, Transition } from "@headlessui/react";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { signOut, useSession } from "next-auth/client";
@@ -163,6 +164,14 @@ const DeleteAccount = () => {
       </Transition>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      messages: require(`../../locales/${locale}.json`),
+    },
+  };
 };
 
 import Layout from "../../components/layout/Layout";
