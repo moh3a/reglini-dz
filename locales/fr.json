@@ -69,6 +69,14 @@
     "contact": "CONTACT"
   },
   "navigation": {
+    "profile": "Votre Profil",
+    "wishlist": "Your Wishlist",
+    "orders": "Vos Commandes",
+    "settings": "Settings",
+    "signOut": "Se Déconnecter",
+    "signIn": "S'Identifier",
+    "register": "Créer un compte",
+    "shopNow": "Achetez maintenant",
     "categories": [
       {
         "id": "products",

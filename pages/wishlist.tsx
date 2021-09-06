@@ -1,19 +1,19 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { GetServerSideProps } from "next";
-import mongoose from "mongoose";
+import { GetStaticProps } from "next";
 import Head from "next/head";
-import { getSession } from "next-auth/client";
+import { useSession } from "next-auth/client";
 
-import dbConnect from "../config/db";
+import { IUser } from "../types/userType";
 import { selectUser } from "../utils/redux/userSlice";
 import { getUser } from "../utils/redux/userAsyncActions";
 import WishedItems from "../components/store/WishedItems";
 import Link from "next/link";
 
-const Wishlist = ({ session }: any) => {
+const Wishlist = ({ messages }: any) => {
   const [wishlist, setWishlist] = useState([]);
+  const [session, loading]: [IUser | null, boolean] = useSession();
   const router = useRouter();
   const dispatch = useDispatch();
   const { isAuthenticated, status, user } = useSelector(selectUser);
@@ -69,15 +69,9 @@ const Wishlist = ({ session }: any) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  if (!mongoose.connection.readyState) {
-    await dbConnect();
-  }
-  const { req, res } = context;
-  const session = await getSession({ req });
-
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
-    props: { session },
+    props: { messages: require(`../locales/${locale}.json`) },
   };
 };
 

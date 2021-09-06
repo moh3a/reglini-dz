@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Link from "next/link";
 import Head from "next/head";
 
@@ -35,6 +36,14 @@ const Custom404 = () => {
       </section>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = ({ locale }) => {
+  return {
+    props: {
+      messages: require(`../locales/${locale}.json`),
+    },
+  };
 };
 
 import Layout from "../components/layout/Layout";

@@ -2,6 +2,8 @@ import { Fragment } from "react";
 import { signOut } from "next-auth/client";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useTranslations } from "next-intl";
 import { Popover, Transition, Menu } from "@headlessui/react";
 import { MenuIcon, HeartIcon } from "@heroicons/react/outline";
 
@@ -16,6 +18,9 @@ function classNames(...classes: any) {
 }
 
 const NavLarge = ({ setOpen, session, user }: any) => {
+  const t = useTranslations("navigation");
+  const router = useRouter();
+
   return (
     <header className="relative bg-white dark:bg-grim">
       <nav
@@ -46,7 +51,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
             {/* Flyout menus */}
             <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
               <div className="h-full flex space-x-8 z-0">
-                {navigation.categories.map((category: any) => (
+                {navigation.en.categories.map((category: any) => (
                   <Popover key={category.name} className="flex">
                     {({ open }) => (
                       <>
@@ -98,21 +103,22 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                             />
                                           </div>
                                         </div>
-                                        <a
-                                          href={item.href}
-                                          className="mt-6 block font-medium text-gray-800 dark:text-gray-100"
-                                        >
-                                          <span
-                                            className="absolute z-0 inset-0"
-                                            aria-hidden="true"
-                                          />
-                                          {item.name}
-                                        </a>
+                                        <Link href={item.href} passHref>
+                                          <>
+                                            <span
+                                              className=" absolute z-0 inset-0 cursor-pointer"
+                                              aria-hidden="true"
+                                            />
+                                            <span className="mt-6 block font-medium text-gray-800 dark:text-gray-100">
+                                              {item.name}
+                                            </span>
+                                          </>
+                                        </Link>
                                         <p
                                           aria-hidden="true"
                                           className="mt-1 text-gray-800 dark:text-gray-100"
                                         >
-                                          Shop now
+                                          {t("shopNow")}
                                         </p>
                                       </div>
                                     ))}
@@ -136,12 +142,11 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                               key={item.name}
                                               className="flex"
                                             >
-                                              <a
-                                                href={item.href}
-                                                className="text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400"
-                                              >
-                                                {item.name}
-                                              </a>
+                                              <Link href={item.href} passHref>
+                                                <span className="text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400 cursor-pointer">
+                                                  {item.name}
+                                                </span>
+                                              </Link>
                                             </li>
                                           ))}
                                         </ul>
@@ -158,14 +163,12 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                   </Popover>
                 ))}
 
-                {navigation.pages.map((page: any) => (
-                  <a
-                    key={page.name}
-                    href={page.href}
-                    className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400"
-                  >
-                    {page.name}
-                  </a>
+                {navigation.en.pages.map((page: any) => (
+                  <Link key={page.name} href={page.href} passHref>
+                    <span className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400 cursor-pointer">
+                      {page.name}
+                    </span>
+                  </Link>
                 ))}
               </div>
             </Popover.Group>
@@ -208,7 +211,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                     "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
                                   )}
                                 >
-                                  <Link href="/profile">Your Profile</Link>
+                                  <Link href="/profile">{t("profile")}</Link>
                                 </p>
                               )}
                             </Menu.Item>
@@ -222,7 +225,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                     "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
                                   )}
                                 >
-                                  <Link href="/wishlist">Your Wishlist</Link>
+                                  <Link href="/wishlist">{t("wishlist")}</Link>
                                 </p>
                               )}
                             </Menu.Item>
@@ -236,7 +239,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                     "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
                                   )}
                                 >
-                                  <Link href="/orders">Your Orders</Link>
+                                  <Link href="/orders">{t("orders")}</Link>
                                 </p>
                               )}
                             </Menu.Item>
@@ -250,7 +253,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                     "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
                                   )}
                                 >
-                                  <Link href="/settings">Settings</Link>
+                                  <Link href="/settings">{t("settings")}</Link>
                                 </p>
                               )}
                             </Menu.Item>
@@ -265,7 +268,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                     "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
                                   )}
                                 >
-                                  Sign out
+                                  {t("signOut")}
                                 </p>
                               )}
                             </Menu.Item>
@@ -278,13 +281,13 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                   <>
                     <Link href="/login" passHref>
                       <span className="text-sm font-medium text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400 cursor-pointer">
-                        Sign in
+                        {t("signIn")}
                       </span>
                     </Link>
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                     <Link href="/register" passHref>
                       <span className="text-sm font-medium text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400 cursor-pointer">
-                        Create account
+                        {t("register")}
                       </span>
                     </Link>
                   </>

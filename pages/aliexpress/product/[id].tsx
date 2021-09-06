@@ -4,15 +4,17 @@ import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
-import { getSession } from "next-auth/client";
+import { useSession } from "next-auth/client";
 
+import { IUser } from "../../../types/userType";
 import { getAEProductInfo } from "../../../utils/redux/aeapiAsyncActions";
 import { selectAEApi } from "../../../utils/redux/aeapiSlice";
 import ProductDetails from "../../../components/aliexpress/ProductDetails";
 
-const AliexpressProduct = ({ session }: any) => {
+const AliexpressProduct = ({ messages }: any) => {
   const dispatch = useDispatch();
   const router = useRouter();
+  const [session, loading]: [IUser | null, boolean] = useSession();
 
   let locale = "en";
   if (router.locale === "ar") {
@@ -90,16 +92,9 @@ const AliexpressProduct = ({ session }: any) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { req, res, locale } = context;
-  const session = await getSession({ req });
-  //   const id = req.url?.split("product/")[1];
-  //   const { data } = await axios.get(
-  //     `http://${req.headers.host}/api/aliexpress/${id}`
-  //   );
-  //   const product = data.data;
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
-    props: { session, messages: require(`../../../locales/${locale}.json`) },
+    props: { messages: require(`../../../locales/${locale}.json`) },
   };
 };
 

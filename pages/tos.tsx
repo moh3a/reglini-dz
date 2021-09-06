@@ -13,6 +13,15 @@ const TermsOfService = () => {
   );
 };
 
+import { GetStaticProps } from "next";
+export const getStaticProps: GetStaticProps = ({ locale }) => {
+  return {
+    props: {
+      messages: require(`../locales/${locale}.json`),
+    },
+  };
+};
+
 import Layout from "../components/layout/Layout";
 TermsOfService.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;

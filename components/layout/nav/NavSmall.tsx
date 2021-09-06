@@ -2,6 +2,8 @@ import { Fragment } from "react";
 import { signOut } from "next-auth/client";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useTranslations } from "next-intl";
 import { Dialog, Tab, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import { navigation } from "../../../data/navigation";
@@ -12,6 +14,9 @@ function classNames(...classes: any) {
 }
 
 const NavSmall = ({ open, setOpen, session, user }: any) => {
+  const t = useTranslations("navigation");
+  const router = useRouter();
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
@@ -75,7 +80,7 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                   <div className="flow-root">
                     <Link href="/orders" passHref>
                       <span className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800">
-                        Your Orders
+                        {t("orders")}
                       </span>
                     </Link>
                   </div>
@@ -100,14 +105,14 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                   <div className="flow-root">
                     <Link href="/login" passHref>
                       <span className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100 cursor-pointer">
-                        Sign in
+                        {t("signIn")}
                       </span>
                     </Link>
                   </div>
                   <div className="flow-root">
                     <Link href="/register" passHref>
                       <span className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100 cursor-pointer">
-                        Create account
+                        {t("register")}
                       </span>
                     </Link>
                   </div>
@@ -119,7 +124,7 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
             <Tab.Group as="div" className="mt-2">
               <div className="border-b border-gray-200">
                 <Tab.List className="-mb-px flex px-4 space-x-8">
-                  {navigation.categories.map((category: any) => (
+                  {navigation.en.categories.map((category: any) => (
                     <Tab
                       key={category.name}
                       className={({ selected }) =>
@@ -137,7 +142,7 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                 </Tab.List>
               </div>
               <Tab.Panels as={Fragment}>
-                {navigation.categories.map((category: any) => (
+                {navigation.en.categories.map((category: any) => (
                   <Tab.Panel
                     key={category.name}
                     className="pt-10 pb-8 px-4 space-y-10 z-0"
@@ -155,16 +160,13 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                               layout="responsive"
                             />
                           </div>
-                          <a
-                            href={item.href}
-                            className="mt-6 block font-medium text-gray-800 dark:text-gray-100"
-                          >
+                          <Link href={item.href} passHref>
                             <span
-                              className="absolute z-0 inset-0"
+                              className="mt-6 block font-medium text-gray-800 dark:text-gray-100 absolute z-0 inset-0 cursor-pointer"
                               aria-hidden="true"
                             />
                             {item.name}
-                          </a>
+                          </Link>
                           <p
                             aria-hidden="true"
                             className="mt-1 text-gray-800 dark:text-gray-100"
@@ -189,12 +191,11 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                         >
                           {section.items.map((item: any) => (
                             <li key={item.name} className="flow-root">
-                              <a
-                                href={item.href}
-                                className="-m-2 p-2 block text-gray-800 dark:text-gray-100"
-                              >
-                                {item.name}
-                              </a>
+                              <Link href={item.href} passHref>
+                                <span className="-m-2 p-2 block text-gray-800 dark:text-gray-100">
+                                  {item.name}
+                                </span>
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -206,14 +207,13 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
             </Tab.Group>
 
             <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">
-              {navigation.pages.map((page: any) => (
+              {navigation.en.pages.map((page: any) => (
                 <div key={page.name} className="flow-root">
-                  <a
-                    href={page.href}
-                    className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100"
-                  >
-                    {page.name}
-                  </a>
+                  <Link href={page.href} passHref>
+                    <span className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
+                      {page.name}
+                    </span>
+                  </Link>
                 </div>
               ))}
             </div>

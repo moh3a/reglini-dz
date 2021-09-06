@@ -11,7 +11,7 @@ import ProductList from "../../components/store/ProductList";
 import Loading from "../../components/Loading";
 import CategoryFilters from "../../components/store/CategoryFilters";
 
-const Aliexpress = () => {
+const Aliexpress = ({ messages }: any) => {
   const [session, loading]: [IUser | null, boolean] = useSession();
   const { search, product, status } = useSelector(selectAEApi);
 
@@ -75,7 +75,16 @@ const Aliexpress = () => {
   );
 };
 
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      messages: require(`../../locales/${locale}.json`),
+    },
+  };
+};
+
 import Layout from "../../components/layout/Layout";
+import { GetStaticProps } from "next";
 Aliexpress.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

@@ -69,6 +69,14 @@
     "contact": "إتصال"
   },
   "navigation": {
+    "profile": "معلوماتي",
+    "wishlist": "Your Wishlist",
+    "orders": "طلباتك",
+    "settings": "Settings",
+    "signOut": "خروج",
+    "signIn": "دخول",
+    "register": "إنشاء حساب",
+    "shopNow": "تسوق الآن",
     "categories": [
       {
         "id": "products",
