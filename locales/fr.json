@@ -59,5 +59,84 @@
     "historical": {
       "name": "Historique"
     }
+  },
+  "Footer": {
+    "desc": "Bienvenue sur reglini.dz, où vous pourrez acheter des articles d'Aliexpress en utilisant les dinars algériens locaux ou vous abonner aux services fournis.",
+    "info": "INFO",
+    "support": "Support",
+    "pp": "Politique de confidentialité",
+    "tos": "Conditions d'utilisation",
+    "contact": "CONTACT"
+  },
+  "navigation": {
+    "profile": "Votre Profil",
+    "wishlist": "Your Wishlist",
+    "orders": "Vos Commandes",
+    "settings": "Settings",
+    "signOut": "Se Déconnecter",
+    "signIn": "S'Identifier",
+    "register": "Créer un compte",
+    "shopNow": "Achetez maintenant",
+    "categories": [
+      {
+        "id": "products",
+        "name": "Produits",
+        "featured": [
+          {
+            "name": "Aliexpress",
+            "href": "/aliexpress",
+            "imageSrc": "/aliexpress-icon.png",
+            "imageAlt": "Aliexpress icon."
+          },
+          {
+            "name": "Netflix",
+            "href": "/netflix",
+            "imageSrc": "/Netflix_N_logo.png",
+            "imageAlt": "Netflix icon."
+          }
+        ],
+        "sections": [
+          {
+            "id": "aliexpress",
+            "name": "Aliexpress",
+            "items": [
+              {
+                "name": "Vêtements & Accessoires",
+                "href": "/aliexpress/category/205776616"
+              },
+              {
+                "name": "Vêtements pour hommes",
+                "href": "/aliexpress/category/205776616"
+              },
+              {
+                "name": "Vêtements pour femmes",
+                "href": "/aliexpress/category/100003109"
+              },
+              {
+                "name": "Automobiles et motos",
+                "href": "/aliexpress/category/34"
+              },
+              {
+                "name": "Beauté et santé",
+                "href": "/aliexpress/category/66"
+              },
+              {
+                "name": "Téléphones et télécommunications",
+                "href": "/aliexpress/category/509"
+              },
+              {
+                "name": "Ordinateur et bureau",
+                "href": "/aliexpress/category/7"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "pages": [
+      { "name": "Échange de devises", "href": "/currency" },
+      { "name": "Support", "href": "/support" },
+      { "name": "FAQ", "href": "/faq" }
+    ]
   }
 }

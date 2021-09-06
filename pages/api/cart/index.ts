@@ -3,23 +3,25 @@ import { getSession } from "next-auth/client";
 import type { NextApiRequest, NextApiResponse } from "next";
 import User from "../../../models/User";
 import { cartCount, cartSubtotal } from "../../../utils/cartMethods";
+import { IUser } from "../../../types/userType";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   await dbConnect();
-  const session = await getSession({ req });
+  const session: IUser | null = await getSession({ req });
 
   if (req.method === "POST") {
-    const { productId, name, price, imageUrl, quantity } = req.body;
+    const { productId, name, price, imageUrl, properties, quantity, shipping } =
+      req.body;
     try {
       if (!session) {
         res.status(403).json({ message: "Unauthorized to access this part." });
       } else if (session.user) {
         const email = session.user.email;
         const account = session.user.type;
-        let provider = "";
+        let provider: IUser["user.provider"];
         if (account === "oauth") {
           provider = session.user.provider;
         }
@@ -41,7 +43,9 @@ export default async function handler(
             name,
             price,
             imageUrl,
+            properties,
             quantity,
+            shipping,
           });
         } else {
           data.cart.cartItems[index].quantity = quantity;
@@ -55,7 +59,7 @@ export default async function handler(
           message: "Item successfully added to cart.",
         });
       }
-    } catch (error) {
+    } catch (error: any) {
       res
         .status(500)
         .json({ message: error.message, success: false, status: 500 });

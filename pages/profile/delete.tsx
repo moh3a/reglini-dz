@@ -1,20 +1,21 @@
 import { Fragment, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Dialog, Transition } from "@headlessui/react";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { signOut, getSession } from "next-auth/client";
+import { signOut, useSession } from "next-auth/client";
 import axios from "axios";
 
+import { IUser } from "../../types/userType";
 import { DangerDialog } from "../../components/elements/Dialog";
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";
 
-const DeleteAccount = ({ session }: any) => {
+const DeleteAccount = () => {
   let [isOpen, setIsOpen] = useState(false);
   const [error, setError] = useState("");
-
+  const [session, loading]: [IUser | null, boolean] = useSession();
   const dispatch = useDispatch();
   const { isAuthenticated, status } = useSelector(selectUser);
   const router = useRouter();
@@ -68,7 +69,7 @@ const DeleteAccount = ({ session }: any) => {
       <Head>
         <title>
           Delete{" "}
-          {session && session.user.name
+          {session && session.user?.name
             ? `${session.user.name}'s account | `
             : ``}
           reglini.dz
@@ -165,12 +166,11 @@ const DeleteAccount = ({ session }: any) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { req, res } = context;
-  const session = await getSession({ req });
-
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
-    props: { session },
+    props: {
+      messages: require(`../../locales/${locale}.json`),
+    },
   };
 };
 

@@ -17,7 +17,7 @@ export const getAEProductInfo = createAsyncThunk(
       });
       console.log(data.data);
       return data.data;
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.response);
     }
   }
@@ -32,7 +32,7 @@ export const searchAEProductByName = createAsyncThunk(
         url: `/api/aliexpress/search/product/${name}`,
       });
       return data.data;
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.response);
     }
   }
@@ -47,7 +47,7 @@ export const searchAEProductByCategory = createAsyncThunk(
         url: `/api/aliexpress/search/category/${category}`,
       });
       return data.data;
-    } catch (error) {
+    } catch (error: any) {
       return rejectWithValue(error.response);
     }
   }

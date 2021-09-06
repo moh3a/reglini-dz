@@ -1,7 +1,8 @@
-import StoreNavigation from "./StoreNavigation";
+import StoreNavigation from "./nav/StoreNavigation";
 import Footer from "./Footer";
+import { ReactNode } from "react";
 
-export default function Layout({ children }: any) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
       <StoreNavigation />

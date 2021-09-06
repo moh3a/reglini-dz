@@ -1,20 +1,19 @@
+import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
-import { GetServerSideProps } from "next";
 import Head from "next/head";
-import mongoose from "mongoose";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getSession } from "next-auth/client";
+import { useSession } from "next-auth/client";
 
-import dbConnect from "../../config/db";
+import { IUser } from "../../types/userType";
 import Tabs from "../../components/layout/Tabs";
-
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";
 
-const Profile = ({ session }: any) => {
+const Profile = () => {
   const router = useRouter();
   const dispatch = useDispatch();
+  const [session, loading]: [IUser | null, boolean] = useSession();
   const { isAuthenticated, user, status } = useSelector(selectUser);
 
   useEffect(() => {
@@ -31,7 +30,7 @@ const Profile = ({ session }: any) => {
     <>
       <Head>
         <title>
-          {session && session.user.name
+          {session && session.user?.name
             ? `${session.user.name}'s profile | `
             : ``}
           reglini.dz
@@ -44,15 +43,11 @@ const Profile = ({ session }: any) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  if (!mongoose.connection.readyState) {
-    await dbConnect();
-  }
-  const { req, res } = context;
-  const session = await getSession({ req });
-
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
-    props: { session },
+    props: {
+      messages: require(`../../locales/${locale}.json`),
+    },
   };
 };
 

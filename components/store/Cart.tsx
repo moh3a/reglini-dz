@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
+import Link from "next/link";
 import { Dialog, Transition } from "@headlessui/react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,7 +17,9 @@ export default function Cart({ session }: any) {
       name: "",
       price: 0,
       imageUrl: "",
+      properties: {},
       quantity: 0,
+      shipping: "",
     },
   ]);
   const router = useRouter();
@@ -129,18 +132,17 @@ export default function Cart({ session }: any) {
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-800 dark:text-gray-100">
                         <p>Subtotal</p>
-                        <p>{user ? user.cart.subtotal : "0"} DZD</p>
+                        <p>€ {user ? user.cart.subtotal : "0"}</p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-800 dark:text-gray-100">
                         Shipping and taxes calculated at checkout.
                       </p>
                       <div className="mt-6">
-                        <a
-                          href="#"
-                          className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-800 hover:bg-green-900"
-                        >
-                          Checkout
-                        </a>
+                        <Link href="/order" passHref>
+                          <span className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium cursor-pointer text-white bg-green-800 hover:bg-green-900">
+                            Place Order
+                          </span>
+                        </Link>
                       </div>
                       <div className="mt-6 flex justify-center text-sm text-center text-gray-800 dark:text-gray-100">
                         <p>

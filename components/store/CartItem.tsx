@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useDispatch } from "react-redux";
 import {
   removeFromCart,
@@ -30,10 +31,26 @@ const CartItem = ({ item }: any) => {
         <div>
           <div className="flex justify-between text-base font-medium text-gray-800 dark:text-gray-100">
             <h3>
-              <a href={`/aliexpress/product/${item.productId}`}>{item.name}</a>
+              <Link href={`/aliexpress/product/${item.productId}`}>
+                {item.name}
+              </Link>
             </h3>
-            <p className="ml-4">${item.price}</p>
+            <p className="ml-4">€{item.price}</p>
           </div>
+        </div>
+        <div className="flex flex-wrap items-end justify-between text-xs  my-2">
+          {item.properties.map((property: any) => (
+            <div key={property.id} className="hover:underline">
+              {property.name} :
+              <span className="font-bold text-gray-500">
+                {" "}
+                {property.value.name}
+              </span>
+            </div>
+          ))}
+        </div>
+        <div className="text-xs text-gray-700 my-2">
+          Shipping carrier: <span className="font-bold">{item.shipping}</span>
         </div>
         <div className="flex-1 flex items-end justify-between text-sm">
           <p className="text-gray-600 dark:text-gray-200">

@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import Link from "next/link";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import {
@@ -121,9 +122,11 @@ export default function CategoryFilters() {
                   >
                     {subCategories.map((category) => (
                       <li key={category.name}>
-                        <a href={category.href} className="block px-2 py-3">
-                          {category.name}
-                        </a>
+                        <Link href={category.href} passHref>
+                          <span className="block px-2 py-3 cursor-pointer">
+                            {category.name}
+                          </span>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -223,18 +226,19 @@ export default function CategoryFilters() {
                       {sortOptions.map((option) => (
                         <Menu.Item key={option.name}>
                           {({ active }) => (
-                            <a
-                              href={option.href}
-                              className={classNames(
-                                option.current
-                                  ? "font-medium text-gray-900"
-                                  : "text-gray-500",
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm"
-                              )}
-                            >
-                              {option.name}
-                            </a>
+                            <Link href={option.href} passHref>
+                              <span
+                                className={classNames(
+                                  option.current
+                                    ? "font-medium text-gray-900"
+                                    : "text-gray-500",
+                                  active ? "bg-gray-100" : "",
+                                  "block px-4 py-2 text-sm cursor-pointer"
+                                )}
+                              >
+                                {option.name}
+                              </span>
+                            </Link>
                           )}
                         </Menu.Item>
                       ))}
@@ -276,7 +280,7 @@ export default function CategoryFilters() {
                 >
                   {subCategories.map((category) => (
                     <li key={category.name}>
-                      <a href={category.href}>{category.name}</a>
+                      <Link href={category.href}>{category.name}</Link>
                     </li>
                   ))}
                 </ul>

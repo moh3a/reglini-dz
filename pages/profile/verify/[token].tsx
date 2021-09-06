@@ -1,11 +1,12 @@
 import { GetServerSideProps } from "next";
+import { useRouter } from "next/router";
 import Head from "next/head";
-import { getSession } from "next-auth/client";
-
 import AccountVerification from "../../../components/account/AccountVerification";
 import Profile from "..";
 
-const AccountVerificationScreen = ({ session, token }: any) => {
+const AccountVerificationScreen = () => {
+  const router = useRouter();
+  const token: unknown = router.query;
   return (
     <>
       <Head>
@@ -16,19 +17,17 @@ const AccountVerificationScreen = ({ session, token }: any) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {token && <AccountVerification token={token} />}
-      <Profile session={session} />
+      {token && <AccountVerification token={token as string} />}
+      <Profile />
     </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { req, res, query } = context;
-  const session = await getSession({ req });
-  const token = query.token;
-
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
-    props: { session, token },
+    props: {
+      messages: require(`../../../locales/${locale}.json`),
+    },
   };
 };
 

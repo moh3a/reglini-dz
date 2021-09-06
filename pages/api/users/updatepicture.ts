@@ -4,8 +4,6 @@ import User from "../../../models/User";
 import { getSession } from "next-auth/client";
 import { IUser } from "../../../types/userType";
 
-import sendEmail from "../../../utils/sendEmail";
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -14,6 +12,7 @@ export default async function handler(
   const session: IUser | null = await getSession({ req });
 
   if (req.method === "POST") {
+    const { picture } = req.body;
     try {
       if (!session) {
         res.status(403).json({ message: "Unauthorized to access this part." });
@@ -24,7 +23,7 @@ export default async function handler(
         if (account === "oauth") {
           provider = session.user.provider;
         }
-        const data = await User.deleteOne({
+        const data = await User.findOne({
           account,
           email,
           provider: provider || undefined,
@@ -35,19 +34,11 @@ export default async function handler(
             success: false,
           });
         }
-        const message = `
-          <h1>Sorry to see you go.</h1>
-          <p>Your account have been successfully deleted.</p>
-          `;
-        await sendEmail({
-          from: process.env.SENDGRID_FROM,
-          to: email,
-          subject: "Account deleted",
-          text: message,
-        });
+        data.picture = picture;
+        await data.save();
         res.status(200).json({
           success: true,
-          message: "Account successfully deleted.",
+          message: "Profile picture successfully update.",
         });
       }
     } catch (error: any) {

@@ -8,30 +8,9 @@ import {
   updateQuantity,
   removeFromCart,
 } from "./userAsyncActions";
+import { IAuth } from "../../types/userType";
 
-interface IUser {
-  isAuthenticated: boolean;
-  user?: {
-    role: string;
-    _id: string;
-    account: string;
-    verified?: boolean;
-    name: string;
-    email: string;
-    wishlist: [];
-    cart: {
-      subtotal: number;
-      count: number;
-      _id: string;
-      cartItems: [];
-    };
-  };
-  status: "idle" | "loading" | "complete" | "failed";
-  error?: string;
-  message: string;
-}
-
-const initialState: IUser = {
+const initialState: IAuth = {
   isAuthenticated: false,
   user: undefined,
   status: "idle",
@@ -41,7 +20,7 @@ const initialState: IUser = {
 
 export const userSlice = createSlice({
   name: "user",
-  initialState, //getInitialState(),
+  initialState,
   reducers: {
     logout: (state) => {
       state.status = "idle";

@@ -1,27 +1,26 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GetServerSideProps } from "next";
-import mongoose from "mongoose";
+import { GetStaticProps } from "next";
 import Head from "next/head";
-import { getSession } from "next-auth/client";
+import { useSession } from "next-auth/client";
 
-import dbConnect from "../config/db";
-
+import { IUser } from "../types/userType";
 import { selectUser } from "../utils/redux/userSlice";
 import { getUser } from "../utils/redux/userAsyncActions";
 import SessionCTA from "../components/sections/SessionCTA";
 import AliexpressCTA from "../components/sections/AliexpressCTA";
 import AppCTA from "../components/sections/AppCTA";
 
-const HomeScreen = ({ session }: any) => {
+const HomeScreen = ({ messages }: any) => {
   const dispatch = useDispatch();
+  const [session, loading]: [IUser | null, boolean] = useSession();
   const { isAuthenticated, status } = useSelector(selectUser);
 
   useEffect(() => {
     if (!isAuthenticated && session && status !== "loading") {
-      const email = session.user.email;
-      const type = session.user.type;
-      const provider = session.user.provider || undefined;
+      const email = session.user?.email;
+      const type = session.user?.type;
+      const provider = session.user?.provider || undefined;
       dispatch(getUser({ email, account: type, provider }));
     }
   }, [session, dispatch, isAuthenticated, status]);
@@ -43,16 +42,9 @@ const HomeScreen = ({ session }: any) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  if (!mongoose.connection.readyState) {
-    await dbConnect();
-  }
-  const { req, res, locale } = context;
-  const session = await getSession({ req });
-
+export const getStaticProps: GetStaticProps = ({ locale }) => {
   return {
     props: {
-      session,
       messages: require(`../locales/${locale}.json`),
     },
   };

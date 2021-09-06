@@ -6,6 +6,7 @@ import ProductReviews from "./ProductReviews";
 import ProductProperty from "./ProductProperty";
 import ProductQuantity from "./ProductQuantity";
 import ProductPrice from "./ProductPrice";
+import ProductShipping from "./ProductShipping";
 import {
   ActionFeedback,
   ProductToWishlist,
@@ -16,14 +17,74 @@ import ProductFeatures from "./ProductFeatures";
 import { selectUser } from "../../utils/redux/userSlice";
 
 const ProductDetails = ({ product, session }: any) => {
+  const [properties, setProperties] = useState([{ name: "", value: "" }]);
+  const [variation, setVariation] = useState([{ name: "", value: "" }]);
   const [showImage, setShowImage] = useState("/placeholder.png");
   const [quantity, setQuantity] = useState(1);
   const [error, setError] = useState("");
+  const [selectedShipping, setSelectedShipping] = useState(
+    product.shipping.carriers[0]
+  );
   const { message } = useSelector(selectUser);
+
+  const [selectedVariation, setSelectedVariation] = useState<{
+    imageUrl: string;
+    price: {};
+    properties: any[];
+    sku: string;
+    thumbnailImageUrl: string;
+    quantity?: number;
+    stock?: number;
+  }>();
 
   useEffect(() => {
     setShowImage(product.productImages[0]);
   }, [product.productImages]);
+
+  useEffect(() => {
+    if (product.hasProperties && properties) {
+      let inverse = properties.slice().reverse();
+      let values = product.properties.map((prop: any) =>
+        inverse.find((property: any) => property.name === prop.name)
+      );
+      setVariation(values);
+    }
+  }, [product, properties]);
+
+  useEffect(() => {
+    if (product.hasVariations && variation) {
+      let theOne = {
+        imageUrl: "",
+        price: {},
+        properties: [{}],
+        sku: "",
+        thumbnailImageUrl: "",
+      };
+      product.variations.map((varia: any) => {
+        let checking: boolean[] = [];
+        varia.properties.map(() => checking.push(false));
+        varia.properties.map((prop: any, i: number = 0) => {
+          const index =
+            variation[0] === undefined
+              ? -2
+              : variation.findIndex((el) => el.value === prop.value.name);
+          if (
+            index !== -2 &&
+            index !== -1 &&
+            variation[index].name === prop.name &&
+            variation[index].value === prop.value.name
+          ) {
+            checking[i] = true;
+          } else {
+            checking[i] = false;
+          }
+          i++;
+        });
+        if (!checking.includes(false)) theOne = varia;
+      });
+      setSelectedVariation({ ...theOne, quantity });
+    }
+  }, [product, variation, quantity]);
 
   return (
     <>
@@ -54,6 +115,7 @@ const ProductDetails = ({ product, session }: any) => {
                       setShowImage={setShowImage}
                       property={property}
                       key={property.name}
+                      setProperties={setProperties}
                     />
                   );
                 })}
@@ -61,27 +123,25 @@ const ProductDetails = ({ product, session }: any) => {
                   product={product}
                   quantity={quantity}
                   setQuantity={setQuantity}
+                  selectedVariation={selectedVariation}
                 />
               </div>
-              <ProductPrice product={product} />
-              <div className="mt-4 text-center">
-                {product.shipping.isAvailableForSelectedCountries ? (
-                  <p className="text-green-500">
-                    THIS ITEM IS AVAILABLE FOR SHIPPING IN ALGERIA
-                  </p>
-                ) : (
-                  <p className="text-red-500">
-                    THIS ITEM IS NOT AVAILABLE FOR SHIPPING IN ALGERIA
-                  </p>
-                )}
-              </div>
+              <ProductPrice
+                product={product}
+                selectedVariation={selectedVariation}
+              />
+              <ProductShipping
+                product={product}
+                setSelectedShipping={setSelectedShipping}
+              />
               <div className="mt-4 flex">
                 <BuyProduct />
                 <ProductToCart
                   product={product}
                   session={session}
-                  quantity={quantity}
                   setError={setError}
+                  selectedVariation={selectedVariation}
+                  selectedShipping={selectedShipping}
                 />
                 <ProductToWishlist
                   product={product}

@@ -1,24 +1,23 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/client";
-const crypto = require("crypto");
 import dbConnect from "../../../../config/db";
 import User from "../../../../models/User";
 import SendEmail from "../../../../utils/sendEmail";
+import { IUser } from "../../../../types/userType";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   await dbConnect();
-  const session = await getSession({ req });
+  const session: IUser | null = await getSession({ req });
 
   if (req.method === "POST") {
     if (session && session.user) {
       const email = session.user.email;
-      const account = session.user.type;
       const user = await User.findOne({
         email,
-        account,
+        account: "credentials",
         verified: false,
       });
       if (!user)

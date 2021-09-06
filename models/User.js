@@ -19,10 +19,18 @@ const ItemSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    properties: {
+      type: [{}],
+      required: true,
+    },
     quantity: {
       type: Number,
       required: true,
       min: [1, "Quantity cannot be less than 1."],
+    },
+    shipping: {
+      type: String,
+      required: true,
     },
   },
   {
@@ -112,7 +120,7 @@ const UserSchema = new mongoose.Schema({
   },
   resetPasswordToken: String,
   resetPasswordExpire: Date,
-  picture: String,
+  picture: mongoose.Mixed,
   cart: {
     type: CartSchema,
     required: true,
