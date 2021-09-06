@@ -9,7 +9,7 @@ const ProductShipping = ({ product, setSelectedShipping }: any) => {
   }, [selected, setSelectedShipping]);
 
   return (
-    <div className="mt-4">
+    <div className="z-10 mt-4">
       {product.shipping.isAvailableForSelectedCountries ? (
         <>
           <p className="text-green-500">

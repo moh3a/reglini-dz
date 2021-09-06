@@ -120,7 +120,7 @@ const UserSchema = new mongoose.Schema({
   },
   resetPasswordToken: String,
   resetPasswordExpire: Date,
-  picture: String,
+  picture: mongoose.Mixed,
   cart: {
     type: CartSchema,
     required: true,

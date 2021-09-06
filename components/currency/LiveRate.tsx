@@ -72,7 +72,7 @@ const LiveRate = ({ currency }: any) => {
                       <div className="flex items-center text-green-500 text-sm">
                         <ArrowUpIcon className="h-3" />
                         <span>
-                          {current.live.rate.parallelpurchaserate} %{" "}
+                          {current.live.rate.parallelpurchaserate}{" "}
                           <span className="text-gray-400">
                             {" "}
                             {t("vsYesterday")}
@@ -83,7 +83,7 @@ const LiveRate = ({ currency }: any) => {
                       <div className="flex items-center text-red-500 text-sm">
                         <ArrowDownIcon className="h-3" />
                         <span>
-                          {current.live.rate.parallelpurchaserate} %{" "}
+                          {current.live.rate.parallelpurchaserate}{" "}
                           <span className="text-gray-400">
                             {" "}
                             {t("vsYesterday")}
@@ -154,7 +154,7 @@ const LiveRate = ({ currency }: any) => {
                       <div className="flex items-center text-green-500 text-sm">
                         <ArrowUpIcon className="h-3" />
                         <span>
-                          {current.live.rate.parallelsalerate} %{" "}
+                          {current.live.rate.parallelsalerate}{" "}
                           <span className="text-gray-400">
                             {" "}
                             {t("vsYesterday")}
@@ -165,7 +165,7 @@ const LiveRate = ({ currency }: any) => {
                       <div className="flex items-center text-red-500 text-sm">
                         <ArrowDownIcon className="h-3" />
                         <span>
-                          {current.live.rate.parallelsalerate} %{" "}
+                          {current.live.rate.parallelsalerate}{" "}
                           <span className="text-gray-400">
                             {" "}
                             {t("vsYesterday")}

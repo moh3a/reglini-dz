@@ -152,6 +152,7 @@ export default NextAuth({
   },
   jwt: {
     secret: process.env.JWT_SECRET,
+    signingKey: process.env.JWT_SIGNINKEY,
   },
   // A database is optional, but required to persist accounts in a database
   // database: process.env.MONGO_URI,

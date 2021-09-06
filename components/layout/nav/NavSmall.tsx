@@ -5,12 +5,13 @@ import Image from "next/image";
 import { Dialog, Tab, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import { navigation } from "../../../data/navigation";
+import ProfilePicture from "../../elements/ProfilePicture";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-const NavSmall = ({ open, setOpen, session }: any) => {
+const NavSmall = ({ open, setOpen, session, user }: any) => {
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
@@ -57,13 +58,7 @@ const NavSmall = ({ open, setOpen, session }: any) => {
                     <Link href="/profile" passHref>
                       <div className="max-w-xs p-2 rounded-full flex items-center text-sm focus:outline-none hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer">
                         <span className="sr-only">Open user menu</span>
-                        <Image
-                          className="h-10 w-10 rounded-full"
-                          src={session.user?.image || "/user-icon.png"}
-                          alt={session.user?.name || "user profile image"}
-                          height={30}
-                          width={30}
-                        />
+                        <ProfilePicture user={user} />
                         <span className="-m-2 p-2 ml-6 block font-medium text-gray-800 dark:text-gray-100 ">
                           {session.user?.name}
                         </span>
