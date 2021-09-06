@@ -9,10 +9,12 @@ const ProductProperty = ({ property, setShowImage, setProperties }: any) => {
   });
 
   useEffect(() => {
-    setProperties((properties: any) => [
-      ...properties,
-      { name: selectedProperty.name, value: selectedProperty.value },
-    ]);
+    if (setProperties) {
+      setProperties((properties: any) => [
+        ...properties,
+        { name: selectedProperty.name, value: selectedProperty.value },
+      ]);
+    }
   }, [setProperties, selectedProperty]);
 
   const selectHandler = (value: any) => {

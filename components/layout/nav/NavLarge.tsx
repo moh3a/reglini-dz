@@ -4,16 +4,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { Popover, Transition, Menu } from "@headlessui/react";
 import { MenuIcon, HeartIcon } from "@heroicons/react/outline";
+
 import { navigation } from "../../../data/navigation";
 import Logo from "../Logo";
 import Cart from "../../store/Cart";
 import Search from "../../Search";
+import ProfilePicture from "../../elements/ProfilePicture";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-const NavLarge = ({ open, setOpen, session }: any) => {
+const NavLarge = ({ setOpen, session, user }: any) => {
   return (
     <header className="relative bg-white dark:bg-grim">
       <nav
@@ -183,13 +185,7 @@ const NavLarge = ({ open, setOpen, session }: any) => {
                         <div>
                           <Menu.Button className="max-w-xs rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                             <span className="sr-only">Open user menu</span>
-                            <Image
-                              className="h-10 w-10 rounded-full"
-                              src={session.user?.image || "/user-icon.png"}
-                              alt={session.user?.name || "user profile image"}
-                              height={30}
-                              width={30}
-                            />
+                            <ProfilePicture user={user} />
                           </Menu.Button>
                         </div>
                         <Transition

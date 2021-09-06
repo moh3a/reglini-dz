@@ -1,9 +1,15 @@
 import { useState } from "react";
-import Image from "next/image";
 import axios from "axios";
+import { createAvatar } from "@dicebear/avatars";
+import * as style from "@dicebear/avatars-bottts-sprites";
+import parse from "html-react-parser";
+
+import { generateRandomString } from "../../utils/methods";
 import { DangerDialog, SuccessDialog } from "../elements/Dialog";
+import ProfilePicture from "../elements/ProfilePicture";
 
 export default function AccountDetails({ user }: any) {
+  const [generated, setGenerated] = useState("");
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
@@ -21,6 +27,33 @@ export default function AccountDetails({ user }: any) {
         setError("");
       }, 5000);
     }
+  };
+
+  const generateAvatar = () => {
+    let str = generateRandomString(6);
+    let svg = createAvatar(style, {
+      seed: str,
+    });
+    setGenerated(svg);
+  };
+
+  const saveAvatar = async (e: any) => {
+    e.preventDefault();
+    const { data } = await axios.post("/api/users/updatepicture", {
+      picture: generated,
+    });
+    if (data.success) {
+      setSuccess(data.message);
+      setTimeout(() => {
+        setSuccess("");
+      }, 5000);
+    } else {
+      setError(data.message);
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+    }
+    setGenerated("");
   };
 
   return (
@@ -42,17 +75,44 @@ export default function AccountDetails({ user }: any) {
               Profile picture
             </dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              <div className="py-2 cursor-pointer">
+              <div className="py-2 cursor-pointer hover:underline">
                 Upload a new profile picture
               </div>
+              <div className="w-full flex">
+                <div
+                  className="py-2 h-12 cursor-pointer hover:underline"
+                  onClick={generateAvatar}
+                >
+                  Generate new avatar
+                </div>
+                {generated && (
+                  <>
+                    <div className="mx-4 flex flex-col my-1">
+                      <button
+                        onClick={() => setGenerated("")}
+                        className="p-1 my-1 bg-gray-500 text-yellow-100 rounded-md"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        onClick={generateAvatar}
+                        className="p-1 my-1 bg-gray-500 text-yellow-100 rounded-md"
+                      >
+                        Change
+                      </button>
+                      <button
+                        className="p-1 my-1 bg-red-500 text-yellow-100 rounded-md"
+                        onClick={saveAvatar}
+                      >
+                        Save
+                      </button>
+                    </div>
+                    <div className="h-40 w-40">{parse(generated)}</div>
+                  </>
+                )}
+              </div>
               <div className="py-2">
-                <Image
-                  className="h-10 w-10 rounded-full"
-                  src={user.imageUrl || "/user-icon.png"}
-                  alt={user.name || "user profile image"}
-                  height={80}
-                  width={80}
-                />
+                {!generated && <ProfilePicture user={user} size="lg" />}
               </div>
             </dd>
           </div>

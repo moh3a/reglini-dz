@@ -1,16 +1,23 @@
 import User from "../models/User";
 import SendEmail from "./sendEmail";
+import { createAvatar } from "@dicebear/avatars";
+import * as style from "@dicebear/avatars-bottts-sprites";
 
 const CustomSignInCallbackMethod = async (user: any, account: any) => {
   if (account.id === "login-credentials") {
     return;
   } else if (account.id === "register-credentials") {
+    let svg = createAvatar(style, {
+      seed: user.name,
+    });
+
     const newuser = await User.create({
       account: account.type,
       verified: false,
       name: user.name,
       email: user.email,
       password: user.password,
+      picture: svg,
       cart: {},
       wishlist: [],
     });

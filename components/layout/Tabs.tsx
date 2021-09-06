@@ -3,6 +3,7 @@ import { Tab } from "@headlessui/react";
 import AccountDetails from "../account/AccountDetails";
 import Settings from "../account/Settings";
 import Orders from "../account/Orders";
+import ProfilePicture from "../elements/ProfilePicture";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -20,13 +21,7 @@ export default function Tabs({ user }: any) {
               return (
                 <Tab key={category} disabled className="w-full overflow-hidden">
                   <div className="flex justify-center items-center">
-                    <Image
-                      className="h-10 w-10 rounded-full"
-                      src={user.imageUrl || "/user-icon.png"}
-                      alt={user.name || "user profile image"}
-                      height={25}
-                      width={25}
-                    />
+                    <ProfilePicture user={user} />
                     <span className="ml-4 hidden md:inline">{user.name}</span>
                   </div>
                 </Tab>

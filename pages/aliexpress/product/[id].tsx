@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import Head from "next/head";
 import { getSession } from "next-auth/client";
 
@@ -28,6 +29,41 @@ const AliexpressProduct = ({ session }: any) => {
     if (!product && id) dispatch(getAEProductInfo({ id, locale }));
   }, [id, dispatch, product, locale]);
 
+  if (product && product.statusId !== "0") {
+    return (
+      <>
+        <Head>
+          <title>
+            {product.status === "inactive" && "Product Inactive"}
+            {product.status === "productNotFound" && "Product not Found"}
+            {product.status === "productNotAvailableForShipToCountry" &&
+              "Item cannot be shipped to Algeria"}
+            | AliExpress | reglini.dz
+          </title>
+          <meta
+            name="description"
+            content="We apologize. You can not proceed with this item. There may be a few reasons. It can be an item that no longer active on AliExpress, a product that is not found, or the issue that is more common, is that some items are illegal to enter algerian soils or the seller does not ship to the country."
+          />
+        </Head>
+        <section className="bg-red-50 dark:bg-red-900 text-gray-800 body-font overflow-hidden">
+          <div className="container px-5 py-24 mx-auto text-center text-4xl font-semibold">
+            {product.status === "inactive" &&
+              "The product you searched is no longer active.."}
+            {product.status === "productNotFound" &&
+              "Ooops... Product not found."}
+            {product.status === "productNotAvailableForShipToCountry" &&
+              "Ooops... This item is not available for shipping to Algeria."}
+            <Link href="/aliexpress" passHref>
+              <span className="text-gray-600 underline block text-base mt-4 hover:text-gray-500">
+                Continue shopping
+              </span>
+            </Link>
+          </div>
+        </section>
+      </>
+    );
+  }
+
   return (
     <>
       <Head>
@@ -45,7 +81,7 @@ const AliexpressProduct = ({ session }: any) => {
       {status === "loading" && (
         <Loading text="Fetching the data from Aliexpress..." />
       )}
-      {product && (
+      {product && product.status === "active" && (
         <>
           <ProductDetails product={product} session={session} />
         </>
