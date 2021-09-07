@@ -72,23 +72,23 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                   </div>
                   <div className="flow-root">
                     <Link href="/wishlist" passHref>
-                      <span className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800">
+                      <a className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800">
                         Your wishlist
-                      </span>
+                      </a>
                     </Link>
                   </div>
                   <div className="flow-root">
                     <Link href="/orders" passHref>
-                      <span className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800">
+                      <a className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800">
                         {t("orders")}
-                      </span>
+                      </a>
                     </Link>
                   </div>
                   <div className="flow-root">
                     <Link href="/settings" passHref>
-                      <span className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800">
+                      <a className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800">
                         Settings
-                      </span>
+                      </a>
                     </Link>
                   </div>
                   <div className="flow-root">
@@ -104,16 +104,16 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                 <>
                   <div className="flow-root">
                     <Link href="/login" passHref>
-                      <span className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100 cursor-pointer">
+                      <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
                         {t("signIn")}
-                      </span>
+                      </a>
                     </Link>
                   </div>
                   <div className="flow-root">
                     <Link href="/register" passHref>
-                      <span className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100 cursor-pointer">
+                      <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
                         {t("register")}
-                      </span>
+                      </a>
                     </Link>
                   </div>
                 </>
@@ -161,11 +161,13 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                             />
                           </div>
                           <Link href={item.href} passHref>
-                            <span
-                              className="mt-6 block font-medium text-gray-800 dark:text-gray-100 absolute z-0 inset-0 cursor-pointer"
-                              aria-hidden="true"
-                            />
-                            {item.name}
+                            <a>
+                              <span
+                                className="mt-6 block font-medium text-gray-800 dark:text-gray-100 absolute z-0 inset-0 cursor-pointer"
+                                aria-hidden="true"
+                              />
+                              {item.name}
+                            </a>
                           </Link>
                           <p
                             aria-hidden="true"
@@ -192,9 +194,9 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                           {section.items.map((item: any) => (
                             <li key={item.name} className="flow-root">
                               <Link href={item.href} passHref>
-                                <span className="-m-2 p-2 block text-gray-800 dark:text-gray-100">
+                                <a className="-m-2 p-2 block text-gray-800 dark:text-gray-100">
                                   {item.name}
-                                </span>
+                                </a>
                               </Link>
                             </li>
                           ))}
@@ -210,9 +212,9 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
               {navigation.en.pages.map((page: any) => (
                 <div key={page.name} className="flow-root">
                   <Link href={page.href} passHref>
-                    <span className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
+                    <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
                       {page.name}
-                    </span>
+                    </a>
                   </Link>
                 </div>
               ))}

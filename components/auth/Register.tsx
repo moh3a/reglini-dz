@@ -48,12 +48,12 @@ const Register = ({ csrfToken }: any) => {
       <p className="mt-8 text-center">
         Already have an account?{" "}
         <Link href="/login" passHref>
-          <span
-            className="font-semibold text-gray-800 dark:text-gray-100 hover:text-black cursor-pointer"
+          <a
+            className="font-semibold text-gray-800 dark:text-gray-100 hover:text-black"
             tabIndex={6}
           >
             Sign In
-          </span>
+          </a>
         </Link>
       </p>
     </>

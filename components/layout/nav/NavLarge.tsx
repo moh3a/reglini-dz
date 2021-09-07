@@ -41,10 +41,10 @@ const NavLarge = ({ setOpen, session, user }: any) => {
             {/* Logo */}
             <div className="ml-4 flex lg:ml-0">
               <Link href="/" passHref>
-                <span>
+                <a>
                   <span className="sr-only">reglini.dz</span>
                   <Logo width="50" height="50" />
-                </span>
+                </a>
               </Link>
             </div>
 
@@ -104,7 +104,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                           </div>
                                         </div>
                                         <Link href={item.href} passHref>
-                                          <>
+                                          <a>
                                             <span
                                               className=" absolute z-0 inset-0 cursor-pointer"
                                               aria-hidden="true"
@@ -112,7 +112,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                             <span className="mt-6 block font-medium text-gray-800 dark:text-gray-100">
                                               {item.name}
                                             </span>
-                                          </>
+                                          </a>
                                         </Link>
                                         <p
                                           aria-hidden="true"
@@ -143,9 +143,9 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                               className="flex"
                                             >
                                               <Link href={item.href} passHref>
-                                                <span className="text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400 cursor-pointer">
+                                                <a className="text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
                                                   {item.name}
-                                                </span>
+                                                </a>
                                               </Link>
                                             </li>
                                           ))}
@@ -165,9 +165,9 @@ const NavLarge = ({ setOpen, session, user }: any) => {
 
                 {navigation.en.pages.map((page: any) => (
                   <Link key={page.name} href={page.href} passHref>
-                    <span className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400 cursor-pointer">
+                    <a className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
                       {page.name}
-                    </span>
+                    </a>
                   </Link>
                 ))}
               </div>
@@ -203,73 +203,81 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                           <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-100 dark:bg-grim ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <Menu.Item>
                               {({ active }) => (
-                                <p
-                                  className={classNames(
-                                    active
-                                      ? "bg-gray-200 dark:bg-gray-800"
-                                      : "",
-                                    "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
-                                  )}
-                                >
-                                  <Link href="/profile">{t("profile")}</Link>
-                                </p>
+                                <Link href="/profile">
+                                  <a
+                                    className={classNames(
+                                      active
+                                        ? "bg-gray-200 dark:bg-gray-800"
+                                        : "",
+                                      "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-300"
+                                    )}
+                                  >
+                                    {t("profile")}
+                                  </a>
+                                </Link>
                               )}
                             </Menu.Item>
                             <Menu.Item>
                               {({ active }) => (
-                                <p
-                                  className={classNames(
-                                    active
-                                      ? "bg-gray-200 dark:bg-gray-800"
-                                      : "",
-                                    "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
-                                  )}
-                                >
-                                  <Link href="/wishlist">{t("wishlist")}</Link>
-                                </p>
+                                <Link href="/wishlist">
+                                  <a
+                                    className={classNames(
+                                      active
+                                        ? "bg-gray-200 dark:bg-gray-800"
+                                        : "",
+                                      "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-300"
+                                    )}
+                                  >
+                                    {t("wishlist")}
+                                  </a>
+                                </Link>
                               )}
                             </Menu.Item>
                             <Menu.Item>
                               {({ active }) => (
-                                <p
-                                  className={classNames(
-                                    active
-                                      ? "bg-gray-200 dark:bg-gray-800"
-                                      : "",
-                                    "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
-                                  )}
-                                >
-                                  <Link href="/orders">{t("orders")}</Link>
-                                </p>
+                                <Link href="/orders">
+                                  <a
+                                    className={classNames(
+                                      active
+                                        ? "bg-gray-200 dark:bg-gray-800"
+                                        : "",
+                                      "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-300"
+                                    )}
+                                  >
+                                    {t("orders")}
+                                  </a>
+                                </Link>
                               )}
                             </Menu.Item>
                             <Menu.Item>
                               {({ active }) => (
-                                <p
-                                  className={classNames(
-                                    active
-                                      ? "bg-gray-200 dark:bg-gray-800"
-                                      : "",
-                                    "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
-                                  )}
-                                >
-                                  <Link href="/settings">{t("settings")}</Link>
-                                </p>
+                                <Link href="/settings">
+                                  <a
+                                    className={classNames(
+                                      active
+                                        ? "bg-gray-200 dark:bg-gray-800"
+                                        : "",
+                                      "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-300"
+                                    )}
+                                  >
+                                    {t("settings")}
+                                  </a>
+                                </Link>
                               )}
                             </Menu.Item>
                             <Menu.Item>
                               {({ active }) => (
-                                <p
+                                <a
                                   onClick={() => signOut()}
                                   className={classNames(
                                     active
                                       ? "bg-gray-200 dark:bg-gray-800"
                                       : "",
-                                    "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 cursor-pointer"
+                                    "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-300"
                                   )}
                                 >
                                   {t("signOut")}
-                                </p>
+                                </a>
                               )}
                             </Menu.Item>
                           </Menu.Items>
@@ -280,15 +288,15 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                 ) : (
                   <>
                     <Link href="/login" passHref>
-                      <span className="text-sm font-medium text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400 cursor-pointer">
+                      <a className="text-sm font-medium text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400 ">
                         {t("signIn")}
-                      </span>
+                      </a>
                     </Link>
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                     <Link href="/register" passHref>
-                      <span className="text-sm font-medium text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400 cursor-pointer">
+                      <a className="text-sm font-medium text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400 ">
                         {t("register")}
-                      </span>
+                      </a>
                     </Link>
                   </>
                 )}
@@ -300,10 +308,10 @@ const NavLarge = ({ setOpen, session, user }: any) => {
               {/* Wishlist */}
               <div className="flex lg:ml-4">
                 <Link href="/wishlist" passHref>
-                  <span className="p-2 text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400 cursor-pointer">
+                  <a className="p-2 text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400">
                     <span className="sr-only">Wishist</span>
                     <HeartIcon className="w-6 h-6" aria-hidden="true" />
-                  </span>
+                  </a>
                 </Link>
               </div>
 

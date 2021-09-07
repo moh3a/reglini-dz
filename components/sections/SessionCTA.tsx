@@ -39,16 +39,16 @@ const SessionCTA = ({ session }: any) => {
                 className="max-w-sm bg-white rounded-lg dark:bg-gray-800"
                 onClick={() => signOut()}
               >
-                <span className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 cursor-pointer">
+                <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700">
                   {t("signOut")}
-                </span>
+                </a>
               </div>
             ) : (
               <div className="max-w-sm bg-white rounded-lg dark:bg-gray-800">
                 <Link href="/login" passHref>
-                  <span className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 cursor-pointer">
+                  <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700">
                     {t("signIn")}
-                  </span>
+                  </a>
                 </Link>
               </div>
             )}

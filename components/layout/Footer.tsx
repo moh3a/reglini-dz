@@ -72,19 +72,19 @@ const Footer = () => {
                   {t("info")}
                 </h3>
                 <Link href="/support" passHref>
-                  <span className="block cursor-pointer mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
+                  <a className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
                     {t("support")}
-                  </span>
+                  </a>
                 </Link>
                 <Link href="/pp" passHref>
-                  <span className="block cursor-pointer mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
+                  <a className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
                     {t("pp")}
-                  </span>
+                  </a>
                 </Link>
                 <Link href="/tos" passHref>
-                  <span className="block cursor-pointer mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
+                  <a className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
                     {t("tos")}
-                  </span>
+                  </a>
                 </Link>
               </div>
 

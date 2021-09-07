@@ -32,7 +32,7 @@ const CartItem = ({ item }: any) => {
           <div className="flex justify-between text-base font-medium text-gray-800 dark:text-gray-100">
             <h3>
               <Link href={`/aliexpress/product/${item.productId}`}>
-                {item.name}
+                <a target="_blank">{item.name}</a>
               </Link>
             </h3>
             <p className="ml-4">€{item.price}</p>

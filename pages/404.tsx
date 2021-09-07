@@ -24,14 +24,14 @@ const Custom404 = () => {
           You might have the wrong address, or the page may have moved.
         </p>
         <Link href="/" passHref>
-          <span className="block w-full mb-2 sm:w-auto sm:mb-0 text-gray-800 dark:text-gray-100 cursor-pointer">
+          <a className="block w-full mb-2 sm:w-auto sm:mb-0 text-gray-800 dark:text-gray-100 cursor-pointer">
             Back to homepage
-          </span>
+          </a>
         </Link>
         <Link href="/support" passHref>
-          <span className="block w-full mb-2 sm:w-auto sm:mb-0 text-gray-800 dark:text-gray-100 cursor-pointer">
+          <a className="block w-full mb-2 sm:w-auto sm:mb-0 text-gray-800 dark:text-gray-100 cursor-pointer">
             Contact us
-          </span>
+          </a>
         </Link>
       </section>
     </>

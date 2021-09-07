@@ -81,9 +81,9 @@ const Contact = () => {
       <p className="my-4 text-base text-center md:text-lg">
         {t("haveAQuestion")}{" "}
         <Link href="/faq" passHref>
-          <span className="cursor-pointer underline text-gray-700 dark:text-gray-400">
+          <a className="underline text-gray-700 dark:text-gray-400">
             {t("checkFaq")}
-          </span>
+          </a>
         </Link>
       </p>
 

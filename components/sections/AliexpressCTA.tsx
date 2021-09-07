@@ -25,9 +25,9 @@ export default function AliexpressCTA() {
         <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
           <div className="inline-flex rounded-md shadow">
             <Link href="/aliexpress" passHref>
-              <span className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-400 hover:bg-red-300 cursor-pointer">
+              <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-400 hover:bg-red-300">
                 {t("getStarted")}
-              </span>
+              </a>
             </Link>
           </div>
         </div>
