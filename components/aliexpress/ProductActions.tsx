@@ -7,7 +7,9 @@ import { addToWishlist, addToCart } from "../../utils/redux/userAsyncActions";
 export const ToDetails = ({ id }: { id: string }) => {
   return (
     <button className="flex ml-auto text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded">
-      <Link href={`/aliexpress/product/${id}`}>View prodduct details</Link>
+      <Link href={`/aliexpress/product/${id}`}>
+        <a>View prodduct details</a>
+      </Link>
     </button>
   );
 };

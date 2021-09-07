@@ -123,9 +123,9 @@ export default function CategoryFilters() {
                     {subCategories.map((category) => (
                       <li key={category.name}>
                         <Link href={category.href} passHref>
-                          <span className="block px-2 py-3 cursor-pointer">
+                          <a className="block px-2 py-3 cursor-pointer">
                             {category.name}
-                          </span>
+                          </a>
                         </Link>
                       </li>
                     ))}
@@ -227,7 +227,7 @@ export default function CategoryFilters() {
                         <Menu.Item key={option.name}>
                           {({ active }) => (
                             <Link href={option.href} passHref>
-                              <span
+                              <a
                                 className={classNames(
                                   option.current
                                     ? "font-medium text-gray-900"
@@ -237,7 +237,7 @@ export default function CategoryFilters() {
                                 )}
                               >
                                 {option.name}
-                              </span>
+                              </a>
                             </Link>
                           )}
                         </Menu.Item>

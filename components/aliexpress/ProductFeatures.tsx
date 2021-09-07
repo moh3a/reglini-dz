@@ -34,10 +34,8 @@ export default function ProductFeatures({ product }: any) {
             {product.sellerDetails.summary.country}
           </p>
           <Link href={product.sellerDetails.sellerDetailsUrl} passHref>
-            <a target="_blank">
-              <span className="text-gray-500 cursor-pointer">
-                {product.sellerDetails.sellerDetailsUrl}
-              </span>
+            <a target="_blank" className="text-gray-500">
+              {product.sellerDetails.sellerDetailsUrl}
             </a>
           </Link>
           <h2 className="text-3xl my-10 font-extrabold tracking-tight text-gray-900 sm:text-4xl">

@@ -31,9 +31,9 @@ export default function Settings() {
                   </div>
                   <div className="ml-4 flex-shrink-0">
                     <Link href="/profile/delete" passHref>
-                      <span className="font-medium text-red-600 hover:text-red-500 cursor-pointer">
+                      <a className="font-medium text-red-600 hover:text-red-500">
                         DELETE
-                      </span>
+                      </a>
                     </Link>
                   </div>
                 </li>

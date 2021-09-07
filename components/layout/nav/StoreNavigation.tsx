@@ -31,10 +31,10 @@ export default function StoreNavigation() {
       {loading ? (
         <div className="pb-4 bg-white dark:bg-grim w-full z-0 flex justify-center">
           <Link href="/" passHref>
-            <>
+            <a>
               <span className="sr-only">reglini.dz</span>
               <Logo width="50" height="50" />
-            </>
+            </a>
           </Link>
         </div>
       ) : (
