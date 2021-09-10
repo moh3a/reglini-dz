@@ -121,6 +121,7 @@ const UserSchema = new mongoose.Schema({
   resetPasswordToken: String,
   resetPasswordExpire: Date,
   picture: mongoose.Mixed,
+  address: String,
   cart: {
     type: CartSchema,
     required: true,

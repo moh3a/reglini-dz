@@ -6,7 +6,7 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
 } from "@heroicons/react/outline";
-import { convertTime } from "../../utils/convertTime";
+import { convertTime } from "../../utils/methods";
 
 const LiveRate = ({ currency }: any) => {
   const t = useTranslations("Currency.liveRate");
