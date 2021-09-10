@@ -1,0 +1,12 @@
+{
+  "id": 5,
+  "name": "Batna",
+  "postalCode": "05000",
+  "towns": [
+    {
+      "name": "Batna",
+      "postalCode": "05000",
+      "otherPosts": []
+    }
+  ]
+}
