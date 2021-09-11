@@ -60,7 +60,7 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
               {session ? (
                 <>
                   <div className="flow-root">
-                    <Link href="/profile" passHref>
+                    <Link href="/account" passHref>
                       <div className="max-w-xs p-2 rounded-full flex items-center text-sm focus:outline-none hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer">
                         <span className="sr-only">Open user menu</span>
                         <ProfilePicture user={user} />
@@ -71,21 +71,21 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                     </Link>
                   </div>
                   <div className="flow-root">
-                    <Link href="/wishlist" passHref>
+                    <Link href="/account/wishlist" passHref>
                       <a className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800">
                         Your wishlist
                       </a>
                     </Link>
                   </div>
                   <div className="flow-root">
-                    <Link href="/orders" passHref>
+                    <Link href="/account/orders" passHref>
                       <a className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800">
                         {t("orders")}
                       </a>
                     </Link>
                   </div>
                   <div className="flow-root">
-                    <Link href="/settings" passHref>
+                    <Link href="/account/settings" passHref>
                       <a className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800">
                         Settings
                       </a>

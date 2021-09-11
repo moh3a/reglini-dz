@@ -2,7 +2,7 @@ import dbConnect from "../../../config/db";
 import { getSession } from "next-auth/client";
 import type { NextApiRequest, NextApiResponse } from "next";
 import User from "../../../models/User";
-import { IUser } from "../../../types/userType";
+import { IUser } from "../../../utils/types";
 
 export default async function handler(
   req: NextApiRequest,

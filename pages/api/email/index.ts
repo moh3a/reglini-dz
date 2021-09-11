@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/client";
 import SendEmail from "../../../utils/sendEmail";
-import { IUser } from "../../../types/userType";
+import { IUser } from "../../../utils/types";
 
 export default async function handler(
   req: NextApiRequest,

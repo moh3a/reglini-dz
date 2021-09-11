@@ -203,7 +203,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                           <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-100 dark:bg-grim ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <Menu.Item>
                               {({ active }) => (
-                                <Link href="/profile">
+                                <Link href="/account">
                                   <a
                                     className={classNames(
                                       active
@@ -219,7 +219,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                             </Menu.Item>
                             <Menu.Item>
                               {({ active }) => (
-                                <Link href="/wishlist">
+                                <Link href="/account/wishlist">
                                   <a
                                     className={classNames(
                                       active
@@ -235,7 +235,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                             </Menu.Item>
                             <Menu.Item>
                               {({ active }) => (
-                                <Link href="/orders">
+                                <Link href="/account/orders">
                                   <a
                                     className={classNames(
                                       active
@@ -251,7 +251,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                             </Menu.Item>
                             <Menu.Item>
                               {({ active }) => (
-                                <Link href="/settings">
+                                <Link href="/account/settings">
                                   <a
                                     className={classNames(
                                       active
@@ -307,7 +307,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
 
               {/* Wishlist */}
               <div className="flex lg:ml-4">
-                <Link href="/wishlist" passHref>
+                <Link href="/account/wishlist" passHref>
                   <a className="p-2 text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400">
                     <span className="sr-only">Wishist</span>
                     <HeartIcon className="w-6 h-6" aria-hidden="true" />

@@ -6,7 +6,7 @@ import { useSession } from "next-auth/client";
 import Logo from "../Logo";
 import NavSmall from "./NavSmall";
 import NavLarge from "./NavLarge";
-import { IUser } from "../../../types/userType";
+import { IUser } from "../../../utils/types";
 import { selectUser } from "../../../utils/redux/userSlice";
 import { getUser } from "../../../utils/redux/userAsyncActions";
 

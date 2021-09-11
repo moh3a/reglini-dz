@@ -3,6 +3,7 @@ import { providers, getSession, csrfToken } from "next-auth/client";
 import { useEffect, useState } from "react";
 import RegisterScreen from ".";
 import Banner from "../../components/Banner";
+import { LoginErrorMessages } from "../../data/LoginMessages";
 
 const RegisterError = ({ csrfToken, providers }: any) => {
   const router = useRouter();
@@ -10,14 +11,12 @@ const RegisterError = ({ csrfToken, providers }: any) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (message === "username_taken") {
-      setError("The username you entered is already taken.");
-    } else if (message === "email_exists") {
-      setError("An account already exists with this email address.");
-    } else {
-      router.push("/login");
-    }
-  }, [message, router]);
+    LoginErrorMessages.map((msg) => {
+      if (message === msg.name) {
+        setError(msg.text);
+      }
+    });
+  }, [message]);
 
   return (
     <>
