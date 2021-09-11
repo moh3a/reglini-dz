@@ -3,7 +3,7 @@ import { getSession } from "next-auth/client";
 import dbConnect from "../../../../config/db";
 import User from "../../../../models/User";
 import SendEmail from "../../../../utils/sendEmail";
-import { IUser } from "../../../../types/userType";
+import { IUser } from "../../../../utils/types";
 
 export default async function handler(
   req: NextApiRequest,

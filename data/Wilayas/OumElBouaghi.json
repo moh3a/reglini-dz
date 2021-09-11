@@ -2,112 +2,205 @@
   "id": 4,
   "name": "Oum el Bouaghi",
   "postalCode": "04000",
-  "towns": [
+  "dairas": [
     {
-      "name": "Oum el Bouaghi",
-      "postalCode": "04000",
-      "otherPosts": [
-        { "name": "Oum el Bouaghi H Boumediene", "postalCode": "04003" },
-        { "name": "Oum el Bouaghi An Nasr", "postalCode": "04009" },
-        { "name": "Oum el Bouaghi Air", "postalCode": "04049" },
-        { "name": "Oum el Bouaghi 18 Fevrier", "postalCode": "04050" },
-        { "name": "Oum el Bouaghi Ben Boulaid", "postalCode": "04054" },
-        { "name": "Oum el Bouaghi Terre", "postalCode": "04055" },
-        { "name": "Oum el Bouaghi Universite", "postalCode": "04056" }
+      "name": "Ain Babouche",
+      "communes": [
+        { "name": "Ain Babouche", "codeONS": "0408", "postalCode": "04020" },
+        {
+          "name": "Bir Amar (Ain Diss)",
+          "codeONS": "0415",
+          "postalCode": "04025"
+        }
       ]
     },
     {
-      "name": "Ain Beida",
-      "postalCode": "04001",
-      "otherPosts": [
-        { "name": "Ain Beida Laazabi", "postalCode": "04007" },
-        { "name": "Ain Beida 1er Novembre", "postalCode": "04048" },
-        { "name": "Ain Beida Saidi Djemoi", "postalCode": "04057" },
-        { "name": "Ain Beida 20 Aout", "postalCode": "04062" },
-        { "name": "Ain Beida El Kahina", "postalCode": "04065" }
+      "name": "Aïn Beïda",
+      "communes": [
+        {
+          "name": "Ain Beida",
+          "postalCode": "04001",
+          "otherPosts": [
+            { "name": "Ain Beida Laazabi", "postalCode": "04007" },
+            { "name": "Ain Beida 1er Novembre", "postalCode": "04048" },
+            { "name": "Ain Beida Saidi Djemoi", "postalCode": "04057" },
+            { "name": "Ain Beida 20 Aout", "postalCode": "04062" },
+            { "name": "Ain Beida El Kahina", "postalCode": "04065" }
+          ]
+        },
+        {
+          "name": "Berriche",
+          "postalCode": "04022",
+          "otherPosts": [
+            { "name": "Berriche Cite Boudiaf", "postalCode": "04015" }
+          ]
+        },
+        { "name": "Ain Ferhat (Zorg)", "postalCode": "04024" },
+        { "name": "Bir Rogaa", "postalCode": "04027" },
+        { "name": "Bir Ounes", "postalCode": "04046" },
+        { "name": "Ain Benayad", "postalCode": "04051" }
       ]
     },
     {
-      "name": "Ain M'lila",
-      "postalCode": "04002",
-      "otherPosts": [
-        { "name": "Ain M'lila Gouadjlia", "postalCode": "04014" },
-        { "name": "Ain M'lila Ben M'hidi", "postalCode": "04017" },
-        { "name": "Ain M'lila Darak", "postalCode": "04059" },
-        { "name": "Ain M'lila 5 Juillet", "postalCode": "04061" }
+      "name": "Aïn Fakroun",
+      "communes": [
+        {
+          "name": "Ain Fakroun",
+          "codeONS": "0425",
+          "postalCode": "04005",
+          "otherPosts": [
+            { "name": "Air Fakroun Satha", "postalCode": "04016" },
+            { "name": "Ain Fakroune Bekkouche Aissa", "postalCode": "04064" },
+            { "name": "Ain Fakroun Afak 2", "postalCode": "04068" }
+          ]
+        },
+        { "name": "Touzeline", "postalCode": "04028" },
+        {
+          "name": "Bougherara Fedjoudj",
+          "codeONS": "0419",
+          "postalCode": "04042"
+        }
+      ]
+    },
+    {
+      "name": "Aïn Kercha",
+      "communes": [
+        {
+          "name": "Ain Kercha",
+          "codeONS": "0412",
+          "postalCode": "04006",
+          "otherPosts": [
+            { "name": "Ain Kercha Essalam", "postalCode": "04063" }
+          ]
+        },
+        { "name": "El Harmelia", "codeONS": "0429", "postalCode": "04032" },
+        {
+          "name": "Hanchir Toumghani",
+          "codeONS": "0413",
+          "postalCode": "04012"
+        },
+        { "name": "Garaa Saida", "postalCode": "04052" }
+      ]
+    },
+    {
+      "name": "Aïn M'lila",
+      "communes": [
+        {
+          "name": "Ain M'lila",
+          "codeONS": "0403",
+          "postalCode": "04002",
+          "otherPosts": [
+            { "name": "Ain M'lila Gouadjlia", "postalCode": "04014" },
+            { "name": "Ain M'lila Ben M'hidi", "postalCode": "04017" },
+            { "name": "Ain M'lila Darak", "postalCode": "04059" },
+            { "name": "Ain M'lila 5 Juillet", "postalCode": "04061" }
+          ]
+        },
+        { "name": "Ouled Gacem", "codeONS": "0428", "postalCode": "04041" },
+        { "name": "Ouled Hamla", "codeONS": "0410", "postalCode": "04019" },
+        { "name": "Soualhia", "postalCode": "04033" }
+      ]
+    },
+    {
+      "name": "Dhalaa",
+      "communes": [
+        { "name": "Dhalaa", "codeONS": "0411", "postalCode": "04008" },
+        { "name": "El Djazia", "codeONS": "0414", "postalCode": "04040" }
+      ]
+    },
+    {
+      "name": "Fkirina",
+      "communes": [
+        { "name": "F'kirina", "codeONS": "0416", "postalCode": "04013" },
+        { "name": "Henchir Laatache (Fkirina)", "postalCode": "04039" },
+        {
+          "name": "Henchir Douames (Oued Nini)",
+          "codeONS": "0423",
+          "postalCode": "04047"
+        }
+      ]
+    },
+    {
+      "name": "Ksar Sbahi",
+      "communes": [
+        { "name": "Ksar Sbahi", "codeONS": "0422", "postalCode": "04018" }
       ]
     },
     {
       "name": "Meskiana",
-      "postalCode": "04004",
-      "otherPosts": [
-        { "name": "Meskiana Belfetni Daoudi", "postalCode": "04058" }
+      "communes": [
+        {
+          "name": "Meskiana",
+          "codeONS": "0424",
+          "postalCode": "04004",
+          "otherPosts": [
+            { "name": "Meskiana Belfetni Daoudi", "postalCode": "04058" }
+          ]
+        },
+        { "name": "Behir Chergui", "codeONS": "0404", "postalCode": "04026" },
+        { "name": "El Bellala", "codeONS": "0407", "postalCode": "04044" },
+        { "name": "Rahia", "codeONS": "0426", "postalCode": "04045" }
       ]
     },
     {
-      "name": "Ain Fakroun",
-      "postalCode": "04005",
-      "otherPosts": [
-        { "name": "Air Fakroun Satha", "postalCode": "04016" },
-        { "name": "Ain Fakroune Bekkouche Aissa", "postalCode": "04064" },
-        { "name": "Ain Fakroun Afak 2", "postalCode": "04068" }
-      ]
-    },
-    {
-      "name": "Ain Kercha",
-      "postalCode": "04006",
-      "otherPosts": [{ "name": "Ain Kercha Essalam", "postalCode": "04063" }]
-    },
-    { "name": "Dhalaa", "postalCode": "04008" },
-    {
-      "name": "Souk Naamane",
-      "postalCode": "04010",
-      "otherPosts": [
-        { "name": "Souk Naamane Houari Boumediene", "postalCode": "04067" }
+      "name": "Oum el Bouaghi",
+      "communes": [
+        {
+          "name": "Oum el Bouaghi",
+          "codeONS": "0401",
+          "postalCode": "04000",
+          "otherPosts": [
+            { "name": "Oum el Bouaghi H Boumediene", "postalCode": "04003" },
+            { "name": "Oum el Bouaghi An Nasr", "postalCode": "04009" },
+            { "name": "Oum el Bouaghi Air", "postalCode": "04049" },
+            { "name": "Oum el Bouaghi 18 Fevrier", "postalCode": "04050" },
+            { "name": "Oum el Bouaghi Ben Boulaid", "postalCode": "04054" },
+            { "name": "Oum el Bouaghi Terre", "postalCode": "04055" },
+            { "name": "Oum el Bouaghi Universite", "postalCode": "04056" }
+          ]
+        },
+        { "name": "Ain Zitoun", "codeONS": "0427", "postalCode": "04023" },
+        { "name": "Sidi R'ghiss M'zi", "postalCode": "04029" },
+        { "name": "Bir Khechba", "postalCode": "04030" }
       ]
     },
     {
       "name": "Sigus",
-      "postalCode": "04011",
-      "otherPosts": [{ "name": "Sigus 20 Aout 1955", "postalCode": "04066" }]
+      "communes": [
+        {
+          "name": "Sigus",
+          "codeONS": "0406",
+          "postalCode": "04011",
+          "otherPosts": [
+            { "name": "Sigus 20 Aout 1955", "postalCode": "04066" }
+          ]
+        },
+        { "name": "Bir Tandja", "postalCode": "04034" },
+        { "name": "Taxas", "postalCode": "04035" },
+        {
+          "name": "Ouled Naceur (El Amiria)",
+          "codeONS": "0405",
+          "postalCode": "04038",
+          "otherPosts": [{ "name": "El Amiria El Amel", "postalCode": "04060" }]
+        },
+        { "name": "Ain el Bordj", "postalCode": "04043" },
+        { "name": "Sila", "postalCode": "04053" }
+      ]
     },
-    { "name": "Henchir Toumghani", "postalCode": "04012" },
-    { "name": "F'kirina", "postalCode": "04013" },
     {
-      "name": "Berriche",
-      "postalCode": "04022",
-      "otherPosts": [{ "name": "Berriche Cite Boudiaf", "postalCode": "04015" }]
-    },
-    { "name": "Ksar Sbahi", "postalCode": "04018" },
-    { "name": "Ouled Hamla", "postalCode": "04019" },
-    { "name": "Ain Babouche", "postalCode": "04020" },
-    { "name": "Bir Chouhada", "postalCode": "04021" },
-    { "name": "Ain Zitoun", "postalCode": "04023" },
-    { "name": "Ain Ferhat", "postalCode": "04024" },
-    { "name": "Bin Amar", "postalCode": "04025" },
-    { "name": "Behair Chergui", "postalCode": "04026" },
-    { "name": "Bir Rogaa", "postalCode": "04027" },
-    { "name": "Touzeline", "postalCode": "04028" },
-    { "name": "Sidi R'ghiss M'zi", "postalCode": "04029" },
-    { "name": "Bir Khechba", "postalCode": "04030" },
-    { "name": "Harmelia", "postalCode": "04032" },
-    { "name": "Soualhia", "postalCode": "04033" },
-    { "name": "Bir Tandja", "postalCode": "04034" },
-    { "name": "Taxas", "postalCode": "04035" },
-    { "name": "Ouled Zaid", "postalCode": "04037" },
-    { "name": "Ouled Naceur", "postalCode": "04038" },
-    { "name": "Henchir Laatache", "postalCode": "04039" },
-    { "name": "El Djazia", "postalCode": "04040" },
-    { "name": "Ouled Gacem", "postalCode": "04041" },
-    { "name": "Bougherara Fedjoudj", "postalCode": "04042" },
-    { "name": "Ain el Bordj", "postalCode": "04043" },
-    { "name": "El Bellala", "postalCode": "04044" },
-    { "name": "Rahia", "postalCode": "04045" },
-    { "name": "Bir Ounes", "postalCode": "04046" },
-    { "name": "Henchir Douames", "postalCode": "04047" },
-    { "name": "Ain Benayad", "postalCode": "04051" },
-    { "name": "Garaa Saida", "postalCode": "04052" },
-    { "name": "Sila", "postalCode": "04053" },
-    { "name": "El Amira El Amel", "postalCode": "04060" }
+      "name": "Souk Naamane",
+      "communes": [
+        {
+          "name": "Souk Naamane",
+          "codeONS": "0417",
+          "postalCode": "04010",
+          "otherPosts": [
+            { "name": "Souk Naamane Houari Boumediene", "postalCode": "04067" }
+          ]
+        },
+        { "name": "Bir Chouhada", "codeONS": "0421", "postalCode": "04021" },
+        { "name": "Ouled Zaid", "codeONS": "0420", "postalCode": "04037" }
+      ]
+    }
   ]
 }

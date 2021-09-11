@@ -53,3 +53,10 @@ export interface IAuth {
   error?: string;
   message?: string;
 }
+
+export interface IEmailOptions {
+  from?: string;
+  to?: string | null;
+  subject: string;
+  text: string;
+}

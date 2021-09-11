@@ -5,7 +5,7 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import { useSession } from "next-auth/client";
 
-import { IUser } from "../../types/userType";
+import { IUser } from "../../utils/types";
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";
 import WishedItems from "../../components/store/WishedItems";

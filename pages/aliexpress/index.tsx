@@ -3,7 +3,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { useSession } from "next-auth/client";
 
-import { IUser } from "../../types/userType";
+import { IUser } from "../../utils/types";
 import { selectAEApi } from "../../utils/redux/aeapiSlice";
 import SearchAE from "../../components/aliexpress/SearchAE";
 import ProductPreview from "../../components/aliexpress/ProductPreview";

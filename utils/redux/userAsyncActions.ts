@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { IUserRedux, IWished, ICartItem } from "../../types/userType";
+import { IUserRedux, IWished, ICartItem } from "../../utils/types";
 
 export const getUser = createAsyncThunk(
   "user/getUser",

@@ -106,6 +106,7 @@
       "name": "Taougrite",
       "communes": [
         { "name": "Taougrite", "codeONS": "0206", "postalCode": "02012" },
+        { "name": "El Athmania", "postalCode": "02028" },
         { "name": "Sidi Moussa", "postalCode": "02032" },
         { "name": "Dahra", "codeONS": "0217", "postalCode": "02036" },
         { "name": "Attatfa", "postalCode": "02048" },
@@ -144,8 +145,10 @@
           ]
         },
         { "name": "Sidi Akacha", "codeONS": "0211", "postalCode": "02009" },
+        { "name": "El Kalaa Bouhallou", "postalCode": "02044" },
         { "name": "Vieux Tenes", "postalCode": "02062" },
         { "name": "Chaarir", "postalCode": "02064" },
+        { "name": "Reggoum", "postalCode": "02067" },
         {
           "name": "Sidi Abderrahmane",
           "codeONS": "0225",
@@ -161,6 +164,7 @@
           "codeONS": "0230",
           "postalCode": "02037"
         },
+        { "name": "Zemoura", "postalCode": "02054" },
         { "name": "El Hadjadj", "codeONS": "0227", "postalCode": "02050" }
       ]
     },
@@ -214,30 +218,25 @@
       "name": "Zeboudja",
       "communes": [
         { "name": "Zeboudja", "codeONS": "0220", "postalCode": "02014" },
-        { "name": "Benairia", "codeONS": "0203", "postalCode": "02039" },
+        { "name": "Heumis Ain Beida", "postalCode": "02019" },
+        { "name": "Benaria", "codeONS": "0203", "postalCode": "02039" },
         { "name": "Bouzghaia", "codeONS": "0231", "postalCode": "02021" },
         { "name": "Kechachda", "postalCode": "02047" },
-        { "name": "Zelgou", "postalCode": "02052" }
+        { "name": "Zelgou", "postalCode": "02052" },
+        { "name": "Main Sinfita", "postalCode": "02068" },
+        { "name": "El Fellaguia Guendez Djillali", "postalCode": "02093" }
       ]
     }
   ],
 
   "address": [
-    { "name": "Heumis Ain Beida", "postalCode": "02019" },
-    { "name": "El Athmania", "postalCode": "02028" },
-    { "name": "El Kalaa Bouhallou", "postalCode": "02044" },
-    { "name": "Zemoura", "postalCode": "02054" },
     { "name": "Boulefred", "postalCode": "02058" },
-    { "name": "Ouled Fetti", "postalCode": "02059" },
-    { "name": "Reggoun", "postalCode": "02067" },
-    { "name": "Main Sinfita", "postalCode": "02068" },
     { "name": "Beni Ouazane", "postalCode": "02069" },
     { "name": "Meddina", "postalCode": "02073" },
     { "name": "Guelaftia", "postalCode": "02075" },
     { "name": "Mezaout", "postalCode": "02078" },
     { "name": "Bouhenyene", "postalCode": "02079" },
     { "name": "Kahloul", "postalCode": "02081" },
-    { "name": "Chaouch Ali", "postalCode": "02085" },
-    { "name": "El Fellaguia Guendez Djillali", "postalCode": "02093" }
+    { "name": "Chaouch Ali", "postalCode": "02085" }
   ]
 }

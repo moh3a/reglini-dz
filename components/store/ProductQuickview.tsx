@@ -2,13 +2,12 @@ import { useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import { StarIcon } from "@heroicons/react/solid";
 import Image from "next/image";
-import { ProductQuickview as product } from "../../data/StoreProducts";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function ProductQuickview({}) {
+export default function ProductQuickview({ product }: any) {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
 

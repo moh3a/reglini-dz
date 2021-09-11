@@ -59,9 +59,11 @@
       "name": "Aougrout",
       "communes": [
         { "name": "Tiberghamine", "codeONS": "0123", "postalCode": "01012" },
-        { "name": "Ouled Abbou (Deldoul)", "postalCode": "01036" },
         { "name": "Ouled Mahmoud", "postalCode": "01033" },
-        { "name": "Meterfa", "codeONS": "0120", "postalCode": "01038" }
+        { "name": "Ouled Abbou (Deldoul)", "postalCode": "01036" },
+        { "name": "Meterfa", "codeONS": "0120", "postalCode": "01038" },
+        { "name": "Ouled Rached", "postalCode": "01059" },
+        { "name": "Zaouiet Sidi Omeur", "postalCode": "01070" }
       ]
     },
     {
@@ -104,6 +106,7 @@
         { "name": "Tamentit", "codeONS": "0114", "postalCode": "01029" },
         { "name": "Djedid (Tamest) ", "postalCode": "01020" },
         { "name": "Boufadi", "postalCode": "01021" },
+        { "name": "Oudgha", "postalCode": "01027" },
         { "name": "Lahmeur", "codeONS": "0102", "postalCode": "01024" }
       ]
     },
@@ -121,8 +124,11 @@
             }
           ]
         },
+        { "name": "Bahou", "postalCode": "01017" },
         { "name": "Timadanine", "postalCode": "01048" },
+        { "name": "In Zeglouf (Anzeghlouf)", "postalCode": "01045" },
         { "name": "Tinourt", "postalCode": "01046" },
+        { "name": "Berriche", "postalCode": "01056" },
         { "name": "Sali", "codeONS": "0118", "postalCode": "01009" }
       ]
     },
@@ -139,10 +145,11 @@
             { "name": "Timimoun Gare Routiere", "postalCode": "01066" }
           ]
         },
-        { "name": "Badriane", "postalCode": "01053" },
-        { "name": "Gourara", "postalCode": "01072" },
+        { "name": "M'guiden", "postalCode": "01037" },
         { "name": "Ouled Said", "codeONS": "0110", "postalCode": "01039" },
-        { "name": "M'guiden", "postalCode": "01037" }
+        { "name": "Badriane", "postalCode": "01053" },
+        { "name": "Taourist", "postalCode": "01055" },
+        { "name": "Gourara", "postalCode": "01072" }
       ]
     },
     {
@@ -167,21 +174,12 @@
       "name": "Zaouiet Kounta",
       "communes": [
         { "name": "Zaouiet Kounta", "codeONS": "0111", "postalCode": "01007" },
-        { "name": "Tittaouine Lakhrasse", "postalCode": "01050" },
-        { "name": "Tiouririne", "postalCode": "01069" },
+        { "name": "Bouali", "postalCode": "01040" },
+        { "name": "Tillouine (InZagmir)", "postalCode": "01047" },
         { "name": "Tidmaine", "postalCode": "01049" },
-        { "name": "Tillouine (InZagmir)", "postalCode": "01047" }
+        { "name": "Tittaouine Lakhrasse", "postalCode": "01050" },
+        { "name": "Tiouririne", "postalCode": "01069" }
       ]
     }
-  ],
-  "address": [
-    { "name": "Bahou", "postalCode": "01017" },
-    { "name": "Ouadgha", "postalCode": "01027" },
-    { "name": "Bouali", "postalCode": "01040" },
-    { "name": "In Zeglouf", "postalCode": "01045" },
-    { "name": "Taourist", "postalCode": "01055" },
-    { "name": "Berriche", "postalCode": "01056" },
-    { "name": "Ouled Rached", "postalCode": "01059" },
-    { "name": "Zaouiet Sidi Omeur", "postalCode": "01070" }
   ]
 }

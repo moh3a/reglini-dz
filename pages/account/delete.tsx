@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { signOut, useSession } from "next-auth/client";
 import axios from "axios";
 
-import { IUser } from "../../types/userType";
+import { IUser } from "../../utils/types";
 import { DangerDialog } from "../../components/elements/Dialog";
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";

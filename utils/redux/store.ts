@@ -7,8 +7,6 @@ const throttle = require("lodash/throttle");
 import { loadState, saveState } from "../localState";
 
 // REDUCERS
-import productSlice from "./productSlice";
-import productsSlice from "./productsSlice";
 import aeapiSlice from "./aeapiSlice";
 import userSlice from "./userSlice";
 
@@ -20,8 +18,6 @@ const persistedState = loadState();
 
 // ROOT REDUCER
 const reducer = combineReducers({
-  product: productSlice,
-  products: productsSlice,
   aeapi: aeapiSlice,
   user: userSlice,
 });
