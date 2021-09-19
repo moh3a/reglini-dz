@@ -2,5 +2,241 @@
   "id": 9,
   "name": "Blida",
   "postalCode": "09000",
-  "towns": []
+  "dairas": [
+    {
+      "name": "Blida",
+      "communes": [
+        {
+          "name": "Blida",
+          "codeONS": "0901",
+          "postalCode": "09000",
+          "otherPosts": [
+            { "name": "Blida Bab Djazair", "postalCode": "09004" },
+            { "name": "Blida Beni Mokadem", "postalCode": "09005" },
+            { "name": "Blida Terre 1", "postalCode": "09006" },
+            { "name": "Blida Ben Boulaid", "postalCode": "09016" },
+            { "name": "Blida Bounaama Djillali", "postalCode": "09017" },
+            { "name": "Blida Zabana", "postalCode": "09018" },
+            { "name": "Blida Ben Achour", "postalCode": "09026" },
+            { "name": "Blida ENTA", "postalCode": "09069" },
+            { "name": "Blida Garnison", "postalCode": "09071" },
+            {
+              "name": "Blida Ecole des Technique de l'Intendance",
+              "postalCode": "09073"
+            },
+            { "name": "Blida Gare Routiere", "postalCode": "09077" },
+            { "name": "Sidi el Kebir", "postalCode": "09050" },
+            { "name": "Bab Errahba", "postalCode": "09055" },
+            { "name": "Cite Aboudi", "postalCode": "09059" }
+          ]
+        },
+        {
+          "name": "Bouafra",
+          "codeONS": "0924",
+          "postalCode": "09019",
+          "otherPosts": [
+            { "name": "Blida R'mel", "postalCode": "09043" },
+            { "name": "Drioueche", "postalCode": "09046" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boufarik",
+      "communes": [
+        {
+          "name": "Boufarik",
+          "codeONS": "0920",
+          "postalCode": "09001",
+          "otherPosts": [
+            { "name": "Boufarik Place des Martyrs", "postalCode": "09007" },
+            { "name": "Boufarik Cite du Stade", "postalCode": "09056" },
+            { "name": "Boufarik Air", "postalCode": "09072" },
+            { "name": "Sidi Aid", "postalCode": "09049" }
+          ]
+        },
+        {
+          "name": "Soumaa",
+          "codeONS": "0914",
+          "postalCode": "09022",
+          "otherPosts": [
+            { "name": "Soumaa Ecole de Police", "postalCode": "09074" },
+            { "name": "Douar Bahli", "postalCode": "09045" },
+            { "name": "Hallouya", "postalCode": "09047" }
+          ]
+        },
+        { "name": "Guerrouaou", "codeONS": "0927", "postalCode": "09029" }
+      ]
+    },
+    {
+      "name": "Bougara",
+      "communes": [
+        {
+          "name": "Bougara",
+          "codeONS": "0926",
+          "postalCode": "09008",
+          "otherPosts": [
+            { "name": "Laabaziz", "postalCode": "09060" },
+            { "name": "Bougara Nouvelle Ville", "postalCode": "09075" }
+          ]
+        },
+        {
+          "name": "Hammam Melouane",
+          "codeONS": "0912",
+          "postalCode": "09030",
+          "otherPosts": [
+            { "name": "Hammam Melouane Nouvelle Cite", "postalCode": "09078" },
+            { "name": "Beni Messira", "postalCode": "09040" }
+          ]
+        },
+        { "name": "Ouled Selama", "codeONS": "0919", "postalCode": "09033" }
+      ]
+    },
+    {
+      "name": "Bouinan",
+      "communes": [
+        {
+          "name": "Bouinan",
+          "codeONS": "0903",
+          "postalCode": "09020",
+          "otherPosts": [
+            { "name": "Amroussa", "postalCode": "09036" },
+            { "name": "Mellaha", "postalCode": "09048" },
+            { "name": "Hassainia", "postalCode": "09064" }
+          ]
+        },
+        {
+          "name": "Chebli",
+          "codeONS": "0902",
+          "postalCode": "09009",
+          "otherPosts": [{ "name": "Tabainette", "postalCode": "09053" }]
+        }
+      ]
+    },
+    {
+      "name": "El Affroun",
+      "communes": [
+        {
+          "name": "El Affroun",
+          "codeONS": "0910",
+          "postalCode": "09011",
+          "otherPosts": [
+            { "name": "El Affroun 2", "postalCode": "09076" },
+            { "name": "Beni Moumene", "postalCode": "09041" },
+            { "name": "Blida Universite 2", "postalCode": "09070" }
+          ]
+        },
+        { "name": "Oued Djer", "codeONS": "0922", "postalCode": "09032" }
+      ]
+    },
+    {
+      "name": "Larbaa",
+      "communes": [
+        {
+          "name": "Larbaa",
+          "codeONS": "0921",
+          "postalCode": "09002",
+          "otherPosts": [{ "name": "Larbaa Fahs", "postalCode": "09057" }]
+        },
+        { "name": "Souhane", "codeONS": "0917", "postalCode": "09034" }
+      ]
+    },
+    {
+      "name": "Meftah",
+      "communes": [
+        {
+          "name": "Meftah",
+          "codeONS": "0918",
+          "postalCode": "09012",
+          "otherPosts": [
+            { "name": "Souakhria", "postalCode": "09052" },
+            { "name": "Sidi Hamed", "postalCode": "09061" },
+            { "name": "M'hada", "postalCode": "09067" }
+          ]
+        },
+        { "name": "Djebabra", "codeONS": "0929", "postalCode": "09028" }
+      ]
+    },
+    {
+      "name": "Mouzaia",
+      "communes": [
+        {
+          "name": "Mouzaia",
+          "codeONS": "0913",
+          "postalCode": "09013",
+          "otherPosts": [
+            { "name": "Mouzaia Ben Ali Ahmed", "postalCode": "09021" },
+            { "name": "Beni Chougrane", "postalCode": "09039" }
+          ]
+        },
+        {
+          "name": "Chiffa",
+          "codeONS": "0911",
+          "postalCode": "09010",
+          "otherPosts": [
+            { "name": "Ahl el Oued Ethenia", "postalCode": "09035" },
+            { "name": "Borj Emir Abdelkader", "postalCode": "09044" },
+            { "name": "Sidi Madani", "postalCode": "09051" },
+            { "name": "Oued Kerrouche", "postalCode": "09063" }
+          ]
+        },
+        {
+          "name": "Ain Romana",
+          "codeONS": "0928",
+          "postalCode": "09023",
+          "otherPosts": [{ "name": "Rihane", "postalCode": "09062" }]
+        }
+      ]
+    },
+    {
+      "name": "Oued Alleug",
+      "communes": [
+        {
+          "name": "Ouled Alleug",
+          "codeONS": "0904",
+          "postalCode": "09014",
+          "otherPosts": [
+            { "name": "Ben Salah", "postalCode": "09042" },
+            { "name": "Cinq Palmiers", "postalCode": "09066" }
+          ]
+        },
+        {
+          "name": "Beni Tamou",
+          "codeONS": "0923",
+          "postalCode": "09024",
+          "otherPosts": [{ "name": "Zaouia", "postalCode": "09054" }]
+        },
+        {
+          "name": "Beni Khellil",
+          "codeONS": "0913",
+          "postalCode": "09025",
+          "otherPosts": [
+            { "name": "Beni Chaabane", "postalCode": "09037" },
+            { "name": "Beni Hamdani", "postalCode": "09038" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ouled Yaich",
+      "communes": [
+        {
+          "name": "Ouled Yaich",
+          "codeONS": "0907",
+          "postalCode": "09015",
+          "otherPosts": [
+            { "name": "Ouled Yaich 1er Mai", "postalCode": "09058" },
+            { "name": "Blida Universite", "postalCode": "09068" }
+          ]
+        },
+        { "name": "Chrea", "codeONS": "0908", "postalCode": "09027" },
+        {
+          "name": "Beni Mered",
+          "codeONS": "0925",
+          "postalCode": "09003",
+          "otherPosts": [{ "name": "Khazrouna", "postalCode": "09031" }]
+        }
+      ]
+    }
+  ]
 }
