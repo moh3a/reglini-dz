@@ -2,5 +2,301 @@
   "id": 10,
   "name": "Bouira",
   "postalCode": "10000",
-  "towns": []
+  "dairas": [
+    {
+      "name": "Bouira",
+      "communes": [
+        {
+          "name": "Bouira",
+          "codeONS": "1001",
+          "postalCode": "10000",
+          "otherPosts": [
+            { "name": "Bouira Cite el Badr", "postalCode": "10001" },
+            { "name": "Bouira Cite Hadid Said", "postalCode": "10017" },
+            { "name": "Bouira Draa el Bordj", "postalCode": "10018" },
+            { "name": "Bouira Izhabi Boulem", "postalCode": "10101" },
+            { "name": "Bouira Pole Universitaire", "postalCode": "10104" },
+            { "name": "Bouira Gare Routiere", "postalCode": "10105" },
+            { "name": "Bouira Universite", "postalCode": "10108" },
+            {
+              "name": "Bouira Residence Universitaire Ainouche Chama",
+              "postalCode": "10109"
+            },
+            { "name": "Ouled Bouchia", "postalCode": "10027" },
+            { "name": "Ras Bouira", "postalCode": "10103" }
+          ]
+        },
+        {
+          "name": "Ain Turk",
+          "codeONS": "1029",
+          "postalCode": "10033",
+          "otherPosts": [{ "name": "Zeboudja", "postalCode": "10046" }]
+        },
+        { "name": "Ait Laaziz", "codeONS": "1008", "postalCode": "10034" }
+      ]
+    },
+    {
+      "name": "Haizer",
+      "communes": [
+        {
+          "name": "Haizer",
+          "codeONS": "1012",
+          "postalCode": "10024",
+          "otherPosts": [
+            { "name": "Guentour", "postalCode": "10063" },
+            { "name": "Tikboucht", "postalCode": "10092" }
+          ]
+        },
+        {
+          "name": "Taghzout",
+          "codeONS": "1009",
+          "postalCode": "10089",
+          "otherPosts": [{ "name": "Merkala", "postalCode": "10073" }]
+        }
+      ]
+    },
+    {
+      "name": "Bechloul",
+      "communes": [
+        { "name": "Bechloul", "codeONS": "1033", "postalCode": "10012" },
+        { "name": "El Asnam", "codeONS": "1002", "postalCode": "10022" },
+        {
+          "name": "El Adjiba",
+          "codeONS": "1019",
+          "postalCode": "10021",
+          "otherPosts": [
+            { "name": "Crete Rouge", "postalCode": "10056" },
+            { "name": "Semmache", "postalCode": "10087" }
+          ]
+        },
+        { "name": "Ahl el Ksar", "codeONS": "1022", "postalCode": "10008" },
+        {
+          "name": "Ouled Rached",
+          "codeONS": "1040",
+          "postalCode": "10081",
+          "otherPosts": [{ "name": "Oued el Khmis", "postalCode": "10076" }]
+        }
+      ]
+    },
+    {
+      "name": "M'Cheddallah",
+      "communes": [
+        {
+          "name": "M'Chedellah",
+          "codeONS": "1037",
+          "postalCode": "10003",
+          "otherPosts": [
+            { "name": "Bouaklane", "postalCode": "10015" },
+            { "name": "Raffour", "postalCode": "10041" }
+          ]
+        },
+        {
+          "name": "Saharidj",
+          "codeONS": "1030",
+          "postalCode": "10043",
+          "otherPosts": [
+            { "name": "Beni Hamad", "postalCode": "10052" },
+            { "name": "Talouine", "postalCode": "10090" }
+          ]
+        },
+        {
+          "name": "Chorfa",
+          "codeONS": "1017",
+          "postalCode": "10019",
+          "otherPosts": [{ "name": "Tiksiridene", "postalCode": "10093" }]
+        },
+        {
+          "name": "Hanif",
+          "codeONS": "1006",
+          "postalCode": "10030",
+          "otherPosts": [
+            { "name": "Ighil Nait Ameur", "postalCode": "10068" },
+            { "name": "Ighrem", "postalCode": "10100" }
+          ]
+        },
+        {
+          "name": "Aghbalou",
+          "codeONS": "1027",
+          "postalCode": "10007",
+          "otherPosts": [
+            { "name": "Bahalil", "postalCode": "10035" },
+            { "name": "Beni Hamdoune", "postalCode": "10053" },
+            { "name": "Selloum", "postalCode": "10086" }
+          ]
+        },
+        { "name": "Ath Mansour", "codeONS": "1043", "postalCode": "10011" }
+      ]
+    },
+    {
+      "name": "Kadiria",
+      "communes": [
+        {
+          "name": "Kadiria",
+          "codeONS": "1005",
+          "postalCode": "10006",
+          "otherPosts": [
+            { "name": "Kadiria 1er Novembre", "postalCode": "10025" }
+          ]
+        },
+        {
+          "name": "Aomar",
+          "codeONS": "1016",
+          "postalCode": "10010",
+          "otherPosts": [
+            { "name": "El Madjen Lotfi", "postalCode": "10059" },
+            { "name": "Krarib", "postalCode": "10069" }
+          ]
+        },
+        {
+          "name": "Djebahia",
+          "codeONS": "1026",
+          "postalCode": "10036",
+          "otherPosts": [
+            { "name": "Lahguia", "postalCode": "10070" },
+            { "name": "Ben Haroune", "postalCode": "10099" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lakhdaria",
+      "communes": [
+        {
+          "name": "Lakhdaria",
+          "codeONS": "1013",
+          "postalCode": "10002",
+          "otherPosts": [
+            { "name": "Lakhdaria 5 Juillet", "postalCode": "10026" },
+            { "name": "Guergour", "postalCode": "10064" }
+          ]
+        },
+        { "name": "Boukram", "codeONS": "1034", "postalCode": "10054" },
+        { "name": "Maala", "codeONS": "1014", "postalCode": "10039" },
+        {
+          "name": "Bouderbala",
+          "codeONS": "1023",
+          "postalCode": "10016",
+          "otherPosts": [
+            { "name": "Ouled Chalabi", "postalCode": "10082" },
+            { "name": "Sebt", "postalCode": "10085" }
+          ]
+        },
+        {
+          "name": "Zbarbar",
+          "codeONS": "1024",
+          "postalCode": "10072",
+          "otherPosts": [{ "name": "Zouabria", "postalCode": "10047" }]
+        },
+        {
+          "name": "Guerrouma",
+          "codeONS": "1003",
+          "postalCode": "10037",
+          "otherPosts": [{ "name": "Ain Beida", "postalCode": "10048" }]
+        }
+      ]
+    },
+    {
+      "name": "Bir Ghablou",
+      "communes": [
+        {
+          "name": "Bir Ghbalou",
+          "codeONS": "1036",
+          "postalCode": "10013",
+          "otherPosts": [{ "name": "Mihoubi", "postalCode": "10074" }]
+        },
+        { "name": "Raouraoua", "codeONS": "1010", "postalCode": "10042" },
+        { "name": "Khabbouzia", "codeONS": "1021", "postalCode": "10038" }
+      ]
+    },
+    {
+      "name": "Ain Bessam",
+      "communes": [
+        {
+          "name": "Ain Bessam",
+          "codeONS": "1035",
+          "postalCode": "10005",
+          "otherPosts": [
+            { "name": "Ain Bessam - Yahiaoui Larbi", "postalCode": "10009" },
+            { "name": "Ain Bessam Mahi Ahmed", "postalCode": "10102" },
+            { "name": "Ain Bessam Zerdab Mohamed", "postalCode": "10107" },
+            { "name": "Sidi Yahya", "postalCode": "10088" }
+          ]
+        },
+        { "name": "Ain Laloui", "codeONS": "1041", "postalCode": "10032" },
+        { "name": "Ain el Hadjar", "codeONS": "1025", "postalCode": "10031" }
+      ]
+    },
+    {
+      "name": "Souk el Khemis",
+      "communes": [
+        {
+          "name": "Souk el Khemis",
+          "codeONS": "1004",
+          "postalCode": "10044",
+          "otherPosts": [{ "name": "Ouled Guemra", "postalCode": "10079" }]
+        },
+        { "name": "El Mokrani", "codeONS": "1044", "postalCode": "10060" }
+      ]
+    },
+    {
+      "name": "El Hachimia",
+      "communes": [
+        {
+          "name": "El Hachimia",
+          "codeONS": "1015",
+          "postalCode": "10023",
+          "otherPosts": [{ "name": "Hammam Ksena", "postalCode": "10066" }]
+        },
+        { "name": "Oued Berdi", "codeONS": "1045", "postalCode": "10075" }
+      ]
+    },
+    {
+      "name": "Sour el Ghozlane",
+      "communes": [
+        {
+          "name": "Sour el Ghozlane",
+          "codeONS": "1038",
+          "postalCode": "10004",
+          "otherPosts": [
+            { "name": "Sour el Ghozlane Azzouz", "postalCode": "10028" },
+            { "name": "Sour el Ghozlane Mebarki Tayeb", "postalCode": "10029" },
+            { "name": "Sour el Ghozlane Gare Routiere", "postalCode": "10106" },
+            { "name": "Ouled Gacem", "postalCode": "10078" }
+          ]
+        },
+        { "name": "Maamora", "codeONS": "1039", "postalCode": "10071" },
+        { "name": "Ridane", "codeONS": "1032", "postalCode": "10083" },
+        { "name": "El Hakimia", "codeONS": "1020", "postalCode": "10058" },
+        { "name": "Dechmia", "codeONS": "1031", "postalCode": "10057" },
+        { "name": "Dirrah", "codeONS": "1007", "postalCode": "10020" }
+      ]
+    },
+    {
+      "name": "Bordj Okhriss",
+      "communes": [
+        { "name": "Bordj Okhriss", "codeONS": "1018", "postalCode": "10014" },
+        { "name": "Mesdour", "codeONS": "1011", "postalCode": "10040" },
+        { "name": "Taguedite", "codeONS": "1028", "postalCode": "10045" },
+        { "name": "Hadjera Zerga", "codeONS": "1042", "postalCode": "10065" }
+      ]
+    }
+  ],
+
+  "address": [
+    { "name": "Ain Terzine Hamla Rabai", "postalCode": "10049" },
+    { "name": "Ath Bouali", "postalCode": "10050" },
+    { "name": "Beggas", "postalCode": "10051" },
+    { "name": "Chabet Brahem", "postalCode": "10055" },
+    { "name": "Erriche", "postalCode": "10061" },
+    { "name": "Guelt Zerga", "postalCode": "10062" },
+    { "name": "Hamza Bougherzoune", "postalCode": "10067" },
+    { "name": "Oued Laalem", "postalCode": "10077" },
+    { "name": "Ouled Lalem", "postalCode": "10080" },
+    { "name": "Said Abid", "postalCode": "10084" },
+    { "name": "Thamer", "postalCode": "10091" },
+    { "name": "Tizi Larbaa", "postalCode": "10094" },
+    { "name": "Toughza Oukrid Mohamed", "postalCode": "10095" },
+    { "name": "Zebara Ladj Mohamed", "postalCode": "10096" },
+    { "name": "Krichiche", "postalCode": "10098" }
+  ]
 }

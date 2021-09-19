@@ -2,5 +2,199 @@
   "id": 8,
   "name": "Bechar",
   "postalCode": "08000",
-  "towns": []
+  "dairas": [
+    {
+      "name": "Bechar",
+      "communes": [
+        {
+          "name": "Bechar",
+          "codeONS": "0801",
+          "postalCode": "08000",
+          "otherPosts": [
+            { "name": "Bechar 1er Novembre", "postalCode": "08001" },
+            { "name": "Bechar Debdaba", "postalCode": "08004" },
+            { "name": "Bechar Djedid", "postalCode": "08005" },
+            { "name": "Bechar Hai el Badr", "postalCode": "08006" },
+            { "name": "Bechar Hai el Inara", "postalCode": "08007" },
+            { "name": "Bechar Hai M'rah", "postalCode": "08008" },
+            { "name": "Bechar La Barga", "postalCode": "08009" },
+            { "name": "Bechar Hai el Djorf", "postalCode": "08013" },
+            { "name": "Bechar Hai el Fath", "postalCode": "08014" },
+            { "name": "Bechar Hai Essalam", "postalCode": "08015" },
+            { "name": "Bechar Hai Hamdane", "postalCode": "08016" },
+            { "name": "Bechar Hay Riadhi", "postalCode": "08017" },
+            { "name": "Bechar Terre", "postalCode": "08018" },
+            { "name": "Bechar Hai Ennour", "postalCode": "08024" },
+            { "name": "Bechar Centre Universitaire", "postalCode": "08054" },
+            { "name": "Bechar Hassi el Houari", "postalCode": "08055" },
+            { "name": "Bechar Zone Bleu", "postalCode": "08056" },
+            {
+              "name": "Bechar Cite Universitaire 1500 lits",
+              "postalCode": "08057"
+            },
+            { "name": "Bechar Gare Routiere", "postalCode": "08059" },
+            { "name": "Bechar Route Lahmar", "postalCode": "08061" },
+            { "name": "Bechar AADL", "postalCode": "08062" },
+            { "name": "Ouakda", "postalCode": "08043" }
+          ]
+        },
+        { "name": "Kenadsa - Sidi M'hamed Ben Bouziane", "postalCode": "08049" }
+      ]
+    },
+    {
+      "name": "Beni Ounif",
+      "communes": [
+        {
+          "name": "Beni Ounif",
+          "codeONS": "0821",
+          "postalCode": "08010",
+          "otherPosts": [
+            { "name": "Beni Ounif - Sidi Boussamha", "postalCode": "08019" },
+            { "name": "Rosfa Taiba", "postalCode": "08045" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lahmar",
+      "communes": [
+        { "name": "Boukais", "codeONS": "0815", "postalCode": "08034" },
+        { "name": "Lahmar", "codeONS": "0806", "postalCode": "08026" },
+        { "name": "Mougheul", "codeONS": "0816", "postalCode": "08042" }
+      ]
+    },
+    {
+      "name": "Kenadsa",
+      "communes": [
+        { "name": "Kendasa", "codeONS": "0810", "postalCode": "08011" },
+        { "name": "Meridja", "codeONS": "0804", "postalCode": "08041" }
+      ]
+    },
+    {
+      "name": "Taghit",
+      "communes": [
+        {
+          "name": "Taghit",
+          "codeONS": "0813",
+          "postalCode": "08030",
+          "otherPosts": [{ "name": "Berrabi", "postalCode": "08033" }]
+        }
+      ]
+    },
+    {
+      "name": "Abadla",
+      "communes": [
+        {
+          "name": "Abadla",
+          "codeONS": "0817",
+          "postalCode": "08003",
+          "otherPosts": [
+            { "name": "Bechar 1er Novembre", "postalCode": "08012" }
+          ]
+        },
+        {
+          "name": "Arg Ferradj",
+          "codeONS": "0802",
+          "postalCode": "08023",
+          "otherPosts": [
+            { "name": "Guir Lotfi", "postalCode": "08037" },
+            { "name": "Hassi Menouanat", "postalCode": "08038" }
+          ]
+        },
+        {
+          "name": "Machraa Houari Boumedienne",
+          "codeONS": "0809",
+          "postalCode": "08027",
+          "otherPosts": [{ "name": "Djorf el Barda", "postalCode": "08035" }]
+        }
+      ]
+    },
+    {
+      "name": "Tabelbala",
+      "communes": [
+        { "name": "Tabelbala", "codeONS": "0812", "postalCode": "08029" }
+      ]
+    },
+    {
+      "name": "Igli",
+      "communes": [
+        {
+          "name": "Igli",
+          "codeONS": "0811",
+          "postalCode": "08021",
+          "otherPosts": [{ "name": "Mazzer", "postalCode": "08040" }]
+        }
+      ]
+    },
+    {
+      "name": "Beni Abbes",
+      "communes": [
+        {
+          "name": "Beni Abbes",
+          "codeONS": "0807",
+          "postalCode": "08002",
+          "otherPosts": [
+            { "name": "Ougarta", "postalCode": "08044" },
+            { "name": "Zeghamra", "postalCode": "08048" }
+          ]
+        },
+        {
+          "name": "Tamtert",
+          "codeONS": "0820",
+          "postalCode": "08046",
+          "otherPosts": [{ "name": "Bechir", "postalCode": "08051" }]
+        }
+      ]
+    },
+    {
+      "name": "El Ouata",
+      "communes": [
+        {
+          "name": "El Ouata",
+          "codeONS": "0814",
+          "postalCode": "08020",
+          "otherPosts": [
+            { "name": "Aguedal", "postalCode": "08032" },
+            { "name": "Annefid", "postalCode": "08052" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kerzaz",
+      "communes": [
+        {
+          "name": "Beni Ikhlef",
+          "codeONS": "0808",
+          "postalCode": "08025",
+          "otherPosts": [{ "name": "Guerzim", "postalCode": "08036" }]
+        },
+        {
+          "name": "Kerzaz",
+          "codeONS": "0818",
+          "postalCode": "08022",
+          "otherPosts": [
+            {
+              "name": "Kerzaz Abou el Kassem Saedellah",
+              "postalCode": "08060"
+            },
+            { "name": "Zaouia Lekbira", "postalCode": "08047" }
+          ]
+        },
+        { "name": "Timoudi", "codeONS": "0805", "postalCode": "08031" }
+      ]
+    },
+    {
+      "name": "Ouled Khoudir",
+      "communes": [
+        { "name": "Ksabi", "codeONS": "0819", "postalCode": "08039" },
+        {
+          "name": "Ouled Khoudir",
+          "codeONS": "0803",
+          "postalCode": "08028",
+          "otherPosts": [{ "name": "Ouled Rafaa", "postalCode": "08050" }]
+        }
+      ]
+    }
+  ]
 }
