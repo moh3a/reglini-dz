@@ -2,5 +2,130 @@
   "id": 29,
   "name": "Mascara",
   "postalCode": "29000",
-  "towns": []
+  "address": [
+    {
+      "name": "Mascara",
+      "postalCode": "29000",
+      "otherPosts": [
+        { "name": "Mascara Baba Ali", "postalCode": "29007" },
+        { "name": "Mascara Emir Abdelkader", "postalCode": "29008" },
+        { "name": "Mascara Rachida", "postalCode": "29009" },
+        { "name": "Mascara Emir Khaled", "postalCode": "29080" },
+        { "name": "Mascara El Quods", "postalCode": "29081" },
+        { "name": "Mascara Sidi Said", "postalCode": "29085" },
+        { "name": "Mascara Universite", "postalCode": "29088" },
+        { "name": "Mascara Cite Administrative", "postalCode": "29089" },
+        { "name": "Mascara 1 Nov 1954", "postalCode": "29092" }
+      ]
+    },
+    {
+      "name": "Sig",
+      "postalCode": "29001",
+      "otherPosts": [
+        { "name": "Sig Les Oliviers", "postalCode": "29010" },
+        { "name": "Sig 1er Novembre", "postalCode": "29084" }
+      ]
+    },
+    {
+      "name": "Mohammadia",
+      "postalCode": "29002",
+      "otherPosts": [
+        { "name": "Mohammadia Habra", "postalCode": "29003" },
+        { "name": "Mohammadia Beni Chougrane", "postalCode": "29028" },
+        { "name": "Mohammadia Sidha Abdelkader", "postalCode": "29095" }
+      ]
+    },
+    {
+      "name": "Tighennif",
+      "postalCode": "29004",
+      "otherPosts": [
+        { "name": "Tighennif Sidi Hamou", "postalCode": "29031" },
+        { "name": "Tighennif Bendikha Larbi", "postalCode": "29093" },
+        { "name": "Tighennif Ageb Ahmed", "postalCode": "29094" }
+      ]
+    },
+    { "name": "Bou Hanifia", "postalCode": "29005" },
+    {
+      "name": "Ghriss",
+      "postalCode": "29006",
+      "otherPosts": [{ "name": "Ghriss Dardara", "postalCode": "29086" }]
+    },
+    { "name": "Ain Fekan", "postalCode": "29011" },
+    { "name": "El Bordj", "postalCode": "29012" },
+    { "name": "El Hachem", "postalCode": "29013" },
+    { "name": "Hacine", "postalCode": "29014" },
+    { "name": "Maoussa", "postalCode": "29015" },
+    { "name": "Oued el Abtal", "postalCode": "29016" },
+    {
+      "name": "Oued Taria",
+      "postalCode": "29017",
+      "otherPosts": [
+        { "name": "Oued Taria 1er Novembre", "postalCode": "29087" }
+      ]
+    },
+    { "name": "Tizi", "postalCode": "29018" },
+    { "name": "Zahana", "postalCode": "29019" },
+    { "name": "Ain Fares", "postalCode": "29020" },
+    { "name": "Aouf", "postalCode": "29021" },
+    { "name": "Bou Henni", "postalCode": "29022" },
+    { "name": "El Ghomri", "postalCode": "29023" },
+    { "name": "Froha", "postalCode": "29024" },
+    { "name": "Khalouia", "postalCode": "29025" },
+    { "name": "Matemore", "postalCode": "29026" },
+    { "name": "Mocta Douz", "postalCode": "29027" },
+    { "name": "Oggaz", "postalCode": "29029" },
+    { "name": "Sidi Kada", "postalCode": "29030" },
+    { "name": "Ain Bouras ", "postalCode": "29032" },
+    { "name": "Ain Farah", "postalCode": "29033" },
+    { "name": "Ain Frass", "postalCode": "29034" },
+    { "name": "Ain Mansour", "postalCode": "29035" },
+    { "name": "Alaimia", "postalCode": "29036" },
+    { "name": "Benchenine", "postalCode": "29037" },
+    { "name": "Benian", "postalCode": "29038" },
+    { "name": "Chorfa", "postalCode": "29039" },
+    { "name": "Djenien Meskine", "postalCode": "29040" },
+    { "name": "El Gaada", "postalCode": "29041" },
+    { "name": "El Gueithna", "postalCode": "29042" },
+    { "name": "El Keurt", "postalCode": "29043" },
+    { "name": "El Menaouer", "postalCode": "29044" },
+    { "name": "Fergoug", "postalCode": "29045" },
+    { "name": "Ferraguig", "postalCode": "29046" },
+    { "name": "Gharrous", "postalCode": "29047" },
+    { "name": "Graia", "postalCode": "29048" },
+    { "name": "Grara", "postalCode": "29049" },
+    { "name": "Guerdjoum", "postalCode": "29050" },
+    { "name": "Hassi Oudjerna", "postalCode": "29051" },
+    { "name": "Khessibia", "postalCode": "29052" },
+    { "name": "Khrouf", "postalCode": "29053" },
+    { "name": "Mactaa Menaouer", "postalCode": "29054" },
+    { "name": "Makda", "postalCode": "29055" },
+    { "name": "Mamounia", "postalCode": "29056" },
+    { "name": "Zelamta", "postalCode": "29057" },
+    { "name": "Nesmoth", "postalCode": "29058" },
+    { "name": "Ouled Khamsa", "postalCode": "29059" },
+    { "name": "Ras el Ain Amirouche", "postalCode": "29060" },
+    { "name": "Sahaouria", "postalCode": "29061" },
+    { "name": "Sedjerara", "postalCode": "29062" },
+    { "name": "Sehailia", "postalCode": "29063" },
+    { "name": "Selatna", "postalCode": "29064" },
+    { "name": "Sidi Abdeldjebar", "postalCode": "29065" },
+    { "name": "Sidi Abdelmoumene", "postalCode": "29066" },
+    { "name": "Sidi Benzerga", "postalCode": "29067" },
+    { "name": "Saf Saf", "postalCode": "29068" },
+    { "name": "Sidi Boussaid", "postalCode": "29069" },
+    { "name": "Sidi Slimane", "postalCode": "29070" },
+    { "name": "Smala Sidi Mahiedine", "postalCode": "29071" },
+    { "name": "Souihia", "postalCode": "29072" },
+    { "name": "Temaznia", "postalCode": "29073" },
+    { "name": "Yalou", "postalCode": "29074" },
+    { "name": "Zaghloul", "postalCode": "29075" },
+    { "name": "Zellaga", "postalCode": "29076" },
+    { "name": "Bekhaitia", "postalCode": "29077" },
+    { "name": "Sidi M'barek", "postalCode": "29078" },
+    { "name": "Ahl el Aid", "postalCode": "29079" },
+    { "name": "Ahl el Ouanane", "postalCode": "29082" },
+    { "name": "El Maleh", "postalCode": "29083" },
+    { "name": "Ouled Bali", "postalCode": "29090" },
+    { "name": "Ahnaidja", "postalCode": "29091" }
+  ]
 }

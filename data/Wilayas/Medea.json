@@ -2,5 +2,126 @@
   "id": 26,
   "name": "Médéa",
   "postalCode": "26000",
-  "towns": []
+  "address": [
+    {
+      "name": "Médéa",
+      "postalCode": "26000",
+      "otherPosts": [
+        { "name": "Médéa Ould Immam", "postalCode": "26009" },
+        { "name": "Médéa Merdjechikr", "postalCode": "26031" },
+        { "name": "Médéa Takbou", "postalCode": "26078" },
+        { "name": "Médéa Universite", "postalCode": "26082" },
+        { "name": "Médéa Yahia Fares", "postalCode": "26083" },
+        { "name": "Médéa Gare Routiere", "postalCode": "26084" },
+        { "name": "Médéa Wahiba Kebaili", "postalCode": "26085" },
+        { "name": "Médéa Hassan Ben Mouloud", "postalCode": "26086" },
+        {
+          "name": "Médéa Residence Universitaire 1 500 Lits",
+          "postalCode": "26087"
+        },
+        { "name": "Médéa Residence Universitaire 2", "postalCode": "26088" },
+        { "name": "Médéa Rouis Bachir", "postalCode": "26090" }
+      ]
+    },
+    {
+      "name": "Beni Slimane",
+      "postalCode": "26001",
+      "otherPosts": [
+        { "name": "Beni Slimane Hachemaoui Messaoud", "postalCode": "26089" }
+      ]
+    },
+    {
+      "name": "Berrouaghia",
+      "postalCode": "26002",
+      "otherPosts": [
+        { "name": "Berrouaghia Batem", "postalCode": "26006" },
+        { "name": "Berrouaghia 1er Novembre", "postalCode": "26024" },
+        { "name": "Berrouaghia Oued Gholat", "postalCode": "26052" }
+      ]
+    },
+    {
+      "name": "Ksar el Boukhari",
+      "postalCode": "26003",
+      "otherPosts": [
+        {
+          "name": "Ksar el Boukhari Belkheiret Mohamed",
+          "postalCode": "26028"
+        },
+        { "name": "Ksar el Boukhari Chaoui Nadir", "postalCode": "26029" },
+        { "name": "Ksar el Boukhari Mekkaoui Othmane", "postalCode": "26077" }
+      ]
+    },
+    { "name": "Tablat", "postalCode": "26004" },
+    {
+      "name": "Ain Boucif",
+      "postalCode": "26005",
+      "otherPosts": [{ "name": "Ain Boucif 5 Juillet", "postalCode": "26010" }]
+    },
+    { "name": "Chellalet El Adhaoura", "postalCode": "26007" },
+    { "name": "El Omaria", "postalCode": "26008" },
+    { "name": "Ain D'hab", "postalCode": "26011" },
+    { "name": "Ben Chicao", "postalCode": "26012" },
+    { "name": "Boghar", "postalCode": "26013" },
+    { "name": "Bouchrahil", "postalCode": "26014" },
+    { "name": "Derrag", "postalCode": "26015" },
+    { "name": "Djouab", "postalCode": "26016" },
+    { "name": "Draa Essemar", "postalCode": "26017" },
+    { "name": "El Azizia", "postalCode": "26018" },
+    { "name": "Ouzera", "postalCode": "26019" },
+    { "name": "Souagui", "postalCode": "26020" },
+    { "name": "Zoubiria", "postalCode": "26021" },
+    { "name": "Aissaouia", "postalCode": "26022" },
+    { "name": "Boughzoul", "postalCode": "26023" },
+    { "name": "Bouskene", "postalCode": "26025" },
+    { "name": "Chahbounia", "postalCode": "26026" },
+    { "name": "Hannacha", "postalCode": "26027" },
+    { "name": "Maarik el Malah", "postalCode": "26030" },
+    { "name": "Mihoub", "postalCode": "26032" },
+    { "name": "Moudjebeur", "postalCode": "26033" },
+    { "name": "Ouamri", "postalCode": "26034" },
+    { "name": "Ouled Antar", "postalCode": "26035" },
+    { "name": "Ouled Brahim", "postalCode": "26036" },
+    { "name": "Ouled Hellal", "postalCode": "26037" },
+    { "name": "Ouled Maareuf", "postalCode": "26038" },
+    { "name": "Rebaia", "postalCode": "26039" },
+    { "name": "Sebt Aziz", "postalCode": "26040" },
+    { "name": "Seghouane", "postalCode": "26041" },
+    { "name": "Seriat", "postalCode": "26042" },
+    { "name": "Sidi Naamane", "postalCode": "26043" },
+    { "name": "Allali Messaoud", "postalCode": "26044" },
+    { "name": "Si Mahdjoub", "postalCode": "26045" },
+    { "name": "Tlelat Ed Douar", "postalCode": "26046" },
+    { "name": "Vieux Ksar", "postalCode": "26047" },
+    { "name": "Ain Ouksir", "postalCode": "26048" },
+    { "name": "Ain Tlelat", "postalCode": "26049" },
+    { "name": "Baata", "postalCode": "26050" },
+    { "name": "Benia", "postalCode": "26051" },
+    { "name": "Bir Ben Abed", "postalCode": "26053" },
+    { "name": "Bouaiche", "postalCode": "26054" },
+    { "name": "Bouaichoune", "postalCode": "26055" },
+    { "name": "Brahimi Mohamed", "postalCode": "26056" },
+    { "name": "Cheniguel", "postalCode": "26057" },
+    { "name": "Deux Bassins", "postalCode": "26058" },
+    { "name": "El Aouinet", "postalCode": "26059" },
+    { "name": "El Hamdania", "postalCode": "26060" },
+    { "name": "Harbil", "postalCode": "26061" },
+    { "name": "Khams Djoumaa", "postalCode": "26062" },
+    { "name": "Maghraoua", "postalCode": "26063" },
+    { "name": "Ouled Bouachra", "postalCode": "26064" },
+    { "name": "Oum el Djellil", "postalCode": "26065" },
+    { "name": "Rezarza", "postalCode": "26066" },
+    { "name": "Saneg", "postalCode": "26067" },
+    { "name": "Sedraia", "postalCode": "26068" },
+    { "name": "Sidi Damed", "postalCode": "26069" },
+    { "name": "Sidi Errabie", "postalCode": "26070" },
+    { "name": "Sidi Mahieddine", "postalCode": "26071" },
+    { "name": "Sidi Zahar", "postalCode": "26072" },
+    { "name": "Sidi Ziane", "postalCode": "26073" },
+    { "name": "Tafraout", "postalCode": "26074" },
+    { "name": "Tamesguida", "postalCode": "26075" },
+    { "name": "Tizi Mahdi", "postalCode": "26076" },
+    { "name": "Kermet Chiha", "postalCode": "26079" },
+    { "name": "El Gouea", "postalCode": "26080" },
+    { "name": "Ouled el Hadj", "postalCode": "26081" }
+  ]
 }
