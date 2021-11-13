@@ -33,16 +33,16 @@ const AccountVerification = ({
           setSuccess(data.message);
           setTimeout(() => {
             setSuccess("");
-            router.push("/profile");
+            router.push("/account");
           }, 3000);
         } else if (!data.success) {
           setError(data.message);
           setTimeout(() => {
             setError("");
-            router.push("/profile");
+            router.push("/account");
           }, 5000);
         }
-      } catch (error) {
+      } catch (error: any) {
         setLoading(false);
         setError(error.response.data.error);
         setTimeout(() => {

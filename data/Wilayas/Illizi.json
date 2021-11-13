@@ -1,0 +1,33 @@
+{
+  "id": 33,
+  "name": "Illizi",
+  "postalCode": "33000",
+  "address": [
+    {
+      "name": "Illizi",
+      "postalCode": "33000",
+      "otherPosts": [
+        { "name": "Illizi 8 Mai 1945", "postalCode": "33005" },
+        { "name": "Illizi In Kours", "postalCode": "33021" }
+      ]
+    },
+    { "name": "In Amenas", "postalCode": "33001" },
+    {
+      "name": "Djanet",
+      "postalCode": "33002",
+      "otherPosts": [{ "name": "Djanet Ain Abarbar", "postalCode": "33006" }]
+    },
+    { "name": "Bordj Omar Driss", "postalCode": "33003" },
+    { "name": "Deb Deb", "postalCode": "33004" },
+    { "name": "Bordj el Haoues", "postalCode": "33008" },
+    { "name": "Iferi", "postalCode": "33009" },
+    { "name": "Ohanet", "postalCode": "33010" },
+    { "name": "Ihrir", "postalCode": "33012" },
+    { "name": "Tabakat", "postalCode": "33014" },
+    { "name": "Tin Fouye", "postalCode": "33015" },
+    { "name": "Tinalkoum", "postalCode": "33016" },
+    { "name": "Tarat", "postalCode": "33022" },
+    { "name": "Timeroualine", "postalCode": "33023" },
+    { "name": "Merksene", "postalCode": "33024" }
+  ]
+}

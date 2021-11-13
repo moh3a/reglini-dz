@@ -1,0 +1,103 @@
+{
+  "id": 35,
+  "name": "Boumerdès",
+  "postalCode": "35000",
+  "address": [
+    {
+      "name": "Boumerdès",
+      "postalCode": "35000",
+      "otherPosts": [
+        { "name": "Boumerdès Frantz-Fanon", "postalCode": "35007" },
+        { "name": "Boumerdès Le Rocher", "postalCode": "35062" },
+        { "name": "Boumerdès Faculte des Sciences", "postalCode": "35063" }
+      ]
+    },
+    {
+      "name": "Bordj Menaiel",
+      "postalCode": "35001",
+      "otherPosts": [
+        { "name": "Bordj Menaiel Amirouche", "postalCode": "35002" }
+      ]
+    },
+    {
+      "name": "Boudouaou",
+      "postalCode": "35003",
+      "otherPosts": [
+        { "name": "Boudouaou Benterquia", "postalCode": "35023" },
+        { "name": "Boudouaou El Bahri", "postalCode": "35037" },
+        { "name": "Boudouaou Faculte de Droit", "postalCode": "35064" },
+        { "name": "Boudouaou Le Plateau", "postalCode": "35065" }
+      ]
+    },
+    { "name": "Dellys", "postalCode": "35004" },
+    { "name": "Thenia", "postalCode": "35005" },
+    { "name": "Beni Amrane", "postalCode": "35006" },
+
+    { "name": "Chabet el Ameur", "postalCode": "35008" },
+    {
+      "name": "Isser",
+      "postalCode": "35009",
+      "otherPosts": [{ "name": "Isser Ville", "postalCode": "35016" }]
+    },
+    {
+      "name": "Khemis el Khechna",
+      "postalCode": "35010",
+      "otherPosts": [
+        { "name": "Khemis el Khechna 17 Juin", "postalCode": "35049" }
+      ]
+    },
+    { "name": "Ouled Moussa", "postalCode": "35011" },
+    {
+      "name": "Zemmouri",
+      "postalCode": "35012",
+      "otherPosts": [
+        { "name": "Zemmouri El Bahri", "postalCode": "35061" },
+        { "name": "Zemmouri AADL", "postalCode": "35067" }
+      ]
+    },
+    { "name": "Baghlia", "postalCode": "35013" },
+    { "name": "Corso", "postalCode": "35014" },
+    { "name": "Hammadi", "postalCode": "35015" },
+    { "name": "Larbatache", "postalCode": "35017" },
+    { "name": "Naciria", "postalCode": "35018" },
+    { "name": "Sidi Daoud", "postalCode": "35019" },
+    { "name": "Souk el Had", "postalCode": "35020" },
+    { "name": "Tidjelabine", "postalCode": "35021" },
+    { "name": "Afir", "postalCode": "35022" },
+    { "name": "Djinet", "postalCode": "35024" },
+    { "name": "Koudiat el Arais", "postalCode": "35025" },
+    { "name": "Leghata", "postalCode": "35026" },
+    { "name": "Rouafa", "postalCode": "35027" },
+    { "name": "Si Mustapha", "postalCode": "35028" },
+    { "name": "Taourga", "postalCode": "35029" },
+    { "name": "Abada", "postalCode": "35030" },
+    { "name": "Ammal", "postalCode": "35031" },
+    { "name": "Azrou", "postalCode": "35032" },
+    { "name": "Benchoud", "postalCode": "35033" },
+    { "name": "Benmerzouga", "postalCode": "35034" },
+    { "name": "Bouaidel", "postalCode": "35035" },
+    { "name": "Boudhar", "postalCode": "35036" },
+    { "name": "Keddara", "postalCode": "35038" },
+    { "name": "Chebacheb", "postalCode": "35039" },
+    { "name": "Chlef Boumraou", "postalCode": "35040" },
+    { "name": "Fourar Ain Sebaou", "postalCode": "35041" },
+    { "name": "Haddada", "postalCode": "35042" },
+    { "name": "Hadj Ahmed", "postalCode": "35043" },
+    { "name": "Haouch Beni Ouali", "postalCode": "35044" },
+    { "name": "Haouch el Mokhfi", "postalCode": "35045" },
+    { "name": "Karma", "postalCode": "35046" },
+    { "name": "Kehf el Gharbi", "postalCode": "35047" },
+    { "name": "Kharouba", "postalCode": "35048" },
+    { "name": "Ouled Aissa", "postalCode": "35050" },
+    { "name": "Ouled Ali", "postalCode": "35051" },
+    { "name": "Ouled Hadadj", "postalCode": "35052" },
+    { "name": "Ouled H'mida", "postalCode": "35053" },
+    { "name": "Ouriacha", "postalCode": "35054" },
+    { "name": "Sebaou el Khedim", "postalCode": "35055" },
+    { "name": "Sidi el Medjni", "postalCode": "35056" },
+    { "name": "Takdempt", "postalCode": "35057" },
+    { "name": "Tchouchfi Bouberak", "postalCode": "35058" },
+    { "name": "Tizi Nali Slimane", "postalCode": "35059" },
+    { "name": "Zaatra", "postalCode": "35060" }
+  ]
+}

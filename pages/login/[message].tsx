@@ -3,6 +3,7 @@ import { providers, getSession, csrfToken } from "next-auth/client";
 import { useEffect, useState } from "react";
 import LoginScreen from ".";
 import Banner from "../../components/Banner";
+import { LoginErrorMessages } from "../../data/LoginMessages";
 
 const LoginError = ({ csrfToken, providers }: any) => {
   const router = useRouter();
@@ -10,20 +11,12 @@ const LoginError = ({ csrfToken, providers }: any) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (message === "invalid_credentials") {
-      setError("The credentials you have enterend are invalid.");
-    } else if (message === "user_not_found") {
-      setError(
-        "No user was found, please register following <Link href='/register'>this link<Link>."
-      );
-    } else if (message === "login_to_view_wishlist") {
-      setError("You have to be logged in to view or edit your wishlist.");
-    } else if (message === "account_deleted") {
-      setError("Account successfully deleted.");
-    } else {
-      router.push("/login");
-    }
-  }, [message, router]);
+    LoginErrorMessages.map((msg) => {
+      if (message === msg.name) {
+        setError(msg.text);
+      }
+    });
+  }, [message]);
 
   return (
     <>

@@ -1,0 +1,123 @@
+{
+  "id": 22,
+  "name": "Sidi Bel Abbes",
+  "postalCode": "22000",
+  "address": [
+    {
+      "name": "Sidi Bel Abbes",
+      "postalCode": "22000",
+      "otherPosts": [
+        { "name": "Sidi Bel Abbes Sidi Yacine", "postalCode": "22002" },
+        { "name": "Sidi Bel Abbes Tayebi Larbi", "postalCode": "22003" },
+        { "name": "Sidi Bel Abbes 1er Novembre", "postalCode": "22006" },
+        { "name": "Sidi Bel Abbes Adim Fatiha", "postalCode": "22015" },
+        { "name": "Sidi Bel Abbes El Wiam", "postalCode": "22016" },
+        { "name": "Sidi Bel Abbes Saadane", "postalCode": "22017" },
+        { "name": "Sidi Bel Abbes Zabana", "postalCode": "22018" },
+        { "name": "Sidi Bel Abbes Beni Ameur", "postalCode": "22071" },
+        {
+          "name": "Sidi Bel Abbes Dr Hassani Abdelkader",
+          "postalCode": "22072"
+        },
+        { "name": "Sidi Bel Abbes Belacel Lakhdar", "postalCode": "22076" },
+        { "name": "Sidi Bel Abbes Gare Routiere", "postalCode": "22077" },
+        { "name": "Sidi Bel Abbes Boumelik", "postalCode": "22079" },
+        { "name": "Sidi Bel Abbes Fida", "postalCode": "22080" },
+        {
+          "name": "Sidi Bel Abbes Cite Universitaire Ibn Rochd",
+          "postalCode": "22086"
+        },
+        {
+          "name": "Sidi Bel Abbes Campus Universitaire",
+          "postalCode": "22084"
+        },
+        { "name": "Sidi Bel Abbes 11 Decembre", "postalCode": "22088" }
+      ]
+    },
+    {
+      "name": "Sfisef",
+      "postalCode": "22001",
+      "otherPosts": [
+        { "name": "Sfisef Sahoua", "postalCode": "22027" },
+        { "name": "Sfisef Hanifi Abdelkader", "postalCode": "22085" }
+      ]
+    },
+    { "name": "Ben Badis", "postalCode": "22004" },
+    {
+      "name": "Ras el Ma",
+      "postalCode": "22005",
+      "otherPosts": [{ "name": "Ras el Ma Essaada", "postalCode": "22069" }]
+    },
+
+    {
+      "name": "Telagh",
+      "postalCode": "22007",
+      "otherPosts": [{ "name": "Telagh Mokdad Mohamed", "postalCode": "22067" }]
+    },
+    { "name": "Boukhanefis", "postalCode": "22008" },
+    { "name": "Dhaya", "postalCode": "22009" },
+    { "name": "Hassi Zehana", "postalCode": "22010" },
+    { "name": "Marhoum", "postalCode": "22011" },
+    { "name": "Merine", "postalCode": "22012" },
+    { "name": "Mostefa ben Brahim", "postalCode": "22013" },
+    { "name": "Sidi Ali Boussidi", "postalCode": "22014" },
+    { "name": "Sidi Hamadouche", "postalCode": "22019" },
+    { "name": "Sidi Lahssene", "postalCode": "22020" },
+    { "name": "Tenira", "postalCode": "22021" },
+    { "name": "Ain el Berd", "postalCode": "22022" },
+    { "name": "Belarbi", "postalCode": "22023" },
+    { "name": "Lamtar", "postalCode": "22024" },
+    { "name": "Mezaourou", "postalCode": "22025" },
+    { "name": "Moulay Slissen", "postalCode": "22026" },
+    { "name": "Sidi Ali Benayoub", "postalCode": "22028" },
+    { "name": "Sidi Brahim", "postalCode": "22029" },
+    { "name": "Sidi Djilali", "postalCode": "22030" },
+    { "name": "Sidi Khaled", "postalCode": "22031" },
+    { "name": "Tabia", "postalCode": "22032" },
+    { "name": "Tessala", "postalCode": "22033" },
+    { "name": "Ain Adden", "postalCode": "22034" },
+    { "name": "Ain Kada", "postalCode": "22035" },
+    { "name": "Ain Tindamine", "postalCode": "22036" },
+    { "name": "Ain Trid", "postalCode": "22037" },
+    { "name": "Bedrabine el Mokrani", "postalCode": "22038" },
+    { "name": "Belaila Yemloul", "postalCode": "22039" },
+    { "name": "Benchaiba Chelia", "postalCode": "22040" },
+    { "name": "Bir el Hemmam", "postalCode": "22041" },
+    { "name": "Bouaiche", "postalCode": "22042" },
+    { "name": "Boudjebaa el Bordj", "postalCode": "22043" },
+    { "name": "Boumaad Tilmouni", "postalCode": "22044" },
+    { "name": "Chetouane", "postalCode": "22045" },
+    { "name": "Delahim", "postalCode": "22046" },
+    { "name": "El Hacaiba", "postalCode": "22047" },
+    { "name": "Emir Abdelkader", "postalCode": "22048" },
+    { "name": "Hassi Daho", "postalCode": "22049" },
+    { "name": "Ighti", "postalCode": "22050" },
+    { "name": "Makedra", "postalCode": "22051" },
+    { "name": "M'cid", "postalCode": "22052" },
+    { "name": "Oued Mebtouh", "postalCode": "22053" },
+    { "name": "Oued Sebaa", "postalCode": "22054" },
+    { "name": "Oued Sefioun", "postalCode": "22055" },
+    { "name": "Oued Taorira", "postalCode": "22056" },
+    { "name": "Ouled Ali", "postalCode": "22057" },
+    { "name": "Redjem Demmouche", "postalCode": "22058" },
+    { "name": "Saf Saf", "postalCode": "22059" },
+    { "name": "Sehala Thaoura", "postalCode": "22060" },
+    { "name": "Sidi Chaib", "postalCode": "22061" },
+    { "name": "Sidi Daho Des Zairs", "postalCode": "22062" },
+    { "name": "Sidi Yacoub Bentemine", "postalCode": "22063" },
+    { "name": "Taoudmout", "postalCode": "22064" },
+    { "name": "Tefessour", "postalCode": "22065" },
+    { "name": "Teghalimet", "postalCode": "22066" },
+    { "name": "Zerouala", "postalCode": "22068" },
+    { "name": "Aouinettes", "postalCode": "22070" },
+    { "name": "Berkane Ben Yagoub", "postalCode": "22073" },
+    { "name": "Touaita", "postalCode": "22074" },
+    { "name": "Tenzera", "postalCode": "22078" },
+    { "name": "Bordj Djaafar", "postalCode": "22082" },
+    { "name": "Louza ben Achiba", "postalCode": "22083" },
+    { "name": "Beloualadi", "postalCode": "22087" },
+    { "name": "Titane Yahia", "postalCode": "22089" },
+    { "name": "Zelifa", "postalCode": "22090" },
+    { "name": "Ouled Bendida", "postalCode": "22091" }
+  ]
+}

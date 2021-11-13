@@ -1,0 +1,140 @@
+{
+  "id": 3,
+  "name": "Laghouat",
+  "postalCode": "03000",
+  "dairas": [
+    {
+      "name": "Aflou",
+      "communes": [
+        {
+          "name": "Aflou",
+          "codeONS": "0319",
+          "postalCode": "03001",
+          "otherPosts": [
+            { "name": "Aflou Hay El Gaada", "postalCode": "03020" },
+            { "name": "Aflou Hai Mohamed Boudiaf", "postalCode": "03021" },
+            { "name": "Aflou Zaoui Said", "postalCode": "03047" },
+            { "name": "Aflou Universite", "postalCode": "03050" },
+            { "name": "Aflou 1 Mai", "postalCode": "03053" }
+          ]
+        },
+        { "name": "Sidi Bouzid", "codeONS": "0324", "postalCode": "03024" },
+        { "name": "Chekkala", "postalCode": "03031" },
+        { "name": "Sebgag", "codeONS": "0316", "postalCode": "03034" }
+      ]
+    },
+    {
+      "name": "Aïn Madhi",
+      "communes": [
+        { "name": "El Kheneg", "codeONS": "0309", "postalCode": "03010" },
+        { "name": "Ain Madhi", "codeONS": "0307", "postalCode": "03012" },
+        { "name": "Tadjemout", "codeONS": "0308", "postalCode": "03007" },
+        { "name": "Tadjerouna", "codeONS": "0318", "postalCode": "03011" },
+        { "name": "El Houaita", "codeONS": "0323", "postalCode": "03040" },
+        { "name": "Lalmaya", "postalCode": "03042" }
+      ]
+    },
+    {
+      "name": "Brida",
+      "communes": [
+        { "name": "Brida", "codeONS": "0313", "postalCode": "03005" },
+        { "name": "Taouiala", "codeONS": "0317", "postalCode": "03026" }
+      ]
+    },
+    {
+      "name": "El Ghicha",
+      "communes": [
+        { "name": "El Ghicha", "codeONS": "0314", "postalCode": "03023" },
+        { "name": "Anfous", "postalCode": "03037" }
+      ]
+    },
+    {
+      "name": "Gueltet Sidi Saâd",
+      "communes": [
+        {
+          "name": "Gueltat Sidi Saad",
+          "codeONS": "0310",
+          "postalCode": "03025"
+        },
+        { "name": "Beidha", "codeONS": "0312", "postalCode": "03013" },
+        { "name": "Ain Sidi Ali", "codeONS": "0311", "postalCode": "03028" },
+        { "name": "Hadj Mechri", "codeONS": "0315", "postalCode": "03038" },
+        { "name": "Hassiane Dhib", "postalCode": "03044" }
+      ]
+    },
+    {
+      "name": "Hassi R'Mel",
+      "communes": [
+        {
+          "name": "Hassi R'mel",
+          "codeONS": "0306",
+          "postalCode": "03004",
+          "otherPosts": [
+            { "name": "Hassi R'mel 1er Nov", "postalCode": "03009" }
+          ]
+        },
+        { "name": "Bellil", "postalCode": "03008" },
+        { "name": "Hassi Delaa", "codeONS": "0305", "postalCode": "03022" },
+        { "name": "Bouzbaeir", "postalCode": "03046" }
+      ]
+    },
+    {
+      "name": "Ksar El Hirane",
+      "communes": [
+        { "name": "Ksar el Hirane", "codeONS": "0302", "postalCode": "03003" },
+        {
+          "name": "Benacer Benchohra",
+          "codeONS": "0303",
+          "postalCode": "03033"
+        }
+      ]
+    },
+    {
+      "name": "Laghouat",
+      "communes": [
+        {
+          "name": "Laghouat",
+          "postalCode": "03000",
+          "otherPosts": [
+            { "name": "Laghouat Maamourah", "postalCode": "03002" },
+            { "name": "Laghouat El Makam", "postalCode": "03006" },
+            { "name": "Laghouat Essadikia", "postalCode": "03015" },
+            { "name": "Laghouat Cite Nord", "postalCode": "03016" },
+            { "name": "Laghouat 1er Nov", "postalCode": "03017" },
+            {
+              "name": "Laghouat Emir Abdelkader (Gare Routiere)",
+              "postalCode": "03018"
+            },
+            { "name": "Laghouat Djamia", "postalCode": "03035" },
+            { "name": "Laghouat DCA", "postalCode": "03048" },
+            { "name": "Laghouat Pole 1", "postalCode": "03049" },
+            { "name": "Laghouat Air", "postalCode": "03051" },
+            { "name": "Laghouat El Wiam", "postalCode": "03052" },
+            { "name": "Laghouat Pole universitaire 2", "postalCode": "03054" }
+          ]
+        },
+        { "name": "Bordj Senouci", "postalCode": "03032" }
+      ]
+    },
+    {
+      "name": "Oued Morra",
+      "communes": [
+        { "name": "Oued Mourra", "codeONS": "0321", "postalCode": "03027" },
+        { "name": "Oued M'zi", "codeONS": "0322", "postalCode": "03041" }
+      ]
+    },
+    {
+      "name": "Sidi Makhlouf",
+      "communes": [
+        { "name": "Sidi Makhlouf", "codeONS": "0304", "postalCode": "03019" },
+        { "name": "El Assafia", "codeONS": "0320", "postalCode": "03014" }
+      ]
+    }
+  ],
+
+  "address": [
+    { "name": "Ain Skhouna", "postalCode": "03030" },
+    { "name": "Terghalel", "postalCode": "03035" },
+    { "name": "Oued Touil", "postalCode": "03043" }
+  ]
+}

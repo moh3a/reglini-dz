@@ -1,0 +1,105 @@
+{
+  "id": 12,
+  "name": "Tebessa",
+  "postalCode": "12000",
+  "towns": [
+    {
+      "name": "Tebessa",
+      "postalCode": "12000",
+      "otherPosts": [
+        { "name": "Tebessa Minerve", "postalCode": "12004" },
+        { "name": "Tebessa La Concorde", "postalCode": "12007" },
+        { "name": "Tebessa Ezzouhour", "postalCode": "12018" },
+        { "name": "Tebessa Ennahda", "postalCode": "12028" },
+        { "name": "Tebessa Omnisport", "postalCode": "12029" },
+        { "name": "Tebessa El Matar", "postalCode": "12059" },
+        { "name": "Tebessa Chadli Ben Djedid", "postalCode": "12060" },
+        { "name": "Tebessa Brakni Ali Ben Younes", "postalCode": "12061" },
+        { "name": "Tebessa Cheikh Larbi Tebessi", "postalCode": "12062" },
+        {
+          "name": "Tebessa Residence Universitaire 19 Mai",
+          "postalCode": "12063"
+        },
+        { "name": "Tebessa Universite", "postalCode": "12064" },
+        { "name": "Tebessa Gare Routiere", "postalCode": "12066" }
+      ]
+    },
+    {
+      "name": "Bir el Ater",
+      "postalCode": "12001",
+      "otherPosts": [
+        { "name": "Bir el Ater 19 Juin", "postalCode": "12009" },
+        { "name": "Bir el Ater El Houria", "postalCode": "12010" },
+        { "name": "Bir el Ater El Imrane", "postalCode": "12020" },
+        { "name": "Bir el Ater Gare Routiere", "postalCode": "12065" }
+      ]
+    },
+    {
+      "name": "Cheria",
+      "postalCode": "12002",
+      "otherPosts": [
+        { "name": "Cheria 9 Octobre", "postalCode": "12021" },
+        { "name": "Cheria Nememcha", "postalCode": "12056" },
+        { "name": "Cheria Gare Routiere", "postalCode": "12068" }
+      ]
+    },
+    {
+      "name": "Ouenza",
+      "postalCode": "12003",
+      "otherPosts": [
+        { "name": "Ouenza 1er Novembre", "postalCode": "12025" },
+        { "name": "Ouenza Amel", "postalCode": "12026" },
+        { "name": "Ouenza Chaine Gora", "postalCode": "12057" },
+        { "name": "Ouenza Gare Routiere", "postalCode": "12067" }
+      ]
+    },
+    {
+      "name": "El Aouinet",
+      "postalCode": "12005",
+      "otherPosts": [{ "name": "El Aouinet 20 Aout 55", "postalCode": "12058" }]
+    },
+    { "name": "El Kouif", "postalCode": "12006" },
+    { "name": "Ain Zerga", "postalCode": "12008" },
+    { "name": "Bir Mokadem", "postalCode": "12011" },
+    { "name": "Boukhadra", "postalCode": "12012" },
+    { "name": "Draa Limame", "postalCode": "12013" },
+    { "name": "El Ma Labiod", "postalCode": "12014" },
+    {
+      "name": "El Ogla",
+      "postalCode": "12015",
+      "otherPosts": [{ "name": "El Ogla El Malha", "postalCode": "12043" }]
+    },
+    { "name": "Hammamet", "postalCode": "12016" },
+    { "name": "Morsott", "postalCode": "12017" },
+    { "name": "Bekkaria", "postalCode": "12019" },
+    { "name": "Djebel Anoual", "postalCode": "12022" },
+    { "name": "El Meridj", "postalCode": "12023" },
+    { "name": "Negrine", "postalCode": "12024" },
+    { "name": "Oum Ali", "postalCode": "12027" },
+    { "name": "Ain Chenia Gare", "postalCode": "12030" },
+    { "name": "Ain Fadha", "postalCode": "12031" },
+    { "name": "Ain Ghrab", "postalCode": "12032" },
+    { "name": "Ain Sidi Salah", "postalCode": "12033" },
+    { "name": "Ain Zeguaieg", "postalCode": "12034" },
+    { "name": "Bedjene", "postalCode": "12035" },
+    { "name": "Bir Dheb", "postalCode": "12036" },
+    { "name": "Bir el Ouesra", "postalCode": "12037" },
+    { "name": "Bouchebka", "postalCode": "12038" },
+    { "name": "Boulhaf", "postalCode": "12039" },
+    { "name": "Dyr", "postalCode": "12040" },
+    { "name": "Lahouidjebt", "postalCode": "12041" },
+    { "name": "El Mezraa", "postalCode": "12042" },
+    { "name": "Ferkane", "postalCode": "12044" },
+    { "name": "Foum el Matleg", "postalCode": "12045" },
+    { "name": "Gourigueur", "postalCode": "12046" },
+    { "name": "Guentis", "postalCode": "12047" },
+    { "name": "Kissa", "postalCode": "12048" },
+    { "name": "Mesloula", "postalCode": "12049" },
+    { "name": "Ouled Naceur", "postalCode": "12050" },
+    { "name": "Ras el Ayoun", "postalCode": "12051" },
+    { "name": "Tazbent", "postalCode": "12052" },
+    { "name": "Thilidjene", "postalCode": "12053" },
+    { "name": "Torricha", "postalCode": "12054" },
+    { "name": "Toualbia", "postalCode": "12055" }
+  ]
+}

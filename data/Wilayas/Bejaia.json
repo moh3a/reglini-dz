@@ -1,0 +1,487 @@
+{
+  "id": 6,
+  "name": "Béjaia",
+  "postalCode": "06000",
+  "dairas": [
+    {
+      "name": "Adekar",
+      "communes": [
+        {
+          "name": "Adekar - Kebouche",
+          "codeONS": "0624",
+          "postalCode": "06021"
+        },
+        {
+          "name": "Adekar - Tizi Ougueni",
+          "codeONS": "0624",
+          "postalCode": "06103"
+        },
+        { "name": "Kiria", "postalCode": "06029" },
+        {
+          "name": "Taourirt Ighil - Centre",
+          "codeONS": "0604",
+          "postalCode": "06115"
+        },
+        {
+          "name": "Taourirt Ighil - Tizi el Korn",
+          "codeONS": "0604",
+          "postalCode": "06035"
+        },
+        {
+          "name": "Beni K'sila",
+          "codeONS": "0635",
+          "postalCode": "06106",
+          "otherPosts": [
+            { "name": "Ighil N'Sebt", "postalCode": "06082" },
+            { "name": "Djeblaa", "postalCode": "06027" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Akbou",
+      "communes": [
+        {
+          "name": "Akbou",
+          "codeONS": "0625",
+          "postalCode": "06001",
+          "otherPosts": [
+            { "name": "Akbou 1er Novembre", "postalCode": "06111" },
+            { "name": "Akbou Hopital", "postalCode": "06137" },
+            { "name": "Akbou Gueldamene", "postalCode": "06141" },
+            { "name": "Guendouza", "postalCode": "06050" }
+          ]
+        },
+        {
+          "name": "Chellata",
+          "codeONS": "0605",
+          "postalCode": "06052",
+          "otherPosts": [
+            { "name": "Ighil Oumced", "postalCode": "06063" },
+            { "name": "Ait Mekedem", "postalCode": "06143" }
+          ]
+        },
+        {
+          "name": "Ighram",
+          "codeONS": "0615",
+          "postalCode": "06057",
+          "otherPosts": [
+            { "name": "Taslent", "postalCode": "06048" },
+            { "name": "Ighil Nasser", "postalCode": "06069" }
+          ]
+        },
+        {
+          "name": "Tamokra",
+          "codeONS": "0606",
+          "postalCode": "06109",
+          "otherPosts": [{ "name": "Bicher", "postalCode": "06053" }]
+        }
+      ]
+    },
+    {
+      "name": "Amizour",
+      "communes": [
+        {
+          "name": "Amizour",
+          "codeONS": "0602",
+          "postalCode": "06008",
+          "otherPosts": [
+            {
+              "name": "Amizour Residence Universitaire 1",
+              "postalCode": "06135"
+            },
+            { "name": "Boukhalfa", "postalCode": "06091" },
+            { "name": "Tadert Tamoukrant", "postalCode": "06096" },
+            { "name": "Ighil Ialouanene", "postalCode": "06098" },
+            { "name": "Merdj Ouamane", "postalCode": "06102" },
+            { "name": "El Hamma", "postalCode": "06117" }
+          ]
+        },
+        {
+          "name": "Ait S'Kheur (Beni Djellil)",
+          "postalCode": "06067",
+          "otherPosts": [{ "name": "Aghbala", "postalCode": "06092" }]
+        },
+        {
+          "name": "Semaoune",
+          "codeONS": "0612",
+          "postalCode": "06020",
+          "otherPosts": [
+            { "name": "Semaoune Chemini", "postalCode": "06084" },
+
+            { "name": "Aourir Adjissa", "postalCode": "06093" }
+          ]
+        },
+        { "name": "Feraoune", "codeONS": "0603", "postalCode": "06033" }
+      ]
+    },
+    {
+      "name": "Aokas",
+      "communes": [
+        {
+          "name": "Aokas",
+          "codeONS": "0622",
+          "postalCode": "06007",
+          "otherPosts": [
+            { "name": "Aokas 20 Aout", "postalCode": "06136" },
+            { "name": "Akkar", "postalCode": "06061" }
+          ]
+        },
+        { "name": "Tizi N'Berber", "codeONS": "0649", "postalCode": "06060" }
+      ]
+    },
+    {
+      "name": "Barbacha",
+      "communes": [
+        {
+          "name": "Barbacha",
+          "codeONS": "0634",
+          "postalCode": "06009",
+          "otherPosts": [
+            { "name": "Khellil", "postalCode": "06095" },
+            { "name": "Taourirt Larbaa", "postalCode": "06124" }
+          ]
+        },
+        {
+          "name": "Tizi Tindjit (Kendira)",
+          "codeONS": "0613",
+          "postalCode": "06032"
+        }
+      ]
+    },
+    {
+      "name": "Béjaia",
+      "communes": [
+        {
+          "name": "Béjaia",
+          "codeONS": "0601",
+          "postalCode": "06000",
+          "otherPosts": [
+            { "name": "Béjaia Liberte", "postalCode": "06002" },
+            { "name": "Béjaia Pepiniere", "postalCode": "06116" },
+            { "name": "Béjaia Gare Routiere", "postalCode": "06123" },
+            { "name": "Béjaia Ahmed Ougana", "postalCode": "06125" },
+            { "name": "Béjaia Hassiba Ben Bouali", "postalCode": "06126" },
+            { "name": "Béjaia Abane Ramdane", "postalCode": "06127" },
+            { "name": "Béjaia Naceria", "postalCode": "06128" },
+            { "name": "Béjaia Tala Ouriane", "postalCode": "06129" },
+            { "name": "Béjaia Ihaddadene", "postalCode": "06130" },
+            { "name": "Béjaia Sidi Ali Labhar", "postalCode": "06131" },
+            { "name": "Béjaia Taassast", "postalCode": "06134" },
+            {
+              "name": "Béjaia Sidi Soufiane",
+              "postalCode": "06139"
+            },
+            { "name": "Béjaia Sidi Ahmed", "postalCode": "06040" },
+            {
+              "name": "Béjaia Etablissement Postal Itinerant 1",
+              "postalCode": "06144"
+            },
+            { "name": "Boukhiama", "postalCode": "06046" },
+            { "name": "Amtik N'Tafat", "postalCode": "06047" }
+          ]
+        },
+        {
+          "name": "Oued Ghir",
+          "codeONS": "0651",
+          "postalCode": "06017",
+          "otherPosts": [{ "name": "Mellala", "postalCode": "06062" }]
+        }
+      ]
+    },
+    {
+      "name": "Beni Maouche",
+      "communes": [
+        {
+          "name": "Beni Maouche",
+          "codeONS": "0650",
+          "postalCode": "06024",
+          "otherPosts": [
+            { "name": "Ait Adjissa", "postalCode": "06081" },
+            {
+              "name": "Aguemoune Beni Khiar",
+              "postalCode": "06107"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chemini",
+      "communes": [
+        { "name": "Chemini", "codeONS": "0629", "postalCode": "06022" },
+        { "name": "Tibane", "codeONS": "0632", "postalCode": "06087" },
+        {
+          "name": "Tiliouacadi (Souk Oufella)",
+          "codeONS": "0630",
+          "postalCode": "06042"
+        },
+        { "name": "Takrietz", "postalCode": "06036" },
+        { "name": "Akfadou", "codeONS": "0642", "postalCode": "06142" },
+        { "name": "Tizamourine", "postalCode": "06025" }
+      ]
+    },
+    {
+      "name": "Darguina",
+      "communes": [
+        { "name": "Darguina", "codeONS": "0620", "postalCode": "06016" },
+        {
+          "name": "Taregregt (Ait Smail)",
+          "codeONS": "0647",
+          "postalCode": "06044",
+          "otherPosts": [{ "name": "Tizoual", "postalCode": "06080" }]
+        },
+        {
+          "name": "Bordj Mira (Taskriout)",
+          "codeONS": "0631",
+          "postalCode": "06015",
+          "otherPosts": [
+            { "name": "Ifalene", "postalCode": "06058" },
+            { "name": "Ait Idriss", "postalCode": "06078" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "El Kseur",
+      "communes": [
+        {
+          "name": "El Kseur",
+          "codeONS": "0631",
+          "postalCode": "06003",
+          "otherPosts": [
+            { "name": "El Kseur Akal Aberkane", "postalCode": "06132" }
+          ]
+        },
+        {
+          "name": "Berchiche - Residence Universitaire",
+          "postalCode": "06120"
+        },
+        {
+          "name": "Il Matten",
+          "codeONS": "0618",
+          "postalCode": "06041",
+          "otherPosts": [
+            { "name": "Il Matten Hopital", "postalCode": "06088" },
+            { "name": "Tala Tazert", "postalCode": "06086" }
+          ]
+        },
+        {
+          "name": "Toudja",
+          "codeONS": "0619",
+          "postalCode": "06030",
+          "otherPosts": [{ "name": "Achelouf", "postalCode": "06071" }]
+        }
+      ]
+    },
+    {
+      "name": "Ighil Ali",
+      "communes": [
+        {
+          "name": "Ighil Ali",
+          "codeONS": "0617",
+          "postalCode": "06014",
+          "otherPosts": [{ "name": "Belayel", "postalCode": "06054" }]
+        },
+        {
+          "name": "Guendouze (Ait Rzine)",
+          "codeONS": "0628",
+          "postalCode": "06013"
+        },
+        { "name": "Tizi Alouane (Ait Rzine)", "postalCode": "06055" }
+      ]
+    },
+    {
+      "name": "Kherrata",
+      "communes": [
+        {
+          "name": "Kherrata",
+          "codeONS": "0644",
+          "postalCode": "06004",
+          "otherPosts": [
+            { "name": "Kherrata Nouvelle", "postalCode": "06118" },
+            { "name": "Djermouna", "postalCode": "06133" },
+            { "name": "Merouaha", "postalCode": "06140" }
+          ]
+        },
+        {
+          "name": "Berzakh (Draa el Kaid)",
+          "codeONS": "0645",
+          "postalCode": "06070",
+          "otherPosts": [
+            { "name": "Adjioun", "postalCode": "06074" },
+            { "name": "Dradra", "postalCode": "06075" },
+            { "name": "Senadla", "postalCode": "06113" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ouzellaguen",
+      "communes": [
+        { "name": "Ighzer Amokrane", "codeONS": "0636", "postalCode": "06010" },
+        {
+          "name": "Ouzellaguen - Djemaa",
+          "postalCode": "06045",
+          "otherPosts": [
+            { "name": "Ouzellaguen - Helouane", "postalCode": "06121" },
+            { "name": "Tigrine", "postalCode": "06101" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seddouk",
+      "communes": [
+        {
+          "name": "Akourma (Amalou)",
+          "codeONS": "0616",
+          "postalCode": "06034"
+        },
+        {
+          "name": "M'cisna (Sidi Said)",
+          "codeONS": "0609",
+          "postalCode": "06038",
+          "otherPosts": [
+            { "name": "Ighil Ouantar", "postalCode": "06064" },
+            { "name": "Immoula", "postalCode": "06108" }
+          ]
+        },
+        {
+          "name": "Bouhamza",
+          "codeONS": "0637",
+          "postalCode": "06031",
+          "otherPosts": [
+            { "name": "Bouhitem", "postalCode": "06049" },
+            { "name": "Mahfouda", "postalCode": "06073" }
+          ]
+        },
+        {
+          "name": "Seddouk",
+          "codeONS": "0626",
+          "postalCode": "06011",
+          "otherPosts": [
+            { "name": "Takaatz", "postalCode": "06072" },
+            { "name": "Tibouamouchine", "postalCode": "06079" },
+            { "name": "Akhnak", "postalCode": "06099" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sidi Aich",
+      "communes": [
+        {
+          "name": "Sidi Aich",
+          "codeONS": "0639",
+          "postalCode": "06005",
+          "otherPosts": [
+            { "name": "Sidi Aich Timzaghra", "postalCode": "06138" }
+          ]
+        },
+        { "name": "Leflaye", "codeONS": "0643", "postalCode": "06043" },
+        { "name": "Tinbdar", "codeONS": "0610", "postalCode": "06037" },
+        {
+          "name": "Tifra - Sillal",
+          "codeONS": "0614",
+          "postalCode": "06028",
+          "otherPosts": [
+            { "name": "Tifra - Ikedjane", "postalCode": "06089" },
+            { "name": "Tifra- Assam", "postalCode": "06104" }
+          ]
+        },
+        { "name": "Sidi Ayad", "codeONS": "0621", "postalCode": "06085" }
+      ]
+    },
+    {
+      "name": "Souk El Ténine",
+      "communes": [
+        {
+          "name": "Souk el Tenine",
+          "codeONS": "0608",
+          "postalCode": "06012",
+          "otherPosts": [{ "name": "Lota", "postalCode": "06110" }]
+        },
+        {
+          "name": "El Djorf (Melbou)",
+          "codeONS": "0608",
+          "postalCode": "06076",
+          "otherPosts": [{ "name": "Tizi el Oued", "postalCode": "06114" }]
+        },
+        {
+          "name": "Tamricht (Tamridjet)",
+          "codeONS": "0646",
+          "postalCode": "06090",
+          "otherPosts": [{ "name": "El Alem", "postalCode": "06077" }]
+        }
+      ]
+    },
+    {
+      "name": "Tazmalte",
+      "communes": [
+        {
+          "name": "Tazmalt",
+          "codeONS": "0627",
+          "postalCode": "06006",
+          "otherPosts": [{ "name": "Allaghane", "postalCode": "06112" }]
+        },
+        {
+          "name": "Ait Mellikeche",
+          "codeONS": "0638",
+          "postalCode": "06039",
+          "otherPosts": [
+            { "name": "Beni Ouamar", "postalCode": "06056" },
+            { "name": "Ayacha", "postalCode": "06068" }
+          ]
+        },
+        {
+          "name": "Boudjellil",
+          "codeONS": "0652",
+          "postalCode": "06018",
+          "otherPosts": [
+            { "name": "Ouled Allouane", "postalCode": "06051" },
+            { "name": "Beni Mansour", "postalCode": "06026" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tichy",
+      "communes": [
+        {
+          "name": "Taguemount (Boukhelifa)",
+          "codeONS": "0648",
+          "postalCode": "06059"
+        },
+        {
+          "name": "Tichy",
+          "codeONS": "0611",
+          "postalCode": "06023",
+          "otherPosts": [{ "name": "Tizi Ouaklane", "postalCode": "06065" }]
+        },
+        { "name": "Tala Hamza", "codeONS": "0633", "postalCode": "06066" }
+      ]
+    },
+    {
+      "name": "Timezrit",
+      "communes": [
+        {
+          "name": "Timezrit - Akabiou",
+          "codeONS": "0607",
+          "postalCode": "06019",
+          "otherPosts": [
+            { "name": "Timezrit - Ighil Outaouaf", "postalCode": "06083" },
+            { "name": "Timezrit - Abainou", "postalCode": "06119" },
+            { "name": "Timezrit - Iderakane", "postalCode": "06122" }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "address": [
+    { "name": "Garet", "postalCode": "06094" },
+    { "name": "Sidi Ali", "postalCode": "06097" },
+    { "name": "Tizi Beni Khettab", "postalCode": "06100" }
+  ]
+}

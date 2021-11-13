@@ -1,0 +1,87 @@
+{
+  "id": 40,
+  "name": "Khenchela",
+  "postalCode": "40000",
+  "address": [
+    {
+      "name": "Khenchela",
+      "postalCode": "40000",
+      "otherPosts": [
+        { "name": "Khenchela An Nasr", "postalCode": "40002" },
+        { "name": "Khenchela El Houria", "postalCode": "40003" },
+        { "name": "Khenchela El Kahina", "postalCode": "40004" },
+        { "name": "Khenchela Ben Boulaid", "postalCode": "40010" },
+        { "name": "Khenchela 1er Novembre", "postalCode": "40017" },
+        { "name": "Khenchela Cite Hasnaoui", "postalCode": "40018" },
+        { "name": "Khenchela Moussa Reddah", "postalCode": "40019" },
+        { "name": "Khenchela Salem Lalmi", "postalCode": "40020" },
+        { "name": "Khenchela Allaoui Mohamed", "postalCode": "40047" },
+        { "name": "Khenchela Universite", "postalCode": "40051" },
+        { "name": "Khenchela Gare Routiere", "postalCode": "40052" }
+      ]
+    },
+    {
+      "name": "Kais",
+      "postalCode": "40001",
+      "otherPosts": [
+        { "name": "Kais el Amel", "postalCode": "40009" },
+        { "name": "Kais 17 Juin", "postalCode": "40045" }
+      ]
+    },
+    { "name": "Ain Touila", "postalCode": "40005" },
+    {
+      "name": "Babar",
+      "postalCode": "40006",
+      "otherPosts": [{ "name": "Babar 18 Fevrier", "postalCode": "40049" }]
+    },
+    {
+      "name": "Bouhmama",
+      "postalCode": "40007",
+      "otherPosts": [{ "name": "Bouhmama el Aures", "postalCode": "40050" }]
+    },
+    {
+      "name": "Chechar",
+      "postalCode": "40008",
+      "otherPosts": [{ "name": "Chechar Gare Routiere", "postalCode": "40053" }]
+    },
+    { "name": "Taouzient", "postalCode": "40011" },
+    {
+      "name": "Tazougart",
+      "postalCode": "40012",
+      "otherPosts": [{ "name": "Tazougart 5 Juillet", "postalCode": "40048" }]
+    },
+    {
+      "name": "Zoui",
+      "postalCode": "40013",
+      "otherPosts": [{ "name": "Zoui Essalem", "postalCode": "40054" }]
+    },
+    { "name": "Baghai", "postalCode": "40014" },
+    { "name": "Djellal", "postalCode": "40015" },
+    { "name": "El Hamma", "postalCode": "40016" },
+    { "name": "M'toussa", "postalCode": "40021" },
+    { "name": "Taberdga", "postalCode": "40022" },
+    { "name": "Yabous", "postalCode": "40023" },
+    { "name": "Ain Aizar", "postalCode": "40024" },
+    { "name": "Ain Djerboua", "postalCode": "40025" },
+    { "name": "Ain Lahma", "postalCode": "40026" },
+    { "name": "Ain Mimoun", "postalCode": "40027" },
+    { "name": "Bekkar", "postalCode": "40028" },
+    { "name": "Belkitane", "postalCode": "40029" },
+    { "name": "Chelia", "postalCode": "40030" },
+    { "name": "El Kharroub", "postalCode": "40031" },
+    { "name": "El Ouldja", "postalCode": "40032" },
+    { "name": "Fidh el Abiadh", "postalCode": "40033" },
+    { "name": "Fouanis", "postalCode": "40034" },
+    { "name": "Fridjou", "postalCode": "40035" },
+    { "name": "Hella", "postalCode": "40036" },
+    { "name": "Khirane", "postalCode": "40037" },
+    { "name": "Metirchou", "postalCode": "40038" },
+    { "name": "M'sara", "postalCode": "40039" },
+    { "name": "Ouled Azzedine", "postalCode": "40040" },
+    { "name": "Remila", "postalCode": "40041" },
+    { "name": "Tafassour", "postalCode": "40042" },
+    { "name": "Tamayourt", "postalCode": "40043" },
+    { "name": "Tizint", "postalCode": "40044" },
+    { "name": "Timdakit", "postalCode": "40046" }
+  ]
+}

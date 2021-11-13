@@ -8,7 +8,7 @@ import {
   updateQuantity,
   removeFromCart,
 } from "./userAsyncActions";
-import { IAuth } from "../../types/userType";
+import { IAuth } from "../../utils/types";
 
 const initialState: IAuth = {
   isAuthenticated: false,

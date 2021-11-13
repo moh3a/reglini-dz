@@ -1,0 +1,78 @@
+{
+  "id": 45,
+  "name": "Naama",
+  "postalCode": "46000",
+  "address": [
+    {
+      "name": "Naama",
+      "postalCode": "46000",
+      "otherPosts": [
+        { "name": "Naama Maarouf Faradji", "postalCode": "46006" },
+        { "name": "Naama El Ksour", "postalCode": "46020" },
+        { "name": "Naama Universite", "postalCode": "46044" },
+        { "name": "Naama Gare Routiere", "postalCode": "46048" },
+        { "name": "Naama Kebir Laaredj", "postalCode": "46049" }
+      ]
+    },
+    {
+      "name": "Ain Sefra",
+      "postalCode": "46001",
+      "otherPosts": [
+        { "name": "Ain Sefra Boumrifeg", "postalCode": "46003" },
+        { "name": "Ain Sefra Mouileh", "postalCode": "46009" },
+        { "name": "Ain Sefra Saada", "postalCode": "46010" },
+        { "name": "Ain Sefra Ksar Sidi Boutkhil", "postalCode": "46011" },
+        { "name": "Ain Sefra Nouvelle", "postalCode": "46033" },
+        { "name": "Ain Sefra Roucham Maamar", "postalCode": "46040" },
+        { "name": "Ain Sefra Gare Routiere", "postalCode": "46045" },
+        { "name": "Ain Sefra Saddok Ali", "postalCode": "46047" }
+      ]
+    },
+    {
+      "name": "Mecheria",
+      "postalCode": "46002",
+      "otherPosts": [
+        { "name": "Mecheria Bachiri Mohamed", "postalCode": "46015" },
+        { "name": "Mecheria Badaoui", "postalCode": "46016" },
+        { "name": "Mecheria Dahmani", "postalCode": "46017" },
+        { "name": "Mecheria Freres Rahmani", "postalCode": "46018" },
+        { "name": "Mecheria Amrani", "postalCode": "46034" },
+        { "name": "Mecheria El Wiam", "postalCode": "46035" },
+        { "name": "Mecheria Nouvelle", "postalCode": "46037" },
+        { "name": "Mecheria Miloudi Laid", "postalCode": "46039" },
+        { "name": "Mecheria Gare Routiere", "postalCode": "46050" }
+      ]
+    },
+    {
+      "name": "El Biodh",
+      "postalCode": "46004",
+      "otherPosts": [{ "name": "El Biodh 1er Novembre", "postalCode": "46038" }]
+    },
+    { "name": "Mekmen Ben Amar", "postalCode": "46005" },
+    { "name": "Abdelmoula", "postalCode": "46007" },
+    {
+      "name": "Ain Ben Khelil",
+      "postalCode": "46008",
+      "otherPosts": [
+        { "name": "Ain Ben Khelil Kenenda Boufeldja", "postalCode": "46046" }
+      ]
+    },
+    { "name": "Asla", "postalCode": "46012" },
+    { "name": "Djenien Bourezggrioui", "postalCode": "46013" },
+    { "name": "Kalaat Cheikh Bouamama", "postalCode": "46014" },
+    { "name": "Moghrar Fougani", "postalCode": "46019" },
+    { "name": "Sfissifa", "postalCode": "46021" },
+    { "name": "Ain Ouarka", "postalCode": "46022" },
+    { "name": "Ben Handjir", "postalCode": "46023" },
+    { "name": "El Kesdir", "postalCode": "46024" },
+    { "name": "Hadjrat el Meguil", "postalCode": "46025" },
+    { "name": "Hassi Labiadh", "postalCode": "46026" },
+    { "name": "Horchaia", "postalCode": "46027" },
+    { "name": "Mekter Forthassa", "postalCode": "46028" },
+    { "name": "Oulekak", "postalCode": "46029" },
+    { "name": "Tiout", "postalCode": "46030" },
+    { "name": "Tirkount", "postalCode": "46031" },
+    { "name": "Touadjeur", "postalCode": "46032" },
+    { "name": "Sidi Moussa", "postalCode": "46036" }
+  ]
+}

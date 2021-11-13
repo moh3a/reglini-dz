@@ -1,0 +1,114 @@
+{
+  "id": 46,
+  "name": "Ain Temouchent",
+  "postalCode": "46000",
+  "address": [
+    {
+      "name": "Ain Temouchent",
+      "postalCode": "46000",
+      "otherPosts": [
+        { "name": "Ain Temouchent Akid Abbes", "postalCode": "46002" },
+        { "name": "Ain Temouchent Akid Othmane", "postalCode": "46003" },
+        { "name": "Ain Temouchent Djaalab Abdelkader", "postalCode": "46056" },
+        { "name": "Ain Temouchent Gare Routiere", "postalCode": "46057" },
+        {
+          "name": "Ain Temouchent Centre Universitaire",
+          "postalCode": "46059"
+        },
+        { "name": "Ain Temouchent Bouyahia Mohamed", "postalCode": "46060" },
+        { "name": "Ain Temouchent Moulay Mustapha", "postalCode": "46063" },
+        { "name": "Ain Temouchent Sidi Said", "postalCode": "46064" }
+      ]
+    },
+    {
+      "name": "Beni Saf",
+      "postalCode": "46001",
+      "otherPosts": [
+        { "name": "Beni Saf Est", "postalCode": "46004" },
+        { "name": "Beni Saf Bouhmidi", "postalCode": "46018" },
+        { "name": "Beni Saf Nahda", "postalCode": "46019" }
+      ]
+    },
+    {
+      "name": "Hammam Bou Hadjar",
+      "postalCode": "46005",
+      "otherPosts": [
+        { "name": "Hammam Bou Hadjar Kermas Ameur", "postalCode": "46065" },
+        {
+          "name": "Hammam Bou Hadjar Bensaoula Bouhadjar",
+          "postalCode": "46066"
+        }
+      ]
+    },
+    {
+      "name": "El Amria",
+      "postalCode": "46006",
+      "otherPosts": [
+        { "name": "El Amria Taibi Kouider", "postalCode": "46058" }
+      ]
+    },
+    {
+      "name": "El Maleh",
+      "postalCode": "46007",
+      "otherPosts": [
+        { "name": "El Maleh Ben Dardour Mohamed", "postalCode": "46067" }
+      ]
+    },
+    {
+      "name": "Ain Kihal",
+      "postalCode": "46008",
+      "otherPosts": [
+        { "name": "Ain Kihal Benchama Badaoui", "postalCode": "46068" }
+      ]
+    },
+    {
+      "name": "Ain Larbaa",
+      "postalCode": "46009",
+      "otherPosts": [
+        { "name": "Ain Larbaa Safi", "postalCode": "46029" },
+        { "name": "Ain Larbaa Boucharab Miloud", "postalCode": "46061" }
+      ]
+    },
+    { "name": "Ain Tolba", "postalCode": "46010" },
+    { "name": "Chaabar el Leham", "postalCode": "46011" },
+    { "name": "Hassi el Ghella", "postalCode": "46012" },
+    { "name": "Sidi Ben Adda", "postalCode": "46013" },
+    { "name": "Souk el Tenine", "postalCode": "46014" },
+    { "name": "Terga", "postalCode": "46015" },
+    { "name": "Aghlal", "postalCode": "46016" },
+    { "name": "Aoubellil", "postalCode": "46017" },
+    { "name": "Chentouf", "postalCode": "46020" },
+    { "name": "Hassasna", "postalCode": "46021" },
+    { "name": "Oued Berkeche", "postalCode": "46022" },
+    { "name": "Oued Sebbah", "postalCode": "46023" },
+    { "name": "Sidi Ouriache", "postalCode": "46024" },
+    { "name": "Sidi Safi", "postalCode": "46025" },
+    { "name": "Tamzoura", "postalCode": "46026" },
+    { "name": "Ain Alem", "postalCode": "46027" },
+    { "name": "Ain Beida", "postalCode": "46028" },
+    { "name": "Ain Isdiel", "postalCode": "46030" },
+    { "name": "Aissaoui Bouziane", "postalCode": "46031" },
+    { "name": "Aures el Meida", "postalCode": "46032" },
+    { "name": "Bouzedjar Plage", "postalCode": "46033" },
+    { "name": "El Massada Nasr", "postalCode": "46035" },
+    { "name": "El Messaid", "postalCode": "4603" },
+    { "name": "Emir Abdelkader", "postalCode": "46037" },
+    { "name": "Gherras Baroudi", "postalCode": "46038" },
+    { "name": "Hadjairia", "postalCode": "46039" },
+    { "name": "Hamaina", "postalCode": "46040" },
+    { "name": "Mohamed Khemisti", "postalCode": "46041" },
+    { "name": "M'sela Djurdjura", "postalCode": "46042" },
+    { "name": "Ouled Boudjemaa", "postalCode": "46043" },
+    { "name": "Ouled Djbara", "postalCode": "46044" },
+    { "name": "Ouled Kihal", "postalCode": "46045" },
+    { "name": "Ouled Taoui", "postalCode": "46046" },
+    { "name": "Rechgoun", "postalCode": "46047" },
+    { "name": "Rouabia", "postalCode": "46048" },
+    { "name": "Saida", "postalCode": "46049" },
+    { "name": "Sidi Boumedienne", "postalCode": "46051" },
+    { "name": "Sidi Said", "postalCode": "46052" },
+    { "name": "Tedmaya", "postalCode": "46053" },
+    { "name": "El Houaoura", "postalCode": "46055" },
+    { "name": "Oulhaca", "postalCode": "46062" }
+  ]
+}

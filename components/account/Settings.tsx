@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Settings() {
+export default function Settings({ user }: any) {
   return (
     <div className="bg-white shadow overflow-hidden sm:rounded-lg">
       <div className="px-4 py-5 sm:px-6">
@@ -30,7 +30,7 @@ export default function Settings() {
                     DANGER! Your account will be permanently deleted.
                   </div>
                   <div className="ml-4 flex-shrink-0">
-                    <Link href="/profile/delete" passHref>
+                    <Link href="/account/delete" passHref>
                       <a className="font-medium text-red-600 hover:text-red-500">
                         DELETE
                       </a>

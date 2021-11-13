@@ -1,0 +1,131 @@
+{
+  "id": 28,
+  "name": "M'sila",
+  "postalCode": "28000",
+  "address": [
+    {
+      "name": "M'sila",
+      "postalCode": "28000",
+      "otherPosts": [
+        { "name": "M'sila Hodna", "postalCode": "28007" },
+        { "name": "M'sila Chebilia", "postalCode": "28018" },
+        { "name": "M'sila Cite Ennasr", "postalCode": "28019" },
+        { "name": "M'sila Mohamed Boudiaf", "postalCode": "28020" },
+        { "name": "M'sila Ben Badis", "postalCode": "28077" },
+        { "name": "M'sila Pole Universitaire", "postalCode": "28078" },
+        { "name": "M'sila Colonel Amirouche", "postalCode": "28082" },
+        { "name": "M'sila Universite", "postalCode": "28083" },
+        { "name": "M'sila Gare Routiere", "postalCode": "28084" },
+        { "name": "M'sila el Emir Abdelkader", "postalCode": "28089" }
+      ]
+    },
+    {
+      "name": "Bou Saada",
+      "postalCode": "28001",
+      "otherPosts": [
+        { "name": "Bou Saada Houari Boumedienne", "postalCode": "28012" },
+        { "name": "Bou Saada Nacereddine Dinet", "postalCode": "28013" },
+        { "name": "Bou Saada Sidi Slimane", "postalCode": "28069" },
+        { "name": "Bou Saada El Baten", "postalCode": "28086" },
+        { "name": "Bou Saada 8 Mai 1945", "postalCode": "28087" },
+        { "name": "Bou Saada Gare Routiere", "postalCode": "28090" }
+      ]
+    },
+    {
+      "name": "Sidi Aissa",
+      "postalCode": "28002",
+      "otherPosts": [
+        { "name": "Sidi Aissa 1er Novembre 1954", "postalCode": "28034" },
+        { "name": "Sidi Aissa Gare Routiere", "postalCode": "28080" },
+        { "name": "Sidi Aissa Abdelli el Tahar", "postalCode": "28092" }
+      ]
+    },
+    { "name": "Ain el Hadjel", "postalCode": "28003" },
+    {
+      "name": "Ain el Melh",
+      "postalCode": "28004",
+      "otherPosts": [
+        {
+          "name": "Ain el Melh Messaoudi M'hamed Bachir",
+          "postalCode": "28088"
+        }
+      ]
+    },
+    {
+      "name": "Hammam Dalaa",
+      "postalCode": "28005",
+      "otherPosts": [
+        { "name": "Hammam Dalaa Gare Routiere", "postalCode": "28079" }
+      ]
+    },
+    {
+      "name": "Magra",
+      "postalCode": "28006",
+      "otherPosts": [{ "name": "Magra Gare Routiere", "postalCode": "28081" }]
+    },
+    { "name": "Ain el Khadra", "postalCode": "28008" },
+    { "name": "Ben Srour", "postalCode": "28009" },
+    { "name": "Berhoum", "postalCode": "28010" },
+    { "name": "Bichara", "postalCode": "28011" },
+    { "name": "Chellal", "postalCode": "28014" },
+    { "name": "El Hamel", "postalCode": "28015" },
+    { "name": "Medjedel", "postalCode": "28016" },
+    { "name": "Melouza", "postalCode": "28017" },
+    { "name": "Ouled Addi Guebala", "postalCode": "28021" },
+    { "name": "Ouled Derradj", "postalCode": "28022" },
+    { "name": "Ain Fares", "postalCode": "28023" },
+    { "name": "Ain Oghrab", "postalCode": "28024" },
+    { "name": "Ain Rich", "postalCode": "28025" },
+    { "name": "Belaiba", "postalCode": "28026" },
+    { "name": "Beni Ilmane", "postalCode": "28027" },
+    { "name": "Benzouh", "postalCode": "28028" },
+    { "name": "Bir Guellalia", "postalCode": "28029" },
+    { "name": "Djebel Guettaria", "postalCode": "28030" },
+    { "name": "Djoub", "postalCode": "28031" },
+    { "name": "Eddis", "postalCode": "28032" },
+    { "name": "Mohamed Boudiaf", "postalCode": "28033" },
+    { "name": "Sidi Ameur", "postalCode": "28035" },
+    { "name": "Sidi Hadjeres", "postalCode": "28036" },
+    { "name": "Slim", "postalCode": "28037" },
+    { "name": "Tarmount", "postalCode": "28038" },
+    { "name": "Ahl el Oued", "postalCode": "28039" },
+    { "name": "Ain Khermane", "postalCode": "28040" },
+    { "name": "Baniou", "postalCode": "28041" },
+    { "name": "Berarda", "postalCode": "28042" },
+    { "name": "Bir Fodda", "postalCode": "28043" },
+    { "name": "Bir Madhi", "postalCode": "28044" },
+    { "name": "Bordj Belkhrif", "postalCode": "28045" },
+    { "name": "Boukhemissa", "postalCode": "28046" },
+    { "name": "Ced el Ghaba", "postalCode": "28047" },
+    { "name": "Dehahna", "postalCode": "28048" },
+    { "name": "Djaouna", "postalCode": "28049" },
+    { "name": "Djebel Meharga", "postalCode": "28050" },
+    { "name": "Djebel Thameur", "postalCode": "28051" },
+    { "name": "Djebel Zeyreg", "postalCode": "28052" },
+    { "name": "Dreat", "postalCode": "28053" },
+    { "name": "El Allig", "postalCode": "28054" },
+    { "name": "El Ghil", "postalCode": "28055" },
+    { "name": "Khettouti Sed el Djir", "postalCode": "28056" },
+    { "name": "Mohamed Seddik Benyahia", "postalCode": "28057" },
+    { "name": "Metarfa", "postalCode": "28058" },
+    { "name": "M'guitaa", "postalCode": "28059" },
+    { "name": "Ouled Mansour", "postalCode": "28060" },
+    { "name": "Oultem", "postalCode": "28061" },
+    { "name": "Reguaieg", "postalCode": "28062" },
+    { "name": "Roumana", "postalCode": "28063" },
+    { "name": "Souamaa", "postalCode": "28064" },
+    { "name": "Temsa", "postalCode": "28065" },
+    { "name": "Thameur Sidi M'hamed", "postalCode": "28066" },
+    { "name": "Zerzour", "postalCode": "28067" },
+    { "name": "Zitoun", "postalCode": "28068" },
+    { "name": "Menaa", "postalCode": "28070" },
+    { "name": "El Bassatine", "postalCode": "28071" },
+    { "name": "El Djorf", "postalCode": "28072" },
+    { "name": "Boumelal", "postalCode": "28073" },
+    { "name": "Oum Chaouchi", "postalCode": "28074" },
+    { "name": "Ouled Bia", "postalCode": "28075" },
+    { "name": "Lougmane", "postalCode": "28076" },
+    { "name": "Ain Sidi M'hamed", "postalCode": "28091" },
+    { "name": "Ghezal", "postalCode": "28093" }
+  ]
+}

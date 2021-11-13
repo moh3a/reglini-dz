@@ -23,7 +23,7 @@ const CustomSignInCallbackMethod = async (user: any, account: any) => {
     });
     const token = newuser.verifySignUpCredentials();
     await newuser.save();
-    const url = `${process.env.NEXTAUTH_URL}/profile/verify/${token}`;
+    const url = `${process.env.NEXTAUTH_URL}/account/verify/${token}`;
     const message = `
       <h1>Hello ${user.name},</h1>
       <p>In order to verify your account, you can simply follow <a href=${url} target='_blank' clicktracking='off'>this link</a>.</p>

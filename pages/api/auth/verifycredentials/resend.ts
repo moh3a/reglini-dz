@@ -3,7 +3,7 @@ import { getSession } from "next-auth/client";
 import dbConnect from "../../../../config/db";
 import User from "../../../../models/User";
 import SendEmail from "../../../../utils/sendEmail";
-import { IUser } from "../../../../types/userType";
+import { IUser } from "../../../../utils/types";
 
 export default async function handler(
   req: NextApiRequest,
@@ -25,7 +25,7 @@ export default async function handler(
       user.verifyCredentialsToken = undefined;
       const token = user.verifySignUpCredentials();
       await user.save();
-      const url = `${process.env.NEXTAUTH_URL}/profile/verify/${token}`;
+      const url = `${process.env.NEXTAUTH_URL}/account/verify/${token}`;
       const message = `
       <h1>Hello ${user.name},</h1>
       <p>In order to verify your account, you can simply follow <a href=${url} target='_blank' clicktracking='off'>this link</a>.</p>

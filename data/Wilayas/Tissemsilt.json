@@ -1,0 +1,81 @@
+{
+  "id": 38,
+  "name": "Tissemsilt",
+  "postalCode": "38000",
+  "address": [
+    {
+      "name": "Tissemsilt",
+      "postalCode": "38000",
+      "otherPosts": [
+        { "name": "Tissemsilt Bencherki", "postalCode": "38009" },
+        { "name": "Tissemsilt Benhamouda", "postalCode": "38010" },
+        { "name": "Tissemsilt El Merdja", "postalCode": "38011" },
+        { "name": "Tissemsilt El Hidhab", "postalCode": "38034" },
+        { "name": "Tissemsilt Naanaa Ahmed", "postalCode": "38035" },
+        { "name": "Tissemsilt Belaid Benazzouz", "postalCode": "38036" },
+        {
+          "name": "Tissemsilt Centre Universitaire El Wancharissi",
+          "postalCode": "38038"
+        },
+        { "name": "Tissemsilt Gare Routiere", "postalCode": "38042" }
+      ]
+    },
+    { "name": "Bordj Bounaama", "postalCode": "38001" },
+    { "name": "Lardjem", "postalCode": "38002" },
+    {
+      "name": "Theniet el Had",
+      "postalCode": "38003",
+      "otherPosts": [
+        { "name": "Theniet el Had El Meddad", "postalCode": "38032" }
+      ]
+    },
+    {
+      "name": "Bordj Emir Abdelkader",
+      "postalCode": "38004",
+      "otherPosts": [
+        {
+          "name": "Bordj Emir Abdelkader Sahari Belkacem",
+          "postalCode": "38041"
+        }
+      ]
+    },
+    { "name": "Boucaid", "postalCode": "38005" },
+    {
+      "name": "Khesmisti",
+      "postalCode": "38006",
+      "otherPosts": [
+        { "name": "Khemisti Boubtana Ben Amer", "postalCode": "38037" },
+        { "name": "Khemisti Benghoucha Mohamed", "postalCode": "38039" }
+      ]
+    },
+    { "name": "Laayoune", "postalCode": "38007" },
+    { "name": "Lazharia", "postalCode": "38008" },
+    { "name": "Ammari", "postalCode": "38012" },
+    { "name": "Melaab", "postalCode": "38013" },
+    {
+      "name": "Ouled Bessem",
+      "postalCode": "38014",
+      "otherPosts": [
+        { "name": "Ouled Bessem 1er Novembre", "postalCode": "38040" }
+      ]
+    },
+    { "name": "Ain el Kerma", "postalCode": "38015" },
+    { "name": "Ain Ferradja", "postalCode": "38016" },
+    { "name": "Ain Guerguour", "postalCode": "38017" },
+    { "name": "Amrouna", "postalCode": "38018" },
+    { "name": "Beni Chaib", "postalCode": "38019" },
+    { "name": "Beni Lahcen", "postalCode": "38020" },
+    { "name": "Doui Hasni", "postalCode": "38021" },
+    { "name": "Larbaa", "postalCode": "38022" },
+    { "name": "Maacem", "postalCode": "38023" },
+    { "name": "Meguisba", "postalCode": "38024" },
+    { "name": "Sidi Abed", "postalCode": "38025" },
+    { "name": "Sidi Boutouchent", "postalCode": "38026" },
+    { "name": "Sidi Lantri", "postalCode": "38027" },
+    { "name": "Sidi Slimane", "postalCode": "38028" },
+    { "name": "Tamellahet", "postalCode": "38029" },
+    { "name": "Tamezlait", "postalCode": "38030" },
+    { "name": "Youssoufia", "postalCode": "38031" },
+    { "name": "Beni Maida", "postalCode": "38033" }
+  ]
+}

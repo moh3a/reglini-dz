@@ -1,0 +1,378 @@
+{
+  "id": 5,
+  "name": "Batna",
+  "postalCode": "05000",
+  "dairas": [
+    {
+      "name": "Ain Djasser",
+      "communes": [
+        { "name": "Ain Djasser", "codeONS": "0519", "postalCode": "05032" },
+        { "name": "El Hassi", "codeONS": "0557", "postalCode": "05116" }
+      ]
+    },
+    {
+      "name": "Ain Touta",
+      "communes": [
+        {
+          "name": "Ain Touta",
+          "codeONS": "0545",
+          "postalCode": "05002",
+          "otherPosts": [
+            { "name": "Ain Touta 1er Novembre", "postalCode": "05048" },
+            { "name": "Ain Touta Hamada", "postalCode": "05050" },
+            { "name": "Ain Touta Cheffet", "postalCode": "05140" }
+          ]
+        },
+        { "name": "Tamesghit", "postalCode": "05133" },
+        { "name": "Chihat", "postalCode": "05122" },
+        { "name": "Maafa", "codeONS": "0503", "postalCode": "05123" },
+        { "name": "Moulia", "postalCode": "05126" },
+        {
+          "name": "Beni Fedhala el Hakania",
+          "codeONS": "0532",
+          "postalCode": "05141"
+        }
+      ]
+    },
+    {
+      "name": "Arris",
+      "communes": [
+        {
+          "name": "Arris",
+          "codeONS": "0516",
+          "postalCode": "05007",
+          "otherPosts": [
+            { "name": "Arris Mezoudji Amor", "postalCode": "05024" },
+            { "name": "Arris Grine Belgacem", "postalCode": "05042" }
+          ]
+        },
+        { "name": "Boussalah", "codeONS": "0526", "postalCode": "05060" },
+        { "name": "T'zouket", "postalCode": "05075" }
+      ]
+    },
+    {
+      "name": "Barika",
+      "communes": [
+        {
+          "name": "Barika",
+          "codeONS": "0542",
+          "postalCode": "05001",
+          "otherPosts": [
+            { "name": "Barika Liberte", "postalCode": "05022" },
+            { "name": "Barika Ben Baatouche", "postalCode": "05028" },
+            { "name": "Barika Gare Routiere", "postalCode": "05139" }
+          ]
+        },
+        { "name": "M'doukal", "codeONS": "0555", "postalCode": "05037" },
+        {
+          "name": "Bitam",
+          "codeONS": "0514",
+          "postalCode": "05045",
+          "otherPosts": [{ "name": "Ouled Aiche", "postalCode": "05119" }]
+        }
+      ]
+    },
+    {
+      "name": "Batna",
+      "communes": [
+        {
+          "name": "Batna",
+          "codeONS": "0501",
+          "postalCode": "05000",
+          "otherPosts": [
+            { "name": "Batna Ben Boulaid", "postalCode": "05003" },
+            { "name": "Batna Mebarki", "postalCode": "05005" },
+            { "name": "Batna 1er Novembre", "postalCode": "05006" },
+            { "name": "Batna Freres Khezzar", "postalCode": "05008" },
+            { "name": "Batna Hadj Lakhdar", "postalCode": "05010" },
+            { "name": "Batna An Nasr", "postalCode": "05014" },
+            { "name": "Batna Emir Abdelkader", "postalCode": "05017" },
+            { "name": "Batna Imadghassen (Aeroport)", "postalCode": "05018" },
+            { "name": "Batna El Boustene", "postalCode": "05021" },
+            { "name": "Batna Kechida", "postalCode": "05040" },
+            { "name": "Batna Zone Industrielle", "postalCode": "05109" },
+            { "name": "Tamachit", "postalCode": "05131" },
+            { "name": "Batna Gare Routiere", "postalCode": "05134" },
+            { "name": "Batna EAAB", "postalCode": "05135" },
+            { "name": "Batna 1ere Division Blindee", "postalCode": "05136" },
+            { "name": "Batna Universite", "postalCode": "05137" },
+            { "name": "Batna El Aures", "postalCode": "05143" },
+            { "name": "Batna Bouzourane", "postalCode": "05144" }
+          ]
+        },
+        {
+          "name": "Hamou Dambri (Fesdis)",
+          "codeONS": "0523",
+          "postalCode": "05078",
+          "otherPosts": [{ "name": "Fesdis Ferme", "postalCode": "05106" }]
+        },
+        {
+          "name": "Lambirdi (Oued Chaaba)",
+          "codeONS": "0537",
+          "postalCode": "05073"
+        },
+        { "name": "Hamla", "postalCode": "05074" }
+      ]
+    },
+    {
+      "name": "Bouzina",
+      "communes": [
+        { "name": "Bouzina", "codeONS": "0535", "postalCode": "05041" },
+        { "name": "Tagoust el Hamra", "postalCode": "05056" },
+        { "name": "Nirdi", "postalCode": "05086" },
+        { "name": "Mezline", "postalCode": "05097" }
+      ]
+    },
+    {
+      "name": "Chemmoura",
+      "communes": [
+        { "name": "Chemmoura", "codeONS": "0536", "postalCode": "05039" },
+        { "name": "Boulhilet", "codeONS": "0560", "postalCode": "05062" },
+        { "name": "El Kaouchia", "postalCode": "05102" }
+      ]
+    },
+    {
+      "name": "Djezzar",
+      "communes": [
+        {
+          "name": "Merabtine el Djazzar",
+          "codeONS": "0543",
+          "postalCode": "05046"
+        },
+        { "name": "Ouled Ammar", "codeONS": "0556", "postalCode": "05121" },
+        {
+          "name": "M'tkaouak (Abdelkader Azil)",
+          "codeONS": "0515",
+          "postalCode": "05130"
+        },
+        { "name": "Ouled Derradji", "postalCode": "05087" }
+      ]
+    },
+    {
+      "name": "El Madher",
+      "communes": [
+        { "name": "El Madher", "codeONS": "0507", "postalCode": "05015" },
+        { "name": "Ain Yagout", "codeONS": "0522", "postalCode": "05031" },
+        { "name": "Draa Boultif", "postalCode": "05101" },
+        { "name": "Boumia", "codeONS": "0559", "postalCode": "05104" },
+        {
+          "name": "Sidi Khiar (Djerma)",
+          "codeONS": "0513",
+          "postalCode": "05105"
+        },
+        { "name": "Chott", "postalCode": "05118" }
+      ]
+    },
+    {
+      "name": "Ichmoul",
+      "communes": [
+        {
+          "name": "Medina (Ichmoul)",
+          "codeONS": "0530",
+          "postalCode": "05026"
+        },
+        { "name": "Foum Toub", "codeONS": "0531", "postalCode": "05049" },
+        { "name": "Inoughissene", "codeONS": "0511", "postalCode": "05083" },
+        { "name": "El Hadjadj", "postalCode": "05084" }
+      ]
+    },
+    {
+      "name": "Menaa",
+      "communes": [
+        { "name": "Menaa", "codeONS": "0506", "postalCode": "05012" },
+        { "name": "Chelma", "postalCode": "05052" },
+        { "name": "Nara", "postalCode": "05053" },
+        { "name": "Ouarka", "postalCode": "05059" },
+        { "name": "Amentane", "postalCode": "05093" },
+        { "name": "Aoughanime", "postalCode": "05094" },
+        { "name": "Brayadh (Brayed)", "postalCode": "05100" },
+        { "name": "Tigharghar", "codeONS": "0521", "postalCode": "05107" }
+      ]
+    },
+    {
+      "name": "Merouana",
+      "communes": [
+        {
+          "name": "Merouana",
+          "codeONS": "0504",
+          "postalCode": "05013",
+          "otherPosts": [
+            { "name": "Merouana 8 Mai 1945", "postalCode": "05030" },
+            { "name": "Merouana Houari Boumedienne", "postalCode": "05034" }
+          ]
+        },
+        { "name": "Oued el Ma", "codeONS": "0533", "postalCode": "05016" },
+        {
+          "name": "El Ksar (Ksar Bellezma)",
+          "codeONS": "0528",
+          "postalCode": "05047"
+        },
+        {
+          "name": "Ali Nemeur (Hidoussa)",
+          "codeONS": "0546",
+          "postalCode": "05033"
+        },
+        { "name": "R'haout", "postalCode": "05072" },
+        { "name": "Charf el Ain", "postalCode": "05114" },
+        { "name": "Nafla", "postalCode": "05115" }
+      ]
+    },
+    {
+      "name": "N'Gaous",
+      "communes": [
+        {
+          "name": "N'Gaous",
+          "codeONS": "0509",
+          "postalCode": "05004",
+          "otherPosts": [
+            { "name": "N'Gaous 5 Juillet", "postalCode": "05019" },
+            { "name": "N'Gaous Ras el Ain", "postalCode": "05029" }
+          ]
+        },
+        { "name": "Boumagueur", "codeONS": "0541", "postalCode": "05057" },
+        { "name": "Sefiane", "codeONS": "0524", "postalCode": "05064" },
+        { "name": "Tifrene", "postalCode": "05098" }
+      ]
+    },
+    {
+      "name": "Ouled Si Slimane",
+      "communes": [
+        {
+          "name": "Ouled Si Slimane",
+          "codeONS": "0553",
+          "postalCode": "05066"
+        },
+        { "name": "Taxlent", "codeONS": "0538", "postalCode": "05055" },
+        {
+          "name": "Koudiat Messara (Lemsane)",
+          "codeONS": "0527",
+          "postalCode": "05088"
+        },
+        { "name": "Tinibaouine", "postalCode": "05096" }
+      ]
+    },
+    {
+      "name": "Ras el Aioun",
+      "communes": [
+        { "name": "Ras el Aioun", "codeONS": "0551", "postalCode": "05009" },
+        {
+          "name": "Chaabet el Gosbat (Gosbat)",
+          "codeONS": "0539",
+          "postalCode": "05090"
+        },
+        { "name": "Guigba", "codeONS": "0510", "postalCode": "05067" },
+        { "name": "Djeriat", "postalCode": "05068" },
+        { "name": "Rahbat", "codeONS": "0525", "postalCode": "05091" },
+        { "name": "Talkhempt", "codeONS": "0534", "postalCode": "05051" },
+        {
+          "name": "M'cil (Ouled Sellam)",
+          "codeONS": "520",
+          "postalCode": "05044"
+        },
+        { "name": "Kenda", "postalCode": "05089" },
+        { "name": "Timedouine", "postalCode": "05111" },
+        { "name": "Safsaf", "postalCode": "05113" }
+      ]
+    },
+    {
+      "name": "Seggana",
+      "communes": [
+        { "name": "Seggana", "codeONS": "0529", "postalCode": "05027" },
+        { "name": "Tazghet", "postalCode": "05125" },
+        { "name": "Legridet", "postalCode": "05127" }
+      ]
+    },
+    {
+      "name": "Seriana",
+      "communes": [
+        {
+          "name": "Seriana",
+          "codeONS": "0505",
+          "postalCode": "05025",
+          "otherPosts": [{ "name": "Seriana Eris", "postalCode": "05138" }]
+        },
+        { "name": "Draa el Gbour", "postalCode": "05070" },
+        { "name": "Lazrou", "codeONS": "0558", "postalCode": "05117" },
+        { "name": "Zana el Beida", "codeONS": "0554", "postalCode": "05071" },
+        { "name": "Taga", "postalCode": "05120" },
+        { "name": "Zana", "postalCode": "05112" }
+      ]
+    },
+    {
+      "name": "Tazoult",
+      "communes": [
+        {
+          "name": "Tazoult Lambese",
+          "codeONS": "0508",
+          "postalCode": "05011",
+          "otherPosts": [
+            { "name": "Tazoult 20 Aout 1956", "postalCode": "05142" }
+          ]
+        },
+        {
+          "name": "Ouyoun el Assafeur",
+          "codeONS": "0512",
+          "postalCode": "05076"
+        },
+        { "name": "Sidi Maansar", "postalCode": "05069" }
+      ]
+    },
+    {
+      "name": "Teniet el Abed",
+      "communes": [
+        { "name": "Teniet el Abed", "codeONS": "0547", "postalCode": "05035" },
+        { "name": "Nouadar", "postalCode": "05038" },
+        { "name": "Oued Taga", "codeONS": "0548", "postalCode": "05036" },
+        { "name": "Baiou", "postalCode": "05061" },
+        { "name": "T'leth", "postalCode": "05058" },
+        { "name": "Ali Gader", "postalCode": "05092" },
+        { "name": "Baali", "postalCode": "05095" },
+        { "name": "Ouled Azzouz", "postalCode": "05099" },
+        { "name": "Chir", "codeONS": "0552", "postalCode": "05108" }
+      ]
+    },
+    {
+      "name": "Timgad",
+      "communes": [
+        { "name": "Timgad", "codeONS": "0550", "postalCode": "05023" },
+        {
+          "name": "Touffana (Ouled Fadel)",
+          "codeONS": "0549",
+          "postalCode": "05065"
+        },
+        { "name": "Bou el Freiss", "postalCode": "05063" },
+        { "name": "Legrine", "postalCode": "05103" }
+      ]
+    },
+    {
+      "name": "T'Kout",
+      "communes": [
+        { "name": "T'kout", "codeONS": "0544", "postalCode": "05020" },
+        {
+          "name": "Tifelfel (Ghassira)",
+          "codeONS": "0502",
+          "postalCode": "05043"
+        },
+        {
+          "name": "Sidi Ali (Kimmel)",
+          "codeONS": "0517",
+          "postalCode": "05079"
+        },
+        { "name": "Rhoufi", "postalCode": "05080" },
+        { "name": "Chenaoura", "postalCode": "05081" },
+        { "name": "Kef Laarous", "postalCode": "05082" },
+        { "name": "Dermoune", "postalCode": "05085" }
+      ]
+    }
+  ],
+
+  "address": [
+    { "name": "Chaabet Ouled Chelih", "postalCode": "05054" },
+    { "name": "Moussa Guettafi (Freres Ben Chadi)", "postalCode": "05077" },
+    { "name": "Teniet Essadra", "postalCode": "05110" },
+    { "name": "Ras el Ma", "postalCode": "05124" },
+    { "name": "Fenarou", "postalCode": "05128" },
+    { "name": "Tarf", "postalCode": "05129" },
+    { "name": "Bouteraa Kermia", "postalCode": "05132" }
+  ]
+}

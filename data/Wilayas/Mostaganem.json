@@ -1,0 +1,94 @@
+{
+  "id": 27,
+  "name": "Mostaganem",
+  "postalCode": "27000",
+  "address": [
+    {
+      "name": "Mostaganem",
+      "postalCode": "27000",
+      "otherPosts": [
+        { "name": "Mostaganem Adda Benguettat", "postalCode": "27006" },
+        { "name": "Mostaganem 5 Juillet", "postalCode": "27019" },
+        { "name": "Mostaganem Debdaba", "postalCode": "27025" },
+        { "name": "Mostaganem Douar Aizeb", "postalCode": "27057" },
+        { "name": "Mostaganem Berber Senia", "postalCode": "27058" },
+        { "name": "Mostaganem Colonel Lotfi", "postalCode": "27059" },
+        { "name": "Mostaganem Port", "postalCode": "27060" },
+        { "name": "Mostaganem Gare Routiere", "postalCode": "27061" },
+        { "name": "Mostaganem Maaraf Abdellah", "postalCode": "27062" },
+        { "name": "Mostaganem Tigditt", "postalCode": "27064" }
+      ]
+    },
+    {
+      "name": "Ain Tedeles",
+      "postalCode": "27001",
+      "otherPosts": [
+        { "name": "Ain Tedeles Benraoum Hammou", "postalCode": "27011" }
+      ]
+    },
+    {
+      "name": "Sidi Ali",
+      "postalCode": "27002",
+      "otherPosts": [{ "name": "Sidi Ali Fezari Ali", "postalCode": "27063" }]
+    },
+    { "name": "Bouguirat", "postalCode": "27003" },
+    {
+      "name": "Hassi Mameche",
+      "postalCode": "27004",
+      "otherPosts": [
+        { "name": "Hassi Mameche Douar Djedid", "postalCode": "27048" }
+      ]
+    },
+    { "name": "Khadra", "postalCode": "27005" },
+    { "name": "Sidi Lakhdar", "postalCode": "27007" },
+    { "name": "Ben Abdelmalek Ramdane", "postalCode": "27008" },
+    { "name": "Achaacha", "postalCode": "27009" },
+    { "name": "Ain Nouissy", "postalCode": "27010" },
+    { "name": "Benchohra Ghali", "postalCode": "27012" },
+    { "name": "Bled Touahria", "postalCode": "27013" },
+    { "name": "Fornaka", "postalCode": "27014" },
+    { "name": "Hadjadj", "postalCode": "27015" },
+    { "name": "Kheidine", "postalCode": "27016" },
+    {
+      "name": "Mazagran",
+      "postalCode": "27017",
+      "otherPosts": [{ "name": "Mazagran Hai Djedid", "postalCode": "27049" }]
+    },
+    { "name": "Mesra", "postalCode": "27018" },
+    { "name": "Oued el Kheir", "postalCode": "27020" },
+    { "name": "Sirat", "postalCode": "27021" },
+    { "name": "Sour", "postalCode": "27022" },
+    { "name": "Stidia", "postalCode": "27023" },
+    { "name": "Ain Sidi Cherif", "postalCode": "27024" },
+    { "name": "Nekmaria", "postalCode": "27026" },
+    { "name": "Ouled Boughalem", "postalCode": "27027" },
+    { "name": "Ouled Maallah", "postalCode": "27028" },
+    { "name": "Sidi Belattar", "postalCode": "27029" },
+    { "name": "Achasta Amor", "postalCode": "27030" },
+    { "name": "Ain Boudinar", "postalCode": "27031" },
+    { "name": "Ain Tounin", "postalCode": "27032" },
+    { "name": "Beni Yahi", "postalCode": "27033" },
+    { "name": "Cheraifia", "postalCode": "27034" },
+    { "name": "El Hassiane", "postalCode": "27035" },
+    { "name": "Ferna Mansourah", "postalCode": "27036" },
+    { "name": "Louza", "postalCode": "27037" },
+    { "name": "Ouled Baroudi", "postalCode": "27038" },
+    { "name": "Ouled Bouziane", "postalCode": "27039" },
+    { "name": "Ouled Chafaa", "postalCode": "27040" },
+    { "name": "Ouled Hamdane", "postalCode": "27041" },
+    { "name": "Ouled Hamou", "postalCode": "27042" },
+    { "name": "Oureah", "postalCode": "27043" },
+    { "name": "Saf Saf", "postalCode": "27044" },
+    { "name": "Sayada", "postalCode": "27045" },
+    { "name": "Souaflias", "postalCode": "27046" },
+    { "name": "Takourt Tazgait", "postalCode": "27047" },
+    { "name": "Enaro Lazreg Abdellah", "postalCode": "27050" },
+    { "name": "Djafria Benjebour Charef", "postalCode": "27051" },
+    { "name": "Kedadra", "postalCode": "27052" },
+    { "name": "Belhadri", "postalCode": "27053" },
+    { "name": "Garoucha", "postalCode": "27054" },
+    { "name": "Menasria", "postalCode": "27055" },
+    { "name": "Ouled el Bachir", "postalCode": "27056" },
+    { "name": "Rouaouna", "postalCode": "27065" }
+  ]
+}

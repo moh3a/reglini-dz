@@ -1,0 +1,123 @@
+{
+  "id": 21,
+  "name": "Skikda",
+  "postalCode": "21000",
+  "address": [
+    {
+      "name": "Skikda",
+      "postalCode": "21000",
+      "otherPosts": [
+        { "name": "Skikda 20 Aout 1955", "postalCode": "21024" },
+        { "name": "Skikda 8 Mai 1945", "postalCode": "21025" },
+        { "name": "Skikda Didouche Mourad", "postalCode": "21026" },
+        { "name": "Skikda Freres Saadi", "postalCode": "21027" },
+        { "name": "Skikda Ben M'hidi", "postalCode": "21045" },
+        { "name": "Skikda Houari Boumedienne", "postalCode": "21082" }
+      ]
+    },
+    {
+      "name": "Azzaba",
+      "postalCode": "21001",
+      "otherPosts": [
+        { "name": "Azzaba Independance", "postalCode": "21008" },
+        { "name": "Azzaba Bouacida", "postalCode": "21032" }
+      ]
+    },
+    {
+      "name": "Collo",
+      "postalCode": "21002",
+      "otherPosts": [{ "name": "Collo Ain Zida", "postalCode": "21013" }]
+    },
+    {
+      "name": "El Harrouch",
+      "postalCode": "21003",
+      "otherPosts": [{ "name": "El Harrouch El Melha", "postalCode": "21014" }]
+    },
+    {
+      "name": "Ramdane Djamel",
+      "postalCode": "21004",
+      "otherPosts": [
+        { "name": "Ramdane Djamel 1er Novembre", "postalCode": "21021" }
+      ]
+    },
+    {
+      "name": "Tamalous",
+      "postalCode": "21005",
+      "otherPosts": [{ "name": "Tamalous Superieur", "postalCode": "21081" }]
+    },
+    { "name": "Ain Charchar", "postalCode": "21006" },
+    { "name": "Ain Kercha", "postalCode": "21007" },
+    { "name": "Bekkouche Lakhdar", "postalCode": "21009" },
+    { "name": "Ben Azzouz", "postalCode": "21010" },
+    { "name": "Beni Oulbane", "postalCode": "21011" },
+    { "name": "Bou Noghra", "postalCode": "21012" },
+    { "name": "El Hedaiek", "postalCode": "21015" },
+    { "name": "El Ouloudj", "postalCode": "21016" },
+    { "name": "Emjez Ed Chiche", "postalCode": "21017" },
+    { "name": "Es Sebt", "postalCode": "21018" },
+    { "name": "Kerkera", "postalCode": "21019" },
+    { "name": "Oum Toub", "postalCode": "21020" },
+    { "name": "Salah Bouchaour", "postalCode": "21022" },
+    { "name": "Sidi Mezghiche", "postalCode": "21023" },
+    { "name": "Zitouna", "postalCode": "21028" },
+    { "name": "Ahmed Salem", "postalCode": "21029" },
+    { "name": "Ain Aghbel", "postalCode": "21030" },
+    { "name": "Ain Bouziane", "postalCode": "21031" },
+    { "name": "Beni Bechir", "postalCode": "21033" },
+    { "name": "Boudoukha", "postalCode": "21034" },
+    { "name": "Boumaiza", "postalCode": "21035" },
+    { "name": "Cheraia", "postalCode": "21036" },
+    { "name": "Djendel Saadi Mohamed", "postalCode": "21037" },
+    { "name": "Hamadi Krouma", "postalCode": "21038" },
+    { "name": "Hammoudi Hamrouche", "postalCode": "21039" },
+    { "name": "Mellab", "postalCode": "21040" },
+    { "name": "Menzel Bendiche", "postalCode": "21041" },
+    {
+      "name": "Oued Righa",
+      "postalCode": "21042",
+      "otherPosts": [{ "name": "Oued Righa Bahri", "postalCode": "21076" }]
+    },
+    { "name": "Ouled Habeba", "postalCode": "21043" },
+    { "name": "Said Bousbaa", "postalCode": "21044" },
+    { "name": "Stora", "postalCode": "21046" },
+    { "name": "Zerdazas", "postalCode": "21047" },
+    { "name": "Ain Cheraia", "postalCode": "21048" },
+    { "name": "Ain Nechema", "postalCode": "21049" },
+    { "name": "Ain Tabia", "postalCode": "21050" },
+    { "name": "Ain Zouit", "postalCode": "21051" },
+    { "name": "Bein el Ouiden", "postalCode": "21052" },
+    { "name": "Bouchtata Mahmoud", "postalCode": "21053" },
+    { "name": "Bouhalbes", "postalCode": "21054" },
+    { "name": "Demnia", "postalCode": "21055" },
+    { "name": "Djebel Staiha", "postalCode": "21056" },
+    { "name": "El Ghedir Merdj Tahar", "postalCode": "21057" },
+    { "name": "El Marsa Klibet Hamadi", "postalCode": "21058" },
+    { "name": "El Ouldja Boulbalout", "postalCode": "21059" },
+    { "name": "Guerbes Mabrouk Larbi", "postalCode": "21060" },
+    { "name": "Hadjar Mafrouch", "postalCode": "21061" },
+    { "name": "Kanoua", "postalCode": "21062" },
+    { "name": "Kheneg Mayoun", "postalCode": "21063" },
+    { "name": "La Zaouia", "postalCode": "21064" },
+    { "name": "Mekkassa", "postalCode": "21065" },
+    { "name": "Menzel el Abtal", "postalCode": "21066" },
+    { "name": "Oued el Kebir", "postalCode": "21067" },
+    {
+      "name": "Oued Ksob",
+      "postalCode": "21068",
+      "otherPosts": [{ "name": "Oued Ksob VSA", "postalCode": "21069" }]
+    },
+    { "name": "Rakouba", "postalCode": "21070" },
+    { "name": "Ramoul", "postalCode": "21071" },
+    { "name": "Ras el Ma", "postalCode": "21072" },
+    { "name": "Sebti Maameche", "postalCode": "21073" },
+    { "name": "Tahouna", "postalCode": "21074" },
+    { "name": "Toumiettes", "postalCode": "21075" },
+    { "name": "Souk Tleta", "postalCode": "21077" },
+    { "name": "Skikda Universite", "postalCode": "21078" },
+    { "name": "Ouled Slimane", "postalCode": "21079" },
+    { "name": "El Hamma", "postalCode": "21080" },
+    { "name": "Hadjeria", "postalCode": "21083" },
+    { "name": "Taleza", "postalCode": "21084" },
+    { "name": "Laouinettes", "postalCode": "21085" }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "id": 7,
+  "name": "Biskra",
+  "postalCode": "07000",
+  "dairas": [
+    {
+      "name": "Biskra",
+      "communes": [
+        {
+          "name": "Biskra",
+          "codeONS": "0701",
+          "postalCode": "07000",
+          "otherPosts": [
+            { "name": "Biskra Star Melouk", "postalCode": "07001" },
+            { "name": "Biskra Bab Darb", "postalCode": "07006" },
+            { "name": "Biskra Beni Morah", "postalCode": "07014" },
+            { "name": "Biskra Cite el Amal", "postalCode": "07015" },
+            { "name": "Biskra El Alia", "postalCode": "07016" },
+            { "name": "Biskra El Alia Nour", "postalCode": "07017" },
+            { "name": "Biskra Lebcheche", "postalCode": "07018" },
+            { "name": "Biskra Sidi Ghezal", "postalCode": "07019" },
+            { "name": "Biskra Universite", "postalCode": "07020" },
+            { "name": "Biskra Abderrahmane Gacem", "postalCode": "07086" },
+            { "name": "Biskra Gare Routiere", "postalCode": "07088" },
+            { "name": "Biskra Air", "postalCode": "07089" },
+            { "name": "Biskra Korra", "postalCode": "07090" },
+            { "name": "Biskra Base", "postalCode": "07091" },
+            { "name": "Biskra Hay el Moudjahidine", "postalCode": "07092" },
+            { "name": "Ain Ghezal", "postalCode": "07038" },
+            { "name": "Feliache", "postalCode": "07056" }
+          ]
+        },
+        { "name": "Ain el Kerma (El Hadjeb)", "postalCode": "07037" },
+        { "name": "Megloub (El Hadjeb)", "postalCode": "07066" },
+        { "name": "Zaatcha Ben Boulaid (El Hadjeb)", "postalCode": "07083" }
+      ]
+    },
+    {
+      "name": "Djemorah",
+      "communes": [
+        {
+          "name": "Djemourah",
+          "codeONS": "0720",
+          "postalCode": "07025",
+          "otherPosts": [
+            { "name": "Guedila", "postalCode": "07059" },
+            { "name": "Beni Souik", "postalCode": "07094" }
+          ]
+        },
+        {
+          "name": "Branis",
+          "codeONS": "07003",
+          "postalCode": "07023",
+          "otherPosts": [{ "name": "Ouled Said", "postalCode": "07093" }]
+        }
+      ]
+    },
+    {
+      "name": "El Kantara",
+      "communes": [
+        {
+          "name": "El Kantara",
+          "codeONS": "0717",
+          "postalCode": "07008",
+          "otherPosts": [
+            { "name": "El Kantara Les Gorges", "postalCode": "07029" },
+            { "name": "El Kantara 1er Novembre", "postalCode": "07053" }
+          ]
+        },
+        { "name": "Ain Zaatout", "codeONS": "0718", "postalCode": "07013" }
+      ]
+    },
+    {
+      "name": "M'Chouneche",
+      "communes": [
+        {
+          "name": "M'chouneche",
+          "codeONS": "0712",
+          "postalCode": "07010",
+          "otherPosts": [{ "name": "Baniane", "postalCode": "07042" }]
+        }
+      ]
+    },
+    {
+      "name": "Sidi Okba",
+      "communes": [
+        {
+          "name": "Sidi Okba",
+          "codeONS": "0711",
+          "postalCode": "07005",
+          "otherPosts": [
+            { "name": "Seriana", "postalCode": "07076" },
+            { "name": "Ghartha", "postalCode": "07058" }
+          ]
+        },
+        {
+          "name": "Chetma",
+          "codeONS": "0704",
+          "postalCode": "07024",
+          "otherPosts": [
+            { "name": "Droh", "postalCode": "07050" },
+            { "name": "Sidi Khellil", "postalCode": "07077" }
+          ]
+        },
+        {
+          "name": "El Haouch",
+          "codeONS": "0713",
+          "postalCode": "07028",
+          "otherPosts": [
+            { "name": "Sidi Mohamed Moussa", "postalCode": "07079" }
+          ]
+        },
+        {
+          "name": "Ain Naga",
+          "codeONS": "0714",
+          "postalCode": "07039",
+          "otherPosts": [{ "name": "El Horaya", "postalCode": "07052" }]
+        }
+      ]
+    },
+    {
+      "name": "Zeribet El Oued",
+      "communes": [
+        {
+          "name": "Zeribet el Oued",
+          "codeONS": "0715",
+          "postalCode": "07012",
+          "otherPosts": [
+            { "name": "Zeribet el Oued 1er Novembre", "postalCode": "07084" },
+            { "name": "Bades", "postalCode": "07041" },
+            { "name": "N'fidhet Ragma", "postalCode": "07069" }
+          ]
+        },
+        {
+          "name": "Meziraa",
+          "codeONS": "0728",
+          "postalCode": "07067",
+          "otherPosts": [{ "name": "Sidi Masmoudi", "postalCode": "07078" }]
+        },
+        {
+          "name": "El Feidh",
+          "codeONS": "0716",
+          "postalCode": "07026",
+          "otherPosts": [
+            { "name": "El Ouladja", "postalCode": "07054" },
+            { "name": "Rouidjel", "postalCode": "07073" },
+            { "name": "Zeribet Hamed", "postalCode": "07085" }
+          ]
+        },
+        {
+          "name": "Khenguet Sidi Nadji - el Bordj",
+          "codeONS": "0733",
+          "postalCode": "07032"
+        }
+      ]
+    },
+    {
+      "name": "Ourlal",
+      "communes": [
+        { "name": "Ourlal", "codeONS": "0724", "postalCode": "07011" },
+        {
+          "name": "Lioua",
+          "codeONS": "0722",
+          "postalCode": "07033",
+          "otherPosts": [{ "name": "Sehira", "postalCode": "07075" }]
+        },
+        {
+          "name": "Oumache",
+          "codeONS": "0702",
+          "postalCode": "07035",
+          "otherPosts": [{ "name": "Saada", "postalCode": "07074" }]
+        },
+        {
+          "name": "Mekhadma",
+          "codeONS": "0730",
+          "postalCode": "07034",
+          "otherPosts": [
+            { "name": "Ben Thious (Tarfayet el Nos)", "postalCode": "07080" }
+          ]
+        },
+        { "name": "M'lili", "codeONS": "0725", "postalCode": "07068" }
+      ]
+    },
+    {
+      "name": "Tolga",
+      "communes": [
+        {
+          "name": "Tolga",
+          "codeONS": "0721",
+          "postalCode": "07003",
+          "otherPosts": [
+            { "name": "Tolga Emir Abdelkader", "postalCode": "07082" },
+            { "name": "Farfar", "postalCode": "07055" },
+            { "name": "Mobar Mohamed", "postalCode": "07095" }
+          ]
+        },
+        {
+          "name": "Bouchagroune",
+          "codeONS": "0729",
+          "postalCode": "07022",
+          "otherPosts": [
+            { "name": "Bouchagroune Amirouche", "postalCode": "07046" }
+          ]
+        },
+        { "name": "Bordj Benazzouz", "codeONS": "0727", "postalCode": "07021" },
+        { "name": "Lichana", "codeONS": "0723", "postalCode": "07009" }
+      ]
+    },
+    {
+      "name": "Ouled Djellal",
+      "communes": [
+        {
+          "name": "Ouled Djellal",
+          "codeONS": "0705",
+          "postalCode": "07002",
+          "otherPosts": [
+            { "name": "Ouled Djellal 1er Mai", "postalCode": "07070" },
+            { "name": "Diffel", "postalCode": "07048" }
+          ]
+        },
+        {
+          "name": "Chaiba",
+          "codeONS": "0710",
+          "postalCode": "07047",
+          "otherPosts": [
+            { "name": "Bir Naam", "postalCode": "07045" },
+            { "name": "Hassi Cida", "postalCode": "07061" },
+            { "name": "Legsaiat", "postalCode": "07064" }
+          ]
+        },
+        {
+          "name": "Doucen",
+          "codeONS": "0709",
+          "postalCode": "07007",
+          "otherPosts": [{ "name": "Khafoura", "postalCode": "07063" }]
+        }
+      ]
+    },
+    {
+      "name": "Sidi Khaled",
+      "communes": [
+        {
+          "name": "Sidi Khaled",
+          "codeONS": "0708",
+          "postalCode": "07004",
+          "otherPosts": [
+            { "name": "Sidi Khaled Drissi Mohamed", "postalCode": "07036" },
+            { "name": "Arich Hamoula", "postalCode": "07040" }
+          ]
+        },
+        {
+          "name": "Besbes",
+          "codeONS": "0707",
+          "postalCode": "07044",
+          "otherPosts": [
+            { "name": "Ras Djeder", "postalCode": "07071" },
+            { "name": "El Bayadh", "postalCode": "07087" }
+          ]
+        },
+        { "name": "Ras el Miaad", "codeONS": "0706", "postalCode": "07072" }
+      ]
+    },
+    {
+      "name": "Foughala",
+      "communes": [
+        { "name": "Foughala", "codeONS": "0726", "postalCode": "07031" },
+        {
+          "name": "El Ghrous",
+          "codeONS": "0731",
+          "postalCode": "07027",
+          "otherPosts": [{ "name": "El Amri", "postalCode": "07051" }]
+        }
+      ]
+    },
+    {
+      "name": "El Outaya",
+      "communes": [
+        {
+          "name": "El Outaya",
+          "codeONS": "0719",
+          "postalCode": "07030",
+          "otherPosts": [{ "name": "Driss Amor", "postalCode": "07049" }]
+        }
+      ]
+    }
+  ],
+
+  "address": [
+    { "name": "Beghila", "postalCode": "07043" },
+    { "name": "Ferfad Ali", "postalCode": "07057" },
+    { "name": "Guettouchi Lakhdar", "postalCode": "07060" },
+    { "name": "Hassi Smara", "postalCode": "07062" },
+    { "name": "Tizi", "postalCode": "07081" }
+  ]
+}

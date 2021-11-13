@@ -6,7 +6,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { useSession } from "next-auth/client";
 
-import { IUser } from "../../../types/userType";
+import { IUser } from "../../../utils/types";
 import { getAEProductInfo } from "../../../utils/redux/aeapiAsyncActions";
 import { selectAEApi } from "../../../utils/redux/aeapiSlice";
 import ProductDetails from "../../../components/aliexpress/ProductDetails";
