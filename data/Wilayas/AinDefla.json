@@ -2,5 +2,96 @@
   "id": 44,
   "name": "Ain Defla",
   "postalCode": "44000",
-  "towns": []
+  "address": [
+    {
+      "name": "Ain Defla Boussouf Abdelhafid",
+      "postalCode": "44000",
+      "otherPosts": [
+        { "name": "Ain Defla Martyrs", "postalCode": "44007" },
+        { "name": "Ain Defla Mazouni", "postalCode": "44033" }
+      ]
+    },
+    {
+      "name": "Khemis Miliana",
+      "postalCode": "44001",
+      "otherPosts": [
+        { "name": "Khemis Miliana Dardara", "postalCode": "44012" },
+        { "name": "Khemis Miliana Essalem", "postalCode": "44013" },
+        { "name": "Khemis Miliana Souamaa", "postalCode": "44014" },
+        { "name": "Khemis Miliana Souffay", "postalCode": "44015" },
+        { "name": "Khemis Miliana Universite", "postalCode": "44065" }
+      ]
+    },
+    {
+      "name": "El Attaf",
+      "postalCode": "44002",
+      "otherPosts": [{ "name": "El Attaf 8 Mai 1945", "postalCode": "44011" }]
+    },
+    {
+      "name": "Miliana",
+      "postalCode": "44003",
+      "otherPosts": [{ "name": "Miliana Morkah", "postalCode": "44016" }]
+    },
+    { "name": "Bou Medfaa", "postalCode": "44004" },
+    { "name": "Djendel", "postalCode": "44005" },
+    { "name": "El Abadia", "postalCode": "44006" },
+    { "name": "Arib", "postalCode": "44008" },
+    {
+      "name": "Djelida",
+      "postalCode": "44009",
+      "otherPosts": [
+        { "name": "Djelida Sadek Ben Abdellah Belkacem", "postalCode": "44066" }
+      ]
+    },
+    { "name": "El Amra", "postalCode": "44010" },
+    { "name": "Rouina", "postalCode": "44017" },
+    { "name": "Ain Lechiakh", "postalCode": "44018" },
+    { "name": "Ain Sultan", "postalCode": "44019" },
+    { "name": "Ain Torki", "postalCode": "44020" },
+    { "name": "Bordj Emir Khaled", "postalCode": "44021" },
+    { "name": "El Hassania", "postalCode": "44022" },
+    { "name": "Hammam Righa", "postalCode": "44023" },
+    { "name": "Oued Chorfa", "postalCode": "44024" },
+    { "name": "Ouled Moussa Terchi", "postalCode": "44025" },
+    { "name": "Sidi Bouabida", "postalCode": "44026" },
+    { "name": "Sidi Lakhdar", "postalCode": "44027" },
+    { "name": "Tacheta Zouggara", "postalCode": "44028" },
+    { "name": "Tarik Ibn Ziad", "postalCode": "44029" },
+    { "name": "Tiberkanine", "postalCode": "44030" },
+    { "name": "Zeddine", "postalCode": "44031" },
+    { "name": "Ain Bouyahia", "postalCode": "44032" },
+    { "name": "Ain Dem", "postalCode": "44034" },
+    { "name": "Ain El Benian", "postalCode": "44035" },
+    { "name": "Ain Amourah", "postalCode": "44036" },
+    { "name": "Baba Driss Aoudia", "postalCode": "44037" },
+    { "name": "Belaas", "postalCode": "44038" },
+    { "name": "Bel Abbes", "postalCode": "44039" },
+    { "name": "Ben Allel", "postalCode": "44040" },
+    { "name": "Bethaia", "postalCode": "44041" },
+    { "name": "Bir Bouche", "postalCode": "44042" },
+    { "name": "Bir Ouled Khalifa", "postalCode": "44043" },
+    { "name": "Bourached", "postalCode": "44044" },
+    { "name": "Cheikh Benyahia", "postalCode": "44045" },
+    { "name": "Djebabra", "postalCode": "44046" },
+    { "name": "Djemaa Ouled Cheikh", "postalCode": "44047" },
+    { "name": "Hoceinia", "postalCode": "44048" },
+    { "name": "Matmata", "postalCode": "44049" },
+    { "name": "Mekhatria Klitine Mohamed", "postalCode": "44050" },
+    { "name": "Moulay Abdelkader", "postalCode": "44051" },
+    { "name": "Oued Djemaa", "postalCode": "44052" },
+    { "name": "Oued Zebboudj", "postalCode": "44053" },
+    { "name": "Ouled Belgacem", "postalCode": "44054" },
+    { "name": "Saidia", "postalCode": "44055" },
+    { "name": "Sidi Hamou", "postalCode": "44056" },
+    { "name": "Sidi Saad", "postalCode": "44057" },
+    { "name": "Souk Lethnine", "postalCode": "44058" },
+    { "name": "Zouggala", "postalCode": "44059" },
+    { "name": "Feghailia", "postalCode": "44060" },
+    { "name": "Mokari Dahmane", "postalCode": "44061" },
+    { "name": "Ouled Bessa", "postalCode": "44062" },
+    { "name": "Ouled Si Ahmed", "postalCode": "44063" },
+    { "name": "Oued Bedda", "postalCode": "44064" },
+
+    { "name": "Derabla", "postalCode": "44067" }
+  ]
 }

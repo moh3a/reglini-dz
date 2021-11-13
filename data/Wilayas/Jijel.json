@@ -2,5 +2,76 @@
   "id": 18,
   "name": "Jijel",
   "postalCode": "18000",
-  "towns": []
+  "address": [
+    {
+      "name": "Jijel",
+      "postalCode": "18000",
+      "otherPosts": [
+        { "name": "Jijel 1er Novembre", "postalCode": "18011" },
+        { "name": "Jijel Nibouche", "postalCode": "18012" },
+        { "name": "Jijel Plage", "postalCode": "18013" },
+        { "name": "Jijel Soummam", "postalCode": "18014" },
+        { "name": "Jijel Ouled Aissa", "postalCode": "18034" },
+        { "name": "Jijel El Kalaa", "postalCode": "18052" }
+      ]
+    },
+    {
+      "name": "El Milia",
+      "postalCode": "18001",
+      "otherPosts": [{ "name": "El Milia Merimeche", "postalCode": "18009" }]
+    },
+    {
+      "name": "Taher",
+      "postalCode": "18002",
+      "otherPosts": [
+        { "name": "Taher 19 Mai 1956", "postalCode": "18019" },
+        { "name": "Taher Ouled Souici", "postalCode": "18020" }
+      ]
+    },
+    { "name": "Chekfa", "postalCode": "18003" },
+    { "name": "El Ancer", "postalCode": "18004" },
+    { "name": "El Aouana", "postalCode": "18005" },
+    { "name": "Texenna", "postalCode": "18006" },
+    { "name": "Ziama Mansourah", "postalCode": "18007" },
+    { "name": "Belghimouze", "postalCode": "18008" },
+    { "name": "Emir Abdelkader", "postalCode": "18010" },
+    { "name": "Kaous", "postalCode": "18015" },
+    { "name": "Settara", "postalCode": "18016" },
+    { "name": "Sidi Abdelaziz", "postalCode": "18017" },
+    { "name": "Sidi Marouf", "postalCode": "18018" },
+    { "name": "Achbou", "postalCode": "18021" },
+    { "name": "Bazoul", "postalCode": "18022" },
+    { "name": "Belhadef", "postalCode": "18023" },
+    { "name": "Beni Belaid", "postalCode": "18024" },
+    { "name": "Beni Yadjis", "postalCode": "18025" },
+    { "name": "Bordj Ali", "postalCode": "18026" },
+    { "name": "Chahana", "postalCode": "18027" },
+    { "name": "Dekkara", "postalCode": "18028" },
+    { "name": "El Kaada", "postalCode": "18029" },
+    { "name": "El Kennar", "postalCode": "18030" },
+    { "name": "El Maad", "postalCode": "18031" },
+    { "name": "Erraguene", "postalCode": "18032" },
+    {
+      "name": "Harraten",
+      "postalCode": "18033",
+      "otherPosts": [{ "name": "Harraten 5 Juillet", "postalCode": "18055" }]
+    },
+    { "name": "Meharka", "postalCode": "18035" },
+    { "name": "Ouled Askeur", "postalCode": "18036" },
+    { "name": "S'bet", "postalCode": "18037" },
+    { "name": "Tassoust", "postalCode": "18038" },
+    { "name": "Aftis", "postalCode": "18039" },
+    { "name": "Arbis Ali", "postalCode": "18040" },
+    { "name": "Bordj Tahar", "postalCode": "18041" },
+    { "name": "Bouhanche Beni Ahmed", "postalCode": "18043" },
+    { "name": "Ghebala M'cid Aicha", "postalCode": "18045" },
+    { "name": "Larabaa", "postalCode": "18046" },
+    { "name": "Oudjana", "postalCode": "18047" },
+    { "name": "Ouled Bounar", "postalCode": "18048" },
+    { "name": "Selma", "postalCode": "18049" },
+    { "name": "Azirou", "postalCode": "18050" },
+    { "name": "Ghezala", "postalCode": "18051" },
+    { "name": "Beni Metrane", "postalCode": "18053" },
+    { "name": "El Gheriana", "postalCode": "18054" }
+  ]
 }

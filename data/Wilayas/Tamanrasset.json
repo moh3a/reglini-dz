@@ -2,5 +2,50 @@
   "id": 11,
   "name": "Tamanrasset",
   "postalCode": "11000",
-  "towns": []
+  "address": [
+    {
+      "name": "Tamanrasset",
+      "postalCode": "11000",
+      "otherPosts": [
+        { "name": "Tamanrasset Assihar", "postalCode": "11008" },
+        { "name": "Tamanrasset Assoro", "postalCode": "11009" },
+        { "name": "Tamanrasset Centre Ville", "postalCode": "11025" },
+        { "name": "Tamanrasset Gare Routiere", "postalCode": "11026" },
+        { "name": "Tamanrasset Hadj Moussa", "postalCode": "11027" },
+        { "name": "Tamanrasset Terre", "postalCode": "11028" }
+      ]
+    },
+    {
+      "name": "In Salah",
+      "postalCode": "11001",
+      "otherPosts": [
+        { "name": "In Salah 5 Juillet", "postalCode": "11024" },
+        { "name": "In Salah Tidikelt", "postalCode": "11029" }
+      ]
+    },
+    { "name": "In Kouf", "postalCode": "11002" },
+    { "name": "In Amguel", "postalCode": "11003" },
+    { "name": "In Ghar", "postalCode": "11004" },
+    { "name": "In Guezzam", "postalCode": "11005" },
+    { "name": "Serssouf", "postalCode": "11006" },
+    { "name": "Silet", "postalCode": "11007" },
+    { "name": "Tazrouk", "postalCode": "11010" },
+    { "name": "Tin Zouatine", "postalCode": "11011" },
+    { "name": "Abalessa", "postalCode": "11012" },
+    { "name": "Amguid", "postalCode": "11013" },
+    { "name": "Amsel", "postalCode": "11014" },
+    { "name": "El Barka", "postalCode": "11015" },
+    { "name": "Fougaret Ezzouaoua", "postalCode": "11016" },
+    { "name": "Fougaret Larab", "postalCode": "11017" },
+    { "name": "Hassi Lahdjar", "postalCode": "11018" },
+    { "name": "Hirafouk", "postalCode": "11019" },
+    { "name": "Ideles", "postalCode": "11020" },
+    { "name": "Igostene", "postalCode": "11021" },
+    { "name": "Outoul", "postalCode": "11022" },
+    { "name": "Sahla el Fougania", "postalCode": "11023" },
+    { "name": "Tintarabene", "postalCode": "11030" },
+    { "name": "Teberbert", "postalCode": "11031" },
+    { "name": "Tahifet", "postalCode": "11032" },
+    { "name": "Indalag", "postalCode": "11033" }
+  ]
 }
