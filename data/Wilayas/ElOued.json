@@ -2,5 +2,156 @@
   "id": 39,
   "name": "El Oued",
   "postalCode": "39000",
-  "towns": []
+  "address": [
+    {
+      "name": "El Oued",
+      "postalCode": "39000",
+      "otherPosts": [
+        { "name": "El Oued Nezla", "postalCode": "39001" },
+        { "name": "El Oued Tiksebt", "postalCode": "39006" },
+        { "name": "El Oued 17 Octobre 1961", "postalCode": "39009" },
+        { "name": "El Oued Belle Vue", "postalCode": "39010" },
+        { "name": "El Oued Chouhada", "postalCode": "39011" },
+        { "name": "El Oued Cite Nador", "postalCode": "39012" },
+        { "name": "El Oued Sidi Mestour", "postalCode": "39026" },
+        { "name": "El Oued El Qods", "postalCode": "39079" },
+        { "name": "El Oued 19 Mars", "postalCode": "39084" },
+        { "name": "El Oued Cite Universitaire", "postalCode": "39088" },
+        { "name": "El Oued Sahan", "postalCode": "39089" },
+        { "name": "El Oued Gare Routiere", "postalCode": "39091" }
+      ]
+    },
+    {
+      "name": "Guemar",
+      "postalCode": "39002",
+      "otherPosts": [{ "name": "Guemar Chouhada", "postalCode": "39028" }]
+    },
+    {
+      "name": "Debila",
+      "postalCode": "39003",
+      "otherPosts": [{ "name": "Debila Cheguia", "postalCode": "39050" }]
+    },
+    {
+      "name": "Djamaa",
+      "postalCode": "39004",
+      "otherPosts": [
+        { "name": "Djamaa Ouaghlana", "postalCode": "39022" },
+        { "name": "Djamaa Gare Routiere", "postalCode": "39092" }
+      ]
+    },
+    {
+      "name": "El Meghaier",
+      "postalCode": "39005",
+      "otherPosts": [{ "name": "El Meghaier 1er Mai", "postalCode": "39025" }]
+    },
+    {
+      "name": "Bayada",
+      "postalCode": "39007",
+      "otherPosts": [
+        { "name": "Bayada 1er Novembre", "postalCode": "39008" },
+        { "name": "Bayada Cite Izdihar", "postalCode": "39094" }
+      ]
+    },
+    {
+      "name": "Hassi Khalifa",
+      "postalCode": "39013",
+      "otherPosts": [
+        { "name": "Hassi Khalifa Chouaiha", "postalCode": "39090" }
+      ]
+    },
+    {
+      "name": "Kouinine",
+      "postalCode": "39014",
+      "otherPosts": [{ "name": "Kouinine 1er Novembre", "postalCode": "39093" }]
+    },
+    { "name": "Magrane", "postalCode": "39015" },
+    {
+      "name": "Reguiba",
+      "postalCode": "39016",
+      "otherPosts": [{ "name": "Reguiba 20 Aout 1955", "postalCode": "39036" }]
+    },
+    {
+      "name": "Robbah",
+      "postalCode": "39017",
+      "otherPosts": [{ "name": "Robbah Ali Derbal", "postalCode": "39087" }]
+    },
+    { "name": "Sidi Amrane", "postalCode": "39018" },
+    { "name": "Taleb Larbi", "postalCode": "39019" },
+    {
+      "name": "Z'guoum",
+      "postalCode": "39020",
+      "otherPosts": [
+        { "name": "Z'goum Cheikh el Adouani", "postalCode": "39077" }
+      ]
+    },
+    { "name": "Ain Chouhada", "postalCode": "39021" },
+    {
+      "name": "Djedida",
+      "postalCode": "39023",
+      "otherPosts": [{ "name": "Djedida Sidi Aoun", "postalCode": "39052" }]
+    },
+    { "name": "Douar el Ma", "postalCode": "39024" },
+    { "name": "Ghamra", "postalCode": "39027" },
+    { "name": "Hassani Abdelkrim", "postalCode": "39029" },
+    { "name": "Mih Ouensa", "postalCode": "39030" },
+    { "name": "Nakhla", "postalCode": "39031" },
+    { "name": "N'cira", "postalCode": "39032" },
+    { "name": "Ouled Allenda", "postalCode": "39033" },
+    { "name": "Oum el Thiour", "postalCode": "39034" },
+    { "name": "Ourmes", "postalCode": "39035" },
+    { "name": "Sidi Aoun", "postalCode": "39037" },
+    {
+      "name": "Sidi Khelil",
+      "postalCode": "39038",
+      "otherPosts": [{ "name": "Sidi Khelil Essalama", "postalCode": "39086" }]
+    },
+    { "name": "Still", "postalCode": "39039" },
+    {
+      "name": "Taghzout",
+      "postalCode": "39040",
+      "otherPosts": [{ "name": "Taghzout el Istiklal", "postalCode": "39083" }]
+    },
+    { "name": "Tamerna", "postalCode": "39041" },
+    { "name": "Tenedla el Berd", "postalCode": "39042" },
+    { "name": "Tigdidine", "postalCode": "39043" },
+    { "name": "Trifaoui", "postalCode": "39044" },
+    { "name": "Ain Cheikh", "postalCode": "39045" },
+    { "name": "Akfadou", "postalCode": "39046" },
+    { "name": "Ayaicha", "postalCode": "39047" },
+    { "name": "Beni Guecha", "postalCode": "39048" },
+    { "name": "Chemora", "postalCode": "39049" },
+    { "name": "Dendouga", "postalCode": "39051" },
+    { "name": "Dokkar", "postalCode": "39053" },
+    { "name": "Drimini", "postalCode": "39054" },
+    { "name": "El Aguila", "postalCode": "39055" },
+    { "name": "El Arfiane", "postalCode": "39056" },
+    { "name": "El Baadj", "postalCode": "39057" },
+    { "name": "El Khobna", "postalCode": "39058" },
+    { "name": "Hamadine", "postalCode": "39059" },
+    { "name": "Hamaissa", "postalCode": "39060" },
+    { "name": "Hamraia", "postalCode": "39061" },
+    { "name": "Hobba", "postalCode": "39062" },
+    { "name": "Lizerg", "postalCode": "39063" },
+    { "name": "Mazer Zaouia", "postalCode": "39064" },
+    { "name": "Meguibra", "postalCode": "39065" },
+    { "name": "Merzaka", "postalCode": "39066" },
+    { "name": "M'rara", "postalCode": "39067" },
+    { "name": "Nakhla Gherbia", "postalCode": "39068" },
+    { "name": "Nezlet Mahda", "postalCode": "39069" },
+    { "name": "Oglat Amiche", "postalCode": "39070" },
+    { "name": "Oued Tourk", "postalCode": "39071" },
+    { "name": "Sahabane", "postalCode": "39072" },
+    { "name": "Sahan Berri", "postalCode": "39073" },
+    { "name": "Soualah", "postalCode": "39074" },
+    { "name": "Souilha", "postalCode": "39075" },
+    { "name": "Zaoualia", "postalCode": "39076" },
+    { "name": "Oum Z'bed", "postalCode": "39078" },
+    { "name": "El Gherbia", "postalCode": "39079" },
+    { "name": "Douilat", "postalCode": "39080" },
+    { "name": "El Aouachir", "postalCode": "39082" },
+    { "name": "Oued Allenda 18 Fevrier", "postalCode": "39085" },
+    { "name": "Mih Cheikh", "postalCode": "39094" },
+    { "name": "El Ghanami", "postalCode": "39096" },
+    { "name": "Khobnet Trifaoui", "postalCode": "39097" }
+  ]
 }

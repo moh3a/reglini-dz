@@ -2,5 +2,77 @@
   "id": 47,
   "name": "Ghardaia",
   "postalCode": "47000",
-  "towns": []
+  "address": [
+    {
+      "name": "Ghardaia",
+      "postalCode": "47000",
+      "otherPosts": [
+        { "name": "Ghardaia 1er Novembre 1954", "postalCode": "47028" },
+        { "name": "Ghardaia Baissa Oualouane", "postalCode": "47029" },
+        { "name": "Ghardaia Colonel Lotfi", "postalCode": "47030" },
+        { "name": "Ghardaia Universite", "postalCode": "47035" }
+      ]
+    },
+    {
+      "name": "El Meniaa",
+      "postalCode": "47001",
+      "otherPosts": [{ "name": "El Meniaa Port Said", "postalCode": "47034" }]
+    },
+    {
+      "name": "Metlili",
+      "postalCode": "47002",
+      "otherPosts": [{ "name": "Metlili Djadida", "postalCode": "47040" }]
+    },
+    {
+      "name": "Berriane",
+      "postalCode": "47003",
+      "otherPosts": [
+        { "name": "Berriane Hai el Moudjahidine", "postalCode": "47020" },
+        { "name": "Berriane Cheikh Ameur", "postalCode": "47041" }
+      ]
+    },
+    {
+      "name": "Guerrara",
+      "postalCode": "47004",
+      "otherPosts": [
+        { "name": "Guerrara 5 Juillet", "postalCode": "47018" },
+        { "name": "Guerrara Zone Industrielle", "postalCode": "47019" },
+        { "name": "Guerrara S'hen", "postalCode": "47031" },
+        { "name": "Guerrara Centre", "postalCode": "47036" }
+      ]
+    },
+    { "name": "Beni Isguen", "postalCode": "47005" },
+    {
+      "name": "Hassi el Gara",
+      "postalCode": "47006",
+      "otherPosts": [{ "name": "Hassi el Gara Est", "postalCode": "47037" }]
+    },
+    {
+      "name": "Zelfana",
+      "postalCode": "47007",
+      "otherPosts": [
+        { "name": "Zelfana Merabet Messaoud", "postalCode": "47039" }
+      ]
+    },
+    { "name": "Belbachir", "postalCode": "47008" },
+    { "name": "Benghanem", "postalCode": "47009" },
+    { "name": "Bounoura", "postalCode": "47010" },
+    { "name": "Daia Ben Dahoua", "postalCode": "47011" },
+    { "name": "El Atteuf", "postalCode": "47012" },
+    { "name": "El Hadika", "postalCode": "47013" },
+    { "name": "Garat Ettam", "postalCode": "47014" },
+    { "name": "Guemgouma", "postalCode": "47015" },
+    { "name": "Sidi Abaz", "postalCode": "47016" },
+    { "name": "Chaabat Bellaghman", "postalCode": "47017" },
+    { "name": "Hassi F'hal", "postalCode": "47021" },
+    { "name": "Kef Hammouda", "postalCode": "47022" },
+    { "name": "Mansoura Nouvelle", "postalCode": "47023" },
+    { "name": "Melika", "postalCode": "47024" },
+    { "name": "Sebseb", "postalCode": "47025" },
+    { "name": "Sidi M'hamed", "postalCode": "47026" },
+    { "name": "Souareg", "postalCode": "47027" },
+    { "name": "Bouhraoua", "postalCode": "47032" },
+    { "name": "Teniet el Makhzen", "postalCode": "47033" },
+    { "name": "Chaabet Sidi Cheikh", "postalCode": "47038" }
+  ]
 }

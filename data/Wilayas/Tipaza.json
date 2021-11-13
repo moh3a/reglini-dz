@@ -2,5 +2,125 @@
   "id": 42,
   "name": "Tipaza",
   "postalCode": "42000",
-  "towns": []
+  "address": [
+    {
+      "name": "Tipaza",
+      "postalCode": "42000",
+      "otherPosts": [
+        { "name": "Tipaza Oued Merzoug", "postalCode": "42022" },
+        { "name": "Tipaza Universite", "postalCode": "42065" }
+      ]
+    },
+    {
+      "name": "Hadjout",
+      "postalCode": "42001",
+      "otherPosts": [
+        { "name": "Hadjout Mohamed el Bachir", "postalCode": "42037" }
+      ]
+    },
+    {
+      "name": "Cherchel",
+      "postalCode": "42002",
+      "otherPosts": [
+        { "name": "Cherchel Hai 17 Octobre", "postalCode": "42013" }
+      ]
+    },
+    {
+      "name": "Kolea",
+      "postalCode": "42003",
+      "otherPosts": [
+        { "name": "Kolea Hay Billel", "postalCode": "42035" },
+        { "name": "Kolea Salah", "postalCode": "42063" },
+        { "name": "Kolea Universite", "postalCode": "42066" }
+      ]
+    },
+    {
+      "name": "Bou Ismail",
+      "postalCode": "42004",
+      "otherPosts": [{ "name": "Bou Ismail El Amaria", "postalCode": "42010" }]
+    },
+    { "name": "Ahmer el Ain", "postalCode": "42005" },
+    {
+      "name": "Fouka",
+      "postalCode": "42006",
+      "otherPosts": [{ "name": "Fouka Marine", "postalCode": "42027" }]
+    },
+    {
+      "name": "Gouraya",
+      "postalCode": "42007",
+      "otherPosts": [
+        { "name": "Gouraya Oued Sebt", "postalCode": "42028" },
+        { "name": "Gouraya Bois Sacre", "postalCode": "42058" }
+      ]
+    },
+    {
+      "name": "Attatba",
+      "postalCode": "42008",
+      "otherPosts": [{ "name": "Attatba Cite Rahmane", "postalCode": "42051" }]
+    },
+    { "name": "Bouharoun", "postalCode": "42009" },
+    {
+      "name": "Bourkika",
+      "postalCode": "42011",
+      "otherPosts": [
+        { "name": "Bourkika El Houari Ahmed (Sahel)", "postalCode": "42061" }
+      ]
+    },
+    { "name": "Chaiba", "postalCode": "42012" },
+    { "name": "Damous", "postalCode": "42014" },
+    {
+      "name": "Douaouda",
+      "postalCode": "42015",
+      "otherPosts": [
+        { "name": "Douaouda Marine", "postalCode": "42026" },
+        { "name": "Douaouda Cite des Oliviers", "postalCode": "42052" },
+        { "name": "Douaouda el Islah", "postalCode": "42053" }
+      ]
+    },
+    {
+      "name": "Khemisti",
+      "postalCode": "42016",
+      "otherPosts": [{ "name": "Khemisti Port", "postalCode": "42033" }]
+    },
+    {
+      "name": "Larhat",
+      "postalCode": "42017",
+      "otherPosts": [{ "name": "Larhat Mines", "postalCode": "42060" }]
+    },
+    { "name": "Menaceur", "postalCode": "42018" },
+    { "name": "Merad", "postalCode": "42019" },
+    { "name": "Sidi Amar", "postalCode": "42020" },
+    { "name": "Sidi Ghiles", "postalCode": "42021" },
+    { "name": "Ain Taggourait", "postalCode": "42023" },
+    { "name": "Bouyamine", "postalCode": "42024" },
+    { "name": "Chenoua Plage", "postalCode": "42025" },
+    { "name": "Hadjret Ennous", "postalCode": "42029" },
+    { "name": "Helloula Sahilia", "postalCode": "42030" },
+    { "name": "Kaid Youcef", "postalCode": "42031" },
+    { "name": "Karkouba", "postalCode": "42032" },
+    { "name": "Messelmoun", "postalCode": "42036" },
+    {
+      "name": "Nador",
+      "postalCode": "42038",
+      "otherPosts": [{ "name": "Nador Sidi Moussa", "postalCode": "42039" }]
+    },
+    { "name": "Sidi Rached", "postalCode": "42040" },
+    { "name": "Sidi Semiane", "postalCode": "42041" },
+    { "name": "Temloul", "postalCode": "42042" },
+    { "name": "5 Martyrs", "postalCode": "42043" },
+    { "name": "Ain Lahdjar", "postalCode": "42044" },
+    { "name": "Beldj", "postalCode": "42045" },
+    { "name": "Benyacoub Fadjana", "postalCode": "42046" },
+    { "name": "Berbassa Ben Aghrab", "postalCode": "42047" },
+    { "name": "Bouteldja", "postalCode": "42048" },
+    { "name": "Bouyaghsene", "postalCode": "42049" },
+    { "name": "Brahim Ben Omar", "postalCode": "42050" },
+    { "name": "El Hamidia", "postalCode": "42054" },
+    { "name": "Errahba", "postalCode": "42055" },
+    { "name": "Fedjana", "postalCode": "42056" },
+    { "name": "Ghardous", "postalCode": "42057" },
+    { "name": "Hamdania", "postalCode": "42059" },
+    { "name": "Mohamed Arab", "postalCode": "42062" },
+    { "name": "Tiffsassine", "postalCode": "42064" }
+  ]
 }
