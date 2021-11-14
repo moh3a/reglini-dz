@@ -31,7 +31,7 @@ export default function NewOrder({ user }: any) {
               Products
             </dt>
             <div>
-              {user &&
+              {user && user.cart.cartItems.length > 1 ? (
                 user.cart.cartItems.map((item: any) => (
                   <dd
                     key={item.productId}
@@ -39,7 +39,10 @@ export default function NewOrder({ user }: any) {
                   >
                     {item.name}
                   </dd>
-                ))}
+                ))
+              ) : (
+                <dd>You have no products to order.</dd>
+              )}
             </div>
           </div>
         </dl>

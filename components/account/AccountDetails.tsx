@@ -7,11 +7,14 @@ import parse from "html-react-parser";
 import { generateRandomString } from "../../utils/methods";
 import { DangerDialog, SuccessDialog } from "../elements/Dialog";
 import ProfilePicture from "../elements/ProfilePicture";
+import Address from "./Address/Address";
 
 export default function AccountDetails({ user }: any) {
   const [generated, setGenerated] = useState("");
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+
+  const [editAddress, setEditAddress] = useState(false);
 
   const emailResendHandler = async (e: any) => {
     e.preventDefault();
@@ -162,7 +165,30 @@ export default function AccountDetails({ user }: any) {
           <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">Address</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              {user.address ? user.address : <>Somewhere in Algeria.</>}
+              <div>
+                {user.address ? user.address : <>Somewhere in Algeria.</>}
+              </div>
+              <button
+                onClick={() =>
+                  editAddress ? setEditAddress(false) : setEditAddress(true)
+                }
+              >
+                {editAddress ? (
+                  <p className="text-red-600">Close</p>
+                ) : (
+                  <p className="text-yellow-700">Edit</p>
+                )}
+              </button>
+              {editAddress ? (
+                <div
+                  role="list"
+                  className="mt-4 px-4 py-5 border border-red-500 rounded-md divide-y divide-gray-200"
+                >
+                  <Address user={user} />
+                </div>
+              ) : (
+                ""
+              )}
             </dd>
           </div>
           <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
