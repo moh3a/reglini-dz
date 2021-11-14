@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
-import { Provider } from "next-auth/client";
+import { Provider as NextAuthProvider } from "next-auth/client";
 import { Provider as ReduxProvider } from "react-redux";
 import { NextIntlProvider } from "next-intl";
 
@@ -34,10 +34,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           referrerPolicy="no-referrer"
         />
         <link rel="alternate" hrefLang="en" href="https://reglini-dz.com/en" />
-        <link rel="alternate" hrefLang="fr" href="https://reglini-dz.com/fe" />
+        <link rel="alternate" hrefLang="fr" href="https://reglini-dz.com/fr" />
         <link rel="alternate" hrefLang="ar" href="https://reglini-dz.com/ar" />
       </Head>
-      <Provider session={pageProps.session}>
+      <NextAuthProvider session={pageProps.session}>
         <ThemeProvider attribute="class">
           <NextIntlProvider messages={pageProps.messages}>
             <ReduxProvider store={store}>
@@ -45,7 +45,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             </ReduxProvider>
           </NextIntlProvider>
         </ThemeProvider>
-      </Provider>
+      </NextAuthProvider>
     </>
   );
 };

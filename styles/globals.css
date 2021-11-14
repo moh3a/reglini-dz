@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:300i,400i,500i,700i,300i,400i,500i,700i");
 @import url("./classes.css");
-@import url("./blob.css");
 
 .darkmode-input:checked ~ .dot {
   transform: translateX(100%);
