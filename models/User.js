@@ -74,6 +74,15 @@ const CartSchema = new mongoose.Schema(
   }
 );
 
+const AddressSchema = new mongoose.Schema({
+  text: String,
+  postalCode: String,
+  wilaya: String,
+  daira: String,
+  commune: String,
+  streetName: String,
+});
+
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -121,7 +130,8 @@ const UserSchema = new mongoose.Schema({
   resetPasswordToken: String,
   resetPasswordExpire: Date,
   picture: mongoose.Mixed,
-  address: String,
+  address: AddressSchema,
+  phoneNumber: String,
   cart: {
     type: CartSchema,
     required: true,
