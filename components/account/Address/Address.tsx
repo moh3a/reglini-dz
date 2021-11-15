@@ -32,19 +32,22 @@ const Address = ({ user }: any) => {
 
   const addressSaveHandler = async (e: any) => {
     e.preventDefault();
-    if (wilaya && daira && postalCode && addressLine && commune) {
+    if (wilaya && postalCode && addressLine && commune) {
       let address =
         addressLine +
-        ", commune " +
+        ", " +
         commune.name +
-        ", daira " +
-        daira.name +
         ", wilaya " +
         wilaya.name +
         " " +
         postalCode;
       const { data } = await axios.post("/api/users/address", {
-        address,
+        text: address,
+        postalCode,
+        wilaya: wilaya.name,
+        daira: daira.name,
+        commune: commune.name,
+        streetName: addressLine,
       });
       if (data.success) {
         setSuccess(data.message);
@@ -67,7 +70,7 @@ const Address = ({ user }: any) => {
       {error && <DangerDialog>{error}</DangerDialog>}
       {!showForm && user && user.address ? (
         <div>
-          This is your registered address {user.address ? user.address : ""}
+          This is your registered address {user.address.text}
           <div
             className="underline cursor-pointer text-gray-600"
             onClick={() => setShowForm(true)}

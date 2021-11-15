@@ -8,6 +8,7 @@ import { generateRandomString } from "../../utils/methods";
 import { DangerDialog, SuccessDialog } from "../elements/Dialog";
 import ProfilePicture from "../elements/ProfilePicture";
 import Address from "./Address/Address";
+import PhoneNumber from "./PhoneNumber";
 
 export default function AccountDetails({ user }: any) {
   const [generated, setGenerated] = useState("");
@@ -15,6 +16,7 @@ export default function AccountDetails({ user }: any) {
   const [error, setError] = useState("");
 
   const [editAddress, setEditAddress] = useState(false);
+  const [editPhoneNumber, setEditPhoneNumber] = useState(false);
 
   const emailResendHandler = async (e: any) => {
     e.preventDefault();
@@ -78,7 +80,7 @@ export default function AccountDetails({ user }: any) {
               Profile picture
             </dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              <div className="py-2 cursor-pointer hover:underline">
+              <div className="py-2 cursor-not-allowed line-through hover:underline">
                 Upload a new profile picture
               </div>
               <div className="w-full flex">
@@ -185,6 +187,37 @@ export default function AccountDetails({ user }: any) {
                   className="mt-4 px-4 py-5 border border-red-500 rounded-md divide-y divide-gray-200"
                 >
                   <Address user={user} />
+                </div>
+              ) : (
+                ""
+              )}
+            </dd>
+          </div>
+          <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium text-gray-500">Phone Number</dt>
+            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              <div>
+                {user.phoneNumber ? user.phoneNumber : <>No phone number.</>}
+              </div>
+              <button
+                onClick={() =>
+                  editPhoneNumber
+                    ? setEditPhoneNumber(false)
+                    : setEditPhoneNumber(true)
+                }
+              >
+                {editPhoneNumber ? (
+                  <p className="text-red-600">Close</p>
+                ) : (
+                  <p className="text-yellow-700">Edit</p>
+                )}
+              </button>
+              {editPhoneNumber ? (
+                <div
+                  role="list"
+                  className="mt-4 px-4 py-5 border border-red-500 rounded-md divide-y divide-gray-200"
+                >
+                  <PhoneNumber user={user} />
                 </div>
               ) : (
                 ""
