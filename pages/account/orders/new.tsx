@@ -40,7 +40,22 @@ const NewOrderScreen = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NewOrder user={user} />
+      {localStorage.getItem("aeno") && (
+        <>
+          <h3 className="px-4 pt-5 sm:px-6">Direct order</h3>
+          {/* delete aeno from localStorage */}
+          <NewOrder
+            user={user}
+            products={JSON.parse(localStorage.getItem("aeno") as string)}
+          />
+        </>
+      )}
+      {user && user.cart.cartItems.length > 0 && (
+        <>
+          <h3 className="px-4 pt-5 sm:px-6">From cart</h3>
+          <NewOrder user={user} products={user.cart.cartItems} />
+        </>
+      )}
     </>
   );
 };

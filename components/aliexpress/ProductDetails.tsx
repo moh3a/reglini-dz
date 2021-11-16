@@ -135,7 +135,13 @@ const ProductDetails = ({ product, session }: any) => {
                 setSelectedShipping={setSelectedShipping}
               />
               <div className="mt-4 flex">
-                <BuyProduct />
+                <BuyProduct
+                  product={product}
+                  session={session}
+                  setError={setError}
+                  selectedVariation={selectedVariation}
+                  selectedShipping={selectedShipping}
+                />
                 <ProductToCart
                   product={product}
                   session={session}

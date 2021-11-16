@@ -1,10 +1,10 @@
 import Address from "./Address/Address";
 import PhoneNumber from "./PhoneNumber";
 
-export default function NewOrder({ user }: any) {
+export default function NewOrder({ user, products }: any) {
   return (
     <div className="bg-white shadow overflow-hidden sm:rounded-lg">
-      <div className="px-4 py-5 sm:px-6">
+      <div className="px-4 pb-5 sm:px-6">
         <h3 className="text-lg leading-6 font-medium text-gray-900">
           Place a new order
         </h3>
@@ -40,18 +40,14 @@ export default function NewOrder({ user }: any) {
               Products
             </dt>
             <div>
-              {user && user.cart.cartItems.length > 0 ? (
-                user.cart.cartItems.map((item: any) => (
-                  <dd
-                    key={item.productId}
-                    className="my-1 text-sm text-gray-900 sm:col-span-2"
-                  >
-                    {item.name}
-                  </dd>
-                ))
-              ) : (
-                <dd>You have no products to order.</dd>
-              )}
+              {products.map((item: any) => (
+                <dd
+                  key={item.productId}
+                  className="my-1 text-sm text-gray-900 sm:col-span-2"
+                >
+                  {item.name}
+                </dd>
+              ))}
             </div>
           </div>
         </dl>
