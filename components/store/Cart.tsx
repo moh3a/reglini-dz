@@ -10,7 +10,7 @@ import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";
 
 export default function Cart({ session }: any) {
-  const [open, setOpen] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
   const [items, setItems] = useState([
     {
       productId: "",
@@ -48,7 +48,7 @@ export default function Cart({ session }: any) {
       <div className="ml-3 flow-root lg:ml-6">
         <div
           className="group -m-2 p-2 flex items-center cursor-pointer"
-          onClick={() => setOpen(true)}
+          onClick={() => setOpenCart(true)}
         >
           <ShoppingBagIcon
             className="flex-shink-0 h-6 w-6 text-gray-800 dark:text-gray-100 group-hover:text-grim dark:group-hover:text-gray-400"
@@ -61,11 +61,11 @@ export default function Cart({ session }: any) {
         </div>
       </div>
 
-      <Transition.Root show={open} as={Fragment}>
+      <Transition.Root show={openCart} as={Fragment}>
         <Dialog
           as="div"
           className="fixed inset-0 overflow-hidden"
-          onClose={setOpen}
+          onClose={setOpenCart}
         >
           <div className="absolute inset-0 overflow-hidden">
             <Transition.Child
@@ -101,7 +101,7 @@ export default function Cart({ session }: any) {
                           <button
                             type="button"
                             className="-m-2 p-2 text-gray-400 hover:text-gray-500"
-                            onClick={() => setOpen(false)}
+                            onClick={() => setOpenCart(false)}
                           >
                             <span className="sr-only">Close panel</span>
                             <XIcon className="h-6 w-6" aria-hidden="true" />
@@ -150,7 +150,7 @@ export default function Cart({ session }: any) {
                           <button
                             type="button"
                             className="text-gray-600 dark:text-gray-200 font-medium hover:text-gray-500 dark:hover:text-gray-300"
-                            onClick={() => setOpen(false)}
+                            onClick={() => setOpenCart(false)}
                           >
                             Continue Shopping
                             <span aria-hidden="true"> &rarr;</span>

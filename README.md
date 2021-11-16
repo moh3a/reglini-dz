@@ -1,8 +1,8 @@
 ## TODO
 
 - add orders
-- buy button
 - account verified required to order
+- fix cart modal
 - add payment info
 - style navigation bar (remove netflix)
 - redesign CTAs
