@@ -11,6 +11,7 @@ const ItemSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    sku: String,
     price: {
       type: Number,
       required: true,
@@ -83,6 +84,30 @@ const AddressSchema = new mongoose.Schema({
   streetName: String,
 });
 
+const OrderSchema = new mongoose.Schema({
+  orderId: String,
+  products: [
+    {
+      productId: String,
+      sku: String,
+      quantity: Number,
+      carrierId: String,
+      orderMemo: String,
+    },
+  ],
+  shippingAddress: {
+    name: String,
+    countryCode: String,
+    city: String,
+    zipCode: String,
+    addressLine1: String,
+    phoneCountry: String,
+    mobilePhone: String,
+    province: String,
+  },
+  currency: String,
+});
+
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -137,6 +162,7 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
   wishlist: [WishlistSchema],
+  orders: [OrderSchema],
 });
 
 // MIDDLEWARE TO BE USED BEFORE CREATING A NEW PASSWORD

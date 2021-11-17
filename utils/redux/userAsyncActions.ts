@@ -70,6 +70,7 @@ export const addToCart = createAsyncThunk(
       price,
       imageUrl,
       properties,
+      sku,
       quantity,
       shipping,
     }: ICartItem,
@@ -82,6 +83,7 @@ export const addToCart = createAsyncThunk(
         price,
         imageUrl,
         properties,
+        sku,
         quantity,
         shipping,
       });
@@ -118,6 +120,39 @@ export const removeFromCart = createAsyncThunk(
     try {
       const { data } = await axios.delete(`/api/cart/${id}`);
 
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const createOrder = createAsyncThunk(
+  "user/createOrder",
+  async ({ products, shippingAddress }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post(
+        `/api/aliexpress/order/create`,
+        {
+          products,
+          shippingAddress,
+        },
+        { headers: { "Content-type": "application/json" } }
+      );
+      console.log(data);
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const cancelOrder = createAsyncThunk(
+  "user/cancelOrder",
+  async ({ id }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post(`/api/aliexpress/order/cancel/${id}`);
+      console.log(data);
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response);

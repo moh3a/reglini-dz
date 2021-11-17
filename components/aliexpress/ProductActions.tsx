@@ -49,6 +49,7 @@ export const BuyProduct = ({
               imageUrl: selectedVariation.imageUrl,
               properties: selectedVariation.properties,
               quantity: selectedVariation.quantity,
+              sku: selectedVariation.sku,
               shipping: selectedShipping.company.id,
             },
           ])
@@ -99,6 +100,7 @@ export const ProductToCart = ({
             imageUrl: selectedVariation.imageUrl,
             properties: selectedVariation.properties,
             quantity: selectedVariation.quantity,
+            sku: selectedVariation.sku,
             shipping: selectedShipping.company.id,
           })
         );

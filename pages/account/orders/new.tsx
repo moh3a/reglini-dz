@@ -40,7 +40,7 @@ const NewOrderScreen = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {localStorage.getItem("aeno") && (
+      {user && localStorage.getItem("aeno") && (
         <>
           <h3 className="px-4 pt-5 sm:px-6">Direct order</h3>
           {/* delete aeno from localStorage */}
