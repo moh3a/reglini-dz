@@ -21,6 +21,7 @@ export interface ICartItem extends IProduct {
   quantity?: number;
   properties?: Array<Object>;
   shipping?: string;
+  sku?: string;
 }
 
 export interface ICart {

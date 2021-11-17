@@ -168,7 +168,7 @@ export default function AccountDetails({ user }: any) {
             <dt className="text-sm font-medium text-gray-500">Address</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
               <div>
-                {user.address ? user.address : <>Somewhere in Algeria.</>}
+                {user.address ? user.address.text : <>Somewhere in Algeria.</>}
               </div>
               <button
                 onClick={() =>
