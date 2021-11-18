@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { createOrder } from "../../utils/redux/userAsyncActions";
+import {
+  createOrder,
+  removeFromCart,
+} from "../../utils/redux/userAsyncActions";
 import Address from "./Address/Address";
 import PhoneNumber from "./PhoneNumber";
 

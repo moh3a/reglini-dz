@@ -1,7 +1,7 @@
 require("dotenv").config();
-import { getSession } from "next-auth/client";
 import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
+import { getSession } from "next-auth/client";
 
 import User from "../../../../models/User";
 import { IUser } from "../../../../utils/types";
@@ -18,28 +18,6 @@ export default async function handler(
       if (!session) {
         res.status(403).json({ message: "Unauthorized to access this part." });
       } else if (session.user) {
-        console.log(products, shippingAddress);
-        console.log(
-          process.env.ALIEXPRESS_USERNAME,
-          process.env.ALIEXPRESS_PASSWORD
-        );
-        const data = await axios({
-          method: "POST",
-          url: "https://api.zapiex.com/v3/order/create",
-          data: {
-            username: process.env.ALIEXPRESS_USERNAME,
-            password: process.env.ALIEXPRESS_PASSWORD,
-            currency: "EUR",
-            products,
-            shippingAddress,
-          },
-          headers: {
-            "x-api-key": process.env.ZAPIEX_KEY,
-            "Content-Type": "application/json",
-          },
-        });
-        console.log(data);
-
         const email = session.user.email;
         const account = session.user.type;
         let provider: IUser["user.provider"];
@@ -55,14 +33,56 @@ export default async function handler(
           res
             .status(400)
             .json({ success: false, message: "User does not exist" });
-        // user.orders.push();
-        // await user.save();
-        // res.status(200).json({
-        //   success: true,
-        //   //   data,
+        // const data = await axios({
+        //   method: "POST",
+        //   url: "https://api.zapiex.com/v3/order/create",
+        //   headers: {
+        //     "x-api-key": process.env.ZAPIEX_KEY,
+        //     "Content-Type": "application/json",
+        //   },
+        //   data: {
+        //     username: process.env.ALIEXPRESS_USERNAME,
+        //     password: process.env.ALIEXPRESS_PASSWORD,
+        //     currency: "EUR",
+        //     products,
+        //     shippingAddress,
+        //   },
         // });
-        console.log(user);
-        // res.status(200).json({ success: true, data: data.data });
+        axios({
+          method: "POST",
+          url: "https://api.zapiex.com/v3/order/create",
+          headers: {
+            "x-api-key": process.env.ZAPIEX_KEY,
+            "Content-Type": "application/json",
+          },
+          data: {
+            username: process.env.ALIEXPRESS_USERNAME,
+            password: process.env.ALIEXPRESS_PASSWORD,
+            currency: "EUR",
+            products,
+            shippingAddress,
+          },
+        })
+          .then((response) => {
+            let orderIds = response.data.data.orderIds;
+            orderIds.forEach((id: any) => {
+              user.orders.push({
+                orderId: id,
+                products,
+                shippingAddress,
+                currency: "EUR",
+              });
+            });
+            user.save();
+            res.status(200).json({
+              success: true,
+              data: orderIds,
+              message: "Order successfully submitted and awaiting payment.",
+            });
+          })
+          .catch((err) => {
+            res.status(400).json({ success: false, message: err });
+          });
       }
     } catch (error: any) {
       res.status(500).json({ message: error.message, success: false });

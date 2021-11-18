@@ -316,7 +316,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
               </div>
 
               {/* Cart */}
-              <Cart session={session} />
+              <Cart user={user} />
             </div>
           </div>
         </div>
