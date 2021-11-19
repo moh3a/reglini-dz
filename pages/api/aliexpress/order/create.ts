@@ -33,21 +33,7 @@ export default async function handler(
           res
             .status(400)
             .json({ success: false, message: "User does not exist" });
-        // const data = await axios({
-        //   method: "POST",
-        //   url: "https://api.zapiex.com/v3/order/create",
-        //   headers: {
-        //     "x-api-key": process.env.ZAPIEX_KEY,
-        //     "Content-Type": "application/json",
-        //   },
-        //   data: {
-        //     username: process.env.ALIEXPRESS_USERNAME,
-        //     password: process.env.ALIEXPRESS_PASSWORD,
-        //     currency: "EUR",
-        //     products,
-        //     shippingAddress,
-        //   },
-        // });
+
         axios({
           method: "POST",
           url: "https://api.zapiex.com/v3/order/create",
@@ -73,15 +59,25 @@ export default async function handler(
                 currency: "EUR",
               });
             });
-            user.save();
-            res.status(200).json({
-              success: true,
-              data: orderIds,
-              message: "Order successfully submitted and awaiting payment.",
+            user.save(function (err: any, result: any) {
+              if (err) {
+                console.log(err);
+              } else {
+                res.status(200).json({
+                  success: true,
+                  data: user,
+                  message: "Order successfully submitted and awaiting payment.",
+                });
+              }
             });
           })
           .catch((err) => {
-            res.status(400).json({ success: false, message: err });
+            res
+              .status(200)
+              .json({
+                success: false,
+                message: "Your order cannot be confirmed.",
+              });
           });
       }
     } catch (error: any) {

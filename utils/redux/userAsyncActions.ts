@@ -151,8 +151,7 @@ export const cancelOrder = createAsyncThunk(
   "user/cancelOrder",
   async ({ id }: any, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(`/api/aliexpress/order/cancel/${id}`);
-      console.log(data);
+      const { data } = await axios.post(`/api/aliexpress/order/cancel`, { id });
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response);
@@ -160,11 +159,11 @@ export const cancelOrder = createAsyncThunk(
   }
 );
 
-export const getAllOrders = createAsyncThunk(
-  "user/getAllOrders",
-  async ({}, { rejectWithValue }) => {
+export const getOrderDetails = createAsyncThunk(
+  "user/getOrderDetails",
+  async ({ id }: any, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(`/api/aliexpress/order/retrieve`);
+      const { data } = await axios.post(`/api/aliexpress/order/retrieve/${id}`);
       console.log(data);
       return data;
     } catch (error: any) {

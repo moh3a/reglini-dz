@@ -43,6 +43,7 @@ export interface IUserRedux {
   verified?: boolean;
   name?: string | null;
   email?: string | null;
+  orders?: any;
   cart?: ICart;
   wishlist?: Array<IWished>;
 }
@@ -51,7 +52,7 @@ export interface IAuth {
   isAuthenticated?: boolean;
   user?: IUserRedux;
   status?: "idle" | "loading" | "complete" | "failed";
-  error?: string;
+  error?: any;
   message?: string;
 }
 
