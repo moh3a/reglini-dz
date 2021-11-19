@@ -2,6 +2,118 @@
   "id": 41,
   "name": "Souk-Ahras",
   "postalCode": "41000",
+  "dairas": [
+    {
+      "name": "Bir Bou Haouch",
+      "communes": [
+        {
+          "name": "Souk-Ahras",
+          "codeONS": "",
+          "postalCode": "41000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Heddada",
+      "communes": [
+        {
+          "name": "Souk-Ahras",
+          "codeONS": "",
+          "postalCode": "41000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "M'daourouch",
+      "communes": [
+        {
+          "name": "Souk-Ahras",
+          "codeONS": "",
+          "postalCode": "41000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mechroha",
+      "communes": [
+        {
+          "name": "Souk-Ahras",
+          "codeONS": "",
+          "postalCode": "41000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Merahna",
+      "communes": [
+        {
+          "name": "Souk-Ahras",
+          "codeONS": "",
+          "postalCode": "41000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouled Driss",
+      "communes": [
+        {
+          "name": "Souk-Ahras",
+          "codeONS": "",
+          "postalCode": "41000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Oum El Adhaim",
+      "communes": [
+        {
+          "name": "Souk-Ahras",
+          "codeONS": "",
+          "postalCode": "41000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sedrata",
+      "communes": [
+        {
+          "name": "Souk-Ahras",
+          "codeONS": "",
+          "postalCode": "41000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Souk-Ahras",
+      "communes": [
+        {
+          "name": "Souk-Ahras",
+          "codeONS": "",
+          "postalCode": "41000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Taoura",
+      "communes": [
+        {
+          "name": "Souk-Ahras",
+          "codeONS": "",
+          "postalCode": "41000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Souk-Ahras",

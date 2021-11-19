@@ -50,7 +50,7 @@ export const BuyProduct = ({
               properties: selectedVariation.properties,
               quantity: selectedVariation.quantity,
               sku: selectedVariation.sku,
-              shipping: selectedShipping.company.id,
+              carrierId: selectedShipping.company.id,
             },
           ])
         );
@@ -101,7 +101,7 @@ export const ProductToCart = ({
             properties: selectedVariation.properties,
             quantity: selectedVariation.quantity,
             sku: selectedVariation.sku,
-            shipping: selectedShipping.company.id,
+            carrierId: selectedShipping.company.id,
           })
         );
       }
@@ -165,7 +165,7 @@ export const ActionFeedback = ({
   error,
 }: {
   message: string;
-  error: string;
+  error?: string;
 }) => {
   const [success, setSuccess] = useState("");
   const [warning, setWarning] = useState("");
@@ -175,6 +175,13 @@ export const ActionFeedback = ({
         setWarning("");
       }, 3000);
       setWarning(message);
+    } else if (
+      message === "Order successfully submitted and awaiting payment."
+    ) {
+      setTimeout(() => {
+        setSuccess("");
+      }, 3000);
+      setSuccess(message);
     } else if (message === "Item successfully added to wishlist.") {
       setTimeout(() => {
         setSuccess("");

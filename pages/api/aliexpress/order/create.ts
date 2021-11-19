@@ -11,7 +11,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const session: IUser | null = await getSession({ req });
-  const { products, shippingAddress } = req.body;
+  const { product, shippingAddress } = req.body;
 
   if (req.method === "POST") {
     try {
@@ -45,7 +45,7 @@ export default async function handler(
             username: process.env.ALIEXPRESS_USERNAME,
             password: process.env.ALIEXPRESS_PASSWORD,
             currency: "EUR",
-            products,
+            product,
             shippingAddress,
           },
         })
@@ -54,7 +54,7 @@ export default async function handler(
             orderIds.forEach((id: any) => {
               user.orders.push({
                 orderId: id,
-                products,
+                product,
                 shippingAddress,
                 currency: "EUR",
               });
@@ -72,12 +72,10 @@ export default async function handler(
             });
           })
           .catch((err) => {
-            res
-              .status(200)
-              .json({
-                success: false,
-                message: "Your order cannot be confirmed.",
-              });
+            res.status(200).json({
+              success: false,
+              message: "Your order cannot be confirmed.",
+            });
           });
       }
     } catch (error: any) {

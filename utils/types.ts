@@ -20,7 +20,7 @@ export interface ICartItem extends IProduct {
   _id?: string;
   quantity?: number;
   properties?: Array<Object>;
-  shipping?: string;
+  carrierId?: string;
   sku?: string;
 }
 

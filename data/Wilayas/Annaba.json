@@ -2,6 +2,74 @@
   "id": 23,
   "name": "Annaba",
   "postalCode": "23000",
+  "dairas": [
+    {
+      "name": "Annaba",
+      "communes": [
+        {
+          "name": "Annaba",
+          "codeONS": "",
+          "postalCode": "23000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn Berda",
+      "communes": [
+        {
+          "name": "Annaba",
+          "codeONS": "",
+          "postalCode": "23000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Hadjar",
+      "communes": [
+        {
+          "name": "Annaba",
+          "codeONS": "",
+          "postalCode": "23000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Berrahal",
+      "communes": [
+        {
+          "name": "Annaba",
+          "codeONS": "",
+          "postalCode": "23000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Chetaïbi",
+      "communes": [
+        {
+          "name": "Annaba",
+          "codeONS": "",
+          "postalCode": "23000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Bouni",
+      "communes": [
+        {
+          "name": "Annaba",
+          "codeONS": "",
+          "postalCode": "23000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Annaba",

@@ -2,6 +2,129 @@
   "id": 18,
   "name": "Jijel",
   "postalCode": "18000",
+  "dairas": [
+    {
+      "name": "Chekfa",
+      "communes": [
+        {
+          "name": "Jijel",
+          "codeONS": "",
+          "postalCode": "18000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Djimla",
+      "communes": [
+        {
+          "name": "Jijel",
+          "codeONS": "",
+          "postalCode": "18000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Ancer",
+      "communes": [
+        {
+          "name": "Jijel",
+          "codeONS": "",
+          "postalCode": "18000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Aouana",
+      "communes": [
+        {
+          "name": "Jijel",
+          "codeONS": "",
+          "postalCode": "18000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Milia",
+      "communes": [
+        {
+          "name": "Jijel",
+          "codeONS": "",
+          "postalCode": "18000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Jijel",
+      "communes": [
+        {
+          "name": "Jijel",
+          "codeONS": "",
+          "postalCode": "18000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Settara",
+      "communes": [
+        {
+          "name": "Jijel",
+          "codeONS": "",
+          "postalCode": "18000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Maarouf",
+      "communes": [
+        {
+          "name": "Jijel",
+          "codeONS": "",
+          "postalCode": "18000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Taher",
+      "communes": [
+        {
+          "name": "Jijel",
+          "codeONS": "",
+          "postalCode": "18000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Texenna",
+      "communes": [
+        {
+          "name": "Jijel",
+          "codeONS": "",
+          "postalCode": "18000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ziama Mansouriah",
+      "communes": [
+        {
+          "name": "Jijel",
+          "codeONS": "",
+          "postalCode": "18000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Jijel",

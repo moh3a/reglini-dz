@@ -2,6 +2,118 @@
   "id": 27,
   "name": "Mostaganem",
   "postalCode": "27000",
+  "dairas": [
+    {
+      "name": "Mostaganem",
+      "communes": [
+        {
+          "name": "Mostaganem",
+          "codeONS": "",
+          "postalCode": "27000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hassi Maameche",
+      "communes": [
+        {
+          "name": "Mostaganem",
+          "codeONS": "",
+          "postalCode": "27000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn Tedles",
+      "communes": [
+        {
+          "name": "Mostaganem",
+          "codeONS": "",
+          "postalCode": "27000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bouguirat",
+      "communes": [
+        {
+          "name": "Mostaganem",
+          "codeONS": "",
+          "postalCode": "27000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Ali",
+      "communes": [
+        {
+          "name": "Mostaganem",
+          "codeONS": "",
+          "postalCode": "27000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Achaacha",
+      "communes": [
+        {
+          "name": "Mostaganem",
+          "codeONS": "",
+          "postalCode": "27000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn Nouïssy",
+      "communes": [
+        {
+          "name": "Mostaganem",
+          "codeONS": "",
+          "postalCode": "27000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mesra",
+      "communes": [
+        {
+          "name": "Mostaganem",
+          "codeONS": "",
+          "postalCode": "27000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Lakhdar",
+      "communes": [
+        {
+          "name": "Mostaganem",
+          "codeONS": "",
+          "postalCode": "27000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Kheireddine",
+      "communes": [
+        {
+          "name": "Mostaganem",
+          "codeONS": "",
+          "postalCode": "27000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Mostaganem",

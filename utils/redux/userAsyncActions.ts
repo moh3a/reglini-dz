@@ -72,7 +72,7 @@ export const addToCart = createAsyncThunk(
       properties,
       sku,
       quantity,
-      shipping,
+      carrierId,
     }: ICartItem,
     { rejectWithValue }
   ) => {
@@ -85,7 +85,7 @@ export const addToCart = createAsyncThunk(
         properties,
         sku,
         quantity,
-        shipping,
+        carrierId,
       });
       return data;
     } catch (error: any) {
@@ -129,12 +129,12 @@ export const removeFromCart = createAsyncThunk(
 
 export const createOrder = createAsyncThunk(
   "user/createOrder",
-  async ({ products, shippingAddress }: any, { rejectWithValue }) => {
+  async ({ product, shippingAddress }: any, { rejectWithValue }) => {
     try {
       const { data } = await axios.post(
         `/api/aliexpress/order/create`,
         {
-          products,
+          product,
           shippingAddress,
         },
         { headers: { "Content-type": "application/json" } }

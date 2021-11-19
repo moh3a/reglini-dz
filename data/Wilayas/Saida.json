@@ -2,6 +2,74 @@
   "id": 20,
   "name": "Saida",
   "postalCode": "20000",
+  "dairas": [
+    {
+      "name": "Saida",
+      "communes": [
+        {
+          "name": "Saida",
+          "codeONS": "",
+          "postalCode": "20000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn El Hadjar",
+      "communes": [
+        {
+          "name": "Saida",
+          "codeONS": "",
+          "postalCode": "20000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Boubekeur",
+      "communes": [
+        {
+          "name": "Saida",
+          "codeONS": "",
+          "postalCode": "20000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Hassasna",
+      "communes": [
+        {
+          "name": "Saida",
+          "codeONS": "",
+          "postalCode": "20000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouled Brahim",
+      "communes": [
+        {
+          "name": "Saida",
+          "codeONS": "",
+          "postalCode": "20000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Youb",
+      "communes": [
+        {
+          "name": "Saida",
+          "codeONS": "",
+          "postalCode": "20000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Saida",

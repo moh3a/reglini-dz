@@ -15,7 +15,7 @@ export default function Cart({ user }: any) {
       imageUrl: "",
       properties: {},
       quantity: 0,
-      shipping: "",
+      carrierId: "",
     },
   ]);
 

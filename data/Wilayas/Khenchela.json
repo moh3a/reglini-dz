@@ -2,6 +2,96 @@
   "id": 40,
   "name": "Khenchela",
   "postalCode": "40000",
+  "dairas": [
+    {
+      "name": "Khenchela",
+      "communes": [
+        {
+          "name": "Khenchela",
+          "codeONS": "",
+          "postalCode": "40000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Babar",
+      "communes": [
+        {
+          "name": "Khenchela",
+          "codeONS": "",
+          "postalCode": "40000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bouhmama",
+      "communes": [
+        {
+          "name": "Khenchela",
+          "codeONS": "",
+          "postalCode": "40000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Chechar",
+      "communes": [
+        {
+          "name": "Khenchela",
+          "codeONS": "",
+          "postalCode": "40000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Hamma",
+      "communes": [
+        {
+          "name": "Khenchela",
+          "codeONS": "",
+          "postalCode": "40000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Kais",
+      "communes": [
+        {
+          "name": "Khenchela",
+          "codeONS": "",
+          "postalCode": "40000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouled Rechache",
+      "communes": [
+        {
+          "name": "Khenchela",
+          "codeONS": "",
+          "postalCode": "40000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn Touila",
+      "communes": [
+        {
+          "name": "Khenchela",
+          "codeONS": "",
+          "postalCode": "40000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Khenchela",

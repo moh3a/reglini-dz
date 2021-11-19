@@ -2,6 +2,140 @@
   "id": 17,
   "name": "Djelfa",
   "postalCode": "17000",
+  "dairas": [
+    {
+      "name": "Djelfa",
+      "communes": [
+        {
+          "name": "Djelfa",
+          "codeONS": "",
+          "postalCode": "17000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn El Ibel",
+      "communes": [
+        {
+          "name": "Djelfa",
+          "codeONS": "",
+          "postalCode": "17000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn Oussara",
+      "communes": [
+        {
+          "name": "Djelfa",
+          "codeONS": "",
+          "postalCode": "17000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Birine",
+      "communes": [
+        {
+          "name": "Djelfa",
+          "codeONS": "",
+          "postalCode": "17000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Charef",
+      "communes": [
+        {
+          "name": "Djelfa",
+          "codeONS": "",
+          "postalCode": "17000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Dar Chioukh",
+      "communes": [
+        {
+          "name": "Djelfa",
+          "codeONS": "",
+          "postalCode": "17000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Idrissia",
+      "communes": [
+        {
+          "name": "Djelfa",
+          "codeONS": "",
+          "postalCode": "17000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Faidh El Botma",
+      "communes": [
+        {
+          "name": "Djelfa",
+          "codeONS": "",
+          "postalCode": "17000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Had-Sahary",
+      "communes": [
+        {
+          "name": "Djelfa",
+          "codeONS": "",
+          "postalCode": "17000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hassi Bahbah",
+      "communes": [
+        {
+          "name": "Djelfa",
+          "codeONS": "",
+          "postalCode": "17000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Messaad",
+      "communes": [
+        {
+          "name": "Djelfa",
+          "codeONS": "",
+          "postalCode": "17000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Ladjel",
+      "communes": [
+        {
+          "name": "Djelfa",
+          "codeONS": "",
+          "postalCode": "17000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Djelfa",

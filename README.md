@@ -1,7 +1,8 @@
 ## TODO
 
-- handling multiple orders for multiple products
-- other posts and finish data
+- finish order details
+- retrieve tracking
+- add shipping price to total
+- other zip codes and finish data
 - add payment info
-- style navigation bar (remove netflix)
 - redesign CTAs

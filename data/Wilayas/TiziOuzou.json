@@ -2,6 +2,239 @@
   "id": 15,
   "name": "Tizi-Ouzou",
   "postalCode": "15000",
+  "dairas": [
+    {
+      "name": "Ain El Hammam",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Azazga",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Azeffoun",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Beni Douala",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Beni Yenni",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Boghni",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bouzeguène",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Draâ Ben Khedda",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Draâ El Mizan",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Iferhounène",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Larbaâ Nath Irathen",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mâatkas",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Makouda",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mekla",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouacif",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouadhia",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouaguenoun",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tigzirt",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tizi Gheniff",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tizi Ouzou",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tizi Rached",
+      "communes": [
+        {
+          "name": "Tizi-Ouzou",
+          "codeONS": "",
+          "postalCode": "15000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Tizi-Ouzou",

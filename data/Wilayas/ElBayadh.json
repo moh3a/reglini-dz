@@ -2,6 +2,96 @@
   "id": 32,
   "name": "El Bayadh",
   "postalCode": "32000",
+  "dairas": [
+    {
+      "name": "El Bayadh",
+      "communes": [
+        {
+          "name": "El Bayadh",
+          "codeONS": "",
+          "postalCode": "32000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Rogassa",
+      "communes": [
+        {
+          "name": "El Bayadh",
+          "codeONS": "",
+          "postalCode": "32000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Brezina",
+      "communes": [
+        {
+          "name": "El Bayadh",
+          "codeONS": "",
+          "postalCode": "32000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Abiodh Sidi Cheikh",
+      "communes": [
+        {
+          "name": "El Bayadh",
+          "codeONS": "",
+          "postalCode": "32000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bougtoub",
+      "communes": [
+        {
+          "name": "El Bayadh",
+          "codeONS": "",
+          "postalCode": "32000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Chellala",
+      "communes": [
+        {
+          "name": "El Bayadh",
+          "codeONS": "",
+          "postalCode": "32000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Boussemghoun",
+      "communes": [
+        {
+          "name": "El Bayadh",
+          "codeONS": "",
+          "postalCode": "32000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Boualem",
+      "communes": [
+        {
+          "name": "El Bayadh",
+          "codeONS": "",
+          "postalCode": "32000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "El Bayadh",

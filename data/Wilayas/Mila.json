@@ -2,6 +2,151 @@
   "id": 43,
   "name": "Mila",
   "postalCode": "43000",
+  "dairas": [
+    {
+      "name": "Mila",
+      "communes": [
+        {
+          "name": "Mila",
+          "codeONS": "",
+          "postalCode": "43000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Chelghoum Laïd",
+      "communes": [
+        {
+          "name": "Mila",
+          "codeONS": "",
+          "postalCode": "43000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ferdjioua",
+      "communes": [
+        {
+          "name": "Mila",
+          "codeONS": "",
+          "postalCode": "43000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Grarem Gouga",
+      "communes": [
+        {
+          "name": "Mila",
+          "codeONS": "",
+          "postalCode": "43000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Oued Endja",
+      "communes": [
+        {
+          "name": "Mila",
+          "codeONS": "",
+          "postalCode": "43000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Rouached",
+      "communes": [
+        {
+          "name": "Mila",
+          "codeONS": "",
+          "postalCode": "43000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Terrai Bainen",
+      "communes": [
+        {
+          "name": "Mila",
+          "codeONS": "",
+          "postalCode": "43000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tassadane Haddada",
+      "communes": [
+        {
+          "name": "Mila",
+          "codeONS": "",
+          "postalCode": "43000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn Beida Harriche",
+      "communes": [
+        {
+          "name": "Mila",
+          "codeONS": "",
+          "postalCode": "43000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Merouane",
+      "communes": [
+        {
+          "name": "Mila",
+          "codeONS": "",
+          "postalCode": "43000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Teleghma",
+      "communes": [
+        {
+          "name": "Mila",
+          "codeONS": "",
+          "postalCode": "43000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bouhatem",
+      "communes": [
+        {
+          "name": "Mila",
+          "codeONS": "",
+          "postalCode": "43000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tadjenanet",
+      "communes": [
+        {
+          "name": "Mila",
+          "codeONS": "",
+          "postalCode": "43000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Mila",

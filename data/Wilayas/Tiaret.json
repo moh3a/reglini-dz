@@ -2,6 +2,162 @@
   "id": 14,
   "name": "Tiaret",
   "postalCode": "14000",
+  "dairas": [
+    {
+      "name": "Aïn Deheb",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn Kermes",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Dahmouni",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Frenda",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hamadia",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ksar Chellala",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mahdia",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mechraa Safa",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Medroussa",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Meghila",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Oued Lilli",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Rahouia",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sougueur",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tiaret",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "14000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Tiaret",

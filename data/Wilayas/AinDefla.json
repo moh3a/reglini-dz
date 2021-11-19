@@ -2,6 +2,162 @@
   "id": 44,
   "name": "Ain Defla",
   "postalCode": "44000",
+  "dairas": [
+    {
+      "name": "Ain Defla",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn Lechiekh",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bathia",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bordj Emir Khaled",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Boumedfaa",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Djelida",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Djendel",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Abadia",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Amra",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Attaf",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hammam Righa",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Khemis Miliana",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Miliana",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Rouina",
+      "communes": [
+        {
+          "name": "Ain Defla",
+          "codeONS": "",
+          "postalCode": "44000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Ain Defla Boussouf Abdelhafid",

@@ -2,6 +2,118 @@
   "id": 42,
   "name": "Tipaza",
   "postalCode": "42000",
+  "dairas": [
+    {
+      "name": "Ahmar El Ain",
+      "communes": [
+        {
+          "name": "Tipaza",
+          "codeONS": "",
+          "postalCode": "42000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bou Ismail",
+      "communes": [
+        {
+          "name": "Tipaza",
+          "codeONS": "",
+          "postalCode": "42000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Cherchell",
+      "communes": [
+        {
+          "name": "Tipaza",
+          "codeONS": "",
+          "postalCode": "42000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Damous",
+      "communes": [
+        {
+          "name": "Tipaza",
+          "codeONS": "",
+          "postalCode": "42000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Fouka",
+      "communes": [
+        {
+          "name": "Tipaza",
+          "codeONS": "",
+          "postalCode": "42000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Gouraya",
+      "communes": [
+        {
+          "name": "Tipaza",
+          "codeONS": "",
+          "postalCode": "42000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hadjout",
+      "communes": [
+        {
+          "name": "Tipaza",
+          "codeONS": "",
+          "postalCode": "42000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Koléa",
+      "communes": [
+        {
+          "name": "Tipaza",
+          "codeONS": "",
+          "postalCode": "42000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Amar",
+      "communes": [
+        {
+          "name": "Tipaza",
+          "codeONS": "",
+          "postalCode": "42000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tipaza",
+      "communes": [
+        {
+          "name": "Tipaza",
+          "codeONS": "",
+          "postalCode": "42000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Tipaza",

@@ -29,7 +29,7 @@ const ItemSchema = new mongoose.Schema(
       required: true,
       min: [1, "Quantity cannot be less than 1."],
     },
-    shipping: {
+    carrierId: {
       type: String,
       required: true,
     },
@@ -86,15 +86,39 @@ const AddressSchema = new mongoose.Schema({
 
 const OrderSchema = new mongoose.Schema({
   orderId: String,
-  products: [
-    {
-      productId: String,
-      sku: String,
-      quantity: Number,
-      carrierId: String,
-      orderMemo: String,
+  product: {
+    productId: {
+      type: String,
+      required: true,
     },
-  ],
+    name: {
+      type: String,
+      required: true,
+    },
+    sku: String,
+    price: {
+      type: Number,
+      required: true,
+    },
+    imageUrl: {
+      type: String,
+      required: true,
+    },
+    properties: {
+      type: [{}],
+      required: true,
+    },
+    quantity: {
+      type: Number,
+      required: true,
+      min: [1, "Quantity cannot be less than 1."],
+    },
+    carrierId: {
+      type: String,
+      required: true,
+    },
+    orderMemo: String,
+  },
   shippingAddress: {
     name: String,
     countryCode: String,
@@ -104,6 +128,9 @@ const OrderSchema = new mongoose.Schema({
     phoneCountry: String,
     mobilePhone: String,
     province: String,
+  },
+  orderStatus: {
+    status: String,
   },
   currency: String,
 });
@@ -116,6 +143,7 @@ const UserSchema = new mongoose.Schema({
     // unique: true,
     index: true,
   },
+  realName: String,
   email: {
     type: String,
     required: [true, "Please provide an email address."],
