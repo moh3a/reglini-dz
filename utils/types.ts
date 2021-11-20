@@ -35,6 +35,62 @@ export interface IWished extends IProduct {
   _id?: string;
 }
 
+export interface IOrder {
+  orderId?: String;
+  product?: {
+    productId: String;
+    name: String;
+    sku: String;
+    price: Number;
+    imageUrl: String;
+    properties: [{}];
+    quantity: number;
+    carrierId: String;
+    orderMemo: String;
+  };
+  shippingAddress?: {
+    name: String;
+    countryCode: String;
+    city: String;
+    zipCode: String;
+    addressLine1: String;
+    phoneCountry: String;
+    mobilePhone: String;
+    province: String;
+  };
+  status?: String;
+  orderDetailsUrl?: String;
+  creationTime?: String;
+  totalPrice?: {
+    productsPrice: { value: Number; display: String };
+    shippingPrice: { value: Number; display: String };
+    fullOrderPrice: { value: Number; display: String };
+  };
+  paymentTime?: String;
+  readyForDispatchTime?: String;
+  isPaid?: Boolean;
+  isShipped?: Boolean;
+  isFrozen?: Boolean;
+  canResume?: Boolean;
+  canCancel?: Boolean;
+  endReason?: String;
+  currency?: String;
+  tracking?: {
+    isTrackingAvailable: Boolean;
+    packages: [
+      {
+        caption: String;
+        readyForDispatchTime: String;
+        deliveryTimeRange: { min: String; max: String };
+        trackingNumber: String;
+        trackingUrl: String;
+        carrier: { id: String; name: String };
+        progressPercentage: Number;
+      }
+    ];
+  };
+}
+
 export interface IUserRedux {
   role?: "basic" | "admin" | "seller";
   _id?: string;
@@ -43,7 +99,7 @@ export interface IUserRedux {
   verified?: boolean;
   name?: string | null;
   email?: string | null;
-  orders?: any;
+  orders?: Array<IOrder>;
   cart?: ICart;
   wishlist?: Array<IWished>;
 }

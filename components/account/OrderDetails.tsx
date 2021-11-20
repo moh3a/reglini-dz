@@ -1,20 +1,26 @@
 import { useDispatch } from "react-redux";
-import { getOrderDetails } from "../../utils/redux/userAsyncActions";
+import { getOrderTracking } from "../../utils/redux/userAsyncActions";
 
-export default function OrderDetails({ user }: any) {
+export default function OrderDetails({ user, id }: any) {
   const dispatch = useDispatch();
-  const handler = () => {
-    dispatch(getOrderDetails({ id: "" }));
+
+  const getTrackingHandler = () => {
+    dispatch(getOrderTracking({ id }));
   };
 
   return (
     <div className="bg-white shadow overflow-hidden sm:rounded-lg">
       <div className="px-4 py-5 sm:px-6">
         <h3 className="text-lg leading-6 font-medium text-gray-900">
-          Your orders
+          You order
         </h3>
       </div>
-      <div className="border-t border-gray-200">Hello</div>
+      <button
+        onClick={getTrackingHandler}
+        className="px-3 py-1 border border-gray-200"
+      >
+        Tracking
+      </button>
     </div>
   );
 }

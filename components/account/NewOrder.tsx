@@ -25,7 +25,7 @@ export default function NewOrder({ user, products, origin }: any) {
             productId: item.productId,
             sku: item.sku,
             quantity: item.quantity,
-            carrierId: item.carriedId,
+            carrierId: item.carrierId,
             orderMemo:
               "Please do not put invoices or any other document inside the package. Instead send them to this email address support@reglini-dz.com. Thank you very much.",
           },

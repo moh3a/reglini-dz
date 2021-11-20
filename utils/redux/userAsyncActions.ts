@@ -171,3 +171,16 @@ export const getOrderDetails = createAsyncThunk(
     }
   }
 );
+
+export const getOrderTracking = createAsyncThunk(
+  "user/getOrderTracking",
+  async ({ id }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post(`/api/aliexpress/order/tracking/${id}`);
+      console.log(data);
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);

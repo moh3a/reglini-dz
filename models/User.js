@@ -87,36 +87,18 @@ const AddressSchema = new mongoose.Schema({
 const OrderSchema = new mongoose.Schema({
   orderId: String,
   product: {
-    productId: {
-      type: String,
-      required: true,
-    },
-    name: {
-      type: String,
-      required: true,
-    },
+    productId: String,
+    name: String,
     sku: String,
-    price: {
-      type: Number,
-      required: true,
-    },
-    imageUrl: {
-      type: String,
-      required: true,
-    },
-    properties: {
-      type: [{}],
-      required: true,
-    },
+    price: Number,
+    imageUrl: String,
+    properties: [{}],
     quantity: {
       type: Number,
       required: true,
       min: [1, "Quantity cannot be less than 1."],
     },
-    carrierId: {
-      type: String,
-      required: true,
-    },
+    carrierId: String,
     orderMemo: String,
   },
   shippingAddress: {
@@ -129,10 +111,37 @@ const OrderSchema = new mongoose.Schema({
     mobilePhone: String,
     province: String,
   },
-  orderStatus: {
-    status: String,
+  status: String,
+  orderDetailsUrl: String,
+  creationTime: String,
+  totalPrice: {
+    productsPrice: { value: Number, display: String },
+    shippingPrice: { value: Number, display: String },
+    fullOrderPrice: { value: Number, display: String },
   },
+  paymentTime: String,
+  readyForDispatchTime: String,
+  isPaid: Boolean,
+  isShipped: Boolean,
+  isFrozen: Boolean,
+  canResume: Boolean,
+  canCancel: Boolean,
+  endReason: String,
   currency: String,
+  tracking: {
+    isTrackingAvailable: Boolean,
+    packages: [
+      {
+        caption: String,
+        readyForDispatchTime: String,
+        deliveryTimeRange: { min: String, max: String },
+        trackingNumber: String,
+        trackingUrl: String,
+        carrier: { id: String, name: String },
+        progressPercentage: Number,
+      },
+    ],
+  },
 });
 
 const UserSchema = new mongoose.Schema({

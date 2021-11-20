@@ -12,6 +12,15 @@ export default async function handler(
 ) {
   const session: IUser | null = await getSession({ req });
   const { product, shippingAddress } = req.body;
+  let products = [
+    {
+      productId: product.productId,
+      sku: product.sku,
+      quantity: product.quantity,
+      carrierId: product.carrierId,
+      orderMemo: product.orderMemo,
+    },
+  ];
 
   if (req.method === "POST") {
     try {
@@ -33,7 +42,6 @@ export default async function handler(
           res
             .status(400)
             .json({ success: false, message: "User does not exist" });
-
         axios({
           method: "POST",
           url: "https://api.zapiex.com/v3/order/create",
@@ -45,7 +53,7 @@ export default async function handler(
             username: process.env.ALIEXPRESS_USERNAME,
             password: process.env.ALIEXPRESS_PASSWORD,
             currency: "EUR",
-            product,
+            products,
             shippingAddress,
           },
         })
@@ -75,6 +83,7 @@ export default async function handler(
             res.status(200).json({
               success: false,
               message: "Your order cannot be confirmed.",
+              data: user,
             });
           });
       }

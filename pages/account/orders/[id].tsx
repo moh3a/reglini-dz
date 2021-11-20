@@ -11,7 +11,7 @@ import { getUser } from "../../../utils/redux/userAsyncActions";
 
 const OrderDetailsScreen = () => {
   const router = useRouter();
-  const id = router.query;
+  const { id } = router.query;
   const dispatch = useDispatch();
   const [session, loading]: [IUser | null, boolean] = useSession();
   const { isAuthenticated, user, status } = useSelector(selectUser);
@@ -28,7 +28,7 @@ const OrderDetailsScreen = () => {
       const provider = session.user?.provider || undefined;
       dispatch(getUser({ email, account: type, provider }));
     }
-  }, [router, session, loading, dispatch, isAuthenticated, status]);
+  }, [router, session, id, loading, dispatch, isAuthenticated, status]);
 
   return (
     <>
@@ -40,7 +40,7 @@ const OrderDetailsScreen = () => {
         <meta name="description" content="Details for the Aliexpress order." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>{user && <OrderDetails user={user} />}</div>
+      <div>{user && <OrderDetails user={user} id={id} />}</div>
     </>
   );
 };

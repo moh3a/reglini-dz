@@ -1,10 +1,18 @@
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
-import { cancelOrder } from "../../utils/redux/userAsyncActions";
+import {
+  cancelOrder,
+  getOrderDetails,
+} from "../../utils/redux/userAsyncActions";
 
 export default function Orders({ user }: any) {
   const dispatch = useDispatch();
   const router = useRouter();
+
+  const viewDetailsHandler = (id: any) => {
+    dispatch(getOrderDetails({ id }));
+    router.push(`/account/orders/${id}`);
+  };
 
   return (
     <div className="bg-white shadow overflow-hidden sm:rounded-lg">
@@ -23,20 +31,15 @@ export default function Orders({ user }: any) {
                   <div key={order.orderId} className="flex flex-col">
                     <div>
                       <p>Order ID : {order.orderId} </p>
-                      <p>Products names : </p>
+                      <p>Products : </p>
                       <ul>
-                        {order.products.map((product: any) => (
-                          <li key={product.productId}>
-                            <p>{product.productId}</p> <p>Status: </p>
-                          </li>
-                        ))}
+                        <li>
+                          <p>ProductID: {order.product.productId}</p>{" "}
+                          {order.status ? <p>Status: {order.status}</p> : ""}
+                        </li>
                       </ul>
                     </div>
-                    <button
-                      onClick={() =>
-                        router.push(`/account/orders/${order.orderId}`)
-                      }
-                    >
+                    <button onClick={() => viewDetailsHandler(order.orderId)}>
                       View details
                     </button>
                     <button

@@ -49,11 +49,39 @@ export default async function handler(
         })
           .then((response) => {
             let data = response.data.data;
-            res.status(200).json({
-              success: true,
-              message: "Successfully retrieved your order.",
-              data,
-            });
+            const index = user.orders.findIndex(
+              (order: any) => order.orderId === id
+            );
+            if (index === -1) {
+              res
+                .status(200)
+                .json({ success: false, message: "No order with this ID." });
+            } else {
+              user.orders[index].status = data.status;
+              user.orders[index].orderDetailsUrl = data.orderDetailsUrl;
+              user.orders[index].creationTime = data.creationTime;
+              user.orders[index].totalPrice = data.totalPrice;
+              user.orders[index].paymentTime = data.paymentTime;
+              user.orders[index].readyForDispatchTime =
+                data.readyForDispatchTime;
+              user.orders[index].isPaid = data.isPaid;
+              user.orders[index].isShipped = data.isShipped;
+              user.orders[index].isFrozen = data.isFrozen;
+              user.orders[index].canResume = data.canResume;
+              user.orders[index].canCancel = data.canCancel;
+              user.orders[index].endReason = data.endReason;
+              user.save(function (error: any, result: any) {
+                if (error) {
+                  console.log(error);
+                } else {
+                  res.status(200).json({
+                    success: true,
+                    message: "Successfully retrieved your order details.",
+                    data: user,
+                  });
+                }
+              });
+            }
           })
           .catch((err) => {
             res.status(200).json({
