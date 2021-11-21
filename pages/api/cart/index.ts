@@ -22,6 +22,8 @@ export default async function handler(
       properties,
       quantity,
       carrierId,
+      shippingPrice,
+      totalPrice,
     } = req.body;
     try {
       if (!session) {
@@ -55,6 +57,8 @@ export default async function handler(
             properties,
             quantity,
             carrierId,
+            shippingPrice,
+            totalPrice,
           });
         } else {
           data.cart.cartItems[index].quantity = quantity;

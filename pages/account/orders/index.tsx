@@ -34,11 +34,14 @@ const OrderScreen = () => {
       <Head>
         <title>
           {session && session.user?.name
-            ? `${session.user.name}'s profile | `
+            ? `${session.user.name}'s orders | `
             : ``}
           reglini.dz
         </title>
-        <meta name="description" content="reglini.dz user's profile page" />
+        <meta
+          name="description"
+          content="reglini.dz user's full list of orders."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>{user && <Orders user={user} />}</div>

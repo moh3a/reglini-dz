@@ -24,6 +24,9 @@ export default function NewOrder({ user, products, origin }: any) {
           product: {
             productId: item.productId,
             sku: item.sku,
+            imageUrl: item.imageUrl,
+            price: item.price,
+            properties: item.properties,
             quantity: item.quantity,
             carrierId: item.carrierId,
             orderMemo:
@@ -42,13 +45,13 @@ export default function NewOrder({ user, products, origin }: any) {
         })
       );
     });
-    // if (origin === "localStorage") {
-    //   localStorage.removeItem("aeno");
-    // } else if (origin === "cart") {
-    //   products.map((item: any) => {
-    //     dispatch(removeFromCart({ id: item.productId }));
-    //   });
-    // }
+    if (origin === "localStorage") {
+      localStorage.removeItem("aeno");
+    } else if (origin === "cart") {
+      products.map((item: any) => {
+        dispatch(removeFromCart({ id: item.productId }));
+      });
+    }
     router.push("/account/orders");
   };
 
@@ -117,8 +120,10 @@ export default function NewOrder({ user, products, origin }: any) {
                   </div>
                   <div className="flex flex-col px-4 py-2">
                     <p className="font-bold">{item.name}</p>
-                    <p>{item.price} €</p>
+                    <small>Product price: {item.price} €</small>
+                    <small>Shipping price: {item.shippingPrice} €</small>
                     <small>Quantity: {item.quantity}</small>
+                    <p>Total price: {item.totalPrice} €</p>
                   </div>
                 </dd>
               ))}

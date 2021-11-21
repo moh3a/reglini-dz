@@ -54,6 +54,8 @@ const CartItem = ({ item }: any) => {
         </div>
         <div className="text-xs text-gray-700 my-2">
           Shipping carrier: <span className="font-bold">{item.carrierId}</span>
+          <br />
+          Shipping price: €{item.shippingPrice}
         </div>
         <div className="flex-1 flex items-end justify-between text-sm">
           <p className="text-gray-600 dark:text-gray-200">

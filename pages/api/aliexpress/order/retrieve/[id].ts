@@ -70,17 +70,34 @@ export default async function handler(
               user.orders[index].canResume = data.canResume;
               user.orders[index].canCancel = data.canCancel;
               user.orders[index].endReason = data.endReason;
-              user.save(function (error: any, result: any) {
-                if (error) {
-                  console.log(error);
-                } else {
-                  res.status(200).json({
-                    success: true,
-                    message: "Successfully retrieved your order details.",
-                    data: user,
+              axios({
+                method: "POST",
+                url: "https://api.zapiex.com/v3/order/tracking",
+                headers: {
+                  "x-api-key": process.env.ZAPIEX_KEY,
+                  "Content-Type": "application/json",
+                },
+                data: {
+                  username: process.env.ALIEXPRESS_USERNAME,
+                  password: process.env.ALIEXPRESS_PASSWORD,
+                  orderId: id,
+                },
+              })
+                .then((resp) => {
+                  user.orders[index].tracking = resp.data.data;
+                  user.save(function (error: any, result: any) {
+                    if (error) {
+                      console.log(error);
+                    } else {
+                      res.status(200).json({
+                        success: true,
+                        message: "Successfully retrieved your order details.",
+                        data: user,
+                      });
+                    }
                   });
-                }
-              });
+                })
+                .catch((erro) => console.log(erro));
             }
           })
           .catch((err) => {

@@ -51,6 +51,13 @@ export const BuyProduct = ({
               quantity: selectedVariation.quantity,
               sku: selectedVariation.sku,
               carrierId: selectedShipping.company.id,
+              shippingPrice: selectedShipping.price.value,
+              totalPrice:
+                ((selectedVariation.price.app.hasDiscount
+                  ? selectedVariation.price.app.discountedPrice.value
+                  : selectedVariation.price.app.originalPrice.value) +
+                  selectedShipping.price.value) *
+                selectedVariation.quantity,
             },
           ])
         );
@@ -102,6 +109,13 @@ export const ProductToCart = ({
             quantity: selectedVariation.quantity,
             sku: selectedVariation.sku,
             carrierId: selectedShipping.company.id,
+            shippingPrice: selectedShipping.price.value,
+            totalPrice:
+              ((selectedVariation.price.app.hasDiscount
+                ? selectedVariation.price.app.discountedPrice.value
+                : selectedVariation.price.app.originalPrice.value) +
+                selectedShipping.price.value) *
+              selectedVariation.quantity,
           })
         );
       }

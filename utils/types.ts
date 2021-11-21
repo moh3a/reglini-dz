@@ -20,8 +20,10 @@ export interface ICartItem extends IProduct {
   _id?: string;
   quantity?: number;
   properties?: Array<Object>;
-  carrierId?: string;
   sku?: string;
+  carrierId?: string;
+  shippingPrice?: number;
+  totalPrice?: number;
 }
 
 export interface ICart {

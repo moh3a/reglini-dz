@@ -73,6 +73,8 @@ export const addToCart = createAsyncThunk(
       sku,
       quantity,
       carrierId,
+      shippingPrice,
+      totalPrice,
     }: ICartItem,
     { rejectWithValue }
   ) => {
@@ -86,6 +88,8 @@ export const addToCart = createAsyncThunk(
         sku,
         quantity,
         carrierId,
+        shippingPrice,
+        totalPrice,
       });
       return data;
     } catch (error: any) {
