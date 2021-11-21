@@ -2,6 +2,41 @@
   "id": 33,
   "name": "Illizi",
   "postalCode": "33000",
+  "dairas": [
+    {
+      "name": "Illizi",
+      "communes": [
+        {
+          "name": "Illizi",
+          "codeONS": "",
+          "postalCode": "33000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Djanet",
+      "communes": [
+        {
+          "name": "Illizi",
+          "codeONS": "",
+          "postalCode": "33000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "In Amenas",
+      "communes": [
+        {
+          "name": "Illizi",
+          "codeONS": "",
+          "postalCode": "33000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Illizi",

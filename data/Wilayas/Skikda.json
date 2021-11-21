@@ -2,6 +2,151 @@
   "id": 21,
   "name": "Skikda",
   "postalCode": "21000",
+  "dairas": [
+    {
+      "name": "Aïn Kechra",
+      "communes": [
+        {
+          "name": "Skikda",
+          "codeONS": "",
+          "postalCode": "21000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Azzaba",
+      "communes": [
+        {
+          "name": "Skikda",
+          "codeONS": "",
+          "postalCode": "21000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ben Azzouz",
+      "communes": [
+        {
+          "name": "Skikda",
+          "codeONS": "",
+          "postalCode": "21000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Collo",
+      "communes": [
+        {
+          "name": "Skikda",
+          "codeONS": "",
+          "postalCode": "21000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Hadaiek",
+      "communes": [
+        {
+          "name": "Skikda",
+          "codeONS": "",
+          "postalCode": "21000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Harrouch",
+      "communes": [
+        {
+          "name": "Skikda",
+          "codeONS": "",
+          "postalCode": "21000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouled Attia",
+      "communes": [
+        {
+          "name": "Skikda",
+          "codeONS": "",
+          "postalCode": "21000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Oum Toub",
+      "communes": [
+        {
+          "name": "Skikda",
+          "codeONS": "",
+          "postalCode": "21000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ramdane Djamel",
+      "communes": [
+        {
+          "name": "Skikda",
+          "codeONS": "",
+          "postalCode": "21000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Mezghiche",
+      "communes": [
+        {
+          "name": "Skikda",
+          "codeONS": "",
+          "postalCode": "21000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Skikda",
+      "communes": [
+        {
+          "name": "Skikda",
+          "codeONS": "",
+          "postalCode": "21000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tamalous",
+      "communes": [
+        {
+          "name": "Skikda",
+          "codeONS": "",
+          "postalCode": "21000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Zitouna",
+      "communes": [
+        {
+          "name": "Skikda",
+          "codeONS": "",
+          "postalCode": "21000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Skikda",

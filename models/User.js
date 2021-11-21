@@ -29,10 +29,12 @@ const ItemSchema = new mongoose.Schema(
       required: true,
       min: [1, "Quantity cannot be less than 1."],
     },
-    shipping: {
+    carrierId: {
       type: String,
       required: true,
     },
+    shippingPrice: Number,
+    totalPrice: Number,
   },
   {
     timestamps: true,
@@ -84,29 +86,68 @@ const AddressSchema = new mongoose.Schema({
   streetName: String,
 });
 
-const OrderSchema = new mongoose.Schema({
-  orderId: String,
-  products: [
-    {
+const OrderSchema = new mongoose.Schema(
+  {
+    orderId: String,
+    product: {
       productId: String,
+      name: String,
       sku: String,
-      quantity: Number,
+      price: Number,
+      imageUrl: String,
+      properties: [{}],
+      quantity: {
+        type: Number,
+        required: true,
+        min: [1, "Quantity cannot be less than 1."],
+      },
       carrierId: String,
       orderMemo: String,
     },
-  ],
-  shippingAddress: {
-    name: String,
-    countryCode: String,
-    city: String,
-    zipCode: String,
-    addressLine1: String,
-    phoneCountry: String,
-    mobilePhone: String,
-    province: String,
+    shippingAddress: {
+      name: String,
+      countryCode: String,
+      city: String,
+      zipCode: String,
+      addressLine1: String,
+      phoneCountry: String,
+      mobilePhone: String,
+      province: String,
+    },
+    status: String,
+    orderDetailsUrl: String,
+    creationTime: String,
+    totalPrice: {
+      productsPrice: { value: Number, display: String },
+      shippingPrice: { value: Number, display: String },
+      fullOrderPrice: { value: Number, display: String },
+    },
+    paymentTime: String,
+    readyForDispatchTime: String,
+    isPaid: Boolean,
+    isShipped: Boolean,
+    isFrozen: Boolean,
+    canResume: Boolean,
+    canCancel: Boolean,
+    endReason: String,
+    currency: String,
+    tracking: {
+      isTrackingAvailable: Boolean,
+      packages: [
+        {
+          caption: String,
+          readyForDispatchTime: String,
+          deliveryTimeRange: { min: String, max: String },
+          trackingNumber: String,
+          trackingUrl: String,
+          carrier: { id: String, name: String },
+          progressPercentage: Number,
+        },
+      ],
+    },
   },
-  currency: String,
-});
+  { timestamps: true }
+);
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -116,6 +157,7 @@ const UserSchema = new mongoose.Schema({
     // unique: true,
     index: true,
   },
+  realName: String,
   email: {
     type: String,
     required: [true, "Please provide an email address."],

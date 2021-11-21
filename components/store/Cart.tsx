@@ -1,15 +1,11 @@
 import { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
 import { Dialog, Transition } from "@headlessui/react";
-import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
 import { XIcon, ShoppingBagIcon } from "@heroicons/react/outline";
 
 import CartItem from "./CartItem";
-import { selectUser } from "../../utils/redux/userSlice";
-import { getUser } from "../../utils/redux/userAsyncActions";
 
-export default function Cart({ session }: any) {
+export default function Cart({ user }: any) {
   const [openCart, setOpenCart] = useState(false);
   const [items, setItems] = useState([
     {
@@ -19,21 +15,9 @@ export default function Cart({ session }: any) {
       imageUrl: "",
       properties: {},
       quantity: 0,
-      shipping: "",
+      carrierId: "",
     },
   ]);
-  const router = useRouter();
-  const dispatch = useDispatch();
-  const { isAuthenticated, status, user } = useSelector(selectUser);
-
-  useEffect(() => {
-    if (!isAuthenticated && session && status !== "loading") {
-      const email = session.user?.email;
-      const type = session.user?.type;
-      const provider = session.user?.provider || undefined;
-      dispatch(getUser({ email, account: type, provider }));
-    }
-  }, [router, session, dispatch, isAuthenticated, status]);
 
   useEffect(() => {
     if (user) {
@@ -139,7 +123,10 @@ export default function Cart({ session }: any) {
                       </p>
                       <div className="mt-6">
                         <Link href="/account/orders/new" passHref>
-                          <a className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium cursor-pointer text-white bg-green-800 hover:bg-green-900">
+                          <a
+                            onClick={() => setOpenCart(false)}
+                            className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium cursor-pointer text-white bg-green-800 hover:bg-green-900"
+                          >
                             Place Order
                           </a>
                         </Link>

@@ -2,6 +2,96 @@
   "id": 46,
   "name": "Ain Temouchent",
   "postalCode": "46000",
+  "dairas": [
+    {
+      "name": "Aïn El Arbaa",
+      "communes": [
+        {
+          "name": "Ain Temouchent",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ain Kihal",
+      "communes": [
+        {
+          "name": "Ain Temouchent",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ain Temouchent",
+      "communes": [
+        {
+          "name": "Ain Temouchent",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Beni Saf",
+      "communes": [
+        {
+          "name": "Ain Temouchent",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Amria",
+      "communes": [
+        {
+          "name": "Ain Temouchent",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Malah",
+      "communes": [
+        {
+          "name": "Ain Temouchent",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hammam Bou Hadjar",
+      "communes": [
+        {
+          "name": "Ain Temouchent",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Oulhaça El Gheraba",
+      "communes": [
+        {
+          "name": "Ain Temouchent",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Ain Temouchent",

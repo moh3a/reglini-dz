@@ -2,6 +2,228 @@
   "id": 19,
   "name": "Setif",
   "postalCode": "19000",
+  "dairas": [
+    {
+      "name": "Aïn Arnat",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn Azel",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn El Kebira",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn Oulmene",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Amoucha",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Babor",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Beni Aziz",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Beni Ourtilane",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bir El Arch",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bouandas",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bougaa",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Djemila",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Eulma",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Guidjel",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Guenzet",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hammam Guergour",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hammam Soukhna",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Maoklane",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Salah Bey",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Setif",
+      "communes": [
+        {
+          "name": "Setif",
+          "codeONS": "",
+          "postalCode": "19000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Setif",

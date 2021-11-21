@@ -2,6 +2,151 @@
   "id": 16,
   "name": "Alger",
   "postalCode": "16000",
+  "dairas": [
+    {
+      "name": "Bab El Oued",
+      "communes": [
+        {
+          "name": "Alger",
+          "codeONS": "",
+          "postalCode": "16000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Baraki",
+      "communes": [
+        {
+          "name": "Alger",
+          "codeONS": "",
+          "postalCode": "16000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bir Mourad Raïs",
+      "communes": [
+        {
+          "name": "Alger",
+          "codeONS": "",
+          "postalCode": "16000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Birtouta",
+      "communes": [
+        {
+          "name": "Alger",
+          "codeONS": "",
+          "postalCode": "16000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bouzareah",
+      "communes": [
+        {
+          "name": "Alger",
+          "codeONS": "",
+          "postalCode": "16000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Chéraga",
+      "communes": [
+        {
+          "name": "Alger",
+          "codeONS": "",
+          "postalCode": "16000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Dar El Beïda",
+      "communes": [
+        {
+          "name": "Alger",
+          "codeONS": "",
+          "postalCode": "16000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Draria",
+      "communes": [
+        {
+          "name": "Alger",
+          "codeONS": "",
+          "postalCode": "16000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Harrach",
+      "communes": [
+        {
+          "name": "Alger",
+          "codeONS": "",
+          "postalCode": "16000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hussein Dey",
+      "communes": [
+        {
+          "name": "Alger",
+          "codeONS": "",
+          "postalCode": "16000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Rouïba",
+      "communes": [
+        {
+          "name": "Alger",
+          "codeONS": "",
+          "postalCode": "16000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi M'Hamed",
+      "communes": [
+        {
+          "name": "Alger",
+          "codeONS": "",
+          "postalCode": "16000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Zéralda",
+      "communes": [
+        {
+          "name": "Alger",
+          "codeONS": "",
+          "postalCode": "16000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Alger",

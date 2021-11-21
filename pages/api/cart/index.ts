@@ -21,7 +21,9 @@ export default async function handler(
       imageUrl,
       properties,
       quantity,
-      shipping,
+      carrierId,
+      shippingPrice,
+      totalPrice,
     } = req.body;
     try {
       if (!session) {
@@ -54,7 +56,9 @@ export default async function handler(
             sku,
             properties,
             quantity,
-            shipping,
+            carrierId,
+            shippingPrice,
+            totalPrice,
           });
         } else {
           data.cart.cartItems[index].quantity = quantity;

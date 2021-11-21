@@ -2,6 +2,107 @@
   "id": 47,
   "name": "Ghardaia",
   "postalCode": "47000",
+  "dairas": [
+    {
+      "name": "Ghardaia",
+      "communes": [
+        {
+          "name": "Ghardaia",
+          "codeONS": "",
+          "postalCode": "47000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Meniaa",
+      "communes": [
+        {
+          "name": "Ghardaia",
+          "codeONS": "",
+          "postalCode": "47000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Metlili",
+      "communes": [
+        {
+          "name": "Ghardaia",
+          "codeONS": "",
+          "postalCode": "47000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Berriane",
+      "communes": [
+        {
+          "name": "Ghardaia",
+          "codeONS": "",
+          "postalCode": "47000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Daïa Ben Dahoua",
+      "communes": [
+        {
+          "name": "Ghardaia",
+          "codeONS": "",
+          "postalCode": "47000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mansoura",
+      "communes": [
+        {
+          "name": "Ghardaia",
+          "codeONS": "",
+          "postalCode": "47000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Zelfana",
+      "communes": [
+        {
+          "name": "Ghardaia",
+          "codeONS": "",
+          "postalCode": "47000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Guerrara",
+      "communes": [
+        {
+          "name": "Ghardaia",
+          "codeONS": "",
+          "postalCode": "47000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bounoura",
+      "communes": [
+        {
+          "name": "Ghardaia",
+          "codeONS": "",
+          "postalCode": "47000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Ghardaia",

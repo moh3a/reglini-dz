@@ -2,6 +2,118 @@
   "id": 39,
   "name": "El Oued",
   "postalCode": "39000",
+  "dairas": [
+    {
+      "name": "Bayadha",
+      "communes": [
+        {
+          "name": "El Oued",
+          "codeONS": "",
+          "postalCode": "39000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Debila",
+      "communes": [
+        {
+          "name": "El Oued",
+          "codeONS": "",
+          "postalCode": "39000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Oued",
+      "communes": [
+        {
+          "name": "El Oued",
+          "codeONS": "",
+          "postalCode": "39000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Guemar",
+      "communes": [
+        {
+          "name": "El Oued",
+          "codeONS": "",
+          "postalCode": "39000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hassi Khalifa",
+      "communes": [
+        {
+          "name": "El Oued",
+          "codeONS": "",
+          "postalCode": "39000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Magrane",
+      "communes": [
+        {
+          "name": "El Oued",
+          "codeONS": "",
+          "postalCode": "39000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mih Ouansa",
+      "communes": [
+        {
+          "name": "El Oued",
+          "codeONS": "",
+          "postalCode": "39000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Reguiba",
+      "communes": [
+        {
+          "name": "El Oued",
+          "codeONS": "",
+          "postalCode": "39000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Robbah",
+      "communes": [
+        {
+          "name": "El Oued",
+          "codeONS": "",
+          "postalCode": "39000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Taleb Larbi",
+      "communes": [
+        {
+          "name": "El Oued",
+          "codeONS": "",
+          "postalCode": "39000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "El Oued",

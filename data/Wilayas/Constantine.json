@@ -2,6 +2,74 @@
   "id": 25,
   "name": "Constantine",
   "postalCode": "25000",
+  "dairas": [
+    {
+      "name": "Constantine",
+      "communes": [
+        {
+          "name": "Constantine",
+          "codeONS": "",
+          "postalCode": "25000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Khroub",
+      "communes": [
+        {
+          "name": "Constantine",
+          "codeONS": "",
+          "postalCode": "25000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn Abid",
+      "communes": [
+        {
+          "name": "Constantine",
+          "codeONS": "",
+          "postalCode": "25000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Zighoud Youcef",
+      "communes": [
+        {
+          "name": "Constantine",
+          "codeONS": "",
+          "postalCode": "25000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hamma Bouziane",
+      "communes": [
+        {
+          "name": "Constantine",
+          "codeONS": "",
+          "postalCode": "25000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ibn Ziad",
+      "communes": [
+        {
+          "name": "Constantine",
+          "codeONS": "",
+          "postalCode": "25000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Constantine 1 Novembre 1954",

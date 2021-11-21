@@ -2,27 +2,114 @@
   "id": 11,
   "name": "Tamanrasset",
   "postalCode": "11000",
-  "address": [
+  "dairas": [
     {
-      "name": "Tamanrasset",
-      "postalCode": "11000",
-      "otherPosts": [
-        { "name": "Tamanrasset Assihar", "postalCode": "11008" },
-        { "name": "Tamanrasset Assoro", "postalCode": "11009" },
-        { "name": "Tamanrasset Centre Ville", "postalCode": "11025" },
-        { "name": "Tamanrasset Gare Routiere", "postalCode": "11026" },
-        { "name": "Tamanrasset Hadj Moussa", "postalCode": "11027" },
-        { "name": "Tamanrasset Terre", "postalCode": "11028" }
+      "name": "Silet",
+      "communes": [
+        {
+          "name": "Abalessa",
+          "codeONS": "",
+          "postalCode": "11000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "In Ghar",
+      "communes": [
+        {
+          "name": "In Ghar",
+          "codeONS": "",
+          "postalCode": "11000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "In Guezzam",
+      "communes": [
+        {
+          "name": "In Guezzam",
+          "codeONS": "",
+          "postalCode": "11000",
+          "otherPosts": []
+        }
       ]
     },
     {
       "name": "In Salah",
-      "postalCode": "11001",
-      "otherPosts": [
-        { "name": "In Salah 5 Juillet", "postalCode": "11024" },
-        { "name": "In Salah Tidikelt", "postalCode": "11029" }
+      "communes": [
+        {
+          "name": "In Salah",
+          "codeONS": "",
+          "postalCode": "11001",
+          "otherPosts": [
+            { "name": "In Salah 5 Juillet", "postalCode": "11024" },
+            { "name": "In Salah Tidikelt", "postalCode": "11029" }
+          ]
+        },
+        {
+          "name": "Foggaret Ezzaouia",
+          "codeONS": "",
+          "postalCode": "11000",
+          "otherPosts": []
+        }
       ]
     },
+    {
+      "name": "Tazrouk",
+      "communes": [
+        {
+          "name": "Tazrouk",
+          "codeONS": "",
+          "postalCode": "11000",
+          "otherPosts": []
+        },
+        {
+          "name": "Idles",
+          "codeONS": "",
+          "postalCode": "11000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tamanrasset",
+      "communes": [
+        {
+          "name": "Tamanrasset",
+          "codeONS": "",
+          "postalCode": "11000",
+          "otherPosts": []
+        },
+        {
+          "name": "In Amguel",
+          "codeONS": "",
+          "postalCode": "11000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tinzaouten",
+      "communes": [
+        {
+          "name": "Tinzaouten",
+          "codeONS": "",
+          "postalCode": "11000",
+          "otherPosts": [
+            { "name": "Tamanrasset Assihar", "postalCode": "11008" },
+            { "name": "Tamanrasset Assoro", "postalCode": "11009" },
+            { "name": "Tamanrasset Centre Ville", "postalCode": "11025" },
+            { "name": "Tamanrasset Gare Routiere", "postalCode": "11026" },
+            { "name": "Tamanrasset Hadj Moussa", "postalCode": "11027" },
+            { "name": "Tamanrasset Terre", "postalCode": "11028" }
+          ]
+        }
+      ]
+    }
+  ],
+  "address": [
     { "name": "In Kouf", "postalCode": "11002" },
     { "name": "In Amguel", "postalCode": "11003" },
     { "name": "In Ghar", "postalCode": "11004" },

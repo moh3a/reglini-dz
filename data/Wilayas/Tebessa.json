@@ -2,28 +2,253 @@
   "id": 12,
   "name": "Tebessa",
   "postalCode": "12000",
-  "towns": [
+  "dairas": [
     {
       "name": "Tebessa",
-      "postalCode": "12000",
-      "otherPosts": [
-        { "name": "Tebessa Minerve", "postalCode": "12004" },
-        { "name": "Tebessa La Concorde", "postalCode": "12007" },
-        { "name": "Tebessa Ezzouhour", "postalCode": "12018" },
-        { "name": "Tebessa Ennahda", "postalCode": "12028" },
-        { "name": "Tebessa Omnisport", "postalCode": "12029" },
-        { "name": "Tebessa El Matar", "postalCode": "12059" },
-        { "name": "Tebessa Chadli Ben Djedid", "postalCode": "12060" },
-        { "name": "Tebessa Brakni Ali Ben Younes", "postalCode": "12061" },
-        { "name": "Tebessa Cheikh Larbi Tebessi", "postalCode": "12062" },
+      "communes": [
         {
-          "name": "Tebessa Residence Universitaire 19 Mai",
-          "postalCode": "12063"
-        },
-        { "name": "Tebessa Universite", "postalCode": "12064" },
-        { "name": "Tebessa Gare Routiere", "postalCode": "12066" }
+          "name": "Tebessa",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": [
+            { "name": "Tebessa Minerve", "postalCode": "12004" },
+            { "name": "Tebessa La Concorde", "postalCode": "12007" },
+            { "name": "Tebessa Ezzouhour", "postalCode": "12018" },
+            { "name": "Tebessa Ennahda", "postalCode": "12028" },
+            { "name": "Tebessa Omnisport", "postalCode": "12029" },
+            { "name": "Tebessa El Matar", "postalCode": "12059" },
+            { "name": "Tebessa Chadli Ben Djedid", "postalCode": "12060" },
+            { "name": "Tebessa Brakni Ali Ben Younes", "postalCode": "12061" },
+            { "name": "Tebessa Cheikh Larbi Tebessi", "postalCode": "12062" },
+            {
+              "name": "Tebessa Residence Universitaire 19 Mai",
+              "postalCode": "12063"
+            },
+            { "name": "Tebessa Universite", "postalCode": "12064" },
+            { "name": "Tebessa Gare Routiere", "postalCode": "12066" }
+          ]
+        }
       ]
     },
+    {
+      "name": "El Kouif",
+      "communes": [
+        {
+          "name": "Bekkaria",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "Boulhaf Dir",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "El Kouif",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Morsott",
+      "communes": [
+        {
+          "name": "Bir Dheb",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "Morsott",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Ma Labiodh",
+      "communes": [
+        {
+          "name": "El Houidjbet",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "El Ma Labiodh",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Aouinet",
+      "communes": [
+        {
+          "name": "El Aouinet",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "Boukhadra",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouenza",
+      "communes": [
+        {
+          "name": "Ain Zerga",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "El Meridj",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "Ouenza",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bir Mokkadem",
+      "communes": [
+        {
+          "name": "Bir Mokkadem",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "Guorriguer",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "Hammamet",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bir el-Ater",
+      "communes": [
+        {
+          "name": "Bir el Ater",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "Olga Melha",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Ogla",
+      "communes": [
+        {
+          "name": "El Mezraa",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "Bedjene",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "Stah Guentis",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "El Ogla",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Oum Ali",
+      "communes": [
+        {
+          "name": "Oum Ali",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "Safsaf el Ouersa",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Negrine",
+      "communes": [
+        {
+          "name": "Negrine",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "Fekrane",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Cheria",
+      "communes": [
+        {
+          "name": "Cheria",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        },
+        {
+          "name": "Tlidjene",
+          "codeONS": "",
+          "postalCode": "12000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
+  "address": [
     {
       "name": "Bir el Ater",
       "postalCode": "12001",

@@ -2,6 +2,107 @@
   "id": 31,
   "name": "Oran",
   "postalCode": "31000",
+  "dairas": [
+    {
+      "name": "Oran",
+      "communes": [
+        {
+          "name": "Oran",
+          "codeONS": "",
+          "postalCode": "31000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn El Turk",
+      "communes": [
+        {
+          "name": "Oran",
+          "codeONS": "",
+          "postalCode": "31000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Arzew",
+      "communes": [
+        {
+          "name": "Oran",
+          "codeONS": "",
+          "postalCode": "31000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bethioua",
+      "communes": [
+        {
+          "name": "Oran",
+          "codeONS": "",
+          "postalCode": "31000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Es Sénia",
+      "communes": [
+        {
+          "name": "Oran",
+          "codeONS": "",
+          "postalCode": "31000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bir El Djir",
+      "communes": [
+        {
+          "name": "Oran",
+          "codeONS": "",
+          "postalCode": "31000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Boutlélis",
+      "communes": [
+        {
+          "name": "Oran",
+          "codeONS": "",
+          "postalCode": "31000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Oued Tlelat",
+      "communes": [
+        {
+          "name": "Oran",
+          "codeONS": "",
+          "postalCode": "31000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Gdyel",
+      "communes": [
+        {
+          "name": "Oran",
+          "codeONS": "",
+          "postalCode": "31000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Oran",

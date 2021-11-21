@@ -2,6 +2,151 @@
   "id": 48,
   "name": "Relizane",
   "postalCode": "48000",
+  "dairas": [
+    {
+      "name": "Aïn Tarek",
+      "communes": [
+        {
+          "name": "Relizane",
+          "codeONS": "",
+          "postalCode": "48000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ammi Moussa",
+      "communes": [
+        {
+          "name": "Relizane",
+          "codeONS": "",
+          "postalCode": "48000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Djidioua",
+      "communes": [
+        {
+          "name": "Relizane",
+          "codeONS": "",
+          "postalCode": "48000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Hamadna",
+      "communes": [
+        {
+          "name": "Relizane",
+          "codeONS": "",
+          "postalCode": "48000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Matmar",
+      "communes": [
+        {
+          "name": "Relizane",
+          "codeONS": "",
+          "postalCode": "48000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mazouna",
+      "communes": [
+        {
+          "name": "Relizane",
+          "codeONS": "",
+          "postalCode": "48000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mendes",
+      "communes": [
+        {
+          "name": "Relizane",
+          "codeONS": "",
+          "postalCode": "48000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Oued Rhiou",
+      "communes": [
+        {
+          "name": "Relizane",
+          "codeONS": "",
+          "postalCode": "48000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ramka",
+      "communes": [
+        {
+          "name": "Relizane",
+          "codeONS": "",
+          "postalCode": "48000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Relizane",
+      "communes": [
+        {
+          "name": "Relizane",
+          "codeONS": "",
+          "postalCode": "48000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi M'Hamed Ben Ali",
+      "communes": [
+        {
+          "name": "Relizane",
+          "codeONS": "",
+          "postalCode": "48000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Yellel",
+      "communes": [
+        {
+          "name": "Relizane",
+          "codeONS": "",
+          "postalCode": "48000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Zemmora",
+      "communes": [
+        {
+          "name": "Relizane",
+          "codeONS": "",
+          "postalCode": "48000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Relizane",

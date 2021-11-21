@@ -2,6 +2,228 @@
   "id": 13,
   "name": "Tlemcen",
   "postalCode": "13000",
+  "dairas": [
+    {
+      "name": "Aïn Tallout",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bab El Assa",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Beni Boussaid",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Beni Snous",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bensekrane",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Chetouane",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Fellaoucene",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ghazaouet",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hennaya",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Honaïne",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Maghnia",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mansourah",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Marsa Ben M'Hidi",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Nedroma",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouled Mimoun",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Remchi",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sabra",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sebdou",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Djillali",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tlemcen",
+      "communes": [
+        {
+          "name": "Tlemcen",
+          "codeONS": "",
+          "postalCode": "13000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Tlemcen",

@@ -2,6 +2,173 @@
   "id": 22,
   "name": "Sidi Bel Abbes",
   "postalCode": "22000",
+  "dairas": [
+    {
+      "name": "Sidi Bel Abbes",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn el Berd",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ben Badis",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Marhoum",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Merine",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mostefa Ben Brahim",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Moulay Slissen",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ras El Ma",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sfisef",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Ali Benyoub",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Ali Boussidi",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Lahcene",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Telagh",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tenira",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tessala",
+      "communes": [
+        {
+          "name": "Sidi Bel Abbes",
+          "codeONS": "",
+          "postalCode": "22000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Sidi Bel Abbes",

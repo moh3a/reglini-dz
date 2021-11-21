@@ -9,6 +9,8 @@ import {
   removeFromCart,
   createOrder,
   cancelOrder,
+  getOrderDetails,
+  getOrderTracking,
 } from "./userAsyncActions";
 import { IAuth } from "../../utils/types";
 
@@ -137,6 +139,32 @@ export const userSlice = createSlice({
       .addCase(cancelOrder.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
+      })
+      //========================================================================================
+      .addCase(getOrderDetails.pending, (state, action) => {
+        state.status = "loading";
+      })
+      .addCase(getOrderDetails.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.user = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(getOrderDetails.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error;
+      })
+      //========================================================================================
+      .addCase(getOrderTracking.pending, (state, action) => {
+        state.status = "loading";
+      })
+      .addCase(getOrderTracking.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.user = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(getOrderTracking.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error;
       });
   },
 });
