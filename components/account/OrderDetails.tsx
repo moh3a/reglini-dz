@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import Image from "next/image";
 
-import { selectUser } from "../../utils/redux/userSlice";
 import {
   getOrderDetails,
   cancelOrder,
@@ -10,15 +9,7 @@ import {
 
 export default function OrderDetails({ order }: any) {
   const [openTracking, setOpenTracking] = useState(false);
-
   const dispatch = useDispatch();
-  const { message } = useSelector(selectUser);
-
-  useEffect(() => {
-    if (message !== "Successfully retrieved your order details.") {
-      dispatch(getOrderDetails({ id: order.orderId }));
-    }
-  }, [message, dispatch, order.orderId]);
 
   return (
     <div className="bg-white shadow border-2 border-blue-500 overflow-hidden sm:rounded-lg">
@@ -50,7 +41,7 @@ export default function OrderDetails({ order }: any) {
             {order.status ? <p>Order status: {order.status}</p> : ""}
             <small>ProductID: {order.product.productId}</small>
           </div>
-          <div className="flex justify-end py-2 px-3">
+          <div className="flex flex-col justify-end py-2 px-3">
             {order.canCancel && (
               <button
                 onClick={() => dispatch(cancelOrder({ id: order.orderId }))}
@@ -58,6 +49,11 @@ export default function OrderDetails({ order }: any) {
                 Cancel order
               </button>
             )}
+            <button
+              onClick={() => dispatch(getOrderDetails({ id: order.orderId }))}
+            >
+              Refresh
+            </button>
             <button
               onClick={() =>
                 openTracking ? setOpenTracking(false) : setOpenTracking(true)

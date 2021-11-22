@@ -99,7 +99,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 };
 
 import Layout from "../../../components/layout/Layout";
-import Loading from "../../../components/Loading";
+import Loading from "../../../components/layout/Loading";
 AliexpressProduct.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

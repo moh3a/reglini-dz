@@ -1,11 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import axios from "axios";
 import { Fragment, useState } from "react";
-import {
-  SuccessMessage,
-  WarningMessage,
-  DangerMessage,
-} from "../AlertMessages";
+import AlertMessage from "../elements/AlertMessage";
 
 export default function ForgotPasswordModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -47,7 +43,7 @@ export default function ForgotPasswordModal() {
           }, 5000);
         }
       }
-    } catch (error) {
+    } catch (error: any) {
       setError(error.response.data.error);
       setEmail("");
       setTimeout(() => {
@@ -66,8 +62,8 @@ export default function ForgotPasswordModal() {
           Forgot password?
         </span>
       </p>
-      {success && <SuccessMessage message={success} />}
-      {error && <DangerMessage message={error} />}
+      {success && <AlertMessage type="success" message={success} />}
+      {error && <AlertMessage type="error" message={error} />}
 
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog

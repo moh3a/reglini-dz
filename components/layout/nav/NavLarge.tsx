@@ -10,7 +10,7 @@ import { MenuIcon, HeartIcon } from "@heroicons/react/outline";
 import { navigation } from "../../../data/navigation";
 import Logo from "../Logo";
 import Cart from "../../store/Cart";
-import Search from "../../Search";
+import Search from "../../elements/Search";
 import ProfilePicture from "../../elements/ProfilePicture";
 
 function classNames(...classes: any) {

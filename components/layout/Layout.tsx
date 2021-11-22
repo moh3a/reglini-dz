@@ -4,7 +4,7 @@ import { useSession } from "next-auth/client";
 
 import StoreNavigation from "./nav/StoreNavigation";
 import Footer from "./Footer";
-import Loading from "../Loading";
+import Loading from "../layout/Loading";
 import { IUser } from "../../utils/types";
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";

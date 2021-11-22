@@ -41,24 +41,27 @@ const ItemSchema = new mongoose.Schema(
   }
 );
 
-const WishlistSchema = new mongoose.Schema({
-  productId: {
-    type: String,
-    required: true,
+const WishlistSchema = new mongoose.Schema(
+  {
+    productId: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    imageUrl: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
   },
-  name: {
-    type: String,
-    required: true,
-  },
-  imageUrl: {
-    type: String,
-    required: true,
-  },
-  price: {
-    type: Number,
-    required: true,
-  },
-});
+  { timestamps: true }
+);
 
 const CartSchema = new mongoose.Schema(
   {
