@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { SuccessMessage, DangerMessage } from "../AlertMessages";
+import AlertMessage from "../elements/AlertMessage";
 
 const ResetPassword = ({ token }: { token: string | string[] | undefined }) => {
   const [password, setPassword] = useState("");
@@ -38,7 +38,7 @@ const ResetPassword = ({ token }: { token: string | string[] | undefined }) => {
           setSuccess("");
           router.push("/");
         }, 3000);
-      } catch (error) {
+      } catch (error: any) {
         setError(error.response.data.error);
         setTimeout(() => {
           setError("");
@@ -56,8 +56,8 @@ const ResetPassword = ({ token }: { token: string | string[] | undefined }) => {
               <h1 className="text-3xl font-semibold text-center text-gray-800 dark:text-gray-100">
                 Reset Your Password
               </h1>
-              {success && <SuccessMessage message={success} />}
-              {error && <DangerMessage message={error} />}
+              {success && <AlertMessage type="success" message={success} />}
+              {error && <AlertMessage type="error" message={error} />}
               <form
                 className="mt-6"
                 autoComplete="off"

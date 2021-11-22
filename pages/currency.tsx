@@ -4,7 +4,7 @@ import Head from "next/head";
 import mongoose from "mongoose";
 
 import dbConnect from "../config/db";
-import Currency from "../components/currency/Currency";
+import Currency from "../components/currency";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!mongoose.connection.readyState) {

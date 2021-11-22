@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { DangerDialog, SuccessDialog } from "../elements/Dialog";
-import Loading from "../Loading";
+import Loading from "../layout/Loading";
 
 const AccountVerification = ({
   token,

@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 
 import Logo from "./Logo";
-import SelectLanguage from "../SelectLanguage";
-import ToggleDark from "../ToggleDark";
+import SelectLanguage from "../elements/SelectLanguage";
+import ToggleDark from "../elements/ToggleDark";
 
 const Footer = () => {
   const t = useTranslations("Footer");

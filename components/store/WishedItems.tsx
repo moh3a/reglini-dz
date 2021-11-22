@@ -75,7 +75,10 @@ const WishedItems = ({ wishlist }: any) => {
               />
 
               <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
-                <h1 className="text-sm font-bold text-white">Added 17/08/21</h1>
+                <p className="text-sm font-bold text-white">
+                  {item.createdAt.substring(0, 10)}{" "}
+                  {item.createdAt.substring(11, 16)}
+                </p>
                 <button
                   onClick={() =>
                     dispatch(removeFromWishlist({ id: item.productId }))

@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { providers, getSession, csrfToken } from "next-auth/client";
 import { useEffect, useState } from "react";
 import LoginScreen from ".";
-import Banner from "../../components/Banner";
+import AlertMessage from "../../components/elements/AlertMessage";
 import { LoginErrorMessages } from "../../data/LoginMessages";
 
 const LoginError = ({ csrfToken, providers }: any) => {
@@ -21,7 +21,7 @@ const LoginError = ({ csrfToken, providers }: any) => {
   return (
     <>
       <LoginScreen providers={providers} csrfToken={csrfToken}>
-        {error && <Banner type="error">{error}</Banner>}
+        {error && <AlertMessage type="error" message={error} />}
       </LoginScreen>
     </>
   );
