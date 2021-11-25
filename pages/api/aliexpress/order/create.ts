@@ -82,7 +82,8 @@ export default async function handler(
           .catch((err) => {
             res.status(200).json({
               success: false,
-              message: "Your order cannot be confirmed.",
+              message: err.response.data.errorMessage,
+              errorCode: err.response.data.statusCode,
               data: user,
             });
           });

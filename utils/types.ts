@@ -112,6 +112,8 @@ export interface IAuth {
   status?: "idle" | "loading" | "complete" | "failed";
   error?: any;
   message?: string;
+  orderMessage?: string;
+  orderStatusCode?: number;
 }
 
 export interface IEmailOptions {

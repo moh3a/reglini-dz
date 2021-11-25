@@ -20,6 +20,8 @@ const initialState: IAuth = {
   status: "idle",
   error: undefined,
   message: "",
+  orderMessage: "",
+  orderStatusCode: undefined,
 };
 
 export const userSlice = createSlice({
@@ -120,8 +122,13 @@ export const userSlice = createSlice({
       })
       .addCase(createOrder.fulfilled, (state, action) => {
         state.status = "complete";
+        if (action.payload.errorCode) {
+          state.orderStatusCode = action.payload.errorCode;
+          state.orderMessage = action.payload.message;
+        } else {
+          state.message = action.payload.message;
+        }
         state.user = action.payload.data;
-        state.message = action.payload.message;
       })
       .addCase(createOrder.rejected, (state, action) => {
         state.status = "failed";
