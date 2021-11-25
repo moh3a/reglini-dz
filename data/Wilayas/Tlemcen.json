@@ -7,10 +7,19 @@
       "name": "Aïn Tallout",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Aïn Tallout",
+          "codeONS": "1303",
+          "postalCode": "13012",
           "otherPosts": []
+        },
+        {
+          "name": "Aïn Nehala",
+          "codeONS": "1325",
+          "postalCode": "13054",
+          "otherPosts": [
+            { "name": "Ain Nekrouf", "postalCode": "13055" },
+            { "name": "Ramla", "postalCode": "13071" }
+          ]
         }
       ]
     },
@@ -18,9 +27,21 @@
       "name": "Bab El Assa",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Bab El Assa",
+          "codeONS": "1318",
+          "postalCode": "13014",
+          "otherPosts": [{ "name": "Yembou", "postalCode": "13081" }]
+        },
+        {
+          "name": "Souani",
+          "codeONS": "1308",
+          "postalCode": "13046",
+          "otherPosts": []
+        },
+        {
+          "name": "Souk Tlata",
+          "codeONS": "1333",
+          "postalCode": "13078",
           "otherPosts": []
         }
       ]
@@ -29,10 +50,16 @@
       "name": "Beni Boussaid",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Zouia - Beni Boussaid",
+          "codeONS": "1338",
+          "postalCode": "13049",
           "otherPosts": []
+        },
+        {
+          "name": "Sidi Medjahed",
+          "codeONS": "1337",
+          "postalCode": "13044",
+          "otherPosts": [{ "name": "Sidi Yahya", "postalCode": "13087" }]
         }
       ]
     },
@@ -40,9 +67,23 @@
       "name": "Beni Snous",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Beni Snous",
+          "codeONS": "1317",
+          "postalCode": "13085",
+          "otherPosts": [
+            { "name": "Beni Snous - El Khemis", "postalCode": "13037" }
+          ]
+        },
+        {
+          "name": "Tleta - Azails",
+          "codeONS": "1321",
+          "postalCode": "13080",
+          "otherPosts": [{ "name": "Tafesra", "postalCode": "13110" }]
+        },
+        {
+          "name": "Beni Bahdel",
+          "codeONS": "1342",
+          "postalCode": "13060",
           "otherPosts": []
         }
       ]
@@ -51,10 +92,16 @@
       "name": "Bensekrane",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Bensekrane",
+          "codeONS": "1324",
+          "postalCode": "13008",
           "otherPosts": []
+        },
+        {
+          "name": "Sidi Abdelli",
+          "codeONS": "1334",
+          "postalCode": "13019",
+          "otherPosts": [{ "name": "Sidi Senoussi", "postalCode": "13076" }]
         }
       ]
     },
@@ -62,10 +109,25 @@
       "name": "Chetouane",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
-          "otherPosts": []
+          "name": "Ain Fezza",
+          "codeONS": "1312",
+          "postalCode": "13022",
+          "otherPosts": [{ "name": "Ouchba", "postalCode": "13090" }]
+        },
+        {
+          "name": "Amieur",
+          "codeONS": "1314",
+          "postalCode": "13058",
+          "otherPosts": [{ "name": "Djebra Chelaida", "postalCode": "13065" }]
+        },
+        {
+          "name": "Chetouane",
+          "codeONS": "1350",
+          "postalCode": "13048",
+          "otherPosts": [
+            { "name": "Ain el Hout", "postalCode": "13052" },
+            { "name": "Ouzidane", "postalCode": "13083" }
+          ]
         }
       ]
     },
@@ -73,9 +135,21 @@
       "name": "Fellaoucene",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Fellaoucene",
+          "codeONS": "1320",
+          "postalCode": "13035",
+          "otherPosts": []
+        },
+        {
+          "name": "Ain Kebira",
+          "codeONS": "1353",
+          "postalCode": "13053",
+          "otherPosts": []
+        },
+        {
+          "name": "Boutrak - Ain Fetah",
+          "codeONS": "1331",
+          "postalCode": "13028",
           "otherPosts": []
         }
       ]
@@ -84,9 +158,32 @@
       "name": "Ghazaouet",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Dar Yaghmouracene",
+          "codeONS": "1319",
+          "postalCode": "13063",
+          "otherPosts": [{ "name": "El Bor", "postalCode": "13032" }]
+        },
+        {
+          "name": "Ghazaouet",
+          "codeONS": "1307",
+          "postalCode": "13002",
+          "otherPosts": [
+            { "name": "Ghazaouet Sidi Amar", "postalCode": "13067" },
+            { "name": "Djamaa Sekhra", "postalCode": "13064" }
+          ]
+        },
+        {
+          "name": "Souahlia",
+          "codeONS": "1329",
+          "postalCode": "13020",
+          "otherPosts": [
+            { "name": "Mezaourou Sidi Brahim", "postalCode": "13041" }
+          ]
+        },
+        {
+          "name": "Tienet",
+          "codeONS": "1345",
+          "postalCode": "13047",
           "otherPosts": []
         }
       ]
@@ -95,10 +192,22 @@
       "name": "Hennaya",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Hennaya",
+          "codeONS": "1326",
+          "postalCode": "13009",
+          "otherPosts": [{ "name": "Khemisti", "postalCode": "13038" }]
+        },
+        {
+          "name": "Ouled Riyah",
+          "codeONS": "1346",
+          "postalCode": "13070",
           "otherPosts": []
+        },
+        {
+          "name": "Zenata",
+          "codeONS": "1316",
+          "postalCode": "13051",
+          "otherPosts": [{ "name": "Zenata Airoport", "postalCode": "13088" }]
         }
       ]
     },
@@ -106,9 +215,18 @@
       "name": "Honaïne",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Beni Khellad",
+          "codeONS": "1348",
+          "postalCode": "13077",
+          "otherPosts": [
+            { "name": "Sidi Driss", "postalCode": "13074" },
+            { "name": "Souk el Khemis", "postalCode": "13077" }
+          ]
+        },
+        {
+          "name": "Honaïne",
+          "codeONS": "1344",
+          "postalCode": "13015",
           "otherPosts": []
         }
       ]
@@ -117,10 +235,26 @@
       "name": "Maghnia",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
-          "otherPosts": []
+          "name": "Maghnia",
+          "codeONS": "1327",
+          "postalCode": "13001",
+          "otherPosts": [
+            { "name": "Maghnia Azzouni", "postalCode": "13003" },
+            { "name": "Maghnia Cadi", "postalCode": "13091" },
+            { "name": "Maghnia 500 Lits", "postalCode": "13105" },
+            { "name": "Chebikia - Ain Zana ", "postalCode": "13056" },
+            { "name": "Akid Lotfi", "postalCode": "13057" },
+            { "name": "Bekhata", "postalCode": "13089" }
+          ]
+        },
+        {
+          "name": "Hammam Boughrara",
+          "codeONS": "1328",
+          "postalCode": "13036",
+          "otherPosts": [
+            { "name": "Maaziz", "postalCode": "13040" },
+            { "name": "Sidi Mechhor", "postalCode": "13075" }
+          ]
         }
       ]
     },
@@ -128,9 +262,25 @@
       "name": "Mansourah",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Aïn Ghoraba",
+          "codeONS": "1349",
+          "postalCode": "13023",
+          "otherPosts": []
+        },
+        {
+          "name": "Mansourah",
+          "otherPosts": [{ "name": "Imama", "postalCode": "13016" }]
+        },
+        {
+          "name": "Beni Mester",
+          "codeONS": "1302",
+          "postalCode": "13061",
+          "otherPosts": [{ "name": "Zelboun", "postalCode": "13050" }]
+        },
+        {
+          "name": "Terny Beni Hdiel",
+          "codeONS": "1323",
+          "postalCode": "13079",
           "otherPosts": []
         }
       ]
@@ -139,10 +289,16 @@
       "name": "Marsa Ben M'Hidi",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Marsa Ben M'Hidi",
+          "codeONS": "1339",
+          "postalCode": "13017",
           "otherPosts": []
+        },
+        {
+          "name": "Arbouz - MSirda Fouaga",
+          "codeONS": "1330",
+          "postalCode": "13024",
+          "otherPosts": [{ "name": "Boukanoun", "postalCode": "13027" }]
         }
       ]
     },
@@ -150,21 +306,41 @@
       "name": "Nedroma",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
-          "otherPosts": []
+          "name": "Djebala",
+          "codeONS": "1309",
+          "postalCode": "13029",
+          "otherPosts": [
+            { "name": "Zekri Moussa Adjaidja", "postalCode": "13082" }
+          ]
+        },
+        {
+          "name": "Nedroma",
+          "codeONS": "1340",
+          "postalCode": "13004",
+          "otherPosts": [
+            { "name": "Nedroma - Abdelmoumene", "postalCode": "13018" },
+            { "name": "Khoriba", "postalCode": "13039" }
+          ]
         }
       ]
     },
     {
       "name": "Ouled Mimoun",
       "communes": [
+        { "name": "Ain Isser", "codeONS": "1352", "postalCode": "13086" },
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Oued Lakhdar",
+          "codeONS": "1311",
+          "postalCode": "13068",
           "otherPosts": []
+        },
+        {
+          "name": "Ouled Mimoun",
+          "codeONS": "1313",
+          "postalCode": "13010",
+          "otherPosts": [
+            { "name": "Sidi Zouaoui Keddari Kouider", "postalCode": "13045" }
+          ]
         }
       ]
     },
@@ -172,9 +348,33 @@
       "name": "Remchi",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Aïn Youcef",
+          "codeONS": "1315",
+          "postalCode": "13013",
+          "otherPosts": []
+        },
+        {
+          "name": "Beni Ouarsous",
+          "codeONS": "1336",
+          "postalCode": "13025",
+          "otherPosts": [{ "name": "Sidi Bendiaf", "postalCode": "13072" }]
+        },
+        {
+          "name": "El Fehoul",
+          "codeONS": "1305",
+          "postalCode": "13033",
+          "otherPosts": []
+        },
+        {
+          "name": "Remchi",
+          "codeONS": "1304",
+          "postalCode": "13005",
+          "otherPosts": [{ "name": "Sidi Bounouar", "postalCode": "13073" }]
+        },
+        {
+          "name": "Sebaa Chioukh",
+          "codeONS": "1322",
+          "postalCode": "13042",
           "otherPosts": []
         }
       ]
@@ -183,10 +383,16 @@
       "name": "Sabra",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "Bouhlou",
+          "codeONS": "1347",
+          "postalCode": "13026",
           "otherPosts": []
+        },
+        {
+          "name": "Sabra",
+          "codeONS": "1306",
+          "postalCode": "13011",
+          "otherPosts": [{ "name": "Oued Zitoun", "postalCode": "13069" }]
         }
       ]
     },
@@ -194,10 +400,22 @@
       "name": "Sebdou",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "El Aricha",
+          "codeONS": "1332",
+          "postalCode": "13031",
+          "otherPosts": [{ "name": "Belhadji Youcif", "postalCode": "13059" }]
+        },
+        {
+          "name": "El Gor",
+          "codeONS": "1310",
+          "postalCode": "13034",
           "otherPosts": []
+        },
+        {
+          "name": "Sebdou",
+          "codeONS": "1335",
+          "postalCode": "13006",
+          "otherPosts": [{ "name": "Sebdou Dermam", "postalCode": "13113" }]
         }
       ]
     },
@@ -205,9 +423,15 @@
       "name": "Sidi Djillali",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "13000",
+          "name": "El Bouihi",
+          "codeONS": "1343",
+          "postalCode": "13066",
+          "otherPosts": [{ "name": "El Abed", "postalCode": "13030" }]
+        },
+        {
+          "name": "Sidi Djillali",
+          "codeONS": "1341",
+          "postalCode": "13043",
           "otherPosts": []
         }
       ]
@@ -219,163 +443,55 @@
           "name": "Tlemcen",
           "codeONS": "",
           "postalCode": "13000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Tlemcen Cerisiers", "postalCode": "13007" },
+            { "name": "Tlemcen Boudghene", "postalCode": "13021" },
+            { "name": "Tlemcen Abou Techfine", "postalCode": "13092" },
+            { "name": "Tlemcen Oudjlida", "postalCode": "13093" },
+            { "name": "Tlemcen Ben Bouali", "postalCode": "13094" },
+            { "name": "Tlemcen Belmimoune", "postalCode": "13095" },
+            { "name": "Tlemcen Bekhti", "postalCode": "13096" },
+            { "name": "Campus Tlemcen", "postalCode": "13097" },
+            {
+              "name": "Residence Universitaire Mansourah III",
+              "postalCode": "13098"
+            },
+            {
+              "name": "Residence Universitaire Tidjani Heddam",
+              "postalCode": "13099"
+            },
+            {
+              "name": "Residence Universitaire Mansourah 900 lits",
+              "postalCode": "13100"
+            },
+            {
+              "name": "Residence Universitaire Maliha Hamidou",
+              "postalCode": "13101"
+            },
+            {
+              "name": "Residence Universitaire Malika Kaid",
+              "postalCode": "13102"
+            },
+            { "name": "Tlemcen Terre", "postalCode": "13103" },
+            {
+              "name": "Residence Universitaire Soufi Menouar",
+              "postalCode": "13104"
+            },
+            { "name": "Mansourah Bachir el Ibrahimi", "postalCode": "13106" },
+            { "name": "Mansourah 700 lits", "postalCode": "13107" },
+            { "name": "Tlemcen CHU", "postalCode": "13108" },
+            { "name": "Tlemcen Cour", "postalCode": "13109" },
+            { "name": "Tlemcen Sidi Said", "postalCode": "13112" },
+            { "name": "Tlemcen Gare Routiere", "postalCode": "13114" },
+            { "name": "Koudia", "postalCode": "13111" },
+            {
+              "name": "Bouhenak",
+              "postalCode": "13062"
+            },
+            { "name": "Bouhenak Jasmins", "postalCode": "13084" }
+          ]
         }
       ]
     }
-  ],
-  "address": [
-    {
-      "name": "Tlemcen",
-      "postalCode": "13000",
-      "otherPosts": [
-        { "name": "Tlemcen Cerisiers", "postalCode": "13007" },
-        { "name": "Tlemcen Boudghene", "postalCode": "13021" },
-        { "name": "Tlemcen Chetouane", "postalCode": "13048" },
-        { "name": "Tlemcen Abou Techfine", "postalCode": "13092" },
-        { "name": "Tlemcen Oudjlida", "postalCode": "13093" },
-        { "name": "Tlemcen Ben Bouali", "postalCode": "13094" },
-        { "name": "Tlemcen Belmimoune", "postalCode": "13095" },
-        { "name": "Tlemcen Bekhti", "postalCode": "13096" },
-        { "name": "Campus Tlemcen", "postalCode": "13097" },
-        {
-          "name": "Residence Universitaire Mansourah III",
-          "postalCode": "13098"
-        },
-        {
-          "name": "Residence Universitaire Tidjani Heddam",
-          "postalCode": "13099"
-        },
-        {
-          "name": "Residence Universitaire Mansourah 900 lits",
-          "postalCode": "13100"
-        },
-        {
-          "name": "Residence Universitaire Maliha Hamidou",
-          "postalCode": "13101"
-        },
-        {
-          "name": "Residence Universitaire Malika Kaid",
-          "postalCode": "13102"
-        },
-        { "name": "Tlemcen Terre", "postalCode": "13103" },
-        {
-          "name": "Residence Universitaire Soufi Menouar",
-          "postalCode": "13104"
-        },
-        { "name": "Mansourah Bachir el Ibrahimi", "postalCode": "13106" },
-        { "name": "Mansourah 700 lits", "postalCode": "13107" },
-        { "name": "Tlemcen CHU", "postalCode": "13108" },
-        { "name": "Tlemcen Cour", "postalCode": "13109" },
-        { "name": "Tlemcen Sidi Said", "postalCode": "13112" },
-        { "name": "Tlemcen Gare Routiere", "postalCode": "13114" }
-      ]
-    },
-    {
-      "name": "Magnia",
-      "postalCode": "13001",
-      "otherPosts": [
-        { "name": "Maghnia Azzouni", "postalCode": "13003" },
-        { "name": "Maghnia Cadi", "postalCode": "13091" },
-        { "name": "Maghnia 500 Lits", "postalCode": "13105" }
-      ]
-    },
-    {
-      "name": "Ghazaouet",
-      "postalCode": "13002",
-      "otherPosts": [{ "name": "Ghazaouet Sidi Amar", "postalCode": "13067" }]
-    },
-    { "name": "Nedroma", "postalCode": "13004" },
-    { "name": "Remchi", "postalCode": "13005" },
-    { "name": "Sebdou", "postalCode": "13006" },
-    { "name": "Bensekrane", "postalCode": "13008" },
-    { "name": "Hennaya", "postalCode": "13009" },
-    { "name": "Ouled Mimoun Moualid Djelloul", "postalCode": "13010" },
-    { "name": "Sabra", "postalCode": "13011" },
-    { "name": "Ain Tellout", "postalCode": "13012" },
-    { "name": "Ain Youcef", "postalCode": "13013" },
-    { "name": "Bab el Assa", "postalCode": "13014" },
-    { "name": "Honaine", "postalCode": "13015" },
-    { "name": "Imama", "postalCode": "13016" },
-    { "name": "Marsa Ben Mhidi", "postalCode": "13017" },
-    { "name": "Nedroma Abdelmoumene", "postalCode": "13018" },
-    { "name": "Sidi Abdelli", "postalCode": "13019" },
-    { "name": "Souahlia", "postalCode": "13020" },
-    { "name": "Ain Fezza", "postalCode": "13022" },
-    { "name": "Ain Ghoraba", "postalCode": "13023" },
-    { "name": "Arbouz", "postalCode": "13024" },
-    { "name": "Beni Ouarsous", "postalCode": "13025" },
-    { "name": "Bouhallou", "postalCode": "13026" },
-    { "name": "Boukanoun", "postalCode": "13027" },
-    { "name": "Boutrak", "postalCode": "13028" },
-    { "name": "Djabala", "postalCode": "13029" },
-    { "name": "El Abed", "postalCode": "13030" },
-    { "name": "El Aricha", "postalCode": "13031" },
-    { "name": "El Bor", "postalCode": "13032" },
-    { "name": "El Fehoul", "postalCode": "13033" },
-    { "name": "El Gor", "postalCode": "13034" },
-    { "name": "Fillaoucene", "postalCode": "13035" },
-    { "name": "Hammam Boughrara", "postalCode": "13036" },
-    { "name": "El Khemis Beni Snous", "postalCode": "13037" },
-    { "name": "Khemisti", "postalCode": "13038" },
-    { "name": "Khoriba", "postalCode": "13039" },
-    { "name": "Maaziz", "postalCode": "13040" },
-    { "name": "Mezaourou Sidi Brahim", "postalCode": "13041" },
-    { "name": "Sebaa Chioukh", "postalCode": "13042" },
-    { "name": "Sidi Djilali", "postalCode": "13043" },
-    { "name": "Sidi Medjahed", "postalCode": "13044" },
-    { "name": "Sidi Zouaoui Keddari Kouider", "postalCode": "13045" },
-    { "name": "Souani", "postalCode": "13046" },
-    { "name": "Tient", "postalCode": "13047" },
-    { "name": "Zouia", "postalCode": "13049" },
-    { "name": "Zelboun", "postalCode": "13050" },
-    {
-      "name": "Zenata",
-      "postalCode": "13051",
-      "otherPosts": [{ "name": "Zenata Airoport", "postalCode": "13088" }]
-    },
-    { "name": "Ain el Houtz", "postalCode": "13052" },
-    { "name": "Ain Kebira", "postalCode": "13053" },
-    { "name": "Ain Nahala", "postalCode": "13054" },
-    { "name": "Ain Nekrouf", "postalCode": "13055" },
-    { "name": "Ain Zana Chebika", "postalCode": "13056" },
-    { "name": "Akid Lotfi", "postalCode": "13057" },
-    { "name": "Amieur", "postalCode": "13058" },
-    { "name": "Belhadji Youcif", "postalCode": "13059" },
-    { "name": "Beni Bahdel", "postalCode": "13060" },
-    { "name": "Beni Mester", "postalCode": "13061" },
-    {
-      "name": "Bouhenak",
-      "postalCode": "13062",
-      "otherPosts": [{ "name": "Bouhenak Jasmins", "postalCode": "13084" }]
-    },
-    { "name": "Dar Yaghmouracene", "postalCode": "13063" },
-    { "name": "Djamaa Sekhra", "postalCode": "13064" },
-    { "name": "Djebra Chelaida", "postalCode": "13065" },
-    { "name": "El Bouihi", "postalCode": "13066" },
-    { "name": "Oued Lakhdar", "postalCode": "13068" },
-    { "name": "Oued Zitoun", "postalCode": "13069" },
-    { "name": "Ouled Riah", "postalCode": "13070" },
-    { "name": "Ramla", "postalCode": "13071" },
-    { "name": "Sidi Bendiaf", "postalCode": "13072" },
-    { "name": "Sidi Bounouar", "postalCode": "13073" },
-    { "name": "Sidi Driss", "postalCode": "13074" },
-    { "name": "Sidi Mechhor", "postalCode": "13075" },
-    { "name": "Sidi Senoussi", "postalCode": "13076" },
-    { "name": "Souk el Khemis", "postalCode": "13077" },
-    { "name": "Souk Tlata", "postalCode": "13078" },
-    { "name": "Terny", "postalCode": "13079" },
-    { "name": "Tleta", "postalCode": "13080" },
-    { "name": "Yembou", "postalCode": "13081" },
-    { "name": "Zekri Moussa Adjaidja", "postalCode": "13082" },
-    { "name": "Ouzidane", "postalCode": "13083" },
-    { "name": "El Fahs Beni Senous", "postalCode": "13085" },
-    { "name": "Ain Isser", "postalCode": "13086" },
-    { "name": "Sidi Yahya", "postalCode": "13087" },
-    { "name": "Bekhata", "postalCode": "13089" },
-    { "name": "Ouchba", "postalCode": "13090" },
-    { "name": "Tafesra", "postalCode": "13110" },
-    { "name": "Koudia", "postalCode": "13111" },
-    { "name": "Sebdou Dermam", "postalCode": "13113" }
   ]
 }
