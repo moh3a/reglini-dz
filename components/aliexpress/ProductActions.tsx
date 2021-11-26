@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import { SuccessDialog, DangerDialog, WarningDialog } from "../elements/Dialog";
 import { addToWishlist, addToCart } from "../../utils/redux/userAsyncActions";
@@ -14,9 +15,61 @@ export const ToDetails = ({ id }: { id: string }) => {
   );
 };
 
-export const BuyProduct = () => {
+export const BuyProduct = ({
+  product,
+  session,
+  setError,
+  selectedVariation,
+  selectedShipping,
+}: any) => {
+  const router = useRouter();
+  const buyHandler = (e: any) => {
+    e.preventDefault();
+    if (!session) {
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+      setError("You should be logged in to buy this product.");
+    } else if (session) {
+      if (!selectedVariation.sku) {
+        setTimeout(() => {
+          setError("");
+        }, 3000);
+        setError("Please select the properties.");
+      } else if (selectedVariation.sku) {
+        localStorage.setItem(
+          "aeno",
+          JSON.stringify([
+            {
+              productId: product.productId,
+              name: product.title,
+              price: selectedVariation.price.app.hasDiscount
+                ? selectedVariation.price.app.discountedPrice.value
+                : selectedVariation.price.app.originalPrice.value,
+              imageUrl: selectedVariation.imageUrl,
+              properties: selectedVariation.properties,
+              quantity: selectedVariation.quantity,
+              sku: selectedVariation.sku,
+              carrierId: selectedShipping.company.id,
+              shippingPrice: selectedShipping.price.value,
+              totalPrice:
+                ((selectedVariation.price.app.hasDiscount
+                  ? selectedVariation.price.app.discountedPrice.value
+                  : selectedVariation.price.app.originalPrice.value) +
+                  selectedShipping.price.value) *
+                selectedVariation.quantity,
+            },
+          ])
+        );
+        router.push("/account/orders/new");
+      }
+    }
+  };
   return (
-    <button className="flex ml-auto text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded">
+    <button
+      className="flex ml-auto text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded"
+      onClick={buyHandler}
+    >
       Buy
     </button>
   );
@@ -54,7 +107,15 @@ export const ProductToCart = ({
             imageUrl: selectedVariation.imageUrl,
             properties: selectedVariation.properties,
             quantity: selectedVariation.quantity,
-            shipping: selectedShipping.company.id,
+            sku: selectedVariation.sku,
+            carrierId: selectedShipping.company.id,
+            shippingPrice: selectedShipping.price.value,
+            totalPrice:
+              ((selectedVariation.price.app.hasDiscount
+                ? selectedVariation.price.app.discountedPrice.value
+                : selectedVariation.price.app.originalPrice.value) +
+                selectedShipping.price.value) *
+              selectedVariation.quantity,
           })
         );
       }
@@ -118,7 +179,7 @@ export const ActionFeedback = ({
   error,
 }: {
   message: string;
-  error: string;
+  error?: string;
 }) => {
   const [success, setSuccess] = useState("");
   const [warning, setWarning] = useState("");
@@ -128,6 +189,13 @@ export const ActionFeedback = ({
         setWarning("");
       }, 3000);
       setWarning(message);
+    } else if (
+      message === "Order successfully submitted and awaiting payment."
+    ) {
+      setTimeout(() => {
+        setSuccess("");
+      }, 3000);
+      setSuccess(message);
     } else if (message === "Item successfully added to wishlist.") {
       setTimeout(() => {
         setSuccess("");

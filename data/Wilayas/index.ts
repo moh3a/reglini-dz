@@ -3,19 +3,14 @@ export interface IWilaya {
   name: string;
   postalCode: string;
   dairas?: Array<{
-    name: string;
-    communes: Array<{
+    name?: string;
+    communes?: Array<{
       name: string;
-      postalCode: string;
+      postalCode?: string;
       otherPosts?: Array<{ name: string; postalCode: string }>;
     }>;
   }>;
   address?: Array<{
-    name: string;
-    postalCode: string;
-    otherPosts?: Array<{ name: string; postalCode: string }>;
-  }>;
-  towns?: Array<{
     name: string;
     postalCode: string;
     otherPosts?: Array<{ name: string; postalCode: string }>;

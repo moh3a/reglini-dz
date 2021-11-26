@@ -12,7 +12,7 @@ export default async function handler(
   const session: IUser | null = await getSession({ req });
 
   if (req.method === "POST") {
-    const { address } = req.body;
+    const { text, postalCode, wilaya, daira, commune, streetName } = req.body;
     try {
       if (!session) {
         res.status(403).json({ message: "Unauthorized to access this part." });
@@ -34,11 +34,17 @@ export default async function handler(
             success: false,
           });
         }
-        data.address = address;
+        data.address = { text, postalCode, wilaya, daira, commune, streetName };
+        // data.address.text = text;
+        // data.address.postalCode = postalCode;
+        // data.address.wilaya = wilaya;
+        // data.address.daira = daira;
+        // data.address.commune = commune;
+        // data.address.streetName = streetName;
         await data.save();
         res.status(200).json({
           success: true,
-          message: "Address successfully updated.",
+          message: `Address successfully updated. New value is ${text}.`,
         });
       }
     } catch (error: any) {

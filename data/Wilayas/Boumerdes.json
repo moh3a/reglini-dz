@@ -2,6 +2,107 @@
   "id": 35,
   "name": "Boumerdès",
   "postalCode": "35000",
+  "dairas": [
+    {
+      "name": "Baghlia",
+      "communes": [
+        {
+          "name": "Boumerdès",
+          "codeONS": "",
+          "postalCode": "35000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Boudouaou",
+      "communes": [
+        {
+          "name": "Boumerdès",
+          "codeONS": "",
+          "postalCode": "35000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bordj Ménaiel",
+      "communes": [
+        {
+          "name": "Boumerdès",
+          "codeONS": "",
+          "postalCode": "35000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Boumerdès",
+      "communes": [
+        {
+          "name": "Boumerdès",
+          "codeONS": "",
+          "postalCode": "35000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Dellys",
+      "communes": [
+        {
+          "name": "Boumerdès",
+          "codeONS": "",
+          "postalCode": "35000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Khemis El Kechna",
+      "communes": [
+        {
+          "name": "Boumerdès",
+          "codeONS": "",
+          "postalCode": "35000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Isser",
+      "communes": [
+        {
+          "name": "Boumerdès",
+          "codeONS": "",
+          "postalCode": "35000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Naciria",
+      "communes": [
+        {
+          "name": "Boumerdès",
+          "codeONS": "",
+          "postalCode": "35000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Thénia",
+      "communes": [
+        {
+          "name": "Boumerdès",
+          "codeONS": "",
+          "postalCode": "35000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Boumerdès",

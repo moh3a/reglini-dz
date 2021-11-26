@@ -2,6 +2,19 @@
   "id": 37,
   "name": "Tindouf",
   "postalCode": "37000",
+  "dairas": [
+    {
+      "name": "Tindouf",
+      "communes": [
+        {
+          "name": "Tindouf",
+          "codeONS": "",
+          "postalCode": "37000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Tindouf",

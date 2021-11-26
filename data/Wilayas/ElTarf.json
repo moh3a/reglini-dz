@@ -2,6 +2,85 @@
   "id": 36,
   "name": "El Tarf",
   "postalCode": "36000",
+  "dairas": [
+    {
+      "name": "El Tarf",
+      "communes": [
+        {
+          "name": "El Tarf",
+          "codeONS": "",
+          "postalCode": "36000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Kala",
+      "communes": [
+        {
+          "name": "El Tarf",
+          "codeONS": "",
+          "postalCode": "36000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ben Mehidi",
+      "communes": [
+        {
+          "name": "El Tarf",
+          "codeONS": "",
+          "postalCode": "36000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Besbes",
+      "communes": [
+        {
+          "name": "El Tarf",
+          "codeONS": "",
+          "postalCode": "36000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Dréan",
+      "communes": [
+        {
+          "name": "El Tarf",
+          "codeONS": "",
+          "postalCode": "36000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bouhadjar",
+      "communes": [
+        {
+          "name": "El Tarf",
+          "codeONS": "",
+          "postalCode": "36000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bouteldja",
+      "communes": [
+        {
+          "name": "El Tarf",
+          "codeONS": "",
+          "postalCode": "36000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "El Tarf",

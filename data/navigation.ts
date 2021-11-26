@@ -11,12 +11,12 @@ export const navigation = {
             imageSrc: "/aliexpress-icon.png",
             imageAlt: "Aliexpress icon.",
           },
-          {
-            name: "Netflix",
-            href: "/netflix",
-            imageSrc: "/Netflix_N_logo.png",
-            imageAlt: "Netflix icon.",
-          },
+          // {
+          //   name: "Netflix",
+          //   href: "/netflix",
+          //   imageSrc: "/Netflix_N_logo.png",
+          //   imageAlt: "Netflix icon.",
+          // },
         ],
         sections: [
           {
@@ -85,12 +85,12 @@ export const navigation = {
             imageSrc: "/aliexpress-icon.png",
             imageAlt: "Aliexpress icon.",
           },
-          {
-            name: "Netflix",
-            href: "/netflix",
-            imageSrc: "/Netflix_N_logo.png",
-            imageAlt: "Netflix icon.",
-          },
+          // {
+          //   name: "Netflix",
+          //   href: "/netflix",
+          //   imageSrc: "/Netflix_N_logo.png",
+          //   imageAlt: "Netflix icon.",
+          // },
         ],
         sections: [
           {
@@ -148,12 +148,12 @@ export const navigation = {
             imageSrc: "/aliexpress-icon.png",
             imageAlt: "Aliexpress icon.",
           },
-          {
-            name: "Netflix",
-            href: "/netflix",
-            imageSrc: "/Netflix_N_logo.png",
-            imageAlt: "Netflix icon.",
-          },
+          // {
+          //   name: "Netflix",
+          //   href: "/netflix",
+          //   imageSrc: "/Netflix_N_logo.png",
+          //   imageAlt: "Netflix icon.",
+          // },
         ],
         sections: [
           {

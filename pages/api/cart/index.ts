@@ -13,8 +13,18 @@ export default async function handler(
   const session: IUser | null = await getSession({ req });
 
   if (req.method === "POST") {
-    const { productId, name, price, imageUrl, properties, quantity, shipping } =
-      req.body;
+    const {
+      productId,
+      name,
+      price,
+      sku,
+      imageUrl,
+      properties,
+      quantity,
+      carrierId,
+      shippingPrice,
+      totalPrice,
+    } = req.body;
     try {
       if (!session) {
         res.status(403).json({ message: "Unauthorized to access this part." });
@@ -43,9 +53,12 @@ export default async function handler(
             name,
             price,
             imageUrl,
+            sku,
             properties,
             quantity,
-            shipping,
+            carrierId,
+            shippingPrice,
+            totalPrice,
           });
         } else {
           data.cart.cartItems[index].quantity = quantity;

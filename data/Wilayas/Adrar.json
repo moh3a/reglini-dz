@@ -11,16 +11,14 @@
           "codeONS": "0101",
           "postalCode": "01000",
           "otherPosts": [
-            { "name": "Adrar Sidi Med Belekbir", "postalCode": "01002" },
-            { "name": "Adrar 1er Nov 54", "postalCode": "01005" },
-            { "name": "Adrar Cite Administrative", "postalCode": "01006" },
+            { "name": "Adrar - Sidi Med Belekbir", "postalCode": "01002" },
+            { "name": "Adrar - 1er Nov 54", "postalCode": "01005" },
+            { "name": "Adrar - Cite Administrative", "postalCode": "01006" },
             { "name": "Adgha", "postalCode": "01016" },
-            { "name": "Adrar Hay el Gharbi", "postalCode": "01018" },
-            { "name": "Adrar Cite Zerrari Mohamed", "postalCode": "01062" },
-            { "name": "Adrar Universite", "postalCode": "01063" },
-            { "name": "Adrar Cite universitaire", "postalCode": "01064" },
-            { "name": "Adrar Gare Routiere", "postalCode": "01065" },
-            { "name": "Adrar Bureau Itinerant 1", "postalCode": "01071" }
+            { "name": "Adrar - Hay el Gharbi", "postalCode": "01018" },
+            { "name": "Adrar - Cite Zerrari Mohamed", "postalCode": "01062" },
+            { "name": "Adrar - Universite", "postalCode": "01063" },
+            { "name": "Adrar - Cite universitaire", "postalCode": "01064" }
           ]
         },
         {
@@ -28,8 +26,8 @@
           "codeONS": "0122",
           "postalCode": "01023",
           "otherPosts": [
-            { "name": "Bouda Bendraou", "postalCode": "01026" },
-            { "name": "Bouda Leghmara", "postalCode": "01057" }
+            { "name": "Bouda - Bendraou", "postalCode": "01026" },
+            { "name": "Bouda - Leghmara", "postalCode": "01057" }
           ]
         },
         {
@@ -48,7 +46,9 @@
           "name": "Aoulef",
           "codeONS": "0112",
           "postalCode": "01003",
-          "otherPosts": [{ "name": "Aoulef Tidiklete", "postalCode": "01074" }]
+          "otherPosts": [
+            { "name": "Aoulef - Tidiklete", "postalCode": "01074" }
+          ]
         },
         { "name": "Timoktene", "codeONS": "0113", "postalCode": "01043" },
         { "name": "In Belbel", "postalCode": "01041" },
@@ -75,7 +75,7 @@
           "postalCode": "01010",
           "otherPosts": [
             {
-              "name": "Bordj Badji Mokhtar Menad M'hamed",
+              "name": "Bordj Badji Mokhtar - Menad M'hamed",
               "postalCode": "01068"
             }
           ]
@@ -119,7 +119,7 @@
           "postalCode": "01004",
           "otherPosts": [
             {
-              "name": "Reggane Cheikh Moulay Abdellah el Reggani",
+              "name": "Reggane - Cheikh Moulay Abdellah el Reggani",
               "postalCode": "01067"
             }
           ]
@@ -140,9 +140,8 @@
           "codeONS": "0109",
           "postalCode": "01001",
           "otherPosts": [
-            { "name": "Timimoun Zaouiet el Ma", "postalCode": "01052" },
-            { "name": "Timimoun Hay Belbey", "postalCode": "01060" },
-            { "name": "Timimoun Gare Routiere", "postalCode": "01066" }
+            { "name": "Timimoun - Zaouiet el Ma", "postalCode": "01052" },
+            { "name": "Timimoun - Hay Belbey", "postalCode": "01060" }
           ]
         },
         { "name": "M'guiden", "postalCode": "01037" },

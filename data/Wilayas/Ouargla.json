@@ -2,6 +2,118 @@
   "id": 30,
   "name": "Ouargla",
   "postalCode": "30000",
+  "dairas": [
+    {
+      "name": "El Borma",
+      "communes": [
+        {
+          "name": "Ouargla",
+          "codeONS": "",
+          "postalCode": "30000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Hadjira",
+      "communes": [
+        {
+          "name": "Ouargla",
+          "codeONS": "",
+          "postalCode": "30000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hassi Messaoud",
+      "communes": [
+        {
+          "name": "Ouargla",
+          "codeONS": "",
+          "postalCode": "30000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Megarine",
+      "communes": [
+        {
+          "name": "Ouargla",
+          "codeONS": "",
+          "postalCode": "30000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "N'Goussa",
+      "communes": [
+        {
+          "name": "Ouargla",
+          "codeONS": "",
+          "postalCode": "30000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouargla",
+      "communes": [
+        {
+          "name": "Ouargla",
+          "codeONS": "",
+          "postalCode": "30000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Khouiled",
+      "communes": [
+        {
+          "name": "Ouargla",
+          "codeONS": "",
+          "postalCode": "30000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Taibet",
+      "communes": [
+        {
+          "name": "Ouargla",
+          "codeONS": "",
+          "postalCode": "30000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tamacine",
+      "communes": [
+        {
+          "name": "Ouargla",
+          "codeONS": "",
+          "postalCode": "30000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Touggourt",
+      "communes": [
+        {
+          "name": "Ouargla",
+          "codeONS": "",
+          "postalCode": "30000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Ouargla",

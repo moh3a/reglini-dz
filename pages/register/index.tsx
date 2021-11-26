@@ -44,11 +44,8 @@ const RegisterScreen = ({ providers, csrfToken, children }: any) => {
                     </h2>
                     <div className="w-full mt-16 mb-8 text-base leading-relaxed text-blueGray-900 sm:md:w-3/3 lg:text-1xl ">
                       {" "}
-                      All you have to do is choose the section you need, remove
-                      the one that you do not need for that project and paste
-                      the one you need in that moment. All the section have been
-                      given the same left/right padding. Because consistence is
-                      king.{" "}
+                      Creating an account enables you to shop from Aliexpress to
+                      anywhere you are in Algeria using your local DZD currency.{" "}
                     </div>
                   </div>
                 </div>

@@ -11,6 +11,7 @@ const ItemSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    sku: String,
     price: {
       type: Number,
       required: true,
@@ -28,34 +29,39 @@ const ItemSchema = new mongoose.Schema(
       required: true,
       min: [1, "Quantity cannot be less than 1."],
     },
-    shipping: {
+    carrierId: {
       type: String,
       required: true,
     },
+    shippingPrice: Number,
+    totalPrice: Number,
   },
   {
     timestamps: true,
   }
 );
 
-const WishlistSchema = new mongoose.Schema({
-  productId: {
-    type: String,
-    required: true,
+const WishlistSchema = new mongoose.Schema(
+  {
+    productId: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    imageUrl: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
   },
-  name: {
-    type: String,
-    required: true,
-  },
-  imageUrl: {
-    type: String,
-    required: true,
-  },
-  price: {
-    type: Number,
-    required: true,
-  },
-});
+  { timestamps: true }
+);
 
 const CartSchema = new mongoose.Schema(
   {
@@ -74,6 +80,78 @@ const CartSchema = new mongoose.Schema(
   }
 );
 
+const AddressSchema = new mongoose.Schema({
+  text: String,
+  postalCode: String,
+  wilaya: String,
+  daira: String,
+  commune: String,
+  streetName: String,
+});
+
+const OrderSchema = new mongoose.Schema(
+  {
+    orderId: String,
+    product: {
+      productId: String,
+      name: String,
+      sku: String,
+      price: Number,
+      imageUrl: String,
+      properties: [{}],
+      quantity: {
+        type: Number,
+        required: true,
+        min: [1, "Quantity cannot be less than 1."],
+      },
+      carrierId: String,
+      orderMemo: String,
+    },
+    shippingAddress: {
+      name: String,
+      countryCode: String,
+      city: String,
+      zipCode: String,
+      addressLine1: String,
+      phoneCountry: String,
+      mobilePhone: String,
+      province: String,
+    },
+    status: String,
+    orderDetailsUrl: String,
+    creationTime: String,
+    totalPrice: {
+      productsPrice: { value: Number, display: String },
+      shippingPrice: { value: Number, display: String },
+      fullOrderPrice: { value: Number, display: String },
+    },
+    paymentTime: String,
+    readyForDispatchTime: String,
+    isPaid: Boolean,
+    isShipped: Boolean,
+    isFrozen: Boolean,
+    canResume: Boolean,
+    canCancel: Boolean,
+    endReason: String,
+    currency: String,
+    tracking: {
+      isTrackingAvailable: Boolean,
+      packages: [
+        {
+          caption: String,
+          readyForDispatchTime: String,
+          deliveryTimeRange: { min: String, max: String },
+          trackingNumber: String,
+          trackingUrl: String,
+          carrier: { id: String, name: String },
+          progressPercentage: Number,
+        },
+      ],
+    },
+  },
+  { timestamps: true }
+);
+
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -82,6 +160,7 @@ const UserSchema = new mongoose.Schema({
     // unique: true,
     index: true,
   },
+  realName: String,
   email: {
     type: String,
     required: [true, "Please provide an email address."],
@@ -121,12 +200,14 @@ const UserSchema = new mongoose.Schema({
   resetPasswordToken: String,
   resetPasswordExpire: Date,
   picture: mongoose.Mixed,
-  address: String,
+  address: AddressSchema,
+  phoneNumber: String,
   cart: {
     type: CartSchema,
     required: true,
   },
   wishlist: [WishlistSchema],
+  orders: [OrderSchema],
 });
 
 // MIDDLEWARE TO BE USED BEFORE CREATING A NEW PASSWORD

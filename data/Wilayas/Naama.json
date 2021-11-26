@@ -2,6 +2,85 @@
   "id": 45,
   "name": "Naama",
   "postalCode": "46000",
+  "dairas": [
+    {
+      "name": "Naama",
+      "communes": [
+        {
+          "name": "Naama",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ain Sefra",
+      "communes": [
+        {
+          "name": "Naama",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Assela",
+      "communes": [
+        {
+          "name": "Naama",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Makman Ben Amer",
+      "communes": [
+        {
+          "name": "Naama",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mecheria",
+      "communes": [
+        {
+          "name": "Naama",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Moghrar",
+      "communes": [
+        {
+          "name": "Naama",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sfissifa",
+      "communes": [
+        {
+          "name": "Naama",
+          "codeONS": "",
+          "postalCode": "46000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Naama",

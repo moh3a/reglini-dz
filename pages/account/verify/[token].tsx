@@ -6,7 +6,7 @@ import Profile from "..";
 
 const AccountVerificationScreen = () => {
   const router = useRouter();
-  const token: unknown = router.query;
+  const { token } = router.query;
   return (
     <>
       <Head>

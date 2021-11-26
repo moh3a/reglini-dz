@@ -1,0 +1,85 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { DangerDialog, SuccessDialog } from "./../elements/Dialog";
+
+const PhoneNumber = ({ user }: any) => {
+  const [showForm, setShowForm] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (user && user.phoneNumber) {
+      setShowForm(false);
+    }
+  }, [user]);
+
+  const phoneNumberSaveHandler = async (e: any) => {
+    e.preventDefault();
+    if (phoneNumber) {
+      let phone = phoneNumber.replace(/[-a-zA-Z!@#$%^&* ]/g, "");
+      if (phone[0] === "0") {
+        phone = phone.slice(1);
+      }
+      phone = "+213" + phone;
+      const { data } = await axios.post("/api/users/phonenumber", {
+        phoneNumber: phone,
+      });
+      if (data.success) {
+        setSuccess(data.message);
+        setTimeout(() => {
+          setSuccess("");
+        }, 5000);
+      } else {
+        setError(data.message);
+        setTimeout(() => {
+          setError("");
+        }, 5000);
+      }
+      setShowForm(false);
+    }
+  };
+
+  return (
+    <>
+      {success && <SuccessDialog>{success}</SuccessDialog>}
+      {error && <DangerDialog>{error}</DangerDialog>}
+      {!showForm && user && user.phoneNumber ? (
+        <div>
+          This is your registered phone number {user.phoneNumber}
+          <div
+            className="underline cursor-pointer text-gray-600"
+            onClick={() => setShowForm(true)}
+          >
+            Edit
+          </div>
+        </div>
+      ) : (
+        <form onSubmit={phoneNumberSaveHandler}>
+          <div className="relative w-full">
+            <label>Phone Number</label>
+            <input
+              type="number"
+              className="relative rounded-full py-1 pl-12 pr-3 my-1 w-full"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+            <span className="absolute inset-y-0 left-2 top-8">+213</span>
+          </div>
+
+          <button
+            onClick={() => setShowForm(false)}
+            className="m-1 p-1 border-2"
+          >
+            Cancel
+          </button>
+          <button type="submit" className="m-1 p-1 border-2">
+            Save Phone Number
+          </button>
+        </form>
+      )}
+    </>
+  );
+};
+
+export default PhoneNumber;

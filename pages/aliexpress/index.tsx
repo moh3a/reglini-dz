@@ -8,8 +8,7 @@ import { selectAEApi } from "../../utils/redux/aeapiSlice";
 import SearchAE from "../../components/aliexpress/SearchAE";
 import ProductPreview from "../../components/aliexpress/ProductPreview";
 import ProductList from "../../components/store/ProductList";
-import Loading from "../../components/Loading";
-import CategoryFilters from "../../components/store/CategoryFilters";
+import Loading from "../../components/layout/Loading";
 
 const Aliexpress = ({ messages }: any) => {
   const [session, loading]: [IUser | null, boolean] = useSession();

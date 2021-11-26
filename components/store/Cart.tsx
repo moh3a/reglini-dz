@@ -1,16 +1,12 @@
 import { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
 import { Dialog, Transition } from "@headlessui/react";
-import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
 import { XIcon, ShoppingBagIcon } from "@heroicons/react/outline";
 
 import CartItem from "./CartItem";
-import { selectUser } from "../../utils/redux/userSlice";
-import { getUser } from "../../utils/redux/userAsyncActions";
 
-export default function Cart({ session }: any) {
-  const [open, setOpen] = useState(false);
+export default function Cart({ user }: any) {
+  const [openCart, setOpenCart] = useState(false);
   const [items, setItems] = useState([
     {
       productId: "",
@@ -19,21 +15,9 @@ export default function Cart({ session }: any) {
       imageUrl: "",
       properties: {},
       quantity: 0,
-      shipping: "",
+      carrierId: "",
     },
   ]);
-  const router = useRouter();
-  const dispatch = useDispatch();
-  const { isAuthenticated, status, user } = useSelector(selectUser);
-
-  useEffect(() => {
-    if (!isAuthenticated && session && status !== "loading") {
-      const email = session.user?.email;
-      const type = session.user?.type;
-      const provider = session.user?.provider || undefined;
-      dispatch(getUser({ email, account: type, provider }));
-    }
-  }, [router, session, dispatch, isAuthenticated, status]);
 
   useEffect(() => {
     if (user) {
@@ -48,7 +32,7 @@ export default function Cart({ session }: any) {
       <div className="ml-3 flow-root lg:ml-6">
         <div
           className="group -m-2 p-2 flex items-center cursor-pointer"
-          onClick={() => setOpen(true)}
+          onClick={() => setOpenCart(true)}
         >
           <ShoppingBagIcon
             className="flex-shink-0 h-6 w-6 text-gray-800 dark:text-gray-100 group-hover:text-grim dark:group-hover:text-gray-400"
@@ -61,11 +45,11 @@ export default function Cart({ session }: any) {
         </div>
       </div>
 
-      <Transition.Root show={open} as={Fragment}>
+      <Transition.Root show={openCart} as={Fragment}>
         <Dialog
           as="div"
           className="fixed inset-0 overflow-hidden"
-          onClose={setOpen}
+          onClose={setOpenCart}
         >
           <div className="absolute inset-0 overflow-hidden">
             <Transition.Child
@@ -101,7 +85,7 @@ export default function Cart({ session }: any) {
                           <button
                             type="button"
                             className="-m-2 p-2 text-gray-400 hover:text-gray-500"
-                            onClick={() => setOpen(false)}
+                            onClick={() => setOpenCart(false)}
                           >
                             <span className="sr-only">Close panel</span>
                             <XIcon className="h-6 w-6" aria-hidden="true" />
@@ -139,7 +123,10 @@ export default function Cart({ session }: any) {
                       </p>
                       <div className="mt-6">
                         <Link href="/account/orders/new" passHref>
-                          <a className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium cursor-pointer text-white bg-green-800 hover:bg-green-900">
+                          <a
+                            onClick={() => setOpenCart(false)}
+                            className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium cursor-pointer text-white bg-green-800 hover:bg-green-900"
+                          >
                             Place Order
                           </a>
                         </Link>
@@ -150,7 +137,7 @@ export default function Cart({ session }: any) {
                           <button
                             type="button"
                             className="text-gray-600 dark:text-gray-200 font-medium hover:text-gray-500 dark:hover:text-gray-300"
-                            onClick={() => setOpen(false)}
+                            onClick={() => setOpenCart(false)}
                           >
                             Continue Shopping
                             <span aria-hidden="true"> &rarr;</span>

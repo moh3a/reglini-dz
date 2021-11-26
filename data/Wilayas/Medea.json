@@ -2,6 +2,217 @@
   "id": 26,
   "name": "Médéa",
   "postalCode": "26000",
+  "dairas": [
+    {
+      "name": "Aïn Boucif",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aziz",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Beni Slimane",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Berrouaghia",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Chahbounia",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Chellalet El Adhaoura",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Azizia",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Guelb El Kebir",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Omaria",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ksar Boukhari",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Médéa",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouamri",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouled Antar",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouzera",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Seghouane",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Naamane",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Si Mahdjoub",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Souagui",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tablat",
+      "communes": [
+        {
+          "name": "Médéa",
+          "codeONS": "",
+          "postalCode": "26000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Médéa",

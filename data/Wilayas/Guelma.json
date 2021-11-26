@@ -2,6 +2,118 @@
   "id": 24,
   "name": "Guelma",
   "postalCode": "24000",
+  "dairas": [
+    {
+      "name": "Guelma",
+      "communes": [
+        {
+          "name": "Guelma",
+          "codeONS": "",
+          "postalCode": "24000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Khezarra",
+      "communes": [
+        {
+          "name": "Guelma",
+          "codeONS": "",
+          "postalCode": "24000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Guelaât Bou Sbaâ",
+      "communes": [
+        {
+          "name": "Guelma",
+          "codeONS": "",
+          "postalCode": "24000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Héliopolis",
+      "communes": [
+        {
+          "name": "Guelma",
+          "codeONS": "",
+          "postalCode": "24000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Oued Zenati",
+      "communes": [
+        {
+          "name": "Guelma",
+          "codeONS": "",
+          "postalCode": "24000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ain Makhlouf",
+      "communes": [
+        {
+          "name": "Guelma",
+          "codeONS": "",
+          "postalCode": "24000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hammam Debagh",
+      "communes": [
+        {
+          "name": "Guelma",
+          "codeONS": "",
+          "postalCode": "24000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bouchegouf",
+      "communes": [
+        {
+          "name": "Guelma",
+          "codeONS": "",
+          "postalCode": "24000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hammam N’Bails",
+      "communes": [
+        {
+          "name": "Guelma",
+          "codeONS": "",
+          "postalCode": "24000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Houari Boumédiène",
+      "communes": [
+        {
+          "name": "Guelma",
+          "codeONS": "",
+          "postalCode": "24000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Guelma",

@@ -2,6 +2,96 @@
   "id": 38,
   "name": "Tissemsilt",
   "postalCode": "38000",
+  "dairas": [
+    {
+      "name": "Ammari",
+      "communes": [
+        {
+          "name": "Tissemsilt",
+          "codeONS": "",
+          "postalCode": "38000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bordj Bou Naama",
+      "communes": [
+        {
+          "name": "Tissemsilt",
+          "codeONS": "",
+          "postalCode": "38000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bordj El Emir Abdelkader",
+      "communes": [
+        {
+          "name": "Tissemsilt",
+          "codeONS": "",
+          "postalCode": "38000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Khemisti",
+      "communes": [
+        {
+          "name": "Tissemsilt",
+          "codeONS": "",
+          "postalCode": "38000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Lardjem",
+      "communes": [
+        {
+          "name": "Tissemsilt",
+          "codeONS": "",
+          "postalCode": "38000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Lazharia",
+      "communes": [
+        {
+          "name": "Tissemsilt",
+          "codeONS": "",
+          "postalCode": "38000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Theniet El Had",
+      "communes": [
+        {
+          "name": "Tissemsilt",
+          "codeONS": "",
+          "postalCode": "38000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tissemsilt",
+      "communes": [
+        {
+          "name": "Tissemsilt",
+          "codeONS": "",
+          "postalCode": "38000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Tissemsilt",

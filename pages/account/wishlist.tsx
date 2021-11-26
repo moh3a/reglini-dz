@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import { useSession } from "next-auth/client";
 
 import { IUser } from "../../utils/types";
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";
 import WishedItems from "../../components/store/WishedItems";
-import Link from "next/link";
 
 const Wishlist = ({ messages }: any) => {
   const [wishlist, setWishlist] = useState([]);

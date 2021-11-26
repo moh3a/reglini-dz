@@ -2,6 +2,184 @@
   "id": 29,
   "name": "Mascara",
   "postalCode": "29000",
+  "dairas": [
+    {
+      "name": "Aïn Fares",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn Fekan",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aouf",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bou Hanifia",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Bordj",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ghriss",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hachem",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mascara",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mohammadia",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Oggaz",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Oued El Abtal",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Oued Taria",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sig",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tighennif",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Tizi",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Zahana",
+      "communes": [
+        {
+          "name": "Mascara",
+          "codeONS": "",
+          "postalCode": "29000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Mascara",

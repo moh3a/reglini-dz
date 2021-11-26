@@ -2,6 +2,173 @@
   "id": 28,
   "name": "M'sila",
   "postalCode": "28000",
+  "dairas": [
+    {
+      "name": "M'sila",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Hammam Dalaa",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouled Derradj",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Aissa",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn El Melh",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ben Srour",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bou Saada",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ouled sidi Brahim",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Sidi Ameur",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Magra",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Chellal",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Khoubana",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Medjedel",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn El Hadjel",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Djebel Messaad",
+      "communes": [
+        {
+          "name": "M'sila",
+          "codeONS": "",
+          "postalCode": "28000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "M'sila",

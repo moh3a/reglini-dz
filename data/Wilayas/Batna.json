@@ -18,9 +18,9 @@
           "codeONS": "0545",
           "postalCode": "05002",
           "otherPosts": [
-            { "name": "Ain Touta 1er Novembre", "postalCode": "05048" },
-            { "name": "Ain Touta Hamada", "postalCode": "05050" },
-            { "name": "Ain Touta Cheffet", "postalCode": "05140" }
+            { "name": "Ain Touta - 1er Novembre", "postalCode": "05048" },
+            { "name": "Ain Touta - Hamada", "postalCode": "05050" },
+            { "name": "Ain Touta - Cheffet", "postalCode": "05140" }
           ]
         },
         { "name": "Tamesghit", "postalCode": "05133" },
@@ -42,8 +42,8 @@
           "codeONS": "0516",
           "postalCode": "05007",
           "otherPosts": [
-            { "name": "Arris Mezoudji Amor", "postalCode": "05024" },
-            { "name": "Arris Grine Belgacem", "postalCode": "05042" }
+            { "name": "Arris - Mezoudji Amor", "postalCode": "05024" },
+            { "name": "Arris - Grine Belgacem", "postalCode": "05042" }
           ]
         },
         { "name": "Boussalah", "codeONS": "0526", "postalCode": "05060" },
@@ -58,9 +58,8 @@
           "codeONS": "0542",
           "postalCode": "05001",
           "otherPosts": [
-            { "name": "Barika Liberte", "postalCode": "05022" },
-            { "name": "Barika Ben Baatouche", "postalCode": "05028" },
-            { "name": "Barika Gare Routiere", "postalCode": "05139" }
+            { "name": "Barika - Liberte", "postalCode": "05022" },
+            { "name": "Barika - Ben Baatouche", "postalCode": "05028" }
           ]
         },
         { "name": "M'doukal", "codeONS": "0555", "postalCode": "05037" },
@@ -80,24 +79,20 @@
           "codeONS": "0501",
           "postalCode": "05000",
           "otherPosts": [
-            { "name": "Batna Ben Boulaid", "postalCode": "05003" },
-            { "name": "Batna Mebarki", "postalCode": "05005" },
-            { "name": "Batna 1er Novembre", "postalCode": "05006" },
-            { "name": "Batna Freres Khezzar", "postalCode": "05008" },
-            { "name": "Batna Hadj Lakhdar", "postalCode": "05010" },
-            { "name": "Batna An Nasr", "postalCode": "05014" },
-            { "name": "Batna Emir Abdelkader", "postalCode": "05017" },
-            { "name": "Batna Imadghassen (Aeroport)", "postalCode": "05018" },
-            { "name": "Batna El Boustene", "postalCode": "05021" },
-            { "name": "Batna Kechida", "postalCode": "05040" },
-            { "name": "Batna Zone Industrielle", "postalCode": "05109" },
+            { "name": "Batna - Ben Boulaid", "postalCode": "05003" },
+            { "name": "Batna - Mebarki", "postalCode": "05005" },
+            { "name": "Batna - 1er Novembre", "postalCode": "05006" },
+            { "name": "Batna - Freres Khezzar", "postalCode": "05008" },
+            { "name": "Batna - Hadj Lakhdar", "postalCode": "05010" },
+            { "name": "Batna - An Nasr", "postalCode": "05014" },
+            { "name": "Batna - Emir Abdelkader", "postalCode": "05017" },
+            { "name": "Batna - Imadghassen (Aeroport)", "postalCode": "05018" },
+            { "name": "Batna - El Boustene", "postalCode": "05021" },
+            { "name": "Batna - Kechida", "postalCode": "05040" },
+            { "name": "Batna - Zone Industrielle", "postalCode": "05109" },
             { "name": "Tamachit", "postalCode": "05131" },
-            { "name": "Batna Gare Routiere", "postalCode": "05134" },
-            { "name": "Batna EAAB", "postalCode": "05135" },
-            { "name": "Batna 1ere Division Blindee", "postalCode": "05136" },
-            { "name": "Batna Universite", "postalCode": "05137" },
-            { "name": "Batna El Aures", "postalCode": "05143" },
-            { "name": "Batna Bouzourane", "postalCode": "05144" }
+            { "name": "Batna - El Aures", "postalCode": "05143" },
+            { "name": "Batna - Bouzourane", "postalCode": "05144" }
           ]
         },
         {
@@ -225,8 +220,8 @@
           "codeONS": "0509",
           "postalCode": "05004",
           "otherPosts": [
-            { "name": "N'Gaous 5 Juillet", "postalCode": "05019" },
-            { "name": "N'Gaous Ras el Ain", "postalCode": "05029" }
+            { "name": "N'Gaous - 5 Juillet", "postalCode": "05019" },
+            { "name": "N'Gaous - Ras el Ain", "postalCode": "05029" }
           ]
         },
         { "name": "Boumagueur", "codeONS": "0541", "postalCode": "05057" },
@@ -289,7 +284,7 @@
           "name": "Seriana",
           "codeONS": "0505",
           "postalCode": "05025",
-          "otherPosts": [{ "name": "Seriana Eris", "postalCode": "05138" }]
+          "otherPosts": [{ "name": "Seriana - Eris", "postalCode": "05138" }]
         },
         { "name": "Draa el Gbour", "postalCode": "05070" },
         { "name": "Lazrou", "codeONS": "0558", "postalCode": "05117" },
@@ -306,7 +301,7 @@
           "codeONS": "0508",
           "postalCode": "05011",
           "otherPosts": [
-            { "name": "Tazoult 20 Aout 1956", "postalCode": "05142" }
+            { "name": "Tazoult - 20 Aout 1956", "postalCode": "05142" }
           ]
         },
         {

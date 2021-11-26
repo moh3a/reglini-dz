@@ -2,6 +2,118 @@
   "id": 34,
   "name": "Bordj Bou Arreridj",
   "postalCode": "34000",
+  "dairas": [
+    {
+      "name": "Bordj Bou Arreridj",
+      "communes": [
+        {
+          "name": "Bordj Bou Arreridj",
+          "codeONS": "",
+          "postalCode": "34000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Aïn Taghrout",
+      "communes": [
+        {
+          "name": "Bordj Bou Arreridj",
+          "codeONS": "",
+          "postalCode": "34000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Ras El Oued",
+      "communes": [
+        {
+          "name": "Bordj Bou Arreridj",
+          "codeONS": "",
+          "postalCode": "34000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bordj Ghedir",
+      "communes": [
+        {
+          "name": "Bordj Bou Arreridj",
+          "codeONS": "",
+          "postalCode": "34000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bir Kasdali",
+      "communes": [
+        {
+          "name": "Bordj Bou Arreridj",
+          "codeONS": "",
+          "postalCode": "34000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "El Hamadia",
+      "communes": [
+        {
+          "name": "Bordj Bou Arreridj",
+          "codeONS": "",
+          "postalCode": "34000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Mansoura",
+      "communes": [
+        {
+          "name": "Bordj Bou Arreridj",
+          "codeONS": "",
+          "postalCode": "34000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Medjana",
+      "communes": [
+        {
+          "name": "Bordj Bou Arreridj",
+          "codeONS": "",
+          "postalCode": "34000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Bordj Zemoura",
+      "communes": [
+        {
+          "name": "Bordj Bou Arreridj",
+          "codeONS": "",
+          "postalCode": "34000",
+          "otherPosts": []
+        }
+      ]
+    },
+    {
+      "name": "Djaafra",
+      "communes": [
+        {
+          "name": "Bordj Bou Arreridj",
+          "codeONS": "",
+          "postalCode": "34000",
+          "otherPosts": []
+        }
+      ]
+    }
+  ],
   "address": [
     {
       "name": "Bordj Bou Arreridj",

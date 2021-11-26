@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
@@ -11,9 +11,12 @@ const CartItem = ({ item }: any) => {
   const [quantity, setQuantity] = useState(item.quantity);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(updateQuantity({ id: item.productId, quantity }));
-  }, [quantity, dispatch, item.productId]);
+  const quantityHandler = (e: any) => {
+    setQuantity(parseInt(e.target.value));
+    dispatch(
+      updateQuantity({ id: item.productId, quantity: parseInt(e.target.value) })
+    );
+  };
 
   return (
     <li className="py-6 flex">
@@ -50,7 +53,9 @@ const CartItem = ({ item }: any) => {
           ))}
         </div>
         <div className="text-xs text-gray-700 my-2">
-          Shipping carrier: <span className="font-bold">{item.shipping}</span>
+          Shipping carrier: <span className="font-bold">{item.carrierId}</span>
+          <br />
+          Shipping price: €{item.shippingPrice}
         </div>
         <div className="flex-1 flex items-end justify-between text-sm">
           <p className="text-gray-600 dark:text-gray-200">
@@ -63,7 +68,7 @@ const CartItem = ({ item }: any) => {
               id="quantity"
               name="quantity"
               value={quantity}
-              onChange={(e) => setQuantity(parseInt(e.target.value))}
+              onChange={quantityHandler}
               className="p-1 mr-4 text-center w-20 rounded-full focus:ring-2 focus:ring-red-500 focus:border-red-500"
             />
           </p>

@@ -30,6 +30,16 @@ const NewOrderScreen = () => {
     }
   }, [router, session, loading, dispatch, isAuthenticated, status]);
 
+  useEffect(() => {
+    if (
+      user &&
+      !localStorage.getItem("aeno") &&
+      user.cart.cartItems.length === 0
+    ) {
+      router.replace("/account/orders");
+    }
+  }, [user, router]);
+
   return (
     <>
       <Head>
@@ -40,7 +50,26 @@ const NewOrderScreen = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NewOrder user={user} />
+      {user && localStorage.getItem("aeno") && (
+        <>
+          <h3 className="px-4 pt-5 sm:px-6">Direct order</h3>
+          <NewOrder
+            user={user}
+            products={JSON.parse(localStorage.getItem("aeno") as string)}
+            origin={"localStorage"}
+          />
+        </>
+      )}
+      {user && user.cart.cartItems.length > 0 && (
+        <>
+          <h3 className="px-4 pt-5 sm:px-6">From cart</h3>
+          <NewOrder
+            user={user}
+            products={user.cart.cartItems}
+            origin={"cart"}
+          />
+        </>
+      )}
     </>
   );
 };

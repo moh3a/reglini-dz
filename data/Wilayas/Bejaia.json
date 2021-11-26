@@ -46,9 +46,9 @@
           "codeONS": "0625",
           "postalCode": "06001",
           "otherPosts": [
-            { "name": "Akbou 1er Novembre", "postalCode": "06111" },
-            { "name": "Akbou Hopital", "postalCode": "06137" },
-            { "name": "Akbou Gueldamene", "postalCode": "06141" },
+            { "name": "Akbou - 1er Novembre", "postalCode": "06111" },
+            { "name": "Akbou - Hopital", "postalCode": "06137" },
+            { "name": "Akbou - Gueldamene", "postalCode": "06141" },
             { "name": "Guendouza", "postalCode": "06050" }
           ]
         },
@@ -87,7 +87,7 @@
           "postalCode": "06008",
           "otherPosts": [
             {
-              "name": "Amizour Residence Universitaire 1",
+              "name": "Amizour - Residence Universitaire 1",
               "postalCode": "06135"
             },
             { "name": "Boukhalfa", "postalCode": "06091" },
@@ -107,7 +107,7 @@
           "codeONS": "0612",
           "postalCode": "06020",
           "otherPosts": [
-            { "name": "Semaoune Chemini", "postalCode": "06084" },
+            { "name": "Semaoune - Chemini", "postalCode": "06084" },
 
             { "name": "Aourir Adjissa", "postalCode": "06093" }
           ]
@@ -123,7 +123,7 @@
           "codeONS": "0622",
           "postalCode": "06007",
           "otherPosts": [
-            { "name": "Aokas 20 Aout", "postalCode": "06136" },
+            { "name": "Aokas - 20 Aout", "postalCode": "06136" },
             { "name": "Akkar", "postalCode": "06061" }
           ]
         },
@@ -157,26 +157,21 @@
           "codeONS": "0601",
           "postalCode": "06000",
           "otherPosts": [
-            { "name": "Béjaia Liberte", "postalCode": "06002" },
-            { "name": "Béjaia Pepiniere", "postalCode": "06116" },
-            { "name": "Béjaia Gare Routiere", "postalCode": "06123" },
-            { "name": "Béjaia Ahmed Ougana", "postalCode": "06125" },
-            { "name": "Béjaia Hassiba Ben Bouali", "postalCode": "06126" },
-            { "name": "Béjaia Abane Ramdane", "postalCode": "06127" },
-            { "name": "Béjaia Naceria", "postalCode": "06128" },
-            { "name": "Béjaia Tala Ouriane", "postalCode": "06129" },
-            { "name": "Béjaia Ihaddadene", "postalCode": "06130" },
-            { "name": "Béjaia Sidi Ali Labhar", "postalCode": "06131" },
-            { "name": "Béjaia Taassast", "postalCode": "06134" },
+            { "name": "Béjaia - Liberte", "postalCode": "06002" },
+            { "name": "Béjaia - Pepiniere", "postalCode": "06116" },
+            { "name": "Béjaia - Ahmed Ougana", "postalCode": "06125" },
+            { "name": "Béjaia - Hassiba Ben Bouali", "postalCode": "06126" },
+            { "name": "Béjaia - Abane Ramdane", "postalCode": "06127" },
+            { "name": "Béjaia - Naceria", "postalCode": "06128" },
+            { "name": "Béjaia - Tala Ouriane", "postalCode": "06129" },
+            { "name": "Béjaia - Ihaddadene", "postalCode": "06130" },
+            { "name": "Béjaia - Sidi Ali Labhar", "postalCode": "06131" },
+            { "name": "Béjaia - Taassast", "postalCode": "06134" },
             {
-              "name": "Béjaia Sidi Soufiane",
+              "name": "Béjaia - Sidi Soufiane",
               "postalCode": "06139"
             },
-            { "name": "Béjaia Sidi Ahmed", "postalCode": "06040" },
-            {
-              "name": "Béjaia Etablissement Postal Itinerant 1",
-              "postalCode": "06144"
-            },
+            { "name": "Béjaia - Sidi Ahmed", "postalCode": "06040" },
             { "name": "Boukhiama", "postalCode": "06046" },
             { "name": "Amtik N'Tafat", "postalCode": "06047" }
           ]
@@ -250,7 +245,7 @@
           "codeONS": "0631",
           "postalCode": "06003",
           "otherPosts": [
-            { "name": "El Kseur Akal Aberkane", "postalCode": "06132" }
+            { "name": "El Kseur - Akal Aberkane", "postalCode": "06132" }
           ]
         },
         {
@@ -376,7 +371,7 @@
           "codeONS": "0639",
           "postalCode": "06005",
           "otherPosts": [
-            { "name": "Sidi Aich Timzaghra", "postalCode": "06138" }
+            { "name": "Sidi Aich - Timzaghra", "postalCode": "06138" }
           ]
         },
         { "name": "Leflaye", "codeONS": "0643", "postalCode": "06043" },

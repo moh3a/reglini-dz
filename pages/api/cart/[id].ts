@@ -86,6 +86,13 @@ export default async function handler(
             .json({ success: false, message: "Item not found in cart." });
         }
         data.cart.cartItems[index].quantity = quantity;
+        data.cart.cartItems[index].totalPrice =
+          Math.round(
+            (data.cart.cartItems[index].price +
+              data.cart.cartItems[index].shippingPrice) *
+              quantity *
+              100
+          ) / 100;
         data.cart.count = cartCount(data.cart.cartItems);
         data.cart.subtotal = cartSubtotal(data.cart.cartItems);
         await data.save();
