@@ -11,20 +11,12 @@
           "codeONS": "0901",
           "postalCode": "09000",
           "otherPosts": [
-            { "name": "Blida Bab Djazair", "postalCode": "09004" },
-            { "name": "Blida Beni Mokadem", "postalCode": "09005" },
-            { "name": "Blida Terre 1", "postalCode": "09006" },
-            { "name": "Blida Ben Boulaid", "postalCode": "09016" },
-            { "name": "Blida Bounaama Djillali", "postalCode": "09017" },
-            { "name": "Blida Zabana", "postalCode": "09018" },
-            { "name": "Blida Ben Achour", "postalCode": "09026" },
-            { "name": "Blida ENTA", "postalCode": "09069" },
-            { "name": "Blida Garnison", "postalCode": "09071" },
-            {
-              "name": "Blida Ecole des Technique de l'Intendance",
-              "postalCode": "09073"
-            },
-            { "name": "Blida Gare Routiere", "postalCode": "09077" },
+            { "name": "Blida - Bab Djazair", "postalCode": "09004" },
+            { "name": "Blida - Beni Mokadem", "postalCode": "09005" },
+            { "name": "Blida - Ben Boulaid", "postalCode": "09016" },
+            { "name": "Blida - Bounaama Djillali", "postalCode": "09017" },
+            { "name": "Blida - Zabana", "postalCode": "09018" },
+            { "name": "Blida - Ben Achour", "postalCode": "09026" },
             { "name": "Sidi el Kebir", "postalCode": "09050" },
             { "name": "Bab Errahba", "postalCode": "09055" },
             { "name": "Cite Aboudi", "postalCode": "09059" }
@@ -49,9 +41,8 @@
           "codeONS": "0920",
           "postalCode": "09001",
           "otherPosts": [
-            { "name": "Boufarik Place des Martyrs", "postalCode": "09007" },
-            { "name": "Boufarik Cite du Stade", "postalCode": "09056" },
-            { "name": "Boufarik Air", "postalCode": "09072" },
+            { "name": "Boufarik - Place des Martyrs", "postalCode": "09007" },
+            { "name": "Boufarik - Cite du Stade", "postalCode": "09056" },
             { "name": "Sidi Aid", "postalCode": "09049" }
           ]
         },
@@ -60,7 +51,6 @@
           "codeONS": "0914",
           "postalCode": "09022",
           "otherPosts": [
-            { "name": "Soumaa Ecole de Police", "postalCode": "09074" },
             { "name": "Douar Bahli", "postalCode": "09045" },
             { "name": "Hallouya", "postalCode": "09047" }
           ]
@@ -77,7 +67,7 @@
           "postalCode": "09008",
           "otherPosts": [
             { "name": "Laabaziz", "postalCode": "09060" },
-            { "name": "Bougara Nouvelle Ville", "postalCode": "09075" }
+            { "name": "Bougara - Nouvelle Ville", "postalCode": "09075" }
           ]
         },
         {
@@ -85,7 +75,10 @@
           "codeONS": "0912",
           "postalCode": "09030",
           "otherPosts": [
-            { "name": "Hammam Melouane Nouvelle Cite", "postalCode": "09078" },
+            {
+              "name": "Hammam Melouane - Nouvelle Cite",
+              "postalCode": "09078"
+            },
             { "name": "Beni Messira", "postalCode": "09040" }
           ]
         },
@@ -136,7 +129,7 @@
           "name": "Larbaa",
           "codeONS": "0921",
           "postalCode": "09002",
-          "otherPosts": [{ "name": "Larbaa Fahs", "postalCode": "09057" }]
+          "otherPosts": [{ "name": "Larbaa - Fahs", "postalCode": "09057" }]
         },
         { "name": "Souhane", "codeONS": "0917", "postalCode": "09034" }
       ]
@@ -165,7 +158,7 @@
           "codeONS": "0913",
           "postalCode": "09013",
           "otherPosts": [
-            { "name": "Mouzaia Ben Ali Ahmed", "postalCode": "09021" },
+            { "name": "Mouzaia - Ben Ali Ahmed", "postalCode": "09021" },
             { "name": "Beni Chougrane", "postalCode": "09039" }
           ]
         },
@@ -225,7 +218,7 @@
           "codeONS": "0907",
           "postalCode": "09015",
           "otherPosts": [
-            { "name": "Ouled Yaich 1er Mai", "postalCode": "09058" },
+            { "name": "Ouled Yaich - 1er Mai", "postalCode": "09058" },
             { "name": "Blida Universite", "postalCode": "09068" }
           ]
         },

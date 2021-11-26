@@ -198,7 +198,9 @@
           "name": "El Ogla",
           "codeONS": "1213",
           "postalCode": "12015",
-          "otherPosts": [{ "name": "El Ogla El Malha", "postalCode": "12043" }]
+          "otherPosts": [
+            { "name": "El Ogla - El Malha", "postalCode": "12043" }
+          ]
         }
       ]
     },
@@ -240,9 +242,8 @@
           "codeONS": "1203",
           "postalCode": "12002",
           "otherPosts": [
-            { "name": "Cheria 9 Octobre", "postalCode": "12021" },
-            { "name": "Cheria Nememcha", "postalCode": "12056" },
-            { "name": "Cheria Gare Routiere", "postalCode": "12068" }
+            { "name": "Cheria - 9 Octobre", "postalCode": "12021" },
+            { "name": "Cheria - Nememcha", "postalCode": "12056" }
           ]
         },
         {

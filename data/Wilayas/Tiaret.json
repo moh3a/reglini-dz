@@ -7,9 +7,21 @@
       "name": "Aïn Deheb",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "14000",
+          "name": "Aïn Deheb",
+          "codeONS": "1406",
+          "postalCode": "14007",
+          "otherPosts": []
+        },
+        {
+          "name": "Chehaima",
+          "codeONS": "1436",
+          "postalCode": "14046",
+          "otherPosts": []
+        },
+        {
+          "name": "Naima",
+          "codeONS": "1420",
+          "postalCode": "14060",
           "otherPosts": []
         }
       ]
@@ -18,9 +30,35 @@
       "name": "Aïn Kermes",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "14000",
+          "name": "Aïn Kermes",
+          "codeONS": "1428",
+          "postalCode": "14009",
+          "otherPosts": [
+            { "name": "Ain Kermes - 5 Juillet 1962", "postalCode": "14080" }
+          ]
+        },
+        {
+          "name": "Madna",
+          "codeONS": "1410",
+          "postalCode": "14055",
+          "otherPosts": []
+        },
+        {
+          "name": "Medrissa",
+          "codeONS": "1408",
+          "postalCode": "14013",
+          "otherPosts": []
+        },
+        {
+          "name": "Djebilet Rosfa",
+          "codeONS": "1419",
+          "postalCode": "14061",
+          "otherPosts": []
+        },
+        {
+          "name": "Sidi Abderrahmane",
+          "codeONS": "1438",
+          "postalCode": "14028",
           "otherPosts": []
         }
       ]
@@ -29,10 +67,16 @@
       "name": "Dahmouni",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "14000",
-          "otherPosts": []
+          "name": "Dahmouni",
+          "codeONS": "1413",
+          "postalCode": "14010",
+          "otherPosts": [{ "name": "Torriche", "postalCode": "14079" }]
+        },
+        {
+          "name": "Aïn Bouchekif",
+          "codeONS": "1403",
+          "postalCode": "14040",
+          "otherPosts": [{ "name": "Ain Meriem", "postalCode": "14041" }]
         }
       ]
     },
@@ -40,9 +84,24 @@
       "name": "Frenda",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "14000",
+          "name": "Frenda",
+          "codeONS": "1427",
+          "postalCode": "14001",
+          "otherPosts": [
+            { "name": "Frenda Emir Abdelkader", "postalCode": "14050" },
+            { "name": "Frenda Ibn Khaldoun", "postalCode": "14072" }
+          ]
+        },
+        {
+          "name": "Aïn El Hadid",
+          "codeONS": "1418",
+          "postalCode": "14008",
+          "otherPosts": []
+        },
+        {
+          "name": "Takhemaret",
+          "codeONS": "1437",
+          "postalCode": "14015",
           "otherPosts": []
         }
       ]
@@ -51,9 +110,23 @@
       "name": "Hamadia",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "14000",
+          "name": "Hamadia",
+          "codeONS": "1435",
+          "postalCode": "14020",
+          "otherPosts": [
+            { "name": "Hamadia - El Hidhab", "postalCode": "14074" }
+          ]
+        },
+        {
+          "name": "Bougara",
+          "codeONS": "1440",
+          "postalCode": "14018",
+          "otherPosts": []
+        },
+        {
+          "name": "Rechaïga",
+          "codeONS": "1430",
+          "postalCode": "14026",
           "otherPosts": []
         }
       ]
@@ -62,9 +135,26 @@
       "name": "Ksar Chellala",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "14000",
+          "name": "Ksar Chellala",
+          "codeONS": "1429",
+          "postalCode": "14002",
+          "otherPosts": [
+            { "name": "Ksar Chellala - El Wiam", "postalCode": "14011" }
+          ]
+        },
+        {
+          "name": "Serghine",
+          "codeONS": "1439",
+          "postalCode": "14063",
+          "otherPosts": [
+            { "name": "Ain Radjah", "postalCode": "14042" },
+            { "name": "Fritissa", "postalCode": "14051" }
+          ]
+        },
+        {
+          "name": "Zmalet El Emir Abdelkader",
+          "codeONS": "1409",
+          "postalCode": "14038",
           "otherPosts": []
         }
       ]
@@ -73,9 +163,29 @@
       "name": "Mahdia",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "14000",
+          "name": "Mahdia",
+          "codeONS": "1415",
+          "postalCode": "14004",
+          "otherPosts": [
+            { "name": "Mahdia - Emir Abdelkader", "postalCode": "14056" }
+          ]
+        },
+        {
+          "name": "Aïn Zarit",
+          "codeONS": "1405",
+          "postalCode": "14017",
+          "otherPosts": []
+        },
+        {
+          "name": "Nadorah",
+          "codeONS": "1431",
+          "postalCode": "14058",
+          "otherPosts": [{ "name": "Dayet Terfes", "postalCode": "14047" }]
+        },
+        {
+          "name": "Sebaïne",
+          "codeONS": "1425",
+          "postalCode": "14030",
           "otherPosts": []
         }
       ]
@@ -84,9 +194,21 @@
       "name": "Mechraa Safa",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "14000",
+          "name": "Mechraa Safa",
+          "codeONS": "1434",
+          "postalCode": "14012",
+          "otherPosts": [{ "name": "Kharrouba", "postalCode": "14053" }]
+        },
+        {
+          "name": "Djillali Ben Amar",
+          "codeONS": "1424",
+          "postalCode": "14048",
+          "otherPosts": []
+        },
+        {
+          "name": "Tagdemt",
+          "codeONS": "1432",
+          "postalCode": "14068",
           "otherPosts": []
         }
       ]
@@ -95,9 +217,21 @@
       "name": "Medroussa",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "14000",
+          "name": "Medroussa",
+          "codeONS": "1402",
+          "postalCode": "14023",
+          "otherPosts": []
+        },
+        {
+          "name": "Sidi Bakhti",
+          "codeONS": "1407",
+          "postalCode": "14065",
+          "otherPosts": []
+        },
+        {
+          "name": "Mellakou",
+          "codeONS": "1412",
+          "postalCode": "14025",
           "otherPosts": []
         }
       ]
@@ -106,9 +240,21 @@
       "name": "Meghila",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "14000",
+          "name": "Meghila",
+          "codeONS": "1421",
+          "postalCode": "14024",
+          "otherPosts": []
+        },
+        {
+          "name": "Sebt",
+          "codeONS": "1411",
+          "postalCode": "14062",
+          "otherPosts": []
+        },
+        {
+          "name": "Sidi Hosni",
+          "codeONS": "1423",
+          "postalCode": "14029",
           "otherPosts": []
         }
       ]
@@ -117,9 +263,21 @@
       "name": "Oued Lilli",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "14000",
+          "name": "Oued Lilli",
+          "codeONS": "1433",
+          "postalCode": "14014",
+          "otherPosts": []
+        },
+        {
+          "name": "Sidi Ali Mellal",
+          "codeONS": "1404",
+          "postalCode": "14064",
+          "otherPosts": []
+        },
+        {
+          "name": "Tidda",
+          "codeONS": "1442",
+          "postalCode": "14071",
           "otherPosts": []
         }
       ]
@@ -128,10 +286,16 @@
       "name": "Rahouia",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "14000",
+          "name": "Rahouia",
+          "codeONS": "1414",
+          "postalCode": "14005",
           "otherPosts": []
+        },
+        {
+          "name": "Guertoufa",
+          "codeONS": "1422",
+          "postalCode": "14019",
+          "otherPosts": [{ "name": "Temda", "postalCode": "14070" }]
         }
       ]
     },
@@ -139,9 +303,34 @@
       "name": "Sougueur",
       "communes": [
         {
-          "name": "Tlemcen",
-          "codeONS": "",
-          "postalCode": "14000",
+          "name": "Sougueur",
+          "codeONS": "1416",
+          "postalCode": "14003",
+          "otherPosts": [
+            {
+              "name": "Sougueur - Cite Safa Abdelkader",
+              "postalCode": "14066"
+            },
+            { "name": "Sougueur - Amirouche", "postalCode": "14067" },
+            { "name": "Ain Si Mesbah", "postalCode": "14044" }
+          ]
+        },
+        {
+          "name": "Faidja",
+          "codeONS": "1441",
+          "postalCode": "14049",
+          "otherPosts": []
+        },
+        {
+          "name": "Si Abdelghani",
+          "codeONS": "1417",
+          "postalCode": "14027",
+          "otherPosts": []
+        },
+        {
+          "name": "Tousnina",
+          "codeONS": "1426",
+          "postalCode": "14037",
           "otherPosts": []
         }
       ]
@@ -150,126 +339,42 @@
       "name": "Tiaret",
       "communes": [
         {
-          "name": "Tlemcen",
+          "name": "Tiaret",
           "codeONS": "",
           "postalCode": "14000",
-          "otherPosts": []
+          "otherPosts": [
+            {
+              "name": "Tiaret - Colonnel Boukhari Mustapha",
+              "postalCode": "14006"
+            },
+            { "name": "Tiaret - Benamara Djilali", "postalCode": "14016" },
+            { "name": "Kerman", "postalCode": "14021" },
+            { "name": "Tiaret - Bouhenni", "postalCode": "14031" },
+            { "name": "Tiaret - Cite Chaib Mohamed", "postalCode": "14032" },
+            { "name": "Tiaret - Mohamed Boudiaf", "postalCode": "14033" },
+            { "name": "Tiaret - Tahri Bouabdellah", "postalCode": "14034" },
+            { "name": "Tiaret - Universite", "postalCode": "14035" },
+            { "name": "Tiaret - Zaaroura", "postalCode": "14036" },
+            { "name": "Tiaret - Sidi Khaled", "postalCode": "14075" },
+            { "name": "Tiaret - Ibn Khaldoun", "postalCode": "14076" },
+            { "name": "Tiaret - Campus", "postalCode": "14077" },
+            { "name": "Tiaret - Khalil Habib", "postalCode": "14078" },
+            { "name": "Tiaret - Cherif Djaghri", "postalCode": "14081" }
+          ]
         }
       ]
     }
   ],
+
   "address": [
-    {
-      "name": "Tiaret",
-      "postalCode": "14000",
-      "otherPosts": [
-        { "name": "Tiaret Colonnel Boukhari Mustapha", "postalCode": "14006" },
-        { "name": "Tiaret Bouhenni", "postalCode": "14031" },
-        { "name": "Tiaret Cite Chaib Mohamed", "postalCode": "14032" },
-        { "name": "Tiaret Mohamed Boudiaf", "postalCode": "14033" },
-        { "name": "Tiaret Tahri Bouabdellah", "postalCode": "14034" },
-        { "name": "Tiaret Universite", "postalCode": "14035" },
-        { "name": "Tiaret Zaaroura", "postalCode": "14036" },
-        { "name": "Tiaret Sidi Khaled", "postalCode": "14075" },
-        { "name": "Tiaret Ibn Khaldoun", "postalCode": "14076" },
-        { "name": "Tiaret Campus", "postalCode": "14077" },
-        { "name": "Tiaret Khalil Habib", "postalCode": "14078" },
-        { "name": "Tiaret Cherif Djaghri", "postalCode": "14081" }
-      ]
-    },
-    {
-      "name": "Frenda",
-      "postalCode": "14001",
-      "otherPosts": [
-        { "name": "Frenda Emir Abdelkader", "postalCode": "14050" },
-        { "name": "Frenda Ibn Khaldoun", "postalCode": "14072" }
-      ]
-    },
-    {
-      "name": "Ksar Chellala",
-      "postalCode": "14002",
-      "otherPosts": [{ "name": "Ksar Chellala El Wiam", "postalCode": "14011" }]
-    },
-    {
-      "name": "Sougueur",
-      "postalCode": "14003",
-      "otherPosts": [
-        { "name": "Sougueur Cite Safa Abdelkader", "postalCode": "14066" },
-        { "name": "Sougueur Amirouche", "postalCode": "14067" }
-      ]
-    },
-    {
-      "name": "Mahdia",
-      "postalCode": "14004",
-      "otherPosts": [
-        { "name": "Mahdia Emir Abdelkader", "postalCode": "14056" }
-      ]
-    },
-    { "name": "Rahouia", "postalCode": "14005" },
-    { "name": "Ain Deheb", "postalCode": "14007" },
-    { "name": "Ain el Hadid", "postalCode": "14008" },
-    {
-      "name": "Ain Kermes",
-      "postalCode": "14009",
-      "otherPosts": [
-        { "name": "Ain Kermes 5 Juillet 1962", "postalCode": "14080" }
-      ]
-    },
-    { "name": "Dahmouni", "postalCode": "14010" },
-    { "name": "Mechraa Sfa", "postalCode": "14012" },
-    { "name": "Medrissa", "postalCode": "14013" },
-    { "name": "Oued Lili", "postalCode": "14014" },
-    { "name": "Takhmaret", "postalCode": "14015" },
-    { "name": "Tiaret Benamara Djilali", "postalCode": "14016" },
-    { "name": "Ain Dzarit", "postalCode": "14017" },
-    { "name": "Colonnel Bougara", "postalCode": "14018" },
-    { "name": "Guertoufa", "postalCode": "14019" },
-    {
-      "name": "Hamadia",
-      "postalCode": "14020",
-      "otherPosts": [{ "name": "Hamadia El Hidhab", "postalCode": "14074" }]
-    },
-    { "name": "Kerman", "postalCode": "14021" },
-    { "name": "Medroussa", "postalCode": "14023" },
-    { "name": "Meghila", "postalCode": "14024" },
-    { "name": "Mellakou", "postalCode": "14025" },
-    { "name": "Rechaiga", "postalCode": "14026" },
-    { "name": "Si Abdelghani", "postalCode": "14027" },
-    { "name": "Sidi Abderrahmane", "postalCode": "14028" },
-    { "name": "Sidi Hosni", "postalCode": "14029" },
-    { "name": "Si Haoues", "postalCode": "14030" },
-    { "name": "Tousnina", "postalCode": "14037" },
-    { "name": "Zmalet el Emir Abdelkader", "postalCode": "14038" },
     { "name": "Ain Beida", "postalCode": "14039" },
-    { "name": "Ain Bouchekif", "postalCode": "14040" },
-    { "name": "Ain Meriem", "postalCode": "14041" },
-    { "name": "Ain Radjah", "postalCode": "14042" },
     { "name": "Ain Sebain", "postalCode": "14043" },
-    { "name": "Ain Si Mesbah", "postalCode": "14044" },
     { "name": "Bounoual", "postalCode": "14045" },
-    { "name": "Chehaima", "postalCode": "14046" },
-    { "name": "Dayet Terfes", "postalCode": "14047" },
-    { "name": "Djillali Ben Amar", "postalCode": "14048" },
-    { "name": "Faidja", "postalCode": "14049" },
-    { "name": "Fritissa", "postalCode": "14051" },
     { "name": "Kerroum Amar", "postalCode": "14052" },
-    { "name": "Kharrouba", "postalCode": "14053" },
     { "name": "Kherbet Ouled Bouziane", "postalCode": "14054" },
-    { "name": "Madna", "postalCode": "14055" },
     { "name": "El Melaab", "postalCode": "14057" },
-    { "name": "Nadorah", "postalCode": "14058" },
     { "name": "Nador Mnaouer", "postalCode": "14059" },
-    { "name": "Naima", "postalCode": "14060" },
-    { "name": "Rosfa", "postalCode": "14061" },
-    { "name": "Sebt", "postalCode": "14062" },
-    { "name": "Serguine", "postalCode": "14063" },
-    { "name": "Sidi Ali Mellal", "postalCode": "14064" },
-    { "name": "Sidi Bakhti", "postalCode": "14065" },
-    { "name": "Tagdempt", "postalCode": "14068" },
     { "name": "Tazaka", "postalCode": "14069" },
-    { "name": "Temda", "postalCode": "14070" },
-    { "name": "Tidda", "postalCode": "14071" },
-    { "name": "Kaid Ahmed", "postalCode": "14073" },
-    { "name": "Torriche", "postalCode": "14079" }
+    { "name": "Kaid Ahmed", "postalCode": "14073" }
   ]
 }

@@ -168,7 +168,7 @@
           "codeONS": "1307",
           "postalCode": "13002",
           "otherPosts": [
-            { "name": "Ghazaouet Sidi Amar", "postalCode": "13067" },
+            { "name": "Ghazaouet - Sidi Amar", "postalCode": "13067" },
             { "name": "Djamaa Sekhra", "postalCode": "13064" }
           ]
         },
@@ -207,7 +207,7 @@
           "name": "Zenata",
           "codeONS": "1316",
           "postalCode": "13051",
-          "otherPosts": [{ "name": "Zenata Airoport", "postalCode": "13088" }]
+          "otherPosts": [{ "name": "Zenata - Airoport", "postalCode": "13088" }]
         }
       ]
     },
@@ -239,9 +239,9 @@
           "codeONS": "1327",
           "postalCode": "13001",
           "otherPosts": [
-            { "name": "Maghnia Azzouni", "postalCode": "13003" },
-            { "name": "Maghnia Cadi", "postalCode": "13091" },
-            { "name": "Maghnia 500 Lits", "postalCode": "13105" },
+            { "name": "Maghnia - Azzouni", "postalCode": "13003" },
+            { "name": "Maghnia - Cadi", "postalCode": "13091" },
+            { "name": "Maghnia - 500 Lits", "postalCode": "13105" },
             { "name": "Chebikia - Ain Zana ", "postalCode": "13056" },
             { "name": "Akid Lotfi", "postalCode": "13057" },
             { "name": "Bekhata", "postalCode": "13089" }
@@ -444,13 +444,13 @@
           "codeONS": "",
           "postalCode": "13000",
           "otherPosts": [
-            { "name": "Tlemcen Cerisiers", "postalCode": "13007" },
-            { "name": "Tlemcen Boudghene", "postalCode": "13021" },
-            { "name": "Tlemcen Abou Techfine", "postalCode": "13092" },
-            { "name": "Tlemcen Oudjlida", "postalCode": "13093" },
-            { "name": "Tlemcen Ben Bouali", "postalCode": "13094" },
-            { "name": "Tlemcen Belmimoune", "postalCode": "13095" },
-            { "name": "Tlemcen Bekhti", "postalCode": "13096" },
+            { "name": "Tlemcen - Cerisiers", "postalCode": "13007" },
+            { "name": "Tlemcen - Boudghene", "postalCode": "13021" },
+            { "name": "Tlemcen - Abou Techfine", "postalCode": "13092" },
+            { "name": "Tlemcen - Oudjlida", "postalCode": "13093" },
+            { "name": "Tlemcen - Ben Bouali", "postalCode": "13094" },
+            { "name": "Tlemcen - Belmimoune", "postalCode": "13095" },
+            { "name": "Tlemcen - Bekhti", "postalCode": "13096" },
             { "name": "Campus Tlemcen", "postalCode": "13097" },
             {
               "name": "Residence Universitaire Mansourah III",
@@ -472,23 +472,20 @@
               "name": "Residence Universitaire Malika Kaid",
               "postalCode": "13102"
             },
-            { "name": "Tlemcen Terre", "postalCode": "13103" },
             {
               "name": "Residence Universitaire Soufi Menouar",
               "postalCode": "13104"
             },
             { "name": "Mansourah Bachir el Ibrahimi", "postalCode": "13106" },
             { "name": "Mansourah 700 lits", "postalCode": "13107" },
-            { "name": "Tlemcen CHU", "postalCode": "13108" },
-            { "name": "Tlemcen Cour", "postalCode": "13109" },
-            { "name": "Tlemcen Sidi Said", "postalCode": "13112" },
-            { "name": "Tlemcen Gare Routiere", "postalCode": "13114" },
+            { "name": "Tlemcen - CHU", "postalCode": "13108" },
+            { "name": "Tlemcen - Sidi Said", "postalCode": "13112" },
             { "name": "Koudia", "postalCode": "13111" },
             {
               "name": "Bouhenak",
               "postalCode": "13062"
             },
-            { "name": "Bouhenak Jasmins", "postalCode": "13084" }
+            { "name": "Bouhenak - Jasmins", "postalCode": "13084" }
           ]
         }
       ]

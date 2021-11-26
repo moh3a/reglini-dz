@@ -11,15 +11,14 @@
           "codeONS": "1001",
           "postalCode": "10000",
           "otherPosts": [
-            { "name": "Bouira Cite el Badr", "postalCode": "10001" },
-            { "name": "Bouira Cite Hadid Said", "postalCode": "10017" },
-            { "name": "Bouira Draa el Bordj", "postalCode": "10018" },
-            { "name": "Bouira Izhabi Boulem", "postalCode": "10101" },
-            { "name": "Bouira Pole Universitaire", "postalCode": "10104" },
-            { "name": "Bouira Gare Routiere", "postalCode": "10105" },
-            { "name": "Bouira Universite", "postalCode": "10108" },
+            { "name": "Bouira - Cite el Badr", "postalCode": "10001" },
+            { "name": "Bouira - Cite Hadid Said", "postalCode": "10017" },
+            { "name": "Bouira - Draa el Bordj", "postalCode": "10018" },
+            { "name": "Bouira - Izhabi Boulem", "postalCode": "10101" },
+            { "name": "Bouira - Pole Universitaire", "postalCode": "10104" },
+            { "name": "Bouira - Universite", "postalCode": "10108" },
             {
-              "name": "Bouira Residence Universitaire Ainouche Chama",
+              "name": "Bouira - Residence Universitaire Ainouche Chama",
               "postalCode": "10109"
             },
             { "name": "Ouled Bouchia", "postalCode": "10027" },
@@ -135,7 +134,7 @@
           "codeONS": "1005",
           "postalCode": "10006",
           "otherPosts": [
-            { "name": "Kadiria 1er Novembre", "postalCode": "10025" }
+            { "name": "Kadiria - 1er Novembre", "postalCode": "10025" }
           ]
         },
         {
@@ -166,7 +165,7 @@
           "codeONS": "1013",
           "postalCode": "10002",
           "otherPosts": [
-            { "name": "Lakhdaria 5 Juillet", "postalCode": "10026" },
+            { "name": "Lakhdaria - 5 Juillet", "postalCode": "10026" },
             { "name": "Guergour", "postalCode": "10064" }
           ]
         },
@@ -217,8 +216,8 @@
           "postalCode": "10005",
           "otherPosts": [
             { "name": "Ain Bessam - Yahiaoui Larbi", "postalCode": "10009" },
-            { "name": "Ain Bessam Mahi Ahmed", "postalCode": "10102" },
-            { "name": "Ain Bessam Zerdab Mohamed", "postalCode": "10107" },
+            { "name": "Ain Bessam - Mahi Ahmed", "postalCode": "10102" },
+            { "name": "Ain Bessam - Zerdab Mohamed", "postalCode": "10107" },
             { "name": "Sidi Yahya", "postalCode": "10088" }
           ]
         },
@@ -258,9 +257,11 @@
           "codeONS": "1038",
           "postalCode": "10004",
           "otherPosts": [
-            { "name": "Sour el Ghozlane Azzouz", "postalCode": "10028" },
-            { "name": "Sour el Ghozlane Mebarki Tayeb", "postalCode": "10029" },
-            { "name": "Sour el Ghozlane Gare Routiere", "postalCode": "10106" },
+            { "name": "Sour el Ghozlane - Azzouz", "postalCode": "10028" },
+            {
+              "name": "Sour el Ghozlane - Mebarki Tayeb",
+              "postalCode": "10029"
+            },
             { "name": "Ouled Gacem", "postalCode": "10078" }
           ]
         },

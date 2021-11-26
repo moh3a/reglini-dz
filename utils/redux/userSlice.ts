@@ -39,6 +39,7 @@ export const userSlice = createSlice({
     builder
       .addCase(getUser.pending, (state, action) => {
         state.status = "loading";
+        state.message = "";
       })
       .addCase(getUser.fulfilled, (state, action) => {
         state.status = "complete";
@@ -54,6 +55,7 @@ export const userSlice = createSlice({
       //========================================================================================
       .addCase(addToWishlist.pending, (state, action) => {
         state.status = "loading";
+        state.message = "";
       })
       .addCase(addToWishlist.fulfilled, (state, action) => {
         state.status = "complete";
@@ -67,6 +69,7 @@ export const userSlice = createSlice({
       //========================================================================================
       .addCase(removeFromWishlist.pending, (state, action) => {
         state.status = "loading";
+        state.message = "";
       })
       .addCase(removeFromWishlist.fulfilled, (state, action) => {
         state.status = "complete";
@@ -80,6 +83,7 @@ export const userSlice = createSlice({
       //========================================================================================
       .addCase(addToCart.pending, (state, action) => {
         state.status = "loading";
+        state.message = "";
       })
       .addCase(addToCart.fulfilled, (state, action) => {
         state.status = "complete";
@@ -93,6 +97,7 @@ export const userSlice = createSlice({
       //========================================================================================
       .addCase(updateQuantity.pending, (state, action) => {
         state.status = "loading";
+        state.message = "";
       })
       .addCase(updateQuantity.fulfilled, (state, action) => {
         state.status = "complete";
@@ -106,6 +111,7 @@ export const userSlice = createSlice({
       //========================================================================================
       .addCase(removeFromCart.pending, (state, action) => {
         state.status = "loading";
+        state.message = "";
       })
       .addCase(removeFromCart.fulfilled, (state, action) => {
         state.status = "complete";
@@ -119,6 +125,7 @@ export const userSlice = createSlice({
       //========================================================================================
       .addCase(createOrder.pending, (state, action) => {
         state.status = "loading";
+        state.message = "";
       })
       .addCase(createOrder.fulfilled, (state, action) => {
         state.status = "complete";
@@ -137,6 +144,7 @@ export const userSlice = createSlice({
       //========================================================================================
       .addCase(cancelOrder.pending, (state, action) => {
         state.status = "loading";
+        state.message = "";
       })
       .addCase(cancelOrder.fulfilled, (state, action) => {
         state.status = "complete";
@@ -150,6 +158,7 @@ export const userSlice = createSlice({
       //========================================================================================
       .addCase(getOrderDetails.pending, (state, action) => {
         state.status = "loading";
+        state.message = "";
       })
       .addCase(getOrderDetails.fulfilled, (state, action) => {
         state.status = "complete";
@@ -163,6 +172,7 @@ export const userSlice = createSlice({
       //========================================================================================
       .addCase(getOrderTracking.pending, (state, action) => {
         state.status = "loading";
+        state.message = "";
       })
       .addCase(getOrderTracking.fulfilled, (state, action) => {
         state.status = "complete";

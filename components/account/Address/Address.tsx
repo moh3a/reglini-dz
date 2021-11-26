@@ -5,6 +5,7 @@ import SelectDaira from "./SelectDaira";
 import SelectWilaya from "./SelectWilaya";
 import SelectCommune from "./SelectCommune";
 import { DangerDialog, SuccessDialog } from "../../elements/Dialog";
+import SelectPostalCode from "./SelectPostalCode";
 
 const Address = ({ user }: any) => {
   const [showForm, setShowForm] = useState(false);
@@ -25,7 +26,7 @@ const Address = ({ user }: any) => {
   useEffect(() => {
     if (wilaya && !commune) {
       setPostalCode(wilaya.postalCode);
-    } else if (commune) {
+    } else if (commune /*&& !commune.otherPosts*/) {
       setPostalCode(commune.postalCode);
     }
   }, [wilaya, commune]);
@@ -107,6 +108,12 @@ const Address = ({ user }: any) => {
           )}
           {commune && (
             <div className=" w-full">
+              {commune.otherPosts && (
+                <SelectPostalCode
+                  commune={commune}
+                  setPostalCode={setPostalCode}
+                />
+              )}
               <label>Your address in {commune.name} :</label>
               <input
                 type="text"
@@ -116,6 +123,12 @@ const Address = ({ user }: any) => {
               />
             </div>
           )}
+          {/* full list of zip codes
+          {wilaya && (
+            <div className="w-full">
+              <label>Zip codes</label>
+            </div>
+          )} */}
           {postalCode && (
             <div className=" w-full">Code Postal : {postalCode}</div>
           )}
