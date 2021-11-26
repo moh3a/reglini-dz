@@ -79,7 +79,7 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                         onClick={() => setOpen(false)}
                         className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800"
                       >
-                        Your wishlist
+                        {t("wishlist")}
                       </a>
                     </Link>
                   </div>
@@ -99,7 +99,7 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                         onClick={() => setOpen(false)}
                         className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800"
                       >
-                        Settings
+                        {t("settings")}
                       </a>
                     </Link>
                   </div>
@@ -111,7 +111,7 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                       }}
                       className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800"
                     >
-                      Sign Out
+                      {t("signOut")}
                     </p>
                   </div>
                 </>
@@ -194,7 +194,7 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                             aria-hidden="true"
                             className="mt-1 text-gray-800 dark:text-gray-100"
                           >
-                            Shop now
+                            {t("shopNow")}
                           </p>
                         </div>
                       ))}

@@ -11,21 +11,18 @@
           "codeONS": "0701",
           "postalCode": "07000",
           "otherPosts": [
-            { "name": "Biskra Star Melouk", "postalCode": "07001" },
-            { "name": "Biskra Bab Darb", "postalCode": "07006" },
-            { "name": "Biskra Beni Morah", "postalCode": "07014" },
-            { "name": "Biskra Cite el Amal", "postalCode": "07015" },
-            { "name": "Biskra El Alia", "postalCode": "07016" },
-            { "name": "Biskra El Alia Nour", "postalCode": "07017" },
-            { "name": "Biskra Lebcheche", "postalCode": "07018" },
-            { "name": "Biskra Sidi Ghezal", "postalCode": "07019" },
-            { "name": "Biskra Universite", "postalCode": "07020" },
-            { "name": "Biskra Abderrahmane Gacem", "postalCode": "07086" },
-            { "name": "Biskra Gare Routiere", "postalCode": "07088" },
-            { "name": "Biskra Air", "postalCode": "07089" },
-            { "name": "Biskra Korra", "postalCode": "07090" },
-            { "name": "Biskra Base", "postalCode": "07091" },
-            { "name": "Biskra Hay el Moudjahidine", "postalCode": "07092" },
+            { "name": "Biskra - Star Melouk", "postalCode": "07001" },
+            { "name": "Biskra - Bab Darb", "postalCode": "07006" },
+            { "name": "Biskra - Beni Morah", "postalCode": "07014" },
+            { "name": "Biskra - Cite el Amal", "postalCode": "07015" },
+            { "name": "Biskra - El Alia", "postalCode": "07016" },
+            { "name": "Biskra - El Alia Nour", "postalCode": "07017" },
+            { "name": "Biskra - Lebcheche", "postalCode": "07018" },
+            { "name": "Biskra - Sidi Ghezal", "postalCode": "07019" },
+            { "name": "Biskra - Universite", "postalCode": "07020" },
+            { "name": "Biskra - Abderrahmane Gacem", "postalCode": "07086" },
+            { "name": "Biskra - Korra", "postalCode": "07090" },
+            { "name": "Biskra - Hay el Moudjahidine", "postalCode": "07092" },
             { "name": "Ain Ghezal", "postalCode": "07038" },
             { "name": "Feliache", "postalCode": "07056" }
           ]
@@ -63,8 +60,8 @@
           "codeONS": "0717",
           "postalCode": "07008",
           "otherPosts": [
-            { "name": "El Kantara Les Gorges", "postalCode": "07029" },
-            { "name": "El Kantara 1er Novembre", "postalCode": "07053" }
+            { "name": "El Kantara - Les Gorges", "postalCode": "07029" },
+            { "name": "El Kantara - 1er Novembre", "postalCode": "07053" }
           ]
         },
         { "name": "Ain Zaatout", "codeONS": "0718", "postalCode": "07013" }
@@ -126,7 +123,7 @@
           "codeONS": "0715",
           "postalCode": "07012",
           "otherPosts": [
-            { "name": "Zeribet el Oued 1er Novembre", "postalCode": "07084" },
+            { "name": "Zeribet el Oued - 1er Novembre", "postalCode": "07084" },
             { "name": "Bades", "postalCode": "07041" },
             { "name": "N'fidhet Ragma", "postalCode": "07069" }
           ]
@@ -189,7 +186,7 @@
           "codeONS": "0721",
           "postalCode": "07003",
           "otherPosts": [
-            { "name": "Tolga Emir Abdelkader", "postalCode": "07082" },
+            { "name": "Tolga - Emir Abdelkader", "postalCode": "07082" },
             { "name": "Farfar", "postalCode": "07055" },
             { "name": "Mobar Mohamed", "postalCode": "07095" }
           ]
@@ -199,7 +196,7 @@
           "codeONS": "0729",
           "postalCode": "07022",
           "otherPosts": [
-            { "name": "Bouchagroune Amirouche", "postalCode": "07046" }
+            { "name": "Bouchagroune - Amirouche", "postalCode": "07046" }
           ]
         },
         { "name": "Bordj Benazzouz", "codeONS": "0727", "postalCode": "07021" },
@@ -214,7 +211,7 @@
           "codeONS": "0705",
           "postalCode": "07002",
           "otherPosts": [
-            { "name": "Ouled Djellal 1er Mai", "postalCode": "07070" },
+            { "name": "Ouled Djellal - 1er Mai", "postalCode": "07070" },
             { "name": "Diffel", "postalCode": "07048" }
           ]
         },
@@ -244,7 +241,7 @@
           "codeONS": "0708",
           "postalCode": "07004",
           "otherPosts": [
-            { "name": "Sidi Khaled Drissi Mohamed", "postalCode": "07036" },
+            { "name": "Sidi Khaled - Drissi Mohamed", "postalCode": "07036" },
             { "name": "Arich Hamoula", "postalCode": "07040" }
           ]
         },

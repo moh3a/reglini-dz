@@ -11,11 +11,11 @@
           "codeONS": "0319",
           "postalCode": "03001",
           "otherPosts": [
-            { "name": "Aflou Hay El Gaada", "postalCode": "03020" },
-            { "name": "Aflou Hai Mohamed Boudiaf", "postalCode": "03021" },
-            { "name": "Aflou Zaoui Said", "postalCode": "03047" },
-            { "name": "Aflou Universite", "postalCode": "03050" },
-            { "name": "Aflou 1 Mai", "postalCode": "03053" }
+            { "name": "Aflou - Hay El Gaada", "postalCode": "03020" },
+            { "name": "Aflou - Hai Mohamed Boudiaf", "postalCode": "03021" },
+            { "name": "Aflou - Zaoui Said", "postalCode": "03047" },
+            { "name": "Aflou - Universite", "postalCode": "03050" },
+            { "name": "Aflou - 1 Mai", "postalCode": "03053" }
           ]
         },
         { "name": "Sidi Bouzid", "codeONS": "0324", "postalCode": "03024" },
@@ -70,7 +70,7 @@
           "codeONS": "0306",
           "postalCode": "03004",
           "otherPosts": [
-            { "name": "Hassi R'mel 1er Nov", "postalCode": "03009" }
+            { "name": "Hassi R'mel - 1er Nov", "postalCode": "03009" }
           ]
         },
         { "name": "Bellil", "postalCode": "03008" },
@@ -96,21 +96,20 @@
           "name": "Laghouat",
           "postalCode": "03000",
           "otherPosts": [
-            { "name": "Laghouat Maamourah", "postalCode": "03002" },
-            { "name": "Laghouat El Makam", "postalCode": "03006" },
-            { "name": "Laghouat Essadikia", "postalCode": "03015" },
-            { "name": "Laghouat Cite Nord", "postalCode": "03016" },
-            { "name": "Laghouat 1er Nov", "postalCode": "03017" },
+            { "name": "Laghouat - Maamourah", "postalCode": "03002" },
+            { "name": "Laghouat - El Makam", "postalCode": "03006" },
+            { "name": "Laghouat - Essadikia", "postalCode": "03015" },
+            { "name": "Laghouat - Cite Nord", "postalCode": "03016" },
+            { "name": "Laghouat - 1er Nov", "postalCode": "03017" },
             {
-              "name": "Laghouat Emir Abdelkader (Gare Routiere)",
+              "name": "Laghouat - Emir Abdelkader (Gare Routiere)",
               "postalCode": "03018"
             },
-            { "name": "Laghouat Djamia", "postalCode": "03035" },
-            { "name": "Laghouat DCA", "postalCode": "03048" },
-            { "name": "Laghouat Pole 1", "postalCode": "03049" },
-            { "name": "Laghouat Air", "postalCode": "03051" },
-            { "name": "Laghouat El Wiam", "postalCode": "03052" },
-            { "name": "Laghouat Pole universitaire 2", "postalCode": "03054" }
+            { "name": "Laghouat - Djamia", "postalCode": "03035" },
+            { "name": "Laghouat - DCA", "postalCode": "03048" },
+            { "name": "Laghouat - Pole 1", "postalCode": "03049" },
+            { "name": "Laghouat - El Wiam", "postalCode": "03052" },
+            { "name": "Laghouat - Pole universitaire 2", "postalCode": "03054" }
           ]
         },
         { "name": "Bordj Senouci", "postalCode": "03032" }

@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { DangerDialog, SuccessDialog } from "../elements/Dialog";
 import Loading from "../layout/Loading";
+import AlertMessage from "../elements/AlertMessage";
 
 const AccountVerification = ({
   token,
@@ -16,17 +16,16 @@ const AccountVerification = ({
   const router = useRouter();
 
   const verify = useCallback(async () => {
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
     if (token) {
       try {
         const { data } = await axios.post(
           `/api/auth/verifycredentials/${token}`,
           {},
-          config
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
         );
         setLoading(false);
         if (data.success) {
@@ -59,8 +58,8 @@ const AccountVerification = ({
   return (
     <>
       {loading && <Loading text="Your account is being verified.." />}
-      {success && <SuccessDialog>{success}</SuccessDialog>}
-      {error && <DangerDialog>{error}</DangerDialog>}
+      {success && <AlertMessage type="success" message={success} />}
+      {error && <AlertMessage type="error" message={error} />}
     </>
   );
 };

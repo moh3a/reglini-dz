@@ -11,25 +11,20 @@
           "codeONS": "0201",
           "postalCode": "02000",
           "otherPosts": [
-            { "name": "Chlef Bensouna", "postalCode": "02005" },
-            { "name": "Chlef cite administrative", "postalCode": "02013" },
-            { "name": "Ahmed Khelfaoui", "postalCode": "02016" },
-            { "name": "Chlef Hai Badr", "postalCode": "02022" },
-            { "name": "Chlef Hay Nasr", "postalCode": "02023" },
-            { "name": "Chlef Sahli", "postalCode": "02041" },
-            { "name": "Chlef Lalla Aouda", "postalCode": "02042" },
-            { "name": "Chlef Hay Abbad", "postalCode": "02045" },
-            { "name": "Chlef Chegga", "postalCode": "02057" },
-            { "name": "Chlef B Frahi", "postalCode": "02088" },
-            { "name": "Chlef Freres Khelif", "postalCode": "02090" },
-            { "name": "Chlef Hay Es Salam", "postalCode": "02091" },
-            { "name": "Chlef Mohamed Kouadri", "postalCode": "02094" },
-            { "name": "Chlef Gare Routiere", "postalCode": "02098" },
-            { "name": "Chlef Al Hadji Ahmed", "postalCode": "02099" },
-            {
-              "name": "Chlef Etablissement postal Itinerant 1",
-              "postalCode": "02100"
-            }
+            { "name": "Chlef - Bensouna", "postalCode": "02005" },
+            { "name": "Chlef - cite administrative", "postalCode": "02013" },
+            { "name": "Ahmed - Khelfaoui", "postalCode": "02016" },
+            { "name": "Chlef - Hai Badr", "postalCode": "02022" },
+            { "name": "Chlef - Hay Nasr", "postalCode": "02023" },
+            { "name": "Chlef - Sahli", "postalCode": "02041" },
+            { "name": "Chlef - Lalla Aouda", "postalCode": "02042" },
+            { "name": "Chlef - Hay Abbad", "postalCode": "02045" },
+            { "name": "Chlef - Chegga", "postalCode": "02057" },
+            { "name": "Chlef - B Frahi", "postalCode": "02088" },
+            { "name": "Chlef - Freres Khelif", "postalCode": "02090" },
+            { "name": "Chlef - Hay Es Salam", "postalCode": "02091" },
+            { "name": "Chlef - Mohamed Kouadri", "postalCode": "02094" },
+            { "name": "Chlef - Al Hadji Ahmed", "postalCode": "02099" }
           ]
         },
         { "name": "Oum Drou", "codeONS": "0233", "postalCode": "02024" },
@@ -65,14 +60,17 @@
       ]
     },
     {
-      "name": "Beni Haoua",
+      "name": "Ouled Fares",
       "communes": [
         {
           "name": "Ouled Fares",
           "codeONS": "0210",
           "postalCode": "02010",
           "otherPosts": [
-            { "name": "Ouled Fares Cite Universitaire", "postalCode": "02092" }
+            {
+              "name": "Ouled Fares - Cite Universitaire",
+              "postalCode": "02092"
+            }
           ]
         },
         {
@@ -80,8 +78,8 @@
           "codeONS": "0224",
           "postalCode": "02007",
           "otherPosts": [
-            { "name": "Chettia VSA", "postalCode": "02020" },
-            { "name": "Chettia B Djayahia", "postalCode": "02087" }
+            { "name": "Chettia - VSA", "postalCode": "02020" },
+            { "name": "Chettia - B Djayahia", "postalCode": "02087" }
           ]
         },
         {
@@ -123,7 +121,7 @@
           "codeONS": "0229",
           "postalCode": "02003",
           "otherPosts": [
-            { "name": "Oued Fodda Moussalaha", "postalCode": "02001" }
+            { "name": "Oued Fodda - Moussalaha", "postalCode": "02001" }
           ]
         },
         { "name": "Ouled Abbes", "codeONS": "0218", "postalCode": "02029" },
@@ -141,7 +139,7 @@
           "codeONS": "0202",
           "postalCode": "02006",
           "otherPosts": [
-            { "name": "Tenes Mohamed Boudiaf", "postalCode": "02027" }
+            { "name": "Tenes - Mohamed Boudiaf", "postalCode": "02027" }
           ]
         },
         { "name": "Sidi Akacha", "codeONS": "0211", "postalCode": "02009" },
@@ -176,12 +174,18 @@
           "codeONS": "0232",
           "postalCode": "02004",
           "otherPosts": [
-            { "name": "Ain Merane Tahar Mohamed", "postalCode": "02095" }
+            { "name": "Ain Merane - Tahar Mohamed", "postalCode": "02095" }
           ]
         },
-        { "name": "Herenfa", "codeONS": "0215", "postalCode": "02038" },
-        { "name": "Ouled Berradjah", "postalCode": "02074" },
-        { "name": "Herenfa Cheikh El Habib", "postalCode": "02096" }
+        {
+          "name": "Herenfa",
+          "codeONS": "0215",
+          "postalCode": "02038",
+          "otherPosts": [
+            { "name": "Herenfa - Cheikh El Habib", "postalCode": "02096" }
+          ]
+        },
+        { "name": "Ouled Berradjah", "postalCode": "02074" }
       ]
     },
     {
@@ -192,8 +196,8 @@
           "codeONS": "0212",
           "postalCode": "02002",
           "otherPosts": [
-            { "name": "Boukadir El Houria", "postalCode": "02026" },
-            { "name": "Boukadir A Slimani", "postalCode": "02086" }
+            { "name": "Boukadir - El Houria", "postalCode": "02026" },
+            { "name": "Boukadir - A Slimani", "postalCode": "02086" }
           ]
         },
         {
@@ -201,9 +205,9 @@
           "codeONS": "0221",
           "postalCode": "02011",
           "otherPosts": [
-            { "name": "Oued Sly Hay Houria", "postalCode": "02056" },
+            { "name": "Oued Sly - Hay Houria", "postalCode": "02056" },
             {
-              "name": "Oued Sly Boukfoussa Ghoul Charef",
+              "name": "Oued Sly - Boukfoussa Ghoul Charef",
               "postalCode": "02097"
             }
           ]
