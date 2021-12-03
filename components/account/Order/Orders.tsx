@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-import { selectUser } from "../../utils/redux/userSlice";
+import { selectUser } from "../../../utils/redux/userSlice";
 import OrderDetails from "./OrderDetails";
-import AlertMessage from "../elements/AlertMessage";
+import AlertMessage from "../../elements/AlertMessage";
 
 export default function Orders({ user }: any) {
   const { orderStatusCode, orderMessage, message } = useSelector(selectUser);

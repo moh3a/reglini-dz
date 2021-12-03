@@ -5,12 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   createOrder,
   removeFromCart,
-} from "../../utils/redux/userAsyncActions";
-import { selectUser } from "../../utils/redux/userSlice";
-import { ActionFeedback } from "../aliexpress/ProductActions";
-import Address from "./Address/Address";
-import PhoneNumber from "./PhoneNumber";
-import RealName from "./RealName";
+} from "../../../utils/redux/userAsyncActions";
+import { selectUser } from "../../../utils/redux/userSlice";
+import { ActionFeedback } from "../../aliexpress/ProductActions";
+import Address from "../Address/Address";
+import PhoneNumber from "../PhoneNumber";
+import RealName from "../RealName";
 
 export default function NewOrder({ user, products, origin }: any) {
   const dispatch = useDispatch();
@@ -94,7 +94,11 @@ export default function NewOrder({ user, products, origin }: any) {
           <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">Payment</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              + setup a payment method
+              <small>
+                A payment should be submitted in less than 48 hours or the order
+                will be automatically cancelled. You can pay once the order was
+                created.
+              </small>
             </dd>
           </div>
         </dl>

@@ -11,7 +11,7 @@ import { navigation } from "../../../data/navigation";
 import Logo from "../Logo";
 import Cart from "../../store/Cart";
 import Search from "../../elements/Search";
-import ProfilePicture from "../../elements/ProfilePicture";
+import Avatar from "../../elements/Avatar";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -188,7 +188,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                         <div>
                           <Menu.Button className="max-w-xs rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                             <span className="sr-only">Open user menu</span>
-                            <ProfilePicture user={user} />
+                            <Avatar user={user} />
                           </Menu.Button>
                         </div>
                         <Transition

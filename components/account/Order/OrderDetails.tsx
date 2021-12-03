@@ -5,7 +5,7 @@ import Image from "next/image";
 import {
   getOrderDetails,
   cancelOrder,
-} from "../../utils/redux/userAsyncActions";
+} from "../../../utils/redux/userAsyncActions";
 
 export default function OrderDetails({ order }: any) {
   const [openTracking, setOpenTracking] = useState(false);
@@ -42,6 +42,9 @@ export default function OrderDetails({ order }: any) {
             <small>ProductID: {order.product.productId}</small>
           </div>
           <div className="flex flex-col justify-end py-2 px-3">
+            {order.status && order.status !== "COMPLETED" && !order.isPaid && (
+              <button>Pay now</button>
+            )}
             {order.canCancel && (
               <button
                 onClick={() => dispatch(cancelOrder({ id: order.orderId }))}
