@@ -2,7 +2,9 @@ module.exports = {
   reactStrictMode: true,
   images: {
     domains: [
+      "",
       "localhost",
+      "res.cloudinary.com",
       "tailwindui.com",
       "unsplash.com",
       "googleusercontent.com",

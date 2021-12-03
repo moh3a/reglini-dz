@@ -1,7 +1,31 @@
+import { useEffect, useState } from "react";
 import parse from "html-react-parser";
 import Link from "next/link";
 
 export default function ProductFeatures({ product }: any) {
+  const [attributes, setAttributes] = useState([
+    { id: "", name: "", value: [""] },
+  ]);
+
+  useEffect(() => {
+    let att: any[] = [];
+    if (product.hasAttributes) {
+      product.attributes.map((attribute: any) => {
+        const index = att.findIndex((x: any) => x.id === attribute.id);
+        if (index === -1) {
+          att.push({
+            id: attribute.id,
+            name: attribute.name,
+            value: [attribute.value.name],
+          });
+        } else {
+          att[index].value.push(attribute.value.name);
+        }
+      });
+      setAttributes(att);
+    }
+  }, [product]);
+
   return (
     <div className="bg-white">
       <div className="max-w-2xl mx-auto py-24 px-4 ">
@@ -11,20 +35,24 @@ export default function ProductFeatures({ product }: any) {
           </h2>
 
           <dl className="my-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-            {product.hasAttributes &&
-              product.attributes.map((attribute: any) => (
-                <div
-                  key={attribute.id}
-                  className="border-t border-gray-200 pt-4"
-                >
-                  <dt className="font-medium text-gray-900">
-                    {attribute.name}
-                  </dt>
-                  <dd className="mt-2 text-sm text-gray-500">
-                    {attribute.value.name}
-                  </dd>
-                </div>
-              ))}
+            {attributes &&
+              attributes.map((attribute: any) => {
+                return (
+                  <div
+                    key={attribute.id}
+                    className="border-t border-gray-200 pt-4"
+                  >
+                    <dt className="font-medium text-gray-900">
+                      {attribute.name}
+                    </dt>
+                    <dd className="mt-2 text-sm text-gray-500">
+                      {attribute.value.map((va: any) => (
+                        <p key={va}>{va}</p>
+                      ))}
+                    </dd>
+                  </div>
+                );
+              })}
           </dl>
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Seller Details

@@ -58,7 +58,7 @@ export const getStaticProps: GetStaticProps = ({ locale }) => {
 };
 
 import Layout from "../../../components/layout/Layout";
-import Orders from "../../../components/account/Orders";
+import Orders from "../../../components/account/Order/Orders";
 OrderScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

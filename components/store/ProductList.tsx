@@ -7,7 +7,8 @@ export default function ProductList({ search, session }: any) {
         <h2 className="text-2xl font-bold">Aliexpress category</h2>
 
         <h2 className="text-xl font-bold">
-          {search.refiningSearchCategories
+          {search.refiningSearchCategories &&
+          search.refiningSearchCategories.name
             ? search.refiningSearchCategories[0].name
             : ""}
         </h2>

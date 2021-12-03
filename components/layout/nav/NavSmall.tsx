@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import { Dialog, Tab, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import { navigation } from "../../../data/navigation";
-import ProfilePicture from "../../elements/ProfilePicture";
+import Avatar from "../../elements/Avatar";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -66,7 +66,7 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                         className="max-w-xs p-2 rounded-full flex items-center text-sm focus:outline-none hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer"
                       >
                         <span className="sr-only">Open user menu</span>
-                        <ProfilePicture user={user} />
+                        <Avatar user={user} />
                         <span className="-m-2 p-2 ml-6 block font-medium text-gray-800 dark:text-gray-100 ">
                           {session.user?.name}
                         </span>
