@@ -8,7 +8,7 @@ import { useSession } from "next-auth/client";
 import { IUser } from "../../../utils/types";
 import { selectUser } from "../../../utils/redux/userSlice";
 import { getUser } from "../../../utils/redux/userAsyncActions";
-import NewOrder from "../../../components/account/NewOrder";
+import NewOrder from "../../../components/account/Order/NewOrder";
 
 const NewOrderScreen = () => {
   const router = useRouter();

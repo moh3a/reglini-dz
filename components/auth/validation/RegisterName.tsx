@@ -40,7 +40,7 @@ const RegisterName = ({ setNameValidation }: any) => {
           return setNameError(data.message);
         }
       }
-    } catch (error) {
+    } catch (error: any) {
       setNameError(error.response.data.error);
       setName("");
       setTimeout(() => {
@@ -63,7 +63,7 @@ const RegisterName = ({ setNameValidation }: any) => {
         Username
       </label>
       <input
-        className="w-full px-4 py-2 mt-2 text-base transition duration-500 ease-in-out transform border-transparent rounded-lg bg-white border border-gray-300 dark:border-gray-600 dark:bg-grim dark:text-gray-300 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ext-black focus:border-blueGray-500"
+        className="w-full px-4 py-2 mt-2 rounded-lg shadow-md text-black"
         id="name"
         name="name"
         type="text"

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const currencySchema = new mongoose.Schema({
   exchange: String,
   live: {
-    time: Number,
+    time: String,
     rate: {
       parallelsalerate: Number,
       parallelpurchaserate: Number,
@@ -18,7 +18,7 @@ const currencySchema = new mongoose.Schema({
   },
   historical: [
     {
-      time: Number,
+      time: String,
       official: {
         sale: Number,
       },

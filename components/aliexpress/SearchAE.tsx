@@ -29,12 +29,12 @@ const SearchAE = () => {
       const newurl = "https://" + url.split("https://")[1];
       console.log(newurl);
     } else {
-      dispatch(searchAEProductByName(url));
+      dispatch(searchAEProductByName({ name: url, locale }));
     }
   };
 
   return (
-    <section className="bg-gray-100 dark:bg-gray-900">
+    <section className="bg-gray-50 dark:bg-grim">
       <div className="container flex flex-col px-5 py-8 mx-auto lg:items-center">
         <div className="flex flex-col w-full mb-8 text-left lg:text-center">
           <h2 className="mb-4 text-xs font-semibold tracking-widest text-center uppercase title-font">

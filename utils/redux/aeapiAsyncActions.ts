@@ -25,26 +25,14 @@ export const getAEProductInfo = createAsyncThunk(
 
 export const searchAEProductByName = createAsyncThunk(
   "aeapi/searchAEProductByName",
-  async (name: string, { rejectWithValue }) => {
+  async ({ name, locale }: any, { rejectWithValue }) => {
     try {
       const { data } = await axios({
-        method: "GET",
+        method: "POST",
         url: `/api/aliexpress/search/product/${name}`,
-      });
-      return data.data;
-    } catch (error: any) {
-      return rejectWithValue(error.response);
-    }
-  }
-);
-
-export const searchAEProductByCategory = createAsyncThunk(
-  "aeapi/searchAEProductByCategory",
-  async (category: string, { rejectWithValue }) => {
-    try {
-      const { data } = await axios({
-        method: "GET",
-        url: `/api/aliexpress/search/category/${category}`,
+        data: {
+          locale,
+        },
       });
       return data.data;
     } catch (error: any) {

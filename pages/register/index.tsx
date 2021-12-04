@@ -29,8 +29,8 @@ const RegisterScreen = ({ providers, csrfToken, children }: any) => {
         <section className="flex flex-col items-center lg:my-8 sm:my-4 md:flex-row">
           <div className="container mx-auto">
             <div className="flex justify-center px-2 py-6 ">
-              <div className="flex w-full rounded-lg xl:w-3/4 lg:w-11/12 lg:shadow-xl ">
-                <div className="relative hidden w-full h-auto bg-white bg-cover dark:bg-grim border-r rounded-l-lg lg:block lg:w-6/12">
+              <div className="flex w-full rounded-lg xl:w-3/4 lg:w-11/12 lg:shadow-xl border border-yellow-200">
+                <div className="relative hidden w-full h-auto bg-white  bg-cover dark:bg-grim border-r rounded-l-lg lg:block lg:w-6/12">
                   <div className="relative z-0 m-12 text-left ">
                     {/* <a className="flex items-center w-32 mb-4 font-medium text-blueGray-900 title-font md:mb-10">
                   <h2 className="text-lg font-bold tracking-tighter text-gray-800 dark:text-gray-100 transition duration-500 ease-in-out transform hover:text-lightBlack-500 dark:text-lightBlue-400">

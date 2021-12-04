@@ -1,20 +1,17 @@
 import { useState } from "react";
+import Link from "next/link";
 import axios from "axios";
-import { createAvatar } from "@dicebear/avatars";
-import * as style from "@dicebear/avatars-bottts-sprites";
-import parse from "html-react-parser";
 
-import { generateRandomString } from "../../utils/methods";
 import { DangerDialog, SuccessDialog } from "../elements/Dialog";
-import ProfilePicture from "../elements/ProfilePicture";
+import ProfilePicture from "./ProfilePicture";
 import Address from "./Address/Address";
 import PhoneNumber from "./PhoneNumber";
+import RealName from "./RealName";
 
 export default function AccountDetails({ user }: any) {
-  const [generated, setGenerated] = useState("");
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
-
+  const [editRealName, setEditRealName] = useState(false);
   const [editAddress, setEditAddress] = useState(false);
   const [editPhoneNumber, setEditPhoneNumber] = useState(false);
 
@@ -34,109 +31,38 @@ export default function AccountDetails({ user }: any) {
     }
   };
 
-  const generateAvatar = () => {
-    let str = generateRandomString(6);
-    let svg = createAvatar(style, {
-      seed: str,
-    });
-    setGenerated(svg);
-  };
-
-  const saveAvatar = async (e: any) => {
-    e.preventDefault();
-    const { data } = await axios.post("/api/users/updatepicture", {
-      picture: generated,
-    });
-    if (data.success) {
-      setSuccess(data.message);
-      setTimeout(() => {
-        setSuccess("");
-      }, 5000);
-    } else {
-      setError(data.message);
-      setTimeout(() => {
-        setError("");
-      }, 5000);
-    }
-    setGenerated("");
-  };
-
   return (
-    <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+    <div className="bg-white dark:bg-grim shadow overflow-hidden sm:rounded-lg">
       {success && <SuccessDialog>{success}</SuccessDialog>}
       {error && <DangerDialog>{error}</DangerDialog>}
       <div className="px-4 py-5 sm:px-6">
-        <h3 className="text-lg leading-6 font-medium text-gray-900">
+        <h3 className="text-lg leading-6 font-medium text-black dark:text-yellow-200">
           Account Information
         </h3>
-        <p className="mt-1 max-w-2xl text-sm text-gray-500">
+        <p className="mt-1 max-w-2xl text-sm text-gray-600 dark:text-yellow-100">
           Personal details.
         </p>
       </div>
-      <div className="border-t border-gray-200">
+      <div className="border-t border-b border-black dark:border-yellow-200 bg-gray-100 dark:bg-grim text-black dark:text-yellow-100">
         <dl>
-          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">
-              Profile picture
-            </dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              <div className="py-2 cursor-not-allowed line-through hover:underline">
-                Upload a new profile picture
-              </div>
-              <div className="w-full flex">
-                <div
-                  className="py-2 h-12 cursor-pointer hover:underline"
-                  onClick={generateAvatar}
-                >
-                  Generate new avatar
-                </div>
-                {generated && (
-                  <>
-                    <div className="mx-4 flex flex-col my-1">
-                      <button
-                        onClick={() => setGenerated("")}
-                        className="p-1 my-1 bg-gray-500 text-yellow-100 rounded-md"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        onClick={generateAvatar}
-                        className="p-1 my-1 bg-gray-500 text-yellow-100 rounded-md"
-                      >
-                        Change
-                      </button>
-                      <button
-                        className="p-1 my-1 bg-red-500 text-yellow-100 rounded-md"
-                        onClick={saveAvatar}
-                      >
-                        Save
-                      </button>
-                    </div>
-                    <div className="h-40 w-40">{parse(generated)}</div>
-                  </>
-                )}
-              </div>
-              <div className="py-2">
-                {!generated && <ProfilePicture user={user} size="lg" />}
-              </div>
+          <div className=" px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 ">
+            <dt className="text-sm font-medium ">Profile picture</dt>
+            <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
+              <ProfilePicture user={user} size="lg" />
             </dd>
           </div>
-          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Username</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              {user.name}
-            </dd>
+          <div className="border-t border-white dark:border-black  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium ">Username</dt>
+            <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">{user.name}</dd>
           </div>
-          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Email address</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium ">Email address</dt>
+            <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
               {user.email}
             </dd>
           </div>
-          <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">
-              Account verification
-            </dt>
+          <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium ">Account verification</dt>
             <dd className="mt-1 text-sm text-green-500 sm:mt-0 sm:col-span-2">
               {user.verified ? (
                 <>True</>
@@ -164,9 +90,41 @@ export default function AccountDetails({ user }: any) {
               )}
             </dd>
           </div>
-          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Address</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          {user.realName && (
+            <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="text-sm font-medium ">Legal full name</dt>
+              <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
+                <div>{user.realName}</div>
+                <button
+                  onClick={() =>
+                    editRealName
+                      ? setEditRealName(false)
+                      : setEditRealName(true)
+                  }
+                >
+                  {editRealName ? (
+                    <p className="text-red-600">Close</p>
+                  ) : (
+                    <p className="text-yellow-700">Edit</p>
+                  )}
+                </button>
+                {editRealName ? (
+                  <div
+                    role="list"
+                    className="mt-4 px-4 py-5 border border-red-500 rounded-md divide-y divide-gray-200"
+                  >
+                    <RealName user={user} />
+                  </div>
+                ) : (
+                  ""
+                )}
+              </dd>
+            </div>
+          )}
+
+          <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium ">Address</dt>
+            <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
               <div>
                 {user.address ? user.address.text : <>Somewhere in Algeria.</>}
               </div>
@@ -193,9 +151,9 @@ export default function AccountDetails({ user }: any) {
               )}
             </dd>
           </div>
-          <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Phone Number</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium ">Phone Number</dt>
+            <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
               <div>
                 {user.phoneNumber ? user.phoneNumber : <>No phone number.</>}
               </div>
@@ -224,18 +182,38 @@ export default function AccountDetails({ user }: any) {
               )}
             </dd>
           </div>
-          <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Role</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              {user.role}
-            </dd>
+          <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium ">Role</dt>
+            <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">{user.role}</dd>
           </div>
-          <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Authenticated</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium ">Authenticated</dt>
+            <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
               {user.account === "oauth"
                 ? `Authentication credentials are provided by ${user.provider}'s oauth provider.`
                 : `Account created using user's credentials`}
+            </dd>
+          </div>
+          <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium ">Delete your account</dt>
+            <dd className="mt-1 text-sm text-red-500 sm:mt-0 sm:col-span-2">
+              <ul
+                role="list"
+                className="border border-red-500 rounded-md divide-y divide-gray-200"
+              >
+                <li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
+                  <div className="w-0 flex-1 flex items-center">
+                    DANGER! Your account will be permanently deleted.
+                  </div>
+                  <div className="ml-4 flex-shrink-0">
+                    <Link href="/account/delete" passHref>
+                      <a className="font-medium text-red-600 hover:text-red-500">
+                        DELETE
+                      </a>
+                    </Link>
+                  </div>
+                </li>
+              </ul>
             </dd>
           </div>
         </dl>

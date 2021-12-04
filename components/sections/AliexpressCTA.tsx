@@ -22,10 +22,17 @@ export default function AliexpressCTA() {
           <span className="block text-red-400">{t("startNow")}</span>
         </h2>
         <div className="flex lg:mt-0 lg:flex-shrink-0">
-          <div className="mt-16 inline-flex rounded-md shadow">
+          <div className="mx-1 mt-16 inline-flex rounded-md shadow">
             <Link href="/aliexpress" passHref>
               <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-400 hover:bg-red-300">
                 {t("getStarted")}
+              </a>
+            </Link>
+          </div>
+          <div className="mx-1 mt-16 inline-flex rounded-md shadow">
+            <Link href="/faq#howitworks" passHref>
+              <a className=" inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-500 hover:bg-red-600">
+                Learn More
               </a>
             </Link>
           </div>

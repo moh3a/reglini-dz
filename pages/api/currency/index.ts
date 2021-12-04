@@ -42,7 +42,11 @@ export default async function handler(
       parallel: live.parallel,
     };
     await data.save();
-    res.status(201).json({ success: true, data });
+    res.status(201).json({
+      success: true,
+      message: "Daily rates successfully updated.",
+      data,
+    });
   } else {
     res.status(400).json({ message: "Page doesn't exist.", success: false });
   }

@@ -34,43 +34,118 @@ const ProductProperty = ({ property, setShowImage, setProperties }: any) => {
   };
 
   return (
-    <div key={property.name} className="mt-4">
-      <div>
-        {" "}
-        {property.name} : {selectedProperty.value}{" "}
-      </div>
+    <>
+      {property.id === "200007763" ? (
+        <div key={property.name} className="mt-4">
+          <div>
+            {" "}
+            {property.name} : {selectedProperty.value}{" "}
+          </div>
 
-      <div className="flex items-center flex-wrap">
-        {property.values.map((value: any) => {
-          return (
-            <div
-              onClick={() => selectHandler(value.name)}
-              key={value.id}
-              className={`${
-                selectedProperty.value === value.name ? "border-red-500" : ""
-              } ml-2 p-1 border-2 text-center border-gray-300 hover:border-red-400 focus:outline-none cursor-pointer`}
-            >
-              {value.hasImage ? (
+          <div className="flex items-center flex-wrap">
+            {property.values.map((value: any) => {
+              if (value.countryCode === "CN") {
+                return (
+                  <div
+                    onClick={() => selectHandler(value.name)}
+                    key={value.id}
+                    className={`${
+                      selectedProperty.value === value.name
+                        ? "border-red-500"
+                        : "border-gray-300"
+                    } ml-2 p-1 border-2 text-center  hover:border-red-400 focus:outline-none cursor-pointer`}
+                  >
+                    {value.hasImage ? (
+                      <div
+                        className="h-10 w-10"
+                        onClick={() => setShowImage(value.imageUrl)}
+                      >
+                        <Image
+                          src={value.thumbnailImageUrl}
+                          alt={value.name}
+                          width={100}
+                          height={100}
+                          layout="responsive"
+                        />
+                      </div>
+                    ) : (
+                      value.name
+                    )}
+                  </div>
+                );
+              } else {
+                return (
+                  <div
+                    key={value.id}
+                    className={`ml-2 p-1 border-2 text-center border-gray-100 text-gray-400 bg-gray-200 focus:outline-none cursor-not-allowed`}
+                  >
+                    {value.hasImage ? (
+                      <div
+                        className="h-10 w-10"
+                        onClick={() => setShowImage(value.imageUrl)}
+                      >
+                        <Image
+                          src={value.thumbnailImageUrl}
+                          alt={value.name}
+                          width={100}
+                          height={100}
+                          layout="responsive"
+                        />
+                      </div>
+                    ) : (
+                      value.name
+                    )}
+                  </div>
+                );
+              }
+            })}
+          </div>
+          <div>
+            <small>Products should only be shipped from china.</small>
+          </div>
+        </div>
+      ) : (
+        <div key={property.name} className="mt-4">
+          <div>
+            {" "}
+            {property.name} : {selectedProperty.value}{" "}
+          </div>
+
+          <div className="flex items-center flex-wrap">
+            {property.values.map((value: any) => {
+              return (
                 <div
-                  className="h-10 w-10"
-                  onClick={() => setShowImage(value.imageUrl)}
+                  onClick={() => selectHandler(value.name)}
+                  key={value.id}
+                  className={`${
+                    selectedProperty.value === value.name
+                      ? "border-red-500"
+                      : "border-gray-300"
+                  } ml-2 p-1 border-2 text-center hover:border-red-400 focus:outline-none cursor-pointer`}
                 >
-                  <Image
-                    src={value.thumbnailImageUrl}
-                    alt={value.name}
-                    width={100}
-                    height={100}
-                    layout="responsive"
-                  />
+                  {value.hasImage ? (
+                    <div
+                      className="h-10 w-10"
+                      onClick={() => setShowImage(value.imageUrl)}
+                    >
+                      <Image
+                        src={value.thumbnailImageUrl}
+                        alt={value.name}
+                        width={100}
+                        height={100}
+                        layout="responsive"
+                      />
+                    </div>
+                  ) : (
+                    value.name
+                  )}
                 </div>
-              ) : (
-                value.name
-              )}
-            </div>
-          );
-        })}
-      </div>
-    </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

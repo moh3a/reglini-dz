@@ -43,7 +43,7 @@ export default function SelectLanguage() {
       {({ open }) => (
         <>
           <div className="mt-1 relative">
-            <Listbox.Button className="relative w-50 bg-white dark:bg-grim border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-800 focus:border-indigo-800 sm:text-sm">
+            <Listbox.Button className="relative w-50 bg-white dark:bg-grim border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm">
               <span className="flex items-center">
                 <CogIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
                 <span className="ml-3 block truncate">{selected}</span>
@@ -63,13 +63,15 @@ export default function SelectLanguage() {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Listbox.Options className="absolute z-10 mt-1 w-40 bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+              <Listbox.Options className="absolute z-10 mt-1 w-40 bg-white dark:bg-grim border-yellow-200 shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
                 {languages.map((language) => (
                   <Listbox.Option
                     key={language.id}
                     className={({ active }) =>
                       classNames(
-                        active ? "text-white bg-indigo-600" : "text-gray-900",
+                        active
+                          ? "text-white bg-indigo-600 dark:bg-yellow-200 dark:text-black"
+                          : "text-black dark:text-yellow-200",
                         "cursor-default select-none relative py-2 pl-3 pr-9"
                       )
                     }
@@ -97,7 +99,7 @@ export default function SelectLanguage() {
                         {selected ? (
                           <span
                             className={classNames(
-                              active ? "text-white" : "text-indigo-600",
+                              active ? "hidden" : "",
                               "absolute inset-y-0 right-0 flex items-center pr-4"
                             )}
                           >

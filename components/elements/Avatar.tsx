@@ -1,13 +1,7 @@
 import parse from "html-react-parser";
 import Image from "next/image";
 
-const ProfilePicture = ({
-  user,
-  size,
-}: {
-  user: any;
-  size?: "sm" | "md" | "lg";
-}) => {
+const Avatar = ({ user, size }: { user: any; size?: "sm" | "md" | "lg" }) => {
   let avatarSize = "h-10 w-10";
   let height = 30;
   let width = 30;
@@ -43,4 +37,4 @@ const ProfilePicture = ({
     </>
   );
 };
-export default ProfilePicture;
+export default Avatar;

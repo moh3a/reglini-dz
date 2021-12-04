@@ -8,14 +8,16 @@ export default async function handler(
   res: NextApiResponse
 ) {
   let { title } = req.query;
+  let { locale } = req.body;
   title = unslugify(title);
-  if (req.method === "GET") {
+  if (req.method === "POST") {
     try {
       const { data } = await axios({
         method: "POST",
         url: "https://api.zapiex.com/v3/search",
         data: {
           text: title,
+          locale: locale ? locale : "en_US",
           moreThanFourStarsOnly: true,
           sort: "BEST_MATCH",
           currency: "EUR",

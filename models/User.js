@@ -148,6 +148,22 @@ const OrderSchema = new mongoose.Schema(
         },
       ],
     },
+    payment: {
+      hasTimedOut: {
+        type: Boolean,
+        default: false,
+      },
+      isPaymentConfirmed: {
+        type: Boolean,
+        default: false,
+      },
+      receipt: String,
+      paymentMethod: {
+        type: String,
+        enum: ["ccp", "cib"],
+      },
+      paymentTime: String,
+    },
   },
   { timestamps: true }
 );

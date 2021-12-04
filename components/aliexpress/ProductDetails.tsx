@@ -88,7 +88,7 @@ const ProductDetails = ({ product, session }: any) => {
 
   return (
     <>
-      <section className="bg-red-50 dark:bg-red-900 text-gray-600 body-font overflow-hidden">
+      <section className="bg-red-50 dark:bg-grim text-gray-800 dark:text-yellow-100 body-font">
         <ActionFeedback message={message} error={error} />
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
