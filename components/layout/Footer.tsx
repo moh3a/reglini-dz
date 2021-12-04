@@ -99,7 +99,7 @@ const Footer = () => {
                   support@reglini-dz.com
                 </span>
               </div>
-              <div>
+              <div className="hidden lg:block">
                 <div>
                   <SelectLanguage />
                 </div>

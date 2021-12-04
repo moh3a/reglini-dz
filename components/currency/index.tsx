@@ -20,8 +20,10 @@ const Currency = ({ currency }: any) => {
             key={name}
             className={({ selected }) =>
               classNames(
-                "w-full p-4 bg-gray-100 hover:bg-gray-200",
-                selected ? "bg-gray-400" : ""
+                "w-full p-4 bg-yellow-100 hover:bg-yellow-200 dark:text-black",
+                selected
+                  ? "bg-yellow-600 text-yellow-50 dark:text-yellow-50"
+                  : ""
               )
             }
           >

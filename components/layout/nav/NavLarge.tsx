@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import { signOut } from "next-auth/client";
 import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import { Popover, Transition, Menu } from "@headlessui/react";
@@ -51,7 +50,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
             {/* Flyout menus */}
             <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
               <div className="h-full flex space-x-8 z-0">
-                {navigation.en.categories.map((category: any) => (
+                {/* {navigation.en.categories.map((category: any) => (
                   <Popover key={category.name} className="flex">
                     {({ open }) => (
                       <>
@@ -78,7 +77,6 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                           leaveTo="opacity-0"
                         >
                           <Popover.Panel className="absolute top-full z-30 inset-x-0 text-sm text-gray-500">
-                            {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                             <div
                               className="absolute inset-0 top-1/2 bg-white shadow"
                               aria-hidden="true"
@@ -123,36 +121,6 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                       </div>
                                     ))}
                                   </div>
-                                  <div className="row-start-1 grid grid-cols-3 gap-y-10 gap-x-8 text-sm">
-                                    {category.sections.map((section: any) => (
-                                      <div key={section.name}>
-                                        <p
-                                          id={`${section.name}-heading`}
-                                          className="font-medium text-gray-800 dark:text-gray-100"
-                                        >
-                                          {section.name}
-                                        </p>
-                                        <ul
-                                          role="list"
-                                          aria-labelledby={`${section.name}-heading`}
-                                          className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
-                                        >
-                                          {section.items.map((item: any) => (
-                                            <li
-                                              key={item.name}
-                                              className="flex"
-                                            >
-                                              <Link href={item.href} passHref>
-                                                <a className="text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
-                                                  {item.name}
-                                                </a>
-                                              </Link>
-                                            </li>
-                                          ))}
-                                        </ul>
-                                      </div>
-                                    ))}
-                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -161,7 +129,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                       </>
                     )}
                   </Popover>
-                ))}
+                ))} */}
 
                 {navigation.en.pages.map((page: any) => (
                   <Link key={page.name} href={page.href} passHref>
@@ -200,7 +168,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                           leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95"
                         >
-                          <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-100 dark:bg-grim ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-100 dark:bg-grim ring-1 ring-black border-2 border-yellow-200 ring-opacity-5 focus:outline-none">
                             <Menu.Item>
                               {({ active }) => (
                                 <Link href="/account">
@@ -209,7 +177,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                       active
                                         ? "bg-gray-200 dark:bg-gray-800"
                                         : "",
-                                      "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-300"
+                                      "block px-4 py-2 text-sm text-black dark:text-yellow-100 hover:bg-yellow-200 dark:hover:text-black"
                                     )}
                                   >
                                     {t("profile")}
@@ -225,7 +193,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                       active
                                         ? "bg-gray-200 dark:bg-gray-800"
                                         : "",
-                                      "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-300"
+                                      "block px-4 py-2 text-sm text-black dark:text-yellow-100 hover:bg-yellow-200 dark:hover:text-black"
                                     )}
                                   >
                                     {t("wishlist")}
@@ -241,26 +209,10 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                       active
                                         ? "bg-gray-200 dark:bg-gray-800"
                                         : "",
-                                      "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-300"
+                                      "block px-4 py-2 text-sm text-black dark:text-yellow-100 hover:bg-yellow-200 dark:hover:text-black"
                                     )}
                                   >
                                     {t("orders")}
-                                  </a>
-                                </Link>
-                              )}
-                            </Menu.Item>
-                            <Menu.Item>
-                              {({ active }) => (
-                                <Link href="/account/settings">
-                                  <a
-                                    className={classNames(
-                                      active
-                                        ? "bg-gray-200 dark:bg-gray-800"
-                                        : "",
-                                      "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-300"
-                                    )}
-                                  >
-                                    {t("settings")}
                                   </a>
                                 </Link>
                               )}
@@ -273,7 +225,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                                     active
                                       ? "bg-gray-200 dark:bg-gray-800"
                                       : "",
-                                    "block px-4 py-2 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-300"
+                                    "block px-4 py-2 text-sm text-black dark:text-yellow-100 hover:bg-yellow-200 dark:hover:bg-yellow-200 dark:hover:text-black cursor-pointer"
                                   )}
                                 >
                                   {t("signOut")}

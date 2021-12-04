@@ -49,13 +49,13 @@ const Wishlist = ({ messages }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {session && (
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-white dark:bg-grim">
           <div className="m-4 p-4 text-4xl">Your wishlist</div>
-          <div>
+          <div className="border-t border-b border-black dark:border-yellow-200 bg-yellow-100 dark:bg-black">
             {user && wishlist.length > 0 ? (
               <WishedItems wishlist={wishlist} />
             ) : (
-              <div className="text-center p-8 text-lg">
+              <div className="text-center py-32 text-4xl">
                 <div>You have no items in your wishlist.</div>
                 <div className="text-gray-700 hover:underline cursor-pointer">
                   <Link href="/aliexpress">Continue shopping</Link>

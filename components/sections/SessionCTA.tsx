@@ -8,15 +8,15 @@ const SessionCTA = ({ session }: any) => {
   const router = useRouter();
 
   return (
-    <header className="bg-gray-900 relative">
+    <header className="py-64 bg-white dark:bg-grim border-t border-b border-yellow-200 text-black dark:text-yellow-100">
       <div className="container px-6 mx-auto">
         <div
           className={`flex flex-col ${
             router.locale === "ar" ? "text-right lg:flex-row-reverse" : ""
-          } items-center py-6 lg:h-64 lg:flex-row`}
+          } items-center lg:flex-row`}
         >
           <div className="lg:w-1/2">
-            <h3 className="text-2xl font-semibold text-gray-100">
+            <h3 className="text-2xl font-semibold">
               {t("hey")}{" "}
               <span className="text-gray-400">
                 {session ? session.user?.name : t("guest")}
@@ -24,9 +24,7 @@ const SessionCTA = ({ session }: any) => {
               ,
             </h3>
 
-            <p className="mt-3 text-gray-100">
-              {session ? t("enjoyTime") : t("joinUs")}
-            </p>
+            <p className="mt-3">{session ? t("enjoyTime") : t("joinUs")}</p>
           </div>
 
           <div
@@ -35,11 +33,17 @@ const SessionCTA = ({ session }: any) => {
             }  lg:mt-0`}
           >
             {session ? (
-              <div
-                className="max-w-sm bg-white rounded-lg dark:bg-gray-800"
-                onClick={() => signOut()}
-              >
-                <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700">
+              <div className="max-w-sm rounded-lg">
+                <a
+                  onClick={() => router.push("/account")}
+                  className="mx-2 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700"
+                >
+                  Edit Your Profile
+                </a>
+                <a
+                  onClick={() => signOut()}
+                  className="mx-2 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700"
+                >
                   {t("signOut")}
                 </a>
               </div>

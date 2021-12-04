@@ -39,7 +39,7 @@ export default function Search() {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-10" />
+              <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-30 dark:bg-opacity-75" />
             </Transition.Child>
 
             <span
@@ -57,8 +57,10 @@ export default function Search() {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-center align-middle transition-all transform bg-gray-100 dark:bg-grim shadow-xl rounded-2xl">
-                <Dialog.Title>Search</Dialog.Title>
+              <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-center align-middle transition-all transform bg-gray-100 dark:bg-grim border-2 border-yellow-200 shadow rounded-2xl">
+                <Dialog.Title className="text-black dark:text-yellow-100">
+                  Search
+                </Dialog.Title>
                 {/* <Dialog.Description>From here.</Dialog.Description> */}
                 <div>
                   <label htmlFor="search" className="sr-only">
@@ -75,7 +77,7 @@ export default function Search() {
                       type="text"
                       name="search"
                       id="search"
-                      className="focus:ring-pink-50 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+                      className="focus:ring-yellow-200 block w-full pl-7 pr-12 sm:text-sm border-yellow-200 rounded-lg"
                       placeholder="type here..."
                     />
                     <div className="absolute inset-y-0 right-0 flex items-center">

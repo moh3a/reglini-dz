@@ -30,7 +30,7 @@ const WishedItems = ({ wishlist }: any) => {
           return (
             <div
               key={item.productId}
-              className="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800"
+              className="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-grim"
             >
               <div className="px-4 py-2">
                 <h1 className="h-10 w-10">
@@ -57,10 +57,10 @@ const WishedItems = ({ wishlist }: any) => {
                     </defs>
                   </svg>
                 </h1>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-black dark:text-yellow-100">
                   {item.name}
                 </p>
-                <p className="text-xs text-gray-900 font-bold dark:text-gray-400">
+                <p className="text-xs font-extrabold text-gray-800 dark:text-yellow-200">
                   € {item.price}
                 </p>
               </div>
@@ -74,8 +74,8 @@ const WishedItems = ({ wishlist }: any) => {
                 layout="responsive"
               />
 
-              <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
-                <p className="text-sm font-bold text-white">
+              <div className="flex items-center justify-between px-4 py-2">
+                <p className="text-sm font-bold">
                   {item.createdAt.substring(0, 10)}{" "}
                   {item.createdAt.substring(11, 16)}
                 </p>

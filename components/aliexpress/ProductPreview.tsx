@@ -18,7 +18,7 @@ const ProductPreview = ({ product, session }: any) => {
   }, [product.productImages]);
 
   return (
-    <section className="bg-red-50 dark:bg-red-900 text-gray-600 body-font overflow-hidden">
+    <section className="border-t border-b border-black dark:border-yellow-200 bg-red-50 dark:bg-grim text-gray-600 body-font overflow-hidden">
       <ActionFeedback message={message} error={error} />
 
       <div className="container px-5 py-24 mx-auto">

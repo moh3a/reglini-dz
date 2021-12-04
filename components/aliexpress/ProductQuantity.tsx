@@ -24,7 +24,7 @@ const ProductQuantity = ({
           name="quantity"
           value={stock < 1 ? 0 : Math.round(quantity)}
           onChange={(e: any) => setQuantity(parseInt(e.target.value))}
-          className="p-1 mr-4 text-center w-20 rounded-full focus:ring-2 focus:ring-red-500 focus:border-red-500"
+          className="p-1 mr-4 text-center dark:text-black w-20 rounded-full focus:ring-2 focus:ring-red-500 focus:border-red-500"
         />
         <span className="text-gray-400">
           {stock > 0 ? (

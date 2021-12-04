@@ -1,11 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { RootState } from "./store";
-import {
-  getAEProductInfo,
-  searchAEProductByName,
-  searchAEProductByCategory,
-} from "./aeapiAsyncActions";
+import { getAEProductInfo, searchAEProductByName } from "./aeapiAsyncActions";
 
 interface IAEAPI {
   product?: Object;
@@ -48,18 +44,6 @@ export const aeapiSlice = createSlice({
       })
       .addCase(searchAEProductByName.rejected, (state, action) => {
         state.status = "failed";
-        state.error = action.error.message;
-      })
-      .addCase(searchAEProductByCategory.pending, (state, action) => {
-        state.status = "loading";
-      })
-      .addCase(searchAEProductByCategory.fulfilled, (state, action) => {
-        state.status = "complete";
-        state.search = action.payload;
-      })
-      .addCase(searchAEProductByCategory.rejected, (state, action) => {
-        state.status = "failed";
-        state.product = undefined;
         state.error = action.error.message;
       });
   },

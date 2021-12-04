@@ -6,14 +6,13 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
 } from "@heroicons/react/outline";
-import { convertTime } from "../../utils/methods";
 
 const LiveRate = ({ currency }: any) => {
   const t = useTranslations("Currency.liveRate");
 
   return (
     <>
-      <div className="py-8 lg:py-16 px-4 flex flex-col items-center bg-gray-300 dark:bg-gray-700">
+      <div className="py-8 lg:py-16 px-4 flex flex-col items-center border-t-2 border-black dark:border-yellow-200 bg-yellow-100 dark:bg-grim">
         <h2 className="text-center text-xl lg:text-4xl font-bold">
           {t("inMarket")}{" "}
           <span className="underline text-gray-700 dark:text-gray-300">
@@ -29,7 +28,7 @@ const LiveRate = ({ currency }: any) => {
           {currency.map((current: any) => {
             return (
               <div key={current.exchange}>
-                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-gray-800">
+                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-black">
                   <div className="flex items-center">
                     {current.exchange === "DZDUSD" ? (
                       <>
@@ -61,7 +60,7 @@ const LiveRate = ({ currency }: any) => {
                     )}
                   </div>
                   <small className="text-xs">
-                    {t("updated")}: {convertTime(current.live.time)}{" "}
+                    {t("updated")}: {current.live.time}{" "}
                   </small>
                   <div className="flex flex-col justify-start">
                     <p className="text-gray-700 dark:text-gray-100 text-4xl text-left font-bold my-4">
@@ -110,7 +109,7 @@ const LiveRate = ({ currency }: any) => {
           {currency.map((current: any) => {
             return (
               <div key={current.exchange}>
-                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-gray-800">
+                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-black">
                   <div className="flex items-center">
                     {current.exchange === "DZDUSD" ? (
                       <>
@@ -142,7 +141,7 @@ const LiveRate = ({ currency }: any) => {
                     )}
                   </div>
                   <small className="text-xs">
-                    {t("updated")}: {convertTime(current.live.time)}{" "}
+                    {t("updated")}: {current.live.time}{" "}
                   </small>
 
                   <div className="flex flex-col justify-start">
@@ -186,7 +185,7 @@ const LiveRate = ({ currency }: any) => {
           })}
         </div>
       </div>
-      <div className="py-8 lg:py-16 px-4 flex flex-col items-center bg-gray-200 dark:bg-gray-900">
+      <div className="py-8 lg:py-16 px-4 flex flex-col items-center border-t-2 border-b-2 border-black dark:border-yellow-200 bg-yellow-100 dark:bg-grim">
         <h2 className="text-center text-xl lg:text-4xl font-bold">
           {t("inMarket")}{" "}
           <span className="underline text-gray-700 dark:text-gray-300">
@@ -199,7 +198,7 @@ const LiveRate = ({ currency }: any) => {
           {currency.map((current: any) => {
             return (
               <div key={current.exchange}>
-                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-gray-800">
+                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-black">
                   <div className="flex items-center">
                     {current.exchange === "DZDUSD" ? (
                       <>
@@ -231,7 +230,7 @@ const LiveRate = ({ currency }: any) => {
                     )}
                   </div>
                   <small className="text-xs">
-                    {t("updated")}: {convertTime(current.live.time)}{" "}
+                    {t("updated")}: {current.live.time}{" "}
                   </small>
                   <div className="flex flex-col justify-start">
                     <p className="text-gray-700 dark:text-gray-100 text-4xl text-left font-bold my-4">

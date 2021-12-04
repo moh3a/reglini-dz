@@ -30,18 +30,14 @@ const Contact = () => {
   };
 
   return (
-    <section className="w-full max-w-2xl px-6 py-4 mx-auto lg:my-32 my-16 bg-white rounded-md shadow-md dark:bg-grim">
+    <section className="w-full max-w-2xl px-6 py-4 mx-auto lg:mb-32 my-16 bg-yellow-100 border-2 border-yellow-200 rounded-md shadow-md dark:bg-grim dark:text-yellow-100">
       {success && <SuccessDialog>{success} </SuccessDialog>}
       {error && <DangerDialog>{error} </DangerDialog>}
-      <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-white">
-        {t("getInTouch")}
-      </h2>
-      <p className="mt-3 text-center text-gray-600 dark:text-gray-400">
-        {t("yourFeedback")}
-      </p>
+      <h2 className="text-3xl font-semibold text-center ">{t("getInTouch")}</h2>
+      <p className="mt-3 text-center">{t("yourFeedback")}</p>
 
       <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 md:grid-cols-3">
-        <a className="cursor-pointer flex flex-col items-center px-4 py-3 text-gray-700 rounded-md dark:text-gray-200 hover:bg-purple-200 dark:hover:bg-purple-800">
+        <a className="cursor-pointer flex flex-col items-center px-4 py-3 rounded-lg  hover:bg-purple-200 dark:hover:bg-purple-800">
           <svg
             className="w-5 h-5 text-purple-600"
             xmlns="http://www.w3.org/2000/svg"
@@ -58,13 +54,13 @@ const Contact = () => {
           <span className="mt-2">{t("address")}</span>
         </a>
 
-        <a className="cursor-pointer flex flex-col items-center px-4 py-3 text-gray-700 rounded-md dark:text-gray-200 hover:bg-green-200 dark:hover:bg-green-800">
+        <a className="cursor-pointer flex flex-col items-center px-4 py-3  rounded-lg  hover:bg-green-200 dark:hover:bg-green-800">
           <i className="fab fa-whatsapp text-green-500"></i>
 
           <span className="mt-2">+213540861775</span>
         </a>
 
-        <a className="cursor-pointer flex flex-col items-center px-4 py-3 text-gray-700 rounded-md dark:text-gray-200 hover:bg-orange-200 dark:hover:bg-orange-800 text-xs">
+        <a className="cursor-pointer flex flex-col items-center px-4 py-3  rounded-lg  hover:bg-orange-200 dark:hover:bg-orange-800 text-xs">
           <svg
             className="w-5 h-5 text-orange-500"
             xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +100,7 @@ const Contact = () => {
               autoComplete="off"
               className={`${
                 router.locale === "ar" ? "text-right" : ""
-              } block w-full px-4 py-2 text-gray-800 bg-white border border-gray-300 rounded-md dark:bg-grim dark:text-gray-100 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring`}
+              } block w-full px-4 py-2 border-yellow-200 rounded-lg dark:bg-grim dark:text-gray-100 dark:border-yellow-200 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring`}
               type="text"
               id="subject"
               name="subject"
@@ -129,7 +125,7 @@ const Contact = () => {
             name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="block w-full h-40 px-4 py-2 text-gray-800 bg-white border border-gray-300 rounded-md dark:bg-grim dark:text-gray-100 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+            className="block w-full h-40 px-4 py-2  border border-yellow-200 rounded-lg dark:bg-grim dark:text-gray-100 dark:border-yellow-200 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
           ></textarea>
         </div>
 
