@@ -66,6 +66,14 @@ export default async function handler(
                 shippingAddress,
                 currency: "EUR",
               });
+              setTimeout(async () => {
+                const index = user.orders.findIndex(
+                  (el: any) => el.orderId === id
+                );
+                if (index !== -1) {
+                  await axios.post("/api/aliexpress/cancel", { id });
+                }
+              }, 30000);
             });
             user.save(function (err: any, result: any) {
               if (err) {

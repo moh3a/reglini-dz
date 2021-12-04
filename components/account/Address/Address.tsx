@@ -73,7 +73,7 @@ const Address = ({ user }: any) => {
         <div>
           This is your registered address {user.address.text}
           <div
-            className="underline cursor-pointer text-gray-600"
+            className="underline cursor-pointer text-gray-600 dark:text-gray-200"
             onClick={() => setShowForm(true)}
           >
             Edit
@@ -87,7 +87,7 @@ const Address = ({ user }: any) => {
               value={"Algeria"}
               readOnly
               type="text"
-              className=" rounded-full py-1 px-2 my-1"
+              className="ml-2 rounded-full py-1 px-2 my-1  border-yellow-200 text-black dark:text-yellow-100 dark:bg-black focus:border-yellow-200 focus:ring-yellow-200"
             />
           </div>
           <div className=" w-full">
@@ -117,7 +117,7 @@ const Address = ({ user }: any) => {
               <label>Your address in {commune.name} :</label>
               <input
                 type="text"
-                className=" rounded-full py-1 px-2 my-1 w-full"
+                className="rounded-full py-1 px-2 my-1 w-full  border-yellow-200 text-black dark:text-yellow-100 dark:bg-black focus:border-yellow-200 focus:ring-yellow-200"
                 value={addressLine}
                 onChange={(e) => setAddressLine(e.target.value)}
               />
@@ -134,11 +134,14 @@ const Address = ({ user }: any) => {
           )}
           <button
             onClick={() => setShowForm(false)}
-            className="m-1 p-1 border-2"
+            className="m-1 py-1 px-3 rounded-lg bg-red-400  text-white  hover:bg-red-500 "
           >
             Cancel
           </button>
-          <button type="submit" className="m-1 p-1 border-2">
+          <button
+            type="submit"
+            className="m-1 py-1 px-3 rounded-lg bg-green-400 text-white  hover:bg-green-500"
+          >
             Save Address
           </button>
         </form>

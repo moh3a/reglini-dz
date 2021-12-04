@@ -113,15 +113,17 @@ export default function NewOrder({ user, products, origin }: any) {
                   key={item.productId}
                   className="flex border border-gray-200 flex-row my-1 text-sm text-gray-900 sm:col-span-2"
                 >
-                  <div className="w-72 md:w-44 rounded-lg">
-                    <Image
-                      className=""
-                      src={item.imageUrl}
-                      alt={item.name}
-                      height={300}
-                      width={300}
-                    />
-                  </div>
+                  {item.imageUrl && (
+                    <div className="w-72 md:w-44 rounded-lg">
+                      <Image
+                        className=""
+                        src={item.imageUrl}
+                        alt={item.name}
+                        height={300}
+                        width={300}
+                      />
+                    </div>
+                  )}
                   <div className="flex flex-col px-4 py-2">
                     <p className="font-bold">{item.name}</p>
                     <small>Product price: {item.price} €</small>

@@ -7,7 +7,7 @@ const Item = ({ title, children }: any) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border rounded shadow-sm">
+    <div className="border-2 border-black dark:border-yellow-200 dark:bg-grim rounded-lg shadow">
       <button
         type="button"
         aria-label="Open item"
@@ -55,7 +55,7 @@ const Faq = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="px-4 my-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="border-2 border-yellow-200 bg-yellow-100 dark:bg-grim rounded-lg px-4 my-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
           <div className="flex flex-col mb-16 sm:text-center">
             <div className="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">

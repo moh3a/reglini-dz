@@ -29,10 +29,6 @@ export const LoginErrorMessages: ILoginMessage[] = [
     text: "You have to be logged in to place a new order.",
   },
   {
-    name: "login_to_view_settings",
-    text: "You have to be logged in to view or edit your settings.",
-  },
-  {
     name: "account_deleted",
     text: "Account successfully deleted.",
   },

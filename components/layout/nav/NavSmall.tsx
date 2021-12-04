@@ -1,13 +1,15 @@
 import { Fragment } from "react";
 import { signOut } from "next-auth/client";
 import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import { Dialog, Tab, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
+
 import { navigation } from "../../../data/navigation";
 import Avatar from "../../elements/Avatar";
+import SelectLanguage from "../../elements/SelectLanguage";
+import ToggleDark from "../../elements/ToggleDark";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -56,6 +58,7 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                 <XIcon className="h-6 w-6" aria-hidden="true" />
               </button>
             </div>
+
             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
               {session ? (
                 <>
@@ -90,16 +93,6 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                         className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800"
                       >
                         {t("orders")}
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="flow-root">
-                    <Link href="/account/settings" passHref>
-                      <a
-                        onClick={() => setOpen(false)}
-                        className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800"
-                      >
-                        {t("settings")}
                       </a>
                     </Link>
                   </div>
@@ -142,7 +135,7 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
             </div>
 
             {/* Links */}
-            <Tab.Group as="div" className="mt-2">
+            {/* <Tab.Group as="div" className="mt-2">
               <div className="border-b border-gray-200">
                 <Tab.List className="-mb-px flex px-4 space-x-8">
                   {navigation.en.categories.map((category: any) => (
@@ -161,8 +154,8 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                     </Tab>
                   ))}
                 </Tab.List>
-              </div>
-              <Tab.Panels as={Fragment}>
+              </div> */}
+            {/* <Tab.Panels as={Fragment}>
                 {navigation.en.categories.map((category: any) => (
                   <Tab.Panel
                     key={category.name}
@@ -199,35 +192,10 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                         </div>
                       ))}
                     </div>
-                    {category.sections.map((section: any) => (
-                      <div key={section.name}>
-                        <p
-                          id={`${category.id}-${section.id}-heading-mobile`}
-                          className="font-medium text-gray-800 dark:text-gray-100"
-                        >
-                          {section.name}
-                        </p>
-                        <ul
-                          role="list"
-                          aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
-                          className="mt-6 flex flex-col space-y-6"
-                        >
-                          {section.items.map((item: any) => (
-                            <li key={item.name} className="flow-root">
-                              <Link href={item.href} passHref>
-                                <a className="-m-2 p-2 block text-gray-800 dark:text-gray-100">
-                                  {item.name}
-                                </a>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
                   </Tab.Panel>
                 ))}
               </Tab.Panels>
-            </Tab.Group>
+            </Tab.Group> */}
 
             <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">
               {navigation.en.pages.map((page: any) => (
@@ -239,6 +207,15 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                   </Link>
                 </div>
               ))}
+            </div>
+
+            <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">
+              <div className="flex justify-center">
+                <SelectLanguage />
+              </div>
+              <div className="flex justify-center">
+                <ToggleDark />
+              </div>
             </div>
           </div>
         </Transition.Child>

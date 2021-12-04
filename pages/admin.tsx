@@ -34,7 +34,7 @@ const AdminScreen = ({ messages }: any) => {
         <meta name="description" content="Private admin page." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {user && user.role === "admin" && <Admin />}
+      {user && user.role === "admin" && <Admin user={user} />}
     </>
   );
 };
@@ -45,11 +45,6 @@ export const getStaticProps: GetStaticProps = ({ locale }) => {
       messages: require(`../locales/${locale}.json`),
     },
   };
-};
-
-import Layout from "../components/layout/Layout";
-AdminScreen.getLayout = function getLayout(page: any) {
-  return <Layout>{page}</Layout>;
 };
 
 export default AdminScreen;

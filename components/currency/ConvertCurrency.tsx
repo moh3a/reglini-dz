@@ -33,7 +33,7 @@ const ConvertCurrency = ({ currency }: any) => {
   }, [rate]);
 
   return (
-    <div className="py-32 lg:py-44 px-4 flex flex-col items-center bg-gray-300 dark:bg-gray-700">
+    <div className="py-32 lg:py-44 px-4 flex flex-col items-center dark:text-yellow-100 bg-yellow-100 dark:bg-grim">
       <h2 className="text-center text-xl lg:text-4xl font-bold">
         {t("inParallelMarket", { devise: selectedDevise.name })}{" "}
         <span className="underline text-gray-700 dark:text-gray-300">
@@ -58,7 +58,7 @@ const ConvertCurrency = ({ currency }: any) => {
                 dzd: parseFloat(e.target.value),
               });
             }}
-            className="relative mt-1 py-2 pl-3 pr-8 lg:mr-2 text-center bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
+            className="relative mt-1 py-2 pl-3 pr-8 lg:mr-2 text-center dark:bg-grim rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-yellow-200 focus-visible:ring-offset-yellow-200 focus-visible:ring-offset-2 focus-visible:border-yellow-200 sm:text-sm"
           />
           <span className="absolute inset-y-0 right-1 top-1 flex items-center pr-2 pointer-events-none text-gray-500">
             {t("dzd")}
@@ -80,7 +80,7 @@ const ConvertCurrency = ({ currency }: any) => {
                 dzd: parseFloat(e.target.value) * rate,
               });
             }}
-            className="relative mt-1 py-2 pl-3 pr-8 text-center lg:mr-2 bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
+            className="relative mt-1 py-2 pl-3 pr-8 text-center lg:mr-2 dark:bg-grim rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-yellow-200 focus-visible:ring-offset-yellow-200 focus-visible:ring-offset-2 focus-visible:border-yellow-200 sm:text-sm"
           />
           <span className="absolute inset-y-0 right-2 top-1 flex items-center pr-2 pointer-events-none text-gray-500">
             {selectedDevise.name === currencies[0].name
@@ -92,7 +92,7 @@ const ConvertCurrency = ({ currency }: any) => {
         </div>
         <Listbox value={selectedDevise} onChange={setSelectedDevise}>
           <div className="relative mt-1">
-            <Listbox.Button className="relative py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
+            <Listbox.Button className="relative py-2 pl-3 pr-10 text-left dark:bg-grim rounded-lg shadow-md cursor-pointer sm:text-sm border-2 border-black dark:border-yellow-200">
               <span className="block truncate">{selectedDevise.name}</span>
               <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                 <SelectorIcon
@@ -107,15 +107,13 @@ const ConvertCurrency = ({ currency }: any) => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Listbox.Options className="absolute py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              <Listbox.Options className="absolute py-1 mt-1 overflow-auto text-base bg-white dark:text-yellow-100 dark:bg-black border-2 border-yellow-200 rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                 {currencies.map((currency, currencyIdx) => (
                   <Listbox.Option
                     key={currencyIdx}
                     className={({ active }) =>
-                      `${
-                        active ? "text-amber-900 bg-amber-100" : "text-gray-900"
-                      }
-                          cursor-default select-none relative py-2 pl-10 pr-4`
+                      `${active ? "font-extrabold" : ""}
+                          dark:text-yellow-100 cursor-pointer hover:bg-yellow-100 dark:hover:bg-grim select-none relative py-2 pl-10 pr-4`
                     }
                     value={currency}
                   >
