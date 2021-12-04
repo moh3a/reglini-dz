@@ -35,19 +35,18 @@ const Product = ({ product, session }: any) => {
   return (
     <div>
       {error && <DangerDialog>{error} </DangerDialog>}
-      <div
-        onClick={() => router.push(`/aliexpress/product/${product.productId}`)}
-        className="w-50 bg-gray-200 cursor-pointer"
-      >
-        <Image
-          src={product.imageUrl}
-          alt={product.title}
-          layout="responsive"
-          height={50}
-          width={50}
-          className="w-full h-full object-center object-cover hover:opacity-75"
-        />
-      </div>
+      <Link href={`/aliexpress/product/${product.productId}`} passHref>
+        <a className="w-50 bg-gray-200 cursor-pointer">
+          <Image
+            src={product.imageUrl}
+            alt={product.title}
+            layout="responsive"
+            height={50}
+            width={50}
+            className="w-full h-full object-center object-cover hover:opacity-75 rounded-lg shadow-lg"
+          />
+        </a>
+      </Link>
       <div className="relative">
         <div>
           <h3 className="mt-4 text-sm">
@@ -61,7 +60,7 @@ const Product = ({ product, session }: any) => {
         </div>
         <div
           onClick={addToWishlistHandler}
-          className="absolute right-0 top-0 pl-4 pb-5 bg-pink-50 dark:bg-grim"
+          className="hidden lg:block absolute right-0 top-0 pl-4 pb-5 bg-pink-50 dark:bg-grim"
         >
           <HeartIcon
             className="w-5 hover:text-red-500 cursor-pointer"

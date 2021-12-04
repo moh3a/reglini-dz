@@ -52,7 +52,7 @@ const CartItem = ({ item }: any) => {
             </div>
           ))}
         </div>
-        <div className="text-xs text-gray-700 my-2">
+        <div className="text-xs text-gray-700 dark:text-gray-200 my-2">
           Shipping carrier: <span className="font-bold">{item.carrierId}</span>
           <br />
           Shipping price: €{item.shippingPrice}
@@ -69,7 +69,7 @@ const CartItem = ({ item }: any) => {
               name="quantity"
               value={quantity}
               onChange={quantityHandler}
-              className="p-1 mr-4 text-center w-20 rounded-full focus:ring-2 focus:ring-red-500 focus:border-red-500"
+              className="p-1 mr-4 text-center w-20 rounded-full focus:ring-2 text-black focus:ring-red-500 focus:border-red-500"
             />
           </p>
 

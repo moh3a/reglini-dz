@@ -52,8 +52,8 @@ const ProductProperty = ({ property, setShowImage, setProperties }: any) => {
                     className={`${
                       selectedProperty.value === value.name
                         ? "border-red-500"
-                        : ""
-                    } ml-2 p-1 border-2 text-center border-gray-300 hover:border-red-400 focus:outline-none cursor-pointer`}
+                        : "border-gray-300"
+                    } ml-2 p-1 border-2 text-center  hover:border-red-400 focus:outline-none cursor-pointer`}
                   >
                     {value.hasImage ? (
                       <div
@@ -120,8 +120,8 @@ const ProductProperty = ({ property, setShowImage, setProperties }: any) => {
                   className={`${
                     selectedProperty.value === value.name
                       ? "border-red-500"
-                      : ""
-                  } ml-2 p-1 border-2 text-center border-gray-300 hover:border-red-400 focus:outline-none cursor-pointer`}
+                      : "border-gray-300"
+                  } ml-2 p-1 border-2 text-center hover:border-red-400 focus:outline-none cursor-pointer`}
                 >
                   {value.hasImage ? (
                     <div

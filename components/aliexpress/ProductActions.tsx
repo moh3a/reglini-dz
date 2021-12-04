@@ -213,7 +213,9 @@ export const ActionFeedback = ({
       {warning && <WarningDialog>{warning}</WarningDialog>}
       {success && <SuccessDialog>{success}</SuccessDialog>}
       {error && (
-        <DangerDialog action="Login" actionUrl="/login">
+        <DangerDialog
+        // action="Login" actionUrl="/login"
+        >
           {error}
         </DangerDialog>
       )}

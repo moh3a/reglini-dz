@@ -86,8 +86,8 @@ const AdminCurrency = () => {
                   <span
                     className={`mx-1 border-2 rounded-md p-1 ${
                       checked
-                        ? "border-red-300 bg-red-200"
-                        : "border-gray-200 bg-gray-200"
+                        ? "border-red-300 bg-red-200 dark:bg-red-500"
+                        : "border-gray-200 bg-gray-200 dark:bg-gray-500"
                     }`}
                   >
                     DZD / EUR
@@ -99,8 +99,8 @@ const AdminCurrency = () => {
                   <span
                     className={`mx-1 border-2 rounded-md p-1 ${
                       checked
-                        ? "border-red-300 bg-red-200"
-                        : "border-gray-200 bg-gray-200"
+                        ? "border-red-300 bg-red-200 dark:bg-red-500"
+                        : "border-gray-200 bg-gray-200 dark:bg-gray-500"
                     }`}
                   >
                     DZD / USD
@@ -112,8 +112,8 @@ const AdminCurrency = () => {
                   <span
                     className={`mx-1 border-2 rounded-md p-1 ${
                       checked
-                        ? "border-red-300 bg-red-200"
-                        : "border-gray-200 bg-gray-200"
+                        ? "border-red-300 bg-red-200 dark:bg-red-500"
+                        : "border-gray-200 bg-gray-200 dark:bg-gray-500"
                     }`}
                   >
                     DZD / GBP
@@ -126,7 +126,7 @@ const AdminCurrency = () => {
               <div className="flex my-1">
                 <label className="flex-1">purchase</label>
                 <input
-                  className="flex-1 text-center rounded-full"
+                  className="flex-1 text-center rounded-full text-black"
                   type="number"
                   value={parallelPurchase ? parallelPurchase : 0}
                   onChange={(e) =>
@@ -137,7 +137,7 @@ const AdminCurrency = () => {
               <div className="flex my-1">
                 <label className="flex-1">sale</label>
                 <input
-                  className="flex-1 text-center rounded-full"
+                  className="flex-1 text-center rounded-full text-black"
                   type="number"
                   value={parallelSale ? parallelSale : 0}
                   onChange={(e) => setParallelSale(parseFloat(e.target.value))}
@@ -149,7 +149,7 @@ const AdminCurrency = () => {
               <div className="flex my-1">
                 <label className="flex-1">sale</label>
                 <input
-                  className="flex-1 text-center rounded-full"
+                  className="flex-1 text-center rounded-full text-black"
                   type="number"
                   value={officialRate ? officialRate : 0}
                   onChange={(e) => setOfficialRate(parseFloat(e.target.value))}
@@ -158,7 +158,7 @@ const AdminCurrency = () => {
             </div>
             <button
               type="submit"
-              className="mt-2 border-2 border-green-300 bg-green-200 rounded-md p-1"
+              className="mt-2 border-2 border-green-300 bg-green-200 dark:bg-green-500 rounded-lg p-1"
             >
               Submit
             </button>

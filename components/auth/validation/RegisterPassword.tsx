@@ -88,7 +88,7 @@ const RegisterPassword = ({ setPasswordValidation }: any) => {
             Password{" "}
           </label>
           <input
-            className="block w-full px-4 py-2 mt-2 text-base text-black transition duration-500 ease-in-out transform border-transparent rounded-lg bg-white border border-gray-300 dark:border-gray-600 dark:bg-grim dark:text-gray-300 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ext-black focus:border-blueGray-500"
+            className="w-full px-4 py-2 mt-2 rounded-lg shadow-md text-black"
             id="password"
             name="password"
             type="password"
@@ -110,7 +110,7 @@ const RegisterPassword = ({ setPasswordValidation }: any) => {
             Confirm
           </label>
           <input
-            className="block w-full px-4 py-2 mt-2 text-base text-black transition duration-500 ease-in-out transform border-transparent rounded-lg bg-white border border-gray-300 dark:border-gray-600 dark:bg-grim dark:text-gray-300 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ext-black focus:border-blueGray-500 "
+            className="w-full px-4 py-2 mt-2 rounded-lg shadow-md text-black"
             id="confirm"
             name="confirm"
             type="password"

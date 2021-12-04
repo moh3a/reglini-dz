@@ -42,41 +42,6 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
 
   return (
     <div className="px-4 py-5 sm:px-6">
-      <h3>How does it work?</h3>
-      {/* <ul>
-        <li>
-          First you find an item that you like, check if it can be shipped to
-          Algeria and at what price.
-        </li>
-        <li>
-          Select the properties of the item then add it to cart, or even
-          directly buy it.
-        </li>
-        <li>
-          Buying an item is submitting an order, that needs the real legal name
-          and the full correct address and phone number of the buyer.
-        </li>
-        <li>
-          If all the informations are validated, an order is created. The buyer
-          then has 48 hours to submit a payment with the order&apos;s total
-          amount. If no payment was submitted in 48 hours, the order will be
-          automatically cancelled.
-        </li>
-        <li>The payment should be once and with the total amount.</li>
-        <li>
-          After the payment was submitted and validated, you can then check the
-          status of your order, and even see the tracking of your item -if your
-          product&apos;s carrier provides it.
-        </li>
-      </ul>
-      <p>
-        If you have any questions you can check{" "}
-        <span onClick={() => router.push("/faq")}>the FAQ</span>, or
-        <span onClick={() => router.push("/support")}>
-          directly send us an email
-        </span>
-        .
-      </p> */}
       <h2>Choose your payment method</h2>
       <div className="w-full max-w-md mx-auto">
         <RadioGroup

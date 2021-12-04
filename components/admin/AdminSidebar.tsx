@@ -94,7 +94,7 @@ const AdminSidebar = ({ user }: any) => {
         >
           <span>
             <svg
-              className="fill-current h-5 w-5 text-gray-800 mx-auto hover:text-red-700"
+              className="fill-current h-5 w-5 text-gray-800 mx-auto hover:text-red-700 dark:text-white dark:hover:text-red-400"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

@@ -27,10 +27,10 @@ export default function ProductFeatures({ product }: any) {
   }, [product]);
 
   return (
-    <div className="bg-white">
+    <div className="border-t border-gray-600 dark:border-yellow-200 text-black dark:text-yellow-100 bg-white dark:bg-grim">
       <div className="max-w-2xl mx-auto py-24 px-4 ">
         <div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-extrabold tracking-tight  sm:text-4xl">
             Product Specifications
           </h2>
 
@@ -42,10 +42,8 @@ export default function ProductFeatures({ product }: any) {
                     key={attribute.id}
                     className="border-t border-gray-200 pt-4"
                   >
-                    <dt className="font-medium text-gray-900">
-                      {attribute.name}
-                    </dt>
-                    <dd className="mt-2 text-sm text-gray-500">
+                    <dt className="font-medium ">{attribute.name}</dt>
+                    <dd className="mt-2 text-sm text-gray-600 dark:text-white">
                       {attribute.value.map((va: any) => (
                         <p key={va}>{va}</p>
                       ))}
@@ -54,22 +52,22 @@ export default function ProductFeatures({ product }: any) {
                 );
               })}
           </dl>
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-extrabold tracking-tight  sm:text-4xl">
             Seller Details
           </h2>
-          <p className="mt-4 text-gray-500">
+          <p className="mt-4 text-gray-600 dark:text-white">
             {product.sellerDetails.summary.contactPerson} from{" "}
             {product.sellerDetails.summary.country}
           </p>
           <Link href={product.sellerDetails.sellerDetailsUrl} passHref>
-            <a target="_blank" className="text-gray-500">
+            <a target="_blank" className="text-gray-600 dark:text-white">
               {product.sellerDetails.sellerDetailsUrl}
             </a>
           </Link>
-          <h2 className="text-3xl my-10 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl my-10 font-extrabold tracking-tight  sm:text-4xl">
             Seller&apos;s Product Description
           </h2>
-          {parse(product.htmlDescription)}
+          {product.htmlDescription && parse(product.htmlDescription)}
         </div>
       </div>
     </div>

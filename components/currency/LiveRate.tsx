@@ -28,7 +28,7 @@ const LiveRate = ({ currency }: any) => {
           {currency.map((current: any) => {
             return (
               <div key={current.exchange}>
-                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-gray-800">
+                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-black">
                   <div className="flex items-center">
                     {current.exchange === "DZDUSD" ? (
                       <>
@@ -109,7 +109,7 @@ const LiveRate = ({ currency }: any) => {
           {currency.map((current: any) => {
             return (
               <div key={current.exchange}>
-                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-gray-800">
+                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-black">
                   <div className="flex items-center">
                     {current.exchange === "DZDUSD" ? (
                       <>
@@ -198,7 +198,7 @@ const LiveRate = ({ currency }: any) => {
           {currency.map((current: any) => {
             return (
               <div key={current.exchange}>
-                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-gray-800">
+                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-black">
                   <div className="flex items-center">
                     {current.exchange === "DZDUSD" ? (
                       <>

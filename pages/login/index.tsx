@@ -42,10 +42,10 @@ const LoginScreen = ({
       {children}
 
       {!loading && !session && (
-        <section className="flex flex-col items-center lg:my-8 sm:my-4 md:flex-row">
-          <div className="container mx-auto">
+        <section className="flex flex-col items-center lg:my-8 sm:my-4 md:flex-row ">
+          <div className="container mx-auto ">
             <div className="flex justify-center px-2 py-6 ">
-              <div className="w-full max-w-sm px-8 py-24 bg-white dark:bg-grim rounded-lg border-gray-800  lg:rounded-l-none s lg:shadow-xl">
+              <div className="w-full max-w-sm px-8 py-24 bg-white dark:bg-grim rounded-lg lg:shadow-xl border border-yellow-200">
                 <div className="relative z-0 text-left ">
                   <h1 className="text-3xl font-semibold text-center text-gray-800 dark:text-gray-100">
                     Sign In

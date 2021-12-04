@@ -56,62 +56,56 @@ export default function NewOrder({ user, products, origin }: any) {
   };
 
   return (
-    <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+    <div className="border-t border-b mb-12 border-yellow-200 bg-white dark:bg-grim text-black dark:text-white shadow overflow-hidden sm:rounded-lg">
       <ActionFeedback message={message} />
       <div className="px-4 pb-5 sm:px-6">
-        <h3 className="text-lg leading-6 font-medium text-gray-900">
-          Place a new order
-        </h3>
+        <h3 className="text-lg leading-6 font-medium">Place a new order</h3>
       </div>
       <div className="border-t border-gray-200">
         <dl>
-          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">
-              Real name and family name
-            </dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          <div className="bg-gray-50 dark:bg-grim px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium">Real name and family name</dt>
+            <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">
               <RealName user={user} />
             </dd>
           </div>
         </dl>
         <dl>
-          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Address</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          <div className="bg-gray-50 dark:bg-grim px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium">Address</dt>
+            <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">
               <Address user={user} />
             </dd>
           </div>
         </dl>
         <dl>
-          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Phone Number</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          <div className="bg-gray-50 dark:bg-grim px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium ">Phone Number</dt>
+            <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
               <PhoneNumber user={user} />
             </dd>
           </div>
         </dl>
         <dl>
-          <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium text-gray-500">Payment</dt>
-            <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              <small>
+          <div className="bg-gray-50 dark:bg-grim px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium ">Payment</dt>
+            <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
+              <p>
                 A payment should be submitted in less than 48 hours or the order
                 will be automatically cancelled. You can pay once the order was
                 created.
-              </small>
+              </p>
             </dd>
           </div>
         </dl>
         <dl>
-          <div className="bg-gray-50 px-4 py-5 sm:px-6">
-            <dt className="text-sm h-full font-medium text-gray-500">
-              Products
-            </dt>
+          <div className="bg-gray-50 dark:bg-grim px-4 py-5 sm:px-6">
+            <dt className="text-sm h-full font-medium ">Products</dt>
             <div>
               {products.map((item: any) => (
                 <dd
                   key={item.productId}
-                  className="flex border border-gray-200 flex-row my-1 text-sm text-gray-900 sm:col-span-2"
+                  className="flex border border-gray-200 flex-row my-1 text-sm  sm:col-span-2"
                 >
                   {item.imageUrl && (
                     <div className="w-72 md:w-44 rounded-lg">
@@ -125,11 +119,11 @@ export default function NewOrder({ user, products, origin }: any) {
                     </div>
                   )}
                   <div className="flex flex-col px-4 py-2">
-                    <p className="font-bold">{item.name}</p>
-                    <small>Product price: {item.price} €</small>
-                    <small>Shipping price: {item.shippingPrice} €</small>
-                    <small>Quantity: {item.quantity}</small>
-                    <p>Total price: {item.totalPrice} €</p>
+                    <p className="font-bold text-lg">{item.name}</p>
+                    <p>Product price: {item.price} €</p>
+                    <p>Shipping price: {item.shippingPrice} €</p>
+                    <p>Quantity: {item.quantity}</p>
+                    <p className="text-lg">Total price: {item.totalPrice} €</p>
                   </div>
                 </dd>
               ))}

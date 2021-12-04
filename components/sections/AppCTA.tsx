@@ -6,9 +6,9 @@ const AppCTA = () => {
   const router = useRouter();
 
   return (
-    <section className="text-gray-800 dark:text-gray-100 bg-yellow-50 dark:bg-gray-800 body-font">
+    <section className="py-64 text-gray-800 dark:text-gray-100 bg-yellow-50 dark:bg-grim border-b border-yellow-200 body-font">
       <div
-        className={`container px-5 py-24 mx-auto flex items-center ${
+        className={`container px-5 mx-auto flex items-center ${
           router.locale === "ar"
             ? "md:flex-row-reverse text-right"
             : "md:flex-row"

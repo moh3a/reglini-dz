@@ -19,7 +19,7 @@ const ProductShipping = ({ product, setSelectedShipping }: any) => {
           <div>
             <Listbox value={selected} onChange={setSelected}>
               <div className="relative mt-1">
-                <Listbox.Button className="relative h-12 w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
+                <Listbox.Button className="relative h-12 w-full py-2 pl-3 pr-10 text-left text-black bg-white dark:text-yellow-100 dark:bg-black rounded-lg shadow-lg sm:text-sm">
                   <span className="block truncate">
                     {selected.company.name}
                   </span>
@@ -36,18 +36,14 @@ const ProductShipping = ({ product, setSelectedShipping }: any) => {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto  bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none text-sm z-100">
+                  <Listbox.Options className="absolute w-full py-1 mt-1 overflow-auto text-black bg-white dark:text-yellow-100 dark:bg-grim dark:border dark:border-yellow-100 rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none text-sm z-100">
                     {product.shipping.carriers.map(
                       (carrier: any, carrierIdx: number) => (
                         <Listbox.Option
                           key={carrierIdx}
                           className={({ active }) =>
-                            `${
-                              active
-                                ? "text-amber-900 bg-amber-100"
-                                : "text-gray-900"
-                            }
-                          cursor-default select-none relative py-2 pl-10 pr-4`
+                            `${active ? "font-extrabold" : ""}
+                          text-black dark:text-yellow-100 cursor-default select-none relative py-2 pl-10 pr-4`
                           }
                           value={carrier}
                         >
@@ -55,7 +51,7 @@ const ProductShipping = ({ product, setSelectedShipping }: any) => {
                             <>
                               <span
                                 className={`${
-                                  selected ? "font-medium" : "font-normal"
+                                  selected ? "font-bold" : "font-normal"
                                 } block truncate`}
                               >
                                 {carrier.company.name}
