@@ -69,74 +69,16 @@
     "contact": "إتصال"
   },
   "navigation": {
-    "profile": "معلوماتي",
-    "wishlist": "Your Wishlist",
+    "profile": "ملفك الشخصي",
+    "wishlist": "قائمة امنياتك",
     "orders": "طلباتك",
-
     "signOut": "خروج",
     "signIn": "دخول",
     "register": "إنشاء حساب",
     "shopNow": "تسوق الآن",
-    "categories": [
-      {
-        "id": "products",
-        "name": "منتجات",
-        "featured": [
-          {
-            "name": "Aliexpress",
-            "href": "/aliexpress",
-            "imageSrc": "/aliexpress-icon.png",
-            "imageAlt": "Aliexpress icon."
-          },
-          {
-            "name": "Netflix",
-            "href": "/netflix",
-            "imageSrc": "/Netflix_N_logo.png",
-            "imageAlt": "Netflix icon."
-          }
-        ],
-        "sections": [
-          {
-            "id": "aliexpress",
-            "name": "الي اكسبراس",
-            "items": [
-              {
-                "name": "ملابس واكسسوارات",
-                "href": "/aliexpress/category/205776616"
-              },
-              {
-                "name": "ملابس رجالية",
-                "href": "/aliexpress/category/205776616"
-              },
-              {
-                "name": "ملابس نسائية",
-                "href": "/aliexpress/category/100003109"
-              },
-              {
-                "name": "سيارات ودراجات نارية",
-                "href": "/aliexpress/category/34"
-              },
-              {
-                "name": "الصحة و الجمال",
-                "href": "/aliexpress/category/66"
-              },
-              {
-                "name": "الهواتف والاتصالات",
-                "href": "/aliexpress/category/509"
-              },
-              {
-                "name": "كمبيوتر ومكتب",
-                "href": "/aliexpress/category/7"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "pages": [
-      { "name": "تحويل العملات", "href": "/currency" },
-      { "name": "الدعم", "href": "/support" },
-      { "name": "التعليمات", "href": "/faq" }
-    ]
+    "aliexpress": { "name": "Shop Aliexpress", "href": "/aliexpress" },
+    "currency": { "name": "تحويل العملات", "href": "/currency" },
+    "support": { "name": "الدعم", "href": "/support" },
+    "faq": { "name": "التعليمات", "href": "/faq" }
   }
 }

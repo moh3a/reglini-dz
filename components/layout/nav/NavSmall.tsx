@@ -198,15 +198,34 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
             </Tab.Group> */}
 
             <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">
-              {navigation.en.pages.map((page: any) => (
-                <div key={page.name} className="flow-root">
-                  <Link href={page.href} passHref>
-                    <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
-                      {page.name}
-                    </a>
-                  </Link>
-                </div>
-              ))}
+              <div className="flow-root">
+                <Link href={t("aliexpress.href")} passHref>
+                  <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
+                    {t("aliexpress.name")}
+                  </a>
+                </Link>
+              </div>
+              <div className="flow-root">
+                <Link href={t("currency.href")} passHref>
+                  <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
+                    {t("currency.name")}
+                  </a>
+                </Link>
+              </div>
+              <div className="flow-root">
+                <Link href={t("support.href")} passHref>
+                  <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
+                    {t("support.name")}
+                  </a>
+                </Link>
+              </div>
+              <div className="flow-root">
+                <Link href={t("faq.href")} passHref>
+                  <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
+                    {t("faq.name")}
+                  </a>
+                </Link>
+              </div>
             </div>
 
             <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">

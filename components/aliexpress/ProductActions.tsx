@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import axios from "axios";
 import { SuccessDialog, DangerDialog, WarningDialog } from "../elements/Dialog";
 import { addToWishlist, addToCart } from "../../utils/redux/userAsyncActions";
 
@@ -22,8 +23,31 @@ export const BuyProduct = ({
   selectedVariation,
   selectedShipping,
 }: any) => {
+  const [commission, setCommission] = useState(0);
+  const [rate, setRate] = useState(0);
+
+  let fetchData = useCallback(async () => {
+    const { data } = await axios.get("http://localhost:3000/api/commission");
+    setCommission(data.data.commission);
+    const res = await axios.get("http://localhost:3000/api/currency");
+    setRate(res.data.data[0].live.parallel.sale);
+  }, []);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  let converter = (price: number) => {
+    let nv = Math.floor((price * rate + price * rate * commission) / 10) * 10;
+    return nv;
+  };
+
   const router = useRouter();
   const buyHandler = (e: any) => {
+    let price = selectedVariation.price.app.hasDiscount
+      ? selectedVariation.price.app.discountedPrice.value
+      : selectedVariation.price.app.originalPrice.value;
+    let shippingPrice = selectedShipping.price.value;
     e.preventDefault();
     if (!session) {
       setTimeout(() => {
@@ -43,20 +67,16 @@ export const BuyProduct = ({
             {
               productId: product.productId,
               name: product.title,
-              price: selectedVariation.price.app.hasDiscount
-                ? selectedVariation.price.app.discountedPrice.value
-                : selectedVariation.price.app.originalPrice.value,
+              price: converter(price),
+              originalPrice: price,
               imageUrl: selectedVariation.imageUrl,
               properties: selectedVariation.properties,
               quantity: selectedVariation.quantity,
               sku: selectedVariation.sku,
               carrierId: selectedShipping.company.id,
-              shippingPrice: selectedShipping.price.value,
+              shippingPrice: converter(shippingPrice),
               totalPrice:
-                ((selectedVariation.price.app.hasDiscount
-                  ? selectedVariation.price.app.discountedPrice.value
-                  : selectedVariation.price.app.originalPrice.value) +
-                  selectedShipping.price.value) *
+                (converter(price) + converter(shippingPrice)) *
                 selectedVariation.quantity,
             },
           ])
@@ -82,8 +102,31 @@ export const ProductToCart = ({
   selectedVariation,
   selectedShipping,
 }: any) => {
+  const [commission, setCommission] = useState(0);
+  const [rate, setRate] = useState(0);
+
+  let fetchData = useCallback(async () => {
+    const { data } = await axios.get("http://localhost:3000/api/commission");
+    setCommission(data.data.commission);
+    const res = await axios.get("http://localhost:3000/api/currency");
+    setRate(res.data.data[0].live.parallel.sale);
+  }, []);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  let converter = (price: number) => {
+    let nv = Math.floor((price * rate + price * rate * commission) / 10) * 10;
+    return nv;
+  };
+
   const dispatch = useDispatch();
   const addToCartHandler = (e: any) => {
+    let price = selectedVariation.price.app.hasDiscount
+      ? selectedVariation.price.app.discountedPrice.value
+      : selectedVariation.price.app.originalPrice.value;
+    let shippingPrice = selectedShipping.price.value;
     e.preventDefault();
     if (!session) {
       setTimeout(() => {
@@ -101,20 +144,16 @@ export const ProductToCart = ({
           addToCart({
             productId: product.productId,
             name: product.title,
-            price: selectedVariation.price.app.hasDiscount
-              ? selectedVariation.price.app.discountedPrice.value
-              : selectedVariation.price.app.originalPrice.value,
+            price: converter(price),
+            originalPrice: price,
             imageUrl: selectedVariation.imageUrl,
             properties: selectedVariation.properties,
             quantity: selectedVariation.quantity,
             sku: selectedVariation.sku,
             carrierId: selectedShipping.company.id,
-            shippingPrice: selectedShipping.price.value,
+            shippingPrice: converter(shippingPrice),
             totalPrice:
-              ((selectedVariation.price.app.hasDiscount
-                ? selectedVariation.price.app.discountedPrice.value
-                : selectedVariation.price.app.originalPrice.value) +
-                selectedShipping.price.value) *
+              (converter(price) + converter(shippingPrice)) *
               selectedVariation.quantity,
           })
         );
@@ -133,6 +172,25 @@ export const ProductToCart = ({
 };
 
 export const ProductToWishlist = ({ product, session, setError }: any) => {
+  const [commission, setCommission] = useState(0);
+  const [rate, setRate] = useState(0);
+
+  let fetchData = useCallback(async () => {
+    const { data } = await axios.get("http://localhost:3000/api/commission");
+    setCommission(data.data.commission);
+    const res = await axios.get("http://localhost:3000/api/currency");
+    setRate(res.data.data[0].live.parallel.sale);
+  }, []);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  let converter = (price: number) => {
+    let nv = Math.floor((price * rate + price * rate * commission) / 10) * 10;
+    return nv;
+  };
+
   const dispatch = useDispatch();
   const addToWishlistHandler = (e: any) => {
     e.preventDefault();
@@ -146,9 +204,11 @@ export const ProductToWishlist = ({ product, session, setError }: any) => {
         addToWishlist({
           productId: product.productId,
           name: product.title,
-          price: product.priceSummary
-            ? product.priceSummary.app.originalPrice.min.value
-            : product.price.app.originalPrice.value,
+          price: converter(
+            product.priceSummary
+              ? product.priceSummary.app.originalPrice.min.value
+              : product.price.app.originalPrice.value
+          ),
           imageUrl: product.productImages[0],
         })
       );

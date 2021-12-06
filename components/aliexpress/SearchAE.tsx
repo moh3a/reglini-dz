@@ -6,8 +6,7 @@ import {
   getAEProductInfo,
 } from "../../utils/redux/aeapiAsyncActions";
 
-const SearchAE = () => {
-  const [url, setUrl] = useState("");
+const SearchAE = ({ url, setUrl }: any) => {
   const dispatch = useDispatch();
   const router = useRouter();
   let locale = "en";

@@ -61,7 +61,7 @@ const WishedItems = ({ wishlist }: any) => {
                   {item.name}
                 </p>
                 <p className="text-xs font-extrabold text-gray-800 dark:text-yellow-200">
-                  € {item.price}
+                  {item.price} DZD
                 </p>
               </div>
 

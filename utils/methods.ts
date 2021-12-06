@@ -27,3 +27,15 @@ export const LocalISODate = () => {
   let date = local.substring(0, 10) + " " + local.substring(11, 16);
   return date;
 };
+
+import axios from "axios";
+export const ConvertPrice = async (price: number) => {
+  let commission = 0;
+  let rate = 0;
+  const { data } = await axios.get("http://localhost:3000/api/commission");
+  commission = data.data.commission;
+  const res = await axios.get("http://localhost:3000/api/currency");
+  rate = res.data.data[0].live.parallel.sale;
+  let newPrice = price * rate + price * rate * commission;
+  return newPrice;
+};

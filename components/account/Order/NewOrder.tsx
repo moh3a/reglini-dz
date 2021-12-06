@@ -120,10 +120,12 @@ export default function NewOrder({ user, products, origin }: any) {
                   )}
                   <div className="flex flex-col px-4 py-2">
                     <p className="font-bold text-lg">{item.name}</p>
-                    <p>Product price: {item.price} €</p>
-                    <p>Shipping price: {item.shippingPrice} €</p>
+                    <p>Product price: {item.price} DZD</p>
+                    <p>Shipping price: {item.shippingPrice} DZD</p>
                     <p>Quantity: {item.quantity}</p>
-                    <p className="text-lg">Total price: {item.totalPrice} €</p>
+                    <p className="text-lg">
+                      Total price: {item.totalPrice} DZD
+                    </p>
                   </div>
                 </dd>
               ))}

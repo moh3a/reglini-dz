@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import axios from "axios";
 import { HeartIcon } from "@heroicons/react/outline";
 
 import { DangerDialog } from "../elements/Dialog";
@@ -12,6 +13,25 @@ const Product = ({ product, session }: any) => {
   const [error, setError] = useState("");
   const router = useRouter();
   const dispatch = useDispatch();
+
+  const [commission, setCommission] = useState(0);
+  const [rate, setRate] = useState(0);
+
+  let fetchData = useCallback(async () => {
+    const { data } = await axios.get("http://localhost:3000/api/commission");
+    setCommission(data.data.commission);
+    const res = await axios.get("http://localhost:3000/api/currency");
+    setRate(res.data.data[0].live.parallel.sale);
+  }, []);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  let converter = (price: number) => {
+    let nv = Math.floor((price * rate + price * rate * commission) / 10) * 10;
+    return nv;
+  };
 
   const addToWishlistHandler = (e: any) => {
     e.preventDefault();
@@ -55,7 +75,7 @@ const Product = ({ product, session }: any) => {
             </Link>
           </h3>
           <p className="mt-1 text-lg font-medium">
-            € {product.productMinPrice.value}
+            {converter(product.productMinPrice.value)} DZD
           </p>
         </div>
         <div

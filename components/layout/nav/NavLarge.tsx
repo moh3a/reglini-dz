@@ -131,13 +131,33 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                   </Popover>
                 ))} */}
 
-                {navigation.en.pages.map((page: any) => (
+                {/* {t("categories.pages").map((page: any) => (
                   <Link key={page.name} href={page.href} passHref>
                     <a className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
                       {page.name}
                     </a>
                   </Link>
-                ))}
+                ))} */}
+                <Link href={t("aliexpress.href")} passHref>
+                  <a className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
+                    {t("aliexpress.name")}
+                  </a>
+                </Link>
+                <Link href={t("currency.href")} passHref>
+                  <a className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
+                    {t("currency.name")}
+                  </a>
+                </Link>
+                <Link href={t("support.href")} passHref>
+                  <a className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
+                    {t("support.name")}
+                  </a>
+                </Link>
+                <Link href={t("faq.href")} passHref>
+                  <a className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
+                    {t("faq.name")}
+                  </a>
+                </Link>
               </div>
             </Popover.Group>
 
@@ -254,8 +274,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
                 )}
               </div>
 
-              {/* Search */}
-              <Search />
+              {/* <Search /> */}
 
               {/* Wishlist */}
               <div className="flex lg:ml-4">

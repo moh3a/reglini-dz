@@ -1,6 +1,7 @@
+import Link from "next/link";
 import Product from "./Product";
 
-export default function ProductList({ search, session }: any) {
+export default function ProductList({ search, session, url }: any) {
   return (
     <div className="z-0 bg-pink-50 dark:bg-grim text-gray-900 dark:text-gray-100">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -19,6 +20,20 @@ export default function ProductList({ search, session }: any) {
           {search.items.map((item: any) => (
             <Product product={item} key={item.productId} session={session} />
           ))}
+        </div>
+        <div className="text-center my-4">
+          <Link href={`https://www.aliexpress.com/wholesale?SearchText=${url}`}>
+            <a target="_blank">
+              <button className="text-2xl text-white border border-green-500 bg-green-400 py-1 px-3 shadow-md rounded-lg">
+                For more results, you can look here
+              </button>
+            </a>
+          </Link>
+          <p>
+            You can search for the product you like from aliexpress.com, once
+            you find the item you would like to purchase, just copy/paste the
+            item&apos;s URL into the search bar.
+          </p>
         </div>
       </div>
     </div>

@@ -116,7 +116,7 @@ export default function Cart({ user }: any) {
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-800 dark:text-gray-100">
                         <p>Subtotal</p>
-                        <p>€ {user ? user.cart.subtotal : "0"}</p>
+                        <p>{user ? user.cart.subtotal : "0"} DZD</p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-800 dark:text-gray-100">
                         Shipping and taxes calculated at checkout.

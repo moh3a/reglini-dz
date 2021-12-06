@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { RadioGroup } from "@headlessui/react";
 import axios from "axios";
 
@@ -14,11 +14,7 @@ const AdminCurrency = () => {
   const [error, setError] = useState("");
   const [done, setDone] = useState(false);
 
-  useEffect(() => {
-    getCurrency();
-  }, []);
-
-  const getCurrency = async () => {
+  const getCurrency = useCallback(async () => {
     const { data } = await axios.get("/api/currency");
     if (data.success) {
       if (data.data[0].live.time === date) {
@@ -26,11 +22,18 @@ const AdminCurrency = () => {
       } else {
         setDone(false);
       }
+      setParallelSale(data.data[0].live.parallel.sale);
+      setParallelPurchase(data.data[0].live.parallel.purchase);
+      setOfficialRate(data.data[0].live.official.sale);
     } else {
       setError(data.message);
       setTimeout(() => setError(""), 3000);
     }
-  };
+  }, [date]);
+
+  useEffect(() => {
+    getCurrency();
+  }, [getCurrency]);
 
   const submitHandler = async (e: any) => {
     e.preventDefault();

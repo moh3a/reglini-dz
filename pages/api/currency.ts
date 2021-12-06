@@ -1,6 +1,6 @@
-import dbConnect from "../../../config/db";
+import dbConnect from "../../config/db";
 import type { NextApiRequest, NextApiResponse } from "next";
-import Currency from "../../../models/Currency";
+import Currency from "../../models/Currency";
 
 export default async function handler(
   req: NextApiRequest,

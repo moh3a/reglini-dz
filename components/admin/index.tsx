@@ -1,5 +1,6 @@
 import AdminCurrency from "./AdminCurrency";
 import AdminPayment from "./AdminPayment";
+import AdminFinance from "./AdminFinance";
 import AdminSidebar from "./AdminSidebar";
 
 const Admin = ({ user }: any) => {
@@ -12,6 +13,9 @@ const Admin = ({ user }: any) => {
         <h1 className="my-10 text-2xl font-bold">Welcome {user.name}.</h1>
         <div className="my-2 p-2 border-2 border-black dark:border-yellow-200 rounded-lg">
           <AdminCurrency />
+        </div>
+        <div className="my-2 p-2 border-2 border-black dark:border-yellow-200 rounded-lg">
+          <AdminFinance />
         </div>
         <div className="my-2 p-2 border-2 border-black dark:border-yellow-200 rounded-lg">
           <AdminPayment />

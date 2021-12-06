@@ -1,6 +1,7 @@
-import { useSelector } from "react-redux";
+import { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import { useSelector } from "react-redux";
 import { useSession } from "next-auth/client";
 
 import { IUser } from "../../utils/types";
@@ -13,6 +14,7 @@ import Loading from "../../components/layout/Loading";
 const Aliexpress = ({ messages }: any) => {
   const [session, loading]: [IUser | null, boolean] = useSession();
   const { search, product, status } = useSelector(selectAEApi);
+  const [url, setUrl] = useState("");
 
   if (product && product.statusId !== "0") {
     return (
@@ -31,7 +33,7 @@ const Aliexpress = ({ messages }: any) => {
             content="We apologize. You can not proceed with this item. There may be a few reasons. It can be an item that no longer active on AliExpress, a product that is not found, or the issue that is more common, is that some items are illegal to enter algerian soils or the seller does not ship to the country."
           />
         </Head>
-        <SearchAE />
+        <SearchAE url={url} setUrl={setUrl} />
         <section className="bg-red-50 dark:bg-red-900 text-gray-800 body-font overflow-hidden">
           <div className="container px-5 py-24 mx-auto text-center text-4xl font-semibold">
             {product.status === "inactive" &&
@@ -51,6 +53,10 @@ const Aliexpress = ({ messages }: any) => {
     );
   }
 
+  if (status === "loading") {
+    return <Loading text="Fetching data from Aliexpress..." />;
+  }
+
   return (
     <>
       <Head>
@@ -61,15 +67,12 @@ const Aliexpress = ({ messages }: any) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SearchAE />
-      {status === "loading" && (
-        <Loading text="Fetching data from Aliexpress..." />
-      )}
+      <SearchAE url={url} setUrl={setUrl} />
+
       {product && product.status === "active" && (
         <ProductPreview session={session} product={product} />
       )}
-      {search && <ProductList session={session} search={search} />}
-      {/* <CategoryFilters /> */}
+      {search && <ProductList session={session} search={search} url={url} />}
     </>
   );
 };
