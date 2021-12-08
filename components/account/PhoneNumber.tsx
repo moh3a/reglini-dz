@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useTranslations } from "next-intl";
 import { DangerDialog, SuccessDialog } from "./../elements/Dialog";
 
 const PhoneNumber = ({ user }: any) => {
+  const t = useTranslations("Profile");
   const [showForm, setShowForm] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [success, setSuccess] = useState("");
@@ -46,18 +48,18 @@ const PhoneNumber = ({ user }: any) => {
       {error && <DangerDialog>{error}</DangerDialog>}
       {!showForm && user && user.phoneNumber ? (
         <div>
-          This is your registered phone number {user.phoneNumber}
+          {t("registered")} {t("phoneNumber")} {user.phoneNumber}
           <div
             className="underline cursor-pointer text-gray-600 dark:text-gray-200"
             onClick={() => setShowForm(true)}
           >
-            Edit
+            {t("edit")}
           </div>
         </div>
       ) : (
         <form onSubmit={phoneNumberSaveHandler}>
           <div className="relative w-full">
-            <label>Phone Number</label>
+            <label>{t("phoneNumber")}</label>
             <input
               type="number"
               className="relative rounded-full py-1 pl-12 pr-3 my-1 w-full border-yellow-200 text-black dark:text-yellow-100 dark:bg-black focus:border-yellow-200 focus:ring-yellow-200"
@@ -71,13 +73,13 @@ const PhoneNumber = ({ user }: any) => {
             onClick={() => setShowForm(false)}
             className="m-1 py-1 px-3 rounded-lg bg-red-400  text-white  hover:bg-red-500 "
           >
-            Cancel
+            {t("cancel")}
           </button>
           <button
             type="submit"
             className="m-1 py-1 px-3 rounded-lg bg-green-400 text-white  hover:bg-green-500"
           >
-            Save Phone Number
+            {t("save")}
           </button>
         </form>
       )}

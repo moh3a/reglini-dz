@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { DangerDialog, SuccessDialog } from "./../elements/Dialog";
+import { useTranslations } from "next-intl";
 
 const RealName = ({ user }: any) => {
+  const t = useTranslations("Profile");
   const [showForm, setShowForm] = useState(false);
   const [realName, setRealName] = useState("");
   const [success, setSuccess] = useState("");
@@ -41,18 +43,18 @@ const RealName = ({ user }: any) => {
       {error && <DangerDialog>{error}</DangerDialog>}
       {!showForm && user && user.realName ? (
         <div>
-          This is your registered full legal name: {user.realName}
+          {t("registered")} {t("name")}: {user.realName}
           <div
             className="underline cursor-pointer text-gray-600 dark:text-gray-200"
             onClick={() => setShowForm(true)}
           >
-            Edit
+            {t("edit")}
           </div>
         </div>
       ) : (
         <form onSubmit={realNameSaveHandler}>
           <div className="relative w-full">
-            <label>Real full legal name</label>
+            <label>{t("name")}</label>
             <input
               type="text"
               className="rounded-full py-1 px-3 my-1 w-full border-yellow-200 text-black dark:text-yellow-100 dark:bg-black focus:border-yellow-200 focus:ring-yellow-200"
@@ -65,13 +67,13 @@ const RealName = ({ user }: any) => {
             onClick={() => setShowForm(false)}
             className="m-1 py-1 px-3 rounded-lg bg-red-400  text-white  hover:bg-red-500 "
           >
-            Cancel
+            {t("cancel")}
           </button>
           <button
             type="submit"
             className="m-1 py-1 px-3 rounded-lg bg-green-400 text-white  hover:bg-green-500"
           >
-            Save Legal Name
+            {t("save")}
           </button>
         </form>
       )}

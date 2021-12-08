@@ -9,29 +9,10 @@ import { HeartIcon } from "@heroicons/react/outline";
 import { DangerDialog } from "../elements/Dialog";
 import { addToWishlist } from "../../utils/redux/userAsyncActions";
 
-const Product = ({ product, session }: any) => {
+const Product = ({ product, session, converter }: any) => {
   const [error, setError] = useState("");
   const router = useRouter();
   const dispatch = useDispatch();
-
-  const [commission, setCommission] = useState(0);
-  const [rate, setRate] = useState(0);
-
-  let fetchData = useCallback(async () => {
-    const { data } = await axios.get("http://localhost:3000/api/commission");
-    setCommission(data.data.commission);
-    const res = await axios.get("http://localhost:3000/api/currency");
-    setRate(res.data.data[0].live.parallel.sale);
-  }, []);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  let converter = (price: number) => {
-    let nv = Math.floor((price * rate + price * rate * commission) / 10) * 10;
-    return nv;
-  };
 
   const addToWishlistHandler = (e: any) => {
     e.preventDefault();

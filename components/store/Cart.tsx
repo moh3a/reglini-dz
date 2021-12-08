@@ -2,10 +2,12 @@ import { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
 import { Dialog, Transition } from "@headlessui/react";
 import { XIcon, ShoppingBagIcon } from "@heroicons/react/outline";
+import { useTranslations } from "next-intl";
 
 import CartItem from "./CartItem";
 
 export default function Cart({ user }: any) {
+  const t = useTranslations("Cart");
   const [openCart, setOpenCart] = useState(false);
   const [items, setItems] = useState([
     {
@@ -79,7 +81,7 @@ export default function Cart({ user }: any) {
                     <div className="flex-1 py-6 overflow-y-auto px-4 sm:px-6">
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-lg font-medium text-gray-800 dark:text-gray-100">
-                          Shopping cart
+                          {t("cart")}
                         </Dialog.Title>
                         <div className="ml-3 h-7 flex items-center">
                           <button
@@ -106,7 +108,7 @@ export default function Cart({ user }: any) {
                                 );
                               })
                             ) : (
-                              <li className="py-6 flex">Your cart is empty.</li>
+                              <li className="py-6 flex">{t("emptyCart")}</li>
                             )}
                           </ul>
                         </div>
@@ -115,11 +117,13 @@ export default function Cart({ user }: any) {
 
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-800 dark:text-gray-100">
-                        <p>Subtotal</p>
-                        <p>{user ? user.cart.subtotal : "0"} DZD</p>
+                        <p>{t("subtotal")}</p>
+                        <p>
+                          {user ? user.cart.subtotal : "0"} {t("DZD")}
+                        </p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-800 dark:text-gray-100">
-                        Shipping and taxes calculated at checkout.
+                        {t("atCheckout")}
                       </p>
                       <div className="mt-6">
                         <Link href="/account/orders/new" passHref>
@@ -127,7 +131,7 @@ export default function Cart({ user }: any) {
                             onClick={() => setOpenCart(false)}
                             className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium cursor-pointer text-white bg-green-800 hover:bg-green-900"
                           >
-                            Place Order
+                            {t("placeOrder")}
                           </a>
                         </Link>
                       </div>
@@ -139,7 +143,7 @@ export default function Cart({ user }: any) {
                             className="text-gray-600 dark:text-gray-200 font-medium hover:text-gray-500 dark:hover:text-gray-300"
                             onClick={() => setOpenCart(false)}
                           >
-                            Continue Shopping
+                            {t("continue")}
                             <span aria-hidden="true"> &rarr;</span>
                           </button>
                         </p>

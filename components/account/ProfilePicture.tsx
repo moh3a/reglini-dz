@@ -2,6 +2,7 @@ import { useState } from "react";
 import parse from "html-react-parser";
 import Image from "next/image";
 import axios from "axios";
+import { useTranslations } from "next-intl";
 import { createAvatar } from "@dicebear/avatars";
 import * as style from "@dicebear/avatars-bottts-sprites";
 
@@ -16,6 +17,7 @@ const ProfilePicture = ({
   user: any;
   size?: "sm" | "md" | "lg";
 }) => {
+  const t = useTranslations("Profile");
   const [pp, setPp] = useState("");
   const [generated, setGenerated] = useState("");
   const [image, setImage] = useState<any>();
@@ -87,7 +89,7 @@ const ProfilePicture = ({
             pp === "upload" ? "underline text-indigo-900" : ""
           } py-2 cursor-pointer hover:underline`}
         >
-          Upload a new profile picture
+          {t("uploadPp")}
         </div>
         <div
           onClick={() => {
@@ -98,7 +100,7 @@ const ProfilePicture = ({
             pp === "avatar" ? "underline text-indigo-900" : ""
           } py-2 cursor-pointer hover:underline`}
         >
-          Generate new avatar
+          {t("generateAvatar")}
         </div>
         {pp && (
           <div className="flex flex-row">
@@ -107,14 +109,14 @@ const ProfilePicture = ({
                 onClick={() => setPp("")}
                 className="p-1 my-1 bg-gray-500 text-yellow-100 rounded-md"
               >
-                Cancel
+                {t("cancel")}
               </button>
               {pp === "avatar" && (
                 <button
                   onClick={generateAvatar}
                   className="p-1 my-1 bg-gray-500 text-yellow-100 rounded-md"
                 >
-                  Change
+                  {t("change")}
                 </button>
               )}
               {pp === "upload" && (
@@ -135,7 +137,7 @@ const ProfilePicture = ({
                     : "";
                 }}
               >
-                Save
+                {t("save")}
               </button>
             </div>
             <div className="h-40 w-40">

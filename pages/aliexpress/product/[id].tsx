@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
@@ -11,7 +10,7 @@ import { getAEProductInfo } from "../../../utils/redux/aeapiAsyncActions";
 import { selectAEApi } from "../../../utils/redux/aeapiSlice";
 import ProductDetails from "../../../components/aliexpress/ProductDetails";
 
-const AliexpressProduct = ({ messages }: any) => {
+const AliexpressProduct = ({ messages, rate, commission }: any) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [session, loading]: [IUser | null, boolean] = useSession();
@@ -24,6 +23,10 @@ const AliexpressProduct = ({ messages }: any) => {
   } else {
     locale = "en_US";
   }
+
+  const converter = (price: number) => {
+    return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
+  };
 
   const { product, status } = useSelector(selectAEApi);
   const { id } = router.query;
@@ -85,16 +88,31 @@ const AliexpressProduct = ({ messages }: any) => {
       )}
       {product && product.status === "active" && (
         <>
-          <ProductDetails product={product} session={session} />
+          <ProductDetails
+            converter={converter}
+            product={product}
+            session={session}
+          />
         </>
       )}
     </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+import axios from "axios";
+import { GetServerSideProps } from "next";
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { req, res, locale } = context;
+  const { data } = await axios.get(`http://${req.headers.host}/api/commission`);
+  const commission = data.data.commission;
+  const response = await axios.get(`http://${req.headers.host}/api/currency`);
+  const rate = response.data.data[0].live.parallel.sale;
   return {
-    props: { messages: require(`../../../locales/${locale}.json`) },
+    props: {
+      rate,
+      commission,
+      messages: require(`../../../locales/${locale}.json`),
+    },
   };
 };
 

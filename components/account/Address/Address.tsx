@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useTranslations } from "next-intl";
 import { IWilaya } from "../../../data/Wilayas";
 import SelectDaira from "./SelectDaira";
 import SelectWilaya from "./SelectWilaya";
@@ -8,6 +9,7 @@ import { DangerDialog, SuccessDialog } from "../../elements/Dialog";
 import SelectPostalCode from "./SelectPostalCode";
 
 const Address = ({ user }: any) => {
+  const t = useTranslations("Profile");
   const [showForm, setShowForm] = useState(false);
   const [wilaya, setWilaya] = useState<IWilaya>();
   const [daira, setDaira] = useState<any>();
@@ -71,18 +73,18 @@ const Address = ({ user }: any) => {
       {error && <DangerDialog>{error}</DangerDialog>}
       {!showForm && user && user.address ? (
         <div>
-          This is your registered address {user.address.text}
+          {t("registered")} {t("address")} {user.address.text}
           <div
             className="underline cursor-pointer text-gray-600 dark:text-gray-200"
             onClick={() => setShowForm(true)}
           >
-            Edit
+            {t("edit")}
           </div>
         </div>
       ) : (
         <form onSubmit={addressSaveHandler}>
           <div className=" w-full">
-            <label>Country</label>
+            <label>{t("country")} </label>
             <input
               value={"Algeria"}
               readOnly
@@ -114,7 +116,9 @@ const Address = ({ user }: any) => {
                   setPostalCode={setPostalCode}
                 />
               )}
-              <label>Your address in {commune.name} :</label>
+              <label>
+                {t("yourAddressIn")} {commune.name} :
+              </label>
               <input
                 type="text"
                 className="rounded-full py-1 px-2 my-1 w-full  border-yellow-200 text-black dark:text-yellow-100 dark:bg-black focus:border-yellow-200 focus:ring-yellow-200"
@@ -123,26 +127,22 @@ const Address = ({ user }: any) => {
               />
             </div>
           )}
-          {/* full list of zip codes
-          {wilaya && (
-            <div className="w-full">
-              <label>Zip codes</label>
-            </div>
-          )} */}
           {postalCode && (
-            <div className=" w-full">Code Postal : {postalCode}</div>
+            <div className=" w-full">
+              {t("zipCode")} : {postalCode}
+            </div>
           )}
           <button
             onClick={() => setShowForm(false)}
             className="m-1 py-1 px-3 rounded-lg bg-red-400  text-white  hover:bg-red-500 "
           >
-            Cancel
+            {t("cancel")}
           </button>
           <button
             type="submit"
             className="m-1 py-1 px-3 rounded-lg bg-green-400 text-white  hover:bg-green-500"
           >
-            Save Address
+            {t("save")}
           </button>
         </form>
       )}

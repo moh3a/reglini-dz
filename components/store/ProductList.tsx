@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Product from "./Product";
 
-export default function ProductList({ search, session, url }: any) {
+export default function ProductList({ search, session, url, converter }: any) {
   return (
     <div className="z-0 bg-pink-50 dark:bg-grim text-gray-900 dark:text-gray-100">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -18,7 +18,12 @@ export default function ProductList({ search, session, url }: any) {
 
         <div className="grid mt-10 grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {search.items.map((item: any) => (
-            <Product product={item} key={item.productId} session={session} />
+            <Product
+              product={item}
+              key={item.productId}
+              session={session}
+              converter={converter}
+            />
           ))}
         </div>
         <div className="text-center my-4">

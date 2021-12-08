@@ -2,12 +2,14 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
+import { useTranslations } from "next-intl";
 import {
   removeFromCart,
   updateQuantity,
 } from "../../utils/redux/userAsyncActions";
 
 const CartItem = ({ item }: any) => {
+  const t = useTranslations("Cart");
   const [quantity, setQuantity] = useState(item.quantity);
   const dispatch = useDispatch();
 
@@ -38,7 +40,9 @@ const CartItem = ({ item }: any) => {
                 <a target="_blank">{item.name}</a>
               </Link>
             </h3>
-            <p className="ml-4 text-red-600">{item.price} DZD</p>
+            <p className="ml-4 text-red-600">
+              {item.price} {t("DZD")}
+            </p>
           </div>
         </div>
         <div className="flex flex-wrap items-end justify-between text-xs  my-2">
@@ -53,13 +57,14 @@ const CartItem = ({ item }: any) => {
           ))}
         </div>
         <div className="text-xs text-gray-700 dark:text-gray-200 my-2">
-          Shipping carrier: <span className="font-bold">{item.carrierId}</span>
+          {t("shippingCarrier")}:{" "}
+          <span className="font-bold">{item.carrierId}</span>
           <br />
-          Shipping price: {item.shippingPrice} DZD
+          {t("shippingPrice")}: {item.shippingPrice} {t("DZD")}
         </div>
         <div className="flex-1 flex items-end justify-between text-sm">
           <p className="text-gray-600 dark:text-gray-200">
-            Qty{" "}
+            {t("qty")}{" "}
             <input
               type="number"
               min="1"
@@ -85,7 +90,7 @@ const CartItem = ({ item }: any) => {
               type="button"
               className="font-medium text-red-600 hover:text-red-500"
             >
-              Remove
+              {t("remove")}
             </button>
           </div>
         </div>

@@ -6,13 +6,15 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { signOut, useSession } from "next-auth/client";
 import axios from "axios";
+import { useTranslations } from "next-intl";
 
 import { IUser } from "../../utils/types";
 import { DangerDialog } from "../../components/elements/Dialog";
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";
 
-const DeleteAccount = () => {
+const DeleteAccount = ({ messages }: any) => {
+  const t = useTranslations("Profile");
   let [isOpen, setIsOpen] = useState(false);
   const [error, setError] = useState("");
   const [session, loading]: [IUser | null, boolean] = useSession();
@@ -82,21 +84,19 @@ const DeleteAccount = () => {
       </Head>
       {error && <DangerDialog>{error}</DangerDialog>}
       <div className="text-center mx-8 lg:mx-32 my-60">
-        <p className="text-xl lg:text-4xl">
-          When deleting your account, you will permanently lose all your data.
-        </p>
+        <p className="text-xl lg:text-4xl">{t("deleteWarning")}</p>
         <button
           onClick={openModal}
           className="bg-red-400 hover:bg-red-500 text-gray-100 text-2xl py-2 px-4 mt-6 rounded-full"
         >
-          DELETE
+          {t("delete")}
         </button>
         <br />
         <button
           onClick={() => router.push("/")}
           className="bg-gray-400 hover:bg-gray-500 text-gray-100 text-xl py-2 px-4 mt-1 rounded-full"
         >
-          Go back to Homepage
+          {t("goHome")}
         </button>
       </div>
       <Transition appear show={isOpen} as={Fragment}>
@@ -143,7 +143,7 @@ const DeleteAccount = () => {
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      All your data will be lost. This action is irreversible.
+                      {t("deleteFinalWarning")}
                     </p>
                   </div>
 
@@ -153,7 +153,7 @@ const DeleteAccount = () => {
                       className="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-100 bg-red-400 border border-transparent rounded-full hover:bg-red-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500"
                       onClick={closeModal}
                     >
-                      Permanently Delete
+                      {t("finalDelete")}
                     </button>
                   </div>
                 </form>

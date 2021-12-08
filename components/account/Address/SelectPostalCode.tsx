@@ -1,4 +1,5 @@
 import { Fragment, useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
@@ -7,6 +8,7 @@ function classNames(...classes: any) {
 }
 
 export default function SelectPostalCode({ commune, setPostalCode }: any) {
+  const t = useTranslations("Profile");
   const [otherPosts, setOtherPosts] = useState<any>();
   const [selected, setSelected] = useState<any>();
 
@@ -24,7 +26,9 @@ export default function SelectPostalCode({ commune, setPostalCode }: any) {
 
   return (
     <>
-      <p>{commune.name} has multiple posts, select one nearest to you:</p>
+      <p>
+        {commune.name} {t("multiplePosts")}:
+      </p>
       {otherPosts && (
         <Listbox value={selected} onChange={setSelected}>
           {({ open }) => (

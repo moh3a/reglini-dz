@@ -1,32 +1,12 @@
-import { Fragment, useState, useEffect, useCallback } from "react";
-import axios from "axios";
+import { Fragment, useState, useEffect } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
-const ProductShipping = ({ product, setSelectedShipping }: any) => {
+const ProductShipping = ({ product, setSelectedShipping, converter }: any) => {
   const [selected, setSelected] = useState(product.shipping.carriers[0]);
   useEffect(() => {
     if (selected) setSelectedShipping(selected);
   }, [selected, setSelectedShipping]);
-
-  const [commission, setCommission] = useState(0);
-  const [rate, setRate] = useState(0);
-
-  let fetchData = useCallback(async () => {
-    const { data } = await axios.get("http://localhost:3000/api/commission");
-    setCommission(data.data.commission);
-    const res = await axios.get("http://localhost:3000/api/currency");
-    setRate(res.data.data[0].live.parallel.sale);
-  }, []);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  let converter = (price: number) => {
-    let nv = Math.floor((price * rate + price * rate * commission) / 10) * 10;
-    return nv;
-  };
 
   return (
     <div className="z-10 mt-4">

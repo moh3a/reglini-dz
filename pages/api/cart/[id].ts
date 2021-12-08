@@ -87,7 +87,7 @@ export default async function handler(
         }
         data.cart.cartItems[index].quantity = quantity;
         data.cart.cartItems[index].totalPrice =
-          Math.round(
+          Math.ceil(
             (data.cart.cartItems[index].price +
               data.cart.cartItems[index].shippingPrice) *
               quantity *

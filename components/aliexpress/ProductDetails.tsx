@@ -16,7 +16,7 @@ import {
 import ProductFeatures from "./ProductFeatures";
 import { selectUser } from "../../utils/redux/userSlice";
 
-const ProductDetails = ({ product, session }: any) => {
+const ProductDetails = ({ product, session, converter }: any) => {
   const [properties, setProperties] = useState([{ name: "", value: "" }]);
   const [variation, setVariation] = useState([{ name: "", value: "" }]);
   const [showImage, setShowImage] = useState("/placeholder.png");
@@ -127,15 +127,18 @@ const ProductDetails = ({ product, session }: any) => {
                 />
               </div>
               <ProductPrice
+                converter={converter}
                 product={product}
                 selectedVariation={selectedVariation}
               />
               <ProductShipping
+                converter={converter}
                 product={product}
                 setSelectedShipping={setSelectedShipping}
               />
               <div className="mt-4 flex">
                 <BuyProduct
+                  converter={converter}
                   product={product}
                   session={session}
                   setError={setError}
@@ -143,6 +146,7 @@ const ProductDetails = ({ product, session }: any) => {
                   selectedShipping={selectedShipping}
                 />
                 <ProductToCart
+                  converter={converter}
                   product={product}
                   session={session}
                   setError={setError}
@@ -150,6 +154,7 @@ const ProductDetails = ({ product, session }: any) => {
                   selectedShipping={selectedShipping}
                 />
                 <ProductToWishlist
+                  converter={converter}
                   product={product}
                   session={session}
                   setError={setError}

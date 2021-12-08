@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
+import { useTranslations } from "next-intl";
 
 import { DangerDialog, SuccessDialog } from "../elements/Dialog";
 import ProfilePicture from "./ProfilePicture";
@@ -9,6 +10,7 @@ import PhoneNumber from "./PhoneNumber";
 import RealName from "./RealName";
 
 export default function AccountDetails({ user }: any) {
+  const t = useTranslations("Profile");
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const [editRealName, setEditRealName] = useState(false);
@@ -37,35 +39,35 @@ export default function AccountDetails({ user }: any) {
       {error && <DangerDialog>{error}</DangerDialog>}
       <div className="px-4 py-5 sm:px-6">
         <h3 className="text-lg leading-6 font-medium text-black dark:text-yellow-200">
-          Account Information
+          {t("info")}
         </h3>
         <p className="mt-1 max-w-2xl text-sm text-gray-600 dark:text-yellow-100">
-          Personal details.
+          {t("title")}
         </p>
       </div>
       <div className="border-t border-b border-black dark:border-yellow-200 bg-gray-100 dark:bg-grim text-black dark:text-yellow-100">
         <dl>
           <div className=" px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 ">
-            <dt className="text-sm font-medium ">Profile picture</dt>
+            <dt className="text-sm font-medium ">{t("pp")}</dt>
             <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
               <ProfilePicture user={user} size="lg" />
             </dd>
           </div>
           <div className="border-t border-white dark:border-black  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium ">Username</dt>
+            <dt className="text-sm font-medium ">{t("username")}</dt>
             <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">{user.name}</dd>
           </div>
           <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium ">Email address</dt>
+            <dt className="text-sm font-medium ">{t("email")}</dt>
             <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
               {user.email}
             </dd>
           </div>
           <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium ">Account verification</dt>
+            <dt className="text-sm font-medium ">{t("verification")}</dt>
             <dd className="mt-1 text-sm text-green-500 sm:mt-0 sm:col-span-2">
               {user.verified ? (
-                <>True</>
+                <>{t("true")}</>
               ) : (
                 <ul
                   role="list"
@@ -74,7 +76,7 @@ export default function AccountDetails({ user }: any) {
                   <li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
                     <div className="w-0 flex-1 flex items-center">
                       <span className="ml-2 flex-1 w-0 truncate">
-                        Your account is yet to be verified. Check your inbox.
+                        {t("verify")}
                       </span>
                     </div>
                     <div className="ml-4 flex-shrink-0">
@@ -82,7 +84,7 @@ export default function AccountDetails({ user }: any) {
                         onClick={emailResendHandler}
                         className="font-medium text-gray-600 hover:text-gray-500"
                       >
-                        Resend verification email
+                        {t("resend")}
                       </button>
                     </div>
                   </li>
@@ -92,7 +94,7 @@ export default function AccountDetails({ user }: any) {
           </div>
           {user.realName && (
             <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium ">Legal full name</dt>
+              <dt className="text-sm font-medium ">{t("name")}</dt>
               <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
                 <div>{user.realName}</div>
                 <button
@@ -103,9 +105,9 @@ export default function AccountDetails({ user }: any) {
                   }
                 >
                   {editRealName ? (
-                    <p className="text-red-600">Close</p>
+                    <p className="text-red-600">{t("close")}</p>
                   ) : (
-                    <p className="text-yellow-700">Edit</p>
+                    <p className="text-yellow-700">{t("edit")}</p>
                   )}
                 </button>
                 {editRealName ? (
@@ -123,10 +125,10 @@ export default function AccountDetails({ user }: any) {
           )}
 
           <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium ">Address</dt>
+            <dt className="text-sm font-medium ">{t("address")}</dt>
             <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
               <div>
-                {user.address ? user.address.text : <>Somewhere in Algeria.</>}
+                {user.address ? user.address.text : <>{t("placeholder")}</>}
               </div>
               <button
                 onClick={() =>
@@ -134,9 +136,9 @@ export default function AccountDetails({ user }: any) {
                 }
               >
                 {editAddress ? (
-                  <p className="text-red-600">Close</p>
+                  <p className="text-red-600">{t("close")}</p>
                 ) : (
-                  <p className="text-yellow-700">Edit</p>
+                  <p className="text-yellow-700">{t("edit")}</p>
                 )}
               </button>
               {editAddress ? (
@@ -152,10 +154,14 @@ export default function AccountDetails({ user }: any) {
             </dd>
           </div>
           <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium ">Phone Number</dt>
+            <dt className="text-sm font-medium ">{t("phoneNumber")}</dt>
             <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
               <div>
-                {user.phoneNumber ? user.phoneNumber : <>No phone number.</>}
+                {user.phoneNumber ? (
+                  user.phoneNumber
+                ) : (
+                  <>{t("noPhoneNumber")}</>
+                )}
               </div>
               <button
                 onClick={() =>
@@ -165,9 +171,9 @@ export default function AccountDetails({ user }: any) {
                 }
               >
                 {editPhoneNumber ? (
-                  <p className="text-red-600">Close</p>
+                  <p className="text-red-600">{t("close")}</p>
                 ) : (
-                  <p className="text-yellow-700">Edit</p>
+                  <p className="text-yellow-700">{t("close")}</p>
                 )}
               </button>
               {editPhoneNumber ? (
@@ -183,19 +189,19 @@ export default function AccountDetails({ user }: any) {
             </dd>
           </div>
           <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium ">Role</dt>
+            <dt className="text-sm font-medium ">{t("role")}</dt>
             <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">{user.role}</dd>
           </div>
           <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium ">Authenticated</dt>
+            <dt className="text-sm font-medium ">{t("authenticated")}</dt>
             <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
               {user.account === "oauth"
                 ? `Authentication credentials are provided by ${user.provider}'s oauth provider.`
-                : `Account created using user's credentials`}
+                : t("credentials")}
             </dd>
           </div>
           <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium ">Delete your account</dt>
+            <dt className="text-sm font-medium ">{t("deleteAccount")}</dt>
             <dd className="mt-1 text-sm text-red-500 sm:mt-0 sm:col-span-2">
               <ul
                 role="list"
@@ -203,12 +209,12 @@ export default function AccountDetails({ user }: any) {
               >
                 <li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
                   <div className="w-0 flex-1 flex items-center">
-                    DANGER! Your account will be permanently deleted.
+                    {t("danger")}
                   </div>
                   <div className="ml-4 flex-shrink-0">
                     <Link href="/account/delete" passHref>
                       <a className="font-medium text-red-600 hover:text-red-500">
-                        DELETE
+                        {t("delete")}
                       </a>
                     </Link>
                   </div>

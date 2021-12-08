@@ -11,10 +11,14 @@ import ProductPreview from "../../components/aliexpress/ProductPreview";
 import ProductList from "../../components/store/ProductList";
 import Loading from "../../components/layout/Loading";
 
-const Aliexpress = ({ messages }: any) => {
+const Aliexpress = ({ messages, rate, commission }: any) => {
   const [session, loading]: [IUser | null, boolean] = useSession();
   const { search, product, status } = useSelector(selectAEApi);
   const [url, setUrl] = useState("");
+
+  const converter = (price: number) => {
+    return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
+  };
 
   if (product && product.statusId !== "0") {
     return (
@@ -72,21 +76,36 @@ const Aliexpress = ({ messages }: any) => {
       {product && product.status === "active" && (
         <ProductPreview session={session} product={product} />
       )}
-      {search && <ProductList session={session} search={search} url={url} />}
+      {search && (
+        <ProductList
+          converter={converter}
+          session={session}
+          search={search}
+          url={url}
+        />
+      )}
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+import axios from "axios";
+import { GetServerSideProps } from "next";
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { req, res, locale } = context;
+  const { data } = await axios.get(`http://${req.headers.host}/api/commission`);
+  const commission = data.data.commission;
+  const response = await axios.get(`http://${req.headers.host}/api/currency`);
+  const rate = response.data.data[0].live.parallel.sale;
   return {
     props: {
+      rate,
+      commission,
       messages: require(`../../locales/${locale}.json`),
     },
   };
 };
 
 import Layout from "../../components/layout/Layout";
-import { GetStaticProps } from "next";
 Aliexpress.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

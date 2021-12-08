@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useTranslations } from "next-intl";
 
 import { SuccessDialog } from "../elements/Dialog";
 import { removeFromWishlist } from "../../utils/redux/userAsyncActions";
 import { selectUser } from "../../utils/redux/userSlice";
 
 const WishedItems = ({ wishlist }: any) => {
+  const t = useTranslations("Wishlist");
   const [success, setSuccess] = useState("");
   const { message } = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -61,7 +63,7 @@ const WishedItems = ({ wishlist }: any) => {
                   {item.name}
                 </p>
                 <p className="text-xs font-extrabold text-gray-800 dark:text-yellow-200">
-                  {item.price} DZD
+                  {item.price} {t("DZD")}
                 </p>
               </div>
 
@@ -85,7 +87,7 @@ const WishedItems = ({ wishlist }: any) => {
                   }
                   className="px-2 py-1 text-xs text-gray-100 uppercase transition-colors duration-200 transform bg-red-500 rounded hover:opacity-80 focus:bg-gray-400 focus:outline-none"
                 >
-                  Remove
+                  {t("remove")}
                 </button>
                 <button
                   onClick={() =>
@@ -93,7 +95,7 @@ const WishedItems = ({ wishlist }: any) => {
                   }
                   className="px-2 py-1 text-xs text-gray-900 uppercase transition-colors duration-200 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none"
                 >
-                  View Details
+                  {t("viewDetails")}
                 </button>
               </div>
             </div>

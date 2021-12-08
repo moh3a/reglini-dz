@@ -5,6 +5,7 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useSession } from "next-auth/client";
+import { useTranslations } from "next-intl";
 
 import { IUser } from "../../utils/types";
 import { selectUser } from "../../utils/redux/userSlice";
@@ -12,6 +13,7 @@ import { getUser } from "../../utils/redux/userAsyncActions";
 import WishedItems from "../../components/store/WishedItems";
 
 const Wishlist = ({ messages }: any) => {
+  const t = useTranslations("Wishlist");
   const [wishlist, setWishlist] = useState([]);
   const [session, loading]: [IUser | null, boolean] = useSession();
   const router = useRouter();
@@ -50,15 +52,15 @@ const Wishlist = ({ messages }: any) => {
       </Head>
       {session && (
         <div className="flex flex-col bg-white dark:bg-grim">
-          <div className="m-4 p-4 text-4xl">Your wishlist</div>
+          <div className="m-4 p-4 text-4xl">{t("yourWishlist")}</div>
           <div className="border-t border-b border-black dark:border-yellow-200 bg-yellow-100 dark:bg-black">
             {user && wishlist.length > 0 ? (
               <WishedItems wishlist={wishlist} />
             ) : (
               <div className="text-center py-32 text-4xl">
-                <div>You have no items in your wishlist.</div>
+                <div>{t("emptyWishlist")}</div>
                 <div className="text-gray-700 hover:underline cursor-pointer">
-                  <Link href="/aliexpress">Continue shopping</Link>
+                  <Link href="/aliexpress">{t("continueShopping")}</Link>
                 </div>
               </div>
             )}

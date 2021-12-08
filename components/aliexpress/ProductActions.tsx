@@ -1,8 +1,7 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import axios from "axios";
 import { SuccessDialog, DangerDialog, WarningDialog } from "../elements/Dialog";
 import { addToWishlist, addToCart } from "../../utils/redux/userAsyncActions";
 
@@ -22,26 +21,8 @@ export const BuyProduct = ({
   setError,
   selectedVariation,
   selectedShipping,
+  converter,
 }: any) => {
-  const [commission, setCommission] = useState(0);
-  const [rate, setRate] = useState(0);
-
-  let fetchData = useCallback(async () => {
-    const { data } = await axios.get("http://localhost:3000/api/commission");
-    setCommission(data.data.commission);
-    const res = await axios.get("http://localhost:3000/api/currency");
-    setRate(res.data.data[0].live.parallel.sale);
-  }, []);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  let converter = (price: number) => {
-    let nv = Math.floor((price * rate + price * rate * commission) / 10) * 10;
-    return nv;
-  };
-
   const router = useRouter();
   const buyHandler = (e: any) => {
     let price = selectedVariation.price.app.hasDiscount
@@ -101,26 +82,8 @@ export const ProductToCart = ({
   setError,
   selectedVariation,
   selectedShipping,
+  converter,
 }: any) => {
-  const [commission, setCommission] = useState(0);
-  const [rate, setRate] = useState(0);
-
-  let fetchData = useCallback(async () => {
-    const { data } = await axios.get("http://localhost:3000/api/commission");
-    setCommission(data.data.commission);
-    const res = await axios.get("http://localhost:3000/api/currency");
-    setRate(res.data.data[0].live.parallel.sale);
-  }, []);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  let converter = (price: number) => {
-    let nv = Math.floor((price * rate + price * rate * commission) / 10) * 10;
-    return nv;
-  };
-
   const dispatch = useDispatch();
   const addToCartHandler = (e: any) => {
     let price = selectedVariation.price.app.hasDiscount
@@ -171,26 +134,12 @@ export const ProductToCart = ({
   );
 };
 
-export const ProductToWishlist = ({ product, session, setError }: any) => {
-  const [commission, setCommission] = useState(0);
-  const [rate, setRate] = useState(0);
-
-  let fetchData = useCallback(async () => {
-    const { data } = await axios.get("http://localhost:3000/api/commission");
-    setCommission(data.data.commission);
-    const res = await axios.get("http://localhost:3000/api/currency");
-    setRate(res.data.data[0].live.parallel.sale);
-  }, []);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  let converter = (price: number) => {
-    let nv = Math.floor((price * rate + price * rate * commission) / 10) * 10;
-    return nv;
-  };
-
+export const ProductToWishlist = ({
+  product,
+  session,
+  setError,
+  converter,
+}: any) => {
   const dispatch = useDispatch();
   const addToWishlistHandler = (e: any) => {
     e.preventDefault();
