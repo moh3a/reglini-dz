@@ -1,9 +1,7 @@
 import Image from "next/image";
-import { useState, useCallback, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useRouter } from "next/router";
 import Link from "next/link";
-import axios from "axios";
 import { HeartIcon } from "@heroicons/react/outline";
 
 import { DangerDialog } from "../elements/Dialog";
@@ -11,7 +9,6 @@ import { addToWishlist } from "../../utils/redux/userAsyncActions";
 
 const Product = ({ product, session, converter }: any) => {
   const [error, setError] = useState("");
-  const router = useRouter();
   const dispatch = useDispatch();
 
   const addToWishlistHandler = (e: any) => {
@@ -56,7 +53,10 @@ const Product = ({ product, session, converter }: any) => {
             </Link>
           </h3>
           <p className="mt-1 text-lg font-medium">
-            {converter(product.productMinPrice.value)} DZD
+            {converter(
+              product.productMinPrice.value + product.shippingMinPrice.value
+            )}{" "}
+            DZD
           </p>
         </div>
         <div
