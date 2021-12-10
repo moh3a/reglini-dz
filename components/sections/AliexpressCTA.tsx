@@ -32,7 +32,7 @@ export default function AliexpressCTA() {
           <div className="mx-1 mt-16 inline-flex rounded-md shadow">
             <Link href="/faq#howitworks" passHref>
               <a className=" inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-500 hover:bg-red-600">
-                Learn More
+                {t("learnMore")}
               </a>
             </Link>
           </div>

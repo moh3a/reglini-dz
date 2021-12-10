@@ -1,7 +1,11 @@
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import axios from "axios";
 import { useTranslations } from "next-intl";
+
+import { useSelector } from "react-redux";
+import { selectUser } from "../../utils/redux/userSlice";
 
 import { DangerDialog, SuccessDialog } from "../elements/Dialog";
 import ProfilePicture from "./ProfilePicture";
@@ -9,7 +13,9 @@ import Address from "./Address/Address";
 import PhoneNumber from "./PhoneNumber";
 import RealName from "./RealName";
 
-export default function AccountDetails({ user }: any) {
+export default function AccountDetails() {
+  const router = useRouter();
+  const { user } = useSelector(selectUser);
   const t = useTranslations("Profile");
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
@@ -37,11 +43,17 @@ export default function AccountDetails({ user }: any) {
     <div className="bg-white dark:bg-grim shadow overflow-hidden sm:rounded-lg">
       {success && <SuccessDialog>{success}</SuccessDialog>}
       {error && <DangerDialog>{error}</DangerDialog>}
-      <div className="px-4 py-5 sm:px-6">
-        <h3 className="text-lg leading-6 font-medium text-black dark:text-yellow-200">
+      <div
+        className={`px-4 py-5 sm:px-6 ${
+          router.locale === "ar" && "text-right"
+        }`}
+      >
+        <h3
+          className={`text-lg leading-6 font-medium text-black dark:text-yellow-200`}
+        >
           {t("info")}
         </h3>
-        <p className="mt-1 max-w-2xl text-sm text-gray-600 dark:text-yellow-100">
+        <p className="mt-1 text-sm text-gray-600 dark:text-yellow-100">
           {t("title")}
         </p>
       </div>
@@ -115,7 +127,7 @@ export default function AccountDetails({ user }: any) {
                     role="list"
                     className="mt-4 px-4 py-5 border border-red-500 rounded-md divide-y divide-gray-200"
                   >
-                    <RealName user={user} />
+                    <RealName />
                   </div>
                 ) : (
                   ""
@@ -181,7 +193,7 @@ export default function AccountDetails({ user }: any) {
                   role="list"
                   className="mt-4 px-4 py-5 border border-red-500 rounded-md divide-y divide-gray-200"
                 >
-                  <PhoneNumber user={user} />
+                  <PhoneNumber />
                 </div>
               ) : (
                 ""

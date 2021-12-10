@@ -44,7 +44,7 @@ const OrderScreen = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>{user && <Orders user={user} />}</div>
+      <div>{user && <Orders />}</div>
     </>
   );
 };

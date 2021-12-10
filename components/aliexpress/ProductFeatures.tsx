@@ -67,7 +67,14 @@ export default function ProductFeatures({ product }: any) {
           <h2 className="text-3xl my-10 font-extrabold tracking-tight  sm:text-4xl">
             Seller&apos;s Product Description
           </h2>
-          {product.htmlDescription && parse(product.htmlDescription)}
+          {/* {product.htmlDescription && (
+            <div>{parse(product.htmlDescription)}</div>
+          )} */}
+          {product.htmlDescription && (
+            <div
+              dangerouslySetInnerHTML={{ __html: product.htmlDescription }}
+            />
+          )}
         </div>
       </div>
     </div>

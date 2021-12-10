@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-
+import { useTranslations } from "next-intl";
 import ProductImage from "./ProductImage";
 import ProductReviews from "./ProductReviews";
 import ProductProperty from "./ProductProperty";
@@ -8,7 +8,8 @@ import ProductPrice from "./ProductPrice";
 import { ActionFeedback, ToDetails, ProductToWishlist } from "./ProductActions";
 import { selectUser } from "../../utils/redux/userSlice";
 
-const ProductPreview = ({ product, session }: any) => {
+const ProductPreview = ({ converter, product, session }: any) => {
+  const t = useTranslations("AEProduct");
   const [showImage, setShowImage] = useState("/placeholder.png");
   const [error, setError] = useState("");
   const { message } = useSelector(selectUser);
@@ -37,7 +38,7 @@ const ProductPreview = ({ product, session }: any) => {
             </h1>
             <ProductReviews product={product} />
             <p className="leading-relaxed text-gray-800 dark:text-gray-100">
-              Category: {product.productCategory.name}
+              {t("category")}: {product.productCategory.name}
             </p>
             <div className="mt-6 text-gray-800 dark:text-gray-100 pb-5 mb-5">
               {product.properties.map((property: any) => {
@@ -50,16 +51,12 @@ const ProductPreview = ({ product, session }: any) => {
                 );
               })}
             </div>
-            <ProductPrice product={product} />
+            <ProductPrice converter={converter} product={product} />
             <div className="mt-4 text-center">
               {product.shipping.isAvailableForSelectedCountries ? (
-                <p className="text-green-500">
-                  THIS ITEM IS AVAILABLE FOR SHIPPING IN ALGERIA
-                </p>
+                <p className="text-green-500">{t("itemAvailable")}</p>
               ) : (
-                <p className="text-red-500">
-                  THIS ITEM IS NOT AVAILABLE FOR SHIPPING IN ALGERIA
-                </p>
+                <p className="text-red-500">{t("itemNotAvailable")}</p>
               )}
             </div>
             <div className="mt-4 flex">

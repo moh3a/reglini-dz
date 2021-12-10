@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/client";
 
 import { IUser } from "../../../utils/types";
@@ -11,6 +12,7 @@ import { getUser } from "../../../utils/redux/userAsyncActions";
 import NewOrder from "../../../components/account/Order/NewOrder";
 
 const NewOrderScreen = () => {
+  const t = useTranslations("NewOrder");
   const router = useRouter();
   const dispatch = useDispatch();
   const [session, loading]: [IUser | null, boolean] = useSession();
@@ -52,9 +54,8 @@ const NewOrderScreen = () => {
       </Head>
       {user && localStorage.getItem("aeno") && (
         <>
-          <h3 className="px-4 pt-5 sm:px-6">Direct order</h3>
+          <h3 className="px-4 pt-5 sm:px-6">{t("directOrder")}</h3>
           <NewOrder
-            user={user}
             products={JSON.parse(localStorage.getItem("aeno") as string)}
             origin={"localStorage"}
           />
@@ -62,12 +63,8 @@ const NewOrderScreen = () => {
       )}
       {user && user.cart.cartItems.length > 0 && (
         <>
-          <h3 className="px-4 pt-5 sm:px-6">From cart</h3>
-          <NewOrder
-            user={user}
-            products={user.cart.cartItems}
-            origin={"cart"}
-          />
+          <h3 className="px-4 pt-5 sm:px-6">{t("fromCart")}</h3>
+          <NewOrder products={user.cart.cartItems} origin={"cart"} />
         </>
       )}
     </>

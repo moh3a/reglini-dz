@@ -2,12 +2,16 @@ import Image from "next/image";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useTranslations } from "next-intl";
 import { HeartIcon } from "@heroicons/react/outline";
 
 import { DangerDialog } from "../elements/Dialog";
 import { addToWishlist } from "../../utils/redux/userAsyncActions";
 
 const Product = ({ product, session, converter }: any) => {
+  const router = useRouter();
+  const t = useTranslations("AEProduct");
   const [error, setError] = useState("");
   const dispatch = useDispatch();
 
@@ -52,16 +56,26 @@ const Product = ({ product, session, converter }: any) => {
               {product.title}
             </Link>
           </h3>
-          <p className="mt-1 text-lg font-medium">
-            {converter(
-              product.productMinPrice.value + product.shippingMinPrice.value
-            )}{" "}
-            DZD
+          <p
+            className={`mt-1 text-lg font-medium ${
+              router.locale === "ar" && "flex flex-row-reverse"
+            }`}
+          >
+            <span>
+              {converter(
+                product.productMinPrice.value + product.shippingMinPrice.value
+              )}
+            </span>
+            <span>{t("dzd")}</span>
           </p>
         </div>
         <div
           onClick={addToWishlistHandler}
-          className="hidden lg:block absolute right-0 top-0 pl-4 pb-5 bg-pink-50 dark:bg-grim"
+          className={`hidden  ${
+            router.locale === "ar"
+              ? "hidden"
+              : "lg:block right-0 top-0 pl-3 absolute   pb-5"
+          } bg-pink-50 dark:bg-grim`}
         >
           <HeartIcon
             className="w-5 hover:text-red-500 cursor-pointer"

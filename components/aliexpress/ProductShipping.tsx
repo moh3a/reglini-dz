@@ -1,21 +1,36 @@
 import { Fragment, useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { useTranslations } from "next-intl";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
 const ProductShipping = ({ product, setSelectedShipping, converter }: any) => {
+  const router = useRouter();
+  const t = useTranslations("AEProduct");
   const [selected, setSelected] = useState(product.shipping.carriers[0]);
   useEffect(() => {
     if (selected) setSelectedShipping(selected);
   }, [selected, setSelectedShipping]);
 
   return (
-    <div className="z-10 mt-4">
+    <div className={`text-left z-10 mt-4`}>
       {product.shipping.isAvailableForSelectedCountries ? (
         <>
-          <p className="text-green-500">
-            Item is avaible for shipping from China
+          <p
+            className={`text-green-500 ${
+              router.locale === "ar" && "text-right"
+            }`}
+          >
+            {t("itemAvailable")}
           </p>
-          <p>Shipping Carriers: </p>
+          <p
+            className={`${
+              router.locale === "ar" && "text-right flex flex-row-reverse"
+            }`}
+          >
+            <span>{t("shippingCarriers")}</span>
+            <span>:</span>
+          </p>
           <div>
             <Listbox value={selected} onChange={setSelected}>
               <div className="relative mt-1">
@@ -57,21 +72,22 @@ const ProductShipping = ({ product, setSelectedShipping, converter }: any) => {
                                 {carrier.company.name}
                               </span>
                               <span className="text-xs">
-                                Delievered in {carrier.deliveryTimeInDays.min} -{" "}
-                                {carrier.deliveryTimeInDays.max} days
+                                {t("delieveredIn")}{" "}
+                                {carrier.deliveryTimeInDays.min} -{" "}
+                                {carrier.deliveryTimeInDays.max} {t("days")}
                               </span>
 
                               {carrier.hasTracking ? (
                                 <span className="text-xs text-green-400 block truncate">
-                                  Carrier has tracking
+                                  {t("carrierHasTracking")}
                                 </span>
                               ) : (
                                 <span className="text-xs text-red-400 block truncate">
-                                  Carrier does not have tracking
+                                  {t("carrierDontHaveTracking")}
                                 </span>
                               )}
                               <span className="absolute inset-y-0 right-0 flex items-center pr-3">
-                                {converter(carrier.price.value)} DZD
+                                {converter(carrier.price.value)} {t("dzd")}
                               </span>
                               {selected ? (
                                 <span
@@ -98,18 +114,16 @@ const ProductShipping = ({ product, setSelectedShipping, converter }: any) => {
           </div>
           <p className="relative text-xs pl-2 z-0">
             <span>
-              Delievered in {selected.deliveryTimeInDays.min} -{" "}
-              {selected.deliveryTimeInDays.max} days
+              {t("delieveredIn")} {selected.deliveryTimeInDays.min} -{" "}
+              {selected.deliveryTimeInDays.max} {t("days")}
             </span>
             <span className="absolute inset-y-0 right-0 flex items-center pr-3">
-              {converter(selected.price.value)} DZD
+              {converter(selected.price.value)} {t("dzd")}
             </span>
           </p>
         </>
       ) : (
-        <p className="text-red-500 uppercase">
-          THIS ITEM IS NOT AVAILABLE FOR SHIPPING TO ALGERIA
-        </p>
+        <p className="text-red-500 uppercase">{t("itemNotAvailable")}</p>
       )}
     </div>
   );

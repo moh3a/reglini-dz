@@ -1,15 +1,23 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useTranslations } from "next-intl";
 import Product from "./Product";
 
 export default function ProductList({ search, session, url, converter }: any) {
+  const router = useRouter();
+  const t = useTranslations("AEProduct");
   return (
     <div className="z-0 bg-pink-50 dark:bg-grim text-gray-900 dark:text-gray-100">
-      <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h1 className="text-2xl font-extrabold">Search results</h1>
+      <div
+        className={`${
+          router.locale === "ar" && "text-right"
+        } max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8`}
+      >
+        <h1 className="text-2xl font-extrabold">{t("searchResults")}</h1>
         {search.refiningSearchCategories &&
           search.refiningSearchCategories.name && (
             <>
-              <h2 className="text-2xl font-bold">Aliexpress category</h2>
+              <h2 className="text-2xl font-bold">{t("searchCategory")}</h2>
               <h2 className="text-xl font-bold">
                 {search.refiningSearchCategories[0].name}
               </h2>
@@ -30,15 +38,11 @@ export default function ProductList({ search, session, url, converter }: any) {
           <Link href={`https://www.aliexpress.com/wholesale?SearchText=${url}`}>
             <a target="_blank">
               <button className="text-2xl text-white border border-green-500 bg-green-400 py-1 px-3 shadow-md rounded-lg">
-                For more results, you can look here
+                {t("moreResults")}
               </button>
             </a>
           </Link>
-          <p>
-            You can search for the product you like from aliexpress.com, once
-            you find the item you would like to purchase, just copy/paste the
-            item&apos;s URL into the search bar.
-          </p>
+          <p>{t("moreResultsDesc")}</p>
         </div>
       </div>
     </div>

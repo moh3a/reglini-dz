@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 const ProductPrice = ({ product, selectedVariation, converter }: any) => {
+  const t = useTranslations("AEProduct");
   const [showEuro, setShowEuro] = useState(false);
   let [currency, setCurrency] = useState("");
 
@@ -36,7 +38,7 @@ const ProductPrice = ({ product, selectedVariation, converter }: any) => {
                         )}{" "}
                     {currency}
                   </span>{" "}
-                  {selectedVariation.price.app.discountPercentage}% off
+                  {selectedVariation.price.app.discountPercentage}% {t("off")}
                 </div>
               </div>
             ) : (
@@ -67,7 +69,7 @@ const ProductPrice = ({ product, selectedVariation, converter }: any) => {
                       : converter(product.price.app.originalPrice.value)}{" "}
                     {currency}
                   </span>{" "}
-                  {product.price.app.discountPercentage}% off
+                  {product.price.app.discountPercentage}% {t("off")}
                 </div>
               </div>
             ) : (
@@ -113,7 +115,7 @@ const ProductPrice = ({ product, selectedVariation, converter }: any) => {
                         )}{" "}
                     {currency}
                   </span>{" "}
-                  {product.priceSummary.app.discountPercentage}% off
+                  {product.priceSummary.app.discountPercentage}% {t("off")}
                 </div>
               </div>
             ) : (
@@ -140,9 +142,7 @@ const ProductPrice = ({ product, selectedVariation, converter }: any) => {
           className="underline text-orange-600 hover:text-orange-800"
           onClick={() => (showEuro ? setShowEuro(false) : setShowEuro(true))}
         >
-          {showEuro
-            ? "Show price in Algerian Dinars"
-            : "Show original price in Euro"}
+          {showEuro ? t("priceInDinars") : t("priceInEuro")}
         </button>
       </div>
     </>

@@ -1,7 +1,16 @@
+import { useRouter } from "next/router";
+import { useTranslations } from "next-intl";
 const ProductReviews = ({ product }: any) => {
+  const router = useRouter();
+  const t = useTranslations("AEProduct");
+
   return (
-    <div className="flex mb-4">
-      <span className="flex items-center">
+    <div className={`flex ${router.locale === "ar" && "justify-end"} mb-4`}>
+      <span
+        className={`flex ${
+          router.locale === "ar" ? " flex-row-reverse" : ""
+        } items-center `}
+      >
         {product.hasReviewsRatings && (
           <>
             <svg
@@ -18,13 +27,23 @@ const ProductReviews = ({ product }: any) => {
             <span className="text-gray-800 dark:text-gray-100 ml-1">
               {product.reviewsRatings.averageRating}
             </span>
-            <span className="text-gray-800 dark:text-gray-100 ml-4">
-              {product.reviewsRatings.totalCount} Reviews
+            <span
+              className={`text-gray-800 dark:text-gray-100 mx-4 ${
+                router.locale === "ar" && "flex flex-row-reverse "
+              }`}
+            >
+              <span>{product.reviewsRatings.totalCount}</span>
+              <span className="mr-1">{t("reviews")}</span>
             </span>
           </>
         )}
-        <span className="text-gray-800 dark:text-gray-100 ml-4">
-          {product.totalOrders} Orders
+        <span
+          className={`${
+            router.locale === "ar" && "flex flex-row-reverse"
+          } text-gray-800 dark:text-gray-100 mx-4`}
+        >
+          <span>{product.totalOrders}</span>
+          <span className="mr-1">{t("orders")}</span>
         </span>
       </span>
     </div>

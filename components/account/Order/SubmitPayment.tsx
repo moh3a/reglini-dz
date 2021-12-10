@@ -1,11 +1,13 @@
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import axios from "axios";
 import { RadioGroup } from "@headlessui/react";
 
 import AlertMessage from "../../elements/AlertMessage";
 
 const SubmitPayment = ({ order, setOpenPayNow }: any) => {
+  const t = useTranslations("Orders");
   const [selected, setSelected] = useState<any>();
   const [image, setImage] = useState<any>();
   const [createObjectURL, setCreateObjectURL] = useState<string>();
@@ -42,7 +44,7 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
 
   return (
     <div className="px-4 py-5 sm:px-6">
-      <h2>Choose your payment method</h2>
+      <h2>{t("choosePaymentMethod")}</h2>
       <div className="w-full max-w-md mx-auto">
         <RadioGroup
           value={selected}
@@ -50,7 +52,7 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
           className="flex my-2"
         >
           <RadioGroup.Label className="sr-only">
-            payment method:{" "}
+            {t("paymentMethod")}:{" "}
           </RadioGroup.Label>
           <RadioGroup.Option value="cib">
             {({ checked }) => (
@@ -61,7 +63,7 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
                     : "border-gray-200 bg-gray-200"
                 }`}
               >
-                Payment enligne par CIB
+                {t("cib")}
               </span>
             )}
           </RadioGroup.Option>
@@ -75,7 +77,7 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
                       : "border-gray-200 bg-gray-200"
                   }`}
                 >
-                  Versement CCP
+                  {t("ccp")}
                 </span>
               </>
             )}
@@ -89,20 +91,14 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
           <div className="mt-6">
             {selected === "ccp" && (
               <>
-                <h1 className="text-xl">Payment by CCP</h1>
-                <p>
-                  Take a picture of the receipt. It should be clear and easy to
-                  read to validate the payment.
-                </p>
+                <h1 className="text-xl">{t("paymentCCP")}</h1>
+                <p>{t("descPaymentCCP")}</p>
               </>
             )}
             {selected === "cib" && (
               <>
-                <h1 className="text-xl">Payment by CIB</h1>
-                <p>
-                  Take a screenshot of your payment directly from the Baridi Mob
-                  app or your bank account app.
-                </p>
+                <h1 className="text-xl">{t("paymentCIB")}</h1>
+                <p>{t("descPaymentCIB")}</p>
               </>
             )}
           </div>
@@ -127,16 +123,14 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
                     layout="responsive"
                   />
                 </div>
-                <small>
-                  Do not mind the image format, it will be fixed on the upload.
-                </small>
+                <small>{t("doNotMind")}</small>
                 <div className="flex justify-end">
                   <button
                     onClick={(e) => uploadToServer(e)}
                     className="w-44 bg-green-200 hover:bg-green-300 dark:bg-green-500 p-1 rounded-md my-2"
                   >
-                    {selected === "ccp" && "Send Receipt"}
-                    {selected === "cib" && "Send Payment Memo"}
+                    {selected === "ccp" && t("sendReceipt")}
+                    {selected === "cib" && t("sendMemo")}
                   </button>
                 </div>
               </>

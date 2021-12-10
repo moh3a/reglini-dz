@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslations } from "next-intl";
 
 import {
   createOrder,
@@ -12,10 +14,17 @@ import Address from "../Address/Address";
 import PhoneNumber from "../PhoneNumber";
 import RealName from "../RealName";
 
-export default function NewOrder({ user, products, origin }: any) {
+export default function NewOrder({ products, origin }: any) {
+  const t = useTranslations("NewOrder");
   const dispatch = useDispatch();
   const router = useRouter();
-  const { message } = useSelector(selectUser);
+  const { user, message } = useSelector(selectUser);
+
+  useEffect(() => {
+    return () => {
+      localStorage.removeItem("aeno");
+    };
+  }, []);
 
   const placeOrderHandler = () => {
     products.map((item: any) => {
@@ -59,20 +68,20 @@ export default function NewOrder({ user, products, origin }: any) {
     <div className="border-t border-b mb-12 border-yellow-200 bg-white dark:bg-grim text-black dark:text-white shadow overflow-hidden sm:rounded-lg">
       <ActionFeedback message={message} />
       <div className="px-4 pb-5 sm:px-6">
-        <h3 className="text-lg leading-6 font-medium">Place a new order</h3>
+        <h3 className="text-lg leading-6 font-medium">{t("placeNewOrder")}</h3>
       </div>
       <div className="border-t border-gray-200">
         <dl>
           <div className="bg-gray-50 dark:bg-grim px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium">Real name and family name</dt>
+            <dt className="text-sm font-medium">{t("realName")}</dt>
             <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">
-              <RealName user={user} />
+              <RealName />
             </dd>
           </div>
         </dl>
         <dl>
           <div className="bg-gray-50 dark:bg-grim px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium">Address</dt>
+            <dt className="text-sm font-medium">{t("address")}</dt>
             <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">
               <Address user={user} />
             </dd>
@@ -80,27 +89,23 @@ export default function NewOrder({ user, products, origin }: any) {
         </dl>
         <dl>
           <div className="bg-gray-50 dark:bg-grim px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium ">Phone Number</dt>
+            <dt className="text-sm font-medium ">{t("phoneNumber")}</dt>
             <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
-              <PhoneNumber user={user} />
+              <PhoneNumber />
             </dd>
           </div>
         </dl>
         <dl>
           <div className="bg-gray-50 dark:bg-grim px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium ">Payment</dt>
+            <dt className="text-sm font-medium ">{t("payment")}</dt>
             <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
-              <p>
-                A payment should be submitted in less than 48 hours or the order
-                will be automatically cancelled. You can pay once the order was
-                created.
-              </p>
+              <p>{t("descPayment")}</p>
             </dd>
           </div>
         </dl>
         <dl>
           <div className="bg-gray-50 dark:bg-grim px-4 py-5 sm:px-6">
-            <dt className="text-sm h-full font-medium ">Products</dt>
+            <dt className="text-sm h-full font-medium ">{t("products")}</dt>
             <div>
               {products.map((item: any) => (
                 <dd
@@ -120,11 +125,17 @@ export default function NewOrder({ user, products, origin }: any) {
                   )}
                   <div className="flex flex-col px-4 py-2">
                     <p className="font-bold text-lg">{item.name}</p>
-                    <p>Product price: {item.price} DZD</p>
-                    <p>Shipping price: {item.shippingPrice} DZD</p>
-                    <p>Quantity: {item.quantity}</p>
+                    <p>
+                      {t("productPrice")}: {item.price} {t("dzd")}
+                    </p>
+                    <p>
+                      {t("shippingPrice")}: {item.shippingPrice} {t("dzd")}
+                    </p>
+                    <p>
+                      {t("quantity")}: {item.quantity}
+                    </p>
                     <p className="text-lg">
-                      Total price: {item.totalPrice} DZD
+                      {t("totalPrice")}: {item.totalPrice} {t("dzd")}
                     </p>
                   </div>
                 </dd>
@@ -142,23 +153,23 @@ export default function NewOrder({ user, products, origin }: any) {
           <>
             <button
               onClick={placeOrderHandler}
-              className="border-2 border-blue-100 p-2 mx-5 rounded-lg"
+              className="border-2 border-blue-200 bg-blue-100 hover:bg-blue-200 dark:bg-black dark:hover:bg-gray-900   p-2 mx-5 rounded-lg"
             >
-              Place your order
+              {t("placeYourOrder")}
             </button>
           </>
         ) : (
           <>
-            <p>In order to place an order, you have to:</p>
+            <p>{t("orderConditions")}:</p>
             <ul>
-              {user.realName ? "" : <li>Add your real identity name.</li>}
-              {user.address ? "" : <li>Add a shipping address.</li>}
-              {user.phoneNumber ? "" : <li>Add a phone number.</li>}
+              {user.realName ? "" : <li>{t("conditionName")}</li>}
+              {user.address ? "" : <li>{t("conditionAddress")}</li>}
+              {user.phoneNumber ? "" : <li>{t("conditionPhone")}</li>}
               {user.account === "credentials" ? (
                 user.verified ? (
                   ""
                 ) : (
-                  <li>Verify your email address.</li>
+                  <li>{t("conditionEmail")}</li>
                 )
               ) : (
                 ""

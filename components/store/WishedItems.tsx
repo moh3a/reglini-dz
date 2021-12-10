@@ -59,11 +59,20 @@ const WishedItems = ({ wishlist }: any) => {
                     </defs>
                   </svg>
                 </h1>
-                <p className="text-sm text-black dark:text-yellow-100">
+                <p
+                  className={`${
+                    router.locale === "ar" && "text-right"
+                  } text-sm text-black dark:text-yellow-100`}
+                >
                   {item.name}
                 </p>
-                <p className="text-xs font-extrabold text-gray-800 dark:text-yellow-200">
-                  {item.price} {t("DZD")}
+                <p
+                  className={`text-xs font-extrabold text-gray-800 dark:text-yellow-200 ${
+                    router.locale === "ar" && "text-right flex flex-row-reverse"
+                  }`}
+                >
+                  <span>{item.price}</span>
+                  <span>{t("DZD")}</span>
                 </p>
               </div>
 

@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../utils/redux/userSlice";
 import { DangerDialog, SuccessDialog } from "./../elements/Dialog";
 import { useTranslations } from "next-intl";
 
-const RealName = ({ user }: any) => {
+const RealName = () => {
+  const { user } = useSelector(selectUser);
   const t = useTranslations("Profile");
   const [showForm, setShowForm] = useState(false);
   const [realName, setRealName] = useState("");

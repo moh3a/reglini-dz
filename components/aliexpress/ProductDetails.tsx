@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import { useTranslations } from "next-intl";
 
 import ProductImage from "./ProductImage";
 import ProductReviews from "./ProductReviews";
@@ -17,6 +19,8 @@ import ProductFeatures from "./ProductFeatures";
 import { selectUser } from "../../utils/redux/userSlice";
 
 const ProductDetails = ({ product, session, converter }: any) => {
+  const router = useRouter();
+  const t = useTranslations("AEProduct");
   const [properties, setProperties] = useState([{ name: "", value: "" }]);
   const [variation, setVariation] = useState([{ name: "", value: "" }]);
   const [showImage, setShowImage] = useState("/placeholder.png");
@@ -91,14 +95,24 @@ const ProductDetails = ({ product, session, converter }: any) => {
       <section className="bg-red-50 dark:bg-grim text-gray-800 dark:text-yellow-100 body-font">
         <ActionFeedback message={message} error={error} />
         <div className="container px-5 py-24 mx-auto">
-          <div className="lg:w-4/5 mx-auto flex flex-wrap">
+          <div
+            className={`lg:w-4/5 mx-auto flex flex-wrap ${
+              router.locale === "ar" && "flex-row-reverse"
+            }`}
+          >
             <ProductImage
               product={product}
               showImage={showImage}
               setShowImage={setShowImage}
             />
-            <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-              <h2 className="text-sm title-font text-gray-700 dark:text-gray-200 tracking-widest">
+            <div
+              className={`lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 ${
+                router.locale === "ar" && "text-right"
+              }`}
+            >
+              <h2
+                className={`text-sm  title-font text-gray-700 dark:text-gray-200 tracking-widest`}
+              >
                 {product.attributes[0].value.name}
               </h2>
               <h1 className="text-gray-800 dark:text-gray-100 text-3xl title-font font-medium mb-1">
@@ -106,7 +120,7 @@ const ProductDetails = ({ product, session, converter }: any) => {
               </h1>
               <ProductReviews product={product} />
               <p className="leading-relaxed text-gray-800 dark:text-gray-100">
-                Category: {product.productCategory.name}
+                {t("category")}: {product.productCategory.name}
               </p>
               <div className="mt-6 text-gray-800 dark:text-gray-100 pb-5 mb-5">
                 {product.properties.map((property: any) => {
@@ -137,22 +151,26 @@ const ProductDetails = ({ product, session, converter }: any) => {
                 setSelectedShipping={setSelectedShipping}
               />
               <div className="mt-4 flex">
-                <BuyProduct
-                  converter={converter}
-                  product={product}
-                  session={session}
-                  setError={setError}
-                  selectedVariation={selectedVariation}
-                  selectedShipping={selectedShipping}
-                />
-                <ProductToCart
-                  converter={converter}
-                  product={product}
-                  session={session}
-                  setError={setError}
-                  selectedVariation={selectedVariation}
-                  selectedShipping={selectedShipping}
-                />
+                {
+                  <BuyProduct
+                    converter={converter}
+                    product={product}
+                    session={session}
+                    setError={setError}
+                    selectedVariation={selectedVariation}
+                    selectedShipping={selectedShipping}
+                  />
+                }
+                {
+                  <ProductToCart
+                    converter={converter}
+                    product={product}
+                    session={session}
+                    setError={setError}
+                    selectedVariation={selectedVariation}
+                    selectedShipping={selectedShipping}
+                  />
+                }
                 <ProductToWishlist
                   converter={converter}
                   product={product}

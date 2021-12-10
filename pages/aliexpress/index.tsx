@@ -74,7 +74,11 @@ const Aliexpress = ({ messages, rate, commission }: any) => {
       <SearchAE url={url} setUrl={setUrl} />
 
       {product && product.status === "active" && (
-        <ProductPreview session={session} product={product} />
+        <ProductPreview
+          converter={converter}
+          session={session}
+          product={product}
+        />
       )}
       {search && (
         <ProductList

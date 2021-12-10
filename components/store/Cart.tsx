@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Dialog, Transition } from "@headlessui/react";
 import { XIcon, ShoppingBagIcon } from "@heroicons/react/outline";
 import { useTranslations } from "next-intl";
@@ -8,6 +9,7 @@ import CartItem from "./CartItem";
 
 export default function Cart({ user }: any) {
   const t = useTranslations("Cart");
+  const router = useRouter();
   const [openCart, setOpenCart] = useState(false);
   const [items, setItems] = useState([
     {
@@ -76,11 +78,15 @@ export default function Cart({ user }: any) {
                 leaveFrom="translate-x-0"
                 leaveTo="translate-x-full"
               >
-                <div className="w-screen max-w-md">
+                <div className="w-screen  max-w-md">
                   <div className="h-full flex flex-col bg-white dark:bg-grim shadow-xl overflow-y-scroll">
                     <div className="flex-1 py-6 overflow-y-auto px-4 sm:px-6">
                       <div className="flex items-start justify-between">
-                        <Dialog.Title className="text-lg font-medium text-gray-800 dark:text-gray-100">
+                        <Dialog.Title
+                          className={`${
+                            router.locale === "ar" && "justify-end"
+                          } text-lg font-medium text-gray-800 dark:text-gray-100`}
+                        >
                           {t("cart")}
                         </Dialog.Title>
                         <div className="ml-3 h-7 flex items-center">
@@ -108,7 +114,13 @@ export default function Cart({ user }: any) {
                                 );
                               })
                             ) : (
-                              <li className="py-6 flex">{t("emptyCart")}</li>
+                              <li
+                                className={`py-6 flex ${
+                                  router.locale === "ar" && "justify-end"
+                                }`}
+                              >
+                                {t("emptyCart")}
+                              </li>
                             )}
                           </ul>
                         </div>
@@ -116,13 +128,26 @@ export default function Cart({ user }: any) {
                     </div>
 
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
-                      <div className="flex justify-between text-base font-medium text-gray-800 dark:text-gray-100">
+                      <div
+                        className={`${
+                          router.locale === "ar" ? "flex-row-reverse" : ""
+                        } flex justify-between text-base font-medium text-gray-800 dark:text-gray-100`}
+                      >
                         <p>{t("subtotal")}</p>
-                        <p>
-                          {user ? user.cart.subtotal : "0"} {t("DZD")}
+                        <p
+                          className={`flex ${
+                            router.locale === "ar" ? "flex-row-reverse" : ""
+                          }`}
+                        >
+                          <span>{user ? user.cart.subtotal : "0"}</span>{" "}
+                          <span>{t("DZD")}</span>
                         </p>
                       </div>
-                      <p className="mt-0.5 text-sm text-gray-800 dark:text-gray-100">
+                      <p
+                        className={`${
+                          router.locale === "ar" && "text-right"
+                        } mt-0.5 text-sm text-gray-800 dark:text-gray-100`}
+                      >
                         {t("atCheckout")}
                       </p>
                       <div className="mt-6">

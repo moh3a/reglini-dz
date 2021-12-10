@@ -42,7 +42,7 @@ const Profile = () => {
         <meta name="description" content="reglini.dz user's profile page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {user && <AccountDetails user={user} />}
+      {user && <AccountDetails />}
     </>
   );
 };

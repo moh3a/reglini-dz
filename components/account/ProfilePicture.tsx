@@ -2,6 +2,8 @@ import { useState } from "react";
 import parse from "html-react-parser";
 import Image from "next/image";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../utils/redux/userSlice";
 import { useTranslations } from "next-intl";
 import { createAvatar } from "@dicebear/avatars";
 import * as style from "@dicebear/avatars-bottts-sprites";
@@ -10,13 +12,8 @@ import AlertMessage from "../elements/AlertMessage";
 import Avatar from "../elements/Avatar";
 import { generateRandomString } from "../../utils/methods";
 
-const ProfilePicture = ({
-  user,
-  size,
-}: {
-  user: any;
-  size?: "sm" | "md" | "lg";
-}) => {
+const ProfilePicture = ({ size }: { user: any; size?: "sm" | "md" | "lg" }) => {
+  const { user } = useSelector(selectUser);
   const t = useTranslations("Profile");
   const [pp, setPp] = useState("");
   const [generated, setGenerated] = useState("");

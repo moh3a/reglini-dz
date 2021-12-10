@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { SuccessDialog, DangerDialog, WarningDialog } from "../elements/Dialog";
 import { addToWishlist, addToCart } from "../../utils/redux/userAsyncActions";
 
 export const ToDetails = ({ id }: { id: string }) => {
+  const t = useTranslations("AEProduct");
   return (
     <button className="flex ml-auto text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded">
       <Link href={`/aliexpress/product/${id}`}>
-        <a>View prodduct details</a>
+        <a>{t("viewDetails")}</a>
       </Link>
     </button>
   );
@@ -23,24 +25,28 @@ export const BuyProduct = ({
   selectedShipping,
   converter,
 }: any) => {
+  const t = useTranslations("AEProduct");
   const router = useRouter();
   const buyHandler = (e: any) => {
-    let price = selectedVariation.price.app.hasDiscount
-      ? selectedVariation.price.app.discountedPrice.value
-      : selectedVariation.price.app.originalPrice.value;
-    let shippingPrice = selectedShipping.price.value;
+    let price, shippingPrice: any;
+    if (selectedVariation.sku) {
+      price = selectedVariation.price.app.hasDiscount
+        ? selectedVariation.price.app.discountedPrice.value
+        : selectedVariation.price.app.originalPrice.value;
+      shippingPrice = selectedShipping.price.value;
+    }
     e.preventDefault();
     if (!session) {
       setTimeout(() => {
         setError("");
       }, 3000);
-      setError("You should be logged in to buy this product.");
+      setError(t("logInToAdd"));
     } else if (session) {
       if (!selectedVariation.sku) {
         setTimeout(() => {
           setError("");
         }, 3000);
-        setError("Please select the properties.");
+        setError(t("selectProperties"));
       } else if (selectedVariation.sku) {
         localStorage.setItem(
           "aeno",
@@ -71,7 +77,7 @@ export const BuyProduct = ({
       className="flex ml-auto text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded"
       onClick={buyHandler}
     >
-      Buy
+      {t("buy")}
     </button>
   );
 };
@@ -84,24 +90,28 @@ export const ProductToCart = ({
   selectedShipping,
   converter,
 }: any) => {
+  const t = useTranslations("AEProduct");
   const dispatch = useDispatch();
   const addToCartHandler = (e: any) => {
-    let price = selectedVariation.price.app.hasDiscount
-      ? selectedVariation.price.app.discountedPrice.value
-      : selectedVariation.price.app.originalPrice.value;
-    let shippingPrice = selectedShipping.price.value;
+    let price, shippingPrice;
+    if (selectedVariation.sku) {
+      price = selectedVariation.price.app.hasDiscount
+        ? selectedVariation.price.app.discountedPrice.value
+        : selectedVariation.price.app.originalPrice.value;
+      shippingPrice = selectedShipping.price.value;
+    }
     e.preventDefault();
     if (!session) {
       setTimeout(() => {
         setError("");
       }, 3000);
-      setError("You should be logged in to add to cart.");
+      setError(t("logInToAdd"));
     } else if (session) {
       if (!selectedVariation.sku) {
         setTimeout(() => {
           setError("");
         }, 3000);
-        setError("Please select the properties.");
+        setError(t("selectProperties"));
       } else if (selectedVariation.sku) {
         dispatch(
           addToCart({
@@ -129,7 +139,7 @@ export const ProductToCart = ({
       onClick={addToCartHandler}
       className="flex ml-4 text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded"
     >
-      Cart
+      {t("cart")}
     </button>
   );
 };
@@ -140,6 +150,7 @@ export const ProductToWishlist = ({
   setError,
   converter,
 }: any) => {
+  const t = useTranslations("AEProduct");
   const dispatch = useDispatch();
   const addToWishlistHandler = (e: any) => {
     e.preventDefault();
@@ -147,7 +158,7 @@ export const ProductToWishlist = ({
       setTimeout(() => {
         setError("");
       }, 3000);
-      setError("You should be logged in to add to wishlist.");
+      setError(t("logInToAdd"));
     } else if (session) {
       dispatch(
         addToWishlist({

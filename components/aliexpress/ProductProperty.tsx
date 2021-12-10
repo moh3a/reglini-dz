@@ -1,7 +1,11 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 const ProductProperty = ({ property, setShowImage, setProperties }: any) => {
+  const router = useRouter();
+  const t = useTranslations("AEProduct");
   const [selectedProperty, setSelectedProperty] = useState({
     selected: false,
     name: property.name,
@@ -37,12 +41,19 @@ const ProductProperty = ({ property, setShowImage, setProperties }: any) => {
     <>
       {property.id === "200007763" ? (
         <div key={property.name} className="mt-4">
-          <div>
-            {" "}
-            {property.name} : {selectedProperty.value}{" "}
+          <div
+            className={`${router.locale === "ar" && "flex flex-row-reverse"}`}
+          >
+            <span>{property.name}</span>
+            <span>:</span>
+            <span>{selectedProperty.value}</span>
           </div>
 
-          <div className="flex items-center flex-wrap">
+          <div
+            className={`flex ${
+              router.locale === "ar" ? "justify-end" : "items-center"
+            }  flex-wrap`}
+          >
             {property.values.map((value: any) => {
               if (value.countryCode === "CN") {
                 return (
@@ -101,17 +112,24 @@ const ProductProperty = ({ property, setShowImage, setProperties }: any) => {
             })}
           </div>
           <div>
-            <small>Products should only be shipped from china.</small>
+            <small>{t("shipFromChina")}</small>
           </div>
         </div>
       ) : (
         <div key={property.name} className="mt-4">
-          <div>
-            {" "}
-            {property.name} : {selectedProperty.value}{" "}
+          <div
+            className={`${router.locale === "ar" && "flex flex-row-reverse"}`}
+          >
+            <span>{property.name}</span>
+            <span>:</span>
+            <span>{selectedProperty.value}</span>
           </div>
 
-          <div className="flex items-center flex-wrap">
+          <div
+            className={`flex ${
+              router.locale === "ar" ? "justify-end" : "items-center"
+            } flex-wrap`}
+          >
             {property.values.map((value: any) => {
               return (
                 <div
