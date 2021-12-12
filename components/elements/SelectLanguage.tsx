@@ -93,19 +93,21 @@ export default function SelectLanguage() {
                             >
                               {language.name}
                             </span>
+                            {selected ? (
+                              <span
+                                className={classNames(
+                                  active ? "hidden" : "",
+                                  "absolute inset-y-0 right-0 flex items-center pr-4"
+                                )}
+                              >
+                                <CheckIcon
+                                  className="h-5 w-5"
+                                  aria-hidden="true"
+                                />
+                              </span>
+                            ) : null}
                           </div>
                         </Link>
-
-                        {selected ? (
-                          <span
-                            className={classNames(
-                              active ? "hidden" : "",
-                              "absolute inset-y-0 right-0 flex items-center pr-4"
-                            )}
-                          >
-                            <CheckIcon className="h-5 w-5" aria-hidden="true" />
-                          </span>
-                        ) : null}
                       </>
                     )}
                   </Listbox.Option>
