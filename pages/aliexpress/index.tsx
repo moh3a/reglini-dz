@@ -30,7 +30,7 @@ const Aliexpress = ({ messages, rate, commission }: any) => {
             {product.status === "productNotAvailableForShipToCountry"
               ? "Item cannot be shipped to Algeria | "
               : ""}
-            AliExpress | reglini.dz
+            AliExpress | reglini-dz
           </title>
           <meta
             name="description"
@@ -64,10 +64,10 @@ const Aliexpress = ({ messages, rate, commission }: any) => {
   return (
     <>
       <Head>
-        <title>Search Aliexpress items | reglini.dz</title>
+        <title>Search Aliexpress items | reglini-dz</title>
         <meta
           name="description"
-          content="Buying items from AliExpress and with Algerian Dinars? Now that's possible here in reglini.dz. Safe and reliable algerian online shopping."
+          content="Buying items from AliExpress and with Algerian Dinars? Now that's possible here in reglini-dz. Safe and reliable algerian online shopping."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

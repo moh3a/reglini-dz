@@ -7,9 +7,50 @@
       "name": "Bab El Oued",
       "communes": [
         {
-          "name": "Alger",
-          "codeONS": "",
-          "postalCode": "16000",
+          "name": "Bab El Oued",
+          "codeONS": "1605",
+          "postalCode": "16008",
+          "otherPosts": [
+            { "name": "Bab el Oued - Ali Basta", "postalCode": "16020" },
+            { "name": "Bab el Oued - El Kettani", "postalCode": "16021" },
+            { "name": "Bab el Oued CHU", "postalCode": "16131" },
+            { "name": "Bab el Oued - Brahim Gharafa", "postalCode": "16155" },
+            { "name": "Bab el Oued - Rachid Kouache", "postalCode": "16156" }
+          ]
+        },
+        {
+          "name": "Casbah",
+          "codeONS": "1607",
+          "postalCode": "16022",
+          "otherPosts": [
+            { "name": "Haute Casbah", "postalCode": "16022" },
+            { "name": "Casbah - Port Said", "postalCode": "16011" }
+          ]
+        },
+        {
+          "name": "Bologhine",
+          "codeONS": "1606",
+          "postalCode": "16030",
+          "otherPosts": [
+            { "name": "Bologhine - Ali Ourak", "postalCode": "16070" }
+          ]
+        },
+        {
+          "name": "Oued Koriche",
+          "codeONS": "1608",
+          "postalCode": "16068",
+          "otherPosts": [
+            { "name": "Oued Koriche - Ahcene Askri", "postalCode": "16068" },
+            {
+              "name": "Oued Koriche - Ben Mbarek Abdelkader",
+              "postalCode": "16182"
+            }
+          ]
+        },
+        {
+          "name": "Raïs Hamidou",
+          "codeONS": "1625",
+          "postalCode": "16060",
           "otherPosts": []
         }
       ]
@@ -147,6 +188,7 @@
       ]
     }
   ],
+
   "address": [
     {
       "name": "Alger",
@@ -155,40 +197,28 @@
         { "name": "Alger 1er Novembre", "postalCode": "16001" },
         { "name": "Alger Mourad Didouche", "postalCode": "16002" },
         { "name": "Alger 1er Mai", "postalCode": "16007" },
-        { "name": "Alger Bab el Oued", "postalCode": "16008" },
         { "name": "Alger El Anasser", "postalCode": "16009" },
         { "name": "Alger Ferhat Boussad", "postalCode": "16010" },
-        { "name": "Alger Port Said", "postalCode": "16011" },
         { "name": "Alger Sidi Mhamed", "postalCode": "16012" },
-        { "name": "Alger Ali Basta", "postalCode": "16020" },
-        { "name": "Alger El Kettani", "postalCode": "16021" },
-        { "name": "Alger Haute Casbah", "postalCode": "16022" },
-        { "name": "Alger Malika Gaid", "postalCode": "16023" },
         { "name": "Alger Hassiba Ben Bouali", "postalCode": "16037" },
         { "name": "Alger 7 Merveilles", "postalCode": "16038" },
         { "name": "Alger Khelifa Boukhalfa", "postalCode": "16039" },
         { "name": "Alger Tarik Ibn Ziad", "postalCode": "16041" },
         { "name": "Alger Freres Bellili", "postalCode": "16066" },
         { "name": "Alger Freres Si Bachir", "postalCode": "16067" },
-        { "name": "Alger Ahcene Askri", "postalCode": "16068" },
-        { "name": "Alger Ali Ourak", "postalCode": "16070" },
         { "name": "Alger APN", "postalCode": "16071" },
         { "name": "Alger Boulevard des Martyrs", "postalCode": "16072" },
         { "name": "Alger Diar el Mahcoul", "postalCode": "16074" },
         { "name": "Alger Les Sources", "postalCode": "16075" },
         { "name": "Alger Mahieddine", "postalCode": "16076" },
         { "name": "Alger Port", "postalCode": "16077" },
-        { "name": "Alger Bab el Oued CHU", "postalCode": "16131" },
         { "name": "Alger CHU Mustapha", "postalCode": "16131" },
         { "name": "Alger Mohamed Douar", "postalCode": "16151" },
-        { "name": "Alger Brahim Gharafa", "postalCode": "16155" },
-        { "name": "Alger Rachid Kouache", "postalCode": "16156" },
         { "name": "Alger Ethaalibi", "postalCode": "16157" },
         { "name": "Alger Ben Mhidi", "postalCode": "16158" },
         { "name": "Alger Amara Rachid", "postalCode": "16159" },
         { "name": "Alger Asselah Hocine", "postalCode": "16172" },
         { "name": "Alger La Concorde", "postalCode": "16173" },
-        { "name": "Alger Ben Mbarek Abdelkader", "postalCode": "16182" },
         { "name": "Alger EPRS", "postalCode": "16197" },
         { "name": "Alger Centre La Faculte Centrale", "postalCode": "16213" },
         { "name": "Alger Gare Maritime", "postalCode": "16216" }
@@ -198,6 +228,7 @@
       "name": "El Biar",
       "postalCode": "16003",
       "otherPosts": [
+        { "name": "El Biar Malika Gaid", "postalCode": "16023" },
         { "name": "El Biar Bougara", "postalCode": "16034" },
         { "name": "El Biar Ali Khoudja", "postalCode": "16138" },
         {
@@ -220,13 +251,12 @@
         }
       ]
     },
-    { "name": "Bologhine", "postalCode": "16030" },
+
     {
       "name": "El Mouradia",
       "postalCode": "16035",
       "otherPosts": [{ "name": "El Mouradia Aoudia", "postalCode": "16052" }]
     },
-    { "name": "Rais Hamidou", "postalCode": "16060" },
     {
       "name": "Said Hamdine",
       "postalCode": "16078",
@@ -310,7 +340,6 @@
       ]
     },
     { "name": "Alger Cour Supreme", "postalCode": "16073" },
-    { "name": "Alger Ziani (police)", "postalCode": "16080" },
     {
       "name": "Baba Hassen",
       "postalCode": "16081",

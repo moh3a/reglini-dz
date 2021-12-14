@@ -2,7 +2,7 @@ require("dotenv").config();
 import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 import { getSession } from "next-auth/client";
-
+import { CancelOrderAfterTimer } from "../../../../utils/methods";
 import User from "../../../../models/User";
 import { IUser } from "../../../../utils/types";
 
@@ -66,14 +66,7 @@ export default async function handler(
                 shippingAddress,
                 currency: "EUR",
               });
-              setTimeout(async () => {
-                const index = user.orders.findIndex(
-                  (el: any) => el.orderId === id
-                );
-                if (index !== -1) {
-                  await axios.post("/api/aliexpress/cancel", { id });
-                }
-              }, 30000);
+              CancelOrderAfterTimer(user, id, 60000);
             });
             user.save(function (err: any, result: any) {
               if (err) {

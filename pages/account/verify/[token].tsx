@@ -10,7 +10,7 @@ const AccountVerificationScreen = () => {
   return (
     <>
       <Head>
-        <title>Account Verification | reglini.dz</title>
+        <title>Account Verification | reglini-dz</title>
         <meta
           name="description"
           content="Verify the email address entered when signin up to be able to purchase items from Aliexpress or subscribe to the offered services."

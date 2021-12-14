@@ -43,7 +43,7 @@ const Wishlist = ({ messages }: any) => {
   return (
     <>
       <Head>
-        <title>Your Wishlist | reglini.dz</title>
+        <title>Your Wishlist | reglini-dz</title>
         <meta
           name="description"
           content="Add items you like to the wishlist so you'll find them whenever you need them."

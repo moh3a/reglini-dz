@@ -37,9 +37,9 @@ const Profile = () => {
           {session && session.user?.name
             ? `${session.user.name}'s profile | `
             : ``}
-          reglini.dz
+          reglini-dz
         </title>
-        <meta name="description" content="reglini.dz user's profile page" />
+        <meta name="description" content="reglini-dz user's profile page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {user && <AccountDetails />}

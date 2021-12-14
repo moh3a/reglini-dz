@@ -4,8 +4,8 @@ const PrivacyPolicy = () => {
   return (
     <>
       <Head>
-        <title>Privacy Policy | reglini.dz</title>
-        <meta name="description" content="reglini.dz's privacy policy" />
+        <title>Privacy Policy | reglini-dz</title>
+        <meta name="description" content="reglini-dz's privacy policy" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>Privacy Policy</div>

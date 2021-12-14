@@ -33,7 +33,7 @@ export default async function handler(
           ? `<h2>User with username ${session.user.name} and email address ${session.user.email} with ${session.user.type} account type sent this email.</h2>`
           : ``;
 
-      const text = `<h3>A client in reglini.dz have sent this email.</h3>${userinfo}<div>${message}</div>`;
+      const text = `<h3>A client in reglini-dz have sent this email.</h3>${userinfo}<div>${message}</div>`;
       SendEmail({ from, to, subject, text });
 
       res.status(200).json({ message: "Email successfully sent." });

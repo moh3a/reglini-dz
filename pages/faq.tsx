@@ -51,10 +51,10 @@ const Faq = () => {
   return (
     <>
       <Head>
-        <title>FAQ | reglini.dz</title>
+        <title>FAQ | reglini-dz</title>
         <meta
           name="description"
-          content="Frequently asked questions about the services provided by reglini.dz"
+          content="Frequently asked questions about the services provided by reglini-dz"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

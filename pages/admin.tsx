@@ -30,7 +30,7 @@ const AdminScreen = ({ messages }: any) => {
   return (
     <>
       <Head>
-        <title>reglini.dz Admin Page</title>
+        <title>reglini-dz Admin Page</title>
         <meta name="description" content="Private admin page." />
         <link rel="icon" href="/favicon.ico" />
       </Head>

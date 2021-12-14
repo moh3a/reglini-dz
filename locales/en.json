@@ -63,7 +63,7 @@
     }
   },
   "Footer": {
-    "desc": "Welcome to reglini.dz, where you'll be able to buy items from Aliexpress using the local algerian dinars or subscribe to the provided services.",
+    "desc": "Welcome to reglini-dz, where you'll be able to buy items from Aliexpress using the local algerian dinars or subscribe to the provided services.",
     "info": "INFO",
     "support": "Support",
     "pp": "Privacy Policy",
@@ -150,6 +150,7 @@
     "orderTime": "Order time",
     "orderStatus": "Order status",
     "productId": "Product ID",
+    "hasTimedOut": "Your order timed out and is now cancelled.",
     "processingPayment": "A payment was received and is being processed.",
     "paymentTime": "Payment time",
     "checkPayment": "See the payment you submitted",

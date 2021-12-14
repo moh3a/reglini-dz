@@ -32,7 +32,7 @@ const LoginScreen = ({
   return (
     <>
       <Head>
-        <title>Login | reglini.dz</title>
+        <title>Login | reglini-dz</title>
         <meta
           name="description"
           content="Join us and enjoy our services from easily shopping from Aliexpress in Algerian dinars to creating personnalized facebook ads."

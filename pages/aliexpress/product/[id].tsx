@@ -43,7 +43,7 @@ const AliexpressProduct = ({ messages, rate, commission }: any) => {
             {product.status === "productNotFound" && "Product not Found"}
             {product.status === "productNotAvailableForShipToCountry" &&
               "Item cannot be shipped to Algeria"}
-            | AliExpress | reglini.dz
+            | AliExpress | reglini-dz
           </title>
           <meta
             name="description"
@@ -73,7 +73,7 @@ const AliexpressProduct = ({ messages, rate, commission }: any) => {
     <>
       <Head>
         <title>
-          {product ? `${product.title} | ` : ``} Aliexpress | reglini.dz
+          {product ? `${product.title} | ` : ``} Aliexpress | reglini-dz
         </title>
         <meta
           name="description"

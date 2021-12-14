@@ -150,6 +150,7 @@
     "orderTime": "وقت الطلب",
     "orderStatus": "حالة الطلب",
     "productId": "معرف المنتج",
+    "hasTimedOut": "انتهت مهلة طلبك وتم إلغاؤه الآن",
     "processingPayment": "تم استلام دفعة وجارٍ معالجتها",
     "paymentTime": "وقت الدفع",
     "checkPayment": "انظر الى الدفع الذي قدمته",

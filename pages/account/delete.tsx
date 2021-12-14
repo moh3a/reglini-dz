@@ -74,11 +74,11 @@ const DeleteAccount = ({ messages }: any) => {
           {session && session.user?.name
             ? `${session.user.name}'s account | `
             : ``}
-          reglini.dz
+          reglini-dz
         </title>
         <meta
           name="description"
-          content="Permanently delete all account info and data from reglini.dz. This action is irreversible."
+          content="Permanently delete all account info and data from reglini-dz. This action is irreversible."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

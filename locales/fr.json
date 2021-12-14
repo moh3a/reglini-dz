@@ -63,7 +63,7 @@
     }
   },
   "Footer": {
-    "desc": "Bienvenue sur reglini.dz, où vous pourrez acheter des articles d'Aliexpress en utilisant les dinars algériens locaux ou vous abonner aux services fournis.",
+    "desc": "Bienvenue sur reglini-dz, où vous pourrez acheter des articles d'Aliexpress en utilisant les dinars algériens locaux ou vous abonner aux services fournis.",
     "info": "INFO",
     "support": "Support",
     "pp": "Politique de confidentialité",
@@ -150,6 +150,7 @@
     "orderTime": "Temps de commande",
     "orderStatus": "Statut de la commande",
     "productId": "Identifiant du produit",
+    "hasTimedOut": "Votre commande a expiré et est maintenant annulée.",
     "processingPayment": "Un paiement a été reçu et est en cours de traitement.",
     "paymentTime": "Temps de paiement",
     "checkPayment": "Voir le paiement que vous avez soumis",

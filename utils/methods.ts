@@ -32,10 +32,72 @@ import axios from "axios";
 export const ConvertPrice = async (price: number) => {
   let commission = 0;
   let rate = 0;
-  const { data } = await axios.get("http://localhost:3000/api/commission");
+  const { data } = await axios.get(
+    `${process.env.NEXTAUTH_URL}/api/commission`
+  );
   commission = data.data.commission;
-  const res = await axios.get("http://localhost:3000/api/currency");
+  const res = await axios.get(`${process.env.NEXTAUTH_URL}/api/currency`);
   rate = res.data.data[0].live.parallel.sale;
   let newPrice = price * rate + price * rate * commission;
   return newPrice;
+};
+
+export const CancelOrderAfterTimer = async (
+  user: any,
+  id: string,
+  timer: number
+) => {
+  await new Promise((resolve) => setTimeout(resolve, timer));
+  const index = user.orders.findIndex(
+    (el: any) => el.orderId === id.toString()
+  );
+  if (index !== -1 && !user.orders[index].isPaymentConfirmed) {
+    await axios({
+      method: "POST",
+      url: "https://api.zapiex.com/v3/order/details",
+      headers: {
+        "x-api-key": process.env.ZAPIEX_KEY,
+        "Content-Type": "application/json",
+      },
+      data: {
+        username: process.env.ALIEXPRESS_USERNAME,
+        password: process.env.ALIEXPRESS_PASSWORD,
+        orderId: id.toString(),
+      },
+    })
+      .then((response) => {
+        let data = response.data.data;
+        if (data.canCancel) {
+          axios({
+            method: "POST",
+            url: "https://api.zapiex.com/v3/order/cancel",
+            headers: {
+              "x-api-key": process.env.ZAPIEX_KEY,
+              "Content-Type": "application/json",
+            },
+            data: {
+              username: process.env.ALIEXPRESS_USERNAME,
+              password: process.env.ALIEXPRESS_PASSWORD,
+              orderId: id.toString(),
+            },
+          })
+            .then(() => {
+              user.orders[index] = {
+                orderId: id.toString(),
+                product: undefined,
+                shippingAddress: undefined,
+                tracking: undefined,
+                payment: { hasTimedOut: true },
+              };
+              user.save(function (err: any, result: any) {
+                if (err) {
+                  console.log(err);
+                }
+              });
+            })
+            .catch((err) => console.log(err));
+        }
+      })
+      .catch((err) => console.log(err));
+  }
 };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { TrashIcon } from "@heroicons/react/outline";
 
 import SubmitPayment from "./SubmitPayment";
 import {
@@ -94,85 +95,111 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
           <h3 className="text-lg leading-6 font-medium">
             {t("orderId")}: {order.orderId}
           </h3>
-          {order.creationTime ? (
-            <p>
-              {t("orderTime")}: {order.creationTime.substring(0, 10)}{" "}
-              {order.creationTime.substring(11, 16)}{" "}
-            </p>
-          ) : (
-            ""
-          )}
-          {order.status ? (
-            <p>
-              {t("orderStatus")}: {order.status}
-            </p>
-          ) : (
-            ""
-          )}
-          <small>
-            {t("productId")}: {order.product.productId}
-          </small>
-          <p>{order.product.title} </p>
-          {order.payment.receipt && (
-            <div className="py-1 px-3 border-2 border-green-300 bg-green-100 rounded-lg">
-              <p className="text-green-800 font-bold">
-                {t("processingPayment")}
-              </p>
-              {order.payment.paymentTime && (
+          {!order.payment.hasTimedOut && (
+            <>
+              {order.creationTime ? (
                 <p>
-                  {t("paymentTime")}:{" "}
-                  {order.payment.paymentTime.substring(0, 10)}{" "}
-                  {order.payment.paymentTime.substring(11, 16)}{" "}
+                  {t("orderTime")}: {order.creationTime.substring(0, 10)}{" "}
+                  {order.creationTime.substring(11, 16)}{" "}
                 </p>
+              ) : (
+                ""
               )}
-              <a target="_blank" rel="noreferrer" href={order.payment.receipt}>
-                {t("checkPayment")}
-              </a>
-            </div>
+              {order.status ? (
+                <p>
+                  {t("orderStatus")}: {order.status}
+                </p>
+              ) : (
+                ""
+              )}
+              <small>
+                {t("productId")}: {order.product.productId}
+              </small>
+              <p>{order.product.title} </p>
+              {order.payment.receipt && (
+                <div className="py-1 px-3 border-2 border-green-300 bg-green-100 rounded-lg">
+                  <p className="text-green-800 font-bold">
+                    {t("processingPayment")}
+                  </p>
+                  {order.payment.paymentTime && (
+                    <p>
+                      {t("paymentTime")}:{" "}
+                      {order.payment.paymentTime.substring(0, 10)}{" "}
+                      {order.payment.paymentTime.substring(11, 16)}{" "}
+                    </p>
+                  )}
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href={order.payment.receipt}
+                  >
+                    {t("checkPayment")}
+                  </a>
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>
-      <div className="flex flex-col items-center lg:flex-row lg:justify-end py-2 px-3 text-black">
-        {order.canCancel && (
+      {order.payment.hasTimedOut ? (
+        <div className="flex flex-col items-center lg:flex-row lg:justify-end py-2 px-3">
+          <div>{t("hasTimedOut")}</div>
           <div>
+            <span className="sr-only">delete</span>
             <button
-              className="bg-red-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-red-300 dark:bg-red-400"
-              onClick={() => dispatch(cancelOrder({ id: order.orderId }))}
+              onClick={() => console.log("item deleted")}
+              className="px-4 py-1 my-1 lg:mx-1 rounded-lg bg-red-500 hover:bg-red-400"
             >
-              {t("cancelOrder")}
+              <TrashIcon
+                className="flex-shink-0 h-6 w-6 text-gray-100"
+                aria-hidden="true"
+              />
             </button>
           </div>
-        )}
-        {order.status &&
-          order.status !== "COMPLETED" &&
-          !order.isPaid &&
-          !order.payment.receipt && (
+        </div>
+      ) : (
+        <div className="flex flex-col items-center lg:flex-row lg:justify-end py-2 px-3 text-black">
+          {order.canCancel && (
             <div>
               <button
-                className="bg-indigo-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-indigo-300 dark:bg-indigo-400"
-                onClick={() => setOpenPayNow(true)}
+                className="bg-red-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-red-300 dark:bg-red-400"
+                onClick={() => dispatch(cancelOrder({ id: order.orderId }))}
               >
-                {t("payNow")}
+                {t("cancelOrder")}
               </button>
             </div>
           )}
-        <div>
-          <button
-            onClick={() => setOpenTracking(true)}
-            className="bg-indigo-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-indigo-300 dark:bg-indigo-400"
-          >
-            {t("tracking")}
-          </button>
+          {order.status &&
+            order.status !== "COMPLETED" &&
+            !order.isPaid &&
+            !order.payment.receipt && (
+              <div>
+                <button
+                  className="bg-indigo-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-indigo-300 dark:bg-indigo-400"
+                  onClick={() => setOpenPayNow(true)}
+                >
+                  {t("payNow")}
+                </button>
+              </div>
+            )}
+          <div>
+            <button
+              onClick={() => setOpenTracking(true)}
+              className="bg-indigo-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-indigo-300 dark:bg-indigo-400"
+            >
+              {t("tracking")}
+            </button>
+          </div>
+          <div>
+            <button
+              className="bg-green-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-green-300 dark:bg-green-400"
+              onClick={() => dispatch(getOrderDetails({ id: order.orderId }))}
+            >
+              {t("refresh")}
+            </button>
+          </div>
         </div>
-        <div>
-          <button
-            className="bg-green-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-green-300 dark:bg-green-400"
-            onClick={() => dispatch(getOrderDetails({ id: order.orderId }))}
-          >
-            {t("refresh")}
-          </button>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

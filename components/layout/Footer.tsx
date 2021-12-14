@@ -22,7 +22,7 @@ const Footer = () => {
             <div className="px-6 text-center">
               <div>
                 <a className="cursor-pointer text-xl font-bold text-gray-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">
-                  reglini.dz
+                  reglini-dz
                 </a>
               </div>
 

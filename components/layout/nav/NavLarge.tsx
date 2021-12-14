@@ -41,7 +41,7 @@ const NavLarge = ({ setOpen, session, user }: any) => {
             <div className="ml-4 flex lg:ml-0">
               <Link href="/" passHref>
                 <a>
-                  <span className="sr-only">reglini.dz</span>
+                  <span className="sr-only">reglini-dz</span>
                   <Logo width="50" height="50" />
                 </a>
               </Link>

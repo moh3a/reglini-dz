@@ -28,10 +28,10 @@ const HomeScreen = ({ messages }: any) => {
   return (
     <>
       <Head>
-        <title>reglini.dz</title>
+        <title>reglini-dz</title>
         <meta
           name="description"
-          content="Welcome to reglini.dz (reglini-dz.com). Checkout the services we provide, from buying from Aliexpress using algerians dinars, to subscribing to Netflix and many more to come."
+          content="Welcome to reglini-dz (reglini-dz.com). Checkout the services we provide, from buying from Aliexpress using algerians dinars, to subscribing to Netflix and many more to come."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

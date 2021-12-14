@@ -45,7 +45,7 @@ const NewOrderScreen = () => {
   return (
     <>
       <Head>
-        <title>Place new order | reglini.dz</title>
+        <title>Place new order | reglini-dz</title>
         <meta
           name="description"
           content="Time to checkout? Setup the needed informations for Aliexpress shipping, and your product will be on its way. reglini-dz"

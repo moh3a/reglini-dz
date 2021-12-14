@@ -10,7 +10,7 @@ const ResetPasswordScreen = ({}) => {
   return (
     <>
       <Head>
-        <title>Reset your password | reglini.dz</title>
+        <title>Reset your password | reglini-dz</title>
         <meta
           name="description"
           content="Forgot your password and requested to change it? Check your email and a link with a token is provided, you follow the link and you'll prompted to set a new password."

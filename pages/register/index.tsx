@@ -17,7 +17,7 @@ const RegisterScreen = ({ providers, csrfToken, children }: any) => {
   return (
     <>
       <Head>
-        <title>Create new account | reglini.dz</title>
+        <title>Create new account | reglini-dz</title>
         <meta
           name="description"
           content="Join us and enjoy our services from easily shopping from Aliexpress in Algerian dinars to creating personnalized facebook ads."
@@ -35,7 +35,7 @@ const RegisterScreen = ({ providers, csrfToken, children }: any) => {
                     {/* <a className="flex items-center w-32 mb-4 font-medium text-blueGray-900 title-font md:mb-10">
                   <h2 className="text-lg font-bold tracking-tighter text-gray-800 dark:text-gray-100 transition duration-500 ease-in-out transform hover:text-lightBlack-500 dark:text-lightBlue-400">
                     {" "}
-                    reglini.dz{" "}
+                    reglini-dz{" "}
                   </h2>
                 </a> */}
                     <h2 className="mt-12 mb-2 text-2xl font-semibold tracking-tighter text-gray-800 dark:text-gray-100 sm:text-3xl title-font">
