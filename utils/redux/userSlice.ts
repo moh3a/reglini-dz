@@ -9,6 +9,7 @@ import {
   removeFromCart,
   createOrder,
   cancelOrder,
+  deleteOrder,
   getOrderDetails,
   getOrderTracking,
 } from "./userAsyncActions";
@@ -156,6 +157,20 @@ export const userSlice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(cancelOrder.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      //========================================================================================
+      .addCase(deleteOrder.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(deleteOrder.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.user = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(deleteOrder.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       })

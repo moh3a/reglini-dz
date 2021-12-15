@@ -6,6 +6,7 @@ import { TrashIcon } from "@heroicons/react/outline";
 
 import SubmitPayment from "./SubmitPayment";
 import {
+  deleteOrder,
   getOrderDetails,
   cancelOrder,
 } from "../../../utils/redux/userAsyncActions";
@@ -78,7 +79,19 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="w-full">
+    <div className="relative w-full">
+      <div className="absolute right-0 top-0 mr-2 mt-1">
+        <span className="sr-only">delete</span>
+        <button
+          onClick={() => dispatch(deleteOrder({ id: order.orderId }))}
+          className="px-4 py-1 my-1 lg:mx-1 rounded-lg bg-red-500 hover:bg-red-400"
+        >
+          <TrashIcon
+            className="flex-shink-0 h-6 w-6 text-gray-100"
+            aria-hidden="true"
+          />
+        </button>
+      </div>
       <div className="flex items-center flex-col lg:items-start lg:flex-row">
         {order.product.imageUrl && (
           <div className="w-72 md:w-44 rounded-lg">
@@ -144,18 +157,6 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
       {order.payment.hasTimedOut ? (
         <div className="flex flex-col items-center lg:flex-row lg:justify-end py-2 px-3">
           <div>{t("hasTimedOut")}</div>
-          <div>
-            <span className="sr-only">delete</span>
-            <button
-              onClick={() => console.log("item deleted")}
-              className="px-4 py-1 my-1 lg:mx-1 rounded-lg bg-red-500 hover:bg-red-400"
-            >
-              <TrashIcon
-                className="flex-shink-0 h-6 w-6 text-gray-100"
-                aria-hidden="true"
-              />
-            </button>
-          </div>
         </div>
       ) : (
         <div className="flex flex-col items-center lg:flex-row lg:justify-end py-2 px-3 text-black">

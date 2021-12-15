@@ -163,12 +163,23 @@ export const cancelOrder = createAsyncThunk(
   }
 );
 
+export const deleteOrder = createAsyncThunk(
+  "user/deleteOrder",
+  async ({ id }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post(`/api/aliexpress/order/delete/${id}`);
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
 export const getOrderDetails = createAsyncThunk(
   "user/getOrderDetails",
   async ({ id }: any, { rejectWithValue }) => {
     try {
       const { data } = await axios.post(`/api/aliexpress/order/retrieve/${id}`);
-      console.log(data);
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response);

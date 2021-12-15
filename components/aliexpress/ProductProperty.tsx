@@ -120,8 +120,7 @@ const ProductProperty = ({ property, setShowImage, setProperties }: any) => {
           <div
             className={`${router.locale === "ar" && "flex flex-row-reverse"}`}
           >
-            <span>{property.name}</span>
-            <span>:</span>
+            <span>{property.name}</span> <span>:</span>{" "}
             <span>{selectedProperty.value}</span>
           </div>
 

@@ -66,7 +66,11 @@ export default async function handler(
                 shippingAddress,
                 currency: "EUR",
               });
-              CancelOrderAfterTimer(user, id, 60000);
+              /*
+              60000      - for test
+              172800000  - 48h for production
+              */
+              CancelOrderAfterTimer(user, id, 172800000);
             });
             user.save(function (err: any, result: any) {
               if (err) {

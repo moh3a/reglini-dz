@@ -51,7 +51,11 @@ export const CancelOrderAfterTimer = async (
   const index = user.orders.findIndex(
     (el: any) => el.orderId === id.toString()
   );
-  if (index !== -1 && !user.orders[index].isPaymentConfirmed) {
+  if (
+    index !== -1 &&
+    !user.orders[index].isPaymentConfirmed &&
+    user.orders[index].status !== "COMPLETED"
+  ) {
     await axios({
       method: "POST",
       url: "https://api.zapiex.com/v3/order/details",
