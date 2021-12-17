@@ -152,6 +152,8 @@
     "productId": "Product ID",
     "hasTimedOut": "Your order timed out and is now cancelled.",
     "processingPayment": "A payment was received and is being processed.",
+    "paymentDeclined": "Your payment was declined.",
+    "paymentAccepted": "Your payment was successful. Order confirmed.",
     "paymentTime": "Payment time",
     "checkPayment": "See the payment you submitted",
     "trackingAvailable": "Tracking Available",

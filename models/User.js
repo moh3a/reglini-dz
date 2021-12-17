@@ -157,6 +157,7 @@ const OrderSchema = new mongoose.Schema(
         type: Boolean,
         default: false,
       },
+      wasDeclined: Boolean,
       receipt: String,
       paymentMethod: {
         type: String,

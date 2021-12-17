@@ -56,7 +56,7 @@ handler.post(upload.single("file"), async (req, res) => {
         SendEmail({
           from: "support@reglini-dz.com",
           to: "moh3a@reglini-dz.com",
-          subject: "Check the payment made by the client",
+          subject: `Check the payment made by ${data.name}`,
           text,
         });
       }
@@ -70,7 +70,7 @@ handler.post(upload.single("file"), async (req, res) => {
       } else {
         let date = LocalISODate();
         let payment = {
-          isPaymentConfirmed: true,
+          wasDeclined: false,
           receipt: picture,
           paymentMethod,
           paymentTime: date,

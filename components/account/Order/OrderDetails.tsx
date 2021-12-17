@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { TrashIcon } from "@heroicons/react/outline";
+import { TrashIcon, PhotographIcon } from "@heroicons/react/outline";
 
 import SubmitPayment from "./SubmitPayment";
 import {
@@ -110,10 +110,10 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
           </h3>
           {!order.payment.hasTimedOut && (
             <>
-              {order.creationTime ? (
+              {order.createdAt ? (
                 <p>
-                  {t("orderTime")}: {order.creationTime.substring(0, 10)}{" "}
-                  {order.creationTime.substring(11, 16)}{" "}
+                  {t("orderTime")}: {order.createdAt.substring(0, 10)}{" "}
+                  {order.createdAt.substring(11, 16)} GMT
                 </p>
               ) : (
                 ""
@@ -129,24 +129,36 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
                 {t("productId")}: {order.product.productId}
               </small>
               <p>{order.product.title} </p>
+              {order.payment.wasDeclined && (
+                <div className="py-1 px-3 text-red-800 font-bold border-2 border-red-300 bg-red-100 rounded-lg">
+                  {t("paymentDeclined")}
+                </div>
+              )}
               {order.payment.receipt && (
                 <div className="py-1 px-3 border-2 border-green-300 bg-green-100 rounded-lg">
                   <p className="text-green-800 font-bold">
-                    {t("processingPayment")}
+                    {order.payment.isPaymentConfirmed
+                      ? t("paymentAccepted")
+                      : t("processingPayment")}
                   </p>
                   {order.payment.paymentTime && (
-                    <p>
+                    <p className="text-green-600">
                       {t("paymentTime")}:{" "}
                       {order.payment.paymentTime.substring(0, 10)}{" "}
                       {order.payment.paymentTime.substring(11, 16)}{" "}
                     </p>
                   )}
                   <a
+                    className="text-green-600 flex justify-center"
                     target="_blank"
                     rel="noreferrer"
                     href={order.payment.receipt}
                   >
-                    {t("checkPayment")}
+                    {t("checkPayment")}{" "}
+                    <PhotographIcon
+                      className="flex-shink-0 h-6 w-6"
+                      aria-hidden="true"
+                    />
                   </a>
                 </div>
               )}

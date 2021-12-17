@@ -1,9 +1,15 @@
-import User from "../models/User";
-import SendEmail from "./sendEmail";
 import { createAvatar } from "@dicebear/avatars";
 import * as style from "@dicebear/avatars-bottts-sprites";
+import mongoose from "mongoose";
+
+import dbConnect from "../config/db";
+import User from "../models/User";
+import SendEmail from "./sendEmail";
 
 const CustomSignInCallbackMethod = async (user: any, account: any) => {
+  if (!mongoose.connection.readyState) {
+    await dbConnect();
+  }
   if (account.id === "login-credentials") {
     return;
   } else if (account.id === "register-credentials") {

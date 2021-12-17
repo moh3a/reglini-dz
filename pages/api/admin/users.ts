@@ -1,3 +1,5 @@
+// doesn't work now because it is using jwt instead next-auth
+
 import dbConnect from "../../../config/db";
 import type { NextApiRequest, NextApiResponse } from "next";
 const jwt = require("jsonwebtoken");

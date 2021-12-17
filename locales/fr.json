@@ -152,6 +152,8 @@
     "productId": "Identifiant du produit",
     "hasTimedOut": "Votre commande a expiré et est maintenant annulée.",
     "processingPayment": "Un paiement a été reçu et est en cours de traitement.",
+    "paymentDeclined": "Votre paiement a été refusé.",
+    "paymentAccepted": "Votre paiement a été effectué avec succès. Commande confirmée.",
     "paymentTime": "Temps de paiement",
     "checkPayment": "Voir le paiement que vous avez soumis",
     "trackingAvailable": "Suivi disponible",

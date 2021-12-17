@@ -152,6 +152,8 @@
     "productId": "معرف المنتج",
     "hasTimedOut": "انتهت مهلة طلبك وتم إلغاؤه الآن",
     "processingPayment": "تم استلام دفعة وجارٍ معالجتها",
+    "paymentDeclined": "تم رفض الدفع",
+    "paymentAccepted": "تم الدفع بنجاح. تم تاكيد الطلب",
     "paymentTime": "وقت الدفع",
     "checkPayment": "انظر الى الدفع الذي قدمته",
     "trackingAvailable": "التتبع متاح",
