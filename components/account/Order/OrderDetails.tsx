@@ -48,10 +48,38 @@ const Tracking = ({ order, setOpenTracking }: any) => {
         </button>
       </div>
       <div className="px-4 py-5 sm:px-6">
-        {order.tracking.isTrackingAvailable
-          ? t("trackingAvailable")
-          : t("trackingNotAvailable")}
+        {order.tracking.isTrackingAvailable ? (
+          <p className="text-green-500">{t("trackingAvailable")}</p>
+        ) : (
+          <p className="text-red-500">{t("trackingNotAvailable")}</p>
+        )}
       </div>
+      {order.tracking.isTrackingAvailable && (
+        <div>
+          <p className="text-xl font-bold">
+            {order.tracking.packages[0].caption}
+          </p>
+          <p>
+            The product will be shipped from{" "}
+            {order.tracking.packages[0].shipFrom} to{" "}
+            {order.tracking.packages[0].shipTo} by{" "}
+            {order.tracking.packages[0].carrier.name}.
+          </p>
+          <p>
+            Estimated progress percentage{" "}
+            {order.tracking.packages[0].progressPercentage}%.
+          </p>
+          <p className="underline">
+            <a
+              href={order.tracking.packages[0].trackingUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Follow this link to the carrier&apos;s tracking page
+            </a>
+          </p>
+        </div>
+      )}
     </div>
   );
 };
@@ -128,7 +156,10 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
               <small>
                 {t("productId")}: {order.product.productId}
               </small>
-              <p>{order.product.title} </p>
+              <p className="text-2xl">{order.product.name} </p>
+              <p className="font-bold text-xl text-red-500">
+                {order.product.totalPrice} DZD
+              </p>
               {order.payment.wasDeclined && (
                 <div className="py-1 px-3 text-red-800 font-bold border-2 border-red-300 bg-red-100 rounded-lg">
                   {t("paymentDeclined")}

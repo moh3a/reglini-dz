@@ -98,6 +98,8 @@ const OrderSchema = new mongoose.Schema(
       name: String,
       sku: String,
       price: Number,
+      shippingPrice: Number,
+      totalPrice: Number,
       imageUrl: String,
       properties: [{}],
       quantity: {

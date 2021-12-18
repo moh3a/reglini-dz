@@ -75,66 +75,65 @@ export default function AccountDetails() {
               {user.email}
             </dd>
           </div>
-          <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt className="text-sm font-medium ">{t("verification")}</dt>
-            <dd className="mt-1 text-sm text-green-500 sm:mt-0 sm:col-span-2">
-              {user.verified ? (
-                <>{t("true")}</>
-              ) : (
-                <ul
-                  role="list"
-                  className="border border-red-500 text-red-500 rounded-md divide-y divide-gray-200"
-                >
-                  <li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
-                    <div className="w-0 flex-1 flex items-center">
-                      <span className="ml-2 flex-1 w-0 truncate">
-                        {t("verify")}
-                      </span>
-                    </div>
-                    <div className="ml-4 flex-shrink-0">
-                      <button
-                        onClick={emailResendHandler}
-                        className="font-medium text-gray-600 hover:text-gray-500"
-                      >
-                        {t("resend")}
-                      </button>
-                    </div>
-                  </li>
-                </ul>
-              )}
-            </dd>
-          </div>
-          {user.realName && (
+          {user.account !== "oauth" && (
             <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium ">{t("name")}</dt>
-              <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
-                <div>{user.realName}</div>
-                <button
-                  onClick={() =>
-                    editRealName
-                      ? setEditRealName(false)
-                      : setEditRealName(true)
-                  }
-                >
-                  {editRealName ? (
-                    <p className="text-red-600">{t("close")}</p>
-                  ) : (
-                    <p className="text-yellow-700">{t("edit")}</p>
-                  )}
-                </button>
-                {editRealName ? (
-                  <div
-                    role="list"
-                    className="mt-4 px-4 py-5 border border-red-500 rounded-md divide-y divide-gray-200"
-                  >
-                    <RealName />
-                  </div>
+              <dt className="text-sm font-medium ">{t("verification")}</dt>
+              <dd className="mt-1 text-sm text-green-500 sm:mt-0 sm:col-span-2">
+                {user.verified ? (
+                  <>{t("true")}</>
                 ) : (
-                  ""
+                  <ul
+                    role="list"
+                    className="border border-red-500 text-red-500 rounded-md divide-y divide-gray-200"
+                  >
+                    <li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
+                      <div className="w-0 flex-1 flex items-center">
+                        <span className="ml-2 flex-1 w-0 truncate">
+                          {t("verify")}
+                        </span>
+                      </div>
+                      <div className="ml-4 flex-shrink-0">
+                        <button
+                          onClick={emailResendHandler}
+                          className="font-medium text-gray-600 hover:text-gray-500"
+                        >
+                          {t("resend")}
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
                 )}
               </dd>
             </div>
           )}
+
+          <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt className="text-sm font-medium ">{t("name")}</dt>
+            <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
+              <div>{user.realName}</div>
+              <button
+                onClick={() =>
+                  editRealName ? setEditRealName(false) : setEditRealName(true)
+                }
+              >
+                {editRealName ? (
+                  <p className="text-red-600">{t("close")}</p>
+                ) : (
+                  <p className="text-yellow-700">{t("edit")}</p>
+                )}
+              </button>
+              {editRealName ? (
+                <div
+                  role="list"
+                  className="mt-4 px-4 py-5 border border-red-500 rounded-md divide-y divide-gray-200"
+                >
+                  <RealName />
+                </div>
+              ) : (
+                ""
+              )}
+            </dd>
+          </div>
 
           <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium ">{t("address")}</dt>
@@ -185,7 +184,7 @@ export default function AccountDetails() {
                 {editPhoneNumber ? (
                   <p className="text-red-600">{t("close")}</p>
                 ) : (
-                  <p className="text-yellow-700">{t("close")}</p>
+                  <p className="text-yellow-700">{t("edit")}</p>
                 )}
               </button>
               {editPhoneNumber ? (

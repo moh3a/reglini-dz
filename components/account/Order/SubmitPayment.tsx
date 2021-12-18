@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 import axios from "axios";
 import { RadioGroup } from "@headlessui/react";
@@ -13,6 +14,12 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
   const [createObjectURL, setCreateObjectURL] = useState<string>();
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (order.product.totalPrice > 50000) {
+      setSelected("ccp");
+    }
+  }, [order]);
 
   const uploadToClient = (event: any) => {
     if (event.target.files && event.target.files[0]) {
@@ -44,46 +51,61 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
 
   return (
     <div className="px-4 py-5 sm:px-6">
-      <h2>{t("choosePaymentMethod")}</h2>
-      <div className="w-full max-w-md mx-auto">
-        <RadioGroup
-          value={selected}
-          onChange={setSelected}
-          className="flex my-2"
-        >
-          <RadioGroup.Label className="sr-only">
-            {t("paymentMethod")}:{" "}
-          </RadioGroup.Label>
-          <RadioGroup.Option value="cib">
-            {({ checked }) => (
-              <span
-                className={`mx-1 border-2 rounded-md p-1 text-black ${
-                  checked
-                    ? "border-red-300 bg-red-200 dark:border-red-600 dark:bg-red-400"
-                    : "border-gray-200 bg-gray-200"
-                }`}
-              >
-                {t("cib")}
-              </span>
-            )}
-          </RadioGroup.Option>
-          <RadioGroup.Option value="ccp">
-            {({ checked }) => (
-              <>
-                <span
-                  className={`mx-1 border-2 rounded-md p-1 text-black ${
-                    checked
-                      ? "border-red-300 bg-red-200 dark:border-red-600 dark:bg-red-400"
-                      : "border-gray-200 bg-gray-200"
-                  }`}
-                >
-                  {t("ccp")}
-                </span>
-              </>
-            )}
-          </RadioGroup.Option>
-        </RadioGroup>
-      </div>
+      <h1>
+        The total amount to be paid is {order.product.totalPrice} DZD.{" "}
+        <Link href="/faq">
+          <a className="underline font-serif" target="_blank" rel="noreferrer">
+            Click here to learn how to pay
+          </a>
+        </Link>
+      </h1>
+      <br />
+      {order.product.totalPrice < 50000 ? (
+        <>
+          <h2>{t("choosePaymentMethod")}</h2>
+          <div className="w-full max-w-md mx-auto">
+            <RadioGroup
+              value={selected}
+              onChange={setSelected}
+              className="flex my-2"
+            >
+              <RadioGroup.Label className="sr-only">
+                {t("paymentMethod")}:{" "}
+              </RadioGroup.Label>
+              <RadioGroup.Option value="cib">
+                {({ checked }) => (
+                  <span
+                    className={`mx-1 border-2 rounded-md p-1 text-black ${
+                      checked
+                        ? "border-red-300 bg-red-200 dark:border-red-600 dark:bg-red-400"
+                        : "border-gray-200 bg-gray-200"
+                    }`}
+                  >
+                    {t("cib")}
+                  </span>
+                )}
+              </RadioGroup.Option>
+              <RadioGroup.Option value="ccp">
+                {({ checked }) => (
+                  <>
+                    <span
+                      className={`mx-1 border-2 rounded-md p-1 text-black ${
+                        checked
+                          ? "border-red-300 bg-red-200 dark:border-red-600 dark:bg-red-400"
+                          : "border-gray-200 bg-gray-200"
+                      }`}
+                    >
+                      {t("ccp")}
+                    </span>
+                  </>
+                )}
+              </RadioGroup.Option>
+            </RadioGroup>
+          </div>
+        </>
+      ) : (
+        <h2>Payment can only be via CCP.</h2>
+      )}
       {selected && (
         <div>
           {success && <AlertMessage type="success" message={success} />}

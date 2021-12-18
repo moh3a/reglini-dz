@@ -32,9 +32,12 @@ export default function NewOrder({ products, origin }: any) {
         createOrder({
           product: {
             productId: item.productId,
+            name: item.name,
             sku: item.sku,
             imageUrl: item.imageUrl,
             price: item.price,
+            shippingPrice: item.shippingPrice,
+            totalPrice: item.totalPrice,
             properties: item.properties,
             quantity: item.quantity,
             carrierId: item.carrierId,
