@@ -1,9 +1,10 @@
 import dbConnect from "../../../config/db";
 import type { NextApiRequest, NextApiResponse } from "next";
-import User from "../../../models/User";
+import Cookies from "js-cookie";
 import { getSession } from "next-auth/client";
-import { IUser } from "../../../utils/types";
 
+import User from "../../../models/User";
+import { IUser } from "../../../utils/types";
 import sendEmail from "../../../utils/sendEmail";
 
 export default async function handler(
@@ -35,6 +36,12 @@ export default async function handler(
             success: false,
           });
         }
+        Cookies.remove("next-auth.session-token");
+        Cookies.remove("next-auth.csrf-token");
+        Cookies.remove("next-auth.callback-url");
+        Cookies.remove("_Secure-next-auth.callback-url");
+        Cookies.remove("_Secure-next-auth.session-token");
+        Cookies.remove("_Secure-next-auth.csrf-token");
         const message = `
           <h1>Sorry to see you go.</h1>
           <p>Your account have been successfully deleted.</p>

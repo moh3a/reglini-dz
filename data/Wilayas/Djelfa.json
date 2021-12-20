@@ -8,9 +8,25 @@
       "communes": [
         {
           "name": "Djelfa",
-          "codeONS": "",
+          "codeONS": "1701",
           "postalCode": "17000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Djelfa - 5 Juillet", "postalCode": "17007" },
+            { "name": "Djelfa - Daya", "postalCode": "17008" },
+            { "name": "Djelfa - Sidi Nail", "postalCode": "17009" },
+            { "name": "Djelfa - Hassen Abdelkader", "postalCode": "17016" },
+            { "name": "Djelfa - Berrebih", "postalCode": "17017" },
+            { "name": "Djelfa - Boutrifis", "postalCode": "17018" },
+            { "name": "Djelfa - Ain Chih", "postalCode": "17028" },
+            { "name": "Djelfa - Zahaf", "postalCode": "17029" },
+            { "name": "Djelfa - Achour Ziane", "postalCode": "17072" },
+            { "name": "Djelfa - Gare Routiere", "postalCode": "17073" },
+            { "name": "Djelfa - Ouled Obaid Allah", "postalCode": "17076" },
+            { "name": "Djelfa - Mohamed Ben Labiad", "postalCode": "17077" },
+            { "name": "Djelfa - El Wiam", "postalCode": "17079" },
+            { "name": "Djelfa - Houari Boumedienne", "postalCode": "17084" },
+            { "name": "Djelfa - Ain Serar", "postalCode": "17085" }
+          ]
         }
       ]
     },
@@ -18,10 +34,30 @@
       "name": "Aïn El Ibel",
       "communes": [
         {
-          "name": "Djelfa",
-          "codeONS": "",
-          "postalCode": "17000",
-          "otherPosts": []
+          "name": "Aïn El Ibel",
+          "codeONS": "1730",
+          "postalCode": "17011",
+          "otherPosts": [{ "name": "Oued Sdar", "postalCode": "17081" }]
+        },
+        {
+          "name": "Moudjebara",
+          "codeONS": "1702",
+          "postalCode": "17058"
+        },
+        {
+          "name": "Tadmit",
+          "codeONS": "1736",
+          "postalCode": "17036",
+          "otherPosts": [
+            { "name": "El Hiouhi", "postalCode": "17050" },
+            { "name": "N'tila", "postalCode": "17059" },
+            { "name": "Ben Hamed", "postalCode": "17082" }
+          ]
+        },
+        {
+          "name": "Zaccar",
+          "codeONS": "1710",
+          "postalCode": "17065"
         }
       ]
     },
@@ -29,9 +65,24 @@
       "name": "Aïn Oussara",
       "communes": [
         {
-          "name": "Djelfa",
-          "codeONS": "",
-          "postalCode": "17000",
+          "name": "Aïn Oussara",
+          "codeONS": "1731",
+          "postalCode": "17001",
+          "otherPosts": [
+            { "name": "Ain Ouessara - Slimani Slimane", "postalCode": "17004" },
+            { "name": "Ain Ouessara - Zighout Youcef", "postalCode": "17005" },
+            { "name": "Ain Ouessara - Abane Ramdane", "postalCode": "17012" },
+            {
+              "name": "Ain Ouessara - Guerada Belkacem",
+              "postalCode": "17013"
+            },
+            { "name": "Ain Ouessara - Gare Routiere", "postalCode": "17074" }
+          ]
+        },
+        {
+          "name": "Guernini",
+          "codeONS": "1721",
+          "postalCode": "17054",
           "otherPosts": []
         }
       ]
@@ -40,10 +91,17 @@
       "name": "Birine",
       "communes": [
         {
-          "name": "Djelfa",
-          "codeONS": "",
-          "postalCode": "17000",
-          "otherPosts": []
+          "name": "Birine",
+          "codeONS": "1708",
+          "postalCode": "17014",
+          "otherPosts": [
+            { "name": "Birine - Kadi Tahar", "postalCode": "17027" }
+          ]
+        },
+        {
+          "name": "Benhar",
+          "postalCode": "17043",
+          "otherPosts": [{ "name": "Draa Souary", "postalCode": "17047" }]
         }
       ]
     },
@@ -51,9 +109,23 @@
       "name": "Charef",
       "communes": [
         {
-          "name": "Djelfa",
-          "codeONS": "",
-          "postalCode": "17000",
+          "name": "Charef",
+          "postalCode": "17015",
+          "otherPosts": [
+            { "name": "El Hammam", "postalCode": "17049" },
+            { "name": "Touazi", "postalCode": "17080" }
+          ]
+        },
+        {
+          "name": "El Guedid",
+          "codeONS": "1703",
+          "postalCode": "17019",
+          "otherPosts": [{ "name": "Oum Chegag", "postalCode": "17060" }]
+        },
+        {
+          "name": "Beni Yagoub",
+          "codeONS": "1727",
+          "postalCode": "17026",
           "otherPosts": []
         }
       ]
@@ -62,10 +134,25 @@
       "name": "Dar Chioukh",
       "communes": [
         {
-          "name": "Djelfa",
-          "codeONS": "",
-          "postalCode": "17000",
+          "name": "Dar Chioukh",
+          "codeONS": "1725",
+          "postalCode": "17006",
           "otherPosts": []
+        },
+        {
+          "name": "M'Liliha",
+          "codeONS": "1713",
+          "postalCode": "17057",
+          "otherPosts": [{ "name": "Mouilah", "postalCode": "17036" }]
+        },
+        {
+          "name": "Sidi Baizid",
+          "codeONS": "1712",
+          "postalCode": "17064",
+          "otherPosts": [
+            { "name": "Guendouza", "postalCode": "17053" },
+            { "name": "Sed Oum Drou", "postalCode": "17068" }
+          ]
         }
       ]
     },
@@ -73,9 +160,23 @@
       "name": "El Idrissia",
       "communes": [
         {
-          "name": "Djelfa",
-          "codeONS": "",
-          "postalCode": "17000",
+          "name": "El Idrissia",
+          "codeONS": "1714",
+          "postalCode": "17020",
+          "otherPosts": [
+            { "name": "El Idrissia - 11 Decembre 1960", "postalCode": "17078" }
+          ]
+        },
+        {
+          "name": "Douis",
+          "codeONS": "1715",
+          "postalCode": "17030",
+          "otherPosts": []
+        },
+        {
+          "name": "Aïn Chouhada",
+          "codeONS": "1723",
+          "postalCode": "17039",
           "otherPosts": []
         }
       ]
@@ -84,9 +185,21 @@
       "name": "Faidh El Botma",
       "communes": [
         {
-          "name": "Djelfa",
-          "codeONS": "",
-          "postalCode": "17000",
+          "name": "Faidh El Botma",
+          "codeONS": "1707",
+          "postalCode": "17021",
+          "otherPosts": []
+        },
+        {
+          "name": "Amourah",
+          "codeONS": "1734",
+          "postalCode": "17042",
+          "otherPosts": [{ "name": "Abdelmadjid", "postalCode": "17069" }]
+        },
+        {
+          "name": "Oum Laadham",
+          "codeONS": "1724",
+          "postalCode": "17061",
           "otherPosts": []
         }
       ]
@@ -95,9 +208,23 @@
       "name": "Had-Sahary",
       "communes": [
         {
-          "name": "Djelfa",
-          "codeONS": "",
-          "postalCode": "17000",
+          "name": "Had-Sahary",
+          "codeONS": "1720",
+          "postalCode": "17022",
+          "otherPosts": [
+            { "name": "Had Sahary - Ait Messaoudene", "postalCode": "17071" }
+          ]
+        },
+        {
+          "name": "Bouira Lahdab",
+          "codeONS": "1709",
+          "postalCode": "17044",
+          "otherPosts": []
+        },
+        {
+          "name": "Aïn Feka",
+          "codeONS": "1735",
+          "postalCode": "17040",
           "otherPosts": []
         }
       ]
@@ -106,9 +233,34 @@
       "name": "Hassi Bahbah",
       "communes": [
         {
-          "name": "Djelfa",
-          "codeONS": "",
-          "postalCode": "17000",
+          "name": "Hassi Bahbah",
+          "codeONS": "1704",
+          "postalCode": "17002",
+          "otherPosts": [
+            { "name": "Hassi Bahbah - Djaaroune Said", "postalCode": "17010" },
+            {
+              "name": "Hassi Bahbah - Chettouh Kheiredine",
+              "postalCode": "17023"
+            },
+            { "name": "Hassi Bahbah - 5 Juillet", "postalCode": "17031" }
+          ]
+        },
+        {
+          "name": "Zaafrane",
+          "codeONS": "1728",
+          "postalCode": "17038",
+          "otherPosts": [{ "name": "Dait el Bkhour", "postalCode": "17045" }]
+        },
+        {
+          "name": "Hassi El Euch",
+          "codeONS": "1716",
+          "postalCode": "17032",
+          "otherPosts": []
+        },
+        {
+          "name": "Aïn Maabed",
+          "codeONS": "1705",
+          "postalCode": "17025",
           "otherPosts": []
         }
       ]
@@ -117,9 +269,39 @@
       "name": "Messaad",
       "communes": [
         {
-          "name": "Djelfa",
-          "codeONS": "",
-          "postalCode": "17000",
+          "name": "Messaad",
+          "codeONS": "1717",
+          "postalCode": "17003",
+          "otherPosts": [
+            { "name": "Messaad - Cite el Quods", "postalCode": "17033" },
+            { "name": "Messaad - Demed", "postalCode": "17034" },
+            { "name": "Messaad - Emir Abdelkader", "postalCode": "17035" },
+            { "name": "Messaad - Gare Routiere", "postalCode": "17075" },
+            { "name": "Messaad - Moussaoui Messaoud", "postalCode": "17083" }
+          ]
+        },
+        {
+          "name": "Deldoul",
+          "codeONS": "1729",
+          "postalCode": "17046",
+          "otherPosts": [{ "name": "Meguied", "postalCode": "17070" }]
+        },
+        {
+          "name": "Selmana",
+          "codeONS": "1722",
+          "postalCode": "17063",
+          "otherPosts": [{ "name": "El Gahra", "postalCode": "17048" }]
+        },
+        {
+          "name": "Sed Rahal",
+          "codeONS": "1706",
+          "postalCode": "17062",
+          "otherPosts": []
+        },
+        {
+          "name": "Guettara",
+          "codeONS": "1718",
+          "postalCode": "17055",
           "otherPosts": []
         }
       ]
@@ -128,133 +310,31 @@
       "name": "Sidi Ladjel",
       "communes": [
         {
-          "name": "Djelfa",
-          "codeONS": "",
-          "postalCode": "17000",
+          "name": "Sidi Ladjel",
+          "codeONS": "1719",
+          "postalCode": "17024",
+          "otherPosts": []
+        },
+        {
+          "name": "El Khemis",
+          "codeONS": "1711",
+          "postalCode": "17051",
+          "otherPosts": []
+        },
+        {
+          "name": "Hassi Fedoul",
+          "codeONS": "1733",
+          "postalCode": "17056",
           "otherPosts": []
         }
       ]
     }
   ],
+
   "address": [
-    {
-      "name": "Djelfa",
-      "postalCode": "17000",
-      "otherPosts": [
-        { "name": "Djelfa 5 Juillet", "postalCode": "17007" },
-        { "name": "Djelfa Daya", "postalCode": "17008" },
-        { "name": "Djelfa Sidi Nail", "postalCode": "17009" },
-        { "name": "Djelfa Hassen Abdelkader", "postalCode": "17016" },
-        { "name": "Djelfa Berrebih", "postalCode": "17017" },
-        { "name": "Djelfa Boutrifis", "postalCode": "17018" },
-        { "name": "Djelfa Ain Chih", "postalCode": "17028" },
-        { "name": "Djelfa Zahaf", "postalCode": "17029" },
-        { "name": "Djelfa Achour Ziane", "postalCode": "17072" },
-        { "name": "Djelfa Gare Routiere", "postalCode": "17073" },
-        { "name": "Djelfa Ouled Obaid Allah", "postalCode": "17076" },
-        { "name": "Djelfa Mohamed Ben Labiad", "postalCode": "17077" },
-        { "name": "Djelfa El Wiam", "postalCode": "17079" },
-        { "name": "Djelfa Houari Boumedienne", "postalCode": "17084" },
-        { "name": "Djelfa Ain Serar", "postalCode": "17085" }
-      ]
-    },
-    {
-      "name": "Ain Ouessara",
-      "postalCode": "17001",
-      "otherPosts": [
-        { "name": "Ain Ouessara Slimani Slimane", "postalCode": "17004" },
-        { "name": "Ain Ouessara Zighout Youcef", "postalCode": "17005" },
-        { "name": "Ain Ouessara Abane Ramdane", "postalCode": "17012" },
-        { "name": "Ain Ouessara Guerada Belkacem", "postalCode": "17013" },
-        { "name": "Ain Ouessara Gare Routiere", "postalCode": "17074" }
-      ]
-    },
-    {
-      "name": "Hassi Bahbah",
-      "postalCode": "17002",
-      "otherPosts": [
-        { "name": "Hassi Bahbah Djaaroune Said", "postalCode": "17010" },
-        { "name": "Hassi Bahbah  Chettouh Kheiredine", "postalCode": "17023" },
-        { "name": "Hassi Bahbah 5 Juillet", "postalCode": "17031" }
-      ]
-    },
-    {
-      "name": "Messaad",
-      "postalCode": "17003",
-      "otherPosts": [
-        { "name": "Messaad Cite el Quods", "postalCode": "17033" },
-        { "name": "Messaad Demed", "postalCode": "17034" },
-        { "name": "Messaad Emir Abdelkader", "postalCode": "17035" },
-        { "name": "Messaad Gare Routiere", "postalCode": "17075" },
-        { "name": "Messaad Moussaoui Messaoud", "postalCode": "17083" }
-      ]
-    },
-    { "name": "Dar Chioukh", "postalCode": "17006" },
-    { "name": "Ain el Ibel", "postalCode": "17011" },
-    {
-      "name": "Birine",
-      "postalCode": "17014",
-      "otherPosts": [{ "name": "Birine Kadi Tahar", "postalCode": "17027" }]
-    },
-    { "name": "Charef", "postalCode": "17015" },
-    { "name": "El Guedid", "postalCode": "17019" },
-    {
-      "name": "El Idrissia",
-      "postalCode": "17020",
-      "otherPosts": [
-        { "name": "El Idrissia 11 Decembre 1960", "postalCode": "17078" }
-      ]
-    },
-    { "name": "Feid el Botma", "postalCode": "17021" },
-    {
-      "name": "Had Sahary",
-      "postalCode": "17022",
-      "otherPosts": [
-        { "name": "Had Sahary Ait Messaoudene", "postalCode": "17071" }
-      ]
-    },
-    { "name": "Sidi Ladjel", "postalCode": "17024" },
-    { "name": "Ain Maabed", "postalCode": "17025" },
-    { "name": "Ben Yaagoub", "postalCode": "17026" },
-    { "name": "Douis", "postalCode": "17030" },
-    { "name": "Hassi el Euch", "postalCode": "17032" },
-    { "name": "Mouilah", "postalCode": "17036" },
-    { "name": "Taadmit", "postalCode": "17037" },
-    { "name": "Zaafrane", "postalCode": "17038" },
-    { "name": "Ain Chouhada", "postalCode": "17039" },
-    { "name": "Ain Fekka", "postalCode": "17040" },
     { "name": "Amera", "postalCode": "17041" },
-    { "name": "Amourah", "postalCode": "17042" },
-    { "name": "Benhar", "postalCode": "17043" },
-    { "name": "Bouira Lahdab", "postalCode": "17044" },
-    { "name": "Dait el Bkhour", "postalCode": "17045" },
-    { "name": "Deldoul", "postalCode": "17046" },
-    { "name": "Draa Souary", "postalCode": "17047" },
-    { "name": "El Gahra", "postalCode": "17048" },
-    { "name": "El Hammam", "postalCode": "17049" },
-    { "name": "El Hiouhi", "postalCode": "17050" },
-    { "name": "El Khemis", "postalCode": "17051" },
     { "name": "El Oguila", "postalCode": "17052" },
-    { "name": "Guendouza", "postalCode": "17053" },
-    { "name": "Guernini", "postalCode": "17054" },
-    { "name": "Guettara", "postalCode": "17055" },
-    { "name": "Hassi Fedoul", "postalCode": "17056" },
-    { "name": "Mliliha", "postalCode": "17057" },
-    { "name": "Moudjebara", "postalCode": "17058" },
-    { "name": "N'tila", "postalCode": "17059" },
-    { "name": "Oum Chegag", "postalCode": "17060" },
-    { "name": "Oum el Adham", "postalCode": "17061" },
-    { "name": "Sed Rahal", "postalCode": "17062" },
-    { "name": "Selmana", "postalCode": "17063" },
-    { "name": "Sidi Baizid", "postalCode": "17064" },
-    { "name": "Zaccar", "postalCode": "17065" },
     { "name": "Tahiri Mohamed", "postalCode": "17066" },
-    { "name": "Haniet Ouled Salm", "postalCode": "17067" },
-    { "name": "Sed Oum Drou", "postalCode": "17068" },
-    { "name": "Abdelmadjid", "postalCode": "17069" },
-    { "name": "Meguied", "postalCode": "17070" },
-    { "name": "Touazi", "postalCode": "17080" },
-    { "name": "Oued Sdar", "postalCode": "17081" },
-    { "name": "Ben Hamed", "postalCode": "17082" }
+    { "name": "Haniet Ouled Salm", "postalCode": "17067" }
   ]
 }

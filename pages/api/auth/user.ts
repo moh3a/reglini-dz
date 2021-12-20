@@ -19,6 +19,11 @@ export default async function handler(
     });
     if (!user) {
       Cookies.remove("next-auth.session-token");
+      Cookies.remove("next-auth.csrf-token");
+      Cookies.remove("next-auth.callback-url");
+      Cookies.remove("_Secure-next-auth.callback-url");
+      Cookies.remove("_Secure-next-auth.session-token");
+      Cookies.remove("_Secure-next-auth.csrf-token");
       res.status(200).json({ success: false, message: "User not found." });
     }
     res.status(200).json({ success: true, data: user, message: "User found." });
