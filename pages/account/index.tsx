@@ -22,12 +22,12 @@ const Profile = () => {
         pathname: "/login/[message]",
         query: { message: "login_to_view_account" },
       });
-    if (!isAuthenticated && session && status !== "loading") {
-      const email = session.user?.email;
-      const type = session.user?.type;
-      const provider = session.user?.provider || undefined;
-      dispatch(getUser({ email, account: type, provider }));
-    }
+    // if (!isAuthenticated && session && status !== "loading") {
+    //   const email = session.user?.email;
+    //   const type = session.user?.type;
+    //   const provider = session.user?.provider || undefined;
+    //   dispatch(getUser({ email, account: type, provider }));
+    // }
   }, [router, session, loading, dispatch, isAuthenticated, status]);
 
   return (

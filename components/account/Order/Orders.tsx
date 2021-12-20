@@ -17,11 +17,12 @@ export default function Orders() {
 
   useEffect(() => {
     if (orderStatusCode) {
+      setTimeout(() => {
+        setMessages("");
+        setErrorCode(0);
+      }, 5000);
       setErrorCode(orderStatusCode);
       setMessages(orderMessage);
-      // setTimeout(() => {
-      //   setMessages("");
-      // }, 5000);
     } else {
       if (message !== "User found.") {
         setMessages(message);

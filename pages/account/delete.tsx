@@ -24,12 +24,12 @@ const DeleteAccount = ({ messages }: any) => {
 
   useEffect(() => {
     if (!loading && !session && !isAuthenticated) router.push("/");
-    if (!isAuthenticated && session && status !== "loading") {
-      const email = session.user?.email;
-      const type = session.user?.type;
-      const provider = session.user?.provider || undefined;
-      dispatch(getUser({ email, account: type, provider }));
-    }
+    // if (!isAuthenticated && session && status !== "loading") {
+    //   const email = session.user?.email;
+    //   const type = session.user?.type;
+    //   const provider = session.user?.provider || undefined;
+    //   dispatch(getUser({ email, account: type, provider }));
+    // }
   }, [router, session, loading, dispatch, isAuthenticated, status]);
 
   function closeModal() {

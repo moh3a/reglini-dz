@@ -16,14 +16,14 @@ const HomeScreen = ({ messages }: any) => {
   const [session, loading]: [IUser | null, boolean] = useSession();
   const { isAuthenticated, status } = useSelector(selectUser);
 
-  useEffect(() => {
-    if (!isAuthenticated && session && status !== "loading") {
-      const email = session.user?.email;
-      const type = session.user?.type;
-      const provider = session.user?.provider || undefined;
-      dispatch(getUser({ email, account: type, provider }));
-    }
-  }, [session, dispatch, isAuthenticated, status]);
+  // useEffect(() => {
+  //   if (!isAuthenticated && session && status !== "loading") {
+  //     const email = session.user?.email;
+  //     const type = session.user?.type;
+  //     const provider = session.user?.provider || undefined;
+  //     dispatch(getUser({ email, account: type, provider }));
+  //   }
+  // }, [session, dispatch, isAuthenticated, status]);
 
   return (
     <>

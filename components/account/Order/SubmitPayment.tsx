@@ -59,6 +59,22 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
           </a>
         </Link>
       </h1>
+      {selected === "ccp" && (
+        <div>
+          <p>Le versement CCP se fait au compte suivant:</p>
+          <p>Nom et prenom: AIT ABDELMALEK MOHAMED ALI</p>
+          <p>Numero de compte: 0020008646 cle 02</p>
+        </div>
+      )}
+      {selected === "cib" && (
+        <div>
+          <p>
+            Pour une transaction en CIB, le versement se fait au numero de
+            compte suivant:
+          </p>
+          <p>00799999002000864602</p>
+        </div>
+      )}
       <br />
       {order.product.totalPrice < 50000 ? (
         <>

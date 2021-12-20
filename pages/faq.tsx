@@ -78,6 +78,13 @@ const Faq = () => {
                 <li>{t("resHow6")}</li>
               </ul>
             </Item>
+            <Item title="How does the payment via CCP work?">
+              <p>The name of the holder: AIT ABDELMALEK MOHAMED ALI</p>
+              <p>The account ID: 0020008646 key 02</p>
+            </Item>
+            <Item title="How does a transaction via CIB work?">
+              The account ID: 00799999002000864602
+            </Item>
             <p className="text-base text-center md:text-lg">
               {t("anotherQuestion")}{" "}
               <Link href="/support" passHref>

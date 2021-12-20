@@ -131,10 +131,6 @@ export const userSlice = createSlice({
       .addCase(createOrder.fulfilled, (state, action) => {
         state.status = "complete";
         if (action.payload.errorCode) {
-          setTimeout(() => {
-            state.orderStatusCode = 0;
-            state.orderMessage = "";
-          }, 5000);
           state.orderStatusCode = action.payload.errorCode;
           state.orderMessage = action.payload.message;
         } else {
