@@ -18,11 +18,18 @@ const AdminScreen = ({ messages }: any) => {
 
   useEffect(() => {
     if (!loading && !session && !isAuthenticated) router.replace("/");
-    if (!isAuthenticated && session && status !== "loading") {
-      const email = session.user?.email;
-      const type = session.user?.type;
-      const provider = session.user?.provider || undefined;
-      dispatch(getUser({ email, account: type, provider }));
+    if (
+      session &&
+      (status === "complete" || status === "idle") &&
+      !isAuthenticated
+    ) {
+      dispatch(
+        getUser({
+          email: session.user?.email,
+          account: session.user?.type,
+          provider: session.user?.provider || undefined,
+        })
+      );
     }
     if (user && user.role !== "admin") router.replace("/");
   }, [session, dispatch, isAuthenticated, status, loading, router, user]);

@@ -15,7 +15,11 @@ export default function Layout({ children }: { children: ReactNode }) {
   const { isAuthenticated, status, user } = useSelector(selectUser);
 
   useEffect(() => {
-    if (session && status === "complete" && !isAuthenticated) {
+    if (
+      session &&
+      (status === "complete" || status === "idle") &&
+      !isAuthenticated
+    ) {
       dispatch(
         getUser({
           email: session.user?.email,

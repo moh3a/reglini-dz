@@ -60,7 +60,7 @@ const NavSmall = ({ open, setOpen, user }: any) => {
             </div>
 
             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-              {user.email ? (
+              {user && user.email ? (
                 <>
                   <div className="flow-root">
                     <Link href="/account" passHref>
