@@ -15,7 +15,7 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-const NavSmall = ({ open, setOpen, session, user }: any) => {
+const NavSmall = ({ open, setOpen, user }: any) => {
   const t = useTranslations("navigation");
   const router = useRouter();
 
@@ -60,7 +60,7 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
             </div>
 
             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-              {session ? (
+              {user.email ? (
                 <>
                   <div className="flow-root">
                     <Link href="/account" passHref>
@@ -71,7 +71,7 @@ const NavSmall = ({ open, setOpen, session, user }: any) => {
                         <span className="sr-only">Open user menu</span>
                         <Avatar user={user} />
                         <span className="-m-2 p-2 ml-6 block font-medium text-gray-800 dark:text-gray-100 ">
-                          {session.user?.name}
+                          {user.name}
                         </span>
                       </div>
                     </Link>

@@ -11,16 +11,18 @@ import { getUser } from "../../utils/redux/userAsyncActions";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const [session, loading]: [IUser | null, boolean] = useSession();
-
   const dispatch = useDispatch();
   const { isAuthenticated, status, user } = useSelector(selectUser);
 
   useEffect(() => {
-    if (!isAuthenticated && session && status !== "loading") {
-      const email = session.user?.email;
-      const type = session.user?.type;
-      const provider = session.user?.provider || undefined;
-      dispatch(getUser({ email, account: type, provider }));
+    if (session && status === "complete" && !isAuthenticated) {
+      dispatch(
+        getUser({
+          email: session.user?.email,
+          account: session.user?.type,
+          provider: session.user?.provider || undefined,
+        })
+      );
     }
   }, [session, dispatch, isAuthenticated, status]);
 
@@ -30,7 +32,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <StoreNavigation session={session} user={user} />
+      <StoreNavigation user={user} />
       <main>{children}</main>
       <Footer />
     </>

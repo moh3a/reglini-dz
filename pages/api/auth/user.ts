@@ -25,8 +25,11 @@ export default async function handler(
       Cookies.remove("_Secure-next-auth.session-token");
       Cookies.remove("_Secure-next-auth.csrf-token");
       res.status(200).json({ success: false, message: "User not found." });
+    } else {
+      res
+        .status(200)
+        .json({ success: true, data: user, message: "User found." });
     }
-    res.status(200).json({ success: true, data: user, message: "User found." });
   } else {
     res.status(400).json({ message: "Page doesn't exist.", status: 400 });
   }

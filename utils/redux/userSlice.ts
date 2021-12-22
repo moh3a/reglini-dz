@@ -13,6 +13,7 @@ import {
   getOrderDetails,
   getOrderTracking,
 } from "./userAsyncActions";
+import { signOut } from "next-auth/client";
 import { IAuth } from "../../utils/types";
 
 const initialState: IAuth = {
@@ -43,10 +44,17 @@ export const userSlice = createSlice({
         state.message = "";
       })
       .addCase(getUser.fulfilled, (state, action) => {
-        state.status = "complete";
-        state.isAuthenticated = true;
-        state.user = action.payload.data;
-        state.message = action.payload.message;
+        if (action.payload.success) {
+          state.status = "complete";
+          state.isAuthenticated = true;
+          state.user = action.payload.data;
+          state.message = action.payload.message;
+        } else {
+          state.status = "failed";
+          state.isAuthenticated = false;
+          state.message = action.payload.message;
+          signOut();
+        }
       })
       .addCase(getUser.rejected, (state, action) => {
         state.status = "failed";
