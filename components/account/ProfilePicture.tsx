@@ -10,7 +10,7 @@ import * as style from "@dicebear/avatars-bottts-sprites";
 
 import AlertMessage from "../elements/AlertMessage";
 import Avatar from "../elements/Avatar";
-import { generateRandomString } from "../../utils/methods";
+// import { generateRandomString } from "../../utils/methods";
 
 const ProfilePicture = ({ size }: { user: any; size?: "sm" | "md" | "lg" }) => {
   const { user } = useSelector(selectUser);
@@ -48,6 +48,16 @@ const ProfilePicture = ({ size }: { user: any; size?: "sm" | "md" | "lg" }) => {
     }
   };
 
+  const generateRandomString = (length: number) => {
+    let result = "";
+    let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    let charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  };
+
   const generateAvatar = () => {
     let str = generateRandomString(6);
     let svg = createAvatar(style, {
@@ -58,7 +68,7 @@ const ProfilePicture = ({ size }: { user: any; size?: "sm" | "md" | "lg" }) => {
 
   const saveAvatar = async (e: any) => {
     e.preventDefault();
-    const { data } = await axios.post("/api/users/updatepicture", {
+    const { data } = await axios.post("/api/users/updateavatar", {
       picture: generated,
     });
     if (data.success) {

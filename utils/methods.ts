@@ -1,12 +1,12 @@
-export function generateRandomString(length: number) {
-  var result = "";
-  var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-  var charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
+export const generateRandomString = (length: number) => {
+  let result = "";
+  let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  let charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
   return result;
-}
+};
 
 export const convertTime = (time: number) => {
   const day = Math.floor((time / 10) % 10) * 10 + Math.floor((time / 1) % 10);
@@ -103,5 +103,40 @@ export const CancelOrderAfterTimer = async (
         }
       })
       .catch((err) => console.log(err));
+  }
+};
+
+import type { NextApiRequest, NextApiResponse } from "next";
+import { getSession } from "next-auth/client";
+import User from "../models/User";
+import { IUser } from "./types";
+export const checkSession = async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+  next: any
+) => {
+  const session: IUser | null = await getSession({ req });
+  if (!session) {
+    res.status(403).json({ message: "Unauthorized to access this part." });
+  } else if (session.user) {
+    const email = session.user.email;
+    const account = session.user.type;
+    let provider: IUser["user.provider"];
+    if (account === "oauth") {
+      provider = session.user.provider;
+    }
+    const data = await User.findOne({
+      account,
+      email,
+      provider: provider || undefined,
+    });
+    if (!data) {
+      res.status(200).json({
+        message: "No user was found.",
+        success: false,
+      });
+    } else if (data) {
+      next();
+    }
   }
 };

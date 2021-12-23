@@ -1,4 +1,4 @@
 ## TODO
 
-- upload pictures do not work
+- email template
 - continue with data

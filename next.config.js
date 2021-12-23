@@ -22,4 +22,7 @@ module.exports = {
     locales: ["en", "fr", "ar"],
     defaultLocale: "en",
   },
+  env: {
+    ROOT: __dirname,
+  },
 };
