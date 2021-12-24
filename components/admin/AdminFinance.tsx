@@ -25,7 +25,7 @@ const AdminFinance = () => {
   const submitHandler = async (e: any) => {
     e.preventDefault();
     if (commission) {
-      const { data } = await axios.post("/api/commission", {
+      const { data } = await axios.post("/api/admin/commission", {
         commission,
       });
       if (data.success) {

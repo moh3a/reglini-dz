@@ -1,6 +1,6 @@
 {
   "id": 16,
-  "name": "Alger",
+  "name": "Algiers",
   "postalCode": "16000",
   "dairas": [
     {
@@ -262,7 +262,7 @@
           ]
         },
         {
-          "name": "Chéraga",
+          "name": "Cheraga",
           "codeONS": "1650",
           "postalCode": "16014",
           "otherPosts": [

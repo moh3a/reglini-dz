@@ -17,19 +17,6 @@ export default async function handler(
         .status(400)
         .json({ success: false, message: "An error have occured." });
     }
-  } else if (req.method === "POST") {
-    const { commission } = req.body;
-    const data = await Finance.findOne();
-    if (!data)
-      res.status(404).json({ success: false, message: "No commission set." });
-
-    data.commission = commission;
-    await data.save();
-    res.status(201).json({
-      success: true,
-      message: "New commission percentage successfully set.",
-      data,
-    });
   } else {
     res.status(400).json({ message: "Page doesn't exist.", success: false });
   }
