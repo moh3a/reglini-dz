@@ -30,7 +30,10 @@ export default async function handler(
       const from = "moh3a@reglini-dz.com";
       const userinfo =
         session && session.user
-          ? `<h2>User with username ${session.user.name} and email address ${session.user.email} with ${session.user.type} account type sent this email.</h2>`
+          ? `
+          <h2>username: ${session.user.name}</h2>
+          <h3>email: ${session.user.email}</h3>
+          <h3>account type: ${session.user.type}</h3>`
           : ``;
 
       const text = `<h3>A client in reglini-dz have sent this email.</h3>${userinfo}<div>${message}</div>`;

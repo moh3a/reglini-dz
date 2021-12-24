@@ -3,10 +3,9 @@ import { signOut } from "next-auth/client";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
-import { Dialog, Tab, Transition } from "@headlessui/react";
+import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 
-import { navigation } from "../../../data/navigation";
 import Avatar from "../../elements/Avatar";
 import SelectLanguage from "../../elements/SelectLanguage";
 import ToggleDark from "../../elements/ToggleDark";
@@ -134,74 +133,55 @@ const NavSmall = ({ open, setOpen, user }: any) => {
               )}
             </div>
 
-            {/* Links */}
-            {/* <Tab.Group as="div" className="mt-2">
-              <div className="border-b border-gray-200">
-                <Tab.List className="-mb-px flex px-4 space-x-8">
-                  {navigation.en.categories.map((category: any) => (
-                    <Tab
-                      key={category.name}
-                      className={({ selected }) =>
-                        classNames(
-                          selected
-                            ? "text-indigo-800 border-indigo-800"
-                            : "text-gray-800 dark:text-gray-100 border-transparent",
-                          "flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium"
-                        )
-                      }
-                    >
-                      {category.name}
-                    </Tab>
-                  ))}
-                </Tab.List>
-              </div> */}
-            {/* <Tab.Panels as={Fragment}>
-                {navigation.en.categories.map((category: any) => (
-                  <Tab.Panel
-                    key={category.name}
-                    className="pt-10 pb-8 px-4 space-y-10 z-0"
-                  >
-                    <div className="grid grid-cols-2 gap-x-4">
-                      {category.featured.map((item: any) => (
-                        <div key={item.name} className="group relative text-sm">
-                          <div className="p-2 aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden hover:opacity-75">
-                            <Image
-                              className="absolute inset-0 object-center object-cover"
-                              src={item.imageSrc}
-                              alt={item.imageAlt}
-                              height={50}
-                              width={50}
-                              layout="responsive"
-                            />
-                          </div>
-                          <Link href={item.href} passHref>
-                            <a>
-                              <span
-                                className="mt-6 block font-medium text-gray-800 dark:text-gray-100 absolute z-0 inset-0 cursor-pointer"
-                                aria-hidden="true"
-                              />
-                              {item.name}
-                            </a>
-                          </Link>
-                          <p
-                            aria-hidden="true"
-                            className="mt-1 text-gray-800 dark:text-gray-100"
-                          >
-                            {t("shopNow")}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </Tab.Panel>
-                ))}
-              </Tab.Panels>
-            </Tab.Group> */}
+            <div className="border-t border-gray-200 px-4 py-6 w-full flex flex-col">
+              <div className="text-xl font-bold">Products</div>
+              <Link href="/aliexpress" passHref>
+                <div className="my-3">
+                  <h1 className="cursor-pointer text-lg text-black dark:text-white">
+                    Aliexpress
+                  </h1>
+                  <p className="hover:underline cursor-pointer text-sm">
+                    Shop Now
+                  </p>
+                </div>
+              </Link>
+              <Link href="/meta-ads" passHref>
+                <div className="my-2">
+                  <h1 className="cursor-pointer text-lg text-black dark:text-white">
+                    Meta ads{" "}
+                    <span className="text-xs cursor-wait rounded-lg border text-facebook border-blue-100 bg-blue-50 p-1">
+                      coming soon
+                    </span>
+                  </h1>
+                  <p className="hover:underline cursor-not-allowed text-sm">
+                    Sponsor Now
+                  </p>
+                </div>
+              </Link>
+              <div className="my-2 text-lg text-black dark:text-white">
+                APIs{" "}
+                <span className="text-xs cursor-wait rounded-lg border text-gray-600 border-gray-200 bg-gray-100 p-1">
+                  coming soon
+                </span>
+              </div>
+              <div className="my-2">
+                <h1 className="text-black dark:text-white">
+                  reglini-dz Affiliate Program{" "}
+                  <span className="text-xs cursor-wait rounded-lg border text-white border-gray-800 bg-gray-600 p-1">
+                    coming soon
+                  </span>
+                </h1>
+                <p className="hover:underline cursor-not-allowed text-sm">
+                  Join Now
+                </p>
+              </div>
+            </div>
 
             <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">
               <div className="flow-root">
-                <Link href={t("aliexpress.href")} passHref>
+                <Link href="/community" passHref>
                   <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
-                    {t("aliexpress.name")}
+                    Community
                   </a>
                 </Link>
               </div>
@@ -226,14 +206,14 @@ const NavSmall = ({ open, setOpen, user }: any) => {
                   </a>
                 </Link>
               </div>
-            </div>
 
-            <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">
-              <div className="flex justify-center">
-                <SelectLanguage />
-              </div>
-              <div className="flex justify-center">
-                <ToggleDark />
+              <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">
+                <div className="flex justify-center">
+                  <SelectLanguage />
+                </div>
+                <div className="flex justify-center">
+                  <ToggleDark />
+                </div>
               </div>
             </div>
           </div>

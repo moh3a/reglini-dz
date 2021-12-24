@@ -1,12 +1,12 @@
 import { Fragment } from "react";
 import { signOut } from "next-auth/client";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import { Popover, Transition, Menu } from "@headlessui/react";
 import { MenuIcon, HeartIcon } from "@heroicons/react/outline";
 
-import { navigation } from "../../../data/navigation";
 import Logo from "../Logo";
 import Cart from "../../store/Cart";
 import Search from "../../elements/Search";
@@ -50,97 +50,136 @@ const NavLarge = ({ setOpen, user }: any) => {
             {/* Flyout menus */}
             <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
               <div className="h-full flex space-x-8 z-0">
-                {/* {navigation.en.categories.map((category: any) => (
-                  <Popover key={category.name} className="flex">
-                    {({ open }) => (
-                      <>
-                        <div className="relative flex">
-                          <Popover.Button
-                            className={classNames(
-                              open
-                                ? "border-indigo-800 text-indigo-800"
-                                : "border-transparent text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400",
-                              "relative z-0 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px"
-                            )}
-                          >
-                            {category.name}
-                          </Popover.Button>
-                        </div>
-
-                        <Transition
-                          as={Fragment}
-                          enter="transition ease-out duration-200"
-                          enterFrom="opacity-0"
-                          enterTo="opacity-100"
-                          leave="transition ease-in duration-150"
-                          leaveFrom="opacity-100"
-                          leaveTo="opacity-0"
+                <Popover className="flex">
+                  {({ open }) => (
+                    <>
+                      <div className="relative flex">
+                        <Popover.Button
+                          className={classNames(
+                            open
+                              ? "border-gray-600 text-gray-600 dark:text-gray-400 dark:border-gray-200"
+                              : "border-transparent text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400",
+                            "relative z-0 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px"
+                          )}
                         >
-                          <Popover.Panel className="absolute top-full z-30 inset-x-0 text-sm text-gray-500">
-                            <div
-                              className="absolute inset-0 top-1/2 bg-white shadow"
-                              aria-hidden="true"
-                            />
+                          Products
+                        </Popover.Button>
+                      </div>
 
-                            <div className="relative bg-white dark:bg-grim">
-                              <div className="max-w-7xl mx-auto px-8">
-                                <div className="grid grid-cols-2 gap-y-10 gap-x-8 py-16">
-                                  <div className="col-start-2 grid grid-cols-2 gap-x-8">
-                                    {category.featured.map((item: any) => (
-                                      <div
-                                        key={item.name}
-                                        className="group relative text-base sm:text-sm"
-                                      >
-                                        <div className="aspect-w-1 aspect-h-1 rounded-lg bg-gray-100 overflow-hidden group-hover:opacity-75">
-                                          <div className="p-2 object-center object-cover">
-                                            <Image
-                                              src={item.imageSrc}
-                                              alt={item.imageAlt}
-                                              height={200}
-                                              width={200}
-                                            />
-                                          </div>
-                                        </div>
-                                        <Link href={item.href} passHref>
-                                          <a>
-                                            <span
-                                              className=" absolute z-0 inset-0 cursor-pointer"
-                                              aria-hidden="true"
-                                            />
-                                            <span className="mt-6 block font-medium text-gray-800 dark:text-gray-100">
-                                              {item.name}
-                                            </span>
-                                          </a>
-                                        </Link>
-                                        <p
-                                          aria-hidden="true"
-                                          className="mt-1 text-gray-800 dark:text-gray-100"
-                                        >
-                                          {t("shopNow")}
-                                        </p>
-                                      </div>
-                                    ))}
+                      <Transition
+                        as={Fragment}
+                        enter="transition ease-out duration-200"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="transition ease-in duration-150"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                      >
+                        <Popover.Panel className="absolute top-full z-30 inset-x-0 text-sm text-gray-500">
+                          <div
+                            className="absolute inset-0 top-1/2 bg-white shadow"
+                            aria-hidden="true"
+                          />
+
+                          <div className="flex relative bg-white dark:bg-grim">
+                            <div className="my-4 mr-1 ml-10 w-full flex justify-around">
+                              <div>
+                                <Link href="/aliexpress" passHref>
+                                  <div className="my-3 mx-3">
+                                    <h1 className="cursor-pointer text-lg text-black dark:text-white">
+                                      Aliexpress
+                                    </h1>
+                                    <p className="hover:underline cursor-pointer text-sm">
+                                      Shop Now
+                                    </p>
                                   </div>
+                                </Link>
+                                <Link href="/meta-ads" passHref>
+                                  <div className="my-3 mx-3">
+                                    <h1 className="cursor-pointer text-lg text-black dark:text-white">
+                                      Meta ads{" "}
+                                      <span className="text-xs cursor-wait rounded-lg border text-facebook border-blue-100 bg-blue-50 p-1">
+                                        coming soon
+                                      </span>
+                                    </h1>
+                                    <p className="hover:underline cursor-not-allowed text-sm">
+                                      Sponsor Now
+                                    </p>
+                                  </div>
+                                </Link>
+                              </div>
+                              <div>
+                                <div className="my-3 mx-3">
+                                  <h1 className="text-lg text-black dark:text-white">
+                                    APIs{" "}
+                                    <span className="text-xs cursor-wait rounded-lg border text-gray-600 border-gray-200 bg-gray-100 p-1">
+                                      coming soon
+                                    </span>
+                                  </h1>
+                                  <p className="hover:underline cursor-not-allowed text-sm">
+                                    - Parallel market currency exchange API
+                                  </p>
+                                  <p className="hover:underline cursor-not-allowed text-sm">
+                                    - Algeria&apos;s zip codes API
+                                  </p>
+                                </div>
+                                <div className="my-3 mx-3">
+                                  <h1 className="text-lg text-black dark:text-white">
+                                    reglini-dz Affiliate Program{" "}
+                                    <span className="text-xs cursor-wait rounded-lg border text-white border-gray-800 bg-gray-600 p-1">
+                                      coming soon
+                                    </span>
+                                  </h1>
+                                  <p className="hover:underline cursor-not-allowed text-sm">
+                                    Join Now
+                                  </p>
                                 </div>
                               </div>
                             </div>
-                          </Popover.Panel>
-                        </Transition>
-                      </>
-                    )}
-                  </Popover>
-                ))} */}
+                            <div className="my-4 mx-1 w-full flex justify-around">
+                              <Link href="/aliexpress" passHref>
+                                <div className="cursor-pointer flex justify-center items-center h-40 w-40 border border-gray-200 bg-gray-100 hover:border-gray-400 dark:border-yellow-200 dark:bg-grim dark:hover:border-yellow-400 rounded-lg relative mt-2 mb-6">
+                                  <div className="w-20 h-20">
+                                    <Image
+                                      src="/aliexpress-icon.png"
+                                      alt="aliexpress logo"
+                                      width={100}
+                                      height={100}
+                                      layout="responsive"
+                                    />
+                                  </div>
+                                  <div className="absolute w-full top-40 text-center">
+                                    Aliexpress
+                                  </div>
+                                </div>
+                              </Link>
+                              <Link href="/meta-ads" passHref>
+                                <div className="cursor-pointer flex justify-center items-center h-40 w-40 border border-gray-200 hover:border-gray-400 bg-gray-100 dark:border-blue-400 dark:bg-grim rounded-lg dark:hover:border-blue-600 relative mt-2 mb-6">
+                                  <div className="w-40 h-40">
+                                    <Image
+                                      src="/meta-icon.png"
+                                      alt="meta logo"
+                                      width={100}
+                                      height={100}
+                                      layout="responsive"
+                                    />
+                                  </div>
+                                  <div className="absolute w-full top-40 text-center">
+                                    Meta Ads
+                                  </div>
+                                </div>
+                              </Link>
+                            </div>
+                          </div>
+                        </Popover.Panel>
+                      </Transition>
+                    </>
+                  )}
+                </Popover>
 
-                {/* {t("categories.pages").map((page: any) => (
-                  <Link key={page.name} href={page.href} passHref>
-                    <a className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
-                      {page.name}
-                    </a>
-                  </Link>
-                ))} */}
-                <Link href={t("aliexpress.href")} passHref>
+                <Link href="/community" passHref>
                   <a className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
-                    {t("aliexpress.name")}
+                    Community
                   </a>
                 </Link>
                 <Link href={t("currency.href")} passHref>
