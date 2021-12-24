@@ -123,3 +123,9 @@ export interface IEmailOptions {
   subject: string;
   text: string;
 }
+
+import type { NextApiRequest } from "next";
+export interface IExtendedAPIRequest extends NextApiRequest {
+  file?: any;
+  userData?: any;
+}

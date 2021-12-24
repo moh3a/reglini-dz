@@ -8,7 +8,6 @@ export default async function handler(
 ) {
   await dbConnect();
 
-  //
   if (req.method === "GET") {
     try {
       const data = await Finance.findOne();
@@ -18,10 +17,7 @@ export default async function handler(
         .status(400)
         .json({ success: false, message: "An error have occured." });
     }
-  }
-
-  //
-  else if (req.method === "POST") {
+  } else if (req.method === "POST") {
     const { commission } = req.body;
     const data = await Finance.findOne();
     if (!data)
@@ -34,10 +30,7 @@ export default async function handler(
       message: "New commission percentage successfully set.",
       data,
     });
-  }
-
-  //
-  else {
+  } else {
     res.status(400).json({ message: "Page doesn't exist.", success: false });
   }
 }

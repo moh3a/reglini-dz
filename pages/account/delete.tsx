@@ -48,7 +48,7 @@ const DeleteAccount = ({ messages }: any) => {
       },
     };
     try {
-      const { data } = await axios.post("/api/users/delete", {}, config);
+      const { data } = await axios.post("/api/user/details/delete", {}, config);
       if (!data.success) {
         setError(data.message);
         setTimeout(() => {

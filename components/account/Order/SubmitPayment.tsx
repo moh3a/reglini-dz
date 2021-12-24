@@ -34,7 +34,7 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
     body.append("file", image);
     body.append("orderId", order.orderId);
     body.append("paymentMethod", selected);
-    const { data } = await axios.post("/api/users/orderpayment", body);
+    const { data } = await axios.post("/api/user/details/orderpayment", body);
     if (data.success) {
       setSuccess(data.message);
       setOpenPayNow(false);

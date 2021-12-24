@@ -1,4 +1,4 @@
 ## TODO
 
-- email template
 - continue with data
+- add community blogs, meta ad

@@ -1,11 +1,11 @@
-import dbConnect from "../../../config/db";
+import dbConnect from "../../../../config/db";
 import type { NextApiRequest, NextApiResponse } from "next";
 import Cookies from "js-cookie";
 import { getSession } from "next-auth/client";
 
-import User from "../../../models/User";
-import { IUser } from "../../../utils/types";
-import sendEmail from "../../../utils/sendEmail";
+import User from "../../../../models/User";
+import { IUser } from "../../../../utils/types";
+import sendEmail from "../../../../utils/sendEmail";
 
 export default async function handler(
   req: NextApiRequest,

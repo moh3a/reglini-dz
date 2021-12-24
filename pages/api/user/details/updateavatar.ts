@@ -1,10 +1,10 @@
 require("dotenv").config();
 import type { NextApiRequest, NextApiResponse } from "next";
 import nc from "next-connect";
-
-import User from "../../../models/User";
 import { getSession } from "next-auth/client";
-import { IUser } from "../../../utils/types";
+
+import User from "../../../../models/User";
+import { IUser } from "../../../../utils/types";
 
 const handler = nc();
 handler.post(async (req: NextApiRequest, res: NextApiResponse) => {

@@ -27,7 +27,7 @@ const PhoneNumber = () => {
         phone = phone.slice(1);
       }
       phone = "+213" + phone;
-      const { data } = await axios.post("/api/users/phonenumber", {
+      const { data } = await axios.post("/api/user/details/phonenumber", {
         phoneNumber: phone,
       });
       if (data.success) {

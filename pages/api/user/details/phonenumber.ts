@@ -1,8 +1,9 @@
-import dbConnect from "../../../config/db";
+import dbConnect from "../../../../config/db";
 import type { NextApiRequest, NextApiResponse } from "next";
-import User from "../../../models/User";
 import { getSession } from "next-auth/client";
-import { IUser } from "../../../utils/types";
+
+import User from "../../../../models/User";
+import { IUser } from "../../../../utils/types";
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,7 +13,7 @@ export default async function handler(
   const session: IUser | null = await getSession({ req });
 
   if (req.method === "POST") {
-    const { realName } = req.body;
+    const { phoneNumber } = req.body;
     try {
       if (!session) {
         res.status(403).json({ message: "Unauthorized to access this part." });
@@ -34,11 +35,11 @@ export default async function handler(
             success: false,
           });
         }
-        data.realName = realName;
+        data.phoneNumber = phoneNumber;
         await data.save();
         res.status(200).json({
           success: true,
-          message: `Legal name successfully updated. New value is ${realName}.`,
+          message: `Phone number successfully updated. New value is ${phoneNumber}.`,
         });
       }
     } catch (error: any) {

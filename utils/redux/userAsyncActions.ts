@@ -36,7 +36,7 @@ export const addToWishlist = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      const { data } = await axios.post(`/api/wishlist`, {
+      const { data } = await axios.post(`/api/user/wishlist`, {
         productId,
         name,
         price,
@@ -53,7 +53,7 @@ export const removeFromWishlist = createAsyncThunk(
   "user/removeFromWishlist",
   async ({ id }: { id: IWished["productId"] }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.delete(`/api/wishlist/${id}`);
+      const { data } = await axios.delete(`/api/user/wishlist/${id}`);
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response);
@@ -79,7 +79,7 @@ export const addToCart = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      const { data } = await axios.post("/api/cart", {
+      const { data } = await axios.post("/api/user/cart", {
         productId,
         name,
         price,
@@ -108,7 +108,7 @@ export const updateQuantity = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      const { data } = await axios.patch(`/api/cart/${id}`, {
+      const { data } = await axios.patch(`/api/user/cart/${id}`, {
         quantity,
       });
       return data;
@@ -122,7 +122,7 @@ export const removeFromCart = createAsyncThunk(
   "user/removeFromCart",
   async ({ id }: { id: ICartItem["productId"] }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.delete(`/api/cart/${id}`);
+      const { data } = await axios.delete(`/api/user/cart/${id}`);
 
       return data;
     } catch (error: any) {

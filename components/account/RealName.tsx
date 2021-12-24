@@ -22,7 +22,7 @@ const RealName = () => {
   const realNameSaveHandler = async (e: any) => {
     e.preventDefault();
     if (realName) {
-      const { data } = await axios.post("/api/users/realname", {
+      const { data } = await axios.post("/api/user/details/realname", {
         realName,
       });
       if (data.success) {

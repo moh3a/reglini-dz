@@ -1,4 +1,4 @@
-// MODULE USED FOR BASIC OPERATIONS IN /API/CART
+// MODULE USED FOR BASIC OPERATIONS IN /API/USER/CART
 
 export const cartCount = (items: any) => {
   let quantities = items.map((item: any) => {

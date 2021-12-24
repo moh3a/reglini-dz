@@ -34,7 +34,7 @@ const ProfilePicture = ({ size }: { user: any; size?: "sm" | "md" | "lg" }) => {
   const uploadToServer = async (event: any) => {
     const body = new FormData();
     body.append("file", image);
-    const { data } = await axios.post("/api/users/updatepicture", body);
+    const { data } = await axios.post("/api/user/details/updatepicture", body);
     if (data.success) {
       setSuccess(data.message);
       setTimeout(() => {
@@ -68,7 +68,7 @@ const ProfilePicture = ({ size }: { user: any; size?: "sm" | "md" | "lg" }) => {
 
   const saveAvatar = async (e: any) => {
     e.preventDefault();
-    const { data } = await axios.post("/api/users/updateavatar", {
+    const { data } = await axios.post("/api/user/details/updateavatar", {
       picture: generated,
     });
     if (data.success) {

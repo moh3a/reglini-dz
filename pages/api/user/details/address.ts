@@ -1,8 +1,9 @@
-import dbConnect from "../../../config/db";
+import dbConnect from "../../../../config/db";
 import type { NextApiRequest, NextApiResponse } from "next";
-import User from "../../../models/User";
 import { getSession } from "next-auth/client";
-import { IUser } from "../../../utils/types";
+
+import User from "../../../../models/User";
+import { IUser } from "../../../../utils/types";
 
 export default async function handler(
   req: NextApiRequest,
@@ -35,12 +36,6 @@ export default async function handler(
           });
         }
         data.address = { text, postalCode, wilaya, daira, commune, streetName };
-        // data.address.text = text;
-        // data.address.postalCode = postalCode;
-        // data.address.wilaya = wilaya;
-        // data.address.daira = daira;
-        // data.address.commune = commune;
-        // data.address.streetName = streetName;
         await data.save();
         res.status(200).json({
           success: true,

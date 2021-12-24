@@ -44,7 +44,7 @@ const Address = ({ user }: any) => {
         wilaya.name +
         " " +
         postalCode;
-      const { data } = await axios.post("/api/users/address", {
+      const { data } = await axios.post("/api/user/details/address", {
         text: address,
         postalCode,
         wilaya: wilaya.name,
