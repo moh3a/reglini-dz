@@ -39,9 +39,9 @@ export default async function handler(
         Cookies.remove("next-auth.session-token");
         Cookies.remove("next-auth.csrf-token");
         Cookies.remove("next-auth.callback-url");
-        Cookies.remove("_Secure-next-auth.callback-url");
-        Cookies.remove("_Secure-next-auth.session-token");
-        Cookies.remove("_Secure-next-auth.csrf-token");
+        Cookies.remove("__Secure-next-auth.callback-url");
+        Cookies.remove("__Secure-next-auth.session-token");
+        Cookies.remove("__Host-next-auth.csrf-token");
         const message = `
           <h1>Sorry to see you go.</h1>
           <p>Your account have been successfully deleted.</p>

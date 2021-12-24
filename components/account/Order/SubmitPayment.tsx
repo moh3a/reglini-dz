@@ -12,6 +12,7 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
   const [selected, setSelected] = useState<any>();
   const [image, setImage] = useState<any>();
   const [createObjectURL, setCreateObjectURL] = useState<string>();
+  const [wait, setWait] = useState(false);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
@@ -30,6 +31,7 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
   };
 
   const uploadToServer = async (event: any) => {
+    setWait(true);
     const body = new FormData();
     body.append("file", image);
     body.append("orderId", order.orderId);
@@ -47,6 +49,7 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
         setError("");
       }, 5000);
     }
+    setWait(false);
   };
 
   return (
@@ -163,6 +166,12 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
                 </div>
                 <small>{t("doNotMind")}</small>
                 <div className="flex justify-end">
+                  {wait && (
+                    <div className="text-lg text-red-500">
+                      <span className="relative top-1 inline-block border-4 border-dashed rounded-full h-5 w-5 border-red-500 animate-spin mr-1" />
+                      please wait...
+                    </div>
+                  )}
                   <button
                     onClick={(e) => uploadToServer(e)}
                     className="w-44 bg-green-200 hover:bg-green-300 dark:bg-green-500 p-1 rounded-md my-2"
