@@ -1,7 +1,9 @@
 require("dotenv").config();
 import type { NextApiResponse } from "next";
 import nc from "next-connect";
+import multer from "multer";
 import { v2 as cloudinary } from "cloudinary";
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
 import User from "../../../../models/User";
 import SendEmail from "../../../../utils/sendEmail";
@@ -15,8 +17,14 @@ export const config = {
   },
 };
 
-import multer from "multer";
-const upload = multer({ dest: `${process.env.ROOT}/public/tmp/` });
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: "tmp",
+  },
+});
+
+const upload = multer({ storage: storage });
 
 const handler = nc();
 handler

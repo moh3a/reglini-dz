@@ -31,7 +31,7 @@ const SendEmail = ({ from, to, subject, text }: IEmailOptions) => {
         >
             <img
               style="width: 50px; height: 50px; margin:auto;"
-              src="https://res.cloudinary.com/dyypyf2sg/image/upload/v1640295120/reglinidz-icon-oval_jgnhdc.png"
+              src="https://res.cloudinary.com/dyypyf2sg/image/upload/v1640361409/reglinidz-icon-oval_ykndfi.png"
               alt="logo"
             />
         </div>
