@@ -14,14 +14,20 @@
             { "name": "Ain Arnat - Base", "postalCode": "19142" },
             { "name": "Ain Arnat - 1 Novembre", "postalCode": "19144" },
             { "name": "El Mahdia", "postalCode": "19044" },
-            { "name": "Ain Messaoud", "postalCode": "19073" }
+            { "name": "Ain Messaoud", "postalCode": "19073" },
+            { "name": "Bouhira", "postalCode": "19091" },
+            { "name": "El Anasser", "postalCode": "19098" },
+            { "name": "Khalfoun", "postalCode": "19107" }
           ]
         },
         {
           "name": "Aïn Abessa",
           "codeONS": "1914",
           "postalCode": "19016",
-          "otherPosts": [{ "name": "Batha", "postalCode": "19079" }]
+          "otherPosts": [
+            { "name": "Batha", "postalCode": "19079" },
+            { "name": "Chaabet Cheurfa", "postalCode": "19093" }
+          ]
         },
         {
           "name": "El Ouricia",
@@ -33,7 +39,7 @@
           "name": "Mesloug",
           "codeONS": "1933",
           "postalCode": "19056",
-          "otherPosts": []
+          "otherPosts": [{ "name": "El Hachichia", "postalCode": "19099" }]
         }
       ]
     },
@@ -59,7 +65,7 @@
           "name": "Beidha Bordj",
           "codeONS": "1929",
           "postalCode": "19021",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Zeraia", "postalCode": "19127" }]
         },
         {
           "name": "Bir Haddada",
@@ -84,7 +90,7 @@
           "name": "Dehamcha",
           "codeONS": "1919",
           "postalCode": "19041",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Ouled Maiza", "postalCode": "19118" }]
         },
         {
           "name": "Ouled Addouane",
@@ -116,7 +122,7 @@
           "name": "Ksar El Abtal",
           "codeONS": "1952",
           "postalCode": "19054",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Ouled Mehalla", "postalCode": "19119" }]
         },
         {
           "name": "Ouled Si Ahmed",
@@ -133,7 +139,7 @@
           "name": "Amoucha",
           "codeONS": "1927",
           "postalCode": "19009",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Laouameur", "postalCode": "19109" }]
         },
         {
           "name": "Oued El Barad",
@@ -156,13 +162,13 @@
           "name": "Babor",
           "codeONS": "1916",
           "postalCode": "19020",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Cheurfa", "postalCode": "19094" }]
         },
         {
           "name": "Serdj El Ghoul",
           "codeONS": "1935",
           "postalCode": "19000",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Bida", "postalCode": "19086" }]
         }
       ]
     },
@@ -196,13 +202,20 @@
           "name": "Beni Ourtilane",
           "codeONS": "1922",
           "postalCode": "19011",
-          "otherPosts": [{ "name": "Arassa", "postalCode": "19035" }]
+          "otherPosts": [
+            { "name": "Arassa", "postalCode": "19035" },
+            { "name": "Freha", "postalCode": "19103" }
+          ]
         },
         {
           "name": "Aïn Legradj",
           "codeONS": "1913",
           "postalCode": "19011",
-          "otherPosts": [{ "name": "Beni Brahim", "postalCode": "19082" }]
+          "otherPosts": [
+            { "name": "Beni Brahim", "postalCode": "19082" },
+            { "name": "Beni Hafed", "postalCode": "19084" },
+            { "name": "Gheboula", "postalCode": "19105" }
+          ]
         },
         {
           "name": "Aït Mouhli",
@@ -260,7 +273,7 @@
           "name": "Aït Noual M'zada",
           "codeONS": "1951",
           "postalCode": "19076",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Beni Khellad", "postalCode": "19085" }]
         },
         {
           "name": "Aït Tizi",
@@ -310,13 +323,16 @@
           "name": "Djemila",
           "codeONS": "1921",
           "postalCode": "19025",
-          "otherPosts": []
+          "otherPosts": [{ "name": "El Merdja", "postalCode": "19101" }]
         },
         {
           "name": "Beni Fouda",
           "codeONS": "1944",
           "postalCode": "19023",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "El Hammam", "postalCode": "19100" },
+            { "name": "Chirhoum", "postalCode": "19128" }
+          ]
         }
       ]
     },
@@ -331,7 +347,9 @@
             { "name": "El Eulma - 1er Novembre 1954", "postalCode": "19004" },
             { "name": "El Eulma - 8 Mai 1945", "postalCode": "19005" },
             { "name": "El Eulma - Thabet Bouzid", "postalCode": "19133" },
-            { "name": "El Eulma - 19 Juin", "postalCode": "19135" }
+            { "name": "El Eulma - 19 Juin", "postalCode": "19135" },
+            { "name": "Djermane", "postalCode": "19097" },
+            { "name": "Smara", "postalCode": "19123" }
           ]
         },
         {
@@ -346,7 +364,7 @@
           "name": "Guelta Zerka",
           "codeONS": "1956",
           "postalCode": "19000",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Sidi Salah", "postalCode": "19122" }]
         }
       ]
     },
@@ -383,7 +401,11 @@
           "name": "Harbil",
           "codeONS": "1936",
           "postalCode": "19000",
-          "otherPosts": [{ "name": "Tittest", "postalCode": "19032" }]
+          "otherPosts": [
+            { "name": "Tittest", "postalCode": "19032" },
+            { "name": "Dar el Hadj", "postalCode": "19096" },
+            { "name": "Kordjana", "postalCode": "19108" }
+          ]
         }
       ]
     },
@@ -394,7 +416,10 @@
           "name": "Hammam Guergour",
           "codeONS": "1950",
           "postalCode": "19051",
-          "otherPosts": [{ "name": "Oued Sebt", "postalCode": "19057" }]
+          "otherPosts": [
+            { "name": "Oued Sebt", "postalCode": "19057" },
+            { "name": "Bouffaroudj", "postalCode": "19090" }
+          ]
         },
         {
           "name": "Draa Kebila - Ouled Ali",
@@ -426,7 +451,7 @@
           "name": "Tella",
           "codeONS": "1960",
           "postalCode": "19000",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Bir Djedid", "postalCode": "19087" }]
         }
       ]
     },
@@ -437,7 +462,10 @@
           "name": "Maoklane",
           "codeONS": "1955",
           "postalCode": "19028",
-          "otherPosts": [{ "name": "Ain Margoum", "postalCode": "19072" }]
+          "otherPosts": [
+            { "name": "Ain Margoum", "postalCode": "19072" },
+            { "name": "Bouamrane", "postalCode": "19088" }
+          ]
         },
         {
           "name": "Talaifacene - Tizi N'braham",
@@ -454,13 +482,16 @@
           "name": "Salah Bey",
           "codeONS": "1939",
           "postalCode": "19013",
-          "otherPosts": [{ "name": "Ain el Hamra", "postalCode": "19071" }]
+          "otherPosts": [
+            { "name": "Ain el Hamra", "postalCode": "19071" },
+            { "name": "Maafeur", "postalCode": "19110" }
+          ]
         },
         {
           "name": "Boutaleb",
           "codeONS": "1905",
           "postalCode": "19092",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Boudjelikh", "postalCode": "19089" }]
         },
         {
           "name": "Hamma",
@@ -507,7 +538,8 @@
             },
             { "name": "Ain Tebinet", "postalCode": "19034" },
             { "name": "Fermatou", "postalCode": "19048" },
-            { "name": "Ain Trick", "postalCode": "19075" }
+            { "name": "Ain Trick", "postalCode": "19075" },
+            { "name": "Chouf el Kedad", "postalCode": "19095" }
           ]
         }
       ]
@@ -520,42 +552,13 @@
     { "name": "Bendiab", "postalCode": "19080" },
     { "name": "Beni Afif", "postalCode": "19081" },
     { "name": "Beni Djemati", "postalCode": "19083" },
-    { "name": "Beni Hafed", "postalCode": "19084" },
-    { "name": "Beni Khellad", "postalCode": "19085" },
-    { "name": "Bida", "postalCode": "19086" },
-    { "name": "Bir Djedid", "postalCode": "19087" },
-    { "name": "Bouamrane", "postalCode": "19088" },
-    { "name": "Boudjelikh", "postalCode": "19089" },
-    { "name": "Bouffaroudj", "postalCode": "19090" },
-    { "name": "Bouhira", "postalCode": "19091" },
-    { "name": "Chaabet Cheurfa", "postalCode": "19093" },
-    { "name": "Cheurfa", "postalCode": "19094" },
-    { "name": "Chouf el Kedad", "postalCode": "19095" },
-    { "name": "Dar el Hadj", "postalCode": "19096" },
-    { "name": "Djermane", "postalCode": "19097" },
-    { "name": "El Anasser Base", "postalCode": "19098" },
-    { "name": "El Hachichia", "postalCode": "19099" },
-    { "name": "El Hammam", "postalCode": "19100" },
-    { "name": "El Merdja", "postalCode": "19101" },
     { "name": "Faucigny", "postalCode": "19102" },
-    { "name": "Freha", "postalCode": "19103" },
     { "name": "Frikat", "postalCode": "19104" },
-    { "name": "Gheboula", "postalCode": "19105" },
-    { "name": "Khalfoun", "postalCode": "19107" },
-    { "name": "Kordjana", "postalCode": "19108" },
-    { "name": "Laouameur", "postalCode": "19109" },
-    { "name": "Maafeur", "postalCode": "19110" },
     { "name": "Mahouan", "postalCode": "19111" },
     { "name": "Melloul", "postalCode": "19113" },
     { "name": "Merzeghlel", "postalCode": "19114" },
     { "name": "Ouled Ali Ben Nacer", "postalCode": "19116" },
     { "name": "Ouled Ayad", "postalCode": "19117" },
-    { "name": "Ouled Maiza", "postalCode": "19118" },
-    { "name": "Ouled Mehalla", "postalCode": "19119" },
-    { "name": "Sidi Salah", "postalCode": "19122" },
-    { "name": "Smara", "postalCode": "19123" },
-    { "name": "Zeraia", "postalCode": "19127" },
-    { "name": "Chirhoum", "postalCode": "19128" },
     { "name": "Bahbaha", "postalCode": "19130" }
   ]
 }

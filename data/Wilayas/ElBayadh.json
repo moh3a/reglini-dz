@@ -8,9 +8,18 @@
       "communes": [
         {
           "name": "El Bayadh",
-          "codeONS": "",
+          "codeONS": "3201",
           "postalCode": "32000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "El Bayadh - Toumi Mohamed", "postalCode": "32004" },
+            { "name": "El Bayadh - Ait Amiri", "postalCode": "32008" },
+            { "name": "El Bayadh - Hamidi Boulenouar", "postalCode": "32009" },
+            { "name": "El Bayadh - Hasnaoui Said", "postalCode": "32010" },
+            { "name": "El Bayadh - Kadichou Mohamed", "postalCode": "32016" },
+            { "name": "El Bayadh - Gare Routiere", "postalCode": "32035" },
+            { "name": "El Bayadh - Universite", "postalCode": "32036" },
+            { "name": "El Bayadh - Mohamed Lamari", "postalCode": "32037" }
+          ]
         }
       ]
     },
@@ -18,9 +27,21 @@
       "name": "Rogassa",
       "communes": [
         {
-          "name": "El Bayadh",
-          "codeONS": "",
-          "postalCode": "32000",
+          "name": "Cheguig",
+          "codeONS": "3217",
+          "postalCode": "32022",
+          "otherPosts": []
+        },
+        {
+          "name": "Kef El Ahmar",
+          "codeONS": "3212",
+          "postalCode": "32013",
+          "otherPosts": []
+        },
+        {
+          "name": "Rogassa",
+          "codeONS": "3202",
+          "postalCode": "32018",
           "otherPosts": []
         }
       ]
@@ -29,9 +50,21 @@
       "name": "Brezina",
       "communes": [
         {
-          "name": "El Bayadh",
-          "codeONS": "",
-          "postalCode": "32000",
+          "name": "Brezina",
+          "codeONS": "3204",
+          "postalCode": "32002",
+          "otherPosts": []
+        },
+        {
+          "name": "Kraakda",
+          "codeONS": "3215",
+          "postalCode": "32027",
+          "otherPosts": []
+        },
+        {
+          "name": "Ghassoul",
+          "codeONS": "3205",
+          "postalCode": "32017",
           "otherPosts": []
         }
       ]
@@ -40,9 +73,44 @@
       "name": "El Abiodh Sidi Cheikh",
       "communes": [
         {
-          "name": "El Bayadh",
-          "codeONS": "",
-          "postalCode": "32000",
+          "name": "Aïn El Orak",
+          "codeONS": "3208",
+          "postalCode": "32019",
+          "otherPosts": []
+        },
+        {
+          "name": "Arbaouat",
+          "codeONS": "3209",
+          "postalCode": "32005",
+          "otherPosts": [{ "name": "Arba Fogani", "postalCode": "32020" }]
+        },
+        {
+          "name": "El Abiodh Sidi Cheikh",
+          "codeONS": "3207",
+          "postalCode": "32003",
+          "otherPosts": [
+            {
+              "name": "El Abiodh Sidi Cheikh - Belmabrouk",
+              "postalCode": "32007"
+            },
+            {
+              "name": "El Abiodh Sidi Cheikh - Gare Routiere",
+              "postalCode": "32038"
+            },
+            {
+              "name": "El Abiodh Sidi Cheikh - Djoudi Bahous",
+              "postalCode": "32040"
+            },
+            {
+              "name": "El Abiodh Sidi Cheikh - Ben Aissa Talia",
+              "postalCode": "32042"
+            }
+          ]
+        },
+        {
+          "name": "El Bnoud",
+          "codeONS": "3216",
+          "postalCode": "32025",
           "otherPosts": []
         }
       ]
@@ -51,9 +119,28 @@
       "name": "Bougtoub",
       "communes": [
         {
-          "name": "El Bayadh",
-          "codeONS": "",
-          "postalCode": "32000",
+          "name": "Bougtob",
+          "codeONS": "3210",
+          "postalCode": "32001",
+          "otherPosts": [
+            { "name": "Bougtob - Hai Nars", "postalCode": "32039" },
+            { "name": "Bougtob - Abdelli Cheikh", "postalCode": "32041" }
+          ]
+        },
+        {
+          "name": "El Kheiter",
+          "codeONS": "3221",
+          "postalCode": "32011",
+          "otherPosts": [
+            { "name": "Bordj el May", "postalCode": "32021" },
+            { "name": "Mosbah", "postalCode": "32028" },
+            { "name": "Sidi Khelifa", "postalCode": "32030" }
+          ]
+        },
+        {
+          "name": "Tousmouline",
+          "codeONS": "3220",
+          "postalCode": "32034",
           "otherPosts": []
         }
       ]
@@ -62,10 +149,19 @@
       "name": "Chellala",
       "communes": [
         {
-          "name": "El Bayadh",
-          "codeONS": "",
-          "postalCode": "32000",
-          "otherPosts": []
+          "name": "Chellala",
+          "codeONS": "3214",
+          "postalCode": "32015",
+          "otherPosts": [
+            { "name": "Chellala - Dahrnia", "postalCode": "32015" },
+            { "name": "Chellala - el Gueblia", "postalCode": "32023" }
+          ]
+        },
+        {
+          "name": "El Mehara",
+          "codeONS": "3219",
+          "postalCode": "32026",
+          "otherPosts": [{ "name": "Deghima", "postalCode": "32024" }]
         }
       ]
     },
@@ -73,9 +169,9 @@
       "name": "Boussemghoun",
       "communes": [
         {
-          "name": "El Bayadh",
-          "codeONS": "",
-          "postalCode": "32000",
+          "name": "Boussemghoun",
+          "codeONS": "3213",
+          "postalCode": "32014",
           "otherPosts": []
         }
       ]
@@ -84,81 +180,36 @@
       "name": "Boualem",
       "communes": [
         {
-          "name": "El Bayadh",
-          "codeONS": "",
-          "postalCode": "32000",
+          "name": "Boualem ",
+          "codeONS": "3206",
+          "postalCode": "32006",
+          "otherPosts": []
+        },
+        {
+          "name": "Sidi Ameur",
+          "codeONS": "3218",
+          "postalCode": "32029",
+          "otherPosts": []
+        },
+        {
+          "name": "Sidi Slimane",
+          "codeONS": "3221",
+          "postalCode": "32031",
+          "otherPosts": []
+        },
+        {
+          "name": "Sidi Tifour",
+          "codeONS": "3222",
+          "postalCode": "32032",
+          "otherPosts": []
+        },
+        {
+          "name": "Stitten",
+          "codeONS": "3203",
+          "postalCode": "32033",
           "otherPosts": []
         }
       ]
     }
-  ],
-  "address": [
-    {
-      "name": "El Bayadh",
-      "postalCode": "32000",
-      "otherPosts": [
-        { "name": "El Bayadh Toumi Mohamed", "postalCode": "32004" },
-        { "name": "El Bayadh Ait Amiri", "postalCode": "32008" },
-        { "name": "El Bayadh Hamidi Boulenouar", "postalCode": "32009" },
-        { "name": "El Bayadh Hasnaoui Said", "postalCode": "32010" },
-        { "name": "El Bayadh Kadichou Mohamed", "postalCode": "32016" },
-        { "name": "El Bayadh Gare Routiere", "postalCode": "32035" },
-        { "name": "El Bayadh Universite", "postalCode": "32036" },
-        { "name": "El Bayadh Mohamed Lamari", "postalCode": "32037" }
-      ]
-    },
-    {
-      "name": "Bougtob",
-      "postalCode": "32001",
-      "otherPosts": [
-        { "name": "Bougtob Hai Nars", "postalCode": "32039" },
-        { "name": "Bougtob Abdelli Cheikh", "postalCode": "32041" }
-      ]
-    },
-    { "name": "Brezina", "postalCode": "32002" },
-    {
-      "name": "El Abiodh Sidi Cheikh",
-      "postalCode": "32003",
-      "otherPosts": [
-        { "name": "El Abiodh Sidi Cheikh Belmabrouk", "postalCode": "32007" },
-        {
-          "name": "El Abiodh Sidi Cheikh Gare Routiere",
-          "postalCode": "32038"
-        },
-        {
-          "name": "El Abiodh Sidi Cheikh Djoudi Bahous",
-          "postalCode": "32040"
-        },
-        {
-          "name": "El Abiodh Sidi Cheikh Ben Aissa Talia",
-          "postalCode": "32042"
-        }
-      ]
-    },
-    { "name": "Arbaouat", "postalCode": "32005" },
-    { "name": "Boualem", "postalCode": "32006" },
-    { "name": "El Keither", "postalCode": "32011" },
-    { "name": "Hossein Ibn Ali", "postalCode": "32012" },
-    { "name": "Kef el Ahmar", "postalCode": "32013" },
-    { "name": "Boussemghoun", "postalCode": "32014" },
-    { "name": "Chellala Dahrnia", "postalCode": "32015" },
-    { "name": "Ghassoul", "postalCode": "32017" },
-    { "name": "Rogassa", "postalCode": "32018" },
-    { "name": "Ain el Orak", "postalCode": "32019" },
-    { "name": "Arba Fogani", "postalCode": "32020" },
-    { "name": "Bordj el May", "postalCode": "32021" },
-    { "name": "Cheguig", "postalCode": "32022" },
-    { "name": "Chellala el Gueblia", "postalCode": "32023" },
-    { "name": "Deghima", "postalCode": "32024" },
-    { "name": "El Bnoud", "postalCode": "32025" },
-    { "name": "El Mehara", "postalCode": "32026" },
-    { "name": "Krakda", "postalCode": "32027" },
-    { "name": "Mosbah", "postalCode": "32028" },
-    { "name": "Sidi Amar", "postalCode": "32029" },
-    { "name": "Sidi Khelifa", "postalCode": "32030" },
-    { "name": "Sidi Slimane", "postalCode": "32031" },
-    { "name": "Sifi Tifour", "postalCode": "32032" },
-    { "name": "Stitten", "postalCode": "32033" },
-    { "name": "Tousmouline", "postalCode": "32034" }
   ]
 }

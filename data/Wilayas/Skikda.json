@@ -7,9 +7,15 @@
       "name": "Aïn Kechra",
       "communes": [
         {
-          "name": "Skikda",
-          "codeONS": "",
-          "postalCode": "21000",
+          "name": "Aïn Kechra",
+          "codeONS": "2127",
+          "postalCode": "21007",
+          "otherPosts": []
+        },
+        {
+          "name": "Ouldja Boulballout",
+          "codeONS": "2135",
+          "postalCode": "21059",
           "otherPosts": []
         }
       ]
@@ -191,7 +197,6 @@
       "otherPosts": [{ "name": "Tamalous Superieur", "postalCode": "21081" }]
     },
     { "name": "Ain Charchar", "postalCode": "21006" },
-    { "name": "Ain Kercha", "postalCode": "21007" },
     { "name": "Bekkouche Lakhdar", "postalCode": "21009" },
     { "name": "Ben Azzouz", "postalCode": "21010" },
     { "name": "Beni Oulbane", "postalCode": "21011" },
@@ -237,7 +242,6 @@
     { "name": "Djebel Staiha", "postalCode": "21056" },
     { "name": "El Ghedir Merdj Tahar", "postalCode": "21057" },
     { "name": "El Marsa Klibet Hamadi", "postalCode": "21058" },
-    { "name": "El Ouldja Boulbalout", "postalCode": "21059" },
     { "name": "Guerbes Mabrouk Larbi", "postalCode": "21060" },
     { "name": "Hadjar Mafrouch", "postalCode": "21061" },
     { "name": "Kanoua", "postalCode": "21062" },

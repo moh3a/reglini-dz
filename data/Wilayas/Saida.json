@@ -8,9 +8,20 @@
       "communes": [
         {
           "name": "Saida",
-          "codeONS": "",
+          "codeONS": "2001",
           "postalCode": "20000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Saida - Boukhors", "postalCode": "20005" },
+            { "name": "Saida - Ennasr", "postalCode": "20006" },
+            { "name": "Saida - Cdt Mejdoub", "postalCode": "20015" },
+            { "name": "Saida - Cite Eriadh", "postalCode": "20016" },
+            { "name": "Saida - Daoudi", "postalCode": "20017" },
+            { "name": "Saida - Khater", "postalCode": "20018" },
+            { "name": "Saida - Soummam", "postalCode": "20042" },
+            { "name": "Saida - 8 Mai 1945", "postalCode": "20043" },
+            { "name": "Saida - Universite", "postalCode": "20044" },
+            { "name": "Saida - Gare Routiere", "postalCode": "20050" }
+          ]
         }
       ]
     },
@@ -18,10 +29,29 @@
       "name": "Aïn El Hadjar",
       "communes": [
         {
-          "name": "Saida",
-          "codeONS": "",
-          "postalCode": "20000",
+          "name": "Aïn El Hadjar",
+          "codeONS": "2003",
+          "postalCode": "20001",
           "otherPosts": []
+        },
+        {
+          "name": "Moulay Larbi",
+          "codeONS": "2005",
+          "postalCode": "20014",
+          "otherPosts": [
+            { "name": "Oum Doud", "postalCode": "20048" },
+            { "name": "El Madene Oued Falette", "postalCode": "20041" }
+          ]
+        },
+        {
+          "name": "Sidi Ahmed",
+          "codeONS": "2012",
+          "postalCode": "20040",
+          "otherPosts": [
+            { "name": "Khalfallah", "postalCode": "20012" },
+            { "name": "Morghad", "postalCode": "20046" },
+            { "name": "Sfid", "postalCode": "20039" }
+          ]
         }
       ]
     },
@@ -29,9 +59,34 @@
       "name": "Sidi Boubekeur",
       "communes": [
         {
-          "name": "Saida",
-          "codeONS": "",
-          "postalCode": "20000",
+          "name": "Sidi Boubekeur",
+          "codeONS": "2009",
+          "postalCode": "20007",
+          "otherPosts": [
+            { "name": "Sidi Boubekeur - Gare Routiere", "postalCode": "20049" },
+            { "name": "Moulay Touhami", "postalCode": "20030" }
+          ]
+        },
+        {
+          "name": "Ouled Khaled - Rebahia",
+          "codeONS": "2004",
+          "postalCode": "20004",
+          "otherPosts": [
+            { "name": "Hammam Rabbi", "postalCode": "20011" },
+            { "name": "Ain Telghat", "postalCode": "20020" },
+            { "name": "Loukda Ain Zerga", "postalCode": "20028" }
+          ]
+        },
+        {
+          "name": "Sidi Amar",
+          "codeONS": "2008",
+          "postalCode": "20019",
+          "otherPosts": [{ "name": "Cherki Sidi Aissa", "postalCode": "20021" }]
+        },
+        {
+          "name": "Hounet",
+          "codeONS": "2007",
+          "postalCode": "20025",
           "otherPosts": []
         }
       ]
@@ -40,10 +95,22 @@
       "name": "El Hassasna",
       "communes": [
         {
-          "name": "Saida",
-          "codeONS": "",
-          "postalCode": "20000",
+          "name": "El Hassasna",
+          "codeONS": "2010",
+          "postalCode": "20003",
           "otherPosts": []
+        },
+        {
+          "name": "Aïn Sekhouna",
+          "codeONS": "2013",
+          "postalCode": "20009",
+          "otherPosts": [{ "name": "Dhaiet Zraguet", "postalCode": "20022" }]
+        },
+        {
+          "name": "Maamora",
+          "codeONS": "2011",
+          "postalCode": "20013",
+          "otherPosts": [{ "name": "Sidi Youcef", "postalCode": "20038" }]
         }
       ]
     },
@@ -51,9 +118,25 @@
       "name": "Ouled Brahim",
       "communes": [
         {
-          "name": "Saida",
-          "codeONS": "",
-          "postalCode": "20000",
+          "name": "Ouled Brahim - Balloul",
+          "codeONS": "2014",
+          "postalCode": "20002",
+          "otherPosts": [
+            { "name": "Balloul - Gare Routiere", "postalCode": "20051" },
+            { "name": "Touta", "postalCode": "20036" },
+            { "name": "Khourichfa", "postalCode": "20027" }
+          ]
+        },
+        {
+          "name": "Tircine",
+          "codeONS": "2015",
+          "postalCode": "20035",
+          "otherPosts": []
+        },
+        {
+          "name": "Aïn Soltane",
+          "codeONS": "2016",
+          "postalCode": "20029",
           "otherPosts": []
         }
       ]
@@ -62,82 +145,34 @@
       "name": "Youb",
       "communes": [
         {
-          "name": "Saida",
-          "codeONS": "",
-          "postalCode": "20000",
-          "otherPosts": []
+          "name": "Youb",
+          "codeONS": "2006",
+          "postalCode": "20008",
+          "otherPosts": [
+            { "name": "Youb - 1er Novembre", "postalCode": "20045" },
+            { "name": "Hassi el Abed", "postalCode": "20024" },
+            { "name": "Oued Berbour", "postalCode": "20031" }
+          ]
+        },
+        {
+          "name": "Doui Thabet",
+          "codeONS": "2002",
+          "postalCode": "20023",
+          "otherPosts": [
+            { "name": "Fidjel", "postalCode": "20023" },
+            { "name": "Ain el Beidha", "postalCode": "20037" }
+          ]
         }
       ]
     }
   ],
+
   "address": [
-    {
-      "name": "Saida",
-      "postalCode": "20000",
-      "otherPosts": [
-        { "name": "Saida Boukhors", "postalCode": "20005" },
-        { "name": "Saida Ennasr", "postalCode": "20006" },
-        { "name": "Saida Cdt Mejdoub", "postalCode": "20015" },
-        { "name": "Saida Cite Eriadh", "postalCode": "20016" },
-        { "name": "Saida Daoudi", "postalCode": "20017" },
-        { "name": "Saida Khater", "postalCode": "20018" },
-        { "name": "Saida Soummam", "postalCode": "20042" },
-        { "name": "Saida 8 Mai 1945", "postalCode": "20043" },
-        { "name": "Saida Universite", "postalCode": "20044" },
-        { "name": "Saida Gare Routiere", "postalCode": "20050" }
-      ]
-    },
-    { "name": "Ain el Hadjar", "postalCode": "20001" },
-    {
-      "name": "Balloul",
-      "postalCode": "20002",
-      "otherPosts": [{ "name": "Balloul Gare Routiere", "postalCode": "20051" }]
-    },
-    { "name": "El Hassasna", "postalCode": "20003" },
-    { "name": "Rebahia", "postalCode": "20004" },
-    {
-      "name": "Sidi Boubekeur",
-      "postalCode": "20007",
-      "otherPosts": [
-        { "name": "Sidi Boubekeur Gare Routiere", "postalCode": "20049" }
-      ]
-    },
-    {
-      "name": "Youb",
-      "postalCode": "20008",
-      "otherPosts": [{ "name": "Youb 1er Novembre", "postalCode": "20045" }]
-    },
-    { "name": "Ain Sekhouna", "postalCode": "20009" },
     { "name": "Boukhors", "postalCode": "20010" },
-    { "name": "Hammam Rabbi", "postalCode": "20011" },
-    { "name": "Khalfallah", "postalCode": "20012" },
-    { "name": "Maamora", "postalCode": "20013" },
-    { "name": "Moulay Larbi", "postalCode": "20014" },
-    { "name": "Sidi Amar", "postalCode": "20019" },
-    { "name": "Ain Teghat", "postalCode": "20020" },
-    { "name": "Cherki Sidi Aissa", "postalCode": "20021" },
-    { "name": "Dhaiet Zraguet", "postalCode": "20022" },
-    { "name": "Fidjel", "postalCode": "20023" },
-    { "name": "Hassi el Abed", "postalCode": "20024" },
-    { "name": "Hounet", "postalCode": "20025" },
     { "name": "Khelifa Maata", "postalCode": "20026" },
-    { "name": "Khourichfa", "postalCode": "20027" },
-    { "name": "Loukda Ain Zerga", "postalCode": "20028" },
-    { "name": "Mimouna Ain Sultan", "postalCode": "20029" },
-    { "name": "Moulay Touhami", "postalCode": "20030" },
-    { "name": "Oued Berbour", "postalCode": "20031" },
     { "name": "Sidi Maamar", "postalCode": "20032" },
     { "name": "Sidi Mbarek", "postalCode": "20033" },
     { "name": "Tamesna", "postalCode": "20034" },
-    { "name": "Tircine", "postalCode": "20035" },
-    { "name": "Touta", "postalCode": "20036" },
-    { "name": "Ain el Beidha", "postalCode": "20037" },
-    { "name": "Sidi Youcef", "postalCode": "20038" },
-    { "name": "Sfid", "postalCode": "20039" },
-    { "name": "Sidi Ahmed", "postalCode": "20040" },
-    { "name": "El Madene Oued Falette", "postalCode": "20041" },
-    { "name": "Morghad", "postalCode": "20046" },
-    { "name": "Timetlas", "postalCode": "20047" },
-    { "name": "Oum Doud", "postalCode": "20048" }
+    { "name": "Timetlas", "postalCode": "20047" }
   ]
 }

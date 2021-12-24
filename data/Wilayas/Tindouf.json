@@ -8,40 +8,37 @@
       "communes": [
         {
           "name": "Tindouf",
-          "codeONS": "",
+          "codeONS": "3701",
           "postalCode": "37000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Tindouf - Hassi Amar", "postalCode": "37001" },
+            { "name": "Tindouf - Hai Nasr", "postalCode": "37002" },
+            { "name": "Tindouf - Secteur", "postalCode": "37007" },
+            { "name": "Tindouf - El Moustakbal", "postalCode": "37008" },
+            { "name": "Tindouf - 1 Novembre 1954", "postalCode": "37009" },
+            { "name": "Tindouf - 5 Juillet 1962", "postalCode": "37010" },
+            { "name": "Tindouf - Universite", "postalCode": "37011" },
+            { "name": "Tindouf - Gare Routiere", "postalCode": "37012" },
+            { "name": "Tindouf - Sghir Mohamed", "postalCode": "37014" },
+            { "name": "Tindouf - Lafdil Mohamed", "postalCode": "37015" },
+            {
+              "name": "Tindouf - Boumedienne Sidi Brahim",
+              "postalCode": "37016"
+            },
+            { "name": "Gara Djebilet", "postalCode": "37004" }
+          ]
+        },
+        {
+          "name": "Oum el Assel",
+          "codeONS": "3702",
+          "postalCode": "37000",
+          "otherPosts": [
+            { "name": "Oum el Assel - Colonnel Lotfi", "postalCode": "37013" },
+            { "name": "Hassi Khebi", "postalCode": "37005" },
+            { "name": "Hassi Mounir", "postalCode": "37006" }
+          ]
         }
       ]
     }
-  ],
-  "address": [
-    {
-      "name": "Tindouf",
-      "postalCode": "37000",
-      "otherPosts": [
-        { "name": "Tindouf Hassi Amar", "postalCode": "37001" },
-        { "name": "Tindouf Hai Nasr", "postalCode": "37002" },
-        { "name": "Tindouf Secteur", "postalCode": "37007" },
-        { "name": "Tindouf El Moustakbal", "postalCode": "37008" },
-        { "name": "Tindouf 1 Novembre 1954", "postalCode": "37009" },
-        { "name": "Tindouf 5 Juillet 1962", "postalCode": "37010" },
-        { "name": "Tindouf Universite", "postalCode": "37011" },
-        { "name": "Tindouf Gare Routiere", "postalCode": "37012" },
-        { "name": "Tindouf Sghir Mohamed", "postalCode": "37014" },
-        { "name": "Tindouf Lafdil Mohamed", "postalCode": "37015" },
-        { "name": "Tindouf Boumedienne Sidi Brahim", "postalCode": "37016" }
-      ]
-    },
-    {
-      "name": "Oum el Assel",
-      "postalCode": "37003",
-      "otherPosts": [
-        { "name": "Oum el Assel Colonnel Lotfi", "postalCode": "37013" }
-      ]
-    },
-    { "name": "Gara Djebilet", "postalCode": "37004" },
-    { "name": "Hassi Khebi", "postalCode": "37005" },
-    { "name": "Hassi Mounir", "postalCode": "37006" }
   ]
 }
