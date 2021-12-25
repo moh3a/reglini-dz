@@ -22,7 +22,7 @@ const NavSmall = ({ open, setOpen, user }: any) => {
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
-        className="fixed inset-0 flex z-0 lg:hidden"
+        className="fixed inset-0 flex z-100 lg:hidden"
         onClose={setOpen}
       >
         <Transition.Child

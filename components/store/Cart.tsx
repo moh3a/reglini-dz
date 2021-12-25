@@ -52,7 +52,7 @@ export default function Cart({ user }: any) {
       <Transition.Root show={openCart} as={Fragment}>
         <Dialog
           as="div"
-          className="fixed inset-0 overflow-hidden"
+          className="fixed z-100 inset-0 overflow-hidden"
           onClose={setOpenCart}
         >
           <div className="absolute inset-0 overflow-hidden">

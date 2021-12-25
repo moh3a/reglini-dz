@@ -63,19 +63,25 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
         </Link>
       </h1>
       {selected === "ccp" && (
-        <div>
+        <div className="mt-2 px-2 py-3 border border-gray-200 bg-gray-50 dark:bg-black dark:border-yellow-200 rounded-lg">
           <p>Le versement CCP se fait au compte suivant:</p>
-          <p>Nom et prenom: AIT ABDELMALEK MOHAMED ALI</p>
-          <p>Numero de compte: 0020008646 cle 02</p>
+          <p>
+            Nom et prenom:{" "}
+            <span className="font-bold">AIT ABDELMALEK MOHAMED ALI</span>
+          </p>
+          <p>
+            Numero de compte (CCP):{" "}
+            <span className="font-bold">0020008646 02</span>
+          </p>
         </div>
       )}
       {selected === "cib" && (
-        <div>
+        <div className="mt-2 px-2 py-3 border border-gray-200 bg-gray-50 dark:bg-black dark:border-yellow-200 rounded-lg">
           <p>
             Pour une transaction en CIB, le versement se fait au numero de
-            compte suivant:
+            compte (RIB) suivant:
           </p>
-          <p>00799999002000864602</p>
+          <p className="font-bold text-center">007 99999 0020008646 02</p>
         </div>
       )}
       <br />
@@ -91,22 +97,9 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
               <RadioGroup.Label className="sr-only">
                 {t("paymentMethod")}:{" "}
               </RadioGroup.Label>
-              <RadioGroup.Option value="cib">
-                {({ checked }) => (
-                  <span
-                    className={`mx-1 border-2 rounded-md p-1 text-black ${
-                      checked
-                        ? "border-red-300 bg-red-200 dark:border-red-600 dark:bg-red-400"
-                        : "border-gray-200 bg-gray-200"
-                    }`}
-                  >
-                    {t("cib")}
-                  </span>
-                )}
-              </RadioGroup.Option>
-              <RadioGroup.Option value="ccp">
-                {({ checked }) => (
-                  <>
+              <div className="flex w-full justify-center items-center flex-col md:flex-row">
+                <RadioGroup.Option className="my-2" value="cib">
+                  {({ checked }) => (
                     <span
                       className={`mx-1 border-2 rounded-md p-1 text-black ${
                         checked
@@ -114,11 +107,26 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
                           : "border-gray-200 bg-gray-200"
                       }`}
                     >
-                      {t("ccp")}
+                      {t("cib")}
                     </span>
-                  </>
-                )}
-              </RadioGroup.Option>
+                  )}
+                </RadioGroup.Option>
+                <RadioGroup.Option className="my-2" value="ccp">
+                  {({ checked }) => (
+                    <>
+                      <span
+                        className={`mx-1 border-2 rounded-md p-1 text-black ${
+                          checked
+                            ? "border-red-300 bg-red-200 dark:border-red-600 dark:bg-red-400"
+                            : "border-gray-200 bg-gray-200"
+                        }`}
+                      >
+                        {t("ccp")}
+                      </span>
+                    </>
+                  )}
+                </RadioGroup.Option>
+              </div>
             </RadioGroup>
           </div>
         </>
@@ -131,10 +139,10 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
           {error && <AlertMessage type="error" message={error} />}
           <div className="mt-6">
             {selected === "ccp" && (
-              <>
+              <div>
                 <h1 className="text-xl">{t("paymentCCP")}</h1>
                 <p>{t("descPaymentCCP")}</p>
-              </>
+              </div>
             )}
             {selected === "cib" && (
               <>
