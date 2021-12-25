@@ -3,9 +3,9 @@ import Head from "next/head";
 import { useSelector } from "react-redux";
 
 import { selectUser } from "../../utils/redux/userSlice";
-import AllBlogs from "../../components/community/AllBlogs";
+import CreateBlog from "../../components/community/CreateBlog";
 
-const CommunityScreen = ({ messages }: any) => {
+const NewBlogScreen = ({ messages }: any) => {
   const { user } = useSelector(selectUser);
 
   return (
@@ -18,7 +18,7 @@ const CommunityScreen = ({ messages }: any) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AllBlogs user={user} />
+      <CreateBlog user={user} />
     </>
   );
 };
@@ -32,8 +32,8 @@ export const getStaticProps: GetStaticProps = ({ locale }) => {
 };
 
 import Layout from "../../components/layout/Layout";
-CommunityScreen.getLayout = function getLayout(page: any) {
+NewBlogScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };
 
-export default CommunityScreen;
+export default NewBlogScreen;

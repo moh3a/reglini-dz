@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
+import { BlogSchema } from "./Blog";
 
 const ItemSchema = new mongoose.Schema(
   {
@@ -225,6 +226,7 @@ const UserSchema = new mongoose.Schema({
     type: CartSchema,
     required: true,
   },
+  blogs: [{ blogId: mongoose.SchemaTypes.ObjectId }],
   wishlist: [WishlistSchema],
   orders: [OrderSchema],
 });
@@ -288,4 +290,4 @@ UserSchema.methods.verifySignUpCredentials = function () {
 // UserSchema.plugin(uniqueValidator, { message: "is already taken." });
 
 const User = mongoose.models.User || mongoose.model("User", UserSchema);
-module.exports = User;
+export default User;
