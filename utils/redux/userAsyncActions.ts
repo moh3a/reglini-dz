@@ -199,22 +199,3 @@ export const getOrderTracking = createAsyncThunk(
     }
   }
 );
-
-export const createBlog = createAsyncThunk(
-  "user/createBlog",
-  async (
-    { title, text }: { title: string; text: string },
-    { rejectWithValue }
-  ) => {
-    try {
-      const { data } = await axios.post(`/api/community/newblog`, {
-        title,
-        text,
-      });
-      console.log(data);
-      return data;
-    } catch (error: any) {
-      return rejectWithValue(error.response);
-    }
-  }
-);

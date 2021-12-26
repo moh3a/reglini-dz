@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { createBlog } from "../../utils/redux/userAsyncActions";
+import { createBlog } from "../../utils/redux/blogsAsyncActions";
 
 function CreateBlog({ user }: any) {
   const router = useRouter();

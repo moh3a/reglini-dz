@@ -1,9 +1,5 @@
-// find many with ids
-// const records = await Model.find({ '_id': { $in: ids } });
-
 import nc from "next-connect";
 import type { NextApiResponse } from "next";
-import slugify from "slugify";
 
 import User from "../../../models/User";
 import Blog from "../../../models/Blog";
@@ -16,8 +12,7 @@ handler
     CheckSession(req, res, next)
   )
   .post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
-    const { title, text } = req.body;
-    const slug = slugify(title);
+    const { blogId, text } = req.body;
 
     const user = await User.findOne({
       email: req.userData.email,
@@ -25,21 +20,22 @@ handler
       provider: req.userData.provider,
     });
 
-    const createdBlog = await Blog.create({
-      title,
-      slug,
-      text,
+    const comment = {
       userId: user._id,
-    });
+      userName: user.name,
+      userPicture: user.picture,
+      text,
+    };
 
-    Blog.watch().on("change", (data) => console.log(new Date(), data));
+    const blog = await Blog.findById(blogId);
+    blog.comments.unshift(comment);
+    blog.commentsCounter = blog.comments.length;
 
-    user.blogs.unshift({ blogId: createdBlog._id });
-    await user.save();
+    await blog.save();
     res.status(200).json({
       success: true,
-      data: createdBlog,
-      message: "blog successfully created",
+      data: blog,
+      message: "comment successfully added",
     });
   });
 

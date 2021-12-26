@@ -48,7 +48,7 @@ const AdminCurrency = () => {
       },
     };
     if (currency && parallelPurchase && parallelSale && officialRate && date) {
-      const { data } = await axios.post("/api/currency", {
+      const { data } = await axios.post("/api/admin/currency", {
         exchange: currency,
         live,
       });

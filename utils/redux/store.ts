@@ -9,6 +9,7 @@ import { loadState, saveState } from "../localState";
 // REDUCERS
 import aeapiSlice from "./aeapiSlice";
 import userSlice from "./userSlice";
+import blogsSlice from "./blogsSlice";
 
 let store: any;
 
@@ -20,6 +21,7 @@ const persistedState = loadState();
 const reducer = combineReducers({
   aeapi: aeapiSlice,
   user: userSlice,
+  blogs: blogsSlice,
 });
 
 // ADD THE REDUX THUNK MIDDLEWARE FOR ASYNC FUNCTIONS

@@ -79,7 +79,7 @@ const NavSmall = ({ open, setOpen, user }: any) => {
                     <Link href="/account/wishlist" passHref>
                       <a
                         onClick={() => setOpen(false)}
-                        className="-m-2 p-2 pl-4 max-w-xs rounded-full block font-medium text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800"
+                        className="-m-2 p-2 pl-4 max-w-xs rounded-full font-medium block  text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800"
                       >
                         {t("wishlist")}
                       </a>
@@ -178,28 +178,28 @@ const NavSmall = ({ open, setOpen, user }: any) => {
             </div>
 
             <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">
-              <div className="flow-root">
+              <div className="flow-root hover:bg-gray-200 dark:hover:bg-gray-800 p-2 pl-4 max-w-xs rounded-full font-medium">
                 <Link href="/community" passHref>
                   <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
                     Community
                   </a>
                 </Link>
               </div>
-              <div className="flow-root">
+              <div className="flow-root hover:bg-gray-200 dark:hover:bg-gray-800 p-2 pl-4 max-w-xs rounded-full font-medium">
                 <Link href={t("currency.href")} passHref>
                   <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
                     {t("currency.name")}
                   </a>
                 </Link>
               </div>
-              <div className="flow-root">
+              <div className="flow-root hover:bg-gray-200 dark:hover:bg-gray-800 p-2 pl-4 max-w-xs rounded-full font-medium">
                 <Link href={t("support.href")} passHref>
                   <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
                     {t("support.name")}
                   </a>
                 </Link>
               </div>
-              <div className="flow-root">
+              <div className="flow-root hover:bg-gray-200 dark:hover:bg-gray-800 p-2 pl-4 max-w-xs rounded-full font-medium">
                 <Link href={t("faq.href")} passHref>
                   <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
                     {t("faq.name")}
@@ -207,7 +207,7 @@ const NavSmall = ({ open, setOpen, user }: any) => {
                 </Link>
               </div>
 
-              <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">
+              <div className="border-t w-full border-gray-200 py-6 px-4 space-y-6 z-0">
                 <div className="flex justify-center">
                   <SelectLanguage />
                 </div>

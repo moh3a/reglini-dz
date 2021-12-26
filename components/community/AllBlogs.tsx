@@ -1,24 +1,29 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import axios from "axios";
 
+import { selectBlogs } from "../../utils/redux/blogsSlice";
+import { getBlogs, addComment } from "../../utils/redux/blogsAsyncActions";
 import Avatar from "../elements/Avatar";
 
 function AllBlogs({ user }: any) {
-  const [blogs, setBlogs] = useState<any>();
+  const dispatch = useDispatch();
+  const { blogs } = useSelector(selectBlogs);
+  const [comment, setComment] = useState("");
   const router = useRouter();
 
-  const fetchBlogs = useCallback(async () => {
-    const { data } = await axios.get("/api/community");
-    if (data.success) {
-      setBlogs(data.data);
-    }
-  }, []);
-
   useEffect(() => {
-    fetchBlogs();
-  }, [fetchBlogs]);
+    dispatch(getBlogs());
+  }, [dispatch]);
+
+  const commentHandler = (e: any, blogId: string) => {
+    e.preventDefault();
+    if (comment) {
+      dispatch(addComment({ blogId, text: comment }));
+    }
+    setComment("");
+  };
 
   return (
     <>
@@ -36,9 +41,11 @@ function AllBlogs({ user }: any) {
           <div>
             <button
               onClick={() => router.push("/community/new")}
-              className="py-1 px-2 rounded-lg border border-b-4 border-gray-300 bg-gray-200"
+              className="py-1 px-2 rounded-lg text-white border border-b-4 border-green-600 bg-green-500"
             >
-              + write new blog
+              <p className="relative bottom-1">
+                <span className="text-2xl font-semibold">+</span> write new blog
+              </p>
             </button>
           </div>
         </div>
@@ -47,11 +54,11 @@ function AllBlogs({ user }: any) {
       <h1 className="text-2xl my-4 mx-4">Community blogs</h1>
 
       {blogs ? (
-        <div>
+        <div className="my-6">
           {blogs.map((blog: any) => (
             <div
               key={blog._id}
-              className="my-2 mx-4 rounded-lg border border-gray-200 bg-gray-50"
+              className="my-2 mx-4 rounded-lg border border-gray-200 bg-gray-50 dark:border-yellow-200 dark:bg-grim"
             >
               <div className="flex">
                 <div className="m-2 h-12 w-12">
@@ -67,17 +74,72 @@ function AllBlogs({ user }: any) {
                   />
                 </div>
                 <div className="mt-2">
-                  <p>{blog.userName}</p>
+                  <p className="font-semibold">{blog.userName}</p>
                   <small>
                     {blog.createdAt.substring(0, 10)}{" "}
                     {blog.createdAt.substring(11, 16)}
                   </small>
                 </div>
               </div>
-              <p className="text-xl font-bold mx-1">{blog.title}</p>
-              <p className="border border-gray-100 bg-white px-4 py-2 m-1 rounded-lg">
+              <div className="flex flex-col md:flex-row md:justify-between">
+                <h1 className="w-full text-xl font-bold mx-1">{blog.title}</h1>
+                <p className="w-full md:w-36 text-center md:text-right px-4">
+                  {blog.votes} votes
+                </p>
+              </div>
+              <p className="mb-3 border border-gray-100 bg-white dark:border-gray-100 dark:bg-gray-600 px-4 py-2 m-1 rounded-lg">
                 {blog.text}
               </p>
+              <h2 className="w-full text-lg font-bold mx-1">Comments:</h2>
+              {user && (
+                <form
+                  className="flex justify-between mx-2 md:mx-8 my-2"
+                  onSubmit={(e) => commentHandler(e, blog._id)}
+                >
+                  <input
+                    className="w-full border border-gray-200 bg-gray-50 rounded-lg"
+                    type="text"
+                    placeholder="add a comment..."
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                  />
+                  <button
+                    type="submit"
+                    className="ml-1 py-1 px-2 rounded-lg text-white border border-b-4 border-green-600 bg-green-500"
+                  >
+                    comment
+                  </button>
+                </form>
+              )}
+              {blog.comments.map((comment: any) => (
+                <div key={comment._id} className="flex my-4">
+                  <div className="m-2 h-10 w-10">
+                    <Image
+                      className="rounded-full"
+                      src={
+                        comment.userPicture
+                          ? comment.userPicture
+                          : "/placeholder.png"
+                      }
+                      alt={comment.userName}
+                      width={500}
+                      height={500}
+                      layout="responsive"
+                    />
+                  </div>
+                  <div className="w-full">
+                    <p>
+                      <span className="font-semibold">{comment.userName}</span>{" "}
+                      -{" "}
+                      <span className="text-sm">
+                        {comment.createdAt.substring(0, 10)}{" "}
+                        {comment.createdAt.substring(11, 16)}
+                      </span>
+                    </p>
+                    <p>{comment.text}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           ))}
         </div>

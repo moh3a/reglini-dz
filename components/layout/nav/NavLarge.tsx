@@ -30,7 +30,7 @@ const NavLarge = ({ setOpen, user }: any) => {
           <div className="h-16 flex items-center">
             <button
               type="button"
-              className="bg-white dark:bg-grim p-2 rounded-md text-gray-800 dark:text-gray-100 lg:hidden"
+              className="bg-white dark:bg-grim p-2 rounded-md text-gray-800  dark:text-gray-100 lg:hidden"
               onClick={() => setOpen(true)}
             >
               <span className="sr-only">Open menu</span>
@@ -58,7 +58,7 @@ const NavLarge = ({ setOpen, user }: any) => {
                           className={classNames(
                             open
                               ? "border-gray-600 text-gray-600 dark:text-gray-400 dark:border-gray-200"
-                              : "border-transparent text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400",
+                              : "border-transparent text-gray-800 hover:text-gray-400 dark:text-gray-100 dark:hover:text-gray-400",
                             "relative z-0 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px"
                           )}
                         >
@@ -178,22 +178,22 @@ const NavLarge = ({ setOpen, user }: any) => {
                 </Popover>
 
                 <Link href="/community" passHref>
-                  <a className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
+                  <a className="flex items-center text-sm font-medium text-gray-800 hover:text-gray-400 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
                     Community
                   </a>
                 </Link>
                 <Link href={t("currency.href")} passHref>
-                  <a className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
+                  <a className="flex items-center text-sm font-medium text-gray-800 hover:text-gray-400 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
                     {t("currency.name")}
                   </a>
                 </Link>
                 <Link href={t("support.href")} passHref>
-                  <a className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
+                  <a className="flex items-center text-sm font-medium text-gray-800 hover:text-gray-400 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
                     {t("support.name")}
                   </a>
                 </Link>
                 <Link href={t("faq.href")} passHref>
-                  <a className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
+                  <a className="flex items-center text-sm font-medium text-gray-800 hover:text-gray-400 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
                     {t("faq.name")}
                   </a>
                 </Link>
