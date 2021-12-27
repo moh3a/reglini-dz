@@ -214,10 +214,12 @@
   },
   "Aliexpress": {
     "hereStarts": "Here starts everything.",
-    "didYouFind": "Did you find something you like?",
-    "workDesc": "You can browse Aliexpress webapp or mobile app, and whenever you find an item that you like, you can simply paste the URL here, and we'll take care of the rest.",
+    "aeHands": "AliExpress between your hands",
     "find": "Find",
-    "happyShopping": "Happy shopping!"
+    "happyShopping": "Happy shopping!",
+    "speceficItem": "you have a specific item that you want to buy?",
+    "workHow": "How to get a specific product",
+    "workDesc": "You can browse Aliexpress webapp or mobile app, and whenever you find an item that you like, simply copy the URL or the product ID of the item and paste it in this page's search bar, and we'll take care of the rest."
   },
   "AEProduct": {
     "dzd": "DZD",

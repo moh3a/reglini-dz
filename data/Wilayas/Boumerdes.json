@@ -1,13 +1,13 @@
 {
   "id": 35,
-  "name": "Boumerdès",
+  "name": "Boumerdes",
   "postalCode": "35000",
   "dairas": [
     {
       "name": "Baghlia",
       "communes": [
         {
-          "name": "Boumerdès",
+          "name": "Boumerdes",
           "codeONS": "",
           "postalCode": "35000",
           "otherPosts": []
@@ -18,7 +18,7 @@
       "name": "Boudouaou",
       "communes": [
         {
-          "name": "Boumerdès",
+          "name": "Boumerdes",
           "codeONS": "",
           "postalCode": "35000",
           "otherPosts": []
@@ -26,10 +26,10 @@
       ]
     },
     {
-      "name": "Bordj Ménaiel",
+      "name": "Bordj Menaiel",
       "communes": [
         {
-          "name": "Boumerdès",
+          "name": "Boumerdes",
           "codeONS": "",
           "postalCode": "35000",
           "otherPosts": []
@@ -37,10 +37,10 @@
       ]
     },
     {
-      "name": "Boumerdès",
+      "name": "Boumerdes",
       "communes": [
         {
-          "name": "Boumerdès",
+          "name": "Boumerdes",
           "codeONS": "",
           "postalCode": "35000",
           "otherPosts": []
@@ -51,7 +51,7 @@
       "name": "Dellys",
       "communes": [
         {
-          "name": "Boumerdès",
+          "name": "Boumerdes",
           "codeONS": "",
           "postalCode": "35000",
           "otherPosts": []
@@ -62,7 +62,7 @@
       "name": "Khemis El Kechna",
       "communes": [
         {
-          "name": "Boumerdès",
+          "name": "Boumerdes",
           "codeONS": "",
           "postalCode": "35000",
           "otherPosts": []
@@ -73,7 +73,7 @@
       "name": "Isser",
       "communes": [
         {
-          "name": "Boumerdès",
+          "name": "Boumerdes",
           "codeONS": "",
           "postalCode": "35000",
           "otherPosts": []
@@ -84,7 +84,7 @@
       "name": "Naciria",
       "communes": [
         {
-          "name": "Boumerdès",
+          "name": "Boumerdes",
           "codeONS": "",
           "postalCode": "35000",
           "otherPosts": []
@@ -92,10 +92,10 @@
       ]
     },
     {
-      "name": "Thénia",
+      "name": "Thenia",
       "communes": [
         {
-          "name": "Boumerdès",
+          "name": "Boumerdes",
           "codeONS": "",
           "postalCode": "35000",
           "otherPosts": []
@@ -105,12 +105,12 @@
   ],
   "address": [
     {
-      "name": "Boumerdès",
+      "name": "Boumerdes",
       "postalCode": "35000",
       "otherPosts": [
-        { "name": "Boumerdès Frantz-Fanon", "postalCode": "35007" },
-        { "name": "Boumerdès Le Rocher", "postalCode": "35062" },
-        { "name": "Boumerdès Faculte des Sciences", "postalCode": "35063" }
+        { "name": "Boumerdes Frantz-Fanon", "postalCode": "35007" },
+        { "name": "Boumerdes Le Rocher", "postalCode": "35062" },
+        { "name": "Boumerdes Faculte des Sciences", "postalCode": "35063" }
       ]
     },
     {

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -117,13 +118,14 @@ export default function NewOrder({ products, origin }: any) {
                 >
                   {item.imageUrl && (
                     <div className="w-72 md:w-44 rounded-lg">
-                      <Image
+                      {/* <Image
                         className=""
                         src={item.imageUrl}
                         alt={item.name}
                         height={300}
                         width={300}
-                      />
+                      /> */}
+                      <img src={item.imageUrl} alt={item.name} />
                     </div>
                   )}
                   <div className="flex flex-col px-4 py-2">

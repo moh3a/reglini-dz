@@ -7,15 +7,15 @@
       "name": "Ain El Hammam",
       "communes": [
         {
-          "name": "Aïn El Hammam",
+          "name": "Ain El Hammam",
           "codeONS": "1502",
           "postalCode": "15002",
           "otherPosts": [
-            { "name": "Ain el Hammam Ait Sidi Said", "postalCode": "15164" }
+            { "name": "Ain el Hammam - Ait Sidi Said", "postalCode": "15164" }
           ]
         },
         {
-          "name": "Aït Yahia - Ait Hichem",
+          "name": "Ait Yahia - Ait Hichem",
           "codeONS": "1527",
           "postalCode": "15088",
           "otherPosts": []
@@ -79,7 +79,7 @@
           "otherPosts": []
         },
         {
-          "name": "Aït Chafâa",
+          "name": "Ait Chafaa",
           "codeONS": "1513",
           "postalCode": "15059",
           "otherPosts": []
@@ -102,13 +102,13 @@
       "name": "Beni Douala",
       "communes": [
         {
-          "name": "Aït Mahmoud",
+          "name": "Ait Mahmoud",
           "codeONS": "1528",
           "postalCode": "15044",
           "otherPosts": []
         },
         {
-          "name": "Beni Aïssi",
+          "name": "Beni Aissi",
           "codeONS": "1515",
           "postalCode": "15191",
           "otherPosts": [{ "name": "Ighil Bouzrou", "postalCode": "15069" }]
@@ -181,7 +181,7 @@
       ]
     },
     {
-      "name": "Bouzeguène",
+      "name": "Bouzeguene",
       "communes": [
         {
           "name": "Ath Zikki",
@@ -190,7 +190,7 @@
           "otherPosts": []
         },
         {
-          "name": "Bouzeguène - Ath Ikhlef",
+          "name": "Bouzeguene - Ath Ikhlef",
           "codeONS": "1534",
           "postalCode": "15009",
           "otherPosts": []
@@ -210,10 +210,10 @@
       ]
     },
     {
-      "name": "Draâ Ben Khedda",
+      "name": "Draa Ben Khedda",
       "communes": [
         {
-          "name": "Draâ Ben Khedda",
+          "name": "Draa Ben Khedda",
           "codeONS": "1547",
           "postalCode": "15004",
           "otherPosts": [
@@ -227,7 +227,7 @@
           "otherPosts": []
         },
         {
-          "name": "Tadmaït",
+          "name": "Tadmait",
           "codeONS": "1564",
           "postalCode": "15018",
           "otherPosts": [
@@ -243,22 +243,22 @@
       ]
     },
     {
-      "name": "Draâ El Mizan",
+      "name": "Draa El Mizan",
       "communes": [
         {
-          "name": "Aïn Zaouia",
+          "name": "Ain Zaouia",
           "codeONS": "1525",
           "postalCode": "15055",
           "otherPosts": []
         },
         {
-          "name": "Aït Yahia Moussa",
+          "name": "Ait Yahia Moussa",
           "codeONS": "1556",
           "postalCode": "15026",
           "otherPosts": []
         },
         {
-          "name": "Draâ El Mizan",
+          "name": "Draa El Mizan",
           "codeONS": "1510",
           "postalCode": "15005",
           "otherPosts": [
@@ -274,10 +274,10 @@
       ]
     },
     {
-      "name": "Iferhounène",
+      "name": "Iferhounene",
       "communes": [
         {
-          "name": "Iferhounène",
+          "name": "Iferhounene",
           "codeONS": "1517",
           "postalCode": "15013",
           "otherPosts": []
@@ -297,10 +297,10 @@
       ]
     },
     {
-      "name": "Larbaâ Nath Irathen",
+      "name": "Larbaa Nath Irathen",
       "communes": [
         {
-          "name": "Aït Aouggacha",
+          "name": "Ait Aouggacha",
           "codeONS": "1535",
           "postalCode": "15058",
           "otherPosts": []
@@ -312,7 +312,7 @@
           "otherPosts": []
         },
         {
-          "name": "Larbaâ Nath Irathen",
+          "name": "Larbaa Nath Irathen",
           "codeONS": "1521",
           "postalCode": "15006",
           "otherPosts": [
@@ -323,10 +323,10 @@
       ]
     },
     {
-      "name": "Mâatkas",
+      "name": "Maatkas",
       "communes": [
         {
-          "name": "Maâtkas",
+          "name": "Maatkas",
           "codeONS": "1529",
           "postalCode": "15017",
           "otherPosts": []
@@ -360,7 +360,7 @@
       "name": "Mekla",
       "communes": [
         {
-          "name": "Aït Khellili - Agoulmime",
+          "name": "Ait Khellili - Agoulmime",
           "codeONS": "1558",
           "postalCode": "15079",
           "otherPosts": []
@@ -372,7 +372,7 @@
           "otherPosts": [{ "name": "Djemaa Saharidj", "postalCode": "15033" }]
         },
         {
-          "name": "Souamaâ",
+          "name": "Souamaa",
           "codeONS": "1505",
           "postalCode": "15043",
           "otherPosts": []
@@ -383,13 +383,13 @@
       "name": "Ouacif",
       "communes": [
         {
-          "name": "Aït Boumahdi",
+          "name": "Ait Boumahdi",
           "codeONS": "1530",
           "postalCode": "15084",
           "otherPosts": []
         },
         {
-          "name": "Aït Toudert",
+          "name": "Ait Toudert",
           "codeONS": "1567",
           "postalCode": "15062",
           "otherPosts": []
@@ -412,7 +412,7 @@
           "otherPosts": []
         },
         {
-          "name": "Aït Bouaddou",
+          "name": "Ait Bouaddou",
           "codeONS": "1565",
           "postalCode": "15024",
           "otherPosts": []
@@ -435,7 +435,7 @@
       "name": "Ouaguenoun",
       "communes": [
         {
-          "name": "Aït Aïssa Mimoun",
+          "name": "Ait Aissa Mimoun",
           "codeONS": "1536",
           "postalCode": "15032",
           "otherPosts": []
@@ -514,7 +514,7 @@
       "name": "Tizi Rached",
       "communes": [
         {
-          "name": "Aït Oumalou - Agouni Bouragh",
+          "name": "Ait Oumalou - Agouni Bouragh",
           "codeONS": "1542",
           "postalCode": "15054",
           "otherPosts": []

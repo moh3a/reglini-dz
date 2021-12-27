@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 import parse from "html-react-parser";
 import Image from "next/image";
@@ -152,14 +153,15 @@ const ProfilePicture = ({ size }: { user: any; size?: "sm" | "md" | "lg" }) => {
             </div>
             <div className="h-40 w-40">
               {pp === "upload" && createObjectURL && (
-                <Image
-                  loader={() => createObjectURL}
-                  src={createObjectURL}
-                  alt=""
-                  width={50}
-                  height={50}
-                  layout="responsive"
-                />
+                // <Image
+                //   loader={() => createObjectURL}
+                //   src={createObjectURL}
+                //   alt=""
+                //   width={50}
+                //   height={50}
+                //   layout="responsive"
+                // />
+                <img src={createObjectURL} alt="" />
               )}
             </div>
           </div>

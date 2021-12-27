@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
@@ -62,7 +63,7 @@ function AllBlogs({ user }: any) {
             >
               <div className="flex">
                 <div className="m-2 h-12 w-12">
-                  <Image
+                  {/* <Image
                     className="rounded-full"
                     src={
                       blog.userPicture ? blog.userPicture : "/placeholder.png"
@@ -71,6 +72,13 @@ function AllBlogs({ user }: any) {
                     width={500}
                     height={500}
                     layout="responsive"
+                  /> */}
+                  <img
+                    className="rounded-full"
+                    src={
+                      blog.userPicture ? blog.userPicture : "/placeholder.png"
+                    }
+                    alt={blog.userName}
                   />
                 </div>
                 <div className="mt-2">
@@ -114,7 +122,7 @@ function AllBlogs({ user }: any) {
               {blog.comments.map((comment: any) => (
                 <div key={comment._id} className="flex my-4">
                   <div className="m-2 h-10 w-10">
-                    <Image
+                    {/* <Image
                       className="rounded-full"
                       src={
                         comment.userPicture
@@ -125,6 +133,15 @@ function AllBlogs({ user }: any) {
                       width={500}
                       height={500}
                       layout="responsive"
+                    /> */}
+                    <img
+                      className="rounded-full"
+                      src={
+                        comment.userPicture
+                          ? comment.userPicture
+                          : "/placeholder.png"
+                      }
+                      alt={comment.userName}
                     />
                   </div>
                   <div className="w-full">

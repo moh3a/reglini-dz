@@ -4,10 +4,10 @@
   "postalCode": "21000",
   "dairas": [
     {
-      "name": "Aïn Kechra",
+      "name": "Ain Kechra",
       "communes": [
         {
-          "name": "Aïn Kechra",
+          "name": "Ain Kechra",
           "codeONS": "2127",
           "postalCode": "21007",
           "otherPosts": [{ "name": "Hadjar Mafrouch", "postalCode": "21061" }]
@@ -24,7 +24,7 @@
       "name": "Azzaba",
       "communes": [
         {
-          "name": "Aïn Charchar",
+          "name": "Ain Charchar",
           "codeONS": "2106",
           "postalCode": "21006",
           "otherPosts": [{ "name": "Oued el Kebir", "postalCode": "21067" }]
@@ -99,7 +99,7 @@
           "otherPosts": [{ "name": "El Ouloudj", "postalCode": "21016" }]
         },
         {
-          "name": "Cheraïa",
+          "name": "Cheraia",
           "codeONS": "2131",
           "postalCode": "21036",
           "otherPosts": [{ "name": "Ain Aghbel", "postalCode": "21030" }]
@@ -119,7 +119,7 @@
       "name": "El Hadaiek",
       "communes": [
         {
-          "name": "Aïn Zouit",
+          "name": "Ain Zouit",
           "codeONS": "2102",
           "postalCode": "21051",
           "otherPosts": []
@@ -237,7 +237,7 @@
       "name": "Sidi Mezghiche",
       "communes": [
         {
-          "name": "Aïn Bouziane",
+          "name": "Ain Bouziane",
           "codeONS": "2122",
           "postalCode": "21031",
           "otherPosts": []

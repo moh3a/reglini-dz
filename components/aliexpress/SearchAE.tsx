@@ -1,6 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
+import { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
+import { Dialog, Transition } from "@headlessui/react";
+
 import {
   searchAEProductByName,
   getAEProductInfo,
@@ -10,6 +14,17 @@ const SearchAE = ({ url, setUrl }: any) => {
   const t = useTranslations("Aliexpress");
   const dispatch = useDispatch();
   const router = useRouter();
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
   let locale = "en";
   if (router.locale === "ar") {
     locale = "ar_MA";
@@ -37,22 +52,25 @@ const SearchAE = ({ url, setUrl }: any) => {
     <section className="bg-gray-50 dark:bg-grim">
       <div className="container flex flex-col px-5 py-8 mx-auto lg:items-center">
         <div className="flex flex-col w-full mb-8 text-left lg:text-center">
+          <div className="flex justify-center items-center">
+            <img src="/aliexpress-ar21.svg" alt="aliexpress logo" />
+          </div>
           <h2 className="mb-4 text-xs font-semibold tracking-widest text-center uppercase title-font">
             {t("hereStarts")}
           </h2>
           <h1 className="mx-auto mb-6 text-4xl text-center font-semibold leading-none tracking-tighter text-aliexpress lg:w-1/2 lg:text-6xl title-font">
-            {t("didYouFind")}
+            {t("aeHands")}
           </h1>
-          <p className="mx-auto text-base text-center lg:text-lg font-medium leading-relaxed text-blueGray-700 lg:w-2/3">
-            {t("workDesc")}
-          </p>
+          {/* <p className="mx-auto text-base text-center lg:text-lg font-medium leading-relaxed text-blueGray-700 lg:w-2/3">
+            search for any item you want
+          </p> */}
           <form
             onSubmit={getByIdQueryHandler}
             className={`flex flex-col ${
               router.locale === "ar" ? "md:flex-row-reverse" : "md:flex-row"
-            }  items-center mt-12 lg:mx-auto justify-center lg:w-1/2`}
+            }  items-center mt-8 lg:mx-auto justify-center lg:w-1/2`}
           >
-            <div className="relative w-2/4 mx-2 text-left lg:w-full xl:w-1/2 md:w-full">
+            <div className="md:mr-2 w-full">
               <input
                 className={`${
                   router.locale === "ar" && "text-right"
@@ -60,7 +78,7 @@ const SearchAE = ({ url, setUrl }: any) => {
                 type="text"
                 id="url"
                 name="url"
-                placeholder="https://www.aliexpress.com/item/xxxxxxx"
+                placeholder="exemple: watch, xt91, coat ... or https://www.aliexpress.com/item/xxxxxxx"
                 autoComplete="off"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
@@ -76,6 +94,87 @@ const SearchAE = ({ url, setUrl }: any) => {
           <p className="mt-2 mb-8 text-xs lg:text-sm text-center lg:mx-auto lg:w-1/3 ">
             {t("happyShopping")}
           </p>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={openModal}
+              className="border border-aliexpress text-aliexpress text-sm md:text-base dark:bg-black bg-white py-1 px-3 rounded-lg"
+            >
+              you have a specific item that you want to buy?
+            </button>
+            <Transition appear show={isOpen} as={Fragment}>
+              <Dialog
+                as="div"
+                className="fixed inset-0 z-100 overflow-y-auto"
+                onClose={closeModal}
+              >
+                <div className="min-h-screen px-4 text-center">
+                  <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                  >
+                    <Dialog.Overlay className="fixed inset-0 bg-black opacity-75" />
+                  </Transition.Child>
+
+                  <span
+                    className="inline-block h-screen align-middle"
+                    aria-hidden="true"
+                  >
+                    &#8203;
+                  </span>
+                  <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
+                  >
+                    <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden align-middle transition-all transform bg-white shadow-xl rounded-2xl text-center">
+                      <Dialog.Title
+                        as="h3"
+                        className="text-lg font-medium leading-6 text-gray-900"
+                      >
+                        How to get a specific product
+                      </Dialog.Title>
+                      <div className="my-2">
+                        <p className="text-sm text-gray-500">
+                          You can browse Aliexpress webapp or mobile app, and
+                          whenever you find an item that you like, simply copy
+                          the URL or the product ID of the item and paste it in
+                          this page&apos;s search bar, and we&apos;ll get it for
+                          you.
+                        </p>
+                      </div>
+                      <div>
+                        <img
+                          className="rounded-lg"
+                          src="/aliexpress-screenshot.jpg"
+                          alt="aliexpress URL copy screenshot"
+                        />
+                      </div>
+                      <div className="flex justify-around">
+                        <div className="mt-4">
+                          <button
+                            type="button"
+                            className="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-lg hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500"
+                            onClick={closeModal}
+                          >
+                            OK
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </Transition.Child>
+                </div>
+              </Dialog>
+            </Transition>
+          </div>
         </div>
       </div>
     </section>

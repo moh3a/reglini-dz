@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
@@ -71,13 +72,14 @@ const ProductProperty = ({ property, setShowImage, setProperties }: any) => {
                         className="h-10 w-10"
                         onClick={() => setShowImage(value.imageUrl)}
                       >
-                        <Image
+                        {/* <Image
                           src={value.thumbnailImageUrl}
                           alt={value.name}
                           width={100}
                           height={100}
                           layout="responsive"
-                        />
+                        /> */}
+                        <img src={value.thumbnailImageUrl} alt={value.name} />
                       </div>
                     ) : (
                       value.name
@@ -95,13 +97,14 @@ const ProductProperty = ({ property, setShowImage, setProperties }: any) => {
                         className="h-10 w-10"
                         onClick={() => setShowImage(value.imageUrl)}
                       >
-                        <Image
+                        {/* <Image
                           src={value.thumbnailImageUrl}
                           alt={value.name}
                           width={100}
                           height={100}
                           layout="responsive"
-                        />
+                        /> */}
+                        <img src={value.thumbnailImageUrl} alt={value.name} />
                       </div>
                     ) : (
                       value.name
@@ -145,13 +148,14 @@ const ProductProperty = ({ property, setShowImage, setProperties }: any) => {
                       className="h-10 w-10"
                       onClick={() => setShowImage(value.imageUrl)}
                     >
-                      <Image
+                      {/* <Image
                         src={value.thumbnailImageUrl}
                         alt={value.name}
                         width={100}
                         height={100}
                         layout="responsive"
-                      />
+                      /> */}
+                      <img src={value.thumbnailImageUrl} alt={value.name} />
                     </div>
                   ) : (
                     value.name

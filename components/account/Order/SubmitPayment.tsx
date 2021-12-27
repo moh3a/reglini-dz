@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -163,14 +164,15 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
             {createObjectURL && (
               <>
                 <div className="w-128 shadow my-2 border border-yellow-200">
-                  <Image
+                  {/* <Image
                     loader={() => createObjectURL}
                     src={createObjectURL}
                     alt=""
                     width={50}
                     height={50}
                     layout="responsive"
-                  />
+                  /> */}
+                  <img src={createObjectURL} alt="" />
                 </div>
                 <small>{t("doNotMind")}</small>
                 <div className="flex justify-end">

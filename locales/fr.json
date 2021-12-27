@@ -214,10 +214,12 @@
   },
   "Aliexpress": {
     "hereStarts": "Ici commence tout.",
-    "didYouFind": "Avez-vous trouvé quelque chose que vous aimez?",
-    "workDesc": "Vous pouvez parcourir l'application Web ou l'application mobile Aliexpress, et chaque fois que vous trouvez un article que vous aimez, vous pouvez simplement coller l'URL ici, et nous nous occuperons du reste.",
+    "aeHands": "AliExpress entre vos mains",
     "find": "Chercher",
-    "happyShopping": "Bon shopping!"
+    "happyShopping": "Bon shopping!",
+    "speceficItem": "vous avez un article spécifique que vous souhaitez acheter ?",
+    "workHow": "Comment obtenir un produit spécifique",
+    "workDesc": "Vous pouvez parcourir l'application Web ou l'application mobile Aliexpress, et chaque fois que vous trouvez un article que vous aimez, copiez simplement l'URL ou l'ID du produit et collez-le dans la barre de recherche de cette page, et nous nous occuperons du reste."
   },
   "AEProduct": {
     "dzd": "DZD",

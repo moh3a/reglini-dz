@@ -4,10 +4,10 @@
   "postalCode": "19000",
   "dairas": [
     {
-      "name": "Aïn Arnat",
+      "name": "Ain Arnat",
       "communes": [
         {
-          "name": "Aïn Arnat",
+          "name": "Ain Arnat",
           "codeONS": "1926",
           "postalCode": "19017",
           "otherPosts": [
@@ -21,7 +21,7 @@
           ]
         },
         {
-          "name": "Aïn Abessa",
+          "name": "Ain Abessa",
           "codeONS": "1914",
           "postalCode": "19016",
           "otherPosts": [
@@ -44,10 +44,10 @@
       ]
     },
     {
-      "name": "Aïn Azel",
+      "name": "Ain Azel",
       "communes": [
         {
-          "name": "Aïn Azel",
+          "name": "Ain Azel",
           "codeONS": "1940",
           "postalCode": "19007",
           "otherPosts": [
@@ -56,7 +56,7 @@
           ]
         },
         {
-          "name": "Aïn Lahdjar",
+          "name": "Ain Lahdjar",
           "codeONS": "1918",
           "postalCode": "19018",
           "otherPosts": []
@@ -76,10 +76,10 @@
       ]
     },
     {
-      "name": "Aïn El Kebira",
+      "name": "Ain El Kebira",
       "communes": [
         {
-          "name": "Aïn El Kebira",
+          "name": "Ain El Kebira",
           "codeONS": "1902",
           "postalCode": "19008",
           "otherPosts": [
@@ -101,10 +101,10 @@
       ]
     },
     {
-      "name": "Aïn Oulmene",
+      "name": "Ain Oulmene",
       "communes": [
         {
-          "name": "Aïn Oulmene",
+          "name": "Ain Oulmene",
           "codeONS": "1928",
           "postalCode": "19002",
           "otherPosts": [
@@ -182,7 +182,7 @@
           "otherPosts": []
         },
         {
-          "name": "Aïn Sebt",
+          "name": "Ain Sebt",
           "codeONS": "1949",
           "postalCode": "19033",
           "otherPosts": []
@@ -208,7 +208,7 @@
           ]
         },
         {
-          "name": "Aïn Legradj",
+          "name": "Ain Legradj",
           "codeONS": "1913",
           "postalCode": "19011",
           "otherPosts": [
@@ -218,7 +218,7 @@
           ]
         },
         {
-          "name": "Aït Mouhli",
+          "name": "Ait Mouhli",
           "codeONS": "1946",
           "postalCode": "19038",
           "otherPosts": []
@@ -270,13 +270,13 @@
           "otherPosts": []
         },
         {
-          "name": "Aït Noual M'zada",
+          "name": "Ait Noual M'zada",
           "codeONS": "1951",
           "postalCode": "19076",
           "otherPosts": [{ "name": "Beni Khellad", "postalCode": "19085" }]
         },
         {
-          "name": "Aït Tizi",
+          "name": "Ait Tizi",
           "codeONS": "1954",
           "postalCode": "19077",
           "otherPosts": []
@@ -303,7 +303,7 @@
           "otherPosts": []
         },
         {
-          "name": "Aïn Roua",
+          "name": "Ain Roua",
           "codeONS": "1906",
           "postalCode": "19019",
           "otherPosts": []

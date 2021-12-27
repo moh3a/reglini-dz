@@ -33,6 +33,19 @@ const Address = ({ user }: any) => {
     }
   }, [wilaya, commune]);
 
+  const convertString = (s: string) => {
+    let str = s.toLowerCase();
+    str = str.replace(/[öô]/g, "o");
+    str = str.replace(/[ç]/g, "c");
+    str = str.replace(/[ş]/g, "s");
+    str = str.replace(/[ıîï]/g, "i");
+    str = str.replace(/[ğ]/g, "g");
+    str = str.replace(/[üûù]/g, "u");
+    str = str.replace(/[âäà]/g, "a");
+    str = str.replace(/[éèêë]/g, "e");
+    return str;
+  };
+
   const addressSaveHandler = async (e: any) => {
     e.preventDefault();
     if (wilaya && postalCode && addressLine && commune) {
@@ -96,10 +109,40 @@ const Address = ({ user }: any) => {
             <label>Wilaya</label>
             <SelectWilaya setWilaya={setWilaya} />
           </div>
-          {wilaya && (
+          {wilaya &&
+          wilaya.id !== 22 &&
+          wilaya.id !== 23 &&
+          wilaya.id !== 24 &&
+          wilaya.id !== 25 &&
+          wilaya.id !== 26 &&
+          wilaya.id !== 27 &&
+          wilaya.id !== 28 &&
+          wilaya.id !== 29 &&
+          wilaya.id !== 30 &&
+          wilaya.id !== 31 &&
+          wilaya.id !== 32 &&
+          wilaya.id !== 33 &&
+          wilaya.id !== 34 &&
+          wilaya.id !== 35 &&
+          wilaya.id !== 36 &&
+          wilaya.id !== 37 &&
+          wilaya.id !== 38 &&
+          wilaya.id !== 39 &&
+          wilaya.id !== 40 &&
+          wilaya.id !== 41 &&
+          wilaya.id !== 42 &&
+          wilaya.id !== 43 &&
+          wilaya.id !== 44 &&
+          wilaya.id !== 46 &&
+          wilaya.id !== 47 &&
+          wilaya.id !== 48 ? (
             <div className=" w-full">
               <label>Daira</label>
               <SelectDaira wilaya={wilaya} setDaira={setDaira} />
+            </div>
+          ) : (
+            <div className=" w-full text-red-500 font-semibold">
+              Shipping to this wilaya will be available soon.
             </div>
           )}
           {daira && (
@@ -123,7 +166,7 @@ const Address = ({ user }: any) => {
                 type="text"
                 className="rounded-full py-1 px-2 my-1 w-full  border-yellow-200 text-black dark:text-yellow-100 dark:bg-black focus:border-yellow-200 focus:ring-yellow-200"
                 value={addressLine}
-                onChange={(e) => setAddressLine(e.target.value)}
+                onChange={(e) => setAddressLine(convertString(e.target.value))}
               />
             </div>
           )}

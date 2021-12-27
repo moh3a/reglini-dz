@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,12 +26,17 @@ const CartItem = ({ item }: any) => {
   return (
     <li className={`py-6 flex ${router.locale === "ar" && "flex-row-reverse"}`}>
       <div className="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
-        <Image
+        {/* <Image
+          className="w-full h-full object-center object-cover"
           src={item.imageUrl ? item.imageUrl : "/placeholder.png"}
           alt={item.name ? item.name : ""}
           height={100}
           width={100}
+        /> */}
+        <img
           className="w-full h-full object-center object-cover"
+          src={item.imageUrl ? item.imageUrl : "/placeholder.png"}
+          alt={item.name ? item.name : ""}
         />
       </div>
 

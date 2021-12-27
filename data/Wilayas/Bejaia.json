@@ -1,6 +1,6 @@
 {
   "id": 6,
-  "name": "Béjaia",
+  "name": "Bejaia",
   "postalCode": "06000",
   "dairas": [
     {
@@ -150,28 +150,28 @@
       ]
     },
     {
-      "name": "Béjaia",
+      "name": "Bejaia",
       "communes": [
         {
-          "name": "Béjaia",
+          "name": "Bejaia",
           "codeONS": "0601",
           "postalCode": "06000",
           "otherPosts": [
-            { "name": "Béjaia - Liberte", "postalCode": "06002" },
-            { "name": "Béjaia - Pepiniere", "postalCode": "06116" },
-            { "name": "Béjaia - Ahmed Ougana", "postalCode": "06125" },
-            { "name": "Béjaia - Hassiba Ben Bouali", "postalCode": "06126" },
-            { "name": "Béjaia - Abane Ramdane", "postalCode": "06127" },
-            { "name": "Béjaia - Naceria", "postalCode": "06128" },
-            { "name": "Béjaia - Tala Ouriane", "postalCode": "06129" },
-            { "name": "Béjaia - Ihaddadene", "postalCode": "06130" },
-            { "name": "Béjaia - Sidi Ali Labhar", "postalCode": "06131" },
-            { "name": "Béjaia - Taassast", "postalCode": "06134" },
+            { "name": "Bejaia - Liberte", "postalCode": "06002" },
+            { "name": "Bejaia - Pepiniere", "postalCode": "06116" },
+            { "name": "Bejaia - Ahmed Ougana", "postalCode": "06125" },
+            { "name": "Bejaia - Hassiba Ben Bouali", "postalCode": "06126" },
+            { "name": "Bejaia - Abane Ramdane", "postalCode": "06127" },
+            { "name": "Bejaia - Naceria", "postalCode": "06128" },
+            { "name": "Bejaia - Tala Ouriane", "postalCode": "06129" },
+            { "name": "Bejaia - Ihaddadene", "postalCode": "06130" },
+            { "name": "Bejaia - Sidi Ali Labhar", "postalCode": "06131" },
+            { "name": "Bejaia - Taassast", "postalCode": "06134" },
             {
-              "name": "Béjaia - Sidi Soufiane",
+              "name": "Bejaia - Sidi Soufiane",
               "postalCode": "06139"
             },
-            { "name": "Béjaia - Sidi Ahmed", "postalCode": "06040" },
+            { "name": "Bejaia - Sidi Ahmed", "postalCode": "06040" },
             { "name": "Boukhiama", "postalCode": "06046" },
             { "name": "Amtik N'Tafat", "postalCode": "06047" }
           ]
@@ -389,7 +389,7 @@
       ]
     },
     {
-      "name": "Souk El Ténine",
+      "name": "Souk El Tenine",
       "communes": [
         {
           "name": "Souk el Tenine",

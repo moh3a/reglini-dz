@@ -1,13 +1,13 @@
 {
   "id": 26,
-  "name": "Médéa",
+  "name": "Medea",
   "postalCode": "26000",
   "dairas": [
     {
-      "name": "Aïn Boucif",
+      "name": "Ain Boucif",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -18,7 +18,7 @@
       "name": "Aziz",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -29,7 +29,7 @@
       "name": "Beni Slimane",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -40,7 +40,7 @@
       "name": "Berrouaghia",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -51,7 +51,7 @@
       "name": "Chahbounia",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -62,7 +62,7 @@
       "name": "Chellalet El Adhaoura",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -73,7 +73,7 @@
       "name": "El Azizia",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -84,7 +84,7 @@
       "name": "El Guelb El Kebir",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -95,7 +95,7 @@
       "name": "El Omaria",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -106,7 +106,7 @@
       "name": "Ksar Boukhari",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -114,10 +114,10 @@
       ]
     },
     {
-      "name": "Médéa",
+      "name": "Medea",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -128,7 +128,7 @@
       "name": "Ouamri",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -139,7 +139,7 @@
       "name": "Ouled Antar",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -150,7 +150,7 @@
       "name": "Ouzera",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -161,7 +161,7 @@
       "name": "Seghouane",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -172,7 +172,7 @@
       "name": "Sidi Naamane",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -183,7 +183,7 @@
       "name": "Si Mahdjoub",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -194,7 +194,7 @@
       "name": "Souagui",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -205,7 +205,7 @@
       "name": "Tablat",
       "communes": [
         {
-          "name": "Médéa",
+          "name": "Medea",
           "codeONS": "",
           "postalCode": "26000",
           "otherPosts": []
@@ -215,23 +215,23 @@
   ],
   "address": [
     {
-      "name": "Médéa",
+      "name": "Medea",
       "postalCode": "26000",
       "otherPosts": [
-        { "name": "Médéa Ould Immam", "postalCode": "26009" },
-        { "name": "Médéa Merdjechikr", "postalCode": "26031" },
-        { "name": "Médéa Takbou", "postalCode": "26078" },
-        { "name": "Médéa Universite", "postalCode": "26082" },
-        { "name": "Médéa Yahia Fares", "postalCode": "26083" },
-        { "name": "Médéa Gare Routiere", "postalCode": "26084" },
-        { "name": "Médéa Wahiba Kebaili", "postalCode": "26085" },
-        { "name": "Médéa Hassan Ben Mouloud", "postalCode": "26086" },
+        { "name": "Medea Ould Immam", "postalCode": "26009" },
+        { "name": "Medea Merdjechikr", "postalCode": "26031" },
+        { "name": "Medea Takbou", "postalCode": "26078" },
+        { "name": "Medea Universite", "postalCode": "26082" },
+        { "name": "Medea Yahia Fares", "postalCode": "26083" },
+        { "name": "Medea Gare Routiere", "postalCode": "26084" },
+        { "name": "Medea Wahiba Kebaili", "postalCode": "26085" },
+        { "name": "v Hassan Ben Mouloud", "postalCode": "26086" },
         {
-          "name": "Médéa Residence Universitaire 1 500 Lits",
+          "name": "Medea Residence Universitaire 1 500 Lits",
           "postalCode": "26087"
         },
-        { "name": "Médéa Residence Universitaire 2", "postalCode": "26088" },
-        { "name": "Médéa Rouis Bachir", "postalCode": "26090" }
+        { "name": "Medea Residence Universitaire 2", "postalCode": "26088" },
+        { "name": "Medea Rouis Bachir", "postalCode": "26090" }
       ]
     },
     {

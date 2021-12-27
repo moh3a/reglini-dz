@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 import { selectUser } from "../../../utils/redux/userSlice";
@@ -51,6 +52,11 @@ export default function Orders() {
         {user && user.orders.length > 0 ? (
           user.orders.map((order: any) => (
             <OrderDetails order={order} key={order.orderId} />
+            // <div key={order.orderId}>
+            //   <Link href={`/account/orders/${order.orderId}`}>
+            //     {order.orderId}
+            //   </Link>
+            // </div>
           ))
         ) : (
           <p className="text-center py-16 text-4xl">{t("noOrders")}</p>

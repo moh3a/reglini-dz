@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -17,14 +18,16 @@ const AdminSidebar = ({ user, tab, setTab }: any) => {
           <Tab.List className="bg-gray-100 dark:bg-gray-800 w-20 h-screen justify-between flex flex-col">
             {user.picture && (
               <div className=" w-10 h-10 mb-3 mx-auto">
-                <Image
-                  src={user.picture}
-                  alt={user.name}
-                  className="rounded-full"
-                  height={4}
-                  width={4}
-                  layout="responsive"
-                />
+                // <Image
+                //   src={user.picture}
+                //   alt={user.name}
+                //   className="rounded-full"
+                //   height={4}
+                //   width={4}
+                //   layout="responsive"
+                // />
+                <img src={user.picture}
+                  alt={user.name} />
               </div>
             )}
             <div className="mt-10">
@@ -57,13 +60,18 @@ const AdminSidebar = ({ user, tab, setTab }: any) => {
           <div className="mt-10 mb-10">
             {user.picture && (
               <div className=" w-10 h-10 mb-3 mx-auto">
-                <Image
+                {/* <Image
                   src={user.picture}
                   alt={user.name}
                   className="rounded-full"
                   height={4}
                   width={4}
                   layout="responsive"
+                /> */}
+                <img
+                  src={user.picture}
+                  alt={user.name}
+                  className="rounded-full"
                 />
               </div>
             )}

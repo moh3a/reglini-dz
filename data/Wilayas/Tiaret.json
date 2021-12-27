@@ -4,10 +4,10 @@
   "postalCode": "14000",
   "dairas": [
     {
-      "name": "Aïn Deheb",
+      "name": "Ain Deheb",
       "communes": [
         {
-          "name": "Aïn Deheb",
+          "name": "Ain Deheb",
           "codeONS": "1406",
           "postalCode": "14007",
           "otherPosts": []
@@ -27,10 +27,10 @@
       ]
     },
     {
-      "name": "Aïn Kermes",
+      "name": "Ain Kermes",
       "communes": [
         {
-          "name": "Aïn Kermes",
+          "name": "Ain Kermes",
           "codeONS": "1428",
           "postalCode": "14009",
           "otherPosts": [
@@ -73,7 +73,7 @@
           "otherPosts": [{ "name": "Torriche", "postalCode": "14079" }]
         },
         {
-          "name": "Aïn Bouchekif",
+          "name": "Ain Bouchekif",
           "codeONS": "1403",
           "postalCode": "14040",
           "otherPosts": [{ "name": "Ain Meriem", "postalCode": "14041" }]
@@ -93,7 +93,7 @@
           ]
         },
         {
-          "name": "Aïn El Hadid",
+          "name": "Ain El Hadid",
           "codeONS": "1418",
           "postalCode": "14008",
           "otherPosts": []
@@ -124,7 +124,7 @@
           "otherPosts": []
         },
         {
-          "name": "Rechaïga",
+          "name": "Rechaiga",
           "codeONS": "1430",
           "postalCode": "14026",
           "otherPosts": []
@@ -171,7 +171,7 @@
           ]
         },
         {
-          "name": "Aïn Zarit",
+          "name": "Ain Zarit",
           "codeONS": "1405",
           "postalCode": "14017",
           "otherPosts": []
@@ -183,7 +183,7 @@
           "otherPosts": [{ "name": "Dayet Terfes", "postalCode": "14047" }]
         },
         {
-          "name": "Sebaïne",
+          "name": "Sebaine",
           "codeONS": "1425",
           "postalCode": "14030",
           "otherPosts": []

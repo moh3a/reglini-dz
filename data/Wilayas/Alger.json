@@ -50,7 +50,7 @@
           ]
         },
         {
-          "name": "Raïs Hamidou",
+          "name": "Rais Hamidou",
           "codeONS": "1625",
           "postalCode": "16060",
           "otherPosts": []
@@ -95,10 +95,10 @@
       ]
     },
     {
-      "name": "Bir Mourad Raïs",
+      "name": "Bir Mourad Rais",
       "communes": [
         {
-          "name": "Bir Mourad Raïs",
+          "name": "Bir Mourad Rais",
           "codeONS": "1609",
           "postalCode": "16013",
           "otherPosts": [
@@ -108,7 +108,7 @@
               "postalCode": "16203"
             },
             { "name": "Tixeraine", "postalCode": "16100" },
-            { "name": "Bir Mourad Raïs - La Concorde", "postalCode": "16173" },
+            { "name": "Bir Mourad Rais - La Concorde", "postalCode": "16173" },
             { "name": "Bir Mourad Rais - Les Sources", "postalCode": "16075" }
           ]
         },
@@ -252,7 +252,7 @@
       "name": "Cheraga",
       "communes": [
         {
-          "name": "Aïn Benian",
+          "name": "Ain Benian",
           "codeONS": "1644",
           "postalCode": "16018",
           "otherPosts": [
@@ -298,7 +298,7 @@
           ]
         },
         {
-          "name": "Baïnem - El Hammamet",
+          "name": "Bainem - El Hammamet",
           "codeONS": "1624",
           "postalCode": "16082",
           "otherPosts": [{ "name": "Cap Caxine", "postalCode": "16085" }]
@@ -306,10 +306,10 @@
       ]
     },
     {
-      "name": "Dar El Beïda",
+      "name": "Dar El Beida",
       "communes": [
         {
-          "name": "Aïn Taya",
+          "name": "Ain Taya",
           "codeONS": "1638",
           "postalCode": "16019",
           "otherPosts": []
@@ -369,7 +369,7 @@
           ]
         },
         {
-          "name": "Dar El Beïda",
+          "name": "Dar El Beida",
           "codeONS": "1620",
           "postalCode": "16033",
           "otherPosts": [
@@ -545,7 +545,7 @@
       ]
     },
     {
-      "name": "Rouïba",
+      "name": "Rouiba",
       "communes": [
         {
           "name": "H'raoua",
@@ -554,7 +554,7 @@
           "otherPosts": []
         },
         {
-          "name": "Réghaïa",
+          "name": "Reghaia",
           "codeONS": "1643",
           "postalCode": "16036",
           "otherPosts": [
@@ -566,7 +566,7 @@
           ]
         },
         {
-          "name": "Rouïba",
+          "name": "Rouiba",
           "codeONS": "1642",
           "postalCode": "16017",
           "otherPosts": [{ "name": "Rouiba - ENPEI", "postalCode": "16174" }]

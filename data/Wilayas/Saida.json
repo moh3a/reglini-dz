@@ -26,10 +26,10 @@
       ]
     },
     {
-      "name": "Aïn El Hadjar",
+      "name": "Ain El Hadjar",
       "communes": [
         {
-          "name": "Aïn El Hadjar",
+          "name": "Ain El Hadjar",
           "codeONS": "2003",
           "postalCode": "20001",
           "otherPosts": []
@@ -101,7 +101,7 @@
           "otherPosts": []
         },
         {
-          "name": "Aïn Sekhouna",
+          "name": "Ain Sekhouna",
           "codeONS": "2013",
           "postalCode": "20009",
           "otherPosts": [{ "name": "Dhaiet Zraguet", "postalCode": "20022" }]
@@ -134,7 +134,7 @@
           "otherPosts": []
         },
         {
-          "name": "Aïn Soltane",
+          "name": "Ain Soltane",
           "codeONS": "2016",
           "postalCode": "20029",
           "otherPosts": []

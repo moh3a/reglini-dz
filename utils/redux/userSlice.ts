@@ -11,6 +11,7 @@ import {
   cancelOrder,
   deleteOrder,
   getOrderDetails,
+  updateOrderDetails,
   getOrderTracking,
 } from "./userAsyncActions";
 import { signOut } from "next-auth/client";
@@ -189,6 +190,20 @@ export const userSlice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(getOrderDetails.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error;
+      })
+      //========================================================================================updateOrderDetails
+      .addCase(updateOrderDetails.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(updateOrderDetails.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.user = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(updateOrderDetails.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error;
       })

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
@@ -76,13 +77,18 @@ const WishedItems = ({ wishlist }: any) => {
                 </p>
               </div>
 
-              <Image
+              {/* <Image
                 className="object-cover w-full h-48 mt-2"
                 src={item.imageUrl}
                 alt={item.name}
                 height={100}
                 width={100}
                 layout="responsive"
+              /> */}
+              <img
+                className="object-cover w-full h-48 mt-2"
+                src={item.imageUrl}
+                alt={item.name}
               />
 
               <div className="flex items-center justify-between px-4 py-2">

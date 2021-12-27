@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Fragment } from "react";
 import { signOut } from "next-auth/client";
 import Link from "next/link";
@@ -140,12 +141,16 @@ const NavLarge = ({ setOpen, user }: any) => {
                               <Link href="/aliexpress" passHref>
                                 <div className="cursor-pointer flex justify-center items-center h-40 w-40 border border-gray-200 bg-gray-100 hover:border-gray-400 dark:border-yellow-200 dark:bg-grim dark:hover:border-yellow-400 rounded-lg relative mt-2 mb-6">
                                   <div className="w-20 h-20">
-                                    <Image
+                                    {/* <Image
                                       src="/aliexpress-icon.png"
                                       alt="aliexpress logo"
                                       width={100}
                                       height={100}
                                       layout="responsive"
+                                    /> */}
+                                    <img
+                                      src="/aliexpress-icon.png"
+                                      alt="aliexpress logo"
                                     />
                                   </div>
                                   <div className="absolute w-full top-40 text-center">
@@ -156,13 +161,14 @@ const NavLarge = ({ setOpen, user }: any) => {
                               <Link href="/meta-ads" passHref>
                                 <div className="cursor-pointer flex justify-center items-center h-40 w-40 border border-gray-200 hover:border-gray-400 bg-gray-100 dark:border-blue-400 dark:bg-grim rounded-lg dark:hover:border-blue-600 relative mt-2 mb-6">
                                   <div className="w-40 h-40">
-                                    <Image
+                                    {/* <Image
                                       src="/meta-icon.png"
                                       alt="meta logo"
                                       width={100}
                                       height={100}
                                       layout="responsive"
-                                    />
+                                    /> */}
+                                    <img src="/meta-icon.png" alt="meta logo" />
                                   </div>
                                   <div className="absolute w-full top-40 text-center">
                                     Meta Ads

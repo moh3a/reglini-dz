@@ -1,6 +1,7 @@
-import { Fragment, useState, useEffect } from "react";
+/* eslint-disable @next/next/no-img-element */
+import { Fragment, useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import { useDispatch } from "react-redux";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { TrashIcon, PhotographIcon } from "@heroicons/react/outline";
 
@@ -12,8 +13,11 @@ import {
 } from "../../../utils/redux/userAsyncActions";
 
 export default function OrderDetails({ order }: any) {
+  const dispatch = useDispatch();
   const [openTracking, setOpenTracking] = useState(false);
   const [openPayNow, setOpenPayNow] = useState(false);
+
+  useEffect(() => {}, []);
 
   return (
     <div className="my-5 shadow-md border-2 text-black dark:text-yellow-100 border-yellow-200 bg-white dark:bg-grim overflow-hidden rounded-lg">
@@ -48,12 +52,9 @@ const Tracking = ({ order, setOpenTracking }: any) => {
         </button>
       </div>
       <div className="px-4 py-5 sm:px-6">
-        {order.tracking.isTrackingAvailable ? (
-          <p className="text-green-500">{t("trackingAvailable")}</p>
-        ) : (
-          <p className="text-red-500">{t("trackingNotAvailable")}</p>
-        )}
+        <p className="text-green-500">{t("trackingAvailable")}</p>
       </div>
+
       {order.tracking.isTrackingAvailable && (
         <div>
           <p className="text-xl font-bold">
@@ -207,18 +208,16 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
       <div className="flex items-center flex-col lg:items-start lg:flex-row">
         {order.product.imageUrl && (
           <div className="w-72 md:w-44 rounded-lg">
-            <Image
-              className=""
-              src={order.product.imageUrl}
-              alt={order.product.name}
-              height={300}
-              width={300}
-            />
+            <img src={order.product.imageUrl} alt={order.product.name} />
           </div>
         )}
         <div className="px-4 py-5 sm:px-6 text-center lg:text-left">
           <h3 className="text-lg leading-6 font-medium">
-            {t("orderId")}: {order.orderId}
+            <Link href={`/account/orders/${order.orderId}`} passHref>
+              <div>
+                {t("orderId")}: {order.orderId}
+              </div>
+            </Link>
           </h3>
           {!order.payment.hasTimedOut && (
             <>
@@ -245,7 +244,7 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
                 {order.product.totalPrice} DZD
               </p>
               {order.payment.wasDeclined && (
-                <div className="py-1 px-3 text-red-800 font-bold border-2 border-red-300 bg-red-100 rounded-lg">
+                <div className="my-1  py-1 px-3 text-red-800 font-bold border-2 border-red-300 bg-red-100 rounded-lg">
                   {t("paymentDeclined")}
                 </div>
               )}
@@ -277,13 +276,18 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
                   </a>
                 </div>
               )}
+              {/* {!order.tracking.isTrackingAvailable && (
+                <div className="my-1 py-1 px-3 text-red-800 font-bold border-2 border-red-300 bg-red-100 rounded-lg">
+                  {t("trackingNotAvailable")}
+                </div>
+              )} */}
             </>
           )}
         </div>
       </div>
       {order.payment.hasTimedOut ? (
-        <div className="flex flex-col items-center lg:flex-row lg:justify-end py-2 px-3">
-          <div>{t("hasTimedOut")}</div>
+        <div className="flex flex-col items-center lg:flex-row lg:justify-end mx-3 my-1 py-1 px-3 text-red-800 font-bold border-2 border-red-300 bg-red-100 rounded-lg">
+          {t("hasTimedOut")}
         </div>
       ) : (
         <div className="flex flex-col items-center lg:flex-row lg:justify-end py-2 px-3 text-black">
@@ -310,14 +314,17 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
                 </button>
               </div>
             )}
-          <div>
-            <button
-              onClick={() => setOpenTracking(true)}
-              className="bg-indigo-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-indigo-300 dark:bg-indigo-400"
-            >
-              {t("tracking")}
-            </button>
-          </div>
+          {order.tracking.isTrackingAvailable && (
+            <div>
+              <button
+                onClick={() => setOpenTracking(true)}
+                className="bg-indigo-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-indigo-300 dark:bg-indigo-400"
+              >
+                {t("tracking")}
+              </button>
+            </div>
+          )}
+
           <div>
             <button
               className="bg-green-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-green-300 dark:bg-green-400"

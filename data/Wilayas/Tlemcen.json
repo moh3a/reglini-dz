@@ -4,16 +4,16 @@
   "postalCode": "13000",
   "dairas": [
     {
-      "name": "Aïn Tallout",
+      "name": "Ain Tallout",
       "communes": [
         {
-          "name": "Aïn Tallout",
+          "name": "Ain Tallout",
           "codeONS": "1303",
           "postalCode": "13012",
           "otherPosts": []
         },
         {
-          "name": "Aïn Nehala",
+          "name": "Ain Nehala",
           "codeONS": "1325",
           "postalCode": "13054",
           "otherPosts": [
@@ -212,7 +212,7 @@
       ]
     },
     {
-      "name": "Honaïne",
+      "name": "Honaine",
       "communes": [
         {
           "name": "Beni Khellad",
@@ -224,7 +224,7 @@
           ]
         },
         {
-          "name": "Honaïne",
+          "name": "Honaine",
           "codeONS": "1344",
           "postalCode": "13015",
           "otherPosts": []
@@ -262,7 +262,7 @@
       "name": "Mansourah",
       "communes": [
         {
-          "name": "Aïn Ghoraba",
+          "name": "Ain Ghoraba",
           "codeONS": "1349",
           "postalCode": "13023",
           "otherPosts": []
@@ -348,7 +348,7 @@
       "name": "Remchi",
       "communes": [
         {
-          "name": "Aïn Youcef",
+          "name": "Ain Youcef",
           "codeONS": "1315",
           "postalCode": "13013",
           "otherPosts": []

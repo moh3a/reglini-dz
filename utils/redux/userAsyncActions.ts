@@ -187,6 +187,13 @@ export const getOrderDetails = createAsyncThunk(
   }
 );
 
+export const updateOrderDetails = createAsyncThunk(
+  "user/updateOrderDetails",
+  async ({ data }: any) => {
+    return data;
+  }
+);
+
 export const getOrderTracking = createAsyncThunk(
   "user/getOrderTracking",
   async ({ id }: any, { rejectWithValue }) => {
