@@ -20,10 +20,8 @@ const Footer = () => {
         >
           <div className="w-full -mx-6 lg:flex-1">
             <div className="px-6 text-center">
-              <div>
-                <a className="cursor-pointer text-xl font-bold text-gray-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">
-                  reglini-dz
-                </a>
+              <div className="cursor-pointer text-xl font-bold text-gray-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">
+                reglini-dz
               </div>
 
               <p className=" mt-2 text-gray-500 dark:text-gray-400">
@@ -33,6 +31,7 @@ const Footer = () => {
               <div className="flex justify-center mt-4 -mx-2">
                 <Link href="https://www.facebook.com/reglini.dz" passHref>
                   <a
+                    rel="noreferrer"
                     target="_blank"
                     className="mx-2 text-blue-600 dark:text-gray-200 hover:text-blue-500 dark:hover:text-gray-400"
                     aria-label="Facebook"
@@ -41,15 +40,16 @@ const Footer = () => {
                   </a>
                 </Link>
 
-                <a
-                  className="mx-2 text-blue-400 dark:text-gray-200 hover:text-blue-300 dark:hover:text-gray-400"
+                <span
+                  className="cursor-pointer mx-2 text-blue-400 dark:text-gray-200 hover:text-blue-300 dark:hover:text-gray-400"
                   aria-label="Messenger"
                 >
                   <i className="fab fa-facebook-messenger"></i>
-                </a>
+                </span>
 
                 <Link href="https://www.instagram.com/reglini.dz/" passHref>
                   <a
+                    rel="noreferrer"
                     target="_blank"
                     className="mx-2 text-pink-600 dark:text-gray-200 hover:text-pink-700 dark:hover:text-gray-400"
                     aria-label="Instagram"
@@ -68,9 +68,9 @@ const Footer = () => {
               }`}
             >
               <div>
-                <h3 className="text-gray-900 font-bold uppercase dark:text-white">
+                <h1 className="text-gray-900 font-bold uppercase dark:text-white">
                   {t("info")}
-                </h3>
+                </h1>
                 <Link href="/support" passHref>
                   <a className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
                     {t("support")}
@@ -89,9 +89,9 @@ const Footer = () => {
               </div>
 
               <div>
-                <h3 className="text-gray-900 font-bold uppercase dark:text-white">
+                <h1 className="text-gray-900 font-bold uppercase dark:text-white">
                   {t("contact")}
-                </h3>
+                </h1>
                 <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
                   +213 540 86 17 75
                 </span>

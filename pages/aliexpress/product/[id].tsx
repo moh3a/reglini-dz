@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -14,6 +14,17 @@ const AliexpressProduct = ({ messages, rate, commission }: any) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [session, loading]: [IUser | null, boolean] = useSession();
+
+  const [message, setMessage] = useState("");
+  useEffect(() => {
+    if (router.locale === "en") {
+      setMessage("Fetching data from Aliexpress...");
+    } else if (router.locale === "fr") {
+      setMessage("Récupération des données d'Aliexpress...");
+    } else if (router.locale === "ar") {
+      setMessage("إحضار البيانات");
+    }
+  }, [router.locale]);
 
   let locale = "en";
   if (router.locale === "ar") {
@@ -83,9 +94,7 @@ const AliexpressProduct = ({ messages, rate, commission }: any) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {status === "loading" && (
-        <Loading text="Fetching the data from Aliexpress..." />
-      )}
+      {status === "loading" && <Loading text={message} />}
       {product && product.status === "active" && (
         <>
           <ProductDetails

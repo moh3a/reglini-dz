@@ -13,7 +13,17 @@ const AccountVerification = ({
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
+  const [message, setMessage] = useState("");
   const router = useRouter();
+  useEffect(() => {
+    if (router.locale === "en") {
+      setMessage("Your account is being verified...");
+    } else if (router.locale === "fr") {
+      setMessage("Votre compte est en cours de vérification...");
+    } else if (router.locale === "ar") {
+      setMessage("يتم التحقق من حسابك");
+    }
+  }, [router.locale]);
 
   const verify = useCallback(async () => {
     if (token) {
@@ -57,7 +67,7 @@ const AccountVerification = ({
 
   return (
     <>
-      {loading && <Loading text="Your account is being verified.." />}
+      {loading && <Loading text={message} />}
       {success && <AlertMessage type="success" message={success} />}
       {error && <AlertMessage type="error" message={error} />}
     </>

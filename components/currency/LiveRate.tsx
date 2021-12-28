@@ -13,17 +13,17 @@ const LiveRate = ({ currency }: any) => {
   return (
     <>
       <div className="py-8 lg:py-16 px-4 flex flex-col items-center border-t-2 border-black dark:border-yellow-200 bg-yellow-100 dark:bg-grim">
-        <h2 className="text-center text-xl lg:text-4xl font-bold">
+        <h1 className="text-center text-xl lg:text-4xl font-bold">
           {t("inMarket")}{" "}
           <span className="underline text-gray-700 dark:text-gray-300">
             {t("parallel")}
           </span>{" "}
           {t("market")}
-        </h2>
+        </h1>
         <div className="text-xs lg:text-sm">{t("dailyRatesParallel")}</div>
-        <h2 className="text-lg lg:text-xl font-semibold underline">
+        <h1 className="text-lg lg:text-xl font-semibold underline">
           {t("purchase")}
-        </h2>
+        </h1>
         <div className="flex flex-wrap flex-center select-none">
           {currency.map((current: any) => {
             return (
@@ -102,9 +102,9 @@ const LiveRate = ({ currency }: any) => {
             );
           })}
         </div>
-        <h2 className="text-lg lg:text-xl font-semibold underline">
+        <h1 className="text-lg lg:text-xl font-semibold underline">
           {t("sale")}
-        </h2>
+        </h1>
         <div className="flex flex-wrap flex-center select-none">
           {currency.map((current: any) => {
             return (
@@ -186,13 +186,13 @@ const LiveRate = ({ currency }: any) => {
         </div>
       </div>
       <div className="py-8 lg:py-16 px-4 flex flex-col items-center border-t-2 border-b-2 border-black dark:border-yellow-200 bg-yellow-100 dark:bg-grim">
-        <h2 className="text-center text-xl lg:text-4xl font-bold">
+        <h1 className="text-center text-xl lg:text-4xl font-bold">
           {t("inMarket")}{" "}
           <span className="underline text-gray-700 dark:text-gray-300">
             {t("official")}
           </span>{" "}
           {t("market")}
-        </h2>
+        </h1>
         <div className="text-xs lg:text-sm">{t("dailyRatesOfficial")}</div>
         <div className="flex flex-wrap flex-center select-none">
           {currency.map((current: any) => {

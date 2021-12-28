@@ -1,6 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import {
   CurrencyEuroIcon,
@@ -13,61 +11,11 @@ const AdminSidebar = ({ user, tab, setTab }: any) => {
   const router = useRouter();
   return (
     <>
-      {/* <Tab.Group>
-        <div className="flex flex-row h-full">
-          <Tab.List className="bg-gray-100 dark:bg-gray-800 w-20 h-screen justify-between flex flex-col">
-            {user.picture && (
-              <div className=" w-10 h-10 mb-3 mx-auto">
-                // <Image
-                //   src={user.picture}
-                //   alt={user.name}
-                //   className="rounded-full"
-                //   height={4}
-                //   width={4}
-                //   layout="responsive"
-                // />
-                <img src={user.picture}
-                  alt={user.name} />
-              </div>
-            )}
-            <div className="mt-10">
-              <Tab>
-                <CurrencyEuroIcon
-                  className="flex-shink-0 h-6 w-6  text-gray-800 dark:text-gray-100 hover:text-red-700  dark:hover:text-red-400"
-                  aria-hidden="true"
-                />
-              </Tab>
-              <Tab>
-                <AdjustmentsIcon
-                  className="flex-shink-0 h-6 w-6 text-gray-800 dark:text-gray-100 hover:text-red-700  dark:hover:text-red-400"
-                  aria-hidden="true"
-                />
-              </Tab>
-            </div>
-          </Tab.List>
-          <Tab.Panels>
-            <Tab.Panel>
-              <p>Coucou</p>
-            </Tab.Panel>
-            <Tab.Panel>
-              <p>Coucou again</p>
-            </Tab.Panel>
-          </Tab.Panels>
-        </div>
-      </Tab.Group> */}
       <div className="flex flex-row h-full">
         <nav className="bg-gray-100 dark:bg-gray-800 w-20 h-screen justify-between flex flex-col">
           <div className="mt-10 mb-10">
             {user.picture && (
               <div className=" w-10 h-10 mb-3 mx-auto">
-                {/* <Image
-                  src={user.picture}
-                  alt={user.name}
-                  className="rounded-full"
-                  height={4}
-                  width={4}
-                  layout="responsive"
-                /> */}
                 <img
                   src={user.picture}
                   alt={user.name}

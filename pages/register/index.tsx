@@ -32,16 +32,10 @@ const RegisterScreen = ({ providers, csrfToken, children }: any) => {
               <div className="flex w-full rounded-lg xl:w-3/4 lg:w-11/12 lg:shadow-xl border border-yellow-200">
                 <div className="relative hidden w-full h-auto bg-white  bg-cover dark:bg-grim border-r rounded-l-lg lg:block lg:w-6/12">
                   <div className="relative z-0 m-12 text-left ">
-                    {/* <a className="flex items-center w-32 mb-4 font-medium text-blueGray-900 title-font md:mb-10">
-                  <h2 className="text-lg font-bold tracking-tighter text-gray-800 dark:text-gray-100 transition duration-500 ease-in-out transform hover:text-lightBlack-500 dark:text-lightBlue-400">
-                    {" "}
-                    reglini-dz{" "}
-                  </h2>
-                </a> */}
-                    <h2 className="mt-12 mb-2 text-2xl font-semibold tracking-tighter text-gray-800 dark:text-gray-100 sm:text-3xl title-font">
+                    <h1 className="mt-12 mb-2 text-2xl font-semibold tracking-tighter text-gray-800 dark:text-gray-100 sm:text-3xl title-font">
                       {" "}
                       Create an account.{" "}
-                    </h2>
+                    </h1>
                     <div className="w-full mt-16 mb-8 text-base leading-relaxed text-blueGray-900 sm:md:w-3/3 lg:text-1xl ">
                       {" "}
                       Creating an account enables you to shop from Aliexpress to

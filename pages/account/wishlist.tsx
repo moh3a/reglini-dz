@@ -9,7 +9,6 @@ import { useTranslations } from "next-intl";
 
 import { IUser } from "../../utils/types";
 import { selectUser } from "../../utils/redux/userSlice";
-import { getUser } from "../../utils/redux/userAsyncActions";
 import WishedItems from "../../components/store/WishedItems";
 
 const Wishlist = ({ messages }: any) => {
@@ -26,12 +25,6 @@ const Wishlist = ({ messages }: any) => {
         pathname: "/login/[message]",
         query: { message: "login_to_view_wishlist" },
       });
-    // if (!isAuthenticated && session && status !== "loading") {
-    //   const email = session.user?.email;
-    //   const type = session.user?.type;
-    //   const provider = session.user?.provider || undefined;
-    //   dispatch(getUser({ email, account: type, provider }));
-    // }
   }, [router, session, loading, dispatch, isAuthenticated, status]);
 
   useEffect(() => {

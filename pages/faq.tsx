@@ -62,7 +62,7 @@ const Faq = () => {
         <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
           <div className="flex flex-col mb-16 sm:text-center">
             <div className="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
-              <h2 className="text-4xl font-bold">{t("faq")}</h2>
+              <h1 className="text-4xl font-bold">{t("faq")}</h1>
             </div>
           </div>
           <div className="space-y-4">

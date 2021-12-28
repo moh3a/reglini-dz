@@ -1,5 +1,6 @@
-import { useEffect, ReactNode } from "react";
+import { useEffect, ReactNode, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 import { useSession } from "next-auth/client";
 
 import StoreNavigation from "./nav/StoreNavigation";
@@ -13,6 +14,18 @@ export default function Layout({ children }: { children: ReactNode }) {
   const [session, loading]: [IUser | null, boolean] = useSession();
   const dispatch = useDispatch();
   const { isAuthenticated, status, user } = useSelector(selectUser);
+
+  const [message, setMessage] = useState("");
+  const router = useRouter();
+  useEffect(() => {
+    if (router.locale === "en") {
+      setMessage("Loading...");
+    } else if (router.locale === "fr") {
+      setMessage("Chargement en cours...");
+    } else if (router.locale === "ar") {
+      setMessage("جاري تحميل");
+    }
+  }, [router.locale]);
 
   useEffect(() => {
     if (
@@ -31,7 +44,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   }, [session, dispatch, isAuthenticated, status]);
 
   if (loading || status === "loading") {
-    return <Loading text="Loading..." />;
+    return <Loading text={message} />;
   }
 
   return (

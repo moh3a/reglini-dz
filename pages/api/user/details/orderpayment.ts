@@ -47,9 +47,9 @@ handler
       });
       picture = image.secure_url;
       let text = `
-          <h3>
+          <h2>
           User with id ${data._id} and email address ${data.email} has made a payment.
-          </h3>
+          </h2>
           <p>The payment was made for order with the order id ${orderId}.</p>
           <p>The payment was via ${paymentMethod}.</p>
           <p>Here's the image sent to validate the payment.</p>

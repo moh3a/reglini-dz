@@ -143,7 +143,6 @@ export const createOrder = createAsyncThunk(
         },
         { headers: { "Content-type": "application/json" } }
       );
-      console.log(data);
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response);
@@ -199,7 +198,6 @@ export const getOrderTracking = createAsyncThunk(
   async ({ id }: any, { rejectWithValue }) => {
     try {
       const { data } = await axios.post(`/api/aliexpress/order/tracking/${id}`);
-      console.log(data);
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response);

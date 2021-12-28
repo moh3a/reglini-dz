@@ -33,7 +33,7 @@ const Contact = () => {
     <section className="w-full max-w-2xl px-6 py-4 mx-auto lg:mb-32 my-16 bg-yellow-100 border-2 border-yellow-200 rounded-md shadow-md dark:bg-grim dark:text-yellow-100">
       {success && <SuccessDialog>{success} </SuccessDialog>}
       {error && <DangerDialog>{error} </DangerDialog>}
-      <h2 className="text-3xl font-semibold text-center ">{t("getInTouch")}</h2>
+      <h1 className="text-3xl font-semibold text-center ">{t("getInTouch")}</h1>
       <p className="mt-3 text-center">{t("yourFeedback")}</p>
 
       <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 md:grid-cols-3">

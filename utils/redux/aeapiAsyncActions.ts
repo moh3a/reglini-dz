@@ -15,7 +15,6 @@ export const getAEProductInfo = createAsyncThunk(
           locale,
         },
       });
-      console.log(data.data);
       return data.data;
     } catch (error: any) {
       return rejectWithValue(error.response);

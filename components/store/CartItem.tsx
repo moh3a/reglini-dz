@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
@@ -26,13 +25,6 @@ const CartItem = ({ item }: any) => {
   return (
     <li className={`py-6 flex ${router.locale === "ar" && "flex-row-reverse"}`}>
       <div className="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
-        {/* <Image
-          className="w-full h-full object-center object-cover"
-          src={item.imageUrl ? item.imageUrl : "/placeholder.png"}
-          alt={item.name ? item.name : ""}
-          height={100}
-          width={100}
-        /> */}
         <img
           className="w-full h-full object-center object-cover"
           src={item.imageUrl ? item.imageUrl : "/placeholder.png"}
@@ -51,11 +43,11 @@ const CartItem = ({ item }: any) => {
               router.locale === "ar" && "text-right"
             } justify-between text-base font-medium text-gray-800 dark:text-gray-100`}
           >
-            <h3>
+            <h1>
               <Link href={`/aliexpress/product/${item.productId}`}>
                 <a target="_blank">{item.name}</a>
               </Link>
-            </h3>
+            </h1>
             <p
               className={`ml-4 text-red-600 ${
                 router.locale === "ar" && "flex flex-row-reverse"

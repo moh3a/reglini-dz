@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import Link from "next/link";
@@ -40,14 +39,6 @@ const Product = ({ product, session, converter }: any) => {
       {error && <DangerDialog>{error} </DangerDialog>}
       <Link href={`/aliexpress/product/${product.productId}`} passHref>
         <a className="w-50 bg-gray-200 cursor-pointer">
-          {/* <Image
-            className="w-full h-full object-center object-cover hover:opacity-75 rounded-lg shadow-lg"
-            src={product.imageUrl}
-            alt={product.title}
-            layout="responsive"
-            height={50}
-            width={50}
-          /> */}
           <img
             className="w-full h-full object-center object-cover hover:opacity-75 rounded-lg shadow-lg"
             src={product.imageUrl}
@@ -57,11 +48,11 @@ const Product = ({ product, session, converter }: any) => {
       </Link>
       <div className="relative">
         <div>
-          <h3 className="mt-4 text-sm">
+          <h1 className="mt-4 text-sm">
             <Link href={`/aliexpress/product/${product.productId}`}>
               {product.title}
             </Link>
-          </h3>
+          </h1>
           <p
             className={`mt-1 text-lg font-medium ${
               router.locale === "ar" && "flex flex-row-reverse"

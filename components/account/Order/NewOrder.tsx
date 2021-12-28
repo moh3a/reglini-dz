@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslations } from "next-intl";
 
@@ -72,7 +71,7 @@ export default function NewOrder({ products, origin }: any) {
     <div className="border-t border-b mb-12 border-yellow-200 bg-white dark:bg-grim text-black dark:text-white shadow overflow-hidden sm:rounded-lg">
       <ActionFeedback message={message} />
       <div className="px-4 pb-5 sm:px-6">
-        <h3 className="text-lg leading-6 font-medium">{t("placeNewOrder")}</h3>
+        <h1 className="text-lg leading-6 font-medium">{t("placeNewOrder")}</h1>
       </div>
       <div className="border-t border-gray-200">
         <dl>
@@ -118,13 +117,6 @@ export default function NewOrder({ products, origin }: any) {
                 >
                   {item.imageUrl && (
                     <div className="w-72 md:w-44 rounded-lg">
-                      {/* <Image
-                        className=""
-                        src={item.imageUrl}
-                        alt={item.name}
-                        height={300}
-                        width={300}
-                      /> */}
                       <img src={item.imageUrl} alt={item.name} />
                     </div>
                   )}

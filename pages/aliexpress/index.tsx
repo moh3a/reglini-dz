@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useSession } from "next-auth/client";
 
@@ -15,6 +16,18 @@ const Aliexpress = ({ messages, rate, commission }: any) => {
   const [session, loading]: [IUser | null, boolean] = useSession();
   const { search, product, status } = useSelector(selectAEApi);
   const [url, setUrl] = useState("");
+
+  const [message, setMessage] = useState("");
+  const router = useRouter();
+  useEffect(() => {
+    if (router.locale === "en") {
+      setMessage("Fetching data from Aliexpress...");
+    } else if (router.locale === "fr") {
+      setMessage("Récupération des données d'Aliexpress...");
+    } else if (router.locale === "ar") {
+      setMessage("إحضار البيانات");
+    }
+  }, [router.locale]);
 
   const converter = (price: number) => {
     return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
@@ -58,7 +71,7 @@ const Aliexpress = ({ messages, rate, commission }: any) => {
   }
 
   if (status === "loading") {
-    return <Loading text="Fetching data from Aliexpress..." />;
+    return <Loading text={message} />;
   }
 
   return (

@@ -21,7 +21,6 @@ export const createBlog = createAsyncThunk(
         title,
         text,
       });
-      console.log(data);
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response);

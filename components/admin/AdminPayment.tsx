@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 import axios from "axios";
 import Avatar from "../elements/Avatar";
 
@@ -89,13 +88,6 @@ const AdminPayment = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {/* <Image
-                    src={receipt.order.payment.receipt}
-                    alt={receipt.order.orderId}
-                    height={50}
-                    width={50}
-                    layout="responsive"
-                  /> */}
                   <img
                     src={receipt.order.payment.receipt}
                     alt={receipt.order.orderId}

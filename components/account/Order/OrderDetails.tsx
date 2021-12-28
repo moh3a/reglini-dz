@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Fragment, useState, useEffect, useCallback } from "react";
+import { Fragment, useState, useEffect } from "react";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { useTranslations } from "next-intl";
@@ -212,13 +212,13 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
           </div>
         )}
         <div className="px-4 py-5 sm:px-6 text-center lg:text-left">
-          <h3 className="text-lg leading-6 font-medium">
+          <h1 className="text-lg leading-6 font-medium">
             <Link href={`/account/orders/${order.orderId}`} passHref>
               <div>
                 {t("orderId")}: {order.orderId}
               </div>
             </Link>
-          </h3>
+          </h1>
           {!order.payment.hasTimedOut && (
             <>
               {order.createdAt ? (

@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import axios from "axios";
@@ -88,7 +87,7 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
       <br />
       {order.product.totalPrice < 50000 ? (
         <>
-          <h2>{t("choosePaymentMethod")}</h2>
+          <h1>{t("choosePaymentMethod")}</h1>
           <div className="w-full max-w-md mx-auto">
             <RadioGroup
               value={selected}
@@ -132,7 +131,7 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
           </div>
         </>
       ) : (
-        <h2>Payment can only be via CCP.</h2>
+        <h1>Payment can only be via CCP.</h1>
       )}
       {selected && (
         <div>
@@ -164,14 +163,6 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
             {createObjectURL && (
               <>
                 <div className="w-128 shadow my-2 border border-yellow-200">
-                  {/* <Image
-                    loader={() => createObjectURL}
-                    src={createObjectURL}
-                    alt=""
-                    width={50}
-                    height={50}
-                    layout="responsive"
-                  /> */}
                   <img src={createObjectURL} alt="" />
                 </div>
                 <small>{t("doNotMind")}</small>

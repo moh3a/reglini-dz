@@ -7,7 +7,6 @@ import { useSession } from "next-auth/client";
 
 import { IUser } from "../../../utils/types";
 import { selectUser } from "../../../utils/redux/userSlice";
-import { getUser } from "../../../utils/redux/userAsyncActions";
 
 const OrderScreen = () => {
   const router = useRouter();
@@ -21,12 +20,6 @@ const OrderScreen = () => {
         pathname: "/login/[message]",
         query: { message: "login_to_view_orders" },
       });
-    // if (!isAuthenticated && session && status !== "loading") {
-    //   const email = session.user?.email;
-    //   const type = session.user?.type;
-    //   const provider = session.user?.provider || undefined;
-    //   dispatch(getUser({ email, account: type, provider }));
-    // }
   }, [router, session, loading, dispatch, isAuthenticated, status]);
 
   return (

@@ -30,9 +30,9 @@ export default function ProductFeatures({ product }: any) {
     <div className="border-t border-gray-600 dark:border-yellow-200 text-black dark:text-yellow-100 bg-white dark:bg-grim">
       <div className="max-w-2xl mx-auto py-24 px-4 ">
         <div>
-          <h2 className="text-3xl font-extrabold tracking-tight  sm:text-4xl">
+          <h1 className="text-3xl font-extrabold tracking-tight  sm:text-4xl">
             Product Specifications
-          </h2>
+          </h1>
 
           <dl className="my-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
             {attributes &&
@@ -52,9 +52,9 @@ export default function ProductFeatures({ product }: any) {
                 );
               })}
           </dl>
-          <h2 className="text-3xl font-extrabold tracking-tight  sm:text-4xl">
+          <h1 className="text-3xl font-extrabold tracking-tight  sm:text-4xl">
             Seller Details
-          </h2>
+          </h1>
           <p className="mt-4 text-gray-600 dark:text-white">
             {product.sellerDetails.summary.contactPerson} from{" "}
             {product.sellerDetails.summary.country}
@@ -64,9 +64,9 @@ export default function ProductFeatures({ product }: any) {
               {product.sellerDetails.sellerDetailsUrl}
             </a>
           </Link>
-          <h2 className="text-3xl my-10 font-extrabold tracking-tight  sm:text-4xl">
+          <h1 className="text-3xl my-10 font-extrabold tracking-tight  sm:text-4xl">
             Seller&apos;s Product Description
-          </h2>
+          </h1>
           {/* {product.htmlDescription && (
             <div>{parse(product.htmlDescription)}</div>
           )} */}

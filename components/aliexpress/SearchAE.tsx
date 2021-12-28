@@ -40,10 +40,12 @@ const SearchAE = ({ url, setUrl }: any) => {
       const firstSplit = url.split("/item/");
       const secondSplit = firstSplit[1].split(".html");
       dispatch(getAEProductInfo({ id: secondSplit[0], locale }));
-    } else if (url.includes("https://a.aliexpress.com/")) {
-      const newurl = "https://" + url.split("https://")[1];
-      console.log(newurl);
-    } else {
+    }
+    // else if (url.includes("https://a.aliexpress.com/")) {
+    //   const newurl = "https://" + url.split("https://")[1];
+    //   console.log(newurl);
+    // }
+    else {
       dispatch(searchAEProductByName({ name: url, locale }));
     }
   };
@@ -55,15 +57,12 @@ const SearchAE = ({ url, setUrl }: any) => {
           <div className="flex justify-center items-center">
             <img src="/aliexpress-ar21.svg" alt="aliexpress logo" />
           </div>
-          <h2 className="mb-4 text-xs font-semibold tracking-widest text-center uppercase title-font">
+          <h1 className="mb-4 text-xs font-semibold tracking-widest text-center uppercase title-font">
             {t("hereStarts")}
-          </h2>
-          <h1 className="mx-auto mb-6 text-4xl text-center font-semibold leading-none tracking-tighter text-aliexpress lg:w-1/2 lg:text-6xl title-font">
-            {t("aeHands")}
           </h1>
-          {/* <p className="mx-auto text-base text-center lg:text-lg font-medium leading-relaxed text-blueGray-700 lg:w-2/3">
-            search for any item you want
-          </p> */}
+          <h2 className="mx-auto mb-6 text-4xl text-center font-semibold leading-none tracking-tighter text-aliexpress lg:w-1/2 lg:text-6xl title-font">
+            {t("aeHands")}
+          </h2>
           <form
             onSubmit={getByIdQueryHandler}
             className={`flex flex-col ${
@@ -99,7 +98,7 @@ const SearchAE = ({ url, setUrl }: any) => {
               onClick={openModal}
               className="border border-aliexpress text-aliexpress text-sm md:text-base dark:bg-black bg-white py-1 px-3 rounded-lg"
             >
-              you have a specific item that you want to buy?
+              {t("speceficItem")}
             </button>
             <Transition appear show={isOpen} as={Fragment}>
               <Dialog
@@ -140,16 +139,10 @@ const SearchAE = ({ url, setUrl }: any) => {
                         as="h3"
                         className="text-lg font-medium leading-6 text-gray-900"
                       >
-                        How to get a specific product
+                        {t("workHow")}
                       </Dialog.Title>
                       <div className="my-2">
-                        <p className="text-sm text-gray-500">
-                          You can browse Aliexpress webapp or mobile app, and
-                          whenever you find an item that you like, simply copy
-                          the URL or the product ID of the item and paste it in
-                          this page&apos;s search bar, and we&apos;ll get it for
-                          you.
-                        </p>
+                        <p className="text-sm text-gray-500">{t("workDesc")}</p>
                       </div>
                       <div>
                         <img

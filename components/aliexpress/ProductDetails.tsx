@@ -110,14 +110,14 @@ const ProductDetails = ({ product, session, converter }: any) => {
                 router.locale === "ar" && "text-right"
               }`}
             >
-              <h2
+              <h1
                 className={`text-sm  title-font text-gray-700 dark:text-gray-200 tracking-widest`}
               >
                 {product.attributes[0].value.name}
-              </h2>
-              <h1 className="text-gray-800 dark:text-gray-100 text-3xl title-font font-medium mb-1">
-                {product.title}
               </h1>
+              <h2 className="text-gray-800 dark:text-gray-100 text-3xl title-font font-medium mb-1">
+                {product.title}
+              </h2>
               <ProductReviews product={product} />
               <p className="leading-relaxed text-gray-800 dark:text-gray-100">
                 {t("category")}: {product.productCategory.name}

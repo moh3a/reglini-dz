@@ -63,8 +63,6 @@ const SendEmail = ({ from, to, subject, text }: IEmailOptions) => {
   transporter.sendMail(mailOptions, function (err: any, info: any) {
     if (err) {
       console.log(err);
-    } else {
-      console.log(info);
     }
   });
 };

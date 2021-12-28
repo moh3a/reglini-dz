@@ -8,7 +8,6 @@ import { useSession } from "next-auth/client";
 
 import { IUser } from "../../../utils/types";
 import { selectUser } from "../../../utils/redux/userSlice";
-import { getUser } from "../../../utils/redux/userAsyncActions";
 import NewOrder from "../../../components/account/Order/NewOrder";
 
 const NewOrderScreen = () => {
@@ -24,12 +23,6 @@ const NewOrderScreen = () => {
         pathname: "/login/[message]",
         query: { message: "login_to_place_order" },
       });
-    // if (!isAuthenticated && session && status !== "loading") {
-    //   const email = session.user?.email;
-    //   const type = session.user?.type;
-    //   const provider = session.user?.provider || undefined;
-    //   dispatch(getUser({ email, account: type, provider }));
-    // }
   }, [router, session, loading, dispatch, isAuthenticated, status]);
 
   useEffect(() => {
@@ -54,7 +47,7 @@ const NewOrderScreen = () => {
       </Head>
       {user && localStorage.getItem("aeno") && (
         <>
-          <h3 className="px-4 pt-5 sm:px-6">{t("directOrder")}</h3>
+          <h1 className="px-4 pt-5 sm:px-6">{t("directOrder")}</h1>
           <NewOrder
             products={JSON.parse(localStorage.getItem("aeno") as string)}
             origin={"localStorage"}
@@ -63,7 +56,7 @@ const NewOrderScreen = () => {
       )}
       {user && user.cart.cartItems.length > 0 && (
         <>
-          <h3 className="px-4 pt-5 sm:px-6">{t("fromCart")}</h3>
+          <h1 className="px-4 pt-5 sm:px-6">{t("fromCart")}</h1>
           <NewOrder products={user.cart.cartItems} origin={"cart"} />
         </>
       )}

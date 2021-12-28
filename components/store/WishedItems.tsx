@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 
@@ -77,14 +76,6 @@ const WishedItems = ({ wishlist }: any) => {
                 </p>
               </div>
 
-              {/* <Image
-                className="object-cover w-full h-48 mt-2"
-                src={item.imageUrl}
-                alt={item.name}
-                height={100}
-                width={100}
-                layout="responsive"
-              /> */}
               <img
                 className="object-cover w-full h-48 mt-2"
                 src={item.imageUrl}

@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import Image from "next/image";
 
 import { selectBlogs } from "../../utils/redux/blogsSlice";
 import { getBlogs, addComment } from "../../utils/redux/blogsAsyncActions";
@@ -63,16 +62,6 @@ function AllBlogs({ user }: any) {
             >
               <div className="flex">
                 <div className="m-2 h-12 w-12">
-                  {/* <Image
-                    className="rounded-full"
-                    src={
-                      blog.userPicture ? blog.userPicture : "/placeholder.png"
-                    }
-                    alt={blog.userName}
-                    width={500}
-                    height={500}
-                    layout="responsive"
-                  /> */}
                   <img
                     className="rounded-full"
                     src={
@@ -98,7 +87,7 @@ function AllBlogs({ user }: any) {
               <p className="mb-3 border border-gray-100 bg-white dark:border-gray-100 dark:bg-gray-600 px-4 py-2 m-1 rounded-lg">
                 {blog.text}
               </p>
-              <h2 className="w-full text-lg font-bold mx-1">Comments:</h2>
+              <h1 className="w-full text-lg font-bold mx-1">Comments:</h1>
               {user && (
                 <form
                   className="flex justify-between mx-2 md:mx-8 my-2"
@@ -122,18 +111,6 @@ function AllBlogs({ user }: any) {
               {blog.comments.map((comment: any) => (
                 <div key={comment._id} className="flex my-4">
                   <div className="m-2 h-10 w-10">
-                    {/* <Image
-                      className="rounded-full"
-                      src={
-                        comment.userPicture
-                          ? comment.userPicture
-                          : "/placeholder.png"
-                      }
-                      alt={comment.userName}
-                      width={500}
-                      height={500}
-                      layout="responsive"
-                    /> */}
                     <img
                       className="rounded-full"
                       src={

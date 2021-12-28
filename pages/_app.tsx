@@ -22,6 +22,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           content="Welcome to reglini-dz, where you'll be able to buy items from Aliexpress using the local algerian dinars or subscribe to the provided services."
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="theme-color" content="#1b1f23" />
         <meta
           name="facebook-domain-verification"
           content="tqch8yg7c5a548rbwp8vepozlepnap"

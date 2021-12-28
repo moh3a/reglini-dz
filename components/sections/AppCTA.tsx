@@ -19,12 +19,12 @@ const AppCTA = () => {
             router.locale === "ar" ? "md:text-right" : " md:text-left"
           }  md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto  text-center`}
         >
-          <h2 className="text-xs text-red-600 dark:text-red-400 tracking-widest font-medium title-font mb-1">
+          <h1 className="text-xs text-red-600 dark:text-red-400 tracking-widest font-medium title-font mb-1">
             {t("underDev")}
-          </h2>
-          <h1 className="md:text-3xl text-2xl font-medium title-font">
-            {t("closer")}
           </h1>
+          <h2 className="md:text-3xl text-2xl font-medium title-font">
+            {t("closer")}
+          </h2>
         </div>
         <div
           className={`flex ${

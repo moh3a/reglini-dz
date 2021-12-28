@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import parse from "html-react-parser";
-import Image from "next/image";
 
 const Avatar = ({ user, size }: { user: any; size?: "sm" | "md" | "lg" }) => {
   let avatarSize = "h-10 w-10";
@@ -27,13 +26,6 @@ const Avatar = ({ user, size }: { user: any; size?: "sm" | "md" | "lg" }) => {
           {parse(user.picture)}
         </div>
       ) : (
-        // <Image
-        //   className={`${avatarSize} rounded-full`}
-        //   src={user && user.picture ? user.picture : "/user-icon.png"}
-        //   alt={user && user.name ? user.name : "user profile image"}
-        //   height={height}
-        //   width={width}
-        // />
         <img
           className={`${avatarSize} rounded-full`}
           src={user && user.picture ? user.picture : "/user-icon.png"}

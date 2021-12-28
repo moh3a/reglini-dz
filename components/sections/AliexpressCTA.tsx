@@ -14,13 +14,10 @@ export default function AliexpressCTA() {
           router.locale === "ar" ? "text-right lg:flex-row-reverse" : ""
         } sm:px-6 lg:py-16 lg:px-8`}
       >
-        <h2 className="text-3xl font-extrabold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl">
-          <span className="block">
-            {t("onlineShopping")} <br />
-            {t("solutionShopping")}
-          </span>
+        <h1 className="text-3xl font-extrabold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl">
+          <span className="block">{t("onlineShopping")}</span>
           <span className="block text-red-400">{t("startNow")}</span>
-        </h2>
+        </h1>
         <div className="flex lg:mt-0 lg:flex-shrink-0">
           <div className="mx-1 mt-16 inline-flex rounded-md shadow">
             <Link href="/aliexpress" passHref>

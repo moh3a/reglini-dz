@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 
 import { useSelector } from "react-redux";
 import { selectUser } from "../../utils/redux/userSlice";
-
 import { DangerDialog, SuccessDialog } from "../elements/Dialog";
 import ProfilePicture from "./ProfilePicture";
 import Address from "./Address/Address";
@@ -48,11 +47,11 @@ export default function AccountDetails() {
           router.locale === "ar" && "text-right"
         }`}
       >
-        <h3
+        <h1
           className={`text-lg leading-6 font-medium text-black dark:text-yellow-200`}
         >
           {t("info")}
-        </h3>
+        </h1>
         <p className="mt-1 text-sm text-gray-600 dark:text-yellow-100">
           {t("title")}
         </p>

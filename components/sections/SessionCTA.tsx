@@ -16,13 +16,13 @@ const SessionCTA = ({ session }: any) => {
           } items-center lg:flex-row`}
         >
           <div className="lg:w-1/2">
-            <h3 className="text-2xl font-semibold">
+            <h1 className="text-2xl font-semibold">
               {t("hey")}{" "}
               <span className="text-gray-400">
                 {session ? session.user?.name : t("guest")}
               </span>
               ,
-            </h3>
+            </h1>
 
             <p className="mt-3">{session ? t("enjoyTime") : t("joinUs")}</p>
           </div>

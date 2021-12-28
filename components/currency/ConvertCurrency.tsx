@@ -34,13 +34,13 @@ const ConvertCurrency = ({ currency }: any) => {
 
   return (
     <div className="py-32 lg:py-44 px-4 flex flex-col items-center dark:text-yellow-100 bg-yellow-100 dark:bg-grim">
-      <h2 className="text-center text-xl lg:text-4xl font-bold">
+      <h1 className="text-center text-xl lg:text-4xl font-bold">
         {t("inParallelMarket", { devise: selectedDevise.name })}{" "}
         <span className="underline text-gray-700 dark:text-gray-300">
           {t("parallel")}
         </span>{" "}
         {t("market")}
-      </h2>
+      </h1>
       <form className="mt-8 mx-auto lg:min-w-128 flex flex-col items-center lg:flex-row lg:justify-around">
         <div className="relative">
           <label htmlFor="dzd" className="sr-only">
