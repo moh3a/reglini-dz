@@ -35,7 +35,7 @@ const Product = ({ product, session, converter }: any) => {
   };
 
   return (
-    <div>
+    <div className="my-8">
       {error && <DangerDialog>{error} </DangerDialog>}
       <Link href={`/aliexpress/product/${product.productId}`} passHref>
         <a className="w-50 bg-gray-200 cursor-pointer">
@@ -48,7 +48,7 @@ const Product = ({ product, session, converter }: any) => {
       </Link>
       <div className="relative">
         <div>
-          <h1 className="mt-4 text-sm">
+          <h1 className="mt-2 text-sm h-5 overflow-hidden">
             <Link href={`/aliexpress/product/${product.productId}`}>
               {product.title}
             </Link>
@@ -62,7 +62,7 @@ const Product = ({ product, session, converter }: any) => {
               {converter(
                 product.productMinPrice.value + product.shippingMinPrice.value
               )}
-            </span>
+            </span>{" "}
             <span>{t("dzd")}</span>
           </p>
         </div>

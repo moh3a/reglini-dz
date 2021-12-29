@@ -82,6 +82,7 @@ handler
         if (accepted) {
           user.orders[index].payment.isPaymentConfirmed = true;
           user.orders[index].payment.wasDeclined = false;
+          user.acceptedPayments.unshift({ userId, orderId });
         } else {
           const d1 = new Date(user.orders[index].createdAt);
           const d2 = new Date();

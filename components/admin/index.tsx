@@ -26,7 +26,7 @@ const Admin = ({ user }: any) => {
         )}
         {tab === "paymentNotifications" && (
           <div className="my-2 p-2 border-2 border-black dark:border-yellow-200 rounded-lg">
-            <AdminPayment />
+            <AdminPayment user={user} />
           </div>
         )}
         {tab === "stats" && (

@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-import { BlogSchema } from "./Blog";
 
 const ItemSchema = new mongoose.Schema(
   {
@@ -229,6 +228,7 @@ const UserSchema = new mongoose.Schema({
   blogs: [{ blogId: mongoose.SchemaTypes.ObjectId }],
   wishlist: [WishlistSchema],
   orders: [OrderSchema],
+  acceptedPayments: [],
 });
 
 // MIDDLEWARE TO BE USED BEFORE CREATING A NEW PASSWORD

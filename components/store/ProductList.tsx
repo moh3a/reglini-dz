@@ -24,7 +24,7 @@ export default function ProductList({ search, session, url, converter }: any) {
             </>
           )}
 
-        <div className="grid mt-10 grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+        <div className="my-4 grid mt-10 grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {search.items.map((item: any) => (
             <Product
               product={item}
@@ -34,7 +34,7 @@ export default function ProductList({ search, session, url, converter }: any) {
             />
           ))}
         </div>
-        <div className="text-center my-4">
+        <div className="text-center mt-16 mb-6">
           <Link href={`https://www.aliexpress.com/wholesale?SearchText=${url}`}>
             <a target="_blank">
               <button className="text-2xl text-white border border-green-500 bg-green-400 py-1 px-3 shadow-md rounded-lg">

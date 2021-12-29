@@ -41,8 +41,10 @@ const AliexpressProduct = ({ messages, rate, commission }: any) => {
 
   const { product, status } = useSelector(selectAEApi);
   const { id } = router.query;
+
   useEffect(() => {
-    if (!product && id) dispatch(getAEProductInfo({ id, locale }));
+    if (id && (!product || product.productId !== id))
+      dispatch(getAEProductInfo({ id, locale }));
   }, [id, dispatch, product, locale]);
 
   if (product && product.statusId !== "0") {

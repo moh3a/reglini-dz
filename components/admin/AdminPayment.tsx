@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import Avatar from "../elements/Avatar";
 
-const AdminPayment = () => {
+const AdminPayment = ({ user }: any) => {
   const [receipts, setReceipts] = useState<any>();
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
@@ -122,6 +122,15 @@ const AdminPayment = () => {
             </div>
           </div>
         ))}
+      <div>
+        {user.acceptedPayments &&
+          user.acceptedPayments.map((payment: any) => (
+            <div key={payment.orderId}>
+              <p>User ID: {payment.userId}</p>
+              <p>Order ID: {payment.orderId}</p>
+            </div>
+          ))}
+      </div>
     </div>
   );
 };
