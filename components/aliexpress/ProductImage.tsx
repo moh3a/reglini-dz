@@ -15,7 +15,7 @@ const ProductImage = ({ product, showImage, setShowImage }: any) => {
               className="ml-2 p-1 border-2 text-center border-gray-300 hover:border-red-400 focus:outline-none cursor-pointer"
             >
               <div className="h-10 w-10">
-                <img src={image} alt={product.title} />
+                <img className="h-10 w-10" src={image} alt={product.title} />
               </div>
             </div>
           );

@@ -13,7 +13,6 @@ import {
 } from "../../../utils/redux/userAsyncActions";
 
 export default function OrderDetails({ order }: any) {
-  const dispatch = useDispatch();
   const [openTracking, setOpenTracking] = useState(false);
   const [openPayNow, setOpenPayNow] = useState(false);
 
@@ -170,11 +169,11 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
                   as="h3"
                   className="text-lg font-medium leading-6 text-gray-900"
                 >
-                  Confirm deleting order
+                  {t("titleConfirmDeletingOrder")}
                 </Dialog.Title>
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">
-                    Do you really want to cancel your order?
+                    {t("confirmDeletingOrder")}
                   </p>
                 </div>
                 <div className="flex justify-around">
@@ -187,7 +186,7 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
                         closeModal();
                       }}
                     >
-                      Delete
+                      {t("deletePrompt")}
                     </button>
                   </div>
                   <div className="mt-4">
@@ -196,7 +195,7 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
                       className="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-lg hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500"
                       onClick={closeModal}
                     >
-                      Cancel
+                      {t("cancelPrompt")}
                     </button>
                   </div>
                 </div>
@@ -243,6 +242,17 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
               <p className="font-bold text-xl text-red-500">
                 {order.product.totalPrice} DZD
               </p>
+              <div className="border border-yellow-200 rounded-lg shadow-md my-2 py-1 px-3">
+                <p>
+                  {t("shippedTo")} {order.shippingAddress.name}
+                </p>
+                <p>
+                  {t("addressShippedTo")}: {order.shippingAddress.addressLine1}
+                  {" - "}
+                  {order.shippingAddress.city}, {order.shippingAddress.province}{" "}
+                  {order.shippingAddress.zipCode}
+                </p>
+              </div>
               {order.payment.wasDeclined && (
                 <div className="my-1  py-1 px-3 text-red-800 font-bold border-2 border-red-300 bg-red-100 rounded-lg">
                   {t("paymentDeclined")}

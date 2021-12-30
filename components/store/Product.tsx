@@ -38,9 +38,9 @@ const Product = ({ product, session, converter }: any) => {
     <div className="my-8">
       {error && <DangerDialog>{error} </DangerDialog>}
       <Link href={`/aliexpress/product/${product.productId}`} passHref>
-        <a className="w-50 bg-gray-200 cursor-pointer">
+        <a className="block w-50 h-50 bg-gray-200 cursor-pointer">
           <img
-            className="w-full h-full object-center object-cover hover:opacity-75 rounded-lg shadow-lg"
+            className="w-50 h-50 object-center object-cover hover:opacity-75 rounded-lg shadow-lg"
             src={product.imageUrl}
             alt={product.title}
           />

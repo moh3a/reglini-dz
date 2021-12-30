@@ -142,7 +142,7 @@ const Address = ({ user }: any) => {
             </div>
           ) : (
             <div className=" w-full text-red-500 font-semibold">
-              Shipping to this wilaya will be available soon.
+              {t("willBeAvailableSoon")}
             </div>
           )}
           {daira && (

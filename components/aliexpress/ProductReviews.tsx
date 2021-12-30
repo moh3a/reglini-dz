@@ -32,7 +32,7 @@ const ProductReviews = ({ product }: any) => {
                 router.locale === "ar" && "flex flex-row-reverse "
               }`}
             >
-              <span>{product.reviewsRatings.totalCount}</span>
+              <span>{product.reviewsRatings.totalCount}</span>{" "}
               <span className="mr-1">{t("reviews")}</span>
             </span>
           </>
@@ -42,7 +42,7 @@ const ProductReviews = ({ product }: any) => {
             router.locale === "ar" && "flex flex-row-reverse"
           } text-gray-800 dark:text-gray-100 mx-4`}
         >
-          <span>{product.totalOrders}</span>
+          <span>{product.totalOrders}</span>{" "}
           <span className="mr-1">{t("orders")}</span>
         </span>
       </span>

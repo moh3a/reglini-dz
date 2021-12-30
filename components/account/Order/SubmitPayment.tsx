@@ -55,32 +55,29 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
   return (
     <div className="px-4 py-5 sm:px-6">
       <h1>
-        The total amount to be paid is {order.product.totalPrice} DZD.{" "}
+        {t("totalAmount")} {order.product.totalPrice} DZD.{" "}
         <Link href="/faq">
           <a className="underline font-serif" target="_blank" rel="noreferrer">
-            Click here to learn how to pay
+            {t("learnHowToPay")}
           </a>
         </Link>
       </h1>
       {selected === "ccp" && (
         <div className="mt-2 px-2 py-3 border border-gray-200 bg-gray-50 dark:bg-black dark:border-yellow-200 rounded-lg">
-          <p>Le versement CCP se fait au compte suivant:</p>
+          <p>{t("ccpToThis")}:</p>
           <p>
-            Nom et prenom:{" "}
+            {t("nameAndSurname")}:{" "}
             <span className="font-bold">AIT ABDELMALEK MOHAMED ALI</span>
           </p>
           <p>
-            Numero de compte (CCP):{" "}
+            {t("accountId")} (CCP):{" "}
             <span className="font-bold">0020008646 02</span>
           </p>
         </div>
       )}
       {selected === "cib" && (
         <div className="mt-2 px-2 py-3 border border-gray-200 bg-gray-50 dark:bg-black dark:border-yellow-200 rounded-lg">
-          <p>
-            Pour une transaction en CIB, le versement se fait au numero de
-            compte (RIB) suivant:
-          </p>
+          <p>{t("cibToThis")}</p>
           <p className="font-bold text-center">007 99999 0020008646 02</p>
         </div>
       )}
@@ -131,7 +128,7 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
           </div>
         </>
       ) : (
-        <h1>Payment can only be via CCP.</h1>
+        <h1>{t("onlyCCP")}</h1>
       )}
       {selected && (
         <div>

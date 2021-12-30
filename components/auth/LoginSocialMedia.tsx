@@ -7,8 +7,8 @@ const LoginSocialMedia = ({ providers }: any) => {
         if (provider.name === "credentials") return;
         if (provider.id === "google") {
           return (
-            <div className="my-1">
-              <a key={provider.name} target="_blank">
+            <div key={provider.name} className="my-1">
+              <a target="_blank">
                 <button
                   onClick={() => signIn(provider.id)}
                   tabIndex={5}
@@ -24,8 +24,8 @@ const LoginSocialMedia = ({ providers }: any) => {
         }
         if (provider.id === "facebook") {
           return (
-            <div className="my-1">
-              <a key={provider.name} target="_blank">
+            <div key={provider.name} className="my-1">
+              <a target="_blank">
                 <button
                   onClick={() => signIn(provider.id)}
                   tabIndex={6}

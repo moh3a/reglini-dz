@@ -78,73 +78,44 @@ const Faq = () => {
                 <li>{t("resHow6")}</li>
               </ul>
             </Item>
-            <Item title="Comment effectuer un paiement via CCP?">
+            <Item title={t("titleHowCCP")}>
               <p>
-                Au guichet de n&apos;importe quel bureau de poste, et sur un
-                formulaire unique SFP01 disponible au guichet ou{" "}
+                {t("howCCP")}{" "}
                 <a
                   className="underline"
                   href="https://www.poste.dz/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  téléchargeable sur Internet
+                  {t("downloadableViaWeb")}
                 </a>
-                . Le versement nécessite une description du numéro et de la clé
-                de compte CCP du bénéficiaire sur le SFP01 et une remise en
-                espèces du montant de versement au guichet.
+                {t("continueHowCCP")}
               </p>
               <br />
-              <p>Nom: AIT ABDELMALEK MOHAMED ALI</p>
-              <p>Numéro et clé CCP: 0020008646 key 02</p>
+              <p>{t("nameCCP")}: AIT ABDELMALEK MOHAMED ALI</p>
+              <p>{t("accountKeyCCP")}: 0020008646 key 02</p>
             </Item>
-            <Item title="Comment fonctionne une transaction via CIB?">
-              <p>
-                Si vous disposez d&apos;une CIB, vous pouvez effectuer des
-                paiements en ligne en toute sécurité et fiabilité. Et pour
-                chaque opération de paiement effectuée au moyen de la carte, un
-                reçu de paiement est délivré au client. Le reçu de paiement
-                contient les informations relatives à lopération de paiement
-                effectuée ainsi que d&apos;autres informations générées par le
-                système et donnant des indications sur le déroulement de la
-                transaction. Ce reçu doit être pris en capture d&apos;écran par
-                le client et être envoyé autant de paiement au niveau de la
-                commande reglini-dz.
-              </p>
+            <Item title={t("titleHowCIB")}>
+              <p>{t("howCIB")}</p>
               <br />
-              <p>
-                Tout ce dont vous avez besoin pour effectuer la transaction est
-                le RIB du compte que vous allez payer.
-              </p>
+              <p>{t("continueHowCIB")}</p>
               <p>RIB: 007 99999 0020008646 02</p>
             </Item>
-            <Item title="Les produits autorisés à l'importation">
+            <Item title={t("titleAllowedProducts")}>
+              <p>{t("allowedProducts")}</p>
               <p>
-                Il faut savoir que les législations diffèrent d&apos;un pays à
-                l&apos;autre, ce qui peut être autorisé dans un pays ne
-                l&apos;est pas forcément dans l&apos;autre, et votre achat
-                pourrait alors se trouver bloqué au niveau de la douane
-                algérienne. Évitez donc tout produit qui peut constituer un
-                danger pour autrui ou porter atteinte à la sécurité. nationale.
-              </p>
-              <p>
-                Pour une liste complète des marchandises interdites ou
-                suspendues à l&apos;importation,{" "}
+                {t("continueAllowedProducts")}{" "}
                 <a
                   target="_blank"
                   href={`https://www.douane.gov.dz/spip.php?article104&lang=fr`}
                   rel="noreferrer"
                   className="underline"
                 >
-                  visitez le site officiel de la douane algerienne.
+                  {t("fullCustomsList")}
                 </a>
               </p>
             </Item>
-            <Item title="Combien de temps prends l'expédition?">
-              La livraison prend généralement moins de 30 jours pour les
-              produits dépassant les 20 euros à presque 2 mois pour les produits
-              à moins de 5 euros.
-            </Item>
+            <Item title={t("titleShippingTime")}>{t("shippingTime")}</Item>
             <p className="text-base text-center md:text-lg">
               {t("anotherQuestion")}{" "}
               <Link href="/support" passHref>
