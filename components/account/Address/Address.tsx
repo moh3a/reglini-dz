@@ -110,7 +110,6 @@ const Address = ({ user }: any) => {
             <SelectWilaya setWilaya={setWilaya} />
           </div>
           {wilaya &&
-          wilaya.id !== 22 &&
           wilaya.id !== 23 &&
           wilaya.id !== 24 &&
           wilaya.id !== 25 &&

@@ -16,6 +16,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   const { isAuthenticated, status, user } = useSelector(selectUser);
 
   const [message, setMessage] = useState("");
+  const [placeholder, setPlaceholder] = useState(true);
   const router = useRouter();
   useEffect(() => {
     if (router.locale === "en") {
@@ -43,13 +44,17 @@ export default function Layout({ children }: { children: ReactNode }) {
     }
   }, [session, dispatch, isAuthenticated, status]);
 
-  if (loading || status === "loading") {
-    return <Loading text={message} />;
-  }
+  useEffect(() => {
+    if (loading || status === "loading") {
+      setPlaceholder(true);
+    } else {
+      setPlaceholder(false);
+    }
+  }, [loading, status]);
 
   return (
     <>
-      <StoreNavigation user={user} />
+      <StoreNavigation placeholder={placeholder} user={user} />
       <main>{children}</main>
       <Footer />
     </>

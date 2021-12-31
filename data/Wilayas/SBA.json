@@ -50,7 +50,7 @@
           "name": "Ain el Berd",
           "codeONS": "2228",
           "postalCode": "22022",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Ouled Ali", "postalCode": "22057" }]
         },
         {
           "name": "Sidi Brahim",
@@ -68,7 +68,10 @@
           "name": "Sidi Hamadouche",
           "codeONS": "2241",
           "postalCode": "22019",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Delahim", "postalCode": "22046" },
+            { "name": "Zelifa", "postalCode": "22090" }
+          ]
         }
       ]
     },
@@ -79,7 +82,7 @@
           "name": "Ben Badis",
           "codeONS": "2245",
           "postalCode": "22004",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Saf Saf", "postalCode": "22059" }]
         },
         {
           "name": "Badredine El Mokrani",
@@ -95,9 +98,8 @@
         },
         {
           "name": "Chettouane Belaila",
-          "codeONS": "",
           "postalCode": "22045",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Belaila Yemloul", "postalCode": "22039" }]
         }
       ]
     },
@@ -201,7 +203,7 @@
           "name": "Ain Tindamine",
           "codeONS": "2224",
           "postalCode": "22036",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Aouinettes", "postalCode": "22070" }]
         }
       ]
     },
@@ -220,7 +222,7 @@
           "name": "Oued Sebaa",
           "codeONS": "2237",
           "postalCode": "22054",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Titane Yahia", "postalCode": "22089" }]
         },
         {
           "name": "Redjem Demouche",
@@ -258,7 +260,7 @@
           "name": "Boudjebha El Bordj",
           "codeONS": "2238",
           "postalCode": "22043",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Oued Mebtouh", "postalCode": "22053" }]
         }
       ]
     },
@@ -272,10 +274,10 @@
           "otherPosts": []
         },
         {
-          "name": "Boukhanafis",
+          "name": "Boukhanefis",
           "codeONS": "2207",
           "postalCode": "22008",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Touaita", "postalCode": "22074" }]
         },
         {
           "name": "Tabia",
@@ -324,10 +326,9 @@
           "otherPosts": []
         },
         {
-          "name": "Amarnas",
+          "name": "Amarnas - Beloualadi",
           "codeONS": "2212",
-          "postalCode": "22000",
-          "otherPosts": []
+          "postalCode": "22087"
         },
         {
           "name": "Sidi Khaled",
@@ -393,13 +394,16 @@
           "name": "Benchiba Chelia",
           "codeONS": "2251",
           "postalCode": "22040",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Tenzera", "postalCode": "22078" },
+            { "name": "Louza", "postalCode": "22083" }
+          ]
         },
         {
           "name": "Hassi Dahou",
           "codeONS": "2252",
           "postalCode": "22049",
-          "otherPosts": []
+          "otherPosts": [{ "name": "Bouaiche", "postalCode": "22042" }]
         }
       ]
     },
@@ -430,23 +434,10 @@
 
   "address": [
     { "name": "Sidi Djilali", "postalCode": "22030" },
-    { "name": "Belaila Yemloul", "postalCode": "22039" },
-    { "name": "Bouaiche", "postalCode": "22042" },
-    { "name": "Delahim", "postalCode": "22046" },
     { "name": "Emir Abdelkader", "postalCode": "22048" },
     { "name": "Ighti", "postalCode": "22050" },
-    { "name": "Oued Mebtouh", "postalCode": "22053" },
-    { "name": "Ouled Ali", "postalCode": "22057" },
-    { "name": "Saf Saf", "postalCode": "22059" },
-    { "name": "Aouinettes", "postalCode": "22070" },
     { "name": "Berkane Ben Yagoub", "postalCode": "22073" },
-    { "name": "Touaita", "postalCode": "22074" },
-    { "name": "Tenzera", "postalCode": "22078" },
     { "name": "Bordj Djaafar", "postalCode": "22082" },
-    { "name": "Louza ben Achiba", "postalCode": "22083" },
-    { "name": "Beloualadi", "postalCode": "22087" },
-    { "name": "Titane Yahia", "postalCode": "22089" },
-    { "name": "Zelifa", "postalCode": "22090" },
     { "name": "Ouled Bendida", "postalCode": "22091" }
   ]
 }

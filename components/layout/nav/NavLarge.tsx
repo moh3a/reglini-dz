@@ -16,7 +16,7 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-const NavLarge = ({ setOpen, user }: any) => {
+const NavLarge = ({ setOpen, user, placeholder }: any) => {
   const t = useTranslations("navigation");
   const router = useRouter();
 
@@ -193,7 +193,13 @@ const NavLarge = ({ setOpen, user }: any) => {
 
             <div className="ml-auto flex items-center">
               <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                {user && user.email ? (
+                {placeholder ? (
+                  <div className="hidden md:block">
+                    <div className="ml-4 flex items-center md:ml-6">
+                      user data
+                    </div>
+                  </div>
+                ) : user && user.email ? (
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
                       <p className="p-1 text-gray-800 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-200 hover:underline cursor-pointer">

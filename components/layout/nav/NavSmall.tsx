@@ -14,7 +14,7 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-const NavSmall = ({ open, setOpen, user }: any) => {
+const NavSmall = ({ open, setOpen, user, placeholder }: any) => {
   const t = useTranslations("navigation");
   const router = useRouter();
 
@@ -59,7 +59,9 @@ const NavSmall = ({ open, setOpen, user }: any) => {
             </div>
 
             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-              {user && user.email ? (
+              {placeholder ? (
+                <div className="flow-root">user data</div>
+              ) : user && user.email ? (
                 <>
                   <div className="flow-root">
                     <Link href="/account" passHref>
