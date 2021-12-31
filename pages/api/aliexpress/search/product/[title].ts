@@ -11,7 +11,7 @@ handler.post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
   let { locale } = req.body;
   title = unslugify(title);
 
-  const { data } = await axios({
+  await axios({
     method: "POST",
     url: "https://api.zapiex.com/v3/search",
     data: {
@@ -26,8 +26,21 @@ handler.post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
     headers: {
       "x-api-key": process.env.ZAPIEX_KEY,
     },
-  });
-  res.status(200).json({ success: true, data: data.data });
+  })
+    .then((result) => {
+      console.log(result);
+      res.status(200).json({ success: true, data: result.data });
+    })
+    .catch((error) => {
+      if (error.response.data.statusCode === 429) {
+        res
+          .status(200)
+          .json({
+            success: false,
+            message: "No AliExpress requests available",
+          });
+      }
+    });
 });
 
 export default handler;

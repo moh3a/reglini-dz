@@ -87,7 +87,10 @@ function AllBlogs({ user }: any) {
               <p className="mb-3 border border-gray-100 bg-white dark:border-gray-100 dark:bg-gray-600 px-4 py-2 m-1 rounded-lg">
                 {blog.text}
               </p>
-              <h1 className="w-full text-lg font-bold mx-1">Comments:</h1>
+              {blog.comments.length > 0 && (
+                <h1 className="w-full text-lg font-bold mx-1">Comments:</h1>
+              )}
+
               {user && (
                 <form
                   className="flex justify-between mx-2 md:mx-8 my-2"
