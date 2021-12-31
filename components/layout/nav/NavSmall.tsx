@@ -179,9 +179,9 @@ const NavSmall = ({ open, setOpen, user }: any) => {
 
             <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">
               <div className="flow-root hover:bg-gray-200 dark:hover:bg-gray-800 p-2 pl-4 max-w-xs rounded-full font-medium">
-                <Link href="/community" passHref>
+                <Link href={t("community.href")} passHref>
                   <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
-                    Community
+                    {t("community.name")}
                   </a>
                 </Link>
               </div>

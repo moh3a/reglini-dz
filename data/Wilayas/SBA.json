@@ -8,9 +8,38 @@
       "communes": [
         {
           "name": "Sidi Bel Abbes",
-          "codeONS": "",
+          "codeONS": "2201",
           "postalCode": "22000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Sidi Bel Abbes - Sidi Yacine", "postalCode": "22002" },
+            { "name": "Sidi Bel Abbes - Tayebi Larbi", "postalCode": "22003" },
+            { "name": "Sidi Bel Abbes - 1er Novembre", "postalCode": "22006" },
+            { "name": "Sidi Bel Abbes - Adim Fatiha", "postalCode": "22015" },
+            { "name": "Sidi Bel Abbes - El Wiam", "postalCode": "22016" },
+            { "name": "Sidi Bel Abbes - Saadane", "postalCode": "22017" },
+            { "name": "Sidi Bel Abbes - Zabana", "postalCode": "22018" },
+            { "name": "Sidi Bel Abbes - Beni Ameur", "postalCode": "22071" },
+            {
+              "name": "Sidi Bel Abbes - Dr Hassani Abdelkader",
+              "postalCode": "22072"
+            },
+            {
+              "name": "Sidi Bel Abbes - Belacel Lakhdar",
+              "postalCode": "22076"
+            },
+            { "name": "Sidi Bel Abbes - Gare Routiere", "postalCode": "22077" },
+            { "name": "Sidi Bel Abbes - Boumelik", "postalCode": "22079" },
+            { "name": "Sidi Bel Abbes - Fida", "postalCode": "22080" },
+            {
+              "name": "Sidi Bel Abbes - Cite Universitaire Ibn Rochd",
+              "postalCode": "22086"
+            },
+            {
+              "name": "Sidi Bel Abbes - Campus Universitaire",
+              "postalCode": "22084"
+            },
+            { "name": "Sidi Bel Abbes - 11 Decembre", "postalCode": "22088" }
+          ]
         }
       ]
     },
@@ -18,9 +47,27 @@
       "name": "Ain el Berd",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
+          "name": "Ain el Berd",
+          "codeONS": "2228",
+          "postalCode": "22022",
+          "otherPosts": []
+        },
+        {
+          "name": "Sidi Brahim",
           "codeONS": "",
-          "postalCode": "22000",
+          "postalCode": "22029",
+          "otherPosts": []
+        },
+        {
+          "name": "Makedra",
+          "codeONS": "2216",
+          "postalCode": "22051",
+          "otherPosts": []
+        },
+        {
+          "name": "Sidi Hamadouche",
+          "codeONS": "2241",
+          "postalCode": "22019",
           "otherPosts": []
         }
       ]
@@ -29,9 +76,27 @@
       "name": "Ben Badis",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
+          "name": "Ben Badis",
+          "codeONS": "2245",
+          "postalCode": "22004",
+          "otherPosts": []
+        },
+        {
+          "name": "Badredine El Mokrani",
+          "codeONS": "2209",
+          "postalCode": "22038",
+          "otherPosts": []
+        },
+        {
+          "name": "Hassi Zahana",
+          "codeONS": "2220",
+          "postalCode": "22010",
+          "otherPosts": []
+        },
+        {
+          "name": "Chettouane Belaila",
           "codeONS": "",
-          "postalCode": "22000",
+          "postalCode": "22045",
           "otherPosts": []
         }
       ]
@@ -40,9 +105,21 @@
       "name": "Marhoum",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
-          "codeONS": "",
-          "postalCode": "22000",
+          "name": "Marhoum",
+          "codeONS": "2210",
+          "postalCode": "22011",
+          "otherPosts": []
+        },
+        {
+          "name": "Sidi Chaib",
+          "codeONS": "2235",
+          "postalCode": "22061",
+          "otherPosts": []
+        },
+        {
+          "name": "Bir El Hammam",
+          "codeONS": "2248",
+          "postalCode": "22041",
           "otherPosts": []
         }
       ]
@@ -51,9 +128,27 @@
       "name": "Merine",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
-          "codeONS": "",
-          "postalCode": "22000",
+          "name": "Merine",
+          "codeONS": "2222",
+          "postalCode": "22012",
+          "otherPosts": []
+        },
+        {
+          "name": "Tafissour",
+          "codeONS": "2211",
+          "postalCode": "22065",
+          "otherPosts": []
+        },
+        {
+          "name": "Oued Taourira",
+          "codeONS": "2231",
+          "postalCode": "22056",
+          "otherPosts": []
+        },
+        {
+          "name": "Taoudmout",
+          "codeONS": "2249",
+          "postalCode": "22064",
           "otherPosts": []
         }
       ]
@@ -62,9 +157,27 @@
       "name": "Mostefa Ben Brahim",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
-          "codeONS": "",
-          "postalCode": "22000",
+          "name": "Mostefa Ben Brahim",
+          "codeONS": "2204",
+          "postalCode": "22013",
+          "otherPosts": []
+        },
+        {
+          "name": "Tilmouni",
+          "codeONS": "2203",
+          "postalCode": "22044",
+          "otherPosts": []
+        },
+        {
+          "name": "Zerouala",
+          "codeONS": "2233",
+          "postalCode": "22068",
+          "otherPosts": []
+        },
+        {
+          "name": "Belarbi",
+          "codeONS": "2242",
+          "postalCode": "22023",
           "otherPosts": []
         }
       ]
@@ -73,9 +186,21 @@
       "name": "Moulay Slissen",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
-          "codeONS": "",
-          "postalCode": "22000",
+          "name": "Moulay Slissen",
+          "codeONS": "2218",
+          "postalCode": "22026",
+          "otherPosts": []
+        },
+        {
+          "name": "El Hacaiba",
+          "codeONS": "2219",
+          "postalCode": "22047",
+          "otherPosts": []
+        },
+        {
+          "name": "Ain Tindamine",
+          "codeONS": "2224",
+          "postalCode": "22036",
           "otherPosts": []
         }
       ]
@@ -84,9 +209,23 @@
       "name": "Ras El Ma",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
-          "codeONS": "",
-          "postalCode": "22000",
+          "name": "Ras El Ma",
+          "codeONS": "2223",
+          "postalCode": "22005",
+          "otherPosts": [
+            { "name": "Ras el Ma - Essaada", "postalCode": "22069" }
+          ]
+        },
+        {
+          "name": "Oued Sebaa",
+          "codeONS": "2237",
+          "postalCode": "22054",
+          "otherPosts": []
+        },
+        {
+          "name": "Redjem Demouche",
+          "codeONS": "2250",
+          "postalCode": "22058",
           "otherPosts": []
         }
       ]
@@ -95,9 +234,30 @@
       "name": "Sfisef",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
-          "codeONS": "",
-          "postalCode": "22000",
+          "name": "Sfisef",
+          "codeONS": "2229",
+          "postalCode": "22001",
+          "otherPosts": [
+            { "name": "Sfisef - Sahoua", "postalCode": "22027" },
+            { "name": "Sfisef - Hanifi Abdelkader", "postalCode": "22085" }
+          ]
+        },
+        {
+          "name": "M'Cid",
+          "codeONS": "2226",
+          "postalCode": "22052",
+          "otherPosts": []
+        },
+        {
+          "name": "Ain Adden",
+          "codeONS": "2230",
+          "postalCode": "22034",
+          "otherPosts": []
+        },
+        {
+          "name": "Boudjebha El Bordj",
+          "codeONS": "2238",
+          "postalCode": "22043",
           "otherPosts": []
         }
       ]
@@ -106,9 +266,21 @@
       "name": "Sidi Ali Benyoub",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
-          "codeONS": "",
-          "postalCode": "22000",
+          "name": "Sidi Ali Benyoub",
+          "codeONS": "2246",
+          "postalCode": "22028",
+          "otherPosts": []
+        },
+        {
+          "name": "Boukhanafis",
+          "codeONS": "2207",
+          "postalCode": "22008",
+          "otherPosts": []
+        },
+        {
+          "name": "Tabia",
+          "codeONS": "2221",
+          "postalCode": "22032",
           "otherPosts": []
         }
       ]
@@ -117,9 +289,27 @@
       "name": "Sidi Ali Boussidi",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
-          "codeONS": "",
-          "postalCode": "22000",
+          "name": "Sidi Ali Boussidi",
+          "codeONS": "2208",
+          "postalCode": "22014",
+          "otherPosts": []
+        },
+        {
+          "name": "Ain Kada",
+          "codeONS": "2225",
+          "postalCode": "22035",
+          "otherPosts": []
+        },
+        {
+          "name": "Lamtar",
+          "codeONS": "2234",
+          "postalCode": "22024",
+          "otherPosts": []
+        },
+        {
+          "name": "Sidi Daho des Zairs",
+          "codeONS": "2236",
+          "postalCode": "22062",
           "otherPosts": []
         }
       ]
@@ -128,9 +318,27 @@
       "name": "Sidi Lahcene",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
-          "codeONS": "",
+          "name": "Sidi Lahcene",
+          "codeONS": "2214",
+          "postalCode": "22020",
+          "otherPosts": []
+        },
+        {
+          "name": "Amarnas",
+          "codeONS": "2212",
           "postalCode": "22000",
+          "otherPosts": []
+        },
+        {
+          "name": "Sidi Khaled",
+          "codeONS": "2227",
+          "postalCode": "22031",
+          "otherPosts": []
+        },
+        {
+          "name": "Sidi Yacoub",
+          "codeONS": "2240",
+          "postalCode": "22063",
           "otherPosts": []
         }
       ]
@@ -139,9 +347,29 @@
       "name": "Telagh",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
-          "codeONS": "",
-          "postalCode": "22000",
+          "name": "Telagh",
+          "codeONS": "2205",
+          "postalCode": "22007",
+          "otherPosts": [
+            { "name": "Telagh - Mokdad Mohamed", "postalCode": "22067" }
+          ]
+        },
+        {
+          "name": "Mezaourou",
+          "codeONS": "2206",
+          "postalCode": "22025",
+          "otherPosts": []
+        },
+        {
+          "name": "Dhaya",
+          "codeONS": "2232",
+          "postalCode": "22009",
+          "otherPosts": []
+        },
+        {
+          "name": "Teghalimet",
+          "codeONS": "2244",
+          "postalCode": "22066",
           "otherPosts": []
         }
       ]
@@ -150,9 +378,27 @@
       "name": "Tenira",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
-          "codeONS": "",
-          "postalCode": "22000",
+          "name": "Tenira",
+          "codeONS": "2217",
+          "postalCode": "22021",
+          "otherPosts": []
+        },
+        {
+          "name": "Oued Sefioun",
+          "codeONS": "2243",
+          "postalCode": "22055",
+          "otherPosts": []
+        },
+        {
+          "name": "Benchiba Chelia",
+          "codeONS": "2251",
+          "postalCode": "22040",
+          "otherPosts": []
+        },
+        {
+          "name": "Hassi Dahou",
+          "codeONS": "2252",
+          "postalCode": "22049",
           "otherPosts": []
         }
       ]
@@ -161,121 +407,37 @@
       "name": "Tessala",
       "communes": [
         {
-          "name": "Sidi Bel Abbes",
-          "codeONS": "",
-          "postalCode": "22000",
+          "name": "Tessala",
+          "codeONS": "2202",
+          "postalCode": "22033",
+          "otherPosts": []
+        },
+        {
+          "name": "Ain Thrid",
+          "codeONS": "2215",
+          "postalCode": "22037",
+          "otherPosts": []
+        },
+        {
+          "name": "Sehala Thaoura",
+          "codeONS": "2239",
+          "postalCode": "22060",
           "otherPosts": []
         }
       ]
     }
   ],
-  "address": [
-    {
-      "name": "Sidi Bel Abbes",
-      "postalCode": "22000",
-      "otherPosts": [
-        { "name": "Sidi Bel Abbes Sidi Yacine", "postalCode": "22002" },
-        { "name": "Sidi Bel Abbes Tayebi Larbi", "postalCode": "22003" },
-        { "name": "Sidi Bel Abbes 1er Novembre", "postalCode": "22006" },
-        { "name": "Sidi Bel Abbes Adim Fatiha", "postalCode": "22015" },
-        { "name": "Sidi Bel Abbes El Wiam", "postalCode": "22016" },
-        { "name": "Sidi Bel Abbes Saadane", "postalCode": "22017" },
-        { "name": "Sidi Bel Abbes Zabana", "postalCode": "22018" },
-        { "name": "Sidi Bel Abbes Beni Ameur", "postalCode": "22071" },
-        {
-          "name": "Sidi Bel Abbes Dr Hassani Abdelkader",
-          "postalCode": "22072"
-        },
-        { "name": "Sidi Bel Abbes Belacel Lakhdar", "postalCode": "22076" },
-        { "name": "Sidi Bel Abbes Gare Routiere", "postalCode": "22077" },
-        { "name": "Sidi Bel Abbes Boumelik", "postalCode": "22079" },
-        { "name": "Sidi Bel Abbes Fida", "postalCode": "22080" },
-        {
-          "name": "Sidi Bel Abbes Cite Universitaire Ibn Rochd",
-          "postalCode": "22086"
-        },
-        {
-          "name": "Sidi Bel Abbes Campus Universitaire",
-          "postalCode": "22084"
-        },
-        { "name": "Sidi Bel Abbes 11 Decembre", "postalCode": "22088" }
-      ]
-    },
-    {
-      "name": "Sfisef",
-      "postalCode": "22001",
-      "otherPosts": [
-        { "name": "Sfisef Sahoua", "postalCode": "22027" },
-        { "name": "Sfisef Hanifi Abdelkader", "postalCode": "22085" }
-      ]
-    },
-    { "name": "Ben Badis", "postalCode": "22004" },
-    {
-      "name": "Ras el Ma",
-      "postalCode": "22005",
-      "otherPosts": [{ "name": "Ras el Ma Essaada", "postalCode": "22069" }]
-    },
 
-    {
-      "name": "Telagh",
-      "postalCode": "22007",
-      "otherPosts": [{ "name": "Telagh Mokdad Mohamed", "postalCode": "22067" }]
-    },
-    { "name": "Boukhanefis", "postalCode": "22008" },
-    { "name": "Dhaya", "postalCode": "22009" },
-    { "name": "Hassi Zehana", "postalCode": "22010" },
-    { "name": "Marhoum", "postalCode": "22011" },
-    { "name": "Merine", "postalCode": "22012" },
-    { "name": "Mostefa ben Brahim", "postalCode": "22013" },
-    { "name": "Sidi Ali Boussidi", "postalCode": "22014" },
-    { "name": "Sidi Hamadouche", "postalCode": "22019" },
-    { "name": "Sidi Lahssene", "postalCode": "22020" },
-    { "name": "Tenira", "postalCode": "22021" },
-    { "name": "Ain el Berd", "postalCode": "22022" },
-    { "name": "Belarbi", "postalCode": "22023" },
-    { "name": "Lamtar", "postalCode": "22024" },
-    { "name": "Mezaourou", "postalCode": "22025" },
-    { "name": "Moulay Slissen", "postalCode": "22026" },
-    { "name": "Sidi Ali Benayoub", "postalCode": "22028" },
-    { "name": "Sidi Brahim", "postalCode": "22029" },
+  "address": [
     { "name": "Sidi Djilali", "postalCode": "22030" },
-    { "name": "Sidi Khaled", "postalCode": "22031" },
-    { "name": "Tabia", "postalCode": "22032" },
-    { "name": "Tessala", "postalCode": "22033" },
-    { "name": "Ain Adden", "postalCode": "22034" },
-    { "name": "Ain Kada", "postalCode": "22035" },
-    { "name": "Ain Tindamine", "postalCode": "22036" },
-    { "name": "Ain Trid", "postalCode": "22037" },
-    { "name": "Bedrabine el Mokrani", "postalCode": "22038" },
     { "name": "Belaila Yemloul", "postalCode": "22039" },
-    { "name": "Benchaiba Chelia", "postalCode": "22040" },
-    { "name": "Bir el Hemmam", "postalCode": "22041" },
     { "name": "Bouaiche", "postalCode": "22042" },
-    { "name": "Boudjebaa el Bordj", "postalCode": "22043" },
-    { "name": "Boumaad Tilmouni", "postalCode": "22044" },
-    { "name": "Chetouane", "postalCode": "22045" },
     { "name": "Delahim", "postalCode": "22046" },
-    { "name": "El Hacaiba", "postalCode": "22047" },
     { "name": "Emir Abdelkader", "postalCode": "22048" },
-    { "name": "Hassi Daho", "postalCode": "22049" },
     { "name": "Ighti", "postalCode": "22050" },
-    { "name": "Makedra", "postalCode": "22051" },
-    { "name": "M'cid", "postalCode": "22052" },
     { "name": "Oued Mebtouh", "postalCode": "22053" },
-    { "name": "Oued Sebaa", "postalCode": "22054" },
-    { "name": "Oued Sefioun", "postalCode": "22055" },
-    { "name": "Oued Taorira", "postalCode": "22056" },
     { "name": "Ouled Ali", "postalCode": "22057" },
-    { "name": "Redjem Demmouche", "postalCode": "22058" },
     { "name": "Saf Saf", "postalCode": "22059" },
-    { "name": "Sehala Thaoura", "postalCode": "22060" },
-    { "name": "Sidi Chaib", "postalCode": "22061" },
-    { "name": "Sidi Daho Des Zairs", "postalCode": "22062" },
-    { "name": "Sidi Yacoub Bentemine", "postalCode": "22063" },
-    { "name": "Taoudmout", "postalCode": "22064" },
-    { "name": "Tefessour", "postalCode": "22065" },
-    { "name": "Teghalimet", "postalCode": "22066" },
-    { "name": "Zerouala", "postalCode": "22068" },
     { "name": "Aouinettes", "postalCode": "22070" },
     { "name": "Berkane Ben Yagoub", "postalCode": "22073" },
     { "name": "Touaita", "postalCode": "22074" },

@@ -168,9 +168,9 @@ const NavLarge = ({ setOpen, user }: any) => {
                   )}
                 </Popover>
 
-                <Link href="/community" passHref>
+                <Link href={t("community.href")} passHref>
                   <a className="flex items-center text-sm font-medium text-gray-800 hover:text-gray-400 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
-                    Community
+                    {t("community.name")}
                   </a>
                 </Link>
                 <Link href={t("currency.href")} passHref>
