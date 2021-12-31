@@ -70,9 +70,9 @@ const Aliexpress = ({ messages, rate, commission }: any) => {
     );
   }
 
-  if (status === "loading") {
-    return <Loading text={message} />;
-  }
+  // if (status === "loading") {
+  //   return <Loading text={message} />;
+  // }
 
   return (
     <>
@@ -86,20 +86,28 @@ const Aliexpress = ({ messages, rate, commission }: any) => {
       </Head>
       <SearchAE url={url} setUrl={setUrl} />
 
-      {product && product.status === "active" && (
-        <ProductPreview
-          converter={converter}
-          session={session}
-          product={product}
-        />
-      )}
-      {search && (
-        <ProductList
-          converter={converter}
-          session={session}
-          search={search}
-          url={url}
-        />
+      {status === "loading" ? (
+        <div className="w-full flex justify-center items-center my-10">
+          <div>{message}</div>
+        </div>
+      ) : (
+        <>
+          {product && product.status === "active" && (
+            <ProductPreview
+              converter={converter}
+              session={session}
+              product={product}
+            />
+          )}
+          {search && (
+            <ProductList
+              converter={converter}
+              session={session}
+              search={search}
+              url={url}
+            />
+          )}
+        </>
       )}
     </>
   );
