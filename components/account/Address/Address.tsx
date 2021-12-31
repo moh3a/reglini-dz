@@ -112,19 +112,14 @@ const Address = ({ user }: any) => {
           {wilaya &&
           wilaya.id !== 23 &&
           wilaya.id !== 24 &&
-          wilaya.id !== 25 &&
           wilaya.id !== 26 &&
           wilaya.id !== 27 &&
           wilaya.id !== 28 &&
           wilaya.id !== 29 &&
           wilaya.id !== 30 &&
-          wilaya.id !== 31 &&
-          wilaya.id !== 32 &&
-          wilaya.id !== 33 &&
           wilaya.id !== 34 &&
           wilaya.id !== 35 &&
           wilaya.id !== 36 &&
-          wilaya.id !== 37 &&
           wilaya.id !== 38 &&
           wilaya.id !== 39 &&
           wilaya.id !== 40 &&

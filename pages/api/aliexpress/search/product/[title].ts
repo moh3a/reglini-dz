@@ -28,17 +28,14 @@ handler.post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
     },
   })
     .then((result) => {
-      console.log(result);
-      res.status(200).json({ success: true, data: result.data });
+      res.status(200).json({ success: true, data: result.data.data });
     })
     .catch((error) => {
       if (error.response.data.statusCode === 429) {
-        res
-          .status(200)
-          .json({
-            success: false,
-            message: "No AliExpress requests available",
-          });
+        res.status(200).json({
+          success: false,
+          message: "No AliExpress requests available",
+        });
       }
     });
 });

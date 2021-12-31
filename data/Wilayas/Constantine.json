@@ -8,9 +8,48 @@
       "communes": [
         {
           "name": "Constantine",
-          "codeONS": "",
+          "codeONS": "2501",
           "postalCode": "25000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Constantine - Hadiani Alaoua", "postalCode": "25001" },
+            { "name": "Constantine - Coudiat", "postalCode": "25002" },
+            { "name": "Constantine - Cite Daksi", "postalCode": "25003" },
+            { "name": "Constantine - Kenez el Ouardi", "postalCode": "25004" },
+            { "name": "Constantine - Belouizdad", "postalCode": "25007" },
+            {
+              "name": "Constantine - Cite 20 Aout 1955",
+              "postalCode": "25008"
+            },
+            { "name": "Constantine - Naoui Hacene", "postalCode": "25009" },
+            {
+              "name": "Constantine - Ben Abderrahmane Zouaoui",
+              "postalCode": "25010"
+            },
+            { "name": "Constantine - Ali Mendjel", "postalCode": "25016" },
+            {
+              "name": "Constantine - Ben Cherif Mohamed Salah",
+              "postalCode": "25017"
+            },
+            { "name": "Constantine - Cite des Muriers", "postalCode": "25018" },
+            { "name": "Constantine - Cite Boussif", "postalCode": "25019" },
+            { "name": "Constantine - Emir Abdelkader", "postalCode": "25020" },
+            { "name": "Constantine - Freres Ferad", "postalCode": "25021" },
+            { "name": "Constantine - Martyrs", "postalCode": "25022" },
+            { "name": "Constantine - Kouira Salah", "postalCode": "25023" },
+            { "name": "Constantine - Adala Ammar", "postalCode": "25025" },
+            { "name": "Constantine - El Istiklal", "postalCode": "25058" },
+            { "name": "Constantine - Aouati Mostefa", "postalCode": "25060" },
+            {
+              "name": "Constantine - Boughambouz Rabah",
+              "postalCode": "25062"
+            },
+            {
+              "name": "Constantine - Fadloune Abdelaziz",
+              "postalCode": "25064"
+            },
+            { "name": "Constantine - Universite 3", "postalCode": "25065" },
+            { "name": "Salah Bey", "postalCode": "25050" }
+          ]
         }
       ]
     },
@@ -18,10 +57,38 @@
       "name": "El Khroub",
       "communes": [
         {
-          "name": "Constantine",
-          "codeONS": "",
-          "postalCode": "25000",
+          "name": "El Khroub",
+          "codeONS": "2506",
+          "postalCode": "25005",
+          "otherPosts": [
+            { "name": "El Khroub - Amar Djeffal", "postalCode": "25011" },
+            { "name": "El Khroub - Rabah Djeddou", "postalCode": "25012" },
+            { "name": "El Khroub - Massinissa", "postalCode": "25026" },
+            { "name": "El Khroub - Boudebza Ammar", "postalCode": "25055" },
+            {
+              "name": "El Khroub - Massinissa 19 Mars 1962",
+              "postalCode": "25063"
+            },
+            { "name": "Guettar el Aich", "postalCode": "25042" },
+            { "name": "Lambleche", "postalCode": "25048" },
+            { "name": "Salah Derradji", "postalCode": "25051" }
+          ]
+        },
+        {
+          "name": "Ain Smara",
+          "codeONS": "2510",
+          "postalCode": "25006",
           "otherPosts": []
+        },
+        {
+          "name": "Ouled Rahmoune",
+          "codeONS": "2510",
+          "postalCode": "25028",
+          "otherPosts": [
+            { "name": "Ouled Rahmoune - Gare", "postalCode": "25049" },
+            { "name": "El Gourzi", "postalCode": "25031" },
+            { "name": "Bounouara", "postalCode": "25039" }
+          ]
         }
       ]
     },
@@ -29,10 +96,22 @@
       "name": "Ain Abid",
       "communes": [
         {
-          "name": "Constantine",
-          "codeONS": "",
-          "postalCode": "25000",
-          "otherPosts": []
+          "name": "Ain Abid",
+          "codeONS": "2507",
+          "postalCode": "25015",
+          "otherPosts": [
+            { "name": "Ain Abid - el Boustene", "postalCode": "25056" },
+            { "name": "Bordj Mehiris", "postalCode": "25038" },
+            { "name": "Kehalcha Kebar", "postalCode": "25045" },
+            { "name": "Lamaamra 20 Aout 1955", "postalCode": "25047" },
+            { "name": "Zehana", "postalCode": "25053" }
+          ]
+        },
+        {
+          "name": "Ibn Badis",
+          "codeONS": "2503",
+          "postalCode": "25030",
+          "otherPosts": [{ "name": "Beni Yagoub", "postalCode": "25037" }]
         }
       ]
     },
@@ -40,9 +119,15 @@
       "name": "Zighoud Youcef",
       "communes": [
         {
-          "name": "Constantine",
-          "codeONS": "",
-          "postalCode": "25000",
+          "name": "Zighoud Youcef",
+          "codeONS": "2504",
+          "postalCode": "25014",
+          "otherPosts": [{ "name": "Sidi Larbi", "postalCode": "25052" }]
+        },
+        {
+          "name": "Beni Hamiden",
+          "codeONS": "2508",
+          "postalCode": "25035",
           "otherPosts": []
         }
       ]
@@ -51,10 +136,27 @@
       "name": "Hamma Bouziane",
       "communes": [
         {
-          "name": "Constantine",
-          "codeONS": "",
-          "postalCode": "25000",
-          "otherPosts": []
+          "name": "Hamma Bouziane",
+          "codeONS": "2502",
+          "postalCode": "25013",
+          "otherPosts": [
+            {
+              "name": "Hamma Bouziane - Zegrouri Larbi",
+              "postalCode": "25061"
+            },
+            { "name": "Bekira", "postalCode": "25029" },
+            { "name": "Ain Ben Sbaa", "postalCode": "25033" },
+            { "name": "Kaidi Abdellah", "postalCode": "25044" }
+          ]
+        },
+        {
+          "name": "Didouche Mourad",
+          "codeONS": "2505",
+          "postalCode": "25024",
+          "otherPosts": [
+            { "name": "Beni Mestina", "postalCode": "25036" },
+            { "name": "Ksar Leklal", "postalCode": "25046" }
+          ]
         }
       ]
     },
@@ -62,105 +164,27 @@
       "name": "Ibn Ziad",
       "communes": [
         {
-          "name": "Constantine",
-          "codeONS": "",
-          "postalCode": "25000",
+          "name": "Ibn Ziad",
+          "codeONS": "2512",
+          "postalCode": "25027",
+          "otherPosts": [
+            { "name": "El Malha", "postalCode": "25040" },
+            { "name": "Farallah", "postalCode": "25041" }
+          ]
+        },
+        {
+          "name": "Messaoud Boudjriou",
+          "codeONS": "2511",
+          "postalCode": "25032",
           "otherPosts": []
         }
       ]
     }
   ],
+
   "address": [
-    {
-      "name": "Constantine 1 Novembre 1954",
-      "postalCode": "25000",
-      "otherPosts": [
-        { "name": "Constantine Hadiani Alaoua", "postalCode": "25001" },
-        { "name": "Constantine Coudiat", "postalCode": "25002" },
-        { "name": "Constantine Cite Daksi", "postalCode": "25003" },
-        { "name": "Constantine Kenez el Ouardi", "postalCode": "25004" },
-        { "name": "Constantine Belouizdad", "postalCode": "25007" },
-        { "name": "Constantine Cite 20 Aout 1955", "postalCode": "25008" },
-        { "name": "Constantine Naoui Hacene", "postalCode": "25009" },
-        {
-          "name": "Constantine Ben Abderrahmane Zouaoui",
-          "postalCode": "25010"
-        },
-        { "name": "Constantine Ali Mendjel", "postalCode": "25016" },
-        {
-          "name": "Constantine Ben Cherif Mohamed Salah",
-          "postalCode": "25017"
-        },
-        { "name": "Constantine Cite des Muriers", "postalCode": "25018" },
-        { "name": "Constantine Cite Boussif", "postalCode": "25019" },
-        { "name": "Constantine Emir Abdelkader", "postalCode": "25020" },
-        { "name": "Constantine Freres Ferad", "postalCode": "25021" },
-        { "name": "Constantine Martyrs", "postalCode": "25022" },
-        { "name": "Constantine Kouira Salah", "postalCode": "25023" },
-        { "name": "Constantine Adala Ammar", "postalCode": "25025" },
-        { "name": "Constantine El Istiklal", "postalCode": "25058" },
-        { "name": "Constantine Aouati Mostefa", "postalCode": "25060" },
-        { "name": "Constantine Boughambouz Rabah", "postalCode": "25062" },
-        { "name": "Constantine Fadloune Abdelaziz", "postalCode": "25064" },
-        { "name": "Constantine Universite 3", "postalCode": "25065" }
-      ]
-    },
-    {
-      "name": "El Kroub Aribi Said",
-      "postalCode": "25005",
-      "otherPosts": [
-        { "name": "El Khroub Amar Djeffal", "postalCode": "25011" },
-        { "name": "El Khroub Rabah Djeddou", "postalCode": "25012" },
-        { "name": "El Khroub Massinissa", "postalCode": "25026" },
-        { "name": "El Khroub Boudebza Ammar", "postalCode": "25055" },
-        { "name": "El Khroub Massinissa 19 Mars 1962", "postalCode": "25063" }
-      ]
-    },
-    { "name": "Ain Smara Bouchabou Ali", "postalCode": "25006" },
-    {
-      "name": "Hamma Bouziane",
-      "postalCode": "25013",
-      "otherPosts": [
-        { "name": "Hamma Bouziane Zegrouri Larbi", "postalCode": "25061" }
-      ]
-    },
-    { "name": "Zighoud Youcef", "postalCode": "25014" },
-    {
-      "name": "Ain Abid",
-      "postalCode": "25015",
-      "otherPosts": [{ "name": "Ain Abid el Boustene", "postalCode": "25056" }]
-    },
-    { "name": "Didouche Mourad", "postalCode": "25024" },
-    { "name": "Ibn Ziad", "postalCode": "25027" },
-    {
-      "name": "Ouled Rahmoune",
-      "postalCode": "25028",
-      "otherPosts": [{ "name": "Ouled Rahmoune Gare", "postalCode": "25049" }]
-    },
-    { "name": "Bekira", "postalCode": "25029" },
-    { "name": "Ben Badis", "postalCode": "25030" },
-    { "name": "El Gourzi", "postalCode": "25031" },
-    { "name": "Messaoud Boudjeriou", "postalCode": "25032" },
-    { "name": "Ain Ben Sbaa", "postalCode": "25033" },
     { "name": "Ain Sdari", "postalCode": "25034" },
-    { "name": "Beni Hamidene", "postalCode": "25035" },
-    { "name": "Beni Mestina", "postalCode": "25036" },
-    { "name": "Beni Yagoub", "postalCode": "25037" },
-    { "name": "Bordj Mehiris", "postalCode": "25038" },
-    { "name": "Bounouara", "postalCode": "25039" },
-    { "name": "El Malah", "postalCode": "25040" },
-    { "name": "Farallah", "postalCode": "25041" },
-    { "name": "Guettar el Aich Saadi M'barek", "postalCode": "25042" },
     { "name": "Kadri Brahim", "postalCode": "25043" },
-    { "name": "Kaidi Abdellah", "postalCode": "25044" },
-    { "name": "Kehalcha Kebar", "postalCode": "25045" },
-    { "name": "Kesar Leklal", "postalCode": "25046" },
-    { "name": "Lamaamra 20 Aout 1955", "postalCode": "25047" },
-    { "name": "Lembleche Darsouni Said", "postalCode": "25048" },
-    { "name": "Salah Bey", "postalCode": "25050" },
-    { "name": "Salah Derradji", "postalCode": "25051" },
-    { "name": "Sidi Larbi", "postalCode": "25052" },
-    { "name": "Zehana", "postalCode": "25053" },
     { "name": "Haricha Ammar Bourayou Rabah", "postalCode": "25054" },
     { "name": "Cheurfi Salah", "postalCode": "25059" }
   ]

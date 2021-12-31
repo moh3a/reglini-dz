@@ -8,9 +8,40 @@
       "communes": [
         {
           "name": "Oran",
-          "codeONS": "",
+          "codeONS": "3101",
           "postalCode": "31000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Oran - Houha Mohamed", "postalCode": "31002" },
+            { "name": "Oran - Saim Mohamed", "postalCode": "31003" },
+            { "name": "Oran - El Makkari", "postalCode": "31007" },
+            { "name": "Oran - El Modjahid", "postalCode": "31008" },
+            { "name": "Oran - Emir Khaled", "postalCode": "31009" },
+            { "name": "Oran - Es Sabbah", "postalCode": "31010" },
+            { "name": "Oran - Hai Badr", "postalCode": "31011" },
+            { "name": "Oran - Oussama", "postalCode": "31012" },
+            { "name": "Oran - Seddika", "postalCode": "31013" },
+            { "name": "Oran - Imam el Houari", "postalCode": "31020" },
+            { "name": "Oran - Sidi el Bachir", "postalCode": "31021" },
+            { "name": "Oran - Ahmed Mederghi", "postalCode": "31032" },
+            { "name": "Oran - El Feth", "postalCode": "31033" },
+            { "name": "Oran - El Hamri", "postalCode": "31034" },
+            { "name": "Oran - El Marsa", "postalCode": "31035" },
+            { "name": "Oran - Hai Bouamama", "postalCode": "31036" },
+            { "name": "Oran - C. Des Enseignants", "postalCode": "31054" },
+            { "name": "Oran - Dar Beida", "postalCode": "31055" },
+            { "name": "Oran - Ibn Rochd", "postalCode": "31056" },
+            { "name": "Oran - Izidi Mohamed", "postalCode": "31057" },
+            { "name": "Oran - Achaba Hanifi", "postalCode": "31085" },
+            { "name": "Oran Wilaya", "postalCode": "31087" },
+            { "name": "Oran - Ibn Sina", "postalCode": "31092" },
+            { "name": "Oran - Hai Akid Lotfi", "postalCode": "31093" },
+            { "name": "Oran - AADL 1 63 Lgts", "postalCode": "31100" },
+            { "name": "Oran - Benzarga Houari", "postalCode": "31101" },
+            { "name": "Oran - Benbassal Benaouda", "postalCode": "31102" },
+            { "name": "Oran - Belle Vue", "postalCode": "31104" },
+            { "name": "Oran - EHU 1er Novembre", "postalCode": "31106" },
+            { "name": "Oran CHU", "postalCode": "31107" }
+          ]
         }
       ]
     },
@@ -18,9 +49,27 @@
       "name": "Ain El Turk",
       "communes": [
         {
-          "name": "Oran",
-          "codeONS": "",
-          "postalCode": "31000",
+          "name": "Ain El Turk",
+          "codeONS": "3109",
+          "postalCode": "31014",
+          "otherPosts": []
+        },
+        {
+          "name": "Bousfer",
+          "codeONS": "3116",
+          "postalCode": "31025",
+          "otherPosts": [{ "name": "Bousfer Plage", "postalCode": "31064" }]
+        },
+        {
+          "name": "El Ansor",
+          "codeONS": "3110",
+          "postalCode": "31043",
+          "otherPosts": []
+        },
+        {
+          "name": "Mers el-Kebir",
+          "codeONS": "3115",
+          "postalCode": "31019",
           "otherPosts": []
         }
       ]
@@ -29,9 +78,22 @@
       "name": "Arzew",
       "communes": [
         {
-          "name": "Oran",
-          "codeONS": "",
-          "postalCode": "31000",
+          "name": "Arzew",
+          "codeONS": "3106",
+          "postalCode": "31004",
+          "otherPosts": [
+            { "name": "Arzew - Emir Abdelkader", "postalCode": "31041" },
+            {
+              "name": "El Mahgoun",
+              "postalCode": "31044"
+            },
+            { "name": "El Mahgoun 11 Decembre 1960", "postalCode": "31105" }
+          ]
+        },
+        {
+          "name": "Sidi Benyebka",
+          "codeONS": "3122",
+          "postalCode": "31058",
           "otherPosts": []
         }
       ]
@@ -40,10 +102,32 @@
       "name": "Bethioua",
       "communes": [
         {
-          "name": "Oran",
-          "codeONS": "",
-          "postalCode": "31000",
-          "otherPosts": []
+          "name": "Ain El Bya",
+          "codeONS": "3126",
+          "postalCode": "31040",
+          "otherPosts": [
+            {
+              "name": "Ain el Bya - Ben Halima Mohamed",
+              "postalCode": "31114"
+            },
+            { "name": "Khemisti", "postalCode": "31051" }
+          ]
+        },
+        {
+          "name": "Bethioua",
+          "codeONS": "3107",
+          "postalCode": "31015",
+          "otherPosts": [
+            { "name": "Bethioua Benmlouka Brahim", "postalCode": "31111" }
+          ]
+        },
+        {
+          "name": "Marsat El Hadjadj",
+          "codeONS": "3108",
+          "postalCode": "31030",
+          "otherPosts": [
+            { "name": "Mers el Hadjadj - Esalam", "postalCode": "31090" }
+          ]
         }
       ]
     },
@@ -51,9 +135,29 @@
       "name": "Es Senia",
       "communes": [
         {
-          "name": "Oran",
-          "codeONS": "",
-          "postalCode": "31000",
+          "name": "El Kerma",
+          "codeONS": "3117",
+          "postalCode": "31026",
+          "otherPosts": []
+        },
+        {
+          "name": "Es Senia",
+          "codeONS": "3105",
+          "postalCode": "31005",
+          "otherPosts": [
+            { "name": "Es Senia Zerbani Mohamed", "postalCode": "31006" },
+            { "name": "Es Senia Kara", "postalCode": "31088" },
+            { "name": "Es Senia El Matar", "postalCode": "31108" },
+            { "name": "Es Sabah Benkouachi Abdessalem", "postalCode": "31115" },
+            { "name": "Es Senia Universite", "postalCode": "31116" },
+            { "name": "Es Senia Ain Beida AADL", "postalCode": "31117" },
+            { "name": "Ain Beida", "postalCode": "31039" }
+          ]
+        },
+        {
+          "name": "Sidi Chami",
+          "codeONS": "3113",
+          "postalCode": "31038",
           "otherPosts": []
         }
       ]
@@ -62,10 +166,31 @@
       "name": "Bir El Djir",
       "communes": [
         {
-          "name": "Oran",
-          "codeONS": "",
-          "postalCode": "31000",
+          "name": "Bir El Djir",
+          "codeONS": "3103",
+          "postalCode": "31023",
+          "otherPosts": [
+            {
+              "name": "Bir el Djir - Cdt Guerrab Mohamed",
+              "postalCode": "31001"
+            }
+          ]
+        },
+        {
+          "name": "Hassi Ben Okba",
+          "codeONS": "3119",
+          "postalCode": "31049",
           "otherPosts": []
+        },
+        {
+          "name": "Hassi Bounif",
+          "codeONS": "3104",
+          "postalCode": "31028",
+          "otherPosts": [
+            { "name": "Bendaoud", "postalCode": "31042" },
+            { "name": "Hai Chahid Mahmoud", "postalCode": "31046" },
+            { "name": "Hassi Ameur", "postalCode": "31048" }
+          ]
         }
       ]
     },
@@ -73,10 +198,24 @@
       "name": "Boutlelis",
       "communes": [
         {
-          "name": "Oran",
-          "codeONS": "",
-          "postalCode": "31000",
+          "name": "Ain El Kerma",
+          "codeONS": "3125",
+          "postalCode": "31059",
           "otherPosts": []
+        },
+        {
+          "name": "Boutlelis",
+          "codeONS": "3124",
+          "postalCode": "31016",
+          "otherPosts": []
+        },
+        {
+          "name": "Misserghine",
+          "codeONS": "3123",
+          "postalCode": "31031",
+          "otherPosts": [
+            { "name": "Misserghine - Hai Zabana", "postalCode": "31086" }
+          ]
         }
       ]
     },
@@ -84,9 +223,30 @@
       "name": "Oued Tlelat",
       "communes": [
         {
-          "name": "Oran",
-          "codeONS": "",
-          "postalCode": "31000",
+          "name": "Boufatis",
+          "codeONS": "3114",
+          "postalCode": "31024",
+          "otherPosts": []
+        },
+        {
+          "name": "El Braya",
+          "codeONS": "3118",
+          "postalCode": "31070",
+          "otherPosts": []
+        },
+        {
+          "name": "Oued Tlelat",
+          "codeONS": "3111",
+          "postalCode": "31037",
+          "otherPosts": [
+            { "name": "Oued Tlelat - 1er Novembre", "postalCode": "31099" },
+            { "name": "Oued Tlelat - Zaoui Azzedine", "postalCode": "31109" }
+          ]
+        },
+        {
+          "name": "Tafraoui",
+          "codeONS": "3112",
+          "postalCode": "31084",
           "otherPosts": []
         }
       ]
@@ -95,158 +255,45 @@
       "name": "Gdyel",
       "communes": [
         {
-          "name": "Oran",
-          "codeONS": "",
-          "postalCode": "31000",
+          "name": "Gdyel",
+          "codeONS": "3102",
+          "postalCode": "31017",
+          "otherPosts": [
+            { "name": "Gdyel - Ahmed Zabana", "postalCode": "31018" },
+            { "name": "Gdyel - Aribi Mohamed", "postalCode": "31112" }
+          ]
+        },
+        {
+          "name": "Ben Freha",
+          "codeONS": "3120",
+          "postalCode": "31063",
+          "otherPosts": [{ "name": "Hassiane Ettoual", "postalCode": "31027" }]
+        },
+        {
+          "name": "Hassi Mefsoukh",
+          "codeONS": "3121",
+          "postalCode": "31050",
           "otherPosts": []
         }
       ]
     }
   ],
+
   "address": [
-    {
-      "name": "Oran",
-      "postalCode": "31000",
-      "otherPosts": [
-        { "name": "Oran Houha Mohamed", "postalCode": "31002" },
-        { "name": "Oran Saim Mohamed", "postalCode": "31003" },
-        { "name": "Oran El Makkari", "postalCode": "31007" },
-        { "name": "Oran El Modjahid", "postalCode": "31008" },
-        { "name": "Oran Emir Khaled", "postalCode": "31009" },
-        { "name": "Oran Es Sabbah", "postalCode": "31010" },
-        { "name": "Oran Hai Badr", "postalCode": "31011" },
-        { "name": "Oran Oussama", "postalCode": "31012" },
-        { "name": "Oran Seddika", "postalCode": "31013" },
-        { "name": "Oran Imam el Houari", "postalCode": "31020" },
-        { "name": "Oran Sidi el Bachir", "postalCode": "31021" },
-        { "name": "Oran Ahmed Mederghi", "postalCode": "31032" },
-        { "name": "Oran El Feth", "postalCode": "31033" },
-        { "name": "Oran El Hamri", "postalCode": "31034" },
-        { "name": "Oran El Marsa", "postalCode": "31035" },
-        { "name": "Oran Hai Bouamama", "postalCode": "31036" },
-        { "name": "Oran C. Des Enseignants", "postalCode": "31054" },
-        { "name": "Oran Dar Beida", "postalCode": "31055" },
-        { "name": "Oran Ibn Rochd", "postalCode": "31056" },
-        { "name": "Oran Izidi Mohamed", "postalCode": "31057" },
-        { "name": "Oran Achaba Hanifi", "postalCode": "31085" },
-        { "name": "Oran Wilaya", "postalCode": "31087" },
-        { "name": "Oran Ibn Sina", "postalCode": "31092" },
-        { "name": "Oran Hai Akid Lotfi", "postalCode": "31093" },
-        { "name": "Oran AADL 1 63 Lgts", "postalCode": "31100" },
-        { "name": "Oran Benzarga Houari", "postalCode": "31101" },
-        { "name": "Oran Benbassal Benaouda", "postalCode": "31102" },
-        { "name": "Oran Belle Vue", "postalCode": "31104" },
-        { "name": "Oran EHU 1er Novembre", "postalCode": "31106" },
-        { "name": "Oran CHU", "postalCode": "31107" }
-      ]
-    },
-    {
-      "name": "Arzew",
-      "postalCode": "31004",
-      "otherPosts": [{ "name": "Arzew Emir Abdelkader", "postalCode": "31041" }]
-    },
-    {
-      "name": "Es Senia",
-      "postalCode": "31005",
-      "otherPosts": [
-        { "name": "Es Senia Zerbani Mohamed", "postalCode": "31006" },
-        { "name": "Es Senia Kara", "postalCode": "31088" },
-        { "name": "Es Senia El Matar", "postalCode": "31108" },
-        { "name": "Es Sabah Benkouachi Abdessalem", "postalCode": "31115" },
-        { "name": "Es Senia Universite", "postalCode": "31116" },
-        { "name": "Es Senia Ain Beida AADL", "postalCode": "31117" }
-      ]
-    },
-    { "name": "Ain el Turk", "postalCode": "31014" },
-    { "name": "Bettioua", "postalCode": "31015" },
-    { "name": "Bou Tlelis", "postalCode": "31016" },
-    {
-      "name": "Gdyel",
-      "postalCode": "31017",
-      "otherPosts": [
-        { "name": "Gdyel Ahmed Zabana", "postalCode": "31018" },
-        { "name": "Gdyel Aribi Mohamed", "postalCode": "31112" }
-      ]
-    },
-    { "name": "Mers el Kebir", "postalCode": "31019" },
     { "name": "Akid Abbes", "postalCode": "31022" },
-    {
-      "name": "Bir el Djir",
-      "postalCode": "31023",
-      "otherPosts": [
-        { "name": "Bir el Djir Cdt Guerrab Mohamed", "postalCode": "31001" }
-      ]
-    },
-    { "name": "Boufatis", "postalCode": "31024" },
-    {
-      "name": "Bou Sfer",
-      "postalCode": "31025",
-      "otherPosts": [{ "name": "Bou Sfer Plage", "postalCode": "31064" }]
-    },
-    { "name": "El Kerma", "postalCode": "31026" },
-    { "name": "Hassiane Ettoual", "postalCode": "31027" },
-    { "name": "Hassi Bounif", "postalCode": "31028" },
     { "name": "Khaled ibn el Oualid", "postalCode": "31029" },
-    {
-      "name": "Mers el Hadjadj",
-      "postalCode": "31030",
-      "otherPosts": [
-        { "name": "Mers el Hadjadj Esalam", "postalCode": "31090" }
-      ]
-    },
-    {
-      "name": "Misserghine",
-      "postalCode": "31031",
-      "otherPosts": [
-        { "name": "Misserghine Hai Zabana", "postalCode": "31086" }
-      ]
-    },
-    {
-      "name": "Oued Tlelat",
-      "postalCode": "31037",
-      "otherPosts": [
-        { "name": "Oued Tlelat 1er Novembre", "postalCode": "31099" },
-        { "name": "Oued Tlelat Zaoui Azzedine", "postalCode": "31109" }
-      ]
-    },
-    { "name": "Sidi Chami", "postalCode": "31038" },
-    { "name": "Ain Beida", "postalCode": "31039" },
-    {
-      "name": "Ain el Bya",
-      "postalCode": "31040",
-      "otherPosts": [
-        { "name": "Ain el Bya Ben Halima Mohamed", "postalCode": "31114" }
-      ]
-    },
-    { "name": "Bendaoud", "postalCode": "31042" },
-    { "name": "El Ancor", "postalCode": "31043" },
-    {
-      "name": "El Mahgoun",
-      "postalCode": "31044",
-      "otherPosts": [
-        { "name": "El Mahgoun 11 Decembre 1960", "postalCode": "31105" }
-      ]
-    },
     { "name": "El Minzah", "postalCode": "31045" },
-    { "name": "Hai Chahid Mahmoud", "postalCode": "31046" },
     { "name": "Hai Emir Abdelkader", "postalCode": "31047" },
-    { "name": "Hassi Ameur", "postalCode": "31048" },
-    { "name": "Hassi Ben Okba", "postalCode": "31049" },
-    { "name": "Hassi Mefsoukh", "postalCode": "31050" },
-    { "name": "Khemisti", "postalCode": "31051" },
+
     { "name": "Kristel", "postalCode": "31052" },
     { "name": "Naib", "postalCode": "31053" },
-    { "name": "Sidi Benyebka", "postalCode": "31058" },
-    { "name": "Ain Kerma", "postalCode": "31059" },
     { "name": "Akid Othmane", "postalCode": "31060" },
     { "name": "Araba", "postalCode": "31061" },
     { "name": "Ayaida", "postalCode": "31062" },
-    { "name": "Benfreha", "postalCode": "31063" },
     { "name": "Chairia", "postalCode": "31065" },
     { "name": "Dadayoum", "postalCode": "31067" },
     { "name": "Djefafla", "postalCode": "31068" },
     { "name": "El Bordj el Abiadh", "postalCode": "31069" },
-    { "name": "El Braya", "postalCode": "31070" },
     {
       "name": "En Nedjma",
       "postalCode": "31071",
@@ -265,7 +312,6 @@
     { "name": "Rabah", "postalCode": "31080" },
     { "name": "Sidi Bakhti", "postalCode": "31081" },
     { "name": "Sidi Maarouf", "postalCode": "31083" },
-    { "name": "Tafaraoui", "postalCode": "31084" },
     { "name": "Bouyakour", "postalCode": "31089" },
     { "name": "Arrarsa", "postalCode": "31091" },
     { "name": "Senia 200 lgts", "postalCode": "31094" },
@@ -273,7 +319,7 @@
     { "name": "Hay Fellaoucene", "postalCode": "31096" },
     { "name": "Sidi Ghalem", "postalCode": "31098" },
     { "name": "Hamou Ali", "postalCode": "31103" },
-    { "name": "Bethioua Benmlouka Brahim", "postalCode": "31111" },
+
     { "name": "Toubiat Dhiba el Houari", "postalCode": "31113" }
   ]
 }
