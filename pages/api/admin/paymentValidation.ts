@@ -5,6 +5,7 @@ import nc from "next-connect";
 import dbConnect from "../../../config/db";
 import User from "../../../models/User";
 import CheckSession from "../../../utils/checkSession";
+import sendEmail from "../../../utils/sendEmail";
 import { IExtendedAPIRequest } from "../../../utils/types";
 
 const handler = nc();
@@ -111,7 +112,19 @@ handler
         if (accepted) {
           user.orders[index].payment.isPaymentConfirmed = true;
           user.orders[index].payment.wasDeclined = false;
-          user.acceptedPayments.unshift({ userId, orderId });
+          user.acceptedPayments.push({ userId, orderId });
+          let message = `
+          <h1>Your order was successfull</h1>
+          <small>Product: ${user.orders[index].product.name} </small>
+          <small>Order ID: ${user.orders[index].orderId}</small>
+          <p>The payment has been confirmed, check your order status whenever you want. Tracking will be available once the product was shipped.</p>
+          `;
+          await sendEmail({
+            from: process.env.SENDGRID_FROM,
+            to: user.email,
+            subject: "Order confirmed and payment was successfull",
+            text: message,
+          });
         } else {
           const d1 = new Date(user.orders[index].createdAt);
           const d2 = new Date();

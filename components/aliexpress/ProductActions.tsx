@@ -25,11 +25,12 @@ export const BuyProduct = ({
   selectedShipping,
   converter,
 }: any) => {
+  console.log(selectedVariation);
   const t = useTranslations("AEProduct");
   const router = useRouter();
   const buyHandler = (e: any) => {
     let price, shippingPrice: any;
-    if (selectedVariation.sku) {
+    if (selectedVariation.sku || selectedVariation.price.app) {
       price = selectedVariation.price.app.hasDiscount
         ? selectedVariation.price.app.discountedPrice.value
         : selectedVariation.price.app.originalPrice.value;
@@ -42,12 +43,12 @@ export const BuyProduct = ({
       }, 3000);
       setError(t("logInToAdd"));
     } else if (session) {
-      if (!selectedVariation.sku) {
+      if (!selectedVariation.sku && !selectedVariation.price.app) {
         setTimeout(() => {
           setError("");
         }, 3000);
         setError(t("selectProperties"));
-      } else if (selectedVariation.sku) {
+      } else if (selectedVariation.sku || selectedVariation.price.app) {
         localStorage.setItem(
           "aeno",
           JSON.stringify([
@@ -94,7 +95,7 @@ export const ProductToCart = ({
   const dispatch = useDispatch();
   const addToCartHandler = (e: any) => {
     let price, shippingPrice;
-    if (selectedVariation.sku) {
+    if (selectedVariation.sku || selectedVariation.price.app) {
       price = selectedVariation.price.app.hasDiscount
         ? selectedVariation.price.app.discountedPrice.value
         : selectedVariation.price.app.originalPrice.value;
@@ -107,12 +108,12 @@ export const ProductToCart = ({
       }, 3000);
       setError(t("logInToAdd"));
     } else if (session) {
-      if (!selectedVariation.sku) {
+      if (!selectedVariation.sku && !selectedVariation.price.app) {
         setTimeout(() => {
           setError("");
         }, 3000);
         setError(t("selectProperties"));
-      } else if (selectedVariation.sku) {
+      } else if (selectedVariation.sku || selectedVariation.price.app) {
         dispatch(
           addToCart({
             productId: product.productId,

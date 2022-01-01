@@ -52,6 +52,7 @@ const ProductDetails = ({ product, session, converter }: any) => {
         inverse.find((property: any) => property.name === prop.name)
       );
       setVariation(values);
+    } else if (!product.hasProperties) {
     }
   }, [product, properties]);
 
@@ -64,31 +65,55 @@ const ProductDetails = ({ product, session, converter }: any) => {
         sku: "",
         thumbnailImageUrl: "",
       };
-      product.variations.map((varia: any) => {
-        let checking: boolean[] = [];
-        varia.properties.map(() => checking.push(false));
-        varia.properties.map((prop: any, i: number = 0) => {
-          const index =
-            variation[0] === undefined
-              ? -2
-              : variation.findIndex((el) => el.value === prop.value.name);
-          if (
-            index !== -2 &&
-            index !== -1 &&
-            variation[index].name === prop.name &&
-            variation[index].value === prop.value.name
-          ) {
-            checking[i] = true;
-          } else {
-            checking[i] = false;
-          }
-          i++;
+      if (product.variations.length > 1) {
+        product.variations.map((varia: any) => {
+          let checking: boolean[] = [];
+          varia.properties.map(() => checking.push(false));
+          varia.properties.map((prop: any, i: number = 0) => {
+            const index =
+              variation[0] === undefined
+                ? -2
+                : variation.findIndex((el) => el.value === prop.value.name);
+            if (
+              index !== -2 &&
+              index !== -1 &&
+              variation[index].name === prop.name &&
+              variation[index].value === prop.value.name
+            ) {
+              checking[i] = true;
+            } else {
+              checking[i] = false;
+            }
+            i++;
+          });
+          if (!checking.includes(false)) theOne = varia;
         });
-        if (!checking.includes(false)) theOne = varia;
-      });
+      }
       setSelectedVariation({ ...theOne, quantity });
     }
   }, [product, variation, quantity]);
+
+  useEffect(() => {
+    if (product.hasVariations && variation) {
+      let theOne = {
+        imageUrl: "",
+        price: {},
+        properties: [{}],
+        sku: "",
+        thumbnailImageUrl: "",
+      };
+      if (product && product.variations.length === 1) {
+        theOne = {
+          imageUrl: product.variations[0].imageUrl,
+          price: product.variations[0].price,
+          properties: product.variations[0].properties,
+          sku: product.variations[0].sku,
+          thumbnailImageUrl: product.variations[0].thumbnailImageUrl,
+        };
+      }
+      setSelectedVariation({ ...theOne, quantity });
+    }
+  }, [product, quantity, variation]);
 
   return (
     <>

@@ -228,7 +228,7 @@ const UserSchema = new mongoose.Schema({
   blogs: [{ blogId: mongoose.SchemaTypes.ObjectId }],
   wishlist: [WishlistSchema],
   orders: [OrderSchema],
-  acceptedPayments: [],
+  acceptedPayments: [{ userId: mongoose.Mixed, orderId: mongoose.Mixed }],
 });
 
 // MIDDLEWARE TO BE USED BEFORE CREATING A NEW PASSWORD
