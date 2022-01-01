@@ -2,12 +2,17 @@ import axios from "axios";
 import type { NextApiResponse } from "next";
 import nc from "next-connect";
 
+import dbConnect from "../../../config/db";
 import User from "../../../models/User";
 import CheckSession from "../../../utils/checkSession";
 import { IExtendedAPIRequest } from "../../../utils/types";
 
 const handler = nc();
 handler
+  .use(async (req, res, next) => {
+    await dbConnect();
+    next();
+  })
   .use(async (req: IExtendedAPIRequest, res: NextApiResponse, next) =>
     CheckSession(req, res, next)
   )
@@ -28,7 +33,7 @@ handler
   })
   .get(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
     try {
-      const users = await User.find()
+      const paid = await User.find()
         .select("email picture orders")
         .map((res) => {
           let u: any[] = [];
@@ -53,11 +58,35 @@ handler
           return u;
         });
 
-      if (users) {
+      const unpaid = await User.find()
+        .select("email picture orders")
+        .map((res) => {
+          let u: any[] = [];
+          res.map((user: any) => {
+            if (user.orders.length > 0) {
+              user.orders.map((order: any) => {
+                if (
+                  !order.payment.hasTimedOut &&
+                  !order.payment.isPaymentConfirmed
+                ) {
+                  u.push({
+                    picture: user.picture,
+                    userId: user._id,
+                    email: user.email,
+                    order: order,
+                  });
+                }
+              });
+            }
+          });
+          return u;
+        });
+
+      if (paid && unpaid) {
         res.status(200).json({
           success: true,
           message: `These users submitted payments and need to be checked.`,
-          data: users,
+          data: { unpaid, paid },
         });
       } else {
         res.status(200).json({

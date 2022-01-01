@@ -6,8 +6,14 @@ import Blog from "../../../models/Blog";
 import CheckSession from "../../../utils/checkSession";
 import { IExtendedAPIRequest } from "../../../utils/types";
 
+import dbConnect from "../../../config/db";
+
 const handler = nc();
 handler
+  .use(async (req, res, next) => {
+    await dbConnect();
+    next();
+  })
   .use(async (req: IExtendedAPIRequest, res: NextApiResponse, next) =>
     CheckSession(req, res, next)
   )

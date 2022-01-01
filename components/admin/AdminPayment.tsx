@@ -5,6 +5,7 @@ import Avatar from "../elements/Avatar";
 
 const AdminPayment = ({ user }: any) => {
   const [receipts, setReceipts] = useState<any>();
+  const [unpaid, setUnpaid] = useState<any>();
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
@@ -13,7 +14,8 @@ const AdminPayment = ({ user }: any) => {
     const { data } = await axios.get("/api/admin/paymentValidation");
     if (data.success) {
       setSuccess(data.message);
-      setReceipts(data.data);
+      setReceipts(data.data.paid);
+      setUnpaid(data.data.unpaid);
     } else {
       setError(data.message);
     }
@@ -51,6 +53,7 @@ const AdminPayment = ({ user }: any) => {
         {error && <p className="text-red-500">{error}</p>}
         {success && <p>{success}</p>}
       </div>
+      {receipts && <h1 className="text-2xl font-semibold">Paid users</h1>}
       {receipts &&
         receipts.map((receipt: any) => (
           <div
@@ -122,14 +125,56 @@ const AdminPayment = ({ user }: any) => {
             </div>
           </div>
         ))}
+      {unpaid && <h1 className="text-2xl font-semibold">Unpaid users</h1>}
+      {unpaid &&
+        unpaid.map((receipt: any) => (
+          <div
+            key={receipt.userId}
+            className="border border-yellow-200 rounded-lg my-1 p-2"
+          >
+            <div className="flex">
+              {receipt.picture && (
+                <div className="pt-1">
+                  <Avatar size="sm" user={receipt} />
+                </div>
+              )}
+              <div className="pl-3">
+                <p>
+                  <span className="font-bold">User ID</span>: {receipt.userId}
+                </p>
+                <p>
+                  <span className="font-bold">User email</span>: {receipt.email}
+                </p>
+              </div>
+            </div>
+
+            <p>
+              <span className="font-bold">Order ID</span>:{" "}
+              {receipt.order.orderId}
+            </p>
+            <div className="h-40 w-40">
+              <img
+                src={receipt.order.product.imageUrl}
+                alt={receipt.order.orderId}
+              />
+            </div>
+          </div>
+        ))}
       <div>
-        {user.acceptedPayments &&
+        <h1 className="text-2xl font-semibold">Accepted Payments</h1>
+        {user.acceptedPayments && user.acceptedPayments.length > 0 ? (
           user.acceptedPayments.map((payment: any) => (
-            <div key={payment.orderId}>
+            <div
+              key={payment.orderId}
+              className="border border-yellow-500 p-1 rounded-lg my-2"
+            >
               <p>User ID: {payment.userId}</p>
               <p>Order ID: {payment.orderId}</p>
             </div>
-          ))}
+          ))
+        ) : (
+          <div>No Accepted Payments.</div>
+        )}
       </div>
     </div>
   );

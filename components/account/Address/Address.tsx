@@ -125,7 +125,6 @@ const Address = ({ user }: any) => {
           wilaya.id !== 41 &&
           wilaya.id !== 42 &&
           wilaya.id !== 43 &&
-          wilaya.id !== 44 &&
           wilaya.id !== 46 &&
           wilaya.id !== 47 &&
           wilaya.id !== 48 ? (

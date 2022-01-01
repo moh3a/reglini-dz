@@ -1,5 +1,6 @@
 import type { NextApiResponse } from "next";
 import nc from "next-connect";
+import dbConnect from "../../../config/db";
 
 import User from "../../../models/User";
 import Currency from "../../../models/Currency";
@@ -8,6 +9,10 @@ import { IExtendedAPIRequest } from "../../../utils/types";
 
 const handler = nc();
 handler
+  .use(async (req, res, next) => {
+    await dbConnect();
+    next();
+  })
   .use(async (req: IExtendedAPIRequest, res: NextApiResponse, next) =>
     CheckSession(req, res, next)
   )

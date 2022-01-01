@@ -114,9 +114,11 @@ import axios from "axios";
 import { GetServerSideProps } from "next";
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { req, res, locale } = context;
-  const { data } = await axios.get(`http://${req.headers.host}/api/commission`);
+  const { data } = await axios.get(
+    `${process.env.NEXTAUTH_URL}/api/commission`
+  );
   const commission = data.data.commission;
-  const response = await axios.get(`http://${req.headers.host}/api/currency`);
+  const response = await axios.get(`${process.env.NEXTAUTH_URL}/api/currency`);
   const rate = response.data.data[0].live.parallel.sale;
   return {
     props: {

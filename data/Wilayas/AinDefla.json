@@ -8,9 +8,13 @@
       "communes": [
         {
           "name": "Ain Defla",
-          "codeONS": "",
+          "codeONS": "4401",
           "postalCode": "44000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Ain Defla - Martyrs", "postalCode": "44007" },
+            { "name": "Ain Defla - Mazouni", "postalCode": "44033" },
+            { "name": "Feghailia", "postalCode": "44060" }
+          ]
         }
       ]
     },
@@ -18,10 +22,22 @@
       "name": "Ain Lechiekh",
       "communes": [
         {
-          "name": "Ain Defla",
-          "codeONS": "",
-          "postalCode": "44000",
+          "name": "Ain Lechiekh",
+          "codeONS": "4414",
+          "postalCode": "44018",
           "otherPosts": []
+        },
+        {
+          "name": "Ain Soltane",
+          "codeONS": "4420",
+          "postalCode": "44019",
+          "otherPosts": [{ "name": "Ouled Belgacem", "postalCode": "44054" }]
+        },
+        {
+          "name": "Oued Djemaa",
+          "codeONS": "4415",
+          "postalCode": "44052",
+          "otherPosts": [{ "name": "Matmata", "postalCode": "44049" }]
         }
       ]
     },
@@ -29,9 +45,21 @@
       "name": "Bathia",
       "communes": [
         {
-          "name": "Ain Defla",
-          "codeONS": "",
-          "postalCode": "44000",
+          "name": "Bathia",
+          "codeONS": "4431",
+          "postalCode": "44041",
+          "otherPosts": []
+        },
+        {
+          "name": "El Hassania",
+          "codeONS": "4418",
+          "postalCode": "44022",
+          "otherPosts": [{ "name": "Oued Zebboudj", "postalCode": "44053" }]
+        },
+        {
+          "name": "Belaas",
+          "codeONS": "4436",
+          "postalCode": "44038",
           "otherPosts": []
         }
       ]
@@ -40,9 +68,21 @@
       "name": "Bordj Emir Khaled",
       "communes": [
         {
-          "name": "Ain Defla",
-          "codeONS": "",
-          "postalCode": "44000",
+          "name": "Bordj Emir Khaled",
+          "codeONS": "4422",
+          "postalCode": "44021",
+          "otherPosts": []
+        },
+        {
+          "name": "Bir Ould Khelifa",
+          "codeONS": "4419",
+          "postalCode": "44043",
+          "otherPosts": []
+        },
+        {
+          "name": "Tarik Ibn Ziad",
+          "codeONS": "4421",
+          "postalCode": "44029",
           "otherPosts": []
         }
       ]
@@ -51,9 +91,15 @@
       "name": "Boumedfaa",
       "communes": [
         {
-          "name": "Ain Defla",
-          "codeONS": "",
-          "postalCode": "44000",
+          "name": "Boumedfaa",
+          "codeONS": "4403",
+          "postalCode": "44004",
+          "otherPosts": [{ "name": "Ain Dem", "postalCode": "44034" }]
+        },
+        {
+          "name": "Hoceinia",
+          "codeONS": "4427",
+          "postalCode": "44048",
           "otherPosts": []
         }
       ]
@@ -62,9 +108,27 @@
       "name": "Djelida",
       "communes": [
         {
-          "name": "Ain Defla",
-          "codeONS": "",
-          "postalCode": "44000",
+          "name": "Djelida",
+          "codeONS": "4407",
+          "postalCode": "44009",
+          "otherPosts": [
+            {
+              "name": "Djelida - Sadek Ben Abdellah Belkacem",
+              "postalCode": "44066"
+            },
+            { "name": "Bab Driss Aoudia", "postalCode": "44037" }
+          ]
+        },
+        {
+          "name": "Bourached",
+          "codeONS": "4409",
+          "postalCode": "44044",
+          "otherPosts": [{ "name": "Ouled Si Ahmed", "postalCode": "44063" }]
+        },
+        {
+          "name": "Djemaa Ouled Cheikh",
+          "codeONS": "4429",
+          "postalCode": "44047",
           "otherPosts": []
         }
       ]
@@ -73,10 +137,21 @@
       "name": "Djendel",
       "communes": [
         {
-          "name": "Ain Defla",
-          "codeONS": "",
-          "postalCode": "44000",
+          "name": "Djendel",
+          "postalCode": "44005",
           "otherPosts": []
+        },
+        {
+          "name": "Birbouche",
+          "codeONS": "4428",
+          "postalCode": "44042",
+          "otherPosts": []
+        },
+        {
+          "name": "Oued Chorfa",
+          "codeONS": "4413",
+          "postalCode": "44024",
+          "otherPosts": [{ "name": "Amourah", "postalCode": "44036" }]
         }
       ]
     },
@@ -84,10 +159,22 @@
       "name": "El Abadia",
       "communes": [
         {
-          "name": "Ain Defla",
-          "codeONS": "",
-          "postalCode": "44000",
+          "name": "El Abadia",
+          "codeONS": "4411",
+          "postalCode": "44006",
           "otherPosts": []
+        },
+        {
+          "name": "Ain Bouyahia",
+          "codeONS": "4433",
+          "postalCode": "44032",
+          "otherPosts": []
+        },
+        {
+          "name": "Tacheta Zougagha",
+          "codeONS": "4432",
+          "postalCode": "44028",
+          "otherPosts": [{ "name": "Souk Lethnine", "postalCode": "44058" }]
         }
       ]
     },
@@ -95,9 +182,21 @@
       "name": "El Amra",
       "communes": [
         {
-          "name": "Ain Defla",
-          "codeONS": "",
-          "postalCode": "44000",
+          "name": "El Amra",
+          "codeONS": "4408",
+          "postalCode": "44010",
+          "otherPosts": []
+        },
+        {
+          "name": "Arib",
+          "codeONS": "4406",
+          "postalCode": "44008",
+          "otherPosts": []
+        },
+        {
+          "name": "Mekhatria",
+          "codeONS": "4430",
+          "postalCode": "44050",
           "otherPosts": []
         }
       ]
@@ -106,9 +205,21 @@
       "name": "El Attaf",
       "communes": [
         {
-          "name": "Ain Defla",
-          "codeONS": "",
-          "postalCode": "44000",
+          "name": "El Attaf",
+          "codeONS": "4410",
+          "postalCode": "44002",
+          "otherPosts": [
+            { "name": "El Attaf - 8 Mai 1945", "postalCode": "44011" },
+            { "name": "Ouled Moussa", "postalCode": "44025" },
+            { "name": "Sidi Bouabida", "postalCode": "44026" },
+            { "name": "Bel Abbes", "postalCode": "44039" },
+            { "name": "Cheikh Benyahia", "postalCode": "44045" }
+          ]
+        },
+        {
+          "name": "Tiberkanine",
+          "codeONS": "4435",
+          "postalCode": "44030",
           "otherPosts": []
         }
       ]
@@ -117,9 +228,21 @@
       "name": "Hammam Righa",
       "communes": [
         {
-          "name": "Ain Defla",
-          "codeONS": "",
-          "postalCode": "44000",
+          "name": "Hammam Righa",
+          "codeONS": "4405",
+          "postalCode": "44023",
+          "otherPosts": []
+        },
+        {
+          "name": "Ain Benian",
+          "codeONS": "4426",
+          "postalCode": "44035",
+          "otherPosts": []
+        },
+        {
+          "name": "Ain Torki",
+          "codeONS": "4423",
+          "postalCode": "44020",
           "otherPosts": []
         }
       ]
@@ -128,9 +251,21 @@
       "name": "Khemis Miliana",
       "communes": [
         {
-          "name": "Ain Defla",
-          "codeONS": "",
-          "postalCode": "44000",
+          "name": "Khemis Miliana",
+          "codeONS": "4404",
+          "postalCode": "44001",
+          "otherPosts": [
+            { "name": "Khemis Miliana - Dardara", "postalCode": "44012" },
+            { "name": "Khemis Miliana - Essalem", "postalCode": "44013" },
+            { "name": "Khemis Miliana - Souamaa", "postalCode": "44014" },
+            { "name": "Khemis Miliana - Souffay", "postalCode": "44015" },
+            { "name": "Khemis Miliana Universite", "postalCode": "44065" }
+          ]
+        },
+        {
+          "name": "Sidi Lakhdar",
+          "codeONS": "4424",
+          "postalCode": "44027",
           "otherPosts": []
         }
       ]
@@ -139,9 +274,18 @@
       "name": "Miliana",
       "communes": [
         {
-          "name": "Ain Defla",
-          "codeONS": "",
-          "postalCode": "44000",
+          "name": "Miliana",
+          "codeONS": "4402",
+          "postalCode": "44003",
+          "otherPosts": [
+            { "name": "Miliana - Morkah", "postalCode": "44016" },
+            { "name": "Zouggala", "postalCode": "44059" }
+          ]
+        },
+        {
+          "name": "Ben Allal",
+          "codeONS": "4425",
+          "postalCode": "44040",
           "otherPosts": []
         }
       ]
@@ -150,104 +294,35 @@
       "name": "Rouina",
       "communes": [
         {
-          "name": "Ain Defla",
-          "codeONS": "",
+          "name": "El Maine",
+          "codeONS": "4434",
           "postalCode": "44000",
+          "otherPosts": []
+        },
+        {
+          "name": "Rouina",
+          "codeONS": "4416",
+          "postalCode": "44017",
+          "otherPosts": [{ "name": "Sidi Hamou", "postalCode": "44056" }]
+        },
+        {
+          "name": "Zeddine",
+          "codeONS": "4417",
+          "postalCode": "44031",
           "otherPosts": []
         }
       ]
     }
   ],
+
   "address": [
-    {
-      "name": "Ain Defla Boussouf Abdelhafid",
-      "postalCode": "44000",
-      "otherPosts": [
-        { "name": "Ain Defla Martyrs", "postalCode": "44007" },
-        { "name": "Ain Defla Mazouni", "postalCode": "44033" }
-      ]
-    },
-    {
-      "name": "Khemis Miliana",
-      "postalCode": "44001",
-      "otherPosts": [
-        { "name": "Khemis Miliana Dardara", "postalCode": "44012" },
-        { "name": "Khemis Miliana Essalem", "postalCode": "44013" },
-        { "name": "Khemis Miliana Souamaa", "postalCode": "44014" },
-        { "name": "Khemis Miliana Souffay", "postalCode": "44015" },
-        { "name": "Khemis Miliana Universite", "postalCode": "44065" }
-      ]
-    },
-    {
-      "name": "El Attaf",
-      "postalCode": "44002",
-      "otherPosts": [{ "name": "El Attaf 8 Mai 1945", "postalCode": "44011" }]
-    },
-    {
-      "name": "Miliana",
-      "postalCode": "44003",
-      "otherPosts": [{ "name": "Miliana Morkah", "postalCode": "44016" }]
-    },
-    { "name": "Bou Medfaa", "postalCode": "44004" },
-    { "name": "Djendel", "postalCode": "44005" },
-    { "name": "El Abadia", "postalCode": "44006" },
-    { "name": "Arib", "postalCode": "44008" },
-    {
-      "name": "Djelida",
-      "postalCode": "44009",
-      "otherPosts": [
-        { "name": "Djelida Sadek Ben Abdellah Belkacem", "postalCode": "44066" }
-      ]
-    },
-    { "name": "El Amra", "postalCode": "44010" },
-    { "name": "Rouina", "postalCode": "44017" },
-    { "name": "Ain Lechiakh", "postalCode": "44018" },
-    { "name": "Ain Sultan", "postalCode": "44019" },
-    { "name": "Ain Torki", "postalCode": "44020" },
-    { "name": "Bordj Emir Khaled", "postalCode": "44021" },
-    { "name": "El Hassania", "postalCode": "44022" },
-    { "name": "Hammam Righa", "postalCode": "44023" },
-    { "name": "Oued Chorfa", "postalCode": "44024" },
-    { "name": "Ouled Moussa Terchi", "postalCode": "44025" },
-    { "name": "Sidi Bouabida", "postalCode": "44026" },
-    { "name": "Sidi Lakhdar", "postalCode": "44027" },
-    { "name": "Tacheta Zouggara", "postalCode": "44028" },
-    { "name": "Tarik Ibn Ziad", "postalCode": "44029" },
-    { "name": "Tiberkanine", "postalCode": "44030" },
-    { "name": "Zeddine", "postalCode": "44031" },
-    { "name": "Ain Bouyahia", "postalCode": "44032" },
-    { "name": "Ain Dem", "postalCode": "44034" },
-    { "name": "Ain El Benian", "postalCode": "44035" },
-    { "name": "Ain Amourah", "postalCode": "44036" },
-    { "name": "Baba Driss Aoudia", "postalCode": "44037" },
-    { "name": "Belaas", "postalCode": "44038" },
-    { "name": "Bel Abbes", "postalCode": "44039" },
-    { "name": "Ben Allel", "postalCode": "44040" },
-    { "name": "Bethaia", "postalCode": "44041" },
-    { "name": "Bir Bouche", "postalCode": "44042" },
-    { "name": "Bir Ouled Khalifa", "postalCode": "44043" },
-    { "name": "Bourached", "postalCode": "44044" },
-    { "name": "Cheikh Benyahia", "postalCode": "44045" },
     { "name": "Djebabra", "postalCode": "44046" },
-    { "name": "Djemaa Ouled Cheikh", "postalCode": "44047" },
-    { "name": "Hoceinia", "postalCode": "44048" },
-    { "name": "Matmata", "postalCode": "44049" },
-    { "name": "Mekhatria Klitine Mohamed", "postalCode": "44050" },
     { "name": "Moulay Abdelkader", "postalCode": "44051" },
-    { "name": "Oued Djemaa", "postalCode": "44052" },
-    { "name": "Oued Zebboudj", "postalCode": "44053" },
-    { "name": "Ouled Belgacem", "postalCode": "44054" },
     { "name": "Saidia", "postalCode": "44055" },
-    { "name": "Sidi Hamou", "postalCode": "44056" },
     { "name": "Sidi Saad", "postalCode": "44057" },
-    { "name": "Souk Lethnine", "postalCode": "44058" },
-    { "name": "Zouggala", "postalCode": "44059" },
-    { "name": "Feghailia", "postalCode": "44060" },
     { "name": "Mokari Dahmane", "postalCode": "44061" },
     { "name": "Ouled Bessa", "postalCode": "44062" },
-    { "name": "Ouled Si Ahmed", "postalCode": "44063" },
     { "name": "Oued Bedda", "postalCode": "44064" },
-
     { "name": "Derabla", "postalCode": "44067" }
   ]
 }

@@ -11,7 +11,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     await dbConnect();
   }
   const { req, res, locale } = context;
-  const { data } = await axios.get(`http://${req.headers.host}/api/currency`);
+  const { data } = await axios.get(`${process.env.NEXTAUTH_URL}/api/currency`);
   const currency = data.data;
   return {
     props: {
