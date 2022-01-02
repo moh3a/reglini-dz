@@ -212,7 +212,7 @@ const NavLarge = ({ setOpen, user, placeholder }: any) => {
                         <div>
                           <Menu.Button className="max-w-xs rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                             <span className="sr-only">Open user menu</span>
-                            <Avatar user={user} />
+                            <Avatar picture={user.picture} />
                           </Menu.Button>
                         </div>
                         <Transition

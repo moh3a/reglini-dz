@@ -1,7 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import parse from "html-react-parser";
 
-const Avatar = ({ user, size }: { user: any; size?: "sm" | "md" | "lg" }) => {
+const Avatar = ({
+  picture,
+  size,
+}: {
+  picture: any;
+  size?: "sm" | "md" | "lg";
+}) => {
   let avatarSize = "h-10 w-10";
   let height = 30;
   let width = 30;
@@ -21,18 +27,17 @@ const Avatar = ({ user, size }: { user: any; size?: "sm" | "md" | "lg" }) => {
 
   return (
     <>
-      {user && user.picture && user.picture.includes("<svg ") ? (
-        <div className={`${avatarSize} rounded-full`}>
-          {parse(user.picture)}
-        </div>
+      {picture.includes("<svg ") ? (
+        <div className={`${avatarSize} rounded-full`}>{parse(picture)}</div>
       ) : (
         <img
           className={`${avatarSize} rounded-full`}
-          src={user && user.picture ? user.picture : "/user-icon.png"}
-          alt={user && user.name ? user.name : "user profile image"}
+          src={picture ? picture : "/user-icon.png"}
+          alt={"user profile image"}
         />
       )}
     </>
   );
 };
+
 export default Avatar;

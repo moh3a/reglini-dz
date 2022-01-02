@@ -68,7 +68,7 @@ const AdminPayment = () => {
               <div className="flex">
                 {receipt.picture && (
                   <div className="pt-1">
-                    <Avatar size="sm" user={receipt} />
+                    <Avatar size="sm" picture={receipt.picture} />
                   </div>
                 )}
                 <div className="pl-3">
@@ -141,7 +141,7 @@ const AdminPayment = () => {
               <div className="flex">
                 {receipt.picture && (
                   <div className="pt-1">
-                    <Avatar size="sm" user={receipt} />
+                    <Avatar size="sm" picture={receipt.picture} />
                   </div>
                 )}
                 <div className="pl-3">

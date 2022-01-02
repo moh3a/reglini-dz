@@ -34,7 +34,7 @@ function AllBlogs({ user }: any) {
         <div className="flex justify-around w-full py-8">
           <div className="flex">
             <div>
-              <Avatar user={user} size="sm" />
+              <Avatar picture={user.picture} size="sm" />
             </div>
             <div className="ml-2 text-xl font-bold">{user.name}</div>
           </div>
@@ -62,13 +62,9 @@ function AllBlogs({ user }: any) {
             >
               <div className="flex">
                 <div className="m-2 h-12 w-12">
-                  <img
-                    className="rounded-full"
-                    src={
-                      blog.userPicture ? blog.userPicture : "/placeholder.png"
-                    }
-                    alt={blog.userName}
-                  />
+                  {blog.userPicture && (
+                    <Avatar picture={blog.userPicture} size="sm" />
+                  )}
                 </div>
                 <div className="mt-2">
                   <p className="font-semibold">{blog.userName}</p>

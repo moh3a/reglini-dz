@@ -7,6 +7,8 @@ import {
   ChartBarIcon,
 } from "@heroicons/react/outline";
 
+import Avatar from "../elements/Avatar";
+
 const AdminSidebar = ({ user }: any) => {
   const router = useRouter();
   return (
@@ -15,11 +17,7 @@ const AdminSidebar = ({ user }: any) => {
         <div className="mt-10 mb-10">
           {user.picture && (
             <div className=" w-10 h-10 mb-3 mx-auto">
-              <img
-                src={user.picture}
-                alt={user.name}
-                className="rounded-full"
-              />
+              <Avatar picture={user.picture} size="sm" />
             </div>
           )}
           <div className="mt-10">

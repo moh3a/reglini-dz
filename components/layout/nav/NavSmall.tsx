@@ -70,7 +70,7 @@ const NavSmall = ({ open, setOpen, user, placeholder }: any) => {
                         className="max-w-xs p-2 rounded-full flex items-center text-sm focus:outline-none hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer"
                       >
                         <span className="sr-only">Open user menu</span>
-                        <Avatar user={user} />
+                        <Avatar picture={user.picture} />
                         <span className="-m-2 p-2 ml-6 block font-medium text-gray-800 dark:text-gray-100 ">
                           {user.name}
                         </span>

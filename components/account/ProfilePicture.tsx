@@ -141,7 +141,9 @@ const ProfilePicture = ({ size }: { user: any; size?: "sm" | "md" | "lg" }) => {
           </div>
         )}
       </div>
-      <div className="py-2">{!pp && <Avatar user={user} size={size} />}</div>
+      <div className="py-2">
+        {!pp && <Avatar picture={user.picture} size={size} />}
+      </div>
     </>
   );
 };

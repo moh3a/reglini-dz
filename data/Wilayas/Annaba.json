@@ -8,9 +8,28 @@
       "communes": [
         {
           "name": "Annaba",
-          "codeONS": "",
+          "codeONS": "2301",
           "postalCode": "23000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Annaba - Amirouche", "postalCode": "23001" },
+            { "name": "Annaba - Menadia", "postalCode": "23002" },
+            { "name": "Annaba Port", "postalCode": "23003" },
+            { "name": "Annaba - 5 Juillet", "postalCode": "23007" },
+            { "name": "Annaba - Oued el Kouba", "postalCode": "23008" },
+            { "name": "Annaba - Cite Rym", "postalCode": "23011" },
+            { "name": "Annaba - Plaine Ouest II", "postalCode": "23012" },
+            { "name": "Annaba - Cite des Martyres", "postalCode": "23017" },
+            { "name": "Annaba - Edough", "postalCode": "23048" },
+            { "name": "Annaba - Sidi Achour ", "postalCode": "23050" },
+            { "name": "Annaba - Bouzered Hocine", "postalCode": "23053" },
+            { "name": "Annaba - Cite Seybouse", "postalCode": "23054" }
+          ]
+        },
+        {
+          "name": "Seraidi",
+          "codeONS": "2308",
+          "postalCode": "23015",
+          "otherPosts": [{ "name": "Bouzizi", "postalCode": "23027" }]
         }
       ]
     },
@@ -18,10 +37,30 @@
       "name": "Ain Berda",
       "communes": [
         {
-          "name": "Annaba",
-          "codeONS": "",
-          "postalCode": "23000",
-          "otherPosts": []
+          "name": "Ain Berda",
+          "codeONS": "2309",
+          "postalCode": "23006",
+          "otherPosts": [
+            { "name": "Menaouar Ain Sayd", "postalCode": "23020" },
+            { "name": "Medjez Rassoul", "postalCode": "23041" },
+            { "name": "Selmoune el Hachemi", "postalCode": "23045" },
+            { "name": "El Harrouchi", "postalCode": "23056" }
+          ]
+        },
+        {
+          "name": "Cheurfa",
+          "codeONS": "2307",
+          "postalCode": "23018",
+          "otherPosts": [
+            { "name": "Cheurfa - Labidi Mohamed", "postalCode": "23040" },
+            { "name": "Cheurfa - Azizi Ahmed", "postalCode": "23025" }
+          ]
+        },
+        {
+          "name": "Eulma",
+          "codeONS": "2304",
+          "postalCode": "23031",
+          "otherPosts": [{ "name": "Oued el Hout", "postalCode": "23036" }]
         }
       ]
     },
@@ -29,10 +68,24 @@
       "name": "El Hadjar",
       "communes": [
         {
-          "name": "Annaba",
-          "codeONS": "",
-          "postalCode": "23000",
-          "otherPosts": []
+          "name": "El Hadjar",
+          "codeONS": "2303",
+          "postalCode": "23004",
+          "otherPosts": [
+            { "name": "El Karma", "postalCode": "23019" },
+            { "name": "El Horeicha", "postalCode": "23032" },
+            { "name": "El Moukaouama", "postalCode": "23034" }
+          ]
+        },
+        {
+          "name": "Sidi Amar",
+          "codeONS": "2311",
+          "postalCode": "23005",
+          "otherPosts": [
+            { "name": "Sidi Amar Universite", "postalCode": "23052" },
+            { "name": "Derradji Redjem", "postalCode": "23028" },
+            { "name": "Hadjar Diss", "postalCode": "23037" }
+          ]
         }
       ]
     },
@@ -40,9 +93,24 @@
       "name": "Berrahal",
       "communes": [
         {
-          "name": "Annaba",
-          "codeONS": "",
-          "postalCode": "23000",
+          "name": "Berrahal",
+          "codeONS": "2302",
+          "postalCode": "23009",
+          "otherPosts": [
+            { "name": "Ain Fouadja", "postalCode": "23024" },
+            { "name": "Tacha", "postalCode": "23046" }
+          ]
+        },
+        {
+          "name": "Oued El Aneb",
+          "codeONS": "2306",
+          "postalCode": "23044",
+          "otherPosts": [{ "name": "Oued Zied", "postalCode": "23044" }]
+        },
+        {
+          "name": "Treat",
+          "codeONS": "2312",
+          "postalCode": "23022",
           "otherPosts": []
         }
       ]
@@ -51,10 +119,10 @@
       "name": "Chetaibi",
       "communes": [
         {
-          "name": "Annaba",
-          "codeONS": "",
-          "postalCode": "23000",
-          "otherPosts": []
+          "name": "Chetaibi",
+          "codeONS": "2310",
+          "postalCode": "23014",
+          "otherPosts": [{ "name": "El Azla", "postalCode": "23030" }]
         }
       ]
     },
@@ -62,86 +130,31 @@
       "name": "El Bouni",
       "communes": [
         {
-          "name": "Annaba",
-          "codeONS": "",
-          "postalCode": "23000",
-          "otherPosts": []
+          "name": "El Bouni",
+          "codeONS": "2305",
+          "postalCode": "23005",
+          "otherPosts": [
+            { "name": "El Bouni - Allelik", "postalCode": "23049" },
+            { "name": "El Bouni - Universite", "postalCode": "23051" },
+            { "name": "Boukhadra", "postalCode": "23013" },
+            { "name": "Sidi Salem", "postalCode": "23016" },
+            { "name": "Sidi Salem el Bahri", "postalCode": "23055" },
+            { "name": "Berka Zerga", "postalCode": "23026" },
+            { "name": "Kheraza II", "postalCode": "23038" },
+            { "name": "Kheraza Cite 1e Mai", "postalCode": "23039" }
+          ]
         }
       ]
     }
   ],
+
   "address": [
-    {
-      "name": "Annaba",
-      "postalCode": "23000",
-      "otherPosts": [
-        { "name": "Annaba Amirouche", "postalCode": "23001" },
-        { "name": "Annaba Menadia", "postalCode": "23002" },
-        { "name": "Annaba Port", "postalCode": "23003" },
-        { "name": "Annaba 5 Juillet", "postalCode": "23007" },
-        { "name": "Annaba Oued el Kouba", "postalCode": "23008" },
-        { "name": "Annaba Cite Rym", "postalCode": "23011" },
-        { "name": "Annaba Plaine Ouest II", "postalCode": "23012" },
-        { "name": "Annaba Cite des Martyres", "postalCode": "23017" },
-        { "name": "Annaba Edough", "postalCode": "23048" },
-        { "name": "Annaba Sidi Achour ", "postalCode": "23050" },
-        { "name": "Annaba Bouzered Hocine", "postalCode": "23053" },
-        { "name": "Annaba Cite Seybouse", "postalCode": "23054" }
-      ]
-    },
-    { "name": "El Hadjar", "postalCode": "23004" },
-    {
-      "name": "Sidi Amar",
-      "postalCode": "23005",
-      "otherPosts": [{ "name": "Sidi Amar Universite", "postalCode": "23052" }]
-    },
-    { "name": "Ain Berda", "postalCode": "23006" },
-    { "name": "Berrahal", "postalCode": "23009" },
-    {
-      "name": "El Bouni",
-      "postalCode": "23010",
-      "otherPosts": [
-        { "name": "El Bouni Allelik", "postalCode": "23049" },
-        { "name": "El Bouni Universite", "postalCode": "23051" }
-      ]
-    },
-    { "name": "Boukhadra", "postalCode": "23013" },
-    { "name": "Chetaibi", "postalCode": "23014" },
-    { "name": "Seraidi", "postalCode": "23015" },
-    {
-      "name": "Sidi Salem",
-      "postalCode": "23016",
-      "otherPosts": [{ "name": "Sidi Salem el Bahri", "postalCode": "23055" }]
-    },
-    { "name": "Cheurfa", "postalCode": "23018" },
-    { "name": "El Karma", "postalCode": "23019" },
-    { "name": "Menaouar Ain Sayd", "postalCode": "23020" },
     { "name": "Ouichaoua", "postalCode": "23021" },
-    { "name": "Treat", "postalCode": "23022" },
-    { "name": "Ain Fouadja", "postalCode": "23024" },
-    { "name": "Azizi Ahmed", "postalCode": "23025" },
-    { "name": "Berka Zerga", "postalCode": "23026" },
-    { "name": "Bouzizi", "postalCode": "23027" },
-    { "name": "Derradji Redjem", "postalCode": "23028" },
     { "name": "Draa Errich", "postalCode": "23029" },
-    { "name": "El Azla", "postalCode": "23030" },
-    { "name": "El Eulma", "postalCode": "23031" },
-    { "name": "El Horeicha", "postalCode": "23032" },
     { "name": "El Kalitoussa", "postalCode": "23033" },
-    { "name": "El Moukaouama", "postalCode": "23034" },
     { "name": "Es Sarouel", "postalCode": "23035" },
-    { "name": "Oued el Hout", "postalCode": "23036" },
-    { "name": "Hdjar Diss", "postalCode": "23037" },
-    { "name": "Kheraza II", "postalCode": "23038" },
-    { "name": "Kheraza Cite 1e Mai", "postalCode": "23039" },
-    { "name": "Labidi Mohamed", "postalCode": "23040" },
-    { "name": "Medjez Rassoul", "postalCode": "23041" },
     { "name": "Merzoug Amar", "postalCode": "23042" },
     { "name": "Oued el Nil", "postalCode": "23043" },
-    { "name": "Oued Zied", "postalCode": "23044" },
-    { "name": "Selmoune el Hachemi", "postalCode": "23045" },
-    { "name": "Tacha", "postalCode": "23046" },
-    { "name": "Zaouia", "postalCode": "23047" },
-    { "name": "El Harrouchi", "postalCode": "23056" }
+    { "name": "Zaouia", "postalCode": "23047" }
   ]
 }
