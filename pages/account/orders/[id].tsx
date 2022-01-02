@@ -2,18 +2,16 @@ import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useSession } from "next-auth/client";
 
 import { IUser } from "../../../utils/types";
 import { selectUser } from "../../../utils/redux/userSlice";
-import { getOrderDetails } from "../../../utils/redux/userAsyncActions";
 
 const OrderScreen = () => {
   const router = useRouter();
-  const dispatch = useDispatch();
   const [session, loading]: [IUser | null, boolean] = useSession();
-  const { isAuthenticated, user, status } = useSelector(selectUser);
+  const { isAuthenticated, user } = useSelector(selectUser);
   const { id } = router.query;
 
   let order: any = null;
@@ -31,14 +29,7 @@ const OrderScreen = () => {
         query: { message: "login_to_view_orders" },
       });
     }
-    // else if (user && id) {
-    //   dispatch(getOrderDetails({ id }));
-    // }
   }, [router, session, loading, isAuthenticated]);
-
-  //   useEffect(() => {
-  //     dispatch(getOrderDetails({ id }));
-  //   }, []);
 
   return (
     <>
@@ -50,7 +41,8 @@ const OrderScreen = () => {
         <meta name="description" content="reglini-dz user's order details." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>{order && <OrderDetails order={order} />}</div>
+      {/* <div>{order && <OrderDetails order={order} />}</div> */}
+      {id && <OrderDetails id={id} />}
     </>
   );
 };

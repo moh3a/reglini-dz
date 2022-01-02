@@ -1,9 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import { Fragment, useState, useEffect } from "react";
 import Link from "next/link";
-import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
 import { useTranslations } from "next-intl";
-import { TrashIcon, PhotographIcon } from "@heroicons/react/outline";
+import {
+  TrashIcon,
+  PhotographIcon,
+  ChevronLeftIcon,
+} from "@heroicons/react/outline";
 
 import SubmitPayment from "./SubmitPayment";
 import {
@@ -12,27 +17,46 @@ import {
   cancelOrder,
 } from "../../../utils/redux/userAsyncActions";
 
-export default function OrderDetails({ order }: any) {
+export default function OrderDetails({
+  // order,
+  id,
+}: any) {
+  const dispatch = useDispatch();
+  const { user } = useSelector(selectUser);
+  const [order, setOrder] = useState<any>();
   const [openTracking, setOpenTracking] = useState(false);
   const [openPayNow, setOpenPayNow] = useState(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    dispatch(getOrderDetails({ id }));
+  }, [dispatch, id]);
+
+  useEffect(() => {
+    const index = user.orders.findIndex(
+      (order: any) => order.orderId.toString() === id
+    );
+    if (index !== -1) {
+      setOrder(user.orders[index]);
+    }
+  }, [id, user.orders]);
 
   return (
     <div className="my-5 shadow-md border-2 text-black dark:text-yellow-100 border-yellow-200 bg-white dark:bg-grim overflow-hidden rounded-lg">
-      <div className="flex shadow ">
-        {openPayNow ? (
-          <PayNow order={order} setOpenPayNow={setOpenPayNow} />
-        ) : openTracking ? (
-          <Tracking order={order} setOpenTracking={setOpenTracking} />
-        ) : (
-          <Details
-            order={order}
-            setOpenTracking={setOpenTracking}
-            setOpenPayNow={setOpenPayNow}
-          />
-        )}
-      </div>
+      {order && (
+        <div className="flex shadow ">
+          {openPayNow ? (
+            <PayNow order={order} setOpenPayNow={setOpenPayNow} />
+          ) : openTracking ? (
+            <Tracking order={order} setOpenTracking={setOpenTracking} />
+          ) : (
+            <Details
+              order={order}
+              setOpenTracking={setOpenTracking}
+              setOpenPayNow={setOpenPayNow}
+            />
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -103,10 +127,12 @@ const PayNow = ({ order, setOpenPayNow }: any) => {
 };
 
 import { Dialog, Transition } from "@headlessui/react";
+import { selectUser } from "../../../utils/redux/userSlice";
 const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations("Orders");
   const dispatch = useDispatch();
+  const router = useRouter();
 
   function closeModal() {
     setIsOpen(false);
@@ -118,6 +144,18 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
 
   return (
     <div className="relative w-full">
+      <div className="z-10 absolute left-0 top-0 ml-2 mt-1">
+        <span className="sr-only">go back</span>
+        <button
+          onClick={() => router.back()}
+          className="px-4 py-1 my-1 lg:mx-1 rounded-lg bg-orange-500 hover:bg-orange-400"
+        >
+          <ChevronLeftIcon
+            className="flex-shink-0 h-6 w-6 text-gray-100"
+            aria-hidden="true"
+          />
+        </button>
+      </div>
       <div className="z-10 absolute right-0 top-0 mr-2 mt-1">
         <span className="sr-only">delete</span>
         <button
@@ -184,6 +222,7 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
                       onClick={() => {
                         dispatch(deleteOrder({ id: order.orderId }));
                         closeModal();
+                        router.replace("/account/orders");
                       }}
                     >
                       {t("deletePrompt")}
@@ -205,10 +244,12 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
         </Dialog>
       </Transition>
       <div className="flex items-center flex-col lg:items-start lg:flex-row">
-        {order.product.imageUrl && (
-          <div className="w-72 md:w-44 rounded-lg">
+        {order.product.imageUrl ? (
+          <div className="w-72 md:w-44 lg:mt-18 rounded-lg">
             <img src={order.product.imageUrl} alt={order.product.name} />
           </div>
+        ) : (
+          <div className="w-full h-12" />
         )}
         <div className="px-4 py-5 sm:px-6 text-center lg:text-left">
           <h1 className="text-lg leading-6 font-medium">
@@ -335,14 +376,14 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
             </div>
           )}
 
-          <div>
+          {/* <div>
             <button
               className="bg-green-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-green-300 dark:bg-green-400"
               onClick={() => dispatch(getOrderDetails({ id: order.orderId }))}
             >
               {t("refresh")}
             </button>
-          </div>
+          </div> */}
         </div>
       )}
     </div>

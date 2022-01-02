@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
@@ -39,24 +40,56 @@ export default function Orders() {
       {errorCode && messages && (
         <AlertMessage type="error" message={messages} />
       )}
-      {messages && !errorCode && (
-        <AlertMessage type="success" message={messages} />
-      )}
       <h1
         className={`${router.locale === "ar" && "text-right"} m-4 p-4 text-4xl`}
       >
         {t("yourOrders")}
       </h1>
 
-      <div className="py-4 px-2 lg:px-4 border-t border-b border-black dark:border-yellow-200 bg-yellow-100 dark:bg-black">
+      <div className="py-4 px-2 lg:px-4 ">
         {user && user.orders.length > 0 ? (
           user.orders.map((order: any) => (
-            <OrderDetails order={order} key={order.orderId} />
-            // <div key={order.orderId}>
-            //   <Link href={`/account/orders/${order.orderId}`}>
-            //     {order.orderId}
-            //   </Link>
-            // </div>
+            // <OrderDetails order={order} key={order.orderId} />
+            <div
+              key={order.orderId}
+              className="my-2 rounded-lg border border-black dark:border-yellow-200 bg-yellow-100 dark:bg-black"
+            >
+              <Link href={`/account/orders/${order.orderId}`} passHref>
+                <div className="flex cursor-pointer">
+                  <div className="w-28 h-28 flex justify-center items-center">
+                    <img
+                      className="rounded-lg"
+                      src={
+                        order.product.imageUrl
+                          ? order.product.imageUrl
+                          : "/placeholder.png"
+                      }
+                      alt={order.orderId}
+                    />
+                  </div>
+
+                  <div className="ml-1 relative w-full">
+                    <div className="my-1">
+                      <p>Order ID: {order.orderId}</p>
+                      <p className="h-5 overflow-hidden">
+                        <small className="font-bold">
+                          {order.product.name}
+                        </small>
+                      </p>
+                      <p>
+                        <small className="text-red-600 font-semibold">
+                          {order.product.totalPrice} DZD x{" "}
+                          {order.product.quantity}
+                        </small>
+                      </p>
+                    </div>
+                    <div className="absolute bottom-0 right-0 border border-yellow-700 bg-yellow-600 text-white font-bold m-1 py-1 px-3 rounded-lg">
+                      View details
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
           ))
         ) : (
           <p className="text-center py-16 text-4xl">{t("noOrders")}</p>

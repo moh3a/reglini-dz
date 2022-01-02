@@ -93,27 +93,27 @@ const ProductDetails = ({ product, session, converter }: any) => {
     }
   }, [product, variation, quantity]);
 
-  useEffect(() => {
-    if (product.hasVariations && variation) {
-      let theOne = {
-        imageUrl: "",
-        price: {},
-        properties: [{}],
-        sku: "",
-        thumbnailImageUrl: "",
-      };
-      if (product && product.variations.length === 1) {
-        theOne = {
-          imageUrl: product.variations[0].imageUrl,
-          price: product.variations[0].price,
-          properties: product.variations[0].properties,
-          sku: product.variations[0].sku,
-          thumbnailImageUrl: product.variations[0].thumbnailImageUrl,
-        };
-      }
-      setSelectedVariation({ ...theOne, quantity });
-    }
-  }, [product, quantity, variation]);
+  // useEffect(() => {
+  //   if (product.hasVariations && variation) {
+  //     let theOne = {
+  //       imageUrl: "",
+  //       price: {},
+  //       properties: [{}],
+  //       sku: "",
+  //       thumbnailImageUrl: "",
+  //     };
+  //     if (product && product.variations.length === 1) {
+  //       theOne = {
+  //         imageUrl: product.variations[0].imageUrl,
+  //         price: product.variations[0].price,
+  //         properties: product.variations[0].properties,
+  //         sku: product.variations[0].sku,
+  //         thumbnailImageUrl: product.variations[0].thumbnailImageUrl,
+  //       };
+  //     }
+  //     setSelectedVariation({ ...theOne, quantity });
+  //   }
+  // }, [product, quantity, variation]);
 
   return (
     <>
