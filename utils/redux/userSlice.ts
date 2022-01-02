@@ -13,6 +13,12 @@ import {
   getOrderDetails,
   updateOrderDetails,
   getOrderTracking,
+  editRealName,
+  editPhoneNumber,
+  editAddress,
+  editProfilePicture,
+  editProfileAvatar,
+  submitPayment,
 } from "./userAsyncActions";
 import { signOut } from "next-auth/client";
 import { IAuth } from "../../utils/types";
@@ -218,6 +224,90 @@ export const userSlice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(getOrderTracking.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error;
+      })
+      //========================================================================================
+      .addCase(editRealName.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(editRealName.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.user = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(editRealName.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error;
+      })
+      //========================================================================================
+      .addCase(editPhoneNumber.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(editPhoneNumber.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.user = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(editPhoneNumber.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error;
+      })
+      //========================================================================================
+      .addCase(editAddress.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(editAddress.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.user = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(editAddress.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error;
+      })
+      //========================================================================================
+      .addCase(editProfilePicture.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(editProfilePicture.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.user = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(editProfilePicture.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error;
+      })
+      //========================================================================================
+      .addCase(editProfileAvatar.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(editProfileAvatar.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.user = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(editProfileAvatar.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error;
+      })
+      //========================================================================================
+      .addCase(submitPayment.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(submitPayment.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.user = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(submitPayment.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error;
       });

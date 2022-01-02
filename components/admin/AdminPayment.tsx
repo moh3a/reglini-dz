@@ -1,14 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect, useCallback } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
+
+import { selectUser } from "../../utils/redux/userSlice";
 import Avatar from "../elements/Avatar";
 
-const AdminPayment = ({ user }: any) => {
+const AdminPayment = () => {
   const [receipts, setReceipts] = useState<any>();
   const [unpaid, setUnpaid] = useState<any>();
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const { user } = useSelector(selectUser);
 
   const fetchUsers = useCallback(async () => {
     const { data } = await axios.get("/api/admin/paymentValidation");
@@ -47,134 +51,138 @@ const AdminPayment = ({ user }: any) => {
   };
 
   return (
-    <div>
-      <h1 className="text-xl font-semibold mb-1">Payment Notifications</h1>
+    <div className="my-2 p-2 border-2 border-black dark:border-yellow-200 rounded-lg">
       <div>
-        {error && <p className="text-red-500">{error}</p>}
-        {success && <p>{success}</p>}
-      </div>
-      {receipts && <h1 className="text-2xl font-semibold">Paid users</h1>}
-      {receipts &&
-        receipts.map((receipt: any) => (
-          <div
-            key={receipt.userId}
-            className="border border-yellow-200 rounded-lg my-1 p-2"
-          >
-            <div className="flex">
-              {receipt.picture && (
-                <div className="pt-1">
-                  <Avatar size="sm" user={receipt} />
+        <h1 className="text-xl font-semibold mb-1">Payment Notifications</h1>
+        <div>
+          {error && <p className="text-red-500">{error}</p>}
+          {success && <p>{success}</p>}
+        </div>
+        {receipts && <h1 className="text-2xl font-semibold">Paid users</h1>}
+        {receipts &&
+          receipts.map((receipt: any) => (
+            <div
+              key={receipt.order.orderId}
+              className="border border-yellow-200 rounded-lg my-1 p-2"
+            >
+              <div className="flex">
+                {receipt.picture && (
+                  <div className="pt-1">
+                    <Avatar size="sm" user={receipt} />
+                  </div>
+                )}
+                <div className="pl-3">
+                  <p>
+                    <span className="font-bold">User ID</span>: {receipt.userId}
+                  </p>
+                  <p>
+                    <span className="font-bold">User email</span>:{" "}
+                    {receipt.email}
+                  </p>
                 </div>
-              )}
-              <div className="pl-3">
+              </div>
+
+              <p>
+                <span className="font-bold">Order ID</span>:{" "}
+                {receipt.order.orderId}
+              </p>
+              <div>
                 <p>
-                  <span className="font-bold">User ID</span>: {receipt.userId}
+                  <span className="font-bold">Payment method</span>:{" "}
+                  {receipt.order.payment.paymentMethod}
                 </p>
-                <p>
-                  <span className="font-bold">User email</span>: {receipt.email}
-                </p>
+                <div className="h-40 w-40">
+                  <a
+                    href={receipt.order.payment.receipt}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src={receipt.order.payment.receipt}
+                      alt={receipt.order.orderId}
+                    />
+                  </a>
+                </div>
+                <p>Is this payment legit?</p>
+                <div>
+                  <button
+                    onClick={() =>
+                      declinePayment({
+                        userId: receipt.userId,
+                        orderId: receipt.order.orderId,
+                      })
+                    }
+                    className="border border-red-600 bg-red-500 text-white hover:bg-red-600 rounded-lg mx-2 p-1"
+                  >
+                    decline
+                  </button>
+                  <button
+                    onClick={() =>
+                      acceptPayment({
+                        userId: receipt.userId,
+                        orderId: receipt.order.orderId,
+                      })
+                    }
+                    className="border border-green-600 bg-green-500 text-white hover:bg-green-600 rounded-lg mx-2 p-1"
+                  >
+                    accept
+                  </button>
+                </div>
               </div>
             </div>
+          ))}
+        {unpaid && <h1 className="text-2xl font-semibold">Unpaid users</h1>}
+        {unpaid &&
+          unpaid.map((receipt: any) => (
+            <div
+              key={receipt.order.orderId}
+              className="border border-yellow-200 rounded-lg my-1 p-2"
+            >
+              <div className="flex">
+                {receipt.picture && (
+                  <div className="pt-1">
+                    <Avatar size="sm" user={receipt} />
+                  </div>
+                )}
+                <div className="pl-3">
+                  <p>
+                    <span className="font-bold">User ID</span>: {receipt.userId}
+                  </p>
+                  <p>
+                    <span className="font-bold">User email</span>:{" "}
+                    {receipt.email}
+                  </p>
+                </div>
+              </div>
 
-            <p>
-              <span className="font-bold">Order ID</span>:{" "}
-              {receipt.order.orderId}
-            </p>
-            <div>
               <p>
-                <span className="font-bold">Payment method</span>:{" "}
-                {receipt.order.payment.paymentMethod}
+                <span className="font-bold">Order ID</span>:{" "}
+                {receipt.order.orderId}
               </p>
               <div className="h-40 w-40">
-                <a
-                  href={receipt.order.payment.receipt}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src={receipt.order.payment.receipt}
-                    alt={receipt.order.orderId}
-                  />
-                </a>
-              </div>
-              <p>Is this payment legit?</p>
-              <div>
-                <button
-                  onClick={() =>
-                    declinePayment({
-                      userId: receipt.userId,
-                      orderId: receipt.order.orderId,
-                    })
-                  }
-                  className="border border-red-600 bg-red-500 text-white hover:bg-red-600 rounded-lg mx-2 p-1"
-                >
-                  decline
-                </button>
-                <button
-                  onClick={() =>
-                    acceptPayment({
-                      userId: receipt.userId,
-                      orderId: receipt.order.orderId,
-                    })
-                  }
-                  className="border border-green-600 bg-green-500 text-white hover:bg-green-600 rounded-lg mx-2 p-1"
-                >
-                  accept
-                </button>
+                <img
+                  src={receipt.order.product.imageUrl}
+                  alt={receipt.order.orderId}
+                />
               </div>
             </div>
-          </div>
-        ))}
-      {unpaid && <h1 className="text-2xl font-semibold">Unpaid users</h1>}
-      {unpaid &&
-        unpaid.map((receipt: any) => (
-          <div
-            key={receipt.userId}
-            className="border border-yellow-200 rounded-lg my-1 p-2"
-          >
-            <div className="flex">
-              {receipt.picture && (
-                <div className="pt-1">
-                  <Avatar size="sm" user={receipt} />
-                </div>
-              )}
-              <div className="pl-3">
-                <p>
-                  <span className="font-bold">User ID</span>: {receipt.userId}
-                </p>
-                <p>
-                  <span className="font-bold">User email</span>: {receipt.email}
-                </p>
+          ))}
+        <div>
+          <h1 className="text-2xl font-semibold">Accepted Payments</h1>
+          {user.acceptedPayments && user.acceptedPayments.length > 0 ? (
+            user.acceptedPayments.map((payment: any) => (
+              <div
+                key={payment.orderId}
+                className="border border-yellow-500 p-1 rounded-lg my-2"
+              >
+                <p>User ID: {payment.userId}</p>
+                <p>Order ID: {payment.orderId}</p>
               </div>
-            </div>
-
-            <p>
-              <span className="font-bold">Order ID</span>:{" "}
-              {receipt.order.orderId}
-            </p>
-            <div className="h-40 w-40">
-              <img
-                src={receipt.order.product.imageUrl}
-                alt={receipt.order.orderId}
-              />
-            </div>
-          </div>
-        ))}
-      <div>
-        <h1 className="text-2xl font-semibold">Accepted Payments</h1>
-        {user.acceptedPayments && user.acceptedPayments.length > 0 ? (
-          user.acceptedPayments.map((payment: any) => (
-            <div
-              key={payment.orderId}
-              className="border border-yellow-500 p-1 rounded-lg my-2"
-            >
-              <p>User ID: {payment.userId}</p>
-              <p>Order ID: {payment.orderId}</p>
-            </div>
-          ))
-        ) : (
-          <div>No Accepted Payments.</div>
-        )}
+            ))
+          ) : (
+            <div>No Accepted Payments.</div>
+          )}
+        </div>
       </div>
     </div>
   );

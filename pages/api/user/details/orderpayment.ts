@@ -81,6 +81,7 @@ handler
       data.orders[index].payment = payment;
       await data.save();
       res.status(200).json({
+        data,
         success: true,
         message: "Payment successfully submitted.",
       });

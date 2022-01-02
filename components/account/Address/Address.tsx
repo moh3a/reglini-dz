@@ -1,14 +1,19 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 import { useTranslations } from "next-intl";
+
 import { IWilaya } from "../../../data/Wilayas";
 import SelectDaira from "./SelectDaira";
 import SelectWilaya from "./SelectWilaya";
 import SelectCommune from "./SelectCommune";
 import { DangerDialog, SuccessDialog } from "../../elements/Dialog";
 import SelectPostalCode from "./SelectPostalCode";
+import { selectUser } from "../../../utils/redux/userSlice";
+import { editAddress } from "../../../utils/redux/userAsyncActions";
 
-const Address = ({ user }: any) => {
+const Address = () => {
+  const { user } = useSelector(selectUser);
+  const dispatch = useDispatch();
   const t = useTranslations("Profile");
   const [showForm, setShowForm] = useState(false);
   const [wilaya, setWilaya] = useState<IWilaya>();
@@ -49,33 +54,9 @@ const Address = ({ user }: any) => {
   const addressSaveHandler = async (e: any) => {
     e.preventDefault();
     if (wilaya && postalCode && addressLine && commune) {
-      let address =
-        addressLine +
-        ", " +
-        commune.name +
-        ", wilaya " +
-        wilaya.name +
-        " " +
-        postalCode;
-      const { data } = await axios.post("/api/user/details/address", {
-        text: address,
-        postalCode,
-        wilaya: wilaya.name,
-        daira: daira.name,
-        commune: commune.name,
-        streetName: addressLine,
-      });
-      if (data.success) {
-        setSuccess(data.message);
-        setTimeout(() => {
-          setSuccess("");
-        }, 5000);
-      } else {
-        setError(data.message);
-        setTimeout(() => {
-          setError("");
-        }, 5000);
-      }
+      dispatch(
+        editAddress({ wilaya, daira, postalCode, addressLine, commune })
+      );
       setShowForm(false);
     }
   };

@@ -20,6 +20,7 @@ handler
     blogs.map((blog: any) => {
       userIds.push(blog.userId);
     });
+    console.log(userIds);
 
     const data = await User.find({ _id: { $in: userIds } }).select(
       "name picture"
@@ -34,6 +35,8 @@ handler
         blog.userName = data[index].name;
       }
     });
+
+    console.log(blogs);
 
     res.status(200).json({
       success: true,

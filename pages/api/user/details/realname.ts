@@ -39,6 +39,7 @@ export default async function handler(
         await data.save();
         res.status(200).json({
           success: true,
+          data,
           message: `Legal name successfully updated. New value is ${realName}.`,
         });
       }

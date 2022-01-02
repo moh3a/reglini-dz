@@ -204,3 +204,108 @@ export const getOrderTracking = createAsyncThunk(
     }
   }
 );
+
+export const editRealName = createAsyncThunk(
+  "user/editRealName",
+  async ({ realName }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post("/api/user/details/realname", {
+        realName,
+      });
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const editPhoneNumber = createAsyncThunk(
+  "user/editPhoneNumber",
+  async ({ phoneNumber }: any, { rejectWithValue }) => {
+    try {
+      let phone = phoneNumber.replace(/[-a-zA-Z!@#$%^&* ]/g, "");
+      if (phone[0] === "0") {
+        phone = phone.slice(1);
+      }
+      phone = "+213" + phone;
+      const { data } = await axios.post("/api/user/details/phonenumber", {
+        phoneNumber: phone,
+      });
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const editAddress = createAsyncThunk(
+  "user/editAddress",
+  async (
+    { wilaya, daira, postalCode, addressLine, commune }: any,
+    { rejectWithValue }
+  ) => {
+    try {
+      let address =
+        addressLine +
+        ", " +
+        commune.name +
+        ", wilaya " +
+        wilaya.name +
+        " " +
+        postalCode;
+      const { data } = await axios.post("/api/user/details/address", {
+        text: address,
+        postalCode,
+        wilaya: wilaya.name,
+        daira: daira.name,
+        commune: commune.name,
+        streetName: addressLine,
+      });
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const editProfilePicture = createAsyncThunk(
+  "user/editProfilePicture",
+  async ({ body }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post(
+        "/api/user/details/updatepicture",
+        body
+      );
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const editProfileAvatar = createAsyncThunk(
+  "user/editProfileAvatar",
+  async ({ generated }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post("/api/user/details/updateavatar", {
+        picture: generated,
+      });
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const submitPayment = createAsyncThunk(
+  "user/submitPayment",
+  async ({ body }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post("/api/user/details/orderpayment", body);
+
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);

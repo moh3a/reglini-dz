@@ -156,7 +156,7 @@ export default function AccountDetails() {
                   role="list"
                   className="mt-4 px-4 py-5 border border-red-500 rounded-md divide-y divide-gray-200"
                 >
-                  <Address user={user} />
+                  <Address />
                 </div>
               ) : (
                 ""

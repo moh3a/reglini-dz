@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useTranslations } from "next-intl";
+
 import { selectUser } from "../../utils/redux/userSlice";
 import { DangerDialog, SuccessDialog } from "./../elements/Dialog";
-import { useTranslations } from "next-intl";
+import { editRealName } from "../../utils/redux/userAsyncActions";
 
 const RealName = () => {
   const { user } = useSelector(selectUser);
+  const dispatch = useDispatch();
   const t = useTranslations("Profile");
   const [showForm, setShowForm] = useState(false);
   const [realName, setRealName] = useState("");
@@ -22,20 +24,7 @@ const RealName = () => {
   const realNameSaveHandler = async (e: any) => {
     e.preventDefault();
     if (realName) {
-      const { data } = await axios.post("/api/user/details/realname", {
-        realName,
-      });
-      if (data.success) {
-        setSuccess(data.message);
-        setTimeout(() => {
-          setSuccess("");
-        }, 5000);
-      } else {
-        setError(data.message);
-        setTimeout(() => {
-          setError("");
-        }, 5000);
-      }
+      dispatch(editRealName({ realName }));
       setShowForm(false);
     }
   };

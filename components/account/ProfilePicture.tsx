@@ -2,8 +2,12 @@
 import { useState } from "react";
 import parse from "html-react-parser";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectUser } from "../../utils/redux/userSlice";
+import {
+  editProfilePicture,
+  editProfileAvatar,
+} from "../../utils/redux/userAsyncActions";
 import { useTranslations } from "next-intl";
 import { createAvatar } from "@dicebear/avatars";
 import * as style from "@dicebear/avatars-bottts-sprites";
@@ -12,12 +16,14 @@ import AlertMessage from "../elements/AlertMessage";
 import Avatar from "../elements/Avatar";
 
 const ProfilePicture = ({ size }: { user: any; size?: "sm" | "md" | "lg" }) => {
-  const { user } = useSelector(selectUser);
   const t = useTranslations("Profile");
   const [pp, setPp] = useState("");
   const [generated, setGenerated] = useState("");
   const [image, setImage] = useState<any>();
   const [createObjectURL, setCreateObjectURL] = useState<string>();
+
+  const { user } = useSelector(selectUser);
+  const dispatch = useDispatch();
 
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
@@ -33,18 +39,8 @@ const ProfilePicture = ({ size }: { user: any; size?: "sm" | "md" | "lg" }) => {
   const uploadToServer = async (event: any) => {
     const body = new FormData();
     body.append("file", image);
-    const { data } = await axios.post("/api/user/details/updatepicture", body);
-    if (data.success) {
-      setSuccess(data.message);
-      setTimeout(() => {
-        setSuccess("");
-      }, 5000);
-    } else {
-      setError(data.message);
-      setTimeout(() => {
-        setError("");
-      }, 5000);
-    }
+    dispatch(editProfilePicture({ body }));
+    setPp("");
   };
 
   const generateRandomString = (length: number) => {
@@ -67,21 +63,9 @@ const ProfilePicture = ({ size }: { user: any; size?: "sm" | "md" | "lg" }) => {
 
   const saveAvatar = async (e: any) => {
     e.preventDefault();
-    const { data } = await axios.post("/api/user/details/updateavatar", {
-      picture: generated,
-    });
-    if (data.success) {
-      setSuccess(data.message);
-      setTimeout(() => {
-        setSuccess("");
-      }, 5000);
-    } else {
-      setError(data.message);
-      setTimeout(() => {
-        setError("");
-      }, 5000);
-    }
+    dispatch(editProfileAvatar({ generated }));
     setGenerated("");
+    setPp("");
   };
 
   return (

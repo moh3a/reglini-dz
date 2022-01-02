@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { useSelector } from "react-redux";
-import { selectUser } from "../../utils/redux/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { useTranslations } from "next-intl";
 import { DangerDialog, SuccessDialog } from "./../elements/Dialog";
+import { selectUser } from "../../utils/redux/userSlice";
+import { editPhoneNumber } from "../../utils/redux/userAsyncActions";
 
 const PhoneNumber = () => {
+  const dispatch = useDispatch();
   const { user } = useSelector(selectUser);
   const t = useTranslations("Profile");
   const [showForm, setShowForm] = useState(false);
@@ -22,25 +23,7 @@ const PhoneNumber = () => {
   const phoneNumberSaveHandler = async (e: any) => {
     e.preventDefault();
     if (phoneNumber) {
-      let phone = phoneNumber.replace(/[-a-zA-Z!@#$%^&* ]/g, "");
-      if (phone[0] === "0") {
-        phone = phone.slice(1);
-      }
-      phone = "+213" + phone;
-      const { data } = await axios.post("/api/user/details/phonenumber", {
-        phoneNumber: phone,
-      });
-      if (data.success) {
-        setSuccess(data.message);
-        setTimeout(() => {
-          setSuccess("");
-        }, 5000);
-      } else {
-        setError(data.message);
-        setTimeout(() => {
-          setError("");
-        }, 5000);
-      }
+      dispatch(editPhoneNumber({ phoneNumber }));
       setShowForm(false);
     }
   };

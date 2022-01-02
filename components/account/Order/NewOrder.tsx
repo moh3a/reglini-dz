@@ -86,7 +86,7 @@ export default function NewOrder({ products, origin }: any) {
           <div className="bg-gray-50 dark:bg-grim px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium">{t("address")}</dt>
             <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">
-              <Address user={user} />
+              <Address />
             </dd>
           </div>
         </dl>

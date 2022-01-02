@@ -32,13 +32,15 @@ export default function OrderDetails({
   }, [dispatch, id]);
 
   useEffect(() => {
-    const index = user.orders.findIndex(
-      (order: any) => order.orderId.toString() === id
-    );
-    if (index !== -1) {
-      setOrder(user.orders[index]);
+    if (user && user.orders) {
+      const index = user.orders.findIndex(
+        (order: any) => order.orderId.toString() === id
+      );
+      if (index !== -1) {
+        setOrder(user.orders[index]);
+      }
     }
-  }, [id, user.orders]);
+  }, [id, user]);
 
   return (
     <div className="my-5 shadow-md border-2 text-black dark:text-yellow-100 border-yellow-200 bg-white dark:bg-grim overflow-hidden rounded-lg">
@@ -346,7 +348,10 @@ const Details = ({ order, setOpenPayNow, setOpenTracking }: any) => {
             <div>
               <button
                 className="bg-red-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-red-300 dark:bg-red-400"
-                onClick={() => dispatch(cancelOrder({ id: order.orderId }))}
+                onClick={() => {
+                  dispatch(cancelOrder({ id: order.orderId }));
+                  router.replace("/account/orders");
+                }}
               >
                 {t("cancelOrder")}
               </button>

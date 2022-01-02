@@ -22,6 +22,7 @@ handler
     await data.save();
     res.status(200).json({
       success: true,
+      data,
       message: "Profile picture successfully update.",
     });
   });

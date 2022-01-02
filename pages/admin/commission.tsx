@@ -5,12 +5,13 @@ import Head from "next/head";
 import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 
-import Admin from "../components/admin";
-import { IUser } from "../utils/types";
-import { selectUser } from "../utils/redux/userSlice";
-import { getUser } from "../utils/redux/userAsyncActions";
+import AdminScreen from "./index";
+import AdminFinance from "../../components/admin/AdminFinance";
+import { IUser } from "../../utils/types";
+import { selectUser } from "../../utils/redux/userSlice";
+import { getUser } from "../../utils/redux/userAsyncActions";
 
-const AdminScreen = ({ messages }: any) => {
+const AdminCurrencyScreen = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [session, loading]: [IUser | null, boolean] = useSession();
@@ -41,7 +42,11 @@ const AdminScreen = ({ messages }: any) => {
         <meta name="description" content="Private admin page." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {user && user.role === "admin" && <Admin user={user} />}
+      {user && user.role === "admin" && (
+        <AdminScreen>
+          <AdminFinance />
+        </AdminScreen>
+      )}
     </>
   );
 };
@@ -49,9 +54,9 @@ const AdminScreen = ({ messages }: any) => {
 export const getStaticProps: GetStaticProps = ({ locale }) => {
   return {
     props: {
-      messages: require(`../locales/${locale}.json`),
+      messages: require(`../../locales/${locale}.json`),
     },
   };
 };
 
-export default AdminScreen;
+export default AdminCurrencyScreen;

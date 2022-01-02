@@ -1,13 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import axios from "axios";
 import { RadioGroup } from "@headlessui/react";
 
+import { selectUser } from "../../../utils/redux/userSlice";
+import { submitPayment } from "../../../utils/redux/userAsyncActions";
 import AlertMessage from "../../elements/AlertMessage";
 
 const SubmitPayment = ({ order, setOpenPayNow }: any) => {
+  const dispatch = useDispatch();
+  const { status } = useSelector(selectUser);
   const t = useTranslations("Orders");
   const [selected, setSelected] = useState<any>();
   const [image, setImage] = useState<any>();
@@ -36,20 +40,11 @@ const SubmitPayment = ({ order, setOpenPayNow }: any) => {
     body.append("file", image);
     body.append("orderId", order.orderId);
     body.append("paymentMethod", selected);
-    const { data } = await axios.post("/api/user/details/orderpayment", body);
-    if (data.success) {
-      setSuccess(data.message);
+    dispatch(submitPayment({ body }));
+    if (status !== "loading") {
+      setWait(false);
       setOpenPayNow(false);
-      setTimeout(() => {
-        setSuccess("");
-      }, 5000);
-    } else {
-      setError(data.message);
-      setTimeout(() => {
-        setError("");
-      }, 5000);
     }
-    setWait(false);
   };
 
   return (

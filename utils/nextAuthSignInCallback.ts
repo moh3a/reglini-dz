@@ -1,6 +1,7 @@
 import { createAvatar } from "@dicebear/avatars";
 import * as style from "@dicebear/avatars-bottts-sprites";
 import mongoose from "mongoose";
+import slugify from "slugify";
 
 import dbConnect from "../config/db";
 import User from "../models/User";
@@ -10,9 +11,17 @@ const CustomSignInCallbackMethod = async (user: any, account: any) => {
   if (!mongoose.connection.readyState) {
     await dbConnect();
   }
+
   if (account.id === "login-credentials") {
     return;
   } else if (account.id === "register-credentials") {
+    let username = slugify(user.name);
+    const checkusername = await User.findOne({ name: username });
+    if (checkusername) {
+      username += Math.floor(Math.random() * 10000).toString();
+    }
+    console.log("username: " + username);
+
     let svg = createAvatar(style, {
       seed: user.name,
     });
@@ -20,7 +29,7 @@ const CustomSignInCallbackMethod = async (user: any, account: any) => {
     const newuser = await User.create({
       account: account.type,
       verified: false,
-      name: user.name,
+      name: username,
       email: user.email,
       password: user.password,
       picture: svg,
@@ -53,10 +62,16 @@ const CustomSignInCallbackMethod = async (user: any, account: any) => {
       email: user.email,
     });
     if (!getuser) {
+      let username = slugify(user.name);
+      const checkusername = await User.findOne({ name: username });
+      if (checkusername) {
+        username += Math.floor(Math.random() * 10000).toString();
+      }
+      console.log("username: " + username);
       await User.create({
         account: account.type,
         provider: account.provider,
-        name: user.name,
+        name: username,
         email: user.email,
         picture: user.image,
         cart: {},
