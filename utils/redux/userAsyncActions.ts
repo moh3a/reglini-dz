@@ -309,3 +309,18 @@ export const submitPayment = createAsyncThunk(
     }
   }
 );
+
+export const submitFeedback = createAsyncThunk(
+  "user/submitFeedback",
+  async ({ body }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post(
+        "/api/user/details/orderreceived",
+        body
+      );
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);

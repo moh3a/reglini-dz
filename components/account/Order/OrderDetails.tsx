@@ -115,57 +115,66 @@ export default function OrderDetails({ id }: any) {
                         {t("paymentDeclined")}
                       </div>
                     )}
-                    {order.payment.receipt && (
-                      <div className="py-1 px-3 border-2 border-green-300 bg-green-100 rounded-lg">
-                        <p className="text-green-800 font-bold">
-                          {order.payment.isPaymentConfirmed
-                            ? t("paymentAccepted")
-                            : t("processingPayment")}
-                        </p>
-                        {order.payment.paymentTime && (
-                          <p className="text-green-600">
-                            {t("paymentTime")}:{" "}
-                            {order.payment.paymentTime.substring(0, 10)}{" "}
-                            {order.payment.paymentTime.substring(11, 16)}{" "}
+                    {order.payment.receipt &&
+                      !order.packageReceived.wasReceived && (
+                        <div className="py-1 px-3 border-2 border-green-300 bg-green-100 rounded-lg">
+                          <p className="text-green-800 font-bold">
+                            {order.payment.isPaymentConfirmed
+                              ? t("paymentAccepted")
+                              : t("processingPayment")}
                           </p>
-                        )}
-                        <a
-                          className="text-green-600 flex justify-center"
-                          target="_blank"
-                          rel="noreferrer"
-                          href={order.payment.receipt}
-                        >
-                          {t("checkPayment")}{" "}
-                          <PhotographIcon
-                            className="flex-shink-0 h-6 w-6"
-                            aria-hidden="true"
-                          />
-                        </a>
-                      </div>
-                    )}
+                          {order.payment.paymentTime && (
+                            <p className="text-green-600">
+                              {t("paymentTime")}:{" "}
+                              {order.payment.paymentTime.substring(0, 10)}{" "}
+                              {order.payment.paymentTime.substring(11, 16)}{" "}
+                            </p>
+                          )}
+                          <a
+                            className="text-green-600 flex justify-center"
+                            target="_blank"
+                            rel="noreferrer"
+                            href={order.payment.receipt}
+                          >
+                            {t("checkPayment")}{" "}
+                            <PhotographIcon
+                              className="flex-shink-0 h-6 w-6"
+                              aria-hidden="true"
+                            />
+                          </a>
+                        </div>
+                      )}
                   </>
                 )}
               </div>
             </div>
+            {order.packageReceived.wasReceived && (
+              <div className="text-center text-green-500 font-bold">
+                <p>Order closed.</p>
+                <p>Thank you for using reglini-dz !</p>
+              </div>
+            )}
             {order.payment.hasTimedOut ? (
               <div className="flex flex-col items-center lg:flex-row lg:justify-end mx-3 my-1 py-1 px-3 text-red-800 font-bold border-2 border-red-300 bg-red-100 rounded-lg">
                 {t("hasTimedOut")}
               </div>
             ) : (
               <div className="flex flex-col items-center lg:flex-row lg:justify-end py-2 px-3 text-black">
-                {order.canCancel && (
-                  <div>
-                    <button
-                      className="bg-red-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-red-300 dark:bg-red-400"
-                      onClick={() => {
-                        dispatch(cancelOrder({ id: order.orderId }));
-                        router.replace("/account/orders");
-                      }}
-                    >
-                      {t("cancelOrder")}
-                    </button>
-                  </div>
-                )}
+                {order.canCancel &&
+                  !order.payment.isPaymentConfirmed &&
+                  !order.packageReceived.wasReceived && (
+                    <div>
+                      <button
+                        className="bg-red-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-red-300 dark:bg-red-400"
+                        onClick={() => {
+                          dispatch(cancelOrder({ id: order.orderId }));
+                          router.replace("/account/orders");
+                        }}
+                      >
+                        {t("cancelOrder")}
+                      </button>
+                    </div>
+                  )}
                 <PayNow order={order} />
                 <Tracking order={order} />
                 <ConfirmOrderReceived order={order} />

@@ -19,6 +19,7 @@ import {
   editProfilePicture,
   editProfileAvatar,
   submitPayment,
+  submitFeedback,
 } from "./userAsyncActions";
 import { signOut } from "next-auth/client";
 import { IAuth } from "../../utils/types";
@@ -308,6 +309,20 @@ export const userSlice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(submitPayment.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error;
+      })
+      //========================================================================================
+      .addCase(submitFeedback.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(submitFeedback.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.user = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(submitFeedback.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error;
       });

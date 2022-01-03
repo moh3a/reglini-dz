@@ -167,6 +167,13 @@ const OrderSchema = new mongoose.Schema(
       },
       paymentTime: String,
     },
+    packageReceived: {
+      wasReceived: {
+        type: Boolean,
+        default: false,
+      },
+      packagePicture: String,
+    },
   },
   { timestamps: true }
 );
