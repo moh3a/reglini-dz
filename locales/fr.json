@@ -147,7 +147,7 @@
     "noOrders": "Aucune commande passée.",
     "titleConfirmDeletingOrder": "Confirmer la suppression de la commande",
     "confirmDeletingOrder": "Voulez-vous vraiment annuler votre commande ?",
-    "deletePrompt": "Annuler",
+    "deletePrompt": "Annuler la commande",
     "cancelPrompt": "Retour",
     "goBack": "Revenir",
     "orderId": "Identifiant de la commande",

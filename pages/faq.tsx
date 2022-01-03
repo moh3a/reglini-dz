@@ -92,14 +92,16 @@ const Faq = () => {
                 {t("continueHowCCP")}
               </p>
               <br />
-              <p>{t("nameCCP")}: AIT ABDELMALEK MOHAMED ALI</p>
-              <p>{t("accountKeyCCP")}: 0020008646 key 02</p>
+              <div className="font-bold">
+                <p>{t("nameCCP")}: AIT ABDELMALEK MOHAMED ALI</p>
+                <p>{t("accountKeyCCP")}: 0020008646 key 02</p>
+              </div>
             </Item>
             <Item title={t("titleHowCIB")}>
               <p>{t("howCIB")}</p>
               <br />
               <p>{t("continueHowCIB")}</p>
-              <p>RIB: 007 99999 0020008646 02</p>
+              <p className="font-bold">RIB: 007 99999 0020008646 02</p>
             </Item>
             <Item title={t("titleAllowedProducts")}>
               <p>{t("allowedProducts")}</p>

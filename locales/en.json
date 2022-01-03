@@ -147,7 +147,7 @@
     "noOrders": "No orders made.",
     "titleConfirmDeletingOrder": "Confirm deleting order",
     "confirmDeletingOrder": "Do you really want to cancel your order?",
-    "deletePrompt": "Delete",
+    "deletePrompt": "Delete Order",
     "cancelPrompt": "Cancel",
     "goBack": "Go Back",
     "orderId": "Order ID",

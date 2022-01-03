@@ -91,7 +91,6 @@ const Address = () => {
             <SelectWilaya setWilaya={setWilaya} />
           </div>
           {wilaya &&
-          wilaya.id !== 26 &&
           wilaya.id !== 27 &&
           wilaya.id !== 28 &&
           wilaya.id !== 30 &&

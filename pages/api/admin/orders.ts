@@ -3,6 +3,8 @@ import nc from "next-connect";
 
 import dbConnect from "../../../config/db";
 import User from "../../../models/User";
+import Currency from "../../../models/Currency";
+import Finance from "../../../models/Finance";
 import CheckSession from "../../../utils/checkSession";
 import { IExtendedAPIRequest } from "../../../utils/types";
 
@@ -32,7 +34,11 @@ handler
   })
   .get(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
     try {
-      const data = await User.find()
+      const currency = await Currency.findOne({ exchange: "DZDEUR" }).select(
+        "live"
+      );
+      const finance = await Finance.findOne();
+      const orders = await User.find()
         .select("email picture orders")
         .map((res) => {
           let u: any[] = [];
@@ -55,6 +61,12 @@ handler
           });
           return u;
         });
+
+      let data = {
+        orders,
+        finance,
+        rate: currency,
+      };
 
       if (data) {
         res.status(200).json({

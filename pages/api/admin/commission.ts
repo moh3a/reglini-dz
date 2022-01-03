@@ -31,7 +31,7 @@ handler
       next();
     }
   })
-  .post(async (req: IExtendedAPIRequest, res: NextApiResponse, next) => {
+  .post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
     const { commission } = req.body;
     const data = await Finance.findOne();
     if (!data)

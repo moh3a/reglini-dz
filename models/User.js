@@ -228,18 +228,6 @@ const UserSchema = new mongoose.Schema({
   blogs: [{ blogId: mongoose.SchemaTypes.ObjectId }],
   wishlist: [WishlistSchema],
   orders: [OrderSchema],
-  // only for admin
-  admin: {
-    acceptedPayments: [{ userId: mongoose.Mixed, orderId: mongoose.Mixed }],
-    ordersMoneySumDinars: {
-      type: Number,
-      default: 0,
-    },
-    ordersMoneySumEuros: {
-      type: Number,
-      default: 0,
-    },
-  },
 });
 
 // MIDDLEWARE TO BE USED BEFORE CREATING A NEW PASSWORD

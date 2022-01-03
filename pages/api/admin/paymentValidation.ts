@@ -4,6 +4,7 @@ import nc from "next-connect";
 
 import dbConnect from "../../../config/db";
 import User from "../../../models/User";
+import Finance from "../../../models/Finance";
 import CheckSession from "../../../utils/checkSession";
 import sendEmail from "../../../utils/sendEmail";
 import { IExtendedAPIRequest } from "../../../utils/types";
@@ -78,12 +79,8 @@ handler
   .post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
     try {
       const { accepted, userId, orderId } = req.body;
+      const finance = await Finance.findOne();
       const user = await User.findById(userId);
-      const admin = await User.findOne({
-        email: req.userData.email,
-        account: req.userData.account,
-        provider: req.userData.provider,
-      });
       const index = user.orders.findIndex(
         (order: any) => order.orderId === orderId
       );
@@ -93,12 +90,11 @@ handler
         if (accepted) {
           user.orders[index].payment.isPaymentConfirmed = true;
           user.orders[index].payment.wasDeclined = false;
-          admin.admin.acceptedPayments.push({ userId, orderId });
-          admin.admin.ordersMoneySumDinars +=
-            user.orders[index].product.totalPrice;
-          admin.admin.ordersMoneySumEuros +=
+          finance.acceptedPayments.push({ userId, orderId });
+          finance.ordersMoneySumDinars += user.orders[index].product.totalPrice;
+          finance.ordersMoneySumEuros +=
             user.orders[index].totalPrice.fullOrderPrice.value;
-          await admin.save();
+          await finance.save();
           let message = `
           <h1>Your order was successfull</h1>
           <small>Product: ${user.orders[index].product.name} </small>

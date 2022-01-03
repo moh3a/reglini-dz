@@ -147,7 +147,7 @@
     "noOrders": "لم يصدر اي طلب",
     "titleConfirmDeletingOrder": "تأكيد حذف الطلب",
     "confirmDeletingOrder": "هل تريد حقًا إلغاء طلبك؟",
-    "deletePrompt": "حذف",
+    "deletePrompt": " حذف الطلب",
     "cancelPrompt": "الغاء",
     "goBack": "ارجع",
     "orderId": " معرف الطلب",
