@@ -59,35 +59,11 @@ handler
           return u;
         });
 
-      const unpaid = await User.find()
-        .select("email picture orders")
-        .map((res) => {
-          let u: any[] = [];
-          res.map((user: any) => {
-            if (user.orders.length > 0) {
-              user.orders.map((order: any) => {
-                if (
-                  !order.payment.hasTimedOut &&
-                  !order.payment.isPaymentConfirmed
-                ) {
-                  u.push({
-                    picture: user.picture,
-                    userId: user._id,
-                    email: user.email,
-                    order: order,
-                  });
-                }
-              });
-            }
-          });
-          return u;
-        });
-
-      if (paid && unpaid) {
+      if (paid) {
         res.status(200).json({
           success: true,
           message: `These users submitted payments and need to be checked.`,
-          data: { unpaid, paid },
+          data: paid,
         });
       } else {
         res.status(200).json({
@@ -103,6 +79,11 @@ handler
     try {
       const { accepted, userId, orderId } = req.body;
       const user = await User.findById(userId);
+      const admin = await User.findOne({
+        email: req.userData.email,
+        account: req.userData.account,
+        provider: req.userData.provider,
+      });
       const index = user.orders.findIndex(
         (order: any) => order.orderId === orderId
       );
@@ -112,7 +93,12 @@ handler
         if (accepted) {
           user.orders[index].payment.isPaymentConfirmed = true;
           user.orders[index].payment.wasDeclined = false;
-          user.acceptedPayments.push({ userId, orderId });
+          admin.admin.acceptedPayments.push({ userId, orderId });
+          admin.admin.ordersMoneySumDinars +=
+            user.orders[index].product.totalPrice;
+          admin.admin.ordersMoneySumEuros +=
+            user.orders[index].totalPrice.fullOrderPrice.value;
+          await admin.save();
           let message = `
           <h1>Your order was successfull</h1>
           <small>Product: ${user.orders[index].product.name} </small>

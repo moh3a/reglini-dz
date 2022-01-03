@@ -25,7 +25,6 @@ const ProductQuantity = ({
           min="1"
           max={stock}
           step="1"
-          onKeyDown={(e) => e.preventDefault()}
           id="quantity"
           name="quantity"
           value={stock < 1 ? 0 : Math.round(quantity)}

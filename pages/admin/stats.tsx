@@ -6,6 +6,7 @@ import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 
 import AdminScreen from "./index";
+import AdminGetOrders from "../../components/admin/AdminGetOrders";
 import { IUser } from "../../utils/types";
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";
@@ -41,7 +42,11 @@ const AdminCurrencyScreen = () => {
         <meta name="description" content="Private admin page." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {user && user.role === "admin" && <AdminScreen>Coming soon.</AdminScreen>}
+      {user && user.role === "admin" && (
+        <AdminScreen>
+          <AdminGetOrders />
+        </AdminScreen>
+      )}
     </>
   );
 };

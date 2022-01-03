@@ -18,7 +18,7 @@ const AdminPayment = () => {
     const { data } = await axios.get("/api/admin/paymentValidation");
     if (data.success) {
       setSuccess(data.message);
-      setReceipts(data.data.paid);
+      setReceipts(data.data);
       setUnpaid(data.data.unpaid);
     } else {
       setError(data.message);
@@ -58,7 +58,7 @@ const AdminPayment = () => {
           {error && <p className="text-red-500">{error}</p>}
           {success && <p>{success}</p>}
         </div>
-        {receipts && <h1 className="text-2xl font-semibold">Paid users</h1>}
+        {receipts && <h1 className="text-2xl font-semibold">Paid orders</h1>}
         {receipts &&
           receipts.map((receipt: any) => (
             <div
@@ -82,16 +82,24 @@ const AdminPayment = () => {
                 </div>
               </div>
 
-              <p>
-                <span className="font-bold">Order ID</span>:{" "}
-                {receipt.order.orderId}
-              </p>
               <div>
-                <p>
-                  <span className="font-bold">Payment method</span>:{" "}
-                  {receipt.order.payment.paymentMethod}
-                </p>
-                <div className="h-40 w-40">
+                <div className="border border-gray-100 shadow-md">
+                  <p>
+                    <span className="font-bold">Order ID</span>:{" "}
+                    {receipt.order.orderId}
+                  </p>
+                  <p>
+                    <span className="font-bold">Payment method</span>:{" "}
+                    {receipt.order.payment.paymentMethod}
+                  </p>
+                  <p className="font-serif font-semibold">
+                    {receipt.order.product.name}
+                  </p>
+                  <p className="text-red-500 text-lg">
+                    {receipt.order.product.totalPrice} DZD
+                  </p>
+                </div>
+                <div className="my-4 h-40 w-40">
                   <a
                     href={receipt.order.payment.receipt}
                     target="_blank"
@@ -131,7 +139,9 @@ const AdminPayment = () => {
               </div>
             </div>
           ))}
-        {unpaid && <h1 className="text-2xl font-semibold">Unpaid users</h1>}
+        {unpaid && (
+          <h1 className="text-2xl font-semibold">Users&apos; orders</h1>
+        )}
         {unpaid &&
           unpaid.map((receipt: any) => (
             <div
@@ -155,10 +165,18 @@ const AdminPayment = () => {
                 </div>
               </div>
 
-              <p>
-                <span className="font-bold">Order ID</span>:{" "}
-                {receipt.order.orderId}
-              </p>
+              <div className="border border-gray-100 shadow-md">
+                <p>
+                  <span className="font-bold">Order ID</span>:{" "}
+                  {receipt.order.orderId}
+                </p>
+                <p className="font-serif font-semibold">
+                  {receipt.order.product.name}
+                </p>
+                <p className="text-red-500 text-lg">
+                  {receipt.order.product.totalPrice} DZD
+                </p>
+              </div>
               <div className="h-40 w-40">
                 <img
                   src={receipt.order.product.imageUrl}
@@ -167,22 +185,6 @@ const AdminPayment = () => {
               </div>
             </div>
           ))}
-        <div>
-          <h1 className="text-2xl font-semibold">Accepted Payments</h1>
-          {user.acceptedPayments && user.acceptedPayments.length > 0 ? (
-            user.acceptedPayments.map((payment: any) => (
-              <div
-                key={payment.orderId}
-                className="border border-yellow-500 p-1 rounded-lg my-2"
-              >
-                <p>User ID: {payment.userId}</p>
-                <p>Order ID: {payment.orderId}</p>
-              </div>
-            ))
-          ) : (
-            <div>No Accepted Payments.</div>
-          )}
-        </div>
       </div>
     </div>
   );
