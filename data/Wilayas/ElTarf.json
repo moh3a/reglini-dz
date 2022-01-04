@@ -8,9 +8,33 @@
       "communes": [
         {
           "name": "El Tarf",
-          "codeONS": "",
+          "codeONS": "3601",
           "postalCode": "36000",
+          "otherPosts": [
+            { "name": "El Tarf - Bahri Belkacem", "postalCode": "36008" },
+            { "name": "El Tarf Universite", "postalCode": "36053" },
+            { "name": "Sidi Belgacem", "postalCode": "36009" },
+            { "name": "Ain Khiar", "postalCode": "36016" },
+            { "name": "Matroha", "postalCode": "36038" }
+          ]
+        },
+        {
+          "name": "Ain El Assel",
+          "codeONS": "3606",
+          "postalCode": "36010",
           "otherPosts": []
+        },
+        {
+          "name": "Bougous",
+          "codeONS": "3604",
+          "postalCode": "36029",
+          "otherPosts": []
+        },
+        {
+          "name": "Zitouna",
+          "codeONS": "3620",
+          "postalCode": "36023",
+          "otherPosts": [{ "name": "Meradia", "postalCode": "36039" }]
         }
       ]
     },
@@ -18,10 +42,30 @@
       "name": "El Kala",
       "communes": [
         {
-          "name": "El Tarf",
-          "codeONS": "",
-          "postalCode": "36000",
+          "name": "El Kala",
+          "codeONS": "3605",
+          "postalCode": "36002",
+          "otherPosts": [
+            { "name": "El Kala - El Mordjane", "postalCode": "36056" }
+          ]
+        },
+        {
+          "name": "Souarekh - Oum Teboul",
+          "codeONS": "3609",
+          "postalCode": "36020",
           "otherPosts": []
+        },
+        {
+          "name": "Ramel Souk",
+          "codeONS": "3624",
+          "postalCode": "36021",
+          "otherPosts": [{ "name": "Oued el Hout", "postalCode": "36043" }]
+        },
+        {
+          "name": "El Aioun",
+          "codeONS": "3607",
+          "postalCode": "36018",
+          "otherPosts": [{ "name": "Oued Djenane", "postalCode": "36042" }]
         }
       ]
     },
@@ -29,10 +73,30 @@
       "name": "Ben Mehidi",
       "communes": [
         {
-          "name": "El Tarf",
-          "codeONS": "",
-          "postalCode": "36000",
-          "otherPosts": []
+          "name": "Ben Mehidi",
+          "codeONS": "3603",
+          "postalCode": "36003",
+          "otherPosts": [
+            { "name": "Ben Mehidi Centre", "postalCode": "36050" },
+            { "name": "Sidi Embarek", "postalCode": "36048" }
+          ]
+        },
+        {
+          "name": "Echatt",
+          "postalCode": "36007",
+          "otherPosts": [
+            { "name": "Ben Amar", "postalCode": "36025" },
+            { "name": "El Kous", "postalCode": "36034" }
+          ]
+        },
+        {
+          "name": "Berrihane",
+          "codeONS": "3610",
+          "postalCode": "36027",
+          "otherPosts": [
+            { "name": "Righia", "postalCode": "36046" },
+            { "name": "Sebaa", "postalCode": "36047" }
+          ]
         }
       ]
     },
@@ -40,10 +104,25 @@
       "name": "Besbes",
       "communes": [
         {
-          "name": "El Tarf",
-          "codeONS": "",
-          "postalCode": "36000",
+          "name": "Besbes",
+          "postalCode": "36004",
+          "otherPosts": [
+            { "name": "Besbes Nord", "postalCode": "36051" },
+            { "name": "Daghoussa", "postalCode": "36017" },
+            { "name": "Ain Touila", "postalCode": "36054" }
+          ]
+        },
+        {
+          "name": "Asfour",
+          "codeONS": "3617",
+          "postalCode": "36012",
           "otherPosts": []
+        },
+        {
+          "name": "Zerizer",
+          "codeONS": "3619",
+          "postalCode": "36015",
+          "otherPosts": [{ "name": "Chaaba el Hamra", "postalCode": "36031" }]
         }
       ]
     },
@@ -51,9 +130,25 @@
       "name": "Drean",
       "communes": [
         {
-          "name": "El Tarf",
-          "codeONS": "",
-          "postalCode": "36000",
+          "name": "Drean",
+          "codeONS": "3613",
+          "postalCode": "36001",
+          "otherPosts": [
+            { "name": "Drean - Cite 1300 Lgts", "postalCode": "36052" },
+            { "name": "Drean - 5 Juillet 1962", "postalCode": "36058" },
+            { "name": "Feddaoui Moussa", "postalCode": "36035" }
+          ]
+        },
+        {
+          "name": "Chebaita Mokhtar",
+          "codeONS": "3615",
+          "postalCode": "36013",
+          "otherPosts": [{ "name": "Zohrami Ali", "postalCode": "36049" }]
+        },
+        {
+          "name": "Chihani",
+          "codeONS": "3614",
+          "postalCode": "36014",
           "otherPosts": []
         }
       ]
@@ -62,9 +157,30 @@
       "name": "Bouhadjar",
       "communes": [
         {
-          "name": "El Tarf",
-          "codeONS": "",
-          "postalCode": "36000",
+          "name": "Bouhadjar",
+          "codeONS": "3602",
+          "postalCode": "36005",
+          "otherPosts": []
+        },
+        {
+          "name": "Ain Kerma",
+          "codeONS": "3621",
+          "postalCode": "36011",
+          "otherPosts": [
+            { "name": "Berdjilette", "postalCode": "36026" },
+            { "name": "El Fhis", "postalCode": "36033" }
+          ]
+        },
+        {
+          "name": "Oued Zitoun",
+          "codeONS": "3622",
+          "postalCode": "36044",
+          "otherPosts": []
+        },
+        {
+          "name": "Hammam Beni Salah",
+          "codeONS": "3623",
+          "postalCode": "36036",
           "otherPosts": []
         }
       ]
@@ -73,89 +189,31 @@
       "name": "Bouteldja",
       "communes": [
         {
-          "name": "El Tarf",
-          "codeONS": "",
-          "postalCode": "36000",
+          "name": "Bouteldja",
+          "codeONS": "3608",
+          "postalCode": "36006",
+          "otherPosts": []
+        },
+        {
+          "name": "Lac des Oiseaux",
+          "codeONS": "3611",
+          "postalCode": "36019",
+          "otherPosts": [{ "name": "Bouaabed", "postalCode": "36028" }]
+        },
+        {
+          "name": "Cheffia",
+          "postalCode": "36032",
           "otherPosts": []
         }
       ]
     }
   ],
   "address": [
-    {
-      "name": "El Tarf",
-      "postalCode": "36000",
-      "otherPosts": [
-        { "name": "El Tarf Bahri Belkacem", "postalCode": "36008" },
-        { "name": "El Tarf Universite", "postalCode": "36053" }
-      ]
-    },
-    {
-      "name": "Drean",
-      "postalCode": "36001",
-      "otherPosts": [
-        { "name": "Drean Cite 1300 Lgts", "postalCode": "36052" },
-        { "name": "Drean 5 Juillet 1962", "postalCode": "36058" }
-      ]
-    },
-    {
-      "name": "El Kala",
-      "postalCode": "36002",
-      "otherPosts": [{ "name": "El Kala El Mordjane", "postalCode": "36056" }]
-    },
-    {
-      "name": "Ben M'hidi",
-      "postalCode": "36003",
-      "otherPosts": [{ "name": "Ben M'hidi Centre", "postalCode": "36050" }]
-    },
-    {
-      "name": "Besbes",
-      "postalCode": "36004",
-      "otherPosts": [{ "name": "Besbes Nord", "postalCode": "36051" }]
-    },
-    { "name": "Bouhadjar", "postalCode": "36005" },
-    { "name": "Bouteldja", "postalCode": "36006" },
-    { "name": "Chott", "postalCode": "36007" },
-    { "name": "Sidi Belgacem", "postalCode": "36009" },
-    { "name": "Ain el Assel", "postalCode": "36010" },
-    { "name": "Ain Kerma", "postalCode": "36011" },
-    { "name": "Asfour", "postalCode": "36012" },
-    { "name": "Chebaita Mokhtar", "postalCode": "36013" },
-    { "name": "Chihani", "postalCode": "36014" },
-    { "name": "Zerizer", "postalCode": "36015" },
-    { "name": "Ain Khiar", "postalCode": "36016" },
-    { "name": "Darhoussa", "postalCode": "36017" },
-    { "name": "El Aioun", "postalCode": "36018" },
-    { "name": "Lac des Oiseaux", "postalCode": "36019" },
-    { "name": "Oum Theboul", "postalCode": "36020" },
-    { "name": "Roum el Souk", "postalCode": "36021" },
     { "name": "Sidi Kacem", "postalCode": "36022" },
-    { "name": "Zitouna", "postalCode": "36023" },
     { "name": "Ain Allem", "postalCode": "36024" },
-    { "name": "Ben Amar", "postalCode": "36025" },
-    { "name": "Berdjilette", "postalCode": "36026" },
-    { "name": "Berrihane", "postalCode": "36027" },
-    { "name": "Bouaabed", "postalCode": "36028" },
-    { "name": "Bougous", "postalCode": "36029" },
     { "name": "Boutella Abdallah", "postalCode": "36030" },
-    { "name": "Chaaba el Hamra", "postalCode": "36031" },
-    { "name": "Cheffia", "postalCode": "36032" },
-    { "name": "El Fhis", "postalCode": "36033" },
-    { "name": "El Kous", "postalCode": "36034" },
-    { "name": "Feddaoui Moussa", "postalCode": "36035" },
-    { "name": "Hammam Beni Salah", "postalCode": "36036" },
     { "name": "Kantara el Malha", "postalCode": "36037" },
-    { "name": "Matroha", "postalCode": "36038" },
-    { "name": "Meradia", "postalCode": "36039" },
     { "name": "Mohamed Tayeb", "postalCode": "36041" },
-    { "name": "Oued Djenane", "postalCode": "36042" },
-    { "name": "Oued el Hout", "postalCode": "36043" },
-    { "name": "Oued Zitoune", "postalCode": "36044" },
-    { "name": "Righia", "postalCode": "36046" },
-    { "name": "Sebaa", "postalCode": "36047" },
-    { "name": "Sidi Embarek", "postalCode": "36048" },
-    { "name": "Zohrami Ali", "postalCode": "36049" },
-    { "name": "Ain Touila", "postalCode": "36054" },
     { "name": "Essad", "postalCode": "36055" },
     { "name": "El Anneb", "postalCode": "36057" }
   ]

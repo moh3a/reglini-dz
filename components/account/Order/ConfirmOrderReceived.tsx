@@ -53,7 +53,8 @@ function ConfirmOrderReceived({ order }: any) {
 
   return (
     <div>
-      {order.status !== "COMPLETE" &&
+      {order.status &&
+        order.status !== "COMPLETE" &&
         order.status !== "AWAITING_PAYMENT" &&
         !order.packageReceived.wasReceived && (
           <div>

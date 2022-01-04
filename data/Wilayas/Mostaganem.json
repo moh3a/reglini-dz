@@ -8,9 +8,20 @@
       "communes": [
         {
           "name": "Mostaganem",
-          "codeONS": "",
+          "codeONS": "2701",
           "postalCode": "27000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Mostaganem - Adda Benguettat", "postalCode": "27006" },
+            { "name": "Mostaganem - 5 Juillet", "postalCode": "27019" },
+            { "name": "Mostaganem - Debdaba", "postalCode": "27025" },
+            { "name": "Mostaganem - Douar Aizeb", "postalCode": "27057" },
+            { "name": "Mostaganem - Berber Senia", "postalCode": "27058" },
+            { "name": "Mostaganem - Colonel Lotfi", "postalCode": "27059" },
+            { "name": "Mostaganem Port", "postalCode": "27060" },
+            { "name": "Mostaganem Gare Routiere", "postalCode": "27061" },
+            { "name": "Mostaganem - Maaraf Abdellah", "postalCode": "27062" },
+            { "name": "Mostaganem - Tigditt", "postalCode": "27064" }
+          ]
         }
       ]
     },
@@ -18,9 +29,26 @@
       "name": "Hassi Maameche",
       "communes": [
         {
-          "name": "Mostaganem",
-          "codeONS": "",
-          "postalCode": "27000",
+          "name": "Hassi Mameche",
+          "codeONS": "2706",
+          "postalCode": "27004",
+          "otherPosts": [
+            { "name": "Hassi Mameche - Douar Djedid", "postalCode": "27048" }
+          ]
+        },
+        {
+          "name": "Mazagran",
+          "codeONS": "2727",
+          "postalCode": "27017",
+          "otherPosts": [
+            { "name": "Mazagran - Hai Djedid", "postalCode": "27049" },
+            { "name": "Oureah", "postalCode": "27043" }
+          ]
+        },
+        {
+          "name": "Stidia",
+          "codeONS": "2704",
+          "postalCode": "27023",
           "otherPosts": []
         }
       ]
@@ -29,10 +57,30 @@
       "name": "Ain Tedles",
       "communes": [
         {
-          "name": "Mostaganem",
-          "codeONS": "",
-          "postalCode": "27000",
+          "name": "Ain Tedles",
+          "codeONS": "2707",
+          "postalCode": "27001",
+          "otherPosts": [
+            { "name": "Ain Tedeles - Benraoum Hammou", "postalCode": "27011" }
+          ]
+        },
+        {
+          "name": "Sour",
+          "codeONS": "2708",
+          "postalCode": "27022",
+          "otherPosts": [{ "name": "Ouled Hamdane", "postalCode": "27041" }]
+        },
+        {
+          "name": "Sidi Belattar",
+          "codeONS": "2710",
+          "postalCode": "27029",
           "otherPosts": []
+        },
+        {
+          "name": "Oued El Kheir",
+          "codeONS": "2709",
+          "postalCode": "27020",
+          "otherPosts": [{ "name": "Menasria", "postalCode": "27055" }]
         }
       ]
     },
@@ -40,9 +88,27 @@
       "name": "Bouguirat",
       "communes": [
         {
-          "name": "Mostaganem",
-          "codeONS": "",
-          "postalCode": "27000",
+          "name": "Bouguirat",
+          "codeONS": "2719",
+          "postalCode": "27003",
+          "otherPosts": []
+        },
+        {
+          "name": "Safsaf",
+          "codeONS": "2730",
+          "postalCode": "27044",
+          "otherPosts": []
+        },
+        {
+          "name": "Sirat",
+          "codeONS": "2720",
+          "postalCode": "27021",
+          "otherPosts": []
+        },
+        {
+          "name": "Souaflia",
+          "codeONS": "2724",
+          "postalCode": "27046",
           "otherPosts": []
         }
       ]
@@ -51,10 +117,25 @@
       "name": "Sidi Ali",
       "communes": [
         {
-          "name": "Mostaganem",
-          "codeONS": "",
-          "postalCode": "27000",
+          "name": "Sidi Ali",
+          "codeONS": "2712",
+          "postalCode": "27002",
+          "otherPosts": [
+            { "name": "Sidi Ali - Fezari Ali", "postalCode": "27063" },
+            { "name": "Ouled Hamou", "postalCode": "27042" }
+          ]
+        },
+        {
+          "name": "Ouled Maallah",
+          "codeONS": "2726",
+          "postalCode": "27028",
           "otherPosts": []
+        },
+        {
+          "name": "Tazgait",
+          "codeONS": "2729",
+          "postalCode": "27047",
+          "otherPosts": [{ "name": "Ain Tounin", "postalCode": "27032" }]
         }
       ]
     },
@@ -62,9 +143,27 @@
       "name": "Achaacha",
       "communes": [
         {
-          "name": "Mostaganem",
-          "codeONS": "",
-          "postalCode": "27000",
+          "name": "Achaacha",
+          "codeONS": "2717",
+          "postalCode": "27009",
+          "otherPosts": []
+        },
+        {
+          "name": "Khadra",
+          "codeONS": "2718",
+          "postalCode": "27005",
+          "otherPosts": []
+        },
+        {
+          "name": "Nekmaria",
+          "codeONS": "2715",
+          "postalCode": "27026",
+          "otherPosts": []
+        },
+        {
+          "name": "Ouled Boughalem",
+          "codeONS": "2725",
+          "postalCode": "27027",
           "otherPosts": []
         }
       ]
@@ -73,10 +172,22 @@
       "name": "Ain Nouissy",
       "communes": [
         {
-          "name": "Mostaganem",
-          "codeONS": "",
-          "postalCode": "27000",
+          "name": "Ain Nouissy",
+          "codeONS": "2705",
+          "postalCode": "27010",
           "otherPosts": []
+        },
+        {
+          "name": "El Hassiane",
+          "codeONS": "2732",
+          "postalCode": "27035",
+          "otherPosts": [{ "name": "Beni Yahi", "postalCode": "27033" }]
+        },
+        {
+          "name": "Fornaka",
+          "codeONS": "2703",
+          "postalCode": "27014",
+          "otherPosts": [{ "name": "Louza", "postalCode": "27037" }]
         }
       ]
     },
@@ -84,9 +195,26 @@
       "name": "Mesra",
       "communes": [
         {
-          "name": "Mostaganem",
-          "codeONS": "",
-          "postalCode": "27000",
+          "name": "Mesra",
+          "codeONS": "2722",
+          "postalCode": "27018",
+          "otherPosts": []
+        },
+        {
+          "name": "Ain Sidi Cherif",
+          "codeONS": "2721",
+          "postalCode": "27024",
+          "otherPosts": []
+        },
+        {
+          "name": "Mansourah",
+          "postalCode": "27036",
+          "otherPosts": []
+        },
+        {
+          "name": "Touahria",
+          "codeONS": "2731",
+          "postalCode": "27013",
           "otherPosts": []
         }
       ]
@@ -95,10 +223,22 @@
       "name": "Sidi Lakhdar",
       "communes": [
         {
-          "name": "Mostaganem",
-          "codeONS": "",
-          "postalCode": "27000",
+          "name": "Sidi Lakhdar",
+          "codeONS": "2711",
+          "postalCode": "27007",
+          "otherPosts": [{ "name": "Ouled Baroudi", "postalCode": "27038" }]
+        },
+        {
+          "name": "Hadjadj",
+          "codeONS": "2713",
+          "postalCode": "27015",
           "otherPosts": []
+        },
+        {
+          "name": "Abdelmalek Ramdane",
+          "codeONS": "2713",
+          "postalCode": "27008",
+          "otherPosts": [{ "name": "Rouaouna", "postalCode": "27065" }]
         }
       ]
     },
@@ -106,101 +246,37 @@
       "name": "Kheireddine",
       "communes": [
         {
-          "name": "Mostaganem",
-          "codeONS": "",
-          "postalCode": "27000",
+          "name": "Kheireddine",
+          "codeONS": "2711",
+          "postalCode": "27016",
+          "otherPosts": []
+        },
+        {
+          "name": "Ain Boudinar",
+          "codeONS": "2728",
+          "postalCode": "27031",
+          "otherPosts": []
+        },
+        {
+          "name": "Sayada",
+          "codeONS": "2702",
+          "postalCode": "27045",
           "otherPosts": []
         }
       ]
     }
   ],
   "address": [
-    {
-      "name": "Mostaganem",
-      "postalCode": "27000",
-      "otherPosts": [
-        { "name": "Mostaganem Adda Benguettat", "postalCode": "27006" },
-        { "name": "Mostaganem 5 Juillet", "postalCode": "27019" },
-        { "name": "Mostaganem Debdaba", "postalCode": "27025" },
-        { "name": "Mostaganem Douar Aizeb", "postalCode": "27057" },
-        { "name": "Mostaganem Berber Senia", "postalCode": "27058" },
-        { "name": "Mostaganem Colonel Lotfi", "postalCode": "27059" },
-        { "name": "Mostaganem Port", "postalCode": "27060" },
-        { "name": "Mostaganem Gare Routiere", "postalCode": "27061" },
-        { "name": "Mostaganem Maaraf Abdellah", "postalCode": "27062" },
-        { "name": "Mostaganem Tigditt", "postalCode": "27064" }
-      ]
-    },
-    {
-      "name": "Ain Tedeles",
-      "postalCode": "27001",
-      "otherPosts": [
-        { "name": "Ain Tedeles Benraoum Hammou", "postalCode": "27011" }
-      ]
-    },
-    {
-      "name": "Sidi Ali",
-      "postalCode": "27002",
-      "otherPosts": [{ "name": "Sidi Ali Fezari Ali", "postalCode": "27063" }]
-    },
-    { "name": "Bouguirat", "postalCode": "27003" },
-    {
-      "name": "Hassi Mameche",
-      "postalCode": "27004",
-      "otherPosts": [
-        { "name": "Hassi Mameche Douar Djedid", "postalCode": "27048" }
-      ]
-    },
-    { "name": "Khadra", "postalCode": "27005" },
-    { "name": "Sidi Lakhdar", "postalCode": "27007" },
-    { "name": "Ben Abdelmalek Ramdane", "postalCode": "27008" },
-    { "name": "Achaacha", "postalCode": "27009" },
-    { "name": "Ain Nouissy", "postalCode": "27010" },
     { "name": "Benchohra Ghali", "postalCode": "27012" },
-    { "name": "Bled Touahria", "postalCode": "27013" },
-    { "name": "Fornaka", "postalCode": "27014" },
-    { "name": "Hadjadj", "postalCode": "27015" },
-    { "name": "Kheidine", "postalCode": "27016" },
-    {
-      "name": "Mazagran",
-      "postalCode": "27017",
-      "otherPosts": [{ "name": "Mazagran Hai Djedid", "postalCode": "27049" }]
-    },
-    { "name": "Mesra", "postalCode": "27018" },
-    { "name": "Oued el Kheir", "postalCode": "27020" },
-    { "name": "Sirat", "postalCode": "27021" },
-    { "name": "Sour", "postalCode": "27022" },
-    { "name": "Stidia", "postalCode": "27023" },
-    { "name": "Ain Sidi Cherif", "postalCode": "27024" },
-    { "name": "Nekmaria", "postalCode": "27026" },
-    { "name": "Ouled Boughalem", "postalCode": "27027" },
-    { "name": "Ouled Maallah", "postalCode": "27028" },
-    { "name": "Sidi Belattar", "postalCode": "27029" },
     { "name": "Achasta Amor", "postalCode": "27030" },
-    { "name": "Ain Boudinar", "postalCode": "27031" },
-    { "name": "Ain Tounin", "postalCode": "27032" },
-    { "name": "Beni Yahi", "postalCode": "27033" },
     { "name": "Cheraifia", "postalCode": "27034" },
-    { "name": "El Hassiane", "postalCode": "27035" },
-    { "name": "Ferna Mansourah", "postalCode": "27036" },
-    { "name": "Louza", "postalCode": "27037" },
-    { "name": "Ouled Baroudi", "postalCode": "27038" },
     { "name": "Ouled Bouziane", "postalCode": "27039" },
     { "name": "Ouled Chafaa", "postalCode": "27040" },
-    { "name": "Ouled Hamdane", "postalCode": "27041" },
-    { "name": "Ouled Hamou", "postalCode": "27042" },
-    { "name": "Oureah", "postalCode": "27043" },
-    { "name": "Saf Saf", "postalCode": "27044" },
-    { "name": "Sayada", "postalCode": "27045" },
-    { "name": "Souaflias", "postalCode": "27046" },
-    { "name": "Takourt Tazgait", "postalCode": "27047" },
     { "name": "Enaro Lazreg Abdellah", "postalCode": "27050" },
     { "name": "Djafria Benjebour Charef", "postalCode": "27051" },
     { "name": "Kedadra", "postalCode": "27052" },
     { "name": "Belhadri", "postalCode": "27053" },
     { "name": "Garoucha", "postalCode": "27054" },
-    { "name": "Menasria", "postalCode": "27055" },
-    { "name": "Ouled el Bachir", "postalCode": "27056" },
-    { "name": "Rouaouna", "postalCode": "27065" }
+    { "name": "Ouled el Bachir", "postalCode": "27056" }
   ]
 }

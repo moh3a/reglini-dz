@@ -10,13 +10,8 @@ import Avatar from "../../elements/Avatar";
 import SelectLanguage from "../../elements/SelectLanguage";
 import ToggleDark from "../../elements/ToggleDark";
 
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const NavSmall = ({ open, setOpen, user, placeholder }: any) => {
   const t = useTranslations("navigation");
-  const router = useRouter();
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -138,7 +133,7 @@ const NavSmall = ({ open, setOpen, user, placeholder }: any) => {
             <div className="border-t border-gray-200 px-4 py-6 w-full flex flex-col">
               <div className="text-xl font-bold">Products</div>
               <Link href="/aliexpress" passHref>
-                <div className="my-3">
+                <div onClick={() => setOpen(false)} className="my-3">
                   <h1 className="cursor-pointer text-lg text-black dark:text-white">
                     Aliexpress
                   </h1>
@@ -148,7 +143,7 @@ const NavSmall = ({ open, setOpen, user, placeholder }: any) => {
                 </div>
               </Link>
               <Link href="/meta-ads" passHref>
-                <div className="my-2">
+                <div onClick={() => setOpen(false)} className="my-2">
                   <h1 className="cursor-pointer text-lg text-black dark:text-white">
                     Meta ads{" "}
                     <span className="text-xs cursor-wait rounded-lg border text-facebook border-blue-100 bg-blue-50 p-1">
@@ -182,28 +177,40 @@ const NavSmall = ({ open, setOpen, user, placeholder }: any) => {
             <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">
               <div className="flow-root hover:bg-gray-200 dark:hover:bg-gray-800 p-2 pl-4 max-w-xs rounded-full font-medium">
                 <Link href={t("community.href")} passHref>
-                  <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
+                  <a
+                    onClick={() => setOpen(false)}
+                    className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100"
+                  >
                     {t("community.name")}
                   </a>
                 </Link>
               </div>
               <div className="flow-root hover:bg-gray-200 dark:hover:bg-gray-800 p-2 pl-4 max-w-xs rounded-full font-medium">
                 <Link href={t("currency.href")} passHref>
-                  <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
+                  <a
+                    onClick={() => setOpen(false)}
+                    className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100"
+                  >
                     {t("currency.name")}
                   </a>
                 </Link>
               </div>
               <div className="flow-root hover:bg-gray-200 dark:hover:bg-gray-800 p-2 pl-4 max-w-xs rounded-full font-medium">
                 <Link href={t("support.href")} passHref>
-                  <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
+                  <a
+                    onClick={() => setOpen(false)}
+                    className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100"
+                  >
                     {t("support.name")}
                   </a>
                 </Link>
               </div>
               <div className="flow-root hover:bg-gray-200 dark:hover:bg-gray-800 p-2 pl-4 max-w-xs rounded-full font-medium">
                 <Link href={t("faq.href")} passHref>
-                  <a className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100">
+                  <a
+                    onClick={() => setOpen(false)}
+                    className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100"
+                  >
                     {t("faq.name")}
                   </a>
                 </Link>

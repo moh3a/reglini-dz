@@ -80,7 +80,7 @@ function Tracking({ order }: any) {
                     <p className="text-xl font-bold">
                       {order.tracking.packages[0].caption}
                     </p>
-                    <p className="my-1 border border-gray-200 bg-gray-100 py-1 px-3">
+                    <p className="my-1 border border-gray-200 bg-gray-100 dark:border-yellow-200 dark:bg-black py-1 px-3">
                       The product will be shipped from{" "}
                       {order.tracking.packages[0].shipFrom} to{" "}
                       {order.tracking.packages[0].shipTo} by{" "}

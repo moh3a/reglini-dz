@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 import { selectUser } from "../../../utils/redux/userSlice";
-import OrderDetails from "./OrderDetails";
 import AlertMessage from "../../elements/AlertMessage";
 
 export default function Orders() {
@@ -49,7 +48,6 @@ export default function Orders() {
       <div className="py-4 px-2 lg:px-4 ">
         {user && user.orders.length > 0 ? (
           user.orders.map((order: any) => (
-            // <OrderDetails order={order} key={order.orderId} />
             <div
               key={order.orderId}
               className="my-2 rounded-lg border border-black dark:border-yellow-200 bg-yellow-100 dark:bg-black"

@@ -86,13 +86,13 @@ const ProductProperty = ({ property, setShowImage, setProperties }: any) => {
                   >
                     {value.hasImage ? (
                       <div
-                        className="h-10 w-10"
+                        className="h-10 w-10 line-through"
                         onClick={() => setShowImage(value.imageUrl)}
                       >
                         <img src={value.thumbnailImageUrl} alt={value.name} />
                       </div>
                     ) : (
-                      value.name
+                      <span className="line-through">{value.name}</span>
                     )}
                   </div>
                 );
