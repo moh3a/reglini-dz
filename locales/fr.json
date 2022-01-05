@@ -153,6 +153,15 @@
     "orderId": "Identifiant de la commande",
     "orderTime": "Temps de commande",
     "orderStatus": "Statut de la commande",
+    "orderStatusAE": {
+      "awaitingPayment": "En attente de paiement",
+      "awaitingShipment": "En attente d'expédition",
+      "completed": "Complété",
+      "awaitingPaymentVerifiction": "En attente de la vérification du paiement AliExpress",
+      "awaitingCancellation": "En attente d'annulation",
+      "awaitingReceptionConfirmation": "En attente de confirmation de réception",
+      "partiallyShipped": "Partiellement expédié"
+    },
     "productId": "Identifiant du produit",
     "shippedTo": "Expédiés à",
     "addressShippedTo": "expédié à cette adresse",

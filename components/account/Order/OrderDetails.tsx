@@ -22,6 +22,7 @@ export default function OrderDetails({ id }: any) {
   const dispatch = useDispatch();
   const { user } = useSelector(selectUser);
   const [order, setOrder] = useState<any>();
+  const [orderStatus, setOrderStatus] = useState("");
 
   useEffect(() => {
     dispatch(getOrderDetails({ id }));
@@ -37,6 +38,33 @@ export default function OrderDetails({ id }: any) {
       }
     }
   }, [id, user]);
+
+  useEffect(() => {
+    if (order) {
+      if (
+        order.status === "AWAITING_PAYMENT" &&
+        !order.payment.isPaymentConfirmed
+      ) {
+        setOrderStatus(t("orderStatusAE.awaitingPayment"));
+      } else if (order.status === "AWAITING_SHIPMENT") {
+        setOrderStatus(t("orderStatusAE.awaitingShipment"));
+      } else if (order.status === "COMPLETED") {
+        setOrderStatus(t("orderStatusAE.completed"));
+      } else if (
+        (order.status === "AWAITING_PAYMENT" &&
+          order.payment.isPaymentConfirmed) ||
+        order.status === "AWAITING_PAYMENT_VERIFICATION"
+      ) {
+        setOrderStatus(t("orderStatusAE.awaitingPaymentVerifiction"));
+      } else if (order.status === "AWAITING_CANCELLATION") {
+        setOrderStatus(t("orderStatusAE.awaitingCancellation"));
+      } else if (order.status === "AWAITING_RECEPTION_CONFIRMATION") {
+        setOrderStatus(t("orderStatusAE.awaitingReceptionConfirmation"));
+      } else if (order.status === "PARTIALLY_SHIPPED") {
+        setOrderStatus(t("orderStatusAE.partiallyShipped"));
+      }
+    }
+  }, [order, t]);
 
   return (
     <div className="my-5 shadow-md border-2 text-black dark:text-yellow-100 border-yellow-200 bg-white dark:bg-grim overflow-hidden rounded-lg">
@@ -85,7 +113,10 @@ export default function OrderDetails({ id }: any) {
                     )}
                     {order.status ? (
                       <p>
-                        {t("orderStatus")}: {order.status}
+                        {t("orderStatus")}:{" "}
+                        <span className="text-lg font-semibold text-gray-500">
+                          {orderStatus}
+                        </span>
                       </p>
                     ) : (
                       ""

@@ -2,9 +2,6 @@ import { useMemo } from "react";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-const throttle = require("lodash/throttle");
-
-import { loadState, saveState } from "../localState";
 
 // REDUCERS
 import aeapiSlice from "./aeapiSlice";
@@ -15,7 +12,6 @@ let store: any;
 
 // INITIAL STATE
 const initialState = {};
-const persistedState = loadState();
 
 // ROOT REDUCER
 const reducer = combineReducers({
@@ -60,11 +56,6 @@ export const initializeStore = (preloadedState: any) => {
 
 export function useStore(initialState: any) {
   const store = useMemo(() => initializeStore(initialState), [initialState]);
-  // store.subscribe(
-  //   throttle(() => {
-  //     saveState({ user: store.getState().user });
-  //   }, 1000)
-  // );
   return store;
 }
 

@@ -153,6 +153,15 @@
     "orderId": " معرف الطلب",
     "orderTime": "وقت الطلب",
     "orderStatus": "حالة الطلب",
+    "orderStatusAE": {
+      "awaitingPayment": "انتظار الدفع",
+      "awaitingShipment": "في انتظار الشحن",
+      "completed": "مكتمل",
+      "awaitingPaymentVerifiction": "في انتظار التحقق من دفع AliExpress",
+      "awaitingCancellation": "انتظار الإلغاء",
+      "awaitingReceptionConfirmation": "في انتظار تأكيد الاستلام",
+      "partiallyShipped": "تم الشحن جزئيًا"
+    },
     "productId": "معرف المنتج",
     "shippedTo": "تم شحنها إلي",
     "addressShippedTo": "العنوان الذي تم شحنه إلى",

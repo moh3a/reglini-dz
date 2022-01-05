@@ -153,6 +153,15 @@
     "orderId": "Order ID",
     "orderTime": "Order time",
     "orderStatus": "Order status",
+    "orderStatusAE": {
+      "awaitingPayment": "Awaiting payment",
+      "awaitingShipment": "Awaiting shipment",
+      "completed": "Completed",
+      "awaitingPaymentVerifiction": "Awaiting AliExpress payment verification",
+      "awaitingCancellation": "Awaiting cancellation",
+      "awaitingReceptionConfirmation": "Awaiting reception confirmation",
+      "partiallyShipped": "Partially shipped"
+    },
     "productId": "Product ID",
     "shippedTo": "Shipped to",
     "addressShippedTo": "Shipped to this address",
