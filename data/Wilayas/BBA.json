@@ -8,9 +8,24 @@
       "communes": [
         {
           "name": "Bordj Bou Arreridj",
-          "codeONS": "",
+          "codeONS": "3401",
           "postalCode": "34000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Bordj-Bou-Arreridj - Ben Badis", "postalCode": "34002" },
+            { "name": "Bordj-Bou-Arreridj - Mokrani", "postalCode": "34003" },
+            {
+              "name": "Bordj Bou Arreridj - 24 Fevrier",
+              "postalCode": "34012"
+            },
+            { "name": "Bordj Bou Arreridj - Es Saada", "postalCode": "34013" },
+            {
+              "name": "Bordj Bou Arreridj - Cite Mokafihine",
+              "postalCode": "34024"
+            },
+            { "name": "Bordj Bou Arreridj - 20 Aout", "postalCode": "34064" },
+            { "name": "Bordj Bou Arreridj Universite", "postalCode": "34069" },
+            { "name": "Bir Snab", "postalCode": "34041" }
+          ]
         }
       ]
     },
@@ -18,9 +33,15 @@
       "name": "Ain Taghrout",
       "communes": [
         {
-          "name": "Bordj Bou Arreridj",
-          "codeONS": "",
-          "postalCode": "34000",
+          "name": "Ain Taghrout",
+          "codeONS": "3408",
+          "postalCode": "34010",
+          "otherPosts": []
+        },
+        {
+          "name": "Tixter",
+          "codeONS": "3426",
+          "postalCode": "34022",
           "otherPosts": []
         }
       ]
@@ -29,9 +50,25 @@
       "name": "Ras El Oued",
       "communes": [
         {
-          "name": "Bordj Bou Arreridj",
-          "codeONS": "",
-          "postalCode": "34000",
+          "name": "Ain Tesra",
+          "codeONS": "3430",
+          "postalCode": "34037",
+          "otherPosts": [{ "name": "Bir Aissa", "postalCode": "34027" }]
+        },
+        {
+          "name": "Ras El Oued",
+          "codeONS": "3402",
+          "postalCode": "34001",
+          "otherPosts": [
+            { "name": "Ras el Oued - 19 Mars", "postalCode": "34065" },
+            { "name": "Bir Hamoudi", "postalCode": "34040" },
+            { "name": "R'mail", "postalCode": "34055" }
+          ]
+        },
+        {
+          "name": "Ouled Brahem",
+          "codeONS": "3417",
+          "postalCode": "34032",
           "otherPosts": []
         }
       ]
@@ -40,9 +77,33 @@
       "name": "Bordj Ghedir",
       "communes": [
         {
-          "name": "Bordj Bou Arreridj",
-          "codeONS": "",
-          "postalCode": "34000",
+          "name": "Belimour",
+          "codeONS": "3412",
+          "postalCode": "34025",
+          "otherPosts": [{ "name": "Chenia", "postalCode": "34044" }]
+        },
+        {
+          "name": "Bordj Ghedir",
+          "codeONS": "3409",
+          "postalCode": "34004",
+          "otherPosts": []
+        },
+        {
+          "name": "El Anasseur",
+          "codeONS": "3428",
+          "postalCode": "34030",
+          "otherPosts": [{ "name": "Guemour", "postalCode": "34046" }]
+        },
+        {
+          "name": "Ghilassa",
+          "codeONS": "3432",
+          "postalCode": "34031",
+          "otherPosts": []
+        },
+        {
+          "name": "Taglait",
+          "codeONS": "3421",
+          "postalCode": "34059",
           "otherPosts": []
         }
       ]
@@ -51,10 +112,26 @@
       "name": "Bir Kasdali",
       "communes": [
         {
-          "name": "Bordj Bou Arreridj",
-          "codeONS": "",
-          "postalCode": "34000",
+          "name": "Bir Kasdali",
+          "codeONS": "3431",
+          "postalCode": "34011",
           "otherPosts": []
+        },
+        {
+          "name": "Khelil",
+          "codeONS": "3420",
+          "postalCode": "34007",
+          "otherPosts": [
+            { "name": "Chefaa", "postalCode": "34028" },
+            { "name": "Ras el Ain", "postalCode": "34054" },
+            { "name": "Ouled Hamza", "postalCode": "34071" }
+          ]
+        },
+        {
+          "name": "Sidi Embarek",
+          "codeONS": "3410",
+          "postalCode": "34020",
+          "otherPosts": [{ "name": "Boulhaf", "postalCode": "34043" }]
         }
       ]
     },
@@ -62,9 +139,27 @@
       "name": "El Hamadia",
       "communes": [
         {
-          "name": "Bordj Bou Arreridj",
-          "codeONS": "",
-          "postalCode": "34000",
+          "name": "El Ach",
+          "codeONS": "3427",
+          "postalCode": "34029",
+          "otherPosts": []
+        },
+        {
+          "name": "El Hamadia",
+          "codeONS": "3411",
+          "postalCode": "34017",
+          "otherPosts": [{ "name": "Oued Lakhdar", "postalCode": "34050" }]
+        },
+        {
+          "name": "Ksour",
+          "codeONS": "3422",
+          "postalCode": "34048",
+          "otherPosts": [{ "name": "El Hamma", "postalCode": "34066" }]
+        },
+        {
+          "name": "Rabta",
+          "codeONS": "3433",
+          "postalCode": "34035",
           "otherPosts": []
         }
       ]
@@ -73,10 +168,35 @@
       "name": "Mansoura",
       "communes": [
         {
-          "name": "Bordj Bou Arreridj",
-          "codeONS": "",
-          "postalCode": "34000",
-          "otherPosts": []
+          "name": "Ben Daoud",
+          "postalCode": "34039",
+          "otherPosts": [{ "name": "Ain Noug", "postalCode": "34073" }]
+        },
+        {
+          "name": "El M'hir",
+          "codeONS": "3405",
+          "postalCode": "34019",
+          "otherPosts": [{ "name": "Selatna", "postalCode": "34057" }]
+        },
+        {
+          "name": "Haraza",
+          "codeONS": "3434",
+          "postalCode": "34047",
+          "otherPosts": [{ "name": "Tizi Ahcene", "postalCode": "34072" }]
+        },
+        {
+          "name": "Ouled Sidi Brahim",
+          "postalCode": "34052",
+          "otherPosts": [{ "name": "Tizi Kachouchene", "postalCode": "34062" }]
+        },
+        {
+          "name": "Mansoura",
+          "codeONS": "3404",
+          "postalCode": "34008",
+          "otherPosts": [
+            { "name": "Boukaba", "postalCode": "34042" },
+            { "name": "Ain Defla", "postalCode": "34074" }
+          ]
         }
       ]
     },
@@ -84,10 +204,35 @@
       "name": "Medjana",
       "communes": [
         {
-          "name": "Bordj Bou Arreridj",
-          "codeONS": "",
-          "postalCode": "34000",
-          "otherPosts": []
+          "name": "El Achir",
+          "codeONS": "3407",
+          "postalCode": "34006",
+          "otherPosts": [
+            { "name": "Zenouna", "postalCode": "34063" },
+            { "name": "Lechbour", "postalCode": "34070" }
+          ]
+        },
+        {
+          "name": "Hasnaoua",
+          "codeONS": "3419",
+          "postalCode": "34014",
+          "otherPosts": [
+            { "name": "Cherchar", "postalCode": "34014" },
+            { "name": "Ouled Mahdi", "postalCode": "34051" },
+            { "name": "Ouled Mebarek", "postalCode": "34068" }
+          ]
+        },
+        {
+          "name": "Medjana",
+          "codeONS": "3413",
+          "postalCode": "34009",
+          "otherPosts": [{ "name": "Ain Soltane", "postalCode": "34023" }]
+        },
+        {
+          "name": "Teniet En Nasr",
+          "codeONS": "3414",
+          "postalCode": "34021",
+          "otherPosts": [{ "name": "Ain Kahla", "postalCode": "34036" }]
         }
       ]
     },
@@ -95,9 +240,23 @@
       "name": "Bordj Zemoura",
       "communes": [
         {
-          "name": "Bordj Bou Arreridj",
-          "codeONS": "",
-          "postalCode": "34000",
+          "name": "Bordj Zemoura",
+          "codeONS": "3403",
+          "postalCode": "34005",
+          "otherPosts": [
+            { "name": "Bordj Zemmoura - 1er Novembre", "postalCode": "34067" }
+          ]
+        },
+        {
+          "name": "Ouled Dahmane",
+          "codeONS": "3418",
+          "postalCode": "34033",
+          "otherPosts": []
+        },
+        {
+          "name": "Tassameurt",
+          "codeONS": "3429",
+          "postalCode": "34060",
           "otherPosts": []
         }
       ]
@@ -106,101 +265,37 @@
       "name": "Djaafra",
       "communes": [
         {
-          "name": "Bordj Bou Arreridj",
-          "codeONS": "",
-          "postalCode": "34000",
+          "name": "Colla ",
+          "codeONS": "3425",
+          "postalCode": "34015",
           "otherPosts": []
+        },
+        {
+          "name": "Djaafra",
+          "codeONS": "3415",
+          "postalCode": "34016",
+          "otherPosts": []
+        },
+        {
+          "name": "El Main",
+          "codeONS": "3416",
+          "postalCode": "34018",
+          "otherPosts": [{ "name": "Sidi Idir", "postalCode": "34058" }]
+        },
+        {
+          "name": "Tefreg",
+          "codeONS": "3424",
+          "postalCode": "34061",
+          "otherPosts": [{ "name": "Ouled Zaid", "postalCode": "34053" }]
         }
       ]
     }
   ],
   "address": [
-    {
-      "name": "Bordj Bou Arreridj",
-      "postalCode": "34000",
-      "otherPosts": [
-        { "name": "Bordj-Bou-Arreridj Ben Badis", "postalCode": "34002" },
-        { "name": "Bordj-Bou-Arreridj Mokrani", "postalCode": "34003" },
-        { "name": "Bordj Bou Arreridj 24 Fevrier", "postalCode": "34012" },
-        { "name": "Bordj Bou Arreridj Es Saada", "postalCode": "34013" },
-        { "name": "Bordj Bou Arreridj Cite Mokafihine", "postalCode": "34024" },
-        { "name": "Bordj Bou Arreridj 20 Aout", "postalCode": "34064" },
-        { "name": "Bordj Bou Arreridj Universite", "postalCode": "34069" }
-      ]
-    },
-    {
-      "name": "Ras el Oued",
-      "postalCode": "34001",
-      "otherPosts": [{ "name": "Ras el Oued 19 Mars", "postalCode": "34065" }]
-    },
-    { "name": "Bordj Ghedir", "postalCode": "34004" },
-    {
-      "name": "Bordj Zemmoura",
-      "postalCode": "34005",
-      "otherPosts": [
-        { "name": "Bordj Zemmoura 1er Novembre", "postalCode": "34067" }
-      ]
-    },
-    { "name": "El Achir", "postalCode": "34006" },
-    { "name": "Khellil", "postalCode": "34007" },
-    { "name": "Mansoura", "postalCode": "34008" },
-    { "name": "Medjana", "postalCode": "34009" },
-    { "name": "Ain Taghrout", "postalCode": "34010" },
-    { "name": "Bir Kasdali", "postalCode": "34011" },
-    { "name": "Cherchar", "postalCode": "34014" },
-    { "name": "Colla", "postalCode": "34015" },
-    { "name": "Djaafra", "postalCode": "34016" },
-    { "name": "El Hammadia", "postalCode": "34017" },
-    { "name": "El Main", "postalCode": "34018" },
-    { "name": "El Mehir", "postalCode": "34019" },
-    { "name": "Sidi Embarek", "postalCode": "34020" },
-    { "name": "Teniet En Nasr", "postalCode": "34021" },
-    { "name": "Tixter", "postalCode": "34022" },
-    { "name": "Ain Soltane", "postalCode": "34023" },
-    { "name": "Bel Imour", "postalCode": "34025" },
     { "name": "Beni Laalem", "postalCode": "34026" },
-    { "name": "Bir Aissa", "postalCode": "34027" },
-    { "name": "Chefaa", "postalCode": "34028" },
-    { "name": "El Ach", "postalCode": "34029" },
-    { "name": "El Annasser", "postalCode": "34030" },
-    { "name": "Ghilassa", "postalCode": "34031" },
-    { "name": "Ouled Braham", "postalCode": "34032" },
-    { "name": "Ouled Dahmane", "postalCode": "34033" },
     { "name": "Ouled Rached", "postalCode": "34034" },
-    { "name": "Rabta", "postalCode": "34035" },
-    { "name": "Ain Kahla", "postalCode": "34036" },
-    { "name": "Ain Tassera", "postalCode": "34037" },
     { "name": "Ayada", "postalCode": "34038" },
-    { "name": "Bendaoud", "postalCode": "34039" },
-    { "name": "Bir Hamoudi", "postalCode": "34040" },
-    { "name": "Bir Snab", "postalCode": "34041" },
-    { "name": "Boukaba", "postalCode": "34042" },
-    { "name": "Boulhaf", "postalCode": "34043" },
-    { "name": "Chenia Beni Henaya Saad", "postalCode": "34044" },
     { "name": "El Hamra", "postalCode": "34045" },
-    { "name": "Guemour", "postalCode": "34046" },
-    { "name": "Haraza", "postalCode": "34047" },
-    { "name": "Ksour", "postalCode": "34048" },
-    { "name": "Oued Lakhdar", "postalCode": "34050" },
-    { "name": "Ouled Mahdi", "postalCode": "34051" },
-    { "name": "Ouled Sidi Brahim", "postalCode": "34052" },
-    { "name": "Ouled Zaid", "postalCode": "34053" },
-    { "name": "Ras el Ain", "postalCode": "34054" },
-    { "name": "R'mail", "postalCode": "34055" },
-    { "name": "Sedrata", "postalCode": "34056" },
-    { "name": "Selatna", "postalCode": "34057" },
-    { "name": "Sidi Idir", "postalCode": "34058" },
-    { "name": "Taglait", "postalCode": "34059" },
-    { "name": "Tassameurt", "postalCode": "34060" },
-    { "name": "Teffreg", "postalCode": "34061" },
-    { "name": "Tizi Kachouchene", "postalCode": "34062" },
-    { "name": "Zenouna", "postalCode": "34063" },
-    { "name": "El Hamma 8 Mai 1945", "postalCode": "34066" },
-    { "name": "Ouled Mebarek", "postalCode": "34068" },
-    { "name": "Lechbour", "postalCode": "34070" },
-    { "name": "Ouled Hamza", "postalCode": "34071" },
-    { "name": "Tizi Ahcene", "postalCode": "34072" },
-    { "name": "Ain Noug", "postalCode": "34073" },
-    { "name": "Ain Defla", "postalCode": "34074" }
+    { "name": "Sedrata", "postalCode": "34056" }
   ]
 }

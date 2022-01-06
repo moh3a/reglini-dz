@@ -1,4 +1,3 @@
 ## TODO
 
-- finish msila
-- continue with data: ouargla, bba, boumerdes, tissemsilt, eloued, khenchla, souk ahras, tipaza, mila, ain temouchent, ghardaia, relizane
+- continue with data: tissemsilt, khenchla, souk ahras, tipaza, mila, ain temouchent, ghardaia, relizane

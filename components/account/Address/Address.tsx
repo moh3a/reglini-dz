@@ -6,7 +6,6 @@ import { IWilaya } from "../../../data/Wilayas";
 import SelectDaira from "./SelectDaira";
 import SelectWilaya from "./SelectWilaya";
 import SelectCommune from "./SelectCommune";
-import { DangerDialog, SuccessDialog } from "../../elements/Dialog";
 import SelectPostalCode from "./SelectPostalCode";
 import { selectUser } from "../../../utils/redux/userSlice";
 import { editAddress } from "../../../utils/redux/userAsyncActions";
@@ -21,8 +20,6 @@ const Address = () => {
   const [commune, setCommune] = useState<any>();
   const [postalCode, setPostalCode] = useState("");
   const [addressLine, setAddressLine] = useState("");
-  const [success, setSuccess] = useState("");
-  const [error, setError] = useState("");
 
   useEffect(() => {
     if (user && user.address) {
@@ -33,7 +30,7 @@ const Address = () => {
   useEffect(() => {
     if (wilaya && !commune) {
       setPostalCode(wilaya.postalCode);
-    } else if (commune /*&& !commune.otherPosts*/) {
+    } else if (commune) {
       setPostalCode(commune.postalCode);
     }
   }, [wilaya, commune]);
@@ -63,8 +60,6 @@ const Address = () => {
 
   return (
     <>
-      {success && <SuccessDialog>{success}</SuccessDialog>}
-      {error && <DangerDialog>{error}</DangerDialog>}
       {!showForm && user && user.address ? (
         <div>
           {t("registered")} {t("address")} {user.address.text}
@@ -91,11 +86,7 @@ const Address = () => {
             <SelectWilaya setWilaya={setWilaya} />
           </div>
           {wilaya &&
-          wilaya.id !== 30 &&
-          wilaya.id !== 34 &&
-          wilaya.id !== 35 &&
           wilaya.id !== 38 &&
-          wilaya.id !== 39 &&
           wilaya.id !== 40 &&
           wilaya.id !== 41 &&
           wilaya.id !== 42 &&

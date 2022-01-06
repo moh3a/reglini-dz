@@ -7,9 +7,24 @@
       "name": "Baghlia",
       "communes": [
         {
-          "name": "Boumerdes",
-          "codeONS": "",
-          "postalCode": "35000",
+          "name": "Baghlia",
+          "codeONS": "3506",
+          "postalCode": "35013",
+          "otherPosts": [
+            { "name": "Ouled H'mida", "postalCode": "35053" },
+            { "name": "Sebaou el Khedim", "postalCode": "35055" }
+          ]
+        },
+        {
+          "name": "Sidi Daoud",
+          "codeONS": "3507",
+          "postalCode": "35019",
+          "otherPosts": []
+        },
+        {
+          "name": "Taourga",
+          "codeONS": "3525",
+          "postalCode": "35029",
           "otherPosts": []
         }
       ]
@@ -18,9 +33,38 @@
       "name": "Boudouaou",
       "communes": [
         {
-          "name": "Boumerdes",
-          "codeONS": "",
-          "postalCode": "35000",
+          "name": "Boudouaou",
+          "codeONS": "3502",
+          "postalCode": "35003",
+          "otherPosts": [
+            { "name": "Boudouaou - Benterquia", "postalCode": "35023" },
+            { "name": "Boudouaou - Faculte de Droit", "postalCode": "35064" },
+            { "name": "Boudouaou - Le Plateau", "postalCode": "35065" },
+            { "name": "Benmerzouga", "postalCode": "35034" }
+          ]
+        },
+        {
+          "name": "Boudouaou El Bahri",
+          "codeONS": "3532",
+          "postalCode": "35037",
+          "otherPosts": []
+        },
+        {
+          "name": "El Kharrouba",
+          "codeONS": "3538",
+          "postalCode": "35048",
+          "otherPosts": []
+        },
+        {
+          "name": "Bouzegza Keddara",
+          "codeONS": "3522",
+          "postalCode": "35038",
+          "otherPosts": []
+        },
+        {
+          "name": "Ouled Hedadj",
+          "codeONS": "3533",
+          "postalCode": "35052",
           "otherPosts": []
         }
       ]
@@ -29,10 +73,36 @@
       "name": "Bordj Menaiel",
       "communes": [
         {
-          "name": "Boumerdes",
-          "codeONS": "",
-          "postalCode": "35000",
-          "otherPosts": []
+          "name": "Bordj Menaiel",
+          "codeONS": "3505",
+          "postalCode": "35001",
+          "otherPosts": [
+            { "name": "Bordj Menaiel - Amirouche", "postalCode": "35002" },
+            { "name": "Tizi Nali Slimane", "postalCode": "35059" }
+          ]
+        },
+        {
+          "name": "Zemmouri",
+          "codeONS": "3511",
+          "postalCode": "35012",
+          "otherPosts": [
+            { "name": "Zemmouri - El Bahri", "postalCode": "35061" },
+            { "name": "Zemmouri - AADL", "postalCode": "35067" },
+            { "name": "Hadj Ahmed", "postalCode": "35043" },
+            { "name": "Zaatra", "postalCode": "35060" }
+          ]
+        },
+        {
+          "name": "Leghata",
+          "codeONS": "3535",
+          "postalCode": "35026",
+          "otherPosts": [{ "name": "Koudiat el Arais", "postalCode": "35025" }]
+        },
+        {
+          "name": "Djinet",
+          "codeONS": "3509",
+          "postalCode": "35024",
+          "otherPosts": [{ "name": "Haouch Beni Ouali", "postalCode": "35044" }]
         }
       ]
     },
@@ -41,8 +111,28 @@
       "communes": [
         {
           "name": "Boumerdes",
-          "codeONS": "",
+          "codeONS": "3501",
           "postalCode": "35000",
+          "otherPosts": [
+            { "name": "Boumerdes - Frantz-Fanon", "postalCode": "35007" },
+            { "name": "Boumerdes - Le Rocher", "postalCode": "35062" },
+            {
+              "name": "Boumerdes - Faculte des Sciences",
+              "postalCode": "35063"
+            },
+            { "name": "Karma", "postalCode": "35046" }
+          ]
+        },
+        {
+          "name": "Corso",
+          "codeONS": "3519",
+          "postalCode": "35014",
+          "otherPosts": []
+        },
+        {
+          "name": "Tidjelabine",
+          "codeONS": "3513",
+          "postalCode": "35021",
           "otherPosts": []
         }
       ]
@@ -51,9 +141,21 @@
       "name": "Dellys",
       "communes": [
         {
-          "name": "Boumerdes",
-          "codeONS": "",
-          "postalCode": "35000",
+          "name": "Dellys",
+          "codeONS": "3528",
+          "postalCode": "35004",
+          "otherPosts": [{ "name": "Takdempt", "postalCode": "35057" }]
+        },
+        {
+          "name": "Afir",
+          "codeONS": "3504",
+          "postalCode": "35022",
+          "otherPosts": [{ "name": "Abada", "postalCode": "35030" }]
+        },
+        {
+          "name": "Ben Choud",
+          "codeONS": "3527",
+          "postalCode": "35033",
           "otherPosts": []
         }
       ]
@@ -62,9 +164,30 @@
       "name": "Khemis El Kechna",
       "communes": [
         {
-          "name": "Boumerdes",
-          "codeONS": "",
-          "postalCode": "35000",
+          "name": "Khemis El Khechna",
+          "codeONS": "3537",
+          "postalCode": "35010",
+          "otherPosts": [
+            { "name": "Khemis el Khechna - 17 Juin", "postalCode": "35049" },
+            { "name": "Chebacheb", "postalCode": "35039" }
+          ]
+        },
+        {
+          "name": "Ouled Moussa",
+          "codeONS": "3520",
+          "postalCode": "35011",
+          "otherPosts": []
+        },
+        {
+          "name": "Larbatache",
+          "codeONS": "3521",
+          "postalCode": "35017",
+          "otherPosts": []
+        },
+        {
+          "name": "Hammadi",
+          "codeONS": "3536",
+          "postalCode": "35015",
           "otherPosts": []
         }
       ]
@@ -73,9 +196,30 @@
       "name": "Isser",
       "communes": [
         {
-          "name": "Boumerdes",
-          "codeONS": "",
+          "name": "Isser",
+          "codeONS": "3510",
+          "postalCode": "35009",
+          "otherPosts": [
+            { "name": "Isser Ville", "postalCode": "35016" },
+            { "name": "Kehf el Gharbi", "postalCode": "35047" }
+          ]
+        },
+        {
+          "name": "Si Mustapha",
+          "codeONS": "3512",
+          "postalCode": "35028",
+          "otherPosts": []
+        },
+        {
+          "name": "Timezrit",
+          "codeONS": "3518",
           "postalCode": "35000",
+          "otherPosts": []
+        },
+        {
+          "name": "Chabet el Ameur",
+          "codeONS": "3514",
+          "postalCode": "35008",
           "otherPosts": []
         }
       ]
@@ -84,9 +228,18 @@
       "name": "Naciria",
       "communes": [
         {
-          "name": "Boumerdes",
-          "codeONS": "",
-          "postalCode": "35000",
+          "name": "Naciria",
+          "codeONS": "3508",
+          "postalCode": "35018",
+          "otherPosts": [
+            { "name": "Chlef Boumraou", "postalCode": "35040" },
+            { "name": "Ouriacha", "postalCode": "35054" }
+          ]
+        },
+        {
+          "name": "Ouled Aissa",
+          "codeONS": "3526",
+          "postalCode": "35050",
           "otherPosts": []
         }
       ]
@@ -95,110 +248,41 @@
       "name": "Thenia",
       "communes": [
         {
-          "name": "Boumerdes",
-          "codeONS": "",
-          "postalCode": "35000",
+          "name": "Thenia",
+          "codeONS": "3515",
+          "postalCode": "35005",
+          "otherPosts": []
+        },
+        {
+          "name": "Souk El Had",
+          "codeONS": "3531",
+          "postalCode": "35020",
+          "otherPosts": []
+        },
+        {
+          "name": "Ammal",
+          "codeONS": "3529",
+          "postalCode": "35031",
+          "otherPosts": [{ "name": "Bouaidel", "postalCode": "35035" }]
+        },
+        {
+          "name": "Beni Amrane",
+          "codeONS": "3530",
+          "postalCode": "35006",
           "otherPosts": []
         }
       ]
     }
   ],
   "address": [
-    {
-      "name": "Boumerdes",
-      "postalCode": "35000",
-      "otherPosts": [
-        { "name": "Boumerdes Frantz-Fanon", "postalCode": "35007" },
-        { "name": "Boumerdes Le Rocher", "postalCode": "35062" },
-        { "name": "Boumerdes Faculte des Sciences", "postalCode": "35063" }
-      ]
-    },
-    {
-      "name": "Bordj Menaiel",
-      "postalCode": "35001",
-      "otherPosts": [
-        { "name": "Bordj Menaiel Amirouche", "postalCode": "35002" }
-      ]
-    },
-    {
-      "name": "Boudouaou",
-      "postalCode": "35003",
-      "otherPosts": [
-        { "name": "Boudouaou Benterquia", "postalCode": "35023" },
-        { "name": "Boudouaou El Bahri", "postalCode": "35037" },
-        { "name": "Boudouaou Faculte de Droit", "postalCode": "35064" },
-        { "name": "Boudouaou Le Plateau", "postalCode": "35065" }
-      ]
-    },
-    { "name": "Dellys", "postalCode": "35004" },
-    { "name": "Thenia", "postalCode": "35005" },
-    { "name": "Beni Amrane", "postalCode": "35006" },
-
-    { "name": "Chabet el Ameur", "postalCode": "35008" },
-    {
-      "name": "Isser",
-      "postalCode": "35009",
-      "otherPosts": [{ "name": "Isser Ville", "postalCode": "35016" }]
-    },
-    {
-      "name": "Khemis el Khechna",
-      "postalCode": "35010",
-      "otherPosts": [
-        { "name": "Khemis el Khechna 17 Juin", "postalCode": "35049" }
-      ]
-    },
-    { "name": "Ouled Moussa", "postalCode": "35011" },
-    {
-      "name": "Zemmouri",
-      "postalCode": "35012",
-      "otherPosts": [
-        { "name": "Zemmouri El Bahri", "postalCode": "35061" },
-        { "name": "Zemmouri AADL", "postalCode": "35067" }
-      ]
-    },
-    { "name": "Baghlia", "postalCode": "35013" },
-    { "name": "Corso", "postalCode": "35014" },
-    { "name": "Hammadi", "postalCode": "35015" },
-    { "name": "Larbatache", "postalCode": "35017" },
-    { "name": "Naciria", "postalCode": "35018" },
-    { "name": "Sidi Daoud", "postalCode": "35019" },
-    { "name": "Souk el Had", "postalCode": "35020" },
-    { "name": "Tidjelabine", "postalCode": "35021" },
-    { "name": "Afir", "postalCode": "35022" },
-    { "name": "Djinet", "postalCode": "35024" },
-    { "name": "Koudiat el Arais", "postalCode": "35025" },
-    { "name": "Leghata", "postalCode": "35026" },
     { "name": "Rouafa", "postalCode": "35027" },
-    { "name": "Si Mustapha", "postalCode": "35028" },
-    { "name": "Taourga", "postalCode": "35029" },
-    { "name": "Abada", "postalCode": "35030" },
-    { "name": "Ammal", "postalCode": "35031" },
     { "name": "Azrou", "postalCode": "35032" },
-    { "name": "Benchoud", "postalCode": "35033" },
-    { "name": "Benmerzouga", "postalCode": "35034" },
-    { "name": "Bouaidel", "postalCode": "35035" },
     { "name": "Boudhar", "postalCode": "35036" },
-    { "name": "Keddara", "postalCode": "35038" },
-    { "name": "Chebacheb", "postalCode": "35039" },
-    { "name": "Chlef Boumraou", "postalCode": "35040" },
     { "name": "Fourar Ain Sebaou", "postalCode": "35041" },
     { "name": "Haddada", "postalCode": "35042" },
-    { "name": "Hadj Ahmed", "postalCode": "35043" },
-    { "name": "Haouch Beni Ouali", "postalCode": "35044" },
     { "name": "Haouch el Mokhfi", "postalCode": "35045" },
-    { "name": "Karma", "postalCode": "35046" },
-    { "name": "Kehf el Gharbi", "postalCode": "35047" },
-    { "name": "Kharouba", "postalCode": "35048" },
-    { "name": "Ouled Aissa", "postalCode": "35050" },
     { "name": "Ouled Ali", "postalCode": "35051" },
-    { "name": "Ouled Hadadj", "postalCode": "35052" },
-    { "name": "Ouled H'mida", "postalCode": "35053" },
-    { "name": "Ouriacha", "postalCode": "35054" },
-    { "name": "Sebaou el Khedim", "postalCode": "35055" },
     { "name": "Sidi el Medjni", "postalCode": "35056" },
-    { "name": "Takdempt", "postalCode": "35057" },
-    { "name": "Tchouchfi Bouberak", "postalCode": "35058" },
-    { "name": "Tizi Nali Slimane", "postalCode": "35059" },
-    { "name": "Zaatra", "postalCode": "35060" }
+    { "name": "Tchouchfi Bouberak", "postalCode": "35058" }
   ]
 }
