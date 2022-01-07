@@ -7,10 +7,16 @@
       "name": "Ain Tarek",
       "communes": [
         {
-          "name": "Relizane",
-          "codeONS": "",
-          "postalCode": "48000",
-          "otherPosts": []
+          "name": "Ain Tarek",
+          "codeONS": "48191",
+          "postalCode": "48015",
+          "otherPosts": [{ "name": "Marioua", "postalCode": "48055" }]
+        },
+        {
+          "name": "Had Echkalla",
+          "codeONS": "4834",
+          "postalCode": "48050",
+          "otherPosts": [{ "name": "Boughiden", "postalCode": "48043" }]
         }
       ]
     },
@@ -18,10 +24,24 @@
       "name": "Ammi Moussa",
       "communes": [
         {
-          "name": "Relizane",
-          "codeONS": "",
-          "postalCode": "48000",
-          "otherPosts": []
+          "name": "Ammi Moussa",
+          "codeONS": "4811",
+          "postalCode": "48004"
+        },
+        {
+          "name": "El Hassi ",
+          "codeONS": "4833",
+          "postalCode": "48046"
+        },
+        {
+          "name": "El Ouldja",
+          "codeONS": "4836",
+          "postalCode": "48048"
+        },
+        {
+          "name": "Ouled Aiche",
+          "codeONS": "4805",
+          "postalCode": "48000"
         }
       ]
     },
@@ -29,10 +49,22 @@
       "name": "Djidioua",
       "communes": [
         {
-          "name": "Relizane",
-          "codeONS": "",
-          "postalCode": "48000",
-          "otherPosts": []
+          "name": "Djidiouia",
+          "codeONS": "4814",
+          "postalCode": "48005",
+          "otherPosts": [
+            { "name": "Djidiouia - Soukhal Abdelkader", "postalCode": "48080" }
+          ]
+        },
+        {
+          "name": "Hamri",
+          "codeONS": "4816",
+          "postalCode": "48051"
+        },
+        {
+          "name": "Ouled Sidi Mihoub",
+          "codeONS": "4838",
+          "postalCode": "48061"
         }
       ]
     },
@@ -40,10 +72,17 @@
       "name": "El Hamadna",
       "communes": [
         {
-          "name": "Relizane",
-          "codeONS": "",
-          "postalCode": "48000",
-          "otherPosts": []
+          "name": "El Hamadna",
+          "codeONS": "4807",
+          "postalCode": "48017",
+          "otherPosts": [
+            { "name": "El Hamadna - Bourokba", "postalCode": "48047" }
+          ]
+        },
+        {
+          "name": "Oued El Djemaa",
+          "codeONS": "4826",
+          "postalCode": "48021"
         }
       ]
     },
@@ -51,10 +90,24 @@
       "name": "El Matmar",
       "communes": [
         {
-          "name": "Relizane",
-          "codeONS": "",
-          "postalCode": "48000",
-          "otherPosts": []
+          "name": "El Matmar",
+          "codeONS": "4817",
+          "postalCode": "48009"
+        },
+        {
+          "name": "Belassel Bouzegza",
+          "codeONS": "4803",
+          "postalCode": "48036"
+        },
+        {
+          "name": "Sidi Khettab",
+          "codeONS": "4810",
+          "postalCode": "48029"
+        },
+        {
+          "name": "Sidi M'Hamed Benaouda",
+          "codeONS": "4818",
+          "postalCode": "48030"
         }
       ]
     },
@@ -62,10 +115,19 @@
       "name": "Mazouna",
       "communes": [
         {
-          "name": "Relizane",
-          "codeONS": "",
-          "postalCode": "48000",
-          "otherPosts": []
+          "name": "Mazouna",
+          "codeONS": "4822",
+          "postalCode": "48002",
+          "otherPosts": [
+            { "name": "Mazouna - El Maaziz", "postalCode": "48010" },
+            { "name": "Sidi Adda", "postalCode": "48028" },
+            { "name": "Tamda", "postalCode": "48070" }
+          ]
+        },
+        {
+          "name": "El Guettar",
+          "codeONS": "4816",
+          "postalCode": "48016"
         }
       ]
     },
@@ -73,10 +135,19 @@
       "name": "Mendes",
       "communes": [
         {
-          "name": "Relizane",
-          "codeONS": "",
-          "postalCode": "48000",
-          "otherPosts": []
+          "name": "Mendes",
+          "codeONS": "4828",
+          "postalCode": "48012"
+        },
+        {
+          "name": "Oued Essalem",
+          "codeONS": "4820",
+          "postalCode": "48022"
+        },
+        {
+          "name": "Sidi Lazreg",
+          "codeONS": "4806",
+          "postalCode": "48065"
         }
       ]
     },
@@ -84,10 +155,31 @@
       "name": "Oued Rhiou",
       "communes": [
         {
-          "name": "Relizane",
-          "codeONS": "",
-          "postalCode": "48000",
-          "otherPosts": []
+          "name": "Oued Rhiou",
+          "codeONS": "4802",
+          "postalCode": "48001",
+          "otherPosts": [
+            { "name": "Oued Rhiou - Boudalia", "postalCode": "48014" },
+            { "name": "Oued Rhiou - SNMG", "postalCode": "48057" },
+            { "name": "Kharmacha", "postalCode": "48054" },
+            { "name": "Zenainia", "postalCode": "48073" }
+          ]
+        },
+        {
+          "name": "Merdja Sidi Abed",
+          "codeONS": "4837",
+          "postalCode": "48056"
+        },
+        {
+          "name": "Ouarizane",
+          "codeONS": "4821",
+          "postalCode": "48013",
+          "otherPosts": [{ "name": "Ahl Abed", "postalCode": "48031" }]
+        },
+        {
+          "name": "Lahlef",
+          "codeONS": "4829",
+          "postalCode": "48020"
         }
       ]
     },
@@ -95,10 +187,15 @@
       "name": "Ramka",
       "communes": [
         {
-          "name": "Relizane",
-          "codeONS": "",
-          "postalCode": "48000",
-          "otherPosts": []
+          "name": "Ramka",
+          "codeONS": "4827",
+          "postalCode": "48024"
+        },
+        {
+          "name": "Souk El Had",
+          "codeONS": "4831",
+          "postalCode": "48068",
+          "otherPosts": [{ "name": "Ouled Bouali", "postalCode": "48058" }]
         }
       ]
     },
@@ -107,9 +204,24 @@
       "communes": [
         {
           "name": "Relizane",
-          "codeONS": "",
+          "codeONS": "4801",
           "postalCode": "48000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Relizane - Lahmar", "postalCode": "48007" },
+            { "name": "Relizane - Aissat Idir", "postalCode": "48025" },
+            { "name": "Relizane - Benaouda Bessaadi", "postalCode": "48026" },
+            { "name": "Relizane - Berrezga", "postalCode": "48027" },
+            { "name": "Relizane - 11 Decembre 1960", "postalCode": "48075" },
+            { "name": "Relizane - Boubekeur", "postalCode": "48076" },
+            { "name": "Relizane Universite", "postalCode": "48077" },
+            { "name": "Relizane Gare Routiere", "postalCode": "48078" },
+            { "name": "Relizane - Ben Ali Tenfir Badra", "postalCode": "48079" }
+          ]
+        },
+        {
+          "name": "Bendaoud",
+          "codeONS": "4835",
+          "postalCode": "48037"
         }
       ]
     },
@@ -117,10 +229,24 @@
       "name": "Sidi M'Hamed Ben Ali",
       "communes": [
         {
-          "name": "Relizane",
-          "codeONS": "",
-          "postalCode": "48000",
-          "otherPosts": []
+          "name": "Sidi M'Hamed Ben Ali",
+          "codeONS": "4808",
+          "postalCode": "48003",
+          "otherPosts": [{ "name": "Ain Matboul", "postalCode": "48032" }]
+        },
+        {
+          "name": "Beni Zentis",
+          "codeONS": "4830",
+          "postalCode": "48041"
+        },
+        {
+          "name": "Mediouna",
+          "codeONS": "4809",
+          "postalCode": "48011",
+          "otherPosts": [
+            { "name": "Sidi Bouabdellah", "postalCode": "48064" },
+            { "name": "Sidi Miliani", "postalCode": "48066" }
+          ]
         }
       ]
     },
@@ -128,10 +254,25 @@
       "name": "Yellel",
       "communes": [
         {
-          "name": "Relizane",
-          "codeONS": "",
-          "postalCode": "48000",
-          "otherPosts": []
+          "name": "Yellel",
+          "postalCode": "48000"
+        },
+        {
+          "name": "Ain Rahma",
+          "codeONS": "4824",
+          "postalCode": "48033",
+          "otherPosts": [{ "name": "Tliouanet", "postalCode": "48072" }]
+        },
+        {
+          "name": "Kalaa",
+          "codeONS": "4823",
+          "postalCode": "48018",
+          "otherPosts": [{ "name": "Semmar", "postalCode": "48063" }]
+        },
+        {
+          "name": "Sidi Saada",
+          "codeONS": "4804",
+          "postalCode": "48067"
         }
       ]
     },
@@ -139,115 +280,41 @@
       "name": "Zemmora",
       "communes": [
         {
-          "name": "Relizane",
-          "codeONS": "",
-          "postalCode": "48000",
-          "otherPosts": []
+          "name": "Zemmora",
+          "codeONS": "4812",
+          "postalCode": "48008",
+          "otherPosts": [{ "name": "Benaada Zagheloul", "postalCode": "48074" }]
+        },
+        {
+          "name": "Beni Dergoun",
+          "codeONS": "4813",
+          "postalCode": "48039"
+        },
+        {
+          "name": "Dar Ben Abdellah",
+          "codeONS": "4832",
+          "postalCode": "48044"
         }
       ]
     }
   ],
+
   "address": [
-    {
-      "name": "Relizane",
-      "postalCode": "48000",
-      "otherPosts": [
-        { "name": "Relizane Lahmar", "postalCode": "48007" },
-        { "name": "Relizane Aissat Idir", "postalCode": "48025" },
-        { "name": "Relizane Benaouda Bessaadi", "postalCode": "48026" },
-        { "name": "Relizane Berrezga", "postalCode": "48027" },
-        { "name": "Relizane 11 Decembre 1960", "postalCode": "48075" },
-        { "name": "Relizane Boubekeur", "postalCode": "48076" },
-        { "name": "Relizane Universite", "postalCode": "48077" },
-        { "name": "Relizane Gare Routiere", "postalCode": "48078" },
-        { "name": "Relizane Ben Ali Tenfir Badra", "postalCode": "48079" }
-      ]
-    },
-    {
-      "name": "Oued Rhiou",
-      "postalCode": "48001",
-      "otherPosts": [
-        { "name": "Oued Rhiou Boudalia", "postalCode": "48014" },
-        { "name": "Oued Rhiou SNMG", "postalCode": "48057" }
-      ]
-    },
-    {
-      "name": "Mazouna",
-      "postalCode": "48002",
-      "otherPosts": [{ "name": "Mazouna El Maaziz", "postalCode": "48010" }]
-    },
-    { "name": "Sidi M'hamed Ben Ali", "postalCode": "48003" },
-    { "name": "Ammi Moussa", "postalCode": "48004" },
-    {
-      "name": "Jdiouia",
-      "postalCode": "48005",
-      "otherPosts": [
-        { "name": "Jdiouia Soukhal Abdelkader", "postalCode": "48080" }
-      ]
-    },
     { "name": "L'hillil", "postalCode": "48006" },
-    { "name": "Zemmoura", "postalCode": "48008" },
-    { "name": "El Matmar", "postalCode": "48009" },
-    { "name": "Mediouna", "postalCode": "48011" },
-    { "name": "Mendes", "postalCode": "48012" },
-    { "name": "Ouarizane", "postalCode": "48013" },
-    { "name": "Ain Tarik", "postalCode": "48015" },
-    { "name": "El Guettar", "postalCode": "48016" },
-    {
-      "name": "El H'madna",
-      "postalCode": "48017",
-      "otherPosts": [{ "name": "El H'madna Bourokba", "postalCode": "48047" }]
-    },
-    { "name": "Kalaa", "postalCode": "48018" },
     { "name": "Khechan Ben Aissa", "postalCode": "48019" },
-    { "name": "Lahlef", "postalCode": "48020" },
-    { "name": "Oued el Djemaa", "postalCode": "48021" },
-    { "name": "Oued Es Salem", "postalCode": "48022" },
     { "name": "Ouled Meziane", "postalCode": "48023" },
-    { "name": "Ramka", "postalCode": "48024" },
-    { "name": "Sidi Adda", "postalCode": "48028" },
-    { "name": "Sidi Khettab", "postalCode": "48029" },
-    { "name": "Sidi M'hamed Ben Aouda", "postalCode": "48030" },
-    { "name": "Ahl Abed", "postalCode": "48031" },
-    { "name": "Ain Matboul", "postalCode": "48032" },
-    { "name": "Ain Rahma", "postalCode": "48033" },
     { "name": "Akerma", "postalCode": "48034" },
     { "name": "Ammamra", "postalCode": "48035" },
-    { "name": "Belhacel Bouzegza", "postalCode": "48036" },
-    { "name": "Bendaoud", "postalCode": "48037" },
     { "name": "Beni Cheikh", "postalCode": "48038" },
-    { "name": "Beni Dergoun", "postalCode": "48039" },
     { "name": "Beni Yassaad", "postalCode": "48040" },
-    { "name": "Beni Zenthis", "postalCode": "48041" },
     { "name": "Benziane", "postalCode": "48042" },
-    { "name": "Boughiden", "postalCode": "48043" },
-    { "name": "Dar Ben Abdellah", "postalCode": "48044" },
     { "name": "El Aouedj", "postalCode": "48045" },
-    { "name": "El Hassi", "postalCode": "48046" },
-    { "name": "El Ouldja", "postalCode": "48048" },
     { "name": "Grainia", "postalCode": "48049" },
-    { "name": "Had Chekalla", "postalCode": "48050" },
-    { "name": "Hamri", "postalCode": "48051" },
     { "name": "Kenenda", "postalCode": "48052" },
     { "name": "Khachab Zaghloul", "postalCode": "48053" },
-    { "name": "Kharmacha", "postalCode": "48054" },
-    { "name": "Marioua", "postalCode": "48055" },
-    { "name": "Merdja Sidi Abed", "postalCode": "48056" },
-    { "name": "Ouled Bouali", "postalCode": "48058" },
     { "name": "Ouled Bouriah", "postalCode": "48059" },
     { "name": "Ouled Gana", "postalCode": "48060" },
-    { "name": "Ouled Sidi Mihoub", "postalCode": "48061" },
     { "name": "Ouled Souid", "postalCode": "48062" },
-    { "name": "Semmar", "postalCode": "48063" },
-    { "name": "Sidi Bouabdellah", "postalCode": "48064" },
-    { "name": "Sidi Lazreg", "postalCode": "48065" },
-    { "name": "Sidi Miliani", "postalCode": "48066" },
-    { "name": "Sidi Saada", "postalCode": "48067" },
-    { "name": "Souk el Had", "postalCode": "48068" },
-    { "name": "Tamda", "postalCode": "48070" },
-    { "name": "Tamdjet", "postalCode": "48071" },
-    { "name": "Tliouanet", "postalCode": "48072" },
-    { "name": "Zenainia", "postalCode": "48073" },
-    { "name": "Benaada Zagheloul", "postalCode": "48074" }
+    { "name": "Tamdjet", "postalCode": "48071" }
   ]
 }

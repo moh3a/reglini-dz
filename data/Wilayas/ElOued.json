@@ -94,8 +94,7 @@
         {
           "name": "Ourmas",
           "codeONS": "3920",
-          "postalCode": "39035",
-          "otherPosts": []
+          "postalCode": "39035"
         },
         {
           "name": "Taghzout",
@@ -231,14 +230,12 @@
         {
           "name": "Douar El Ma",
           "codeONS": "3915",
-          "postalCode": "39024",
-          "otherPosts": []
+          "postalCode": "39024"
         },
         {
           "name": "Taleb Larbi",
           "codeONS": "3914",
-          "postalCode": "39019",
-          "otherPosts": []
+          "postalCode": "39019"
         }
       ]
     },
@@ -259,8 +256,7 @@
         {
           "name": "M'Rara",
           "codeONS": "3922",
-          "postalCode": "39067",
-          "otherPosts": []
+          "postalCode": "39067"
         },
         {
           "name": "Sidi Amrane",
@@ -311,8 +307,7 @@
         {
           "name": "Still",
           "codeONS": "3921",
-          "postalCode": "39039",
-          "otherPosts": []
+          "postalCode": "39039"
         }
       ]
     }

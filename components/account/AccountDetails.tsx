@@ -3,9 +3,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { useTranslations } from "next-intl";
+import { useSelector, useDispatch } from "react-redux";
+import { BanIcon } from "@heroicons/react/outline";
 
-import { useSelector } from "react-redux";
 import { selectUser } from "../../utils/redux/userSlice";
+import { editUsername } from "../../utils/redux/userAsyncActions";
 import { DangerDialog, SuccessDialog } from "../elements/Dialog";
 import ProfilePicture from "./ProfilePicture";
 import Address from "./Address/Address";
@@ -14,6 +16,7 @@ import RealName from "./RealName";
 
 export default function AccountDetails() {
   const router = useRouter();
+  const dispatch = useDispatch();
   const { user } = useSelector(selectUser);
   const t = useTranslations("Profile");
   const [success, setSuccess] = useState("");
@@ -21,6 +24,11 @@ export default function AccountDetails() {
   const [editRealName, setEditRealName] = useState(false);
   const [editAddress, setEditAddress] = useState(false);
   const [editPhoneNumber, setEditPhoneNumber] = useState(false);
+
+  const [editUsernameForm, setEditUsernameForm] = useState(false);
+  const [validUsername, setValidUsername] = useState(false);
+  const [username, setUsername] = useState("");
+  const [usernameMessage, setUsernameMessage] = useState("");
 
   const emailResendHandler = async (e: any) => {
     e.preventDefault();
@@ -35,6 +43,19 @@ export default function AccountDetails() {
       setTimeout(() => {
         setError("");
       }, 5000);
+    }
+  };
+
+  const checkName = async () => {
+    const { data } = await axios.post("/api/auth/check/name", {
+      name: username,
+    });
+    if (data.success) {
+      setValidUsername(true);
+      setUsernameMessage("");
+    } else {
+      setValidUsername(false);
+      setUsernameMessage(data.message);
     }
   };
 
@@ -66,7 +87,59 @@ export default function AccountDetails() {
           </div>
           <div className="border-t border-white dark:border-black  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium ">{t("username")}</dt>
-            <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">{user.name}</dd>
+            <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">
+              <p>{user.name}</p>
+              <div
+                className="cursor-pointer text-orange-700"
+                onClick={() => setEditUsernameForm(true)}
+              >
+                {t("edit")}
+              </div>
+              {editUsernameForm && (
+                <div>
+                  <div className="relative w-full">
+                    <input
+                      type="text"
+                      className="rounded-full py-1 px-3 my-1 w-full border-yellow-200 text-black dark:text-yellow-100 dark:bg-black focus:border-yellow-200 focus:ring-yellow-200"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                      onBlur={() => checkName()}
+                    />
+                  </div>
+                  {usernameMessage && (
+                    <div className="text-red-500">
+                      <span>
+                        <BanIcon
+                          className="h-5 w-5 inline"
+                          aria-hidden="true"
+                        />{" "}
+                        <span className="relative top-1">
+                          {usernameMessage}
+                        </span>
+                      </span>
+                    </div>
+                  )}
+
+                  <button
+                    onClick={() => setEditUsernameForm(false)}
+                    className="m-1 py-1 px-3 rounded-lg bg-red-400  text-white  hover:bg-red-500 "
+                  >
+                    {t("cancel")}
+                  </button>
+                  <button
+                    onClick={() => {
+                      if (validUsername) {
+                        dispatch(editUsername({ username }));
+                        setEditUsernameForm(false);
+                      }
+                    }}
+                    className="m-1 py-1 px-3 rounded-lg bg-green-400 text-white  hover:bg-green-500"
+                  >
+                    {t("save")}
+                  </button>
+                </div>
+              )}
+            </dd>
           </div>
           <div className="border-t border-white dark:border-black px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium ">{t("email")}</dt>

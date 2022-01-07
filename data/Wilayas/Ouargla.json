@@ -9,8 +9,7 @@
         {
           "name": "El Borma",
           "codeONS": "3021",
-          "postalCode": "30025",
-          "otherPosts": []
+          "postalCode": "30025"
         }
       ]
     },
@@ -117,8 +116,7 @@
         {
           "name": "Rouissat",
           "codeONS": "30051",
-          "postalCode": "30013",
-          "otherPosts": []
+          "postalCode": "30013"
         }
       ]
     },
@@ -134,8 +132,7 @@
         {
           "name": "Hassi Ben Abdellah",
           "codeONS": "3012",
-          "postalCode": "30052",
-          "otherPosts": []
+          "postalCode": "30052"
         },
         {
           "name": "Sidi Khouiled",
@@ -151,8 +148,7 @@
         {
           "name": "Benaceur",
           "codeONS": "3017",
-          "postalCode": "30020",
-          "otherPosts": []
+          "postalCode": "30020"
         },
         {
           "name": "M'Naguer",
@@ -163,8 +159,7 @@
         {
           "name": "Taibet",
           "codeONS": "3015",
-          "postalCode": "30015",
-          "otherPosts": []
+          "postalCode": "30015"
         }
       ]
     },

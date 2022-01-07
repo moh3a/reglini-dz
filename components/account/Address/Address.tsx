@@ -85,22 +85,10 @@ const Address = () => {
             <label>Wilaya</label>
             <SelectWilaya setWilaya={setWilaya} />
           </div>
-          {wilaya &&
-          wilaya.id !== 38 &&
-          wilaya.id !== 40 &&
-          wilaya.id !== 41 &&
-          wilaya.id !== 42 &&
-          wilaya.id !== 43 &&
-          wilaya.id !== 46 &&
-          wilaya.id !== 47 &&
-          wilaya.id !== 48 ? (
+          {wilaya && (
             <div className=" w-full">
               <label>Daira</label>
               <SelectDaira wilaya={wilaya} setDaira={setDaira} />
-            </div>
-          ) : (
-            <div className=" w-full text-red-500 font-semibold">
-              {t("willBeAvailableSoon")}
             </div>
           )}
           {daira && (

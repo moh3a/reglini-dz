@@ -51,8 +51,7 @@
         {
           "name": "Ain El Turk",
           "codeONS": "3109",
-          "postalCode": "31014",
-          "otherPosts": []
+          "postalCode": "31014"
         },
         {
           "name": "Bousfer",
@@ -67,8 +66,7 @@
         {
           "name": "El Ansor",
           "codeONS": "3110",
-          "postalCode": "31043",
-          "otherPosts": []
+          "postalCode": "31043"
         },
         {
           "name": "Mers el-Kebir",
@@ -97,8 +95,7 @@
         {
           "name": "Sidi Benyebka",
           "codeONS": "3122",
-          "postalCode": "31058",
-          "otherPosts": []
+          "postalCode": "31058"
         }
       ]
     },
@@ -148,8 +145,7 @@
         {
           "name": "El Kerma",
           "codeONS": "3117",
-          "postalCode": "31026",
-          "otherPosts": []
+          "postalCode": "31026"
         },
         {
           "name": "Es Senia",
@@ -198,8 +194,7 @@
         {
           "name": "Hassi Ben Okba",
           "codeONS": "3119",
-          "postalCode": "31049",
-          "otherPosts": []
+          "postalCode": "31049"
         },
         {
           "name": "Hassi Bounif",
@@ -250,14 +245,12 @@
         {
           "name": "Boufatis",
           "codeONS": "3114",
-          "postalCode": "31024",
-          "otherPosts": []
+          "postalCode": "31024"
         },
         {
           "name": "El Braya",
           "codeONS": "3118",
-          "postalCode": "31070",
-          "otherPosts": []
+          "postalCode": "31070"
         },
         {
           "name": "Oued Tlelat",
@@ -306,8 +299,7 @@
         {
           "name": "Hassi Mefsoukh",
           "codeONS": "3121",
-          "postalCode": "31050",
-          "otherPosts": []
+          "postalCode": "31050"
         }
       ]
     }

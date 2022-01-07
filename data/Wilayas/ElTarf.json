@@ -21,14 +21,12 @@
         {
           "name": "Ain El Assel",
           "codeONS": "3606",
-          "postalCode": "36010",
-          "otherPosts": []
+          "postalCode": "36010"
         },
         {
           "name": "Bougous",
           "codeONS": "3604",
-          "postalCode": "36029",
-          "otherPosts": []
+          "postalCode": "36029"
         },
         {
           "name": "Zitouna",
@@ -52,8 +50,7 @@
         {
           "name": "Souarekh - Oum Teboul",
           "codeONS": "3609",
-          "postalCode": "36020",
-          "otherPosts": []
+          "postalCode": "36020"
         },
         {
           "name": "Ramel Souk",
@@ -115,8 +112,7 @@
         {
           "name": "Asfour",
           "codeONS": "3617",
-          "postalCode": "36012",
-          "otherPosts": []
+          "postalCode": "36012"
         },
         {
           "name": "Zerizer",
@@ -148,8 +144,7 @@
         {
           "name": "Chihani",
           "codeONS": "3614",
-          "postalCode": "36014",
-          "otherPosts": []
+          "postalCode": "36014"
         }
       ]
     },
@@ -159,8 +154,7 @@
         {
           "name": "Bouhadjar",
           "codeONS": "3602",
-          "postalCode": "36005",
-          "otherPosts": []
+          "postalCode": "36005"
         },
         {
           "name": "Ain Kerma",
@@ -174,14 +168,12 @@
         {
           "name": "Oued Zitoun",
           "codeONS": "3622",
-          "postalCode": "36044",
-          "otherPosts": []
+          "postalCode": "36044"
         },
         {
           "name": "Hammam Beni Salah",
           "codeONS": "3623",
-          "postalCode": "36036",
-          "otherPosts": []
+          "postalCode": "36036"
         }
       ]
     },
@@ -191,8 +183,7 @@
         {
           "name": "Bouteldja",
           "codeONS": "3608",
-          "postalCode": "36006",
-          "otherPosts": []
+          "postalCode": "36006"
         },
         {
           "name": "Lac des Oiseaux",
@@ -202,8 +193,7 @@
         },
         {
           "name": "Cheffia",
-          "postalCode": "36032",
-          "otherPosts": []
+          "postalCode": "36032"
         }
       ]
     }

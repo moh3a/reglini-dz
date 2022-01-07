@@ -9,8 +9,7 @@
         {
           "name": "Ain Tallout",
           "codeONS": "1303",
-          "postalCode": "13012",
-          "otherPosts": []
+          "postalCode": "13012"
         },
         {
           "name": "Ain Nehala",
@@ -35,14 +34,12 @@
         {
           "name": "Souani",
           "codeONS": "1308",
-          "postalCode": "13046",
-          "otherPosts": []
+          "postalCode": "13046"
         },
         {
           "name": "Souk Tlata",
           "codeONS": "1333",
-          "postalCode": "13078",
-          "otherPosts": []
+          "postalCode": "13078"
         }
       ]
     },
@@ -52,8 +49,7 @@
         {
           "name": "Zouia - Beni Boussaid",
           "codeONS": "1338",
-          "postalCode": "13049",
-          "otherPosts": []
+          "postalCode": "13049"
         },
         {
           "name": "Sidi Medjahed",
@@ -83,8 +79,7 @@
         {
           "name": "Beni Bahdel",
           "codeONS": "1342",
-          "postalCode": "13060",
-          "otherPosts": []
+          "postalCode": "13060"
         }
       ]
     },
@@ -94,8 +89,7 @@
         {
           "name": "Bensekrane",
           "codeONS": "1324",
-          "postalCode": "13008",
-          "otherPosts": []
+          "postalCode": "13008"
         },
         {
           "name": "Sidi Abdelli",
@@ -137,20 +131,17 @@
         {
           "name": "Fellaoucene",
           "codeONS": "1320",
-          "postalCode": "13035",
-          "otherPosts": []
+          "postalCode": "13035"
         },
         {
           "name": "Ain Kebira",
           "codeONS": "1353",
-          "postalCode": "13053",
-          "otherPosts": []
+          "postalCode": "13053"
         },
         {
           "name": "Boutrak - Ain Fetah",
           "codeONS": "1331",
-          "postalCode": "13028",
-          "otherPosts": []
+          "postalCode": "13028"
         }
       ]
     },
@@ -183,8 +174,7 @@
         {
           "name": "Tienet",
           "codeONS": "1345",
-          "postalCode": "13047",
-          "otherPosts": []
+          "postalCode": "13047"
         }
       ]
     },
@@ -200,8 +190,7 @@
         {
           "name": "Ouled Riyah",
           "codeONS": "1346",
-          "postalCode": "13070",
-          "otherPosts": []
+          "postalCode": "13070"
         },
         {
           "name": "Zenata",
@@ -226,8 +215,7 @@
         {
           "name": "Honaine",
           "codeONS": "1344",
-          "postalCode": "13015",
-          "otherPosts": []
+          "postalCode": "13015"
         }
       ]
     },
@@ -264,8 +252,7 @@
         {
           "name": "Ain Ghoraba",
           "codeONS": "1349",
-          "postalCode": "13023",
-          "otherPosts": []
+          "postalCode": "13023"
         },
         {
           "name": "Mansourah",
@@ -280,8 +267,7 @@
         {
           "name": "Terny Beni Hdiel",
           "codeONS": "1323",
-          "postalCode": "13079",
-          "otherPosts": []
+          "postalCode": "13079"
         }
       ]
     },
@@ -291,8 +277,7 @@
         {
           "name": "Marsa Ben M'Hidi",
           "codeONS": "1339",
-          "postalCode": "13017",
-          "otherPosts": []
+          "postalCode": "13017"
         },
         {
           "name": "Arbouz - MSirda Fouaga",
@@ -331,8 +316,7 @@
         {
           "name": "Oued Lakhdar",
           "codeONS": "1311",
-          "postalCode": "13068",
-          "otherPosts": []
+          "postalCode": "13068"
         },
         {
           "name": "Ouled Mimoun",
@@ -350,8 +334,7 @@
         {
           "name": "Ain Youcef",
           "codeONS": "1315",
-          "postalCode": "13013",
-          "otherPosts": []
+          "postalCode": "13013"
         },
         {
           "name": "Beni Ouarsous",
@@ -362,8 +345,7 @@
         {
           "name": "El Fehoul",
           "codeONS": "1305",
-          "postalCode": "13033",
-          "otherPosts": []
+          "postalCode": "13033"
         },
         {
           "name": "Remchi",
@@ -374,8 +356,7 @@
         {
           "name": "Sebaa Chioukh",
           "codeONS": "1322",
-          "postalCode": "13042",
-          "otherPosts": []
+          "postalCode": "13042"
         }
       ]
     },
@@ -385,8 +366,7 @@
         {
           "name": "Bouhlou",
           "codeONS": "1347",
-          "postalCode": "13026",
-          "otherPosts": []
+          "postalCode": "13026"
         },
         {
           "name": "Sabra",
@@ -408,8 +388,7 @@
         {
           "name": "El Gor",
           "codeONS": "1310",
-          "postalCode": "13034",
-          "otherPosts": []
+          "postalCode": "13034"
         },
         {
           "name": "Sebdou",
@@ -431,8 +410,7 @@
         {
           "name": "Sidi Djillali",
           "codeONS": "1341",
-          "postalCode": "13043",
-          "otherPosts": []
+          "postalCode": "13043"
         }
       ]
     },
@@ -441,7 +419,7 @@
       "communes": [
         {
           "name": "Tlemcen",
-          "codeONS": "",
+          "codeONS": "1301",
           "postalCode": "13000",
           "otherPosts": [
             { "name": "Tlemcen - Cerisiers", "postalCode": "13007" },

@@ -18,14 +18,12 @@
         {
           "name": "Sidi Daoud",
           "codeONS": "3507",
-          "postalCode": "35019",
-          "otherPosts": []
+          "postalCode": "35019"
         },
         {
           "name": "Taourga",
           "codeONS": "3525",
-          "postalCode": "35029",
-          "otherPosts": []
+          "postalCode": "35029"
         }
       ]
     },
@@ -46,26 +44,22 @@
         {
           "name": "Boudouaou El Bahri",
           "codeONS": "3532",
-          "postalCode": "35037",
-          "otherPosts": []
+          "postalCode": "35037"
         },
         {
           "name": "El Kharrouba",
           "codeONS": "3538",
-          "postalCode": "35048",
-          "otherPosts": []
+          "postalCode": "35048"
         },
         {
           "name": "Bouzegza Keddara",
           "codeONS": "3522",
-          "postalCode": "35038",
-          "otherPosts": []
+          "postalCode": "35038"
         },
         {
           "name": "Ouled Hedadj",
           "codeONS": "3533",
-          "postalCode": "35052",
-          "otherPosts": []
+          "postalCode": "35052"
         }
       ]
     },
@@ -126,14 +120,12 @@
         {
           "name": "Corso",
           "codeONS": "3519",
-          "postalCode": "35014",
-          "otherPosts": []
+          "postalCode": "35014"
         },
         {
           "name": "Tidjelabine",
           "codeONS": "3513",
-          "postalCode": "35021",
-          "otherPosts": []
+          "postalCode": "35021"
         }
       ]
     },
@@ -155,8 +147,7 @@
         {
           "name": "Ben Choud",
           "codeONS": "3527",
-          "postalCode": "35033",
-          "otherPosts": []
+          "postalCode": "35033"
         }
       ]
     },
@@ -175,20 +166,17 @@
         {
           "name": "Ouled Moussa",
           "codeONS": "3520",
-          "postalCode": "35011",
-          "otherPosts": []
+          "postalCode": "35011"
         },
         {
           "name": "Larbatache",
           "codeONS": "3521",
-          "postalCode": "35017",
-          "otherPosts": []
+          "postalCode": "35017"
         },
         {
           "name": "Hammadi",
           "codeONS": "3536",
-          "postalCode": "35015",
-          "otherPosts": []
+          "postalCode": "35015"
         }
       ]
     },
@@ -207,20 +195,17 @@
         {
           "name": "Si Mustapha",
           "codeONS": "3512",
-          "postalCode": "35028",
-          "otherPosts": []
+          "postalCode": "35028"
         },
         {
           "name": "Timezrit",
           "codeONS": "3518",
-          "postalCode": "35000",
-          "otherPosts": []
+          "postalCode": "35000"
         },
         {
           "name": "Chabet el Ameur",
           "codeONS": "3514",
-          "postalCode": "35008",
-          "otherPosts": []
+          "postalCode": "35008"
         }
       ]
     },
@@ -239,8 +224,7 @@
         {
           "name": "Ouled Aissa",
           "codeONS": "3526",
-          "postalCode": "35050",
-          "otherPosts": []
+          "postalCode": "35050"
         }
       ]
     },
@@ -250,14 +234,12 @@
         {
           "name": "Thenia",
           "codeONS": "3515",
-          "postalCode": "35005",
-          "otherPosts": []
+          "postalCode": "35005"
         },
         {
           "name": "Souk El Had",
           "codeONS": "3531",
-          "postalCode": "35020",
-          "otherPosts": []
+          "postalCode": "35020"
         },
         {
           "name": "Ammal",
@@ -268,8 +250,7 @@
         {
           "name": "Beni Amrane",
           "codeONS": "3530",
-          "postalCode": "35006",
-          "otherPosts": []
+          "postalCode": "35006"
         }
       ]
     }

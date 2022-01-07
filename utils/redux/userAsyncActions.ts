@@ -283,6 +283,20 @@ export const editProfilePicture = createAsyncThunk(
   }
 );
 
+export const editUsername = createAsyncThunk(
+  "user/editUsername",
+  async ({ username }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post("/api/user/details/username", {
+        username,
+      });
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
 export const editProfileAvatar = createAsyncThunk(
   "user/editProfileAvatar",
   async ({ generated }: any, { rejectWithValue }) => {

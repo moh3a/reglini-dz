@@ -48,8 +48,7 @@
         {
           "name": "Stidia",
           "codeONS": "2704",
-          "postalCode": "27023",
-          "otherPosts": []
+          "postalCode": "27023"
         }
       ]
     },
@@ -73,8 +72,7 @@
         {
           "name": "Sidi Belattar",
           "codeONS": "2710",
-          "postalCode": "27029",
-          "otherPosts": []
+          "postalCode": "27029"
         },
         {
           "name": "Oued El Kheir",
@@ -90,26 +88,22 @@
         {
           "name": "Bouguirat",
           "codeONS": "2719",
-          "postalCode": "27003",
-          "otherPosts": []
+          "postalCode": "27003"
         },
         {
           "name": "Safsaf",
           "codeONS": "2730",
-          "postalCode": "27044",
-          "otherPosts": []
+          "postalCode": "27044"
         },
         {
           "name": "Sirat",
           "codeONS": "2720",
-          "postalCode": "27021",
-          "otherPosts": []
+          "postalCode": "27021"
         },
         {
           "name": "Souaflia",
           "codeONS": "2724",
-          "postalCode": "27046",
-          "otherPosts": []
+          "postalCode": "27046"
         }
       ]
     },
@@ -128,8 +122,7 @@
         {
           "name": "Ouled Maallah",
           "codeONS": "2726",
-          "postalCode": "27028",
-          "otherPosts": []
+          "postalCode": "27028"
         },
         {
           "name": "Tazgait",
@@ -145,26 +138,22 @@
         {
           "name": "Achaacha",
           "codeONS": "2717",
-          "postalCode": "27009",
-          "otherPosts": []
+          "postalCode": "27009"
         },
         {
           "name": "Khadra",
           "codeONS": "2718",
-          "postalCode": "27005",
-          "otherPosts": []
+          "postalCode": "27005"
         },
         {
           "name": "Nekmaria",
           "codeONS": "2715",
-          "postalCode": "27026",
-          "otherPosts": []
+          "postalCode": "27026"
         },
         {
           "name": "Ouled Boughalem",
           "codeONS": "2725",
-          "postalCode": "27027",
-          "otherPosts": []
+          "postalCode": "27027"
         }
       ]
     },
@@ -174,8 +163,7 @@
         {
           "name": "Ain Nouissy",
           "codeONS": "2705",
-          "postalCode": "27010",
-          "otherPosts": []
+          "postalCode": "27010"
         },
         {
           "name": "El Hassiane",
@@ -197,25 +185,21 @@
         {
           "name": "Mesra",
           "codeONS": "2722",
-          "postalCode": "27018",
-          "otherPosts": []
+          "postalCode": "27018"
         },
         {
           "name": "Ain Sidi Cherif",
           "codeONS": "2721",
-          "postalCode": "27024",
-          "otherPosts": []
+          "postalCode": "27024"
         },
         {
           "name": "Mansourah",
-          "postalCode": "27036",
-          "otherPosts": []
+          "postalCode": "27036"
         },
         {
           "name": "Touahria",
           "codeONS": "2731",
-          "postalCode": "27013",
-          "otherPosts": []
+          "postalCode": "27013"
         }
       ]
     },
@@ -231,8 +215,7 @@
         {
           "name": "Hadjadj",
           "codeONS": "2713",
-          "postalCode": "27015",
-          "otherPosts": []
+          "postalCode": "27015"
         },
         {
           "name": "Abdelmalek Ramdane",
@@ -248,20 +231,17 @@
         {
           "name": "Kheireddine",
           "codeONS": "2711",
-          "postalCode": "27016",
-          "otherPosts": []
+          "postalCode": "27016"
         },
         {
           "name": "Ain Boudinar",
           "codeONS": "2728",
-          "postalCode": "27031",
-          "otherPosts": []
+          "postalCode": "27031"
         },
         {
           "name": "Sayada",
           "codeONS": "2702",
-          "postalCode": "27045",
-          "otherPosts": []
+          "postalCode": "27045"
         }
       ]
     }

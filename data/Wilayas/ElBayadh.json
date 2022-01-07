@@ -29,20 +29,17 @@
         {
           "name": "Cheguig",
           "codeONS": "3217",
-          "postalCode": "32022",
-          "otherPosts": []
+          "postalCode": "32022"
         },
         {
           "name": "Kef El Ahmar",
           "codeONS": "3212",
-          "postalCode": "32013",
-          "otherPosts": []
+          "postalCode": "32013"
         },
         {
           "name": "Rogassa",
           "codeONS": "3202",
-          "postalCode": "32018",
-          "otherPosts": []
+          "postalCode": "32018"
         }
       ]
     },
@@ -52,20 +49,17 @@
         {
           "name": "Brezina",
           "codeONS": "3204",
-          "postalCode": "32002",
-          "otherPosts": []
+          "postalCode": "32002"
         },
         {
           "name": "Kraakda",
           "codeONS": "3215",
-          "postalCode": "32027",
-          "otherPosts": []
+          "postalCode": "32027"
         },
         {
           "name": "Ghassoul",
           "codeONS": "3205",
-          "postalCode": "32017",
-          "otherPosts": []
+          "postalCode": "32017"
         }
       ]
     },
@@ -75,8 +69,7 @@
         {
           "name": "Ain El Orak",
           "codeONS": "3208",
-          "postalCode": "32019",
-          "otherPosts": []
+          "postalCode": "32019"
         },
         {
           "name": "Arbaouat",
@@ -110,8 +103,7 @@
         {
           "name": "El Bnoud",
           "codeONS": "3216",
-          "postalCode": "32025",
-          "otherPosts": []
+          "postalCode": "32025"
         }
       ]
     },
@@ -140,8 +132,7 @@
         {
           "name": "Tousmouline",
           "codeONS": "3220",
-          "postalCode": "32034",
-          "otherPosts": []
+          "postalCode": "32034"
         }
       ]
     },
@@ -171,8 +162,7 @@
         {
           "name": "Boussemghoun",
           "codeONS": "3213",
-          "postalCode": "32014",
-          "otherPosts": []
+          "postalCode": "32014"
         }
       ]
     },
@@ -182,32 +172,27 @@
         {
           "name": "Boualem ",
           "codeONS": "3206",
-          "postalCode": "32006",
-          "otherPosts": []
+          "postalCode": "32006"
         },
         {
           "name": "Sidi Ameur",
           "codeONS": "3218",
-          "postalCode": "32029",
-          "otherPosts": []
+          "postalCode": "32029"
         },
         {
           "name": "Sidi Slimane",
           "codeONS": "3221",
-          "postalCode": "32031",
-          "otherPosts": []
+          "postalCode": "32031"
         },
         {
           "name": "Sidi Tifour",
           "codeONS": "3222",
-          "postalCode": "32032",
-          "otherPosts": []
+          "postalCode": "32032"
         },
         {
           "name": "Stitten",
           "codeONS": "3203",
-          "postalCode": "32033",
-          "otherPosts": []
+          "postalCode": "32033"
         }
       ]
     }

@@ -39,7 +39,6 @@
       "communes": [
         {
           "name": "In Salah",
-          "codeONS": "",
           "postalCode": "11001",
           "otherPosts": [
             { "name": "El Barka", "postalCode": "11015" },
@@ -83,7 +82,6 @@
       "communes": [
         {
           "name": "Tamanrasset",
-          "codeONS": "",
           "postalCode": "11000",
           "otherPosts": [
             { "name": "In Kouf", "postalCode": "11002" },

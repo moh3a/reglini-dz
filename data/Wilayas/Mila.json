@@ -8,9 +8,28 @@
       "communes": [
         {
           "name": "Mila",
-          "codeONS": "",
+          "codeONS": "4301",
           "postalCode": "43000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Mila - 8 Mai 1945", "postalCode": "43029" },
+            { "name": "Mila - Vielle Ville", "postalCode": "43030" },
+            { "name": "Mila - Sennaoua", "postalCode": "43066" },
+            { "name": "Mila Universite", "postalCode": "43072" },
+            { "name": "Mila - Liberte", "postalCode": "43073" },
+            { "name": "Mila - Ethnia", "postalCode": "43075" }
+          ]
+        },
+        {
+          "name": "Sidi Khelifa",
+          "codeONS": "4327",
+          "postalCode": "43060",
+          "otherPosts": [{ "name": "Ouled el Kaim", "postalCode": "43058" }]
+        },
+        {
+          "name": "Ain Tine",
+          "codeONS": "4325",
+          "postalCode": "43016",
+          "otherPosts": [{ "name": "Azeba", "postalCode": "43039" }]
         }
       ]
     },
@@ -18,10 +37,32 @@
       "name": "Chelghoum Laid",
       "communes": [
         {
-          "name": "Mila",
-          "codeONS": "",
-          "postalCode": "43000",
-          "otherPosts": []
+          "name": "Chelghoum Laid",
+          "codeONS": "4303",
+          "postalCode": "43001",
+          "otherPosts": [
+            { "name": "Chelghoum Laid - 1er Novembre", "postalCode": "43003" },
+            {
+              "name": "Cheghloum Laid - Abdellah Bacha",
+              "postalCode": "43024"
+            },
+            { "name": "Tahamachet", "postalCode": "43062" }
+          ]
+        },
+        {
+          "name": "Ain Mellouk",
+          "codeONS": "43051",
+          "postalCode": "43015"
+        },
+        {
+          "name": "Oued Athmania",
+          "codeONS": "4304",
+          "postalCode": "43005",
+          "otherPosts": [
+            { "name": "Bled Youcef", "postalCode": "43021" },
+            { "name": "Boumalek", "postalCode": "43043" },
+            { "name": "Djebel Aougueb", "postalCode": "43047" }
+          ]
         }
       ]
     },
@@ -29,10 +70,22 @@
       "name": "Ferdjioua",
       "communes": [
         {
-          "name": "Mila",
-          "codeONS": "",
-          "postalCode": "43000",
-          "otherPosts": []
+          "name": "Ferdjioua",
+          "codeONS": "4302",
+          "postalCode": "43002",
+          "otherPosts": [
+            { "name": "Ferdjioua - Bourouh", "postalCode": "43027" },
+            { "name": "Ferdjioua - Soummam", "postalCode": "43028" },
+            { "name": "Ferdjioua Est", "postalCode": "43067" }
+          ]
+        },
+        {
+          "name": "Yahia Beni Guecha",
+          "codeONS": "4331",
+          "postalCode": "43019",
+          "otherPosts": [
+            { "name": "Beni Guecha - Chouara Torche", "postalCode": "43071" }
+          ]
         }
       ]
     },
@@ -40,10 +93,20 @@
       "name": "Grarem Gouga",
       "communes": [
         {
-          "name": "Mila",
-          "codeONS": "",
-          "postalCode": "43000",
-          "otherPosts": []
+          "name": "Grarem Gouga",
+          "codeONS": "4317",
+          "postalCode": "43004",
+          "otherPosts": [
+            { "name": "Grarem - Safsafa", "postalCode": "43076" },
+            { "name": "Grarem Est", "postalCode": "43077" },
+            { "name": "Anouche Ali", "postalCode": "43038" }
+          ]
+        },
+        {
+          "name": "Hamala",
+          "codeONS": "4324",
+          "postalCode": "43052",
+          "otherPosts": [{ "name": "Cheglibi Mekhlouf", "postalCode": "43068" }]
         }
       ]
     },
@@ -51,10 +114,21 @@
       "name": "Oued Endja",
       "communes": [
         {
-          "name": "Mila",
-          "codeONS": "",
-          "postalCode": "43000",
-          "otherPosts": []
+          "name": "Oued Endja",
+          "codeONS": "4310",
+          "postalCode": "43006",
+          "otherPosts": [{ "name": "El Arsa", "postalCode": "43049" }]
+        },
+        {
+          "name": "Zeghaia",
+          "codeONS": "4328",
+          "postalCode": "43012"
+        },
+        {
+          "name": "Ahmed Rachedi ",
+          "codeONS": "4311",
+          "postalCode": "43013",
+          "otherPosts": [{ "name": "Ouled Bouazoune", "postalCode": "43057" }]
         }
       ]
     },
@@ -62,10 +136,15 @@
       "name": "Rouached",
       "communes": [
         {
-          "name": "Mila",
-          "codeONS": "",
-          "postalCode": "43000",
-          "otherPosts": []
+          "name": "Rouached",
+          "codeONS": "4315",
+          "postalCode": "43009"
+        },
+        {
+          "name": "Tiberguent",
+          "codeONS": "4313",
+          "postalCode": "43035",
+          "otherPosts": [{ "name": "Draa Benkhalfa", "postalCode": "43048" }]
         }
       ]
     },
@@ -73,10 +152,20 @@
       "name": "Terrai Bainen",
       "communes": [
         {
-          "name": "Mila",
-          "codeONS": "",
-          "postalCode": "43000",
-          "otherPosts": []
+          "name": "Terrai Bainen",
+          "codeONS": "4323",
+          "postalCode": "43018"
+        },
+        {
+          "name": "Amira Arres",
+          "codeONS": "4322",
+          "postalCode": "43017",
+          "otherPosts": [{ "name": "Tassaft", "postalCode": "43064" }]
+        },
+        {
+          "name": "Tessala Lemtai",
+          "codeONS": "4316",
+          "postalCode": "43034"
         }
       ]
     },
@@ -84,10 +173,18 @@
       "name": "Tassadane Haddada",
       "communes": [
         {
-          "name": "Mila",
-          "codeONS": "",
-          "postalCode": "43000",
-          "otherPosts": []
+          "name": "Tassadane Haddada",
+          "codeONS": "4319",
+          "postalCode": "43033",
+          "otherPosts": [
+            { "name": "Tassadane - Haddada Lantia", "postalCode": "43074" }
+          ]
+        },
+        {
+          "name": "Minar Zarza",
+          "codeONS": "4321",
+          "postalCode": "43036",
+          "otherPosts": [{ "name": "Tamoula", "postalCode": "43063" }]
         }
       ]
     },
@@ -95,10 +192,17 @@
       "name": "Ain Beida Harriche",
       "communes": [
         {
-          "name": "Mila",
-          "codeONS": "",
-          "postalCode": "43000",
-          "otherPosts": []
+          "name": "Ain Beida Harriche",
+          "codeONS": "4330",
+          "postalCode": "43014",
+          "otherPosts": [
+            { "name": "Ain Beida - Djebel Halfa", "postalCode": "43014" }
+          ]
+        },
+        {
+          "name": "Elayadi Barbes",
+          "codeONS": "4329",
+          "postalCode": "43050"
         }
       ]
     },
@@ -106,10 +210,17 @@
       "name": "Sidi Merouane",
       "communes": [
         {
-          "name": "Mila",
-          "codeONS": "",
-          "postalCode": "43000",
-          "otherPosts": []
+          "name": "Sidi Merouane",
+          "codeONS": "4318",
+          "postalCode": "43010",
+          "otherPosts": [
+            { "name": "Sidi Merouane - Ras el Bir", "postalCode": "43070" }
+          ]
+        },
+        {
+          "name": "Chigara",
+          "codeONS": "4332",
+          "postalCode": "43025"
         }
       ]
     },
@@ -117,10 +228,23 @@
       "name": "Teleghma",
       "communes": [
         {
-          "name": "Mila",
-          "codeONS": "",
-          "postalCode": "43000",
-          "otherPosts": []
+          "name": "Teleghma",
+          "codeONS": "4306",
+          "postalCode": "43008",
+          "otherPosts": [
+            { "name": "Telerghma - Z'mala", "postalCode": "43065" }
+          ]
+        },
+        {
+          "name": "Oued Seguen",
+          "codeONS": "4307",
+          "postalCode": "43031",
+          "otherPosts": [{ "name": "Ben Boulaid", "postalCode": "43040" }]
+        },
+        {
+          "name": "El Mechira",
+          "codeONS": "4326",
+          "postalCode": "43026"
         }
       ]
     },
@@ -128,10 +252,15 @@
       "name": "Bouhatem",
       "communes": [
         {
-          "name": "Mila",
-          "codeONS": "",
-          "postalCode": "43000",
-          "otherPosts": []
+          "name": "Bouhatem",
+          "codeONS": "4314",
+          "postalCode": "43022"
+        },
+        {
+          "name": "Derrahi Bousselah",
+          "codeONS": "4320",
+          "postalCode": "43046",
+          "otherPosts": [{ "name": "Dar el Hamra", "postalCode": "43045" }]
         }
       ]
     },
@@ -139,131 +268,35 @@
       "name": "Tadjenanet",
       "communes": [
         {
-          "name": "Mila",
-          "codeONS": "",
-          "postalCode": "43000",
-          "otherPosts": []
+          "name": "Tadjenanet",
+          "codeONS": "4308",
+          "postalCode": "43007",
+          "otherPosts": [{ "name": "Tadjenanet Centre", "postalCode": "43011" }]
+        },
+        {
+          "name": "Benyahia Abderrahmane",
+          "codeONS": "4309",
+          "postalCode": "43020"
+        },
+        {
+          "name": "Ouled Khalouf",
+          "codeONS": "4312",
+          "postalCode": "43032"
         }
       ]
     }
   ],
   "address": [
-    {
-      "name": "Mila",
-      "postalCode": "43000",
-      "otherPosts": [
-        { "name": "Mila 8 Mai 1945", "postalCode": "43029" },
-        { "name": "Mila Vielle Ville", "postalCode": "43030" },
-        { "name": "Mila Sennaoua", "postalCode": "43066" },
-        { "name": "Mila Universite", "postalCode": "43072" },
-        { "name": "Mila Liberte", "postalCode": "43073" },
-        { "name": "Mila Ethnia", "postalCode": "43075" }
-      ]
-    },
-    {
-      "name": "Chelghoum Laid",
-      "postalCode": "43001",
-      "otherPosts": [
-        { "name": "Chelghoum Laid 1er Novembre", "postalCode": "43003" },
-        { "name": "Cheghloum Laid Abdellah Bacha", "postalCode": "43024" }
-      ]
-    },
-    {
-      "name": "Ferdjioua",
-      "postalCode": "43002",
-      "otherPosts": [
-        { "name": "Ferdjioua Bourouh", "postalCode": "43027" },
-        { "name": "Ferdjioua Soummam", "postalCode": "43028" },
-        { "name": "Ferdjioua Est", "postalCode": "43067" }
-      ]
-    },
-    {
-      "name": "Grarem",
-      "postalCode": "43004",
-      "otherPosts": [
-        { "name": "Grarem Safsafa", "postalCode": "43076" },
-        { "name": "Grarem Est", "postalCode": "43077" }
-      ]
-    },
-    { "name": "Oued Athmenia", "postalCode": "43005" },
-    { "name": "Oued Endja", "postalCode": "43006" },
-    {
-      "name": "Tadjenanet",
-      "postalCode": "43007",
-      "otherPosts": [{ "name": "Tadjenanet Centre", "postalCode": "43011" }]
-    },
-    {
-      "name": "Telerghma",
-      "postalCode": "43008",
-      "otherPosts": [{ "name": "Telerghma Z'mala", "postalCode": "43065" }]
-    },
-    { "name": "Rouached", "postalCode": "43009" },
-    {
-      "name": "Sidi Merouane",
-      "postalCode": "43010",
-      "otherPosts": [
-        { "name": "Sidi Merouane Ras el Bir", "postalCode": "43070" }
-      ]
-    },
-    { "name": "Zeghaia", "postalCode": "43012" },
-    { "name": "Ahmed Rachdi", "postalCode": "43013" },
-    { "name": "Ain Beida Djebel Halfa", "postalCode": "43014" },
-    { "name": "Ain Melouk", "postalCode": "43015" },
-    { "name": "Ain Tine", "postalCode": "43016" },
-    { "name": "Arres", "postalCode": "43017" },
-    { "name": "Beinen", "postalCode": "43018" },
-    {
-      "name": "Beni Guecha",
-      "postalCode": "43019",
-      "otherPosts": [
-        { "name": "Beni Guecha Chouara Torche", "postalCode": "43071" }
-      ]
-    },
-    { "name": "Benyahya Abderrahmane", "postalCode": "43020" },
-    { "name": "Bled Youcef", "postalCode": "43021" },
-    { "name": "Bouhatem", "postalCode": "43022" },
     { "name": "Boukarana", "postalCode": "43023" },
-    { "name": "Chigara", "postalCode": "43025" },
-    { "name": "El Mechira", "postalCode": "43026" },
-    { "name": "Oued Seguen", "postalCode": "43031" },
-    { "name": "Ouled Khellouf", "postalCode": "43032" },
-    {
-      "name": "Tassadane",
-      "postalCode": "43033",
-      "otherPosts": [
-        { "name": "Tassadane Haddada Lantia", "postalCode": "43074" }
-      ]
-    },
-    { "name": "Tassala", "postalCode": "43034" },
-    { "name": "Tiberguent", "postalCode": "43035" },
-    { "name": "Zarza", "postalCode": "43036" },
     { "name": "Ain el Hamra", "postalCode": "43037" },
-    { "name": "Anouche Ali", "postalCode": "43038" },
-    { "name": "Azeba", "postalCode": "43039" },
-    { "name": "Ben Boulaid", "postalCode": "43040" },
     { "name": "Bir Branis", "postalCode": "43041" },
     { "name": "Boufoula", "postalCode": "43042" },
-    { "name": "Boumalek", "postalCode": "43043" },
     { "name": "Cherra", "postalCode": "43044" },
-    { "name": "Dar el Hamra", "postalCode": "43045" },
-    { "name": "Derrahi Bousselah", "postalCode": "43046" },
-    { "name": "Djebel Aougueb", "postalCode": "43047" },
-    { "name": "Draa Benkhalfa", "postalCode": "43048" },
-    { "name": "El Arsa", "postalCode": "43049" },
-    { "name": "El Ayadi Barbes", "postalCode": "43050" },
     { "name": "Ferdoua", "postalCode": "43051" },
-    { "name": "Hamala", "postalCode": "43052" },
     { "name": "Kef Bouderga", "postalCode": "43053" },
     { "name": "Mechtatine", "postalCode": "43055" },
-    { "name": "Ouled Bouazoune", "postalCode": "43057" },
-    { "name": "Ouled el Kaim", "postalCode": "43058" },
     { "name": "Sareg Derfoul", "postalCode": "43059" },
-    { "name": "Sidi Khelifa", "postalCode": "43060" },
     { "name": "Sidi Zerrouk", "postalCode": "43061" },
-    { "name": "Tahamachet", "postalCode": "43062" },
-    { "name": "Tamoula", "postalCode": "43063" },
-    { "name": "Tassaft", "postalCode": "43064" },
-    { "name": "Cheglibi Mekhlouf", "postalCode": "43068" },
     { "name": "Ouled Smail", "postalCode": "43069" }
   ]
 }

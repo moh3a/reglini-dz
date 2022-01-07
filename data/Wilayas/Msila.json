@@ -89,14 +89,12 @@
         {
           "name": "Souamaa",
           "codeONS": "2840",
-          "postalCode": "28064",
-          "otherPosts": []
+          "postalCode": "28064"
         },
         {
           "name": "M'Tarfa",
           "codeONS": "2806",
-          "postalCode": "28057",
-          "otherPosts": []
+          "postalCode": "28057"
         }
       ]
     },
@@ -122,8 +120,7 @@
         {
           "name": "Beni Ilmane",
           "codeONS": "2845",
-          "postalCode": "28027",
-          "otherPosts": []
+          "postalCode": "28027"
         }
       ]
     },
@@ -150,8 +147,7 @@
         {
           "name": "Ain Fares",
           "codeONS": "2837",
-          "postalCode": "28023",
-          "otherPosts": []
+          "postalCode": "28023"
         },
         {
           "name": "Sidi M'Hamed",
@@ -166,8 +162,7 @@
         {
           "name": "Ain Errich",
           "codeONS": "2844",
-          "postalCode": "28025",
-          "otherPosts": []
+          "postalCode": "28025"
         }
       ]
     },
@@ -177,8 +172,7 @@
         {
           "name": "Ben Srour",
           "codeONS": "2824",
-          "postalCode": "28009",
-          "otherPosts": []
+          "postalCode": "28009"
         },
         {
           "name": "Ouled Slimane",
@@ -189,8 +183,7 @@
         {
           "name": "Zarzour",
           "codeONS": "2833",
-          "postalCode": "28067",
-          "otherPosts": []
+          "postalCode": "28067"
         },
         {
           "name": "Mohammed Boudiaf",
@@ -219,8 +212,7 @@
         {
           "name": "El Hamel",
           "codeONS": "2827",
-          "postalCode": "28015",
-          "otherPosts": []
+          "postalCode": "28015"
         },
         {
           "name": "Oultem",
@@ -256,14 +248,12 @@
         {
           "name": "Sidi Ameur",
           "codeONS": "2822",
-          "postalCode": "28035",
-          "otherPosts": []
+          "postalCode": "28035"
         },
         {
           "name": "Tamsa",
           "codeONS": "2823",
-          "postalCode": "28065",
-          "otherPosts": []
+          "postalCode": "28065"
         }
       ]
     },
@@ -281,26 +271,22 @@
         {
           "name": "Berhoum",
           "codeONS": "2812",
-          "postalCode": "28010",
-          "otherPosts": []
+          "postalCode": "28010"
         },
         {
           "name": "Ain Khadra",
           "codeONS": "2813",
-          "postalCode": "28008",
-          "otherPosts": []
+          "postalCode": "28008"
         },
         {
           "name": "Belaiba",
           "codeONS": "2815",
-          "postalCode": "28026",
-          "otherPosts": []
+          "postalCode": "28026"
         },
         {
           "name": "Dehahna",
           "codeONS": "2830",
-          "postalCode": "28048",
-          "otherPosts": []
+          "postalCode": "28048"
         }
       ]
     },
@@ -310,8 +296,7 @@
         {
           "name": "Chellal",
           "codeONS": "2809",
-          "postalCode": "28014",
-          "otherPosts": []
+          "postalCode": "28014"
         },
         {
           "name": "Ouled Madhi",
@@ -322,8 +307,7 @@
         {
           "name": "Khettouti Sed El Djir",
           "codeONS": "2832",
-          "postalCode": "28056",
-          "otherPosts": []
+          "postalCode": "28056"
         },
         {
           "name": "Maarif",
@@ -339,8 +323,7 @@
         {
           "name": "M'Cif - Bir Guellalia",
           "codeONS": "2808",
-          "postalCode": "28029",
-          "otherPosts": []
+          "postalCode": "28029"
         },
         {
           "name": "El Houamed",
@@ -356,8 +339,7 @@
         {
           "name": "Medjedel",
           "codeONS": "2842",
-          "postalCode": "28016",
-          "otherPosts": []
+          "postalCode": "28016"
         }
       ]
     },
@@ -367,14 +349,12 @@
         {
           "name": "Ain El Hadjel",
           "codeONS": "2817",
-          "postalCode": "28003",
-          "otherPosts": []
+          "postalCode": "28003"
         },
         {
           "name": "Sidi Hadjeres",
           "codeONS": "2818",
-          "postalCode": "28036",
-          "otherPosts": []
+          "postalCode": "28036"
         }
       ]
     },
@@ -390,8 +370,7 @@
         {
           "name": "Slim",
           "codeONS": "2843",
-          "postalCode": "28037",
-          "otherPosts": []
+          "postalCode": "28037"
         }
       ]
     }

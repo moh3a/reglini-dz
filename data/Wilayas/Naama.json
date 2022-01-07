@@ -44,8 +44,7 @@
         {
           "name": "Tiout",
           "codeONS": "4505",
-          "postalCode": "45030",
-          "otherPosts": []
+          "postalCode": "45030"
         }
       ]
     },
@@ -69,8 +68,7 @@
         {
           "name": "Makman Ben Amer",
           "codeONS": "4510",
-          "postalCode": "45005",
-          "otherPosts": []
+          "postalCode": "45005"
         },
         {
           "name": "Kasdir",
@@ -126,14 +124,12 @@
         {
           "name": "Moghrar",
           "codeONS": "4506",
-          "postalCode": "45019",
-          "otherPosts": []
+          "postalCode": "45019"
         },
         {
           "name": "Djeniene Bourezg",
           "codeONS": "4508",
-          "postalCode": "45013",
-          "otherPosts": []
+          "postalCode": "45013"
         }
       ]
     },

@@ -8,7 +8,7 @@
       "communes": [
         {
           "name": "Tebessa",
-          "codeONS": "",
+          "codeONS": "1201",
           "postalCode": "12000",
           "otherPosts": [
             { "name": "Tebessa - Minerve", "postalCode": "12004" },
@@ -43,7 +43,6 @@
         },
         {
           "name": "Boulhaf Dir",
-          "codeONS": "",
           "postalCode": "12039",
           "otherPosts": [{ "name": "Kissa", "postalCode": "12048" }]
         },

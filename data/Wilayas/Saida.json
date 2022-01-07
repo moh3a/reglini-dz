@@ -31,8 +31,7 @@
         {
           "name": "Ain El Hadjar",
           "codeONS": "2003",
-          "postalCode": "20001",
-          "otherPosts": []
+          "postalCode": "20001"
         },
         {
           "name": "Moulay Larbi",
@@ -86,8 +85,7 @@
         {
           "name": "Hounet",
           "codeONS": "2007",
-          "postalCode": "20025",
-          "otherPosts": []
+          "postalCode": "20025"
         }
       ]
     },
@@ -97,8 +95,7 @@
         {
           "name": "El Hassasna",
           "codeONS": "2010",
-          "postalCode": "20003",
-          "otherPosts": []
+          "postalCode": "20003"
         },
         {
           "name": "Ain Sekhouna",
@@ -130,14 +127,12 @@
         {
           "name": "Tircine",
           "codeONS": "2015",
-          "postalCode": "20035",
-          "otherPosts": []
+          "postalCode": "20035"
         },
         {
           "name": "Ain Soltane",
           "codeONS": "2016",
-          "postalCode": "20029",
-          "otherPosts": []
+          "postalCode": "20029"
         }
       ]
     },

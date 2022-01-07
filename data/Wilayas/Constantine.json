@@ -77,8 +77,7 @@
         {
           "name": "Ain Smara",
           "codeONS": "2510",
-          "postalCode": "25006",
-          "otherPosts": []
+          "postalCode": "25006"
         },
         {
           "name": "Ouled Rahmoune",
@@ -127,8 +126,7 @@
         {
           "name": "Beni Hamiden",
           "codeONS": "2508",
-          "postalCode": "25035",
-          "otherPosts": []
+          "postalCode": "25035"
         }
       ]
     },
@@ -175,8 +173,7 @@
         {
           "name": "Messaoud Boudjriou",
           "codeONS": "2511",
-          "postalCode": "25032",
-          "otherPosts": []
+          "postalCode": "25032"
         }
       ]
     }

@@ -27,8 +27,7 @@
         {
           "name": "Ben Djerrah",
           "codeONS": "2411",
-          "postalCode": "24034",
-          "otherPosts": []
+          "postalCode": "24034"
         }
       ]
     },
@@ -44,8 +43,7 @@
         {
           "name": "Bouhachana",
           "codeONS": "2417",
-          "postalCode": "24037",
-          "otherPosts": []
+          "postalCode": "24037"
         },
         {
           "name": "Ain Sandel",
@@ -61,26 +59,22 @@
         {
           "name": "Belkheir",
           "codeONS": "2410",
-          "postalCode": "24015",
-          "otherPosts": []
+          "postalCode": "24015"
         },
         {
           "name": "Guelaat Bou Sbaa",
           "codeONS": "2418",
-          "postalCode": "24020",
-          "otherPosts": []
+          "postalCode": "24020"
         },
         {
           "name": "Nechmaya",
           "codeONS": "2402",
-          "postalCode": "24027",
-          "otherPosts": []
+          "postalCode": "24027"
         },
         {
           "name": "Djeballah Khemissi",
           "codeONS": "2434",
-          "postalCode": "24039",
-          "otherPosts": []
+          "postalCode": "24039"
         },
         {
           "name": "Boumahra Ahmed",
@@ -108,14 +102,12 @@
         {
           "name": "El Fedjoudj",
           "codeONS": "2420",
-          "postalCode": "24019",
-          "otherPosts": []
+          "postalCode": "24019"
         },
         {
           "name": "Bouati Mahmoud",
           "codeONS": "2403",
-          "postalCode": "24018",
-          "otherPosts": []
+          "postalCode": "24018"
         }
       ]
     },
@@ -131,8 +123,7 @@
         {
           "name": "Bordj Sabat",
           "codeONS": "2421",
-          "postalCode": "24017",
-          "otherPosts": []
+          "postalCode": "24017"
         },
         {
           "name": "Oued Zenati",
@@ -148,14 +139,12 @@
         {
           "name": "Ain Makhlouf",
           "codeONS": "2413",
-          "postalCode": "24013",
-          "otherPosts": []
+          "postalCode": "24013"
         },
         {
           "name": "Ain Larbi",
           "codeONS": "2423",
-          "postalCode": "24012",
-          "otherPosts": []
+          "postalCode": "24012"
         },
         {
           "name": "Tamlouka",
@@ -177,14 +166,12 @@
         {
           "name": "Hammam Debagh",
           "codeONS": "2419",
-          "postalCode": "24007",
-          "otherPosts": []
+          "postalCode": "24007"
         },
         {
           "name": "Roknia",
           "codeONS": "2428",
-          "postalCode": "24028",
-          "otherPosts": []
+          "postalCode": "24028"
         }
       ]
     },
@@ -206,8 +193,7 @@
         {
           "name": "Medjez Sfa",
           "codeONS": "2430",
-          "postalCode": "24026",
-          "otherPosts": []
+          "postalCode": "24026"
         },
         {
           "name": "Oued Fragha",
@@ -243,8 +229,7 @@
         {
           "name": "Houari Boumediene",
           "codeONS": "2427",
-          "postalCode": "24025",
-          "otherPosts": []
+          "postalCode": "24025"
         },
         {
           "name": "Medjez Amar",
@@ -255,14 +240,12 @@
         {
           "name": "Ras El Agba",
           "codeONS": "2408",
-          "postalCode": "24049",
-          "otherPosts": []
+          "postalCode": "24049"
         },
         {
           "name": "Sellaoua Announa",
           "codeONS": "2429",
-          "postalCode": "24029",
-          "otherPosts": []
+          "postalCode": "24029"
         }
       ]
     }

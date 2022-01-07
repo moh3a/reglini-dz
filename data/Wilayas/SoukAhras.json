@@ -7,10 +7,19 @@
       "name": "Bir Bou Haouch",
       "communes": [
         {
-          "name": "Souk-Ahras",
-          "codeONS": "",
-          "postalCode": "41000",
-          "otherPosts": []
+          "name": "Bir Bou Haouch",
+          "codeONS": "4114",
+          "postalCode": "41011"
+        },
+        {
+          "name": "Zouabi",
+          "codeONS": "4126",
+          "postalCode": "41039"
+        },
+        {
+          "name": "Safel El Ouiden",
+          "codeONS": "4121",
+          "postalCode": "41035"
         }
       ]
     },
@@ -18,10 +27,22 @@
       "name": "Heddada",
       "communes": [
         {
-          "name": "Souk-Ahras",
-          "codeONS": "",
-          "postalCode": "41000",
-          "otherPosts": []
+          "name": "Heddada",
+          "codeONS": "4110",
+          "postalCode": "41012",
+          "otherPosts": [{ "name": "Bir Louhichi", "postalCode": "41012" }]
+        },
+        {
+          "name": "Khedara",
+          "codeONS": "4111",
+          "postalCode": "41013",
+          "otherPosts": [{ "name": "Bordj M'raou", "postalCode": "41013" }]
+        },
+        {
+          "name": "Ouled Moumen",
+          "codeONS": "4113",
+          "postalCode": "41052",
+          "otherPosts": [{ "name": "El Fouid", "postalCode": "41052" }]
         }
       ]
     },
@@ -29,10 +50,24 @@
       "name": "M'daourouch",
       "communes": [
         {
-          "name": "Souk-Ahras",
-          "codeONS": "",
-          "postalCode": "41000",
-          "otherPosts": []
+          "name": "M'daourouch",
+          "codeONS": "4115",
+          "postalCode": "41001",
+          "otherPosts": [
+            { "name": "M'daourouch - Achouri Ali", "postalCode": "41041" },
+            { "name": "M'daourouch - Gare Routiere", "postalCode": "41047" },
+            { "name": "M'daourouch - Remadnia Ali", "postalCode": "41051" }
+          ]
+        },
+        {
+          "name": "Tiffech",
+          "codeONS": "4106",
+          "postalCode": "41038"
+        },
+        {
+          "name": "Ragouba",
+          "codeONS": "4122",
+          "postalCode": "41033"
         }
       ]
     },
@@ -40,10 +75,19 @@
       "name": "Mechroha",
       "communes": [
         {
-          "name": "Souk-Ahras",
-          "codeONS": "",
-          "postalCode": "41000",
-          "otherPosts": []
+          "name": "Mechroha",
+          "codeONS": "4104",
+          "postalCode": "41017",
+          "otherPosts": [
+            { "name": "Mechrouha - Sidi Brahim", "postalCode": "41045" },
+            { "name": "Ain Seynour", "postalCode": "41010" }
+          ]
+        },
+        {
+          "name": "Hanancha",
+          "codeONS": "4103",
+          "postalCode": "41016",
+          "otherPosts": [{ "name": "El Betiha", "postalCode": "41016" }]
         }
       ]
     },
@@ -51,10 +95,24 @@
       "name": "Merahna",
       "communes": [
         {
-          "name": "Souk-Ahras",
-          "codeONS": "",
-          "postalCode": "41000",
-          "otherPosts": []
+          "name": "Merahna",
+          "codeONS": "4112",
+          "postalCode": "41004"
+        },
+        {
+          "name": "Ouillen",
+          "codeONS": "4119",
+          "postalCode": "41032",
+          "otherPosts": [{ "name": "Boukebch", "postalCode": "41029" }]
+        },
+        {
+          "name": "Sidi Fredj",
+          "codeONS": "4120",
+          "postalCode": "41030",
+          "otherPosts": [
+            { "name": "El Bordj", "postalCode": "41030" },
+            { "name": "Ouled Abbess", "postalCode": "41042" }
+          ]
         }
       ]
     },
@@ -62,10 +120,14 @@
       "name": "Ouled Driss",
       "communes": [
         {
-          "name": "Souk-Ahras",
-          "codeONS": "",
-          "postalCode": "41000",
-          "otherPosts": []
+          "name": "Ouled Driss",
+          "codeONS": "4105",
+          "postalCode": "41005"
+        },
+        {
+          "name": "Ain Zana",
+          "codeONS": "4117",
+          "postalCode": "41027"
         }
       ]
     },
@@ -73,10 +135,19 @@
       "name": "Oum El Adhaim",
       "communes": [
         {
-          "name": "Souk-Ahras",
-          "codeONS": "",
-          "postalCode": "41000",
-          "otherPosts": []
+          "name": "Oum El Adhaim",
+          "codeONS": "4116",
+          "postalCode": "41019"
+        },
+        {
+          "name": "Terraguelt",
+          "codeONS": "4125",
+          "postalCode": "41037"
+        },
+        {
+          "name": "Oued Keberit",
+          "codeONS": "4124",
+          "postalCode": "41018"
         }
       ]
     },
@@ -84,10 +155,24 @@
       "name": "Sedrata",
       "communes": [
         {
-          "name": "Souk-Ahras",
-          "codeONS": "",
-          "postalCode": "41000",
-          "otherPosts": []
+          "name": "Sedrata",
+          "codeONS": "4102",
+          "postalCode": "41002",
+          "otherPosts": [
+            { "name": "Sedrata - 8 Mai 1945", "postalCode": "41006" },
+            { "name": "Sedrata - Essanoubar", "postalCode": "41020" },
+            { "name": "Sedrata - Hadadi Houmana", "postalCode": "41050" }
+          ]
+        },
+        {
+          "name": "Khemissa",
+          "codeONS": "4123",
+          "postalCode": "41031"
+        },
+        {
+          "name": "Ain Soltane",
+          "codeONS": "4118",
+          "postalCode": "41026"
         }
       ]
     },
@@ -96,9 +181,24 @@
       "communes": [
         {
           "name": "Souk-Ahras",
-          "codeONS": "",
+          "codeONS": "4101",
           "postalCode": "41000",
-          "otherPosts": []
+          "otherPosts": [
+            { "name": "Souk-Ahras - Ibn Khaldoune", "postalCode": "41003" },
+            { "name": "Souk-Ahras - 8  Mai 1945", "postalCode": "41007" },
+            { "name": "Souk-Ahras - Berral Salah", "postalCode": "41008" },
+            { "name": "Souk-Ahras - 17 Octobre", "postalCode": "41021" },
+            { "name": "Souk-Ahras - Ahmed Draia", "postalCode": "41022" },
+            { "name": "Souk-Ahras - Alaouia", "postalCode": "41023" },
+            { "name": "Souk-Ahras - Hamma Loulou", "postalCode": "41024" },
+            { "name": "Souk-Ahras - Ibn Rochd", "postalCode": "41036" },
+            { "name": "Souk-Ahras Universite", "postalCode": "41043" },
+            { "name": "Souk-Ahras Gare Routiere", "postalCode": "41046" },
+            {
+              "name": "Souk-Ahras - Mehdi Mohamed Salah",
+              "postalCode": "41049"
+            }
+          ]
         }
       ]
     },
@@ -106,90 +206,31 @@
       "name": "Taoura",
       "communes": [
         {
-          "name": "Souk-Ahras",
-          "codeONS": "",
-          "postalCode": "41000",
-          "otherPosts": []
+          "name": "Taoura",
+          "codeONS": "4108",
+          "postalCode": "41009",
+          "otherPosts": [
+            { "name": "Taoura - Institut Veterinaire", "postalCode": "41044" },
+            { "name": "Battoum", "postalCode": "41028" }
+          ]
+        },
+        {
+          "name": "Drea",
+          "codeONS": "4109",
+          "postalCode": "41015"
+        },
+        {
+          "name": "Zaarouria",
+          "codeONS": "4107",
+          "postalCode": "41025",
+          "otherPosts": [{ "name": "Djehifa", "postalCode": "41048" }]
         }
       ]
     }
   ],
   "address": [
-    {
-      "name": "Souk-Ahras",
-      "postalCode": "41000",
-      "otherPosts": [
-        { "name": "Souk-Ahras Ibn Khaldoune", "postalCode": "41003" },
-        { "name": "Souk-Ahras 8  Mai 1945", "postalCode": "41007" },
-        { "name": "Souk-Ahras Berral Salah", "postalCode": "41008" },
-        { "name": "Souk-Ahras 17 Octobre", "postalCode": "41021" },
-        { "name": "Souk-Ahras Ahmed Draia", "postalCode": "41022" },
-        { "name": "Souk-Ahras Alaouia", "postalCode": "41023" },
-        { "name": "Souk-Ahras Hamma Loulou", "postalCode": "41024" },
-        { "name": "Souk-Ahras Ibn Rochd", "postalCode": "41036" },
-        { "name": "Souk-Ahras Universite", "postalCode": "41043" },
-        { "name": "Souk-Ahras Gare Routiere", "postalCode": "41046" },
-        { "name": "Souk-Ahras Mehdi Mohamed Salah", "postalCode": "41049" }
-      ]
-    },
-    {
-      "name": "M'daourouch",
-      "postalCode": "41001",
-      "otherPosts": [
-        { "name": "M'daourouch Achouri Ali", "postalCode": "41041" },
-        { "name": "M'daourouch Gare Routiere", "postalCode": "41047" },
-        { "name": "M'daourouch Remadnia Ali", "postalCode": "41051" }
-      ]
-    },
-    {
-      "name": "Sedrata",
-      "postalCode": "41002",
-      "otherPosts": [
-        { "name": "Sedrata 8 Mai 1945", "postalCode": "41006" },
-        { "name": "Sedrata Essanoubar", "postalCode": "41020" },
-        { "name": "Sedrata Hadadi Houmana", "postalCode": "41050" }
-      ]
-    },
-    { "name": "Merahna", "postalCode": "41004" },
-    { "name": "Ouled Driss", "postalCode": "41005" },
-    {
-      "name": "Taoura",
-      "postalCode": "41009",
-      "otherPosts": [
-        { "name": "Taoura Institut Veterinaire", "postalCode": "41044" }
-      ]
-    },
-    { "name": "Ain Seynour", "postalCode": "41010" },
-    { "name": "Bir Bouhouche", "postalCode": "41011" },
-    { "name": "Bir Louhichi", "postalCode": "41012" },
-    { "name": "Bordj M'raou", "postalCode": "41013" },
     { "name": "Boumaraf Sebti", "postalCode": "41014" },
-    { "name": "Drea", "postalCode": "41015" },
-    { "name": "El Betiha", "postalCode": "41016" },
-    {
-      "name": "Mechrouha",
-      "postalCode": "41017",
-      "otherPosts": [{ "name": "Mechrouha Sidi Brahim", "postalCode": "41045" }]
-    },
-    { "name": "Oued Keberit", "postalCode": "41018" },
-    { "name": "Oum el Adhaim", "postalCode": "41019" },
-    { "name": "Zaarouria", "postalCode": "41025" },
-    { "name": "Ain Soltane", "postalCode": "41026" },
-    { "name": "Ain Zana", "postalCode": "41027" },
-    { "name": "Battoum", "postalCode": "41028" },
-    { "name": "Boukebch", "postalCode": "41029" },
-    { "name": "El Bordj", "postalCode": "41030" },
-    { "name": "Khemissa", "postalCode": "41031" },
-    { "name": "Ouillen", "postalCode": "41032" },
-    { "name": "Ragouba", "postalCode": "41033" },
     { "name": "Ras el Kef", "postalCode": "41034" },
-    { "name": "Safel el Ouiden", "postalCode": "41035" },
-    { "name": "Terraguelt", "postalCode": "41037" },
-    { "name": "Tiffech", "postalCode": "41038" },
-    { "name": "Zouabi", "postalCode": "41039" },
-    { "name": "Taghast", "postalCode": "41040" },
-    { "name": "Ouled Abbess", "postalCode": "41042" },
-    { "name": "Djehifa", "postalCode": "41048" },
-    { "name": "El Fouid Benhachiche Rabah", "postalCode": "41052" }
+    { "name": "Taghast", "postalCode": "41040" }
   ]
 }

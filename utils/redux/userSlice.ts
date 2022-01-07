@@ -18,6 +18,7 @@ import {
   editAddress,
   editProfilePicture,
   editProfileAvatar,
+  editUsername,
   submitPayment,
   submitFeedback,
 } from "./userAsyncActions";
@@ -281,6 +282,20 @@ export const userSlice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(editProfilePicture.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error;
+      })
+      //========================================================================================
+      .addCase(editUsername.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(editUsername.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.user = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(editUsername.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error;
       })

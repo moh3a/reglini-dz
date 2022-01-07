@@ -82,8 +82,7 @@
         {
           "name": "Guernini",
           "codeONS": "1721",
-          "postalCode": "17054",
-          "otherPosts": []
+          "postalCode": "17054"
         }
       ]
     },
@@ -125,8 +124,7 @@
         {
           "name": "Beni Yagoub",
           "codeONS": "1727",
-          "postalCode": "17026",
-          "otherPosts": []
+          "postalCode": "17026"
         }
       ]
     },
@@ -136,8 +134,7 @@
         {
           "name": "Dar Chioukh",
           "codeONS": "1725",
-          "postalCode": "17006",
-          "otherPosts": []
+          "postalCode": "17006"
         },
         {
           "name": "M'Liliha",
@@ -170,14 +167,12 @@
         {
           "name": "Douis",
           "codeONS": "1715",
-          "postalCode": "17030",
-          "otherPosts": []
+          "postalCode": "17030"
         },
         {
           "name": "Ain Chouhada",
           "codeONS": "1723",
-          "postalCode": "17039",
-          "otherPosts": []
+          "postalCode": "17039"
         }
       ]
     },
@@ -187,8 +182,7 @@
         {
           "name": "Faidh El Botma",
           "codeONS": "1707",
-          "postalCode": "17021",
-          "otherPosts": []
+          "postalCode": "17021"
         },
         {
           "name": "Amourah",
@@ -199,8 +193,7 @@
         {
           "name": "Oum Laadham",
           "codeONS": "1724",
-          "postalCode": "17061",
-          "otherPosts": []
+          "postalCode": "17061"
         }
       ]
     },
@@ -218,14 +211,12 @@
         {
           "name": "Bouira Lahdab",
           "codeONS": "1709",
-          "postalCode": "17044",
-          "otherPosts": []
+          "postalCode": "17044"
         },
         {
           "name": "Ain Feka",
           "codeONS": "1735",
-          "postalCode": "17040",
-          "otherPosts": []
+          "postalCode": "17040"
         }
       ]
     },
@@ -254,14 +245,12 @@
         {
           "name": "Hassi El Euch",
           "codeONS": "1716",
-          "postalCode": "17032",
-          "otherPosts": []
+          "postalCode": "17032"
         },
         {
           "name": "Ain Maabed",
           "codeONS": "1705",
-          "postalCode": "17025",
-          "otherPosts": []
+          "postalCode": "17025"
         }
       ]
     },
@@ -295,14 +284,12 @@
         {
           "name": "Sed Rahal",
           "codeONS": "1706",
-          "postalCode": "17062",
-          "otherPosts": []
+          "postalCode": "17062"
         },
         {
           "name": "Guettara",
           "codeONS": "1718",
-          "postalCode": "17055",
-          "otherPosts": []
+          "postalCode": "17055"
         }
       ]
     },
@@ -312,20 +299,17 @@
         {
           "name": "Sidi Ladjel",
           "codeONS": "1719",
-          "postalCode": "17024",
-          "otherPosts": []
+          "postalCode": "17024"
         },
         {
           "name": "El Khemis",
           "codeONS": "1711",
-          "postalCode": "17051",
-          "otherPosts": []
+          "postalCode": "17051"
         },
         {
           "name": "Hassi Fedoul",
           "codeONS": "1733",
-          "postalCode": "17056",
-          "otherPosts": []
+          "postalCode": "17056"
         }
       ]
     }

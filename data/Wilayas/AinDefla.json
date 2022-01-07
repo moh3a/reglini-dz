@@ -24,8 +24,7 @@
         {
           "name": "Ain Lechiekh",
           "codeONS": "4414",
-          "postalCode": "44018",
-          "otherPosts": []
+          "postalCode": "44018"
         },
         {
           "name": "Ain Soltane",
@@ -47,8 +46,7 @@
         {
           "name": "Bathia",
           "codeONS": "4431",
-          "postalCode": "44041",
-          "otherPosts": []
+          "postalCode": "44041"
         },
         {
           "name": "El Hassania",
@@ -59,8 +57,7 @@
         {
           "name": "Belaas",
           "codeONS": "4436",
-          "postalCode": "44038",
-          "otherPosts": []
+          "postalCode": "44038"
         }
       ]
     },
@@ -70,20 +67,17 @@
         {
           "name": "Bordj Emir Khaled",
           "codeONS": "4422",
-          "postalCode": "44021",
-          "otherPosts": []
+          "postalCode": "44021"
         },
         {
           "name": "Bir Ould Khelifa",
           "codeONS": "4419",
-          "postalCode": "44043",
-          "otherPosts": []
+          "postalCode": "44043"
         },
         {
           "name": "Tarik Ibn Ziad",
           "codeONS": "4421",
-          "postalCode": "44029",
-          "otherPosts": []
+          "postalCode": "44029"
         }
       ]
     },
@@ -99,8 +93,7 @@
         {
           "name": "Hoceinia",
           "codeONS": "4427",
-          "postalCode": "44048",
-          "otherPosts": []
+          "postalCode": "44048"
         }
       ]
     },
@@ -128,8 +121,7 @@
         {
           "name": "Djemaa Ouled Cheikh",
           "codeONS": "4429",
-          "postalCode": "44047",
-          "otherPosts": []
+          "postalCode": "44047"
         }
       ]
     },
@@ -138,14 +130,12 @@
       "communes": [
         {
           "name": "Djendel",
-          "postalCode": "44005",
-          "otherPosts": []
+          "postalCode": "44005"
         },
         {
           "name": "Birbouche",
           "codeONS": "4428",
-          "postalCode": "44042",
-          "otherPosts": []
+          "postalCode": "44042"
         },
         {
           "name": "Oued Chorfa",
@@ -161,14 +151,12 @@
         {
           "name": "El Abadia",
           "codeONS": "4411",
-          "postalCode": "44006",
-          "otherPosts": []
+          "postalCode": "44006"
         },
         {
           "name": "Ain Bouyahia",
           "codeONS": "4433",
-          "postalCode": "44032",
-          "otherPosts": []
+          "postalCode": "44032"
         },
         {
           "name": "Tacheta Zougagha",
@@ -184,20 +172,17 @@
         {
           "name": "El Amra",
           "codeONS": "4408",
-          "postalCode": "44010",
-          "otherPosts": []
+          "postalCode": "44010"
         },
         {
           "name": "Arib",
           "codeONS": "4406",
-          "postalCode": "44008",
-          "otherPosts": []
+          "postalCode": "44008"
         },
         {
           "name": "Mekhatria",
           "codeONS": "4430",
-          "postalCode": "44050",
-          "otherPosts": []
+          "postalCode": "44050"
         }
       ]
     },
@@ -219,8 +204,7 @@
         {
           "name": "Tiberkanine",
           "codeONS": "4435",
-          "postalCode": "44030",
-          "otherPosts": []
+          "postalCode": "44030"
         }
       ]
     },
@@ -230,20 +214,17 @@
         {
           "name": "Hammam Righa",
           "codeONS": "4405",
-          "postalCode": "44023",
-          "otherPosts": []
+          "postalCode": "44023"
         },
         {
           "name": "Ain Benian",
           "codeONS": "4426",
-          "postalCode": "44035",
-          "otherPosts": []
+          "postalCode": "44035"
         },
         {
           "name": "Ain Torki",
           "codeONS": "4423",
-          "postalCode": "44020",
-          "otherPosts": []
+          "postalCode": "44020"
         }
       ]
     },
@@ -265,8 +246,7 @@
         {
           "name": "Sidi Lakhdar",
           "codeONS": "4424",
-          "postalCode": "44027",
-          "otherPosts": []
+          "postalCode": "44027"
         }
       ]
     },
@@ -285,8 +265,7 @@
         {
           "name": "Ben Allal",
           "codeONS": "4425",
-          "postalCode": "44040",
-          "otherPosts": []
+          "postalCode": "44040"
         }
       ]
     },
@@ -296,8 +275,7 @@
         {
           "name": "El Maine",
           "codeONS": "4434",
-          "postalCode": "44000",
-          "otherPosts": []
+          "postalCode": "44000"
         },
         {
           "name": "Rouina",
@@ -308,8 +286,7 @@
         {
           "name": "Zeddine",
           "codeONS": "4417",
-          "postalCode": "44031",
-          "otherPosts": []
+          "postalCode": "44031"
         }
       ]
     }
