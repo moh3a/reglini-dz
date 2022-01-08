@@ -7,8 +7,16 @@ import SessionCTA from "../components/sections/SessionCTA";
 import AliexpressCTA from "../components/sections/AliexpressCTA";
 import AppCTA from "../components/sections/AppCTA";
 
+import * as Facebook from "fb-sdk-wrapper";
+
 const HomeScreen = ({ messages }: any) => {
   const [session, loading]: [IUser | null, boolean] = useSession();
+
+  const getData = async () => {
+    Facebook.api("/reglini.dz/posts").then((response: any) => {
+      console.log(response);
+    });
+  };
 
   return (
     <>
@@ -23,6 +31,9 @@ const HomeScreen = ({ messages }: any) => {
       <AliexpressCTA />
       <SessionCTA session={session} />
       <AppCTA />
+      <div className="h-20 flex justify-center items-center">
+        <button onClick={getData}>Get Data</button>
+      </div>
     </>
   );
 };
