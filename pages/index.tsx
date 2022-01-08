@@ -7,8 +7,11 @@ import SessionCTA from "../components/sections/SessionCTA";
 import AliexpressCTA from "../components/sections/AliexpressCTA";
 import AppCTA from "../components/sections/AppCTA";
 
-const HomeScreen = ({ messages }: any) => {
+const HomeScreen = () => {
   const [session, loading]: [IUser | null, boolean] = useSession();
+  const callfb = async () => {
+    const { data } = await axios.post("/api/facebook");
+  };
 
   return (
     <>
@@ -23,6 +26,9 @@ const HomeScreen = ({ messages }: any) => {
       <AliexpressCTA />
       <SessionCTA session={session} />
       <AppCTA />
+      <div className="h-20 flex justify-center items-center">
+        <button onClick={callfb}>Check with Facebook</button>
+      </div>
     </>
   );
 };
@@ -36,6 +42,7 @@ export const getStaticProps: GetStaticProps = ({ locale }) => {
 };
 
 import Layout from "../components/layout/Layout";
+import axios from "axios";
 HomeScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };
