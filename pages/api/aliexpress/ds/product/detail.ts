@@ -1,8 +1,8 @@
-// get productdetail info
-// https://developers.aliexpress.com/en/doc.htm?docId=48595&docType=2
+// Commodity information query
+// https://developers.aliexpress.com/en/doc.htm?docId=60452&docType=2
 
 require("dotenv").config();
-import { TopClient } from "../../../../lib/api/topClient";
+import { TopClient } from "../../../../../lib/api/topClient";
 
 import nc from "next-connect";
 import type { NextApiResponse, NextApiRequest } from "next";
@@ -16,16 +16,19 @@ const handler = nc();
 handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     client.execute(
-      "aliexpress.affiliate.category.get",
+      "aliexpress.ds.product.get",
       {
-        app_signature: "reglini-dz-affiliate-program",
+        ship_to_country: "DZ",
+        product_id: "32982857990",
+        target_currency: "EUR",
+        target_language: "EN",
       },
       function (error: any, response: any) {
         if (!error) {
           res.status(200).json({
             success: true,
-            data: response.resp_result.result,
-            message: "Successfully retrieved categories.",
+            data: response,
+            message: "Successfully retrieved recommended products.",
           });
         } else console.log(error);
       }

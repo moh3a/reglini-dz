@@ -1,8 +1,8 @@
-// get get hotporudcts
-// https://developers.aliexpress.com/en/doc.htm?docId=45794&docType=2
+// get products
+// https://developers.aliexpress.com/en/doc.htm?docId=45803&docType=2
 
 require("dotenv").config();
-import { TopClient } from "../../../../lib/api/topClient";
+import { TopClient } from "../../../../../lib/api/topClient";
 
 import nc from "next-connect";
 import type { NextApiResponse, NextApiRequest } from "next";
@@ -16,23 +16,23 @@ const handler = nc();
 handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     client.execute(
-      "aliexpress.affiliate.hotproduct.query",
+      "aliexpress.affiliate.product.query",
       {
-        app_signature: "sssfffxxgggg",
+        app_signature: "asdasdasdsa",
         category_ids: "2",
-        fields: "app_sale_price,shop_id",
+        // fields: "commission_rate,sale_price",
         // keywords: "mp3",
-        // max_sale_price: "33333",
-        // min_sale_price: "22222",
+        // max_sale_price: "100",
+        // min_sale_price: "15",
         page_no: "1",
         page_size: "50",
-        platform_product_type: "TMALL",
+        platform_product_type: "ALL",
         // sort: "SALE_PRICE_ASC",
         target_currency: "EUR",
         target_language: "FR",
         tracking_id: "reglinidz",
-        // delivery_days: "3",
         ship_to_country: "DZ",
+        // delivery_days: "3",
       },
       function (error: any, response: any) {
         if (!error) {

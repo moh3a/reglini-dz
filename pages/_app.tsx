@@ -9,19 +9,9 @@ import { NextIntlProvider } from "next-intl";
 import "../styles/globals.css";
 import { useStore } from "../utils/redux/store";
 
-import * as Facebook from "fb-sdk-wrapper";
-
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const store = useStore(pageProps.initialReduxState);
   const getLayout = (Component as any).getLayout || ((page: NextPage) => page);
-
-  if (typeof window !== "undefined") {
-    Facebook.load().then(() => {
-      Facebook.init({
-        appId: "914879239172871",
-      });
-    });
-  }
 
   return (
     <>

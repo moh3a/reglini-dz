@@ -2,7 +2,7 @@
 // https://developers.aliexpress.com/en/doc.htm?docId=48595&docType=2
 
 require("dotenv").config();
-import { TopClient } from "../../../../lib/api/topClient";
+import { TopClient } from "../../../../../lib/api/topClient";
 
 import nc from "next-connect";
 import type { NextApiResponse, NextApiRequest } from "next";
