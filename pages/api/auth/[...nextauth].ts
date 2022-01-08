@@ -127,6 +127,7 @@ export default NextAuth({
             ...token,
             type,
             provider,
+            accessToken: account.accessToken,
           };
         }
       }

@@ -6,6 +6,7 @@ export interface IUser extends Session {
     image?: string | null;
     type?: "oauth" | "credentials" | null;
     provider?: string | null;
+    accessToken?: string | null;
   };
 }
 
