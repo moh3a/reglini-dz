@@ -40,9 +40,13 @@ const PublicProfile = () => {
       </Head>
       {profile && (
         <div className="mx-3 my-5 md:mx-10">
-          <div className="border border-gray-100 rounded-lg p-2 mb-5 flex items-center shadow-lg">
+          <div
+            className={`border border-gray-100 rounded-lg p-2 mb-5 flex items-center ${
+              router.locale === "ar" && "flex-row-reverse"
+            } shadow-lg`}
+          >
             <Avatar size="md" picture={profile.picture} />
-            <h1 className="text-xl ml-4">{profile.name}</h1>
+            <h1 className="text-xl mx-4">{profile.name}</h1>
           </div>
           <div>Email Address: {profile.email}</div>
           <div>User role: {profile.role}</div>

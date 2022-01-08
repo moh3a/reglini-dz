@@ -62,7 +62,7 @@ const NavLarge = ({ setOpen, user, placeholder }: any) => {
                             "relative z-0 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px"
                           )}
                         >
-                          Products
+                          {t("products")}
                         </Popover.Button>
                       </div>
 

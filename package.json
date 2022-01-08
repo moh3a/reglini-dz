@@ -22,9 +22,12 @@
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.27.1",
     "dotenv": "^10.0.0",
+    "form-data": "^4.0.0",
     "html-react-parser": "^1.2.8",
+    "iconv-lite": "^0.6.3",
     "js-cookie": "^3.0.1",
     "jsonwebtoken": "^8.5.1",
+    "mime": "^3.0.0",
     "mongoose": "^5.13.2",
     "multer": "^1.4.3",
     "multer-storage-cloudinary": "^4.0.0",
@@ -41,8 +44,11 @@
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
+    "request": "^2.88.2",
     "slugify": "^1.6.0",
-    "unslugify": "^1.0.2"
+    "unslugify": "^1.0.2",
+    "urlencode": "^1.1.0",
+    "ws": "^8.4.0"
   },
   "devDependencies": {
     "@types/js-cookie": "^2.2.7",

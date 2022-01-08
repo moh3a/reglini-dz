@@ -77,6 +77,7 @@
     "signIn": "دخول",
     "register": "إنشاء حساب",
     "shopNow": "تسوق الآن",
+    "products": "خدمات",
     "community": { "name": "تواصل اجتماعي", "href": "/community" },
     "currency": { "name": "تحويل العملات", "href": "/currency" },
     "support": { "name": "الدعم", "href": "/support" },

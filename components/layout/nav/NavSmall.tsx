@@ -131,7 +131,7 @@ const NavSmall = ({ open, setOpen, user, placeholder }: any) => {
             </div>
 
             <div className="border-t border-gray-200 px-4 py-6 w-full flex flex-col">
-              <div className="text-xl font-bold">Products</div>
+              <div className="text-xl font-bold">{t("products")}</div>
               <Link href="/aliexpress" passHref>
                 <div onClick={() => setOpen(false)} className="my-3">
                   <h1 className="cursor-pointer text-lg text-black dark:text-white">
