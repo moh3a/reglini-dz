@@ -4,7 +4,10 @@ import nc from "next-connect";
 import { getSession } from "next-auth/client";
 import dbConnect from "../../../config/db";
 import { IExtendedAPIRequest, IUser } from "../../../utils/types";
+import axios from "axios";
+
 const adsSdk = require("facebook-nodejs-business-sdk");
+import { Campaign, AdAccount, FacebookAdsApi } from "facebook-business-sdk-ts";
 
 const handler = nc();
 handler
@@ -22,14 +25,27 @@ handler
       session.user.provider === "facebook"
     ) {
       const accessToken = session.user.accessToken;
-      const api = adsSdk.FacebookAdsApi.init(accessToken);
-      const AdAccount = adsSdk.AdAccount;
-      const Campaign = adsSdk.Campaign;
+      const api = FacebookAdsApi.init(accessToken);
       const account = new AdAccount("act_558237911878111");
 
-      console.log("facebook access token = " + accessToken);
-      console.log("ad account result = ");
-      console.log(account);
+      //   const { data } = await axios.get(
+      //     `https://graph.facebook.com/v12.0/me?fields=id%2Cname%2Cemail&access_token=${accessToken}`
+      //   );
+
+      let campaign_id: any;
+      try {
+        const campaign = await account.createCampaign([], {
+          [Campaign.Fields.name]: "Page likes campaign",
+          [Campaign.Fields.status]: Campaign.Status.paused,
+          [Campaign.Fields.objective]: Campaign.Objective.page_likes,
+          [Campaign.Fields.special_ad_categories]:
+            Campaign.SpecialAdCategories.none,
+        });
+        console.log(campaign);
+        if (campaign) campaign_id = campaign.id;
+      } catch (error: any) {
+        console.log(error);
+      }
     } else {
       res.status(200).json({
         success: false,

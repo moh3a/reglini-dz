@@ -8,8 +8,8 @@ import nc from "next-connect";
 import type { NextApiResponse, NextApiRequest } from "next";
 
 const client = new TopClient({
-  appkey: process.env.ALIEXPRESS_APP_KEY,
-  appsecret: process.env.ALIEXPRESS_APP_SECRET,
+  appkey: process.env.ALIEXPRESS_AFFILIATE_APP_KEY,
+  appsecret: process.env.ALIEXPRESS_AFFILIATE_APP_SECRET,
 });
 
 const handler = nc();

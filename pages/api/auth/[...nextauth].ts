@@ -71,12 +71,6 @@ export default NextAuth({
         }
       },
     }),
-    // generic auth0 provider for testing purposes
-    // Providers.Auth0({
-    //   clientId: process.env.AUTH0_GCLIENT_ID,
-    //   clientSecret: process.env.AUTH0_GCLIENT_SECRET,
-    //   domain: process.env.AUTH0_GDOMAIN,
-    // }),
     Providers.Facebook({
       clientId: process.env.FACEBOOK_CLIENT_ID,
       clientSecret: process.env.FACEBOOK_SECRET,
@@ -89,18 +83,11 @@ export default NextAuth({
       clientId: process.env.INSTAGRAM_CLIENT_ID,
       clientSecret: process.env.INSTAGRAM_SECRET,
     }),
-    // Providers.Email({
-    //   server: {
-    //     host: process.env.SENDGRID_SMTP_SERVER_HOST,
-    //     port: process.env.SENDGRID_SMTP_SERVER_PORT,
-    //     auth: {
-    //       user: process.env.SENDGRID_SMTP_USERNAME,
-    //       pass: process.env.SENDGRID_SMTP_PASSWORD,
-    //     },
-    //   },
-    //   from: process.env.SENDGRID_FROM,
-    // }),
-    // ...add more providers here
+    Providers.Auth0({
+      clientId: process.env.AUTH0_CLIENT_ID,
+      clientSecret: process.env.AUTH0_CLIENT_SECRET,
+      domain: process.env.AUTH0_DOMAIN,
+    }),
   ],
   callbacks: {
     signIn(user, account, profile) {

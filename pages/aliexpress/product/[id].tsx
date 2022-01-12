@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -10,38 +10,48 @@ import { getAEProductInfo } from "../../../utils/redux/aeapiAsyncActions";
 import { selectAEApi } from "../../../utils/redux/aeapiSlice";
 import ProductDetails from "../../../components/aliexpress/ProductDetails";
 
-const AliexpressProduct = ({ messages, rate, commission }: any) => {
+const AliexpressProduct = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [session, loading]: [IUser | null, boolean] = useSession();
 
+  const [commission, setCommission] = useState<number>();
+  const [rate, setRate] = useState<number>();
+  const fetchCommission = useCallback(async () => {
+    const { data } = await axios.get(`/api/commission`);
+    setCommission(data.data.commission);
+  }, []);
+  const fetchRate = useCallback(async () => {
+    const { data } = await axios.get(`/api/currency`);
+    setRate(data.data[0].live.parallel.sale);
+  }, []);
+  useEffect(() => {
+    fetchCommission();
+    fetchRate();
+  }, [fetchCommission, fetchRate]);
+
+  const [locale, setLocale] = useState("fr");
   const [message, setMessage] = useState("");
   useEffect(() => {
     if (router.locale === "en") {
       setMessage("Fetching data from Aliexpress...");
+      setLocale("en_US");
     } else if (router.locale === "fr") {
       setMessage("Récupération des données d'Aliexpress...");
+      setLocale("fr_FR");
     } else if (router.locale === "ar") {
       setMessage("إحضار البيانات");
+      setLocale("ar_MA");
     }
   }, [router.locale]);
 
-  let locale = "en";
-  if (router.locale === "ar") {
-    locale = "ar_MA";
-  } else if (router.locale === "fr") {
-    locale = "fr_FR";
-  } else {
-    locale = "en_US";
-  }
-
   const converter = (price: number) => {
-    return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
+    if (rate && commission)
+      return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
   };
 
   const { product, status } = useSelector(selectAEApi);
   const { id } = router.query;
-
   useEffect(() => {
     if (id && (!product || product.productId !== id))
       dispatch(getAEProductInfo({ id, locale }));
@@ -97,7 +107,7 @@ const AliexpressProduct = ({ messages, rate, commission }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {status === "loading" && <Loading text={message} />}
-      {product && product.status === "active" && (
+      {product && product.status === "active" && rate && commission && (
         <>
           <ProductDetails
             converter={converter}
@@ -112,18 +122,9 @@ const AliexpressProduct = ({ messages, rate, commission }: any) => {
 
 import axios from "axios";
 import { GetServerSideProps } from "next";
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { req, res, locale } = context;
-  const { data } = await axios.get(
-    `${process.env.NEXTAUTH_URL}/api/commission`
-  );
-  const commission = data.data.commission;
-  const response = await axios.get(`${process.env.NEXTAUTH_URL}/api/currency`);
-  const rate = response.data.data[0].live.parallel.sale;
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      rate,
-      commission,
       messages: require(`../../../locales/${locale}.json`),
     },
   };

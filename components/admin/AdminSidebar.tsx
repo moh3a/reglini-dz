@@ -5,6 +5,7 @@ import {
   AdjustmentsIcon,
   BellIcon,
   ChartBarIcon,
+  ClipboardListIcon,
 } from "@heroicons/react/outline";
 
 import Avatar from "../elements/Avatar";
@@ -23,7 +24,7 @@ const AdminSidebar = ({ user }: any) => {
           <div className="mt-10">
             <ul>
               <li
-                className={`py-6 flex justify-center ${
+                className={`py-6 flex flex-col items-center justify-center ${
                   router.asPath === "/admin/currency"
                     ? "bg-white dark:bg-grim"
                     : ""
@@ -34,9 +35,12 @@ const AdminSidebar = ({ user }: any) => {
                   className="flex-shink-0 h-6 w-6  text-gray-800 dark:text-gray-100 hover:text-red-700  dark:hover:text-red-400"
                   aria-hidden="true"
                 />
+                {router.asPath === "/admin/currency" && (
+                  <p className="text-xs mt-1 select-none">Currency</p>
+                )}
               </li>
               <li
-                className={`py-6 flex justify-center ${
+                className={`py-6 flex flex-col items-center justify-center ${
                   router.asPath === "/admin/commission"
                     ? "bg-white dark:bg-grim"
                     : ""
@@ -47,9 +51,12 @@ const AdminSidebar = ({ user }: any) => {
                   className="flex-shink-0 h-6 w-6 text-gray-800 dark:text-gray-100 hover:text-red-700  dark:hover:text-red-400"
                   aria-hidden="true"
                 />
+                {router.asPath === "/admin/commission" && (
+                  <p className="text-xs mt-1 select-none">Commission</p>
+                )}
               </li>
               <li
-                className={`py-6 flex justify-center ${
+                className={`py-6 flex flex-col items-center justify-center ${
                   router.asPath === "/admin/stats"
                     ? "bg-white dark:bg-grim"
                     : ""
@@ -60,9 +67,28 @@ const AdminSidebar = ({ user }: any) => {
                   className="flex-shink-0 h-6 w-6 text-gray-800 dark:text-gray-100 hover:text-red-700  dark:hover:text-red-400"
                   aria-hidden="true"
                 />
+                {router.asPath === "/admin/stats" && (
+                  <p className="text-xs mt-1 select-none">Statistics</p>
+                )}
               </li>
               <li
-                className={`py-6 flex justify-center ${
+                className={`py-6 flex flex-col items-center justify-center ${
+                  router.asPath === "/admin/orders"
+                    ? "bg-white dark:bg-grim"
+                    : ""
+                }`}
+                onClick={() => router.push("/admin/orders")}
+              >
+                <ClipboardListIcon
+                  className="flex-shink-0 h-6 w-6 text-gray-800 dark:text-gray-100 hover:text-red-700  dark:hover:text-red-400"
+                  aria-hidden="true"
+                />
+                {router.asPath === "/admin/orders" && (
+                  <p className="text-xs mt-1 select-none">Orders</p>
+                )}
+              </li>
+              <li
+                className={`py-6 flex flex-col items-center justify-center ${
                   router.asPath === "/admin/notifications"
                     ? "bg-white dark:bg-grim"
                     : ""
@@ -73,6 +99,9 @@ const AdminSidebar = ({ user }: any) => {
                   className="flex-shink-0 h-6 w-6 text-gray-800 dark:text-gray-100 hover:text-red-700  dark:hover:text-red-400"
                   aria-hidden="true"
                 />
+                {router.asPath === "/admin/notifications" && (
+                  <p className="text-xs mt-1 select-none">Notifications</p>
+                )}
               </li>
             </ul>
           </div>

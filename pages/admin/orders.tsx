@@ -1,16 +1,17 @@
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 
-import AdminSidebar from "../../components/admin/AdminSidebar";
+import AdminScreen from "./index";
+import AdminGetOrders from "../../components/admin/AdminGetOrders";
 import { IUser } from "../../utils/types";
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";
 
-const AdminScreen = ({ children }: { children: ReactNode }) => {
+const AdminOrdersScreen = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [session, loading]: [IUser | null, boolean] = useSession();
@@ -42,19 +43,9 @@ const AdminScreen = ({ children }: { children: ReactNode }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {user && user.role === "admin" && (
-        <div className="flex">
-          <AdminSidebar user={user} />
-          <div className="ml-20 px-5 w-full bg-white dark:bg-grim">
-            <h1 className="my-10 text-2xl font-bold">Welcome {user.name}.</h1>
-            {router.asPath === "/admin" && (
-              <div>
-                <h2 className="text-xl">Tasks to do</h2>
-                <p>- Orders in a route and filter paid and unpaid</p>
-              </div>
-            )}
-            {children}
-          </div>
-        </div>
+        <AdminScreen>
+          <AdminGetOrders />
+        </AdminScreen>
       )}
     </>
   );
@@ -68,4 +59,4 @@ export const getStaticProps: GetStaticProps = ({ locale }) => {
   };
 };
 
-export default AdminScreen;
+export default AdminOrdersScreen;

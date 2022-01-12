@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -12,13 +12,28 @@ import ProductPreview from "../../components/aliexpress/ProductPreview";
 import ProductList from "../../components/store/ProductList";
 import Loading from "../../components/layout/Loading";
 
-const Aliexpress = ({ messages, rate, commission }: any) => {
+const Aliexpress = () => {
   const [session, loading]: [IUser | null, boolean] = useSession();
   const { search, product, status } = useSelector(selectAEApi);
   const [url, setUrl] = useState("");
 
-  const [message, setMessage] = useState("");
   const router = useRouter();
+  const [commission, setCommission] = useState<number>();
+  const [rate, setRate] = useState<number>();
+  const fetchCommission = useCallback(async () => {
+    const { data } = await axios.get(`/api/commission`);
+    setCommission(data.data.commission);
+  }, []);
+  const fetchRate = useCallback(async () => {
+    const { data } = await axios.get(`/api/currency`);
+    setRate(data.data[0].live.parallel.sale);
+  }, []);
+  useEffect(() => {
+    fetchCommission();
+    fetchRate();
+  }, [fetchCommission, fetchRate]);
+
+  const [message, setMessage] = useState("");
   useEffect(() => {
     if (router.locale === "en") {
       setMessage("Fetching data from Aliexpress...");
@@ -30,7 +45,8 @@ const Aliexpress = ({ messages, rate, commission }: any) => {
   }, [router.locale]);
 
   const converter = (price: number) => {
-    return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
+    if (rate && commission)
+      return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
   };
 
   if (product && product.statusId !== "0") {
@@ -92,14 +108,14 @@ const Aliexpress = ({ messages, rate, commission }: any) => {
         </div>
       ) : (
         <>
-          {product && product.status === "active" && (
+          {product && product.status === "active" && rate && commission && (
             <ProductPreview
               converter={converter}
               session={session}
               product={product}
             />
           )}
-          {search && (
+          {search && rate && commission && (
             <ProductList
               converter={converter}
               session={session}
@@ -116,17 +132,10 @@ const Aliexpress = ({ messages, rate, commission }: any) => {
 import axios from "axios";
 import { GetServerSideProps } from "next";
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { req, res, locale } = context;
-  const { data } = await axios.get(
-    `${process.env.NEXTAUTH_URL}/api/commission`
-  );
-  const commission = data.data.commission;
-  const response = await axios.get(`${process.env.NEXTAUTH_URL}/api/currency`);
-  const rate = response.data.data[0].live.parallel.sale;
+  const { locale } = context;
+
   return {
     props: {
-      rate,
-      commission,
       messages: require(`../../locales/${locale}.json`),
     },
   };

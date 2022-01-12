@@ -6,7 +6,7 @@ import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 
 import AdminScreen from "./index";
-import AdminGetOrders from "../../components/admin/AdminGetOrders";
+import AdminStats from "../../components/admin/AdminStats";
 import { IUser } from "../../utils/types";
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";
@@ -44,7 +44,7 @@ const AdminCurrencyScreen = () => {
       </Head>
       {user && user.role === "admin" && (
         <AdminScreen>
-          <AdminGetOrders />
+          <AdminStats />
         </AdminScreen>
       )}
     </>

@@ -34,42 +34,17 @@ handler
   })
   .get(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
     try {
-      const data = await User.find()
-        .select("email picture orders")
-        .map((res) => {
-          let u: any[] = [];
-          res.map((user: any) => {
-            if (user.orders.length > 0) {
-              user.orders.map((order: any) => {
-                if (
-                  !order.payment.hasTimedOut
-                  // && !order.payment.isPaymentConfirmed
-                ) {
-                  u.push({
-                    picture: user.picture,
-                    userId: user._id,
-                    email: user.email,
-                    order: order,
-                  });
-                }
-              });
-            }
-          });
-          return u;
-        });
-
-      if (data) {
-        res.status(200).json({
-          success: true,
-          message: `These are the orders made by users.`,
-          data,
-        });
-      } else {
-        res.status(200).json({
-          success: true,
-          message: `No orders made.`,
-        });
-      }
+      const currency = await Currency.findOne({ exchange: "DZDEUR" }).select(
+        "live"
+      );
+      const finance = await Finance.findOne();
+      res.status(200).json({
+        success: true,
+        data: {
+          finance,
+          rate: currency,
+        },
+      });
     } catch (error: any) {
       res.status(500).json({ message: error.message });
     }
