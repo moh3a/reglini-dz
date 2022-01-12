@@ -10,7 +10,7 @@ import { selectAEApi } from "../../utils/redux/aeapiSlice";
 import SearchAE from "../../components/aliexpress/SearchAE";
 import ProductPreview from "../../components/aliexpress/ProductPreview";
 import ProductList from "../../components/store/ProductList";
-import Loading from "../../components/layout/Loading";
+import RecommendedProducts from "../../components/store/RecommendedProducts";
 
 const Aliexpress = () => {
   const [session, loading]: [IUser | null, boolean] = useSession();
@@ -125,6 +125,8 @@ const Aliexpress = () => {
           )}
         </>
       )}
+      <RecommendedProducts />
+      <AffiliateProducts />
     </>
   );
 };
@@ -142,6 +144,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 import Layout from "../../components/layout/Layout";
+import AffiliateProducts from "../../components/store/AffiliateProducts";
 Aliexpress.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

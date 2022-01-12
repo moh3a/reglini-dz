@@ -13,13 +13,13 @@ const client = new TopClient({
 });
 
 const handler = nc();
-handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
+handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     client.execute(
       "aliexpress.affiliate.hotproduct.query",
       {
-        app_signature: "sssfffxxgggg",
-        category_ids: "2",
+        // app_signature: "sssfffxxgggg",
+        category_ids: "6,7,36,390501,44,200001187",
         fields: "app_sale_price,shop_id",
         // keywords: "mp3",
         // max_sale_price: "33333",
@@ -31,7 +31,6 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
         target_currency: "EUR",
         target_language: "FR",
         tracking_id: "reglinidz",
-        // delivery_days: "3",
         ship_to_country: "DZ",
       },
       function (error: any, response: any) {

@@ -13,21 +13,21 @@ const client = new TopClient({
 });
 
 const handler = nc();
-handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
+handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     client.execute(
       "aliexpress.affiliate.product.query",
       {
-        app_signature: "asdasdasdsa",
-        category_ids: "2",
-        // fields: "commission_rate,sale_price",
+        // app_signature: "asdasdasdsa",
+        category_ids: "6,7,36,390501,44,200001187",
+        fields: "commission_rate,sale_price",
         // keywords: "mp3",
-        // max_sale_price: "100",
-        // min_sale_price: "15",
+        max_sale_price: "50000",
+        min_sale_price: "5000",
         page_no: "1",
         page_size: "50",
         platform_product_type: "ALL",
-        // sort: "SALE_PRICE_ASC",
+        // sort: "LAST_VOLUME_ASC",
         target_currency: "EUR",
         target_language: "FR",
         tracking_id: "reglinidz",
@@ -36,10 +36,22 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
       },
       function (error: any, response: any) {
         if (!error) {
+          let data: any[] = [];
+          response.resp_result.result.products.product.map((product: any) => {
+            data.push({
+              productId: product.product_id,
+              imageUrl: product.product_main_image_url,
+              price: product.target_app_sale_price,
+              currency: product.target_app_sale_price_currency,
+              productCategory: product.second_level_category_name
+                ? product.second_level_category_name
+                : product.first_level_category_name,
+            });
+          });
+
           res.status(200).json({
             success: true,
-            data: response.resp_result,
-            message: "YEESS!!!",
+            data, //: response.resp_result.result,
           });
         } else console.log(error);
       }
