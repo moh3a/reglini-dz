@@ -86,10 +86,6 @@ const Aliexpress = () => {
     );
   }
 
-  // if (status === "loading") {
-  //   return <Loading text={message} />;
-  // }
-
   return (
     <>
       <Head>
@@ -101,7 +97,6 @@ const Aliexpress = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SearchAE url={url} setUrl={setUrl} />
-
       {status === "loading" ? (
         <div className="w-full flex justify-center items-center my-10">
           <div>{message}</div>
@@ -126,7 +121,6 @@ const Aliexpress = () => {
         </>
       )}
       <RecommendedProducts />
-      <AffiliateProducts />
     </>
   );
 };
@@ -144,7 +138,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 import Layout from "../../components/layout/Layout";
-import AffiliateProducts from "../../components/store/AffiliateProducts";
 Aliexpress.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

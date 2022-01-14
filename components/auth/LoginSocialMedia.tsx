@@ -43,30 +43,6 @@ const LoginSocialMedia = ({ providers }: any) => {
             </div>
           );
         }
-        // if (provider.id === "auth0") {
-        //   return (
-        //     <div key={provider.name} className="my-1">
-        //       <a target="_blank">
-        //         <button
-        //           onClick={() => signIn(provider.id)}
-        //           tabIndex={6}
-        //           type="button"
-        //           className="w-full px-4 py-3 rounded-lg border border-aliexpress bg-aliexpress text-white hover:bg-gray-100 hover:text-aliexpress"
-        //         >
-        //           <img
-        //             className="h-6 w-6 inline"
-        //             src="https://img.icons8.com/ios-filled/50/000000/aliexpress.png"
-        //             alt="aliexpress logo"
-        //           />
-        //           <span className="pl-3 font-bold">
-        //             {" "}
-        //             Continue with AliExpress
-        //           </span>
-        //         </button>
-        //       </a>
-        //     </div>
-        //   );
-        // }
       })}
     </div>
   );

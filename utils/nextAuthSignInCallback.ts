@@ -20,7 +20,6 @@ const CustomSignInCallbackMethod = async (user: any, account: any) => {
     if (checkusername) {
       username += Math.floor(Math.random() * 10000).toString();
     }
-    console.log("username: " + username);
 
     let svg = createAvatar(style, {
       seed: user.name,

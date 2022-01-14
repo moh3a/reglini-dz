@@ -235,6 +235,12 @@ const UserSchema = new mongoose.Schema({
   blogs: [{ blogId: mongoose.SchemaTypes.ObjectId }],
   wishlist: [WishlistSchema],
   orders: [OrderSchema],
+  aeCredentials: {
+    token: String,
+    user_id: String,
+    user_nick: String,
+    expire_time: Number,
+  },
 });
 
 // MIDDLEWARE TO BE USED BEFORE CREATING A NEW PASSWORD

@@ -108,13 +108,11 @@ const AliexpressProduct = () => {
       </Head>
       {status === "loading" && <Loading text={message} />}
       {product && product.status === "active" && rate && commission && (
-        <>
-          <ProductDetails
-            converter={converter}
-            product={product}
-            session={session}
-          />
-        </>
+        <ProductDetails
+          converter={converter}
+          product={product}
+          session={session}
+        />
       )}
     </>
   );

@@ -14,25 +14,23 @@ const client = new TopClient({
 
 const handler = nc();
 handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
+  const { keywords } = req.body;
   try {
     client.execute(
       "aliexpress.affiliate.product.query",
       {
-        // app_signature: "asdasdasdsa",
-        category_ids: "6,7,36,390501,44,200001187",
+        category_ids: keywords ? "" : "6,7,36,390501,44,200001187",
         fields: "commission_rate,sale_price",
-        // keywords: "mp3",
-        max_sale_price: "50000",
-        min_sale_price: "5000",
+        keywords,
+        // max_sale_price: "50000",
+        // min_sale_price: "5000",
         page_no: "1",
         page_size: "50",
         platform_product_type: "ALL",
-        // sort: "LAST_VOLUME_ASC",
         target_currency: "EUR",
         target_language: "FR",
         tracking_id: "reglinidz",
         ship_to_country: "DZ",
-        // delivery_days: "3",
       },
       function (error: any, response: any) {
         if (!error) {

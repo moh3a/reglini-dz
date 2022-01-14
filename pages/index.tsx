@@ -38,7 +38,6 @@ export const getStaticProps: GetStaticProps = ({ locale }) => {
 };
 
 import Layout from "../components/layout/Layout";
-import axios from "axios";
 HomeScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };
