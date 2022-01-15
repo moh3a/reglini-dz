@@ -1,3 +1,3 @@
 ## TODO
 
-- ae ds => get: not permission, detail: ok
+- complete ae ordering process

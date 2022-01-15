@@ -1,11 +1,15 @@
 import { useState, useEffect, useCallback } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 
+import { selectUser } from "../../utils/redux/userSlice";
 import SearchAE from "../../components/aliexpress_v2/SearchAE";
 import RecommendedProducts from "../../components/store/RecommendedProducts";
 
 const Aliexpress = () => {
-  const [url, setUrl] = useState("");
+  const { user } = useSelector(selectUser);
+  const router = useRouter();
 
   const [commission, setCommission] = useState<number>();
   const [rate, setRate] = useState<number>();
@@ -27,17 +31,10 @@ const Aliexpress = () => {
       return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
   };
 
-  // const callaeauth = async () => {
-  //   const { data } = await axios.post("/api/aliexpress/auth");
-  //   if (typeof window !== "undefined") {
-  //     window.open(data.data);
-  //   }
-  // };
-
-  // const aeds = async () => {
-  //   const { data } = await axios.post("/api/aliexpress/ds/product/detail");
-  //   console.log(data);
-  // };
+  const callaeauth = async () => {
+    const { data } = await axios.post("/api/aliexpress/auth");
+    if (data.success) router.push(data.data);
+  };
 
   return (
     <>
@@ -49,8 +46,8 @@ const Aliexpress = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SearchAE url={url} setUrl={setUrl} converter={converter} />
-      {/* {user && (!user.aeCredentials || !user.aeCredentials.token) ? (
+      <SearchAE converter={converter} />
+      {user && (!user.aeCredentials || !user.aeCredentials.token) && (
         <div className="px-5 py-6 flex flex-col justify-center items-center">
           <h2>
             You can connect to your AliExpress account to get custom results
@@ -64,19 +61,7 @@ const Aliexpress = () => {
             Connect to Aliexpress
           </button>
         </div>
-      ) : (
-        <div className="px-5 py-6 flex flex-col justify-center items-center">
-          <h2>Get Recommended Products For Your query</h2>
-          <button
-            onClick={aeds}
-            type="button"
-            className="border border-aliexpress bg-aliexpress text-white px-3 py-1"
-          >
-            Call DropShipping API
-          </button>
-        </div>
-      )} */}
-      {}
+      )}
       <RecommendedProducts />
     </>
   );

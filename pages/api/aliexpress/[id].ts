@@ -8,7 +8,6 @@ const handler = nc();
 handler.post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
   const { id } = req.query;
   const { locale } = req.body;
-  console.log(id, locale);
   const { data } = await axios({
     method: "POST",
     url: "https://api.zapiex.com/v3/product/details",

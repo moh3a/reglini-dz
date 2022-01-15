@@ -6,7 +6,13 @@ import { Dialog, Transition } from "@headlessui/react";
 import axios from "axios";
 import ProductsList from "./ProductsList";
 
-const SearchAE = ({ url, setUrl, converter }: any) => {
+const SearchAE = ({
+  converter,
+}: {
+  converter: (price: number) => number | undefined;
+}) => {
+  const [url, setUrl] = useState("");
+
   const [products, setProducts] = useState<any>();
   const t = useTranslations("Aliexpress");
   const router = useRouter();
@@ -19,7 +25,7 @@ const SearchAE = ({ url, setUrl, converter }: any) => {
     setIsOpen(true);
   }
 
-  const getByIdQueryHandler = async (e: any) => {
+  const aeQueryHandler = async (e: any) => {
     e.preventDefault();
     if (url.includes("aliexpress.com/item/")) {
       const firstSplit = url.split("/item/");
@@ -33,7 +39,7 @@ const SearchAE = ({ url, setUrl, converter }: any) => {
           locale: router.locale?.toUpperCase(),
         }
       );
-      setProducts(data.data);
+      setProducts(data.data.products.product);
     }
   };
 
@@ -52,7 +58,7 @@ const SearchAE = ({ url, setUrl, converter }: any) => {
               {t("aeHands")}
             </h2>
             <form
-              onSubmit={getByIdQueryHandler}
+              onSubmit={aeQueryHandler}
               className={`flex flex-col ${
                 router.locale === "ar" ? "md:flex-row-reverse" : "md:flex-row"
               }  items-center mt-8 lg:mx-auto justify-center lg:w-1/2`}

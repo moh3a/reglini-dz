@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useSession } from "next-auth/client";
+import { TerminalIcon } from "@heroicons/react/outline";
 
 import { IUser } from "../../utils/types";
 import { selectAEApi } from "../../utils/redux/aeapiSlice";
@@ -119,6 +120,12 @@ const Aliexpress = () => {
             />
           )}
         </>
+      )}
+      {status === "failed" && (
+        <div className="w-full h-128 flex justify-center items-center text-2xl font-semibold select-none">
+          <TerminalIcon className="h-10 w-10 inline mr-4" aria-hidden="true" />_
+          undergoing maintenance
+        </div>
       )}
       <RecommendedProducts />
     </>

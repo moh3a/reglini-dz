@@ -33,7 +33,7 @@ handler.post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
     .catch((error) => {
       if (error.response.data.statusCode === 429) {
         console.log(error.response.data);
-        res.status(200).json({
+        res.status(429).json({
           success: false,
           message: "No AliExpress requests available",
         });

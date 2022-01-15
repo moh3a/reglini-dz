@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
 import { useSession } from "next-auth/client";
+import { TerminalIcon } from "@heroicons/react/outline";
 
 import { IUser } from "../../../utils/types";
 import { getAEProductInfo } from "../../../utils/redux/aeapiAsyncActions";
@@ -30,7 +31,7 @@ const AliexpressProduct = () => {
     fetchRate();
   }, [fetchCommission, fetchRate]);
 
-  const [locale, setLocale] = useState("fr");
+  const [locale, setLocale] = useState("");
   const [message, setMessage] = useState("");
   useEffect(() => {
     if (router.locale === "en") {
@@ -53,7 +54,7 @@ const AliexpressProduct = () => {
   const { product, status } = useSelector(selectAEApi);
   const { id } = router.query;
   useEffect(() => {
-    if (id && (!product || product.productId !== id))
+    if (id && locale && (!product || product.productId !== id))
       dispatch(getAEProductInfo({ id, locale }));
   }, [id, dispatch, product, locale]);
 
@@ -107,12 +108,17 @@ const AliexpressProduct = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {status === "loading" && <Loading text={message} />}
-      {product && product.status === "active" && rate && commission && (
+      {product && product.status === "active" && rate && commission ? (
         <ProductDetails
           converter={converter}
           product={product}
           session={session}
         />
+      ) : (
+        <div className="w-full h-128 flex justify-center items-center text-2xl font-semibold select-none">
+          <TerminalIcon className="h-10 w-10 inline mr-4" aria-hidden="true" />_
+          undergoing maintenance
+        </div>
       )}
     </>
   );

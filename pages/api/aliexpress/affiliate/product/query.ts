@@ -3,9 +3,12 @@
 
 require("dotenv").config();
 import { TopClient } from "../../../../../lib/api/topClient";
-
 import nc from "next-connect";
 import type { NextApiResponse, NextApiRequest } from "next";
+import {
+  IAEAffiliateProductsResponse,
+  IAEError,
+} from "../../../../../utils/AETypes";
 
 const client = new TopClient({
   appkey: process.env.ALIEXPRESS_AFFILIATE_APP_KEY,
@@ -32,24 +35,11 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
         tracking_id: "reglinidz",
         ship_to_country: "DZ",
       },
-      function (error: any, response: any) {
+      function (error: IAEError, response: IAEAffiliateProductsResponse) {
         if (!error) {
-          let data: any[] = [];
-          response.resp_result.result.products.product.map((product: any) => {
-            data.push({
-              productId: product.product_id,
-              imageUrl: product.product_main_image_url,
-              price: product.target_app_sale_price,
-              currency: product.target_app_sale_price_currency,
-              productCategory: product.second_level_category_name
-                ? product.second_level_category_name
-                : product.first_level_category_name,
-            });
-          });
-
           res.status(200).json({
             success: true,
-            data, //: response.resp_result.result,
+            data: response.resp_result.result,
           });
         } else console.log(error);
       }
