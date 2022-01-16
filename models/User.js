@@ -243,8 +243,6 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-// MIDDLEWARE TO BE USED BEFORE CREATING A NEW PASSWORD
-// USE BCRYPT TO HASH THE CLIENT ENTERED PASSWORD THEN SAVE IT IN DB
 UserSchema.pre("save", async function (next) {
   // the function keyword must be used and not the arrow function
   // CHECK IF PASSWORD HAS ALREADY BEEN HASHED
@@ -252,7 +250,6 @@ UserSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();
   }
-
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
   next();
@@ -265,15 +262,7 @@ UserSchema.methods.matchPasswords = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-// CREATE A JWT FOR THE CLIENT
 const jwt = require("jsonwebtoken");
-UserSchema.methods.getSignedToken = function () {
-  return jwt.sign(
-    { id: this._id },
-    process.env.JWT_SECRET, // SECRET
-    { expiresIn: process.env.JWT_EXPIRE } // OPTIONS
-  );
-};
 
 // GENERTE A RESET TOKEN AND EXPIRES IN 10 MIN
 const crypto = require("crypto");
@@ -297,9 +286,6 @@ UserSchema.methods.verifySignUpCredentials = function () {
     return verifyToken;
   }
 };
-
-// ADD A UNIQUE VALIDATION TO THE EMAIL AND USERNAME FIELDS
-// UserSchema.plugin(uniqueValidator, { message: "is already taken." });
 
 const User = mongoose.models.User || mongoose.model("User", UserSchema);
 export default User;

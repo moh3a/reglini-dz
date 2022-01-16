@@ -1,5 +1,3 @@
-// Commodity information query
-// https://developers.aliexpress.com/en/doc.htm?docId=60452&docType=2
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 import nc from "next-connect";
@@ -8,9 +6,15 @@ import { getSession } from "next-auth/client";
 
 import { TopClient } from "../../../../../lib/api/topClient";
 import User from "../../../../../models/User";
+import Currency from "../../../../../models/Currency";
+import Finance from "../../../../../models/Finance";
 import dbConnect from "../../../../../config/db";
 import { IExtendedAPIRequest, IUser } from "../../../../../utils/types";
-import { IAEError, IDSapiProductDetails } from "../../../../../utils/AETypes";
+import {
+  IAEError,
+  IDSapiProductDetails,
+  IShippingInformation,
+} from "../../../../../utils/AETypes";
 
 const client = new TopClient({
   appkey: process.env.ALIEXPRESS_DS_APP_KEY,
@@ -25,8 +29,31 @@ handler
   })
   .post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
     const { id, locale } = req.body;
+
     const session: IUser | null = await getSession({ req });
     let aesession: any;
+    let aeop_freight_calculate_result_for_buyer_d_t_o_list: IShippingInformation;
+
+    const rate = await Currency.findOne({ exchange: "DZDEUR" }).select("live");
+    const commission = await Finance.findOne().select("commission");
+
+    client.execute(
+      "aliexpress.logistics.buyer.freight.calculate",
+      {
+        session: process.env.ALIEXPRESS_DS_ACCESS_TOKEN,
+        param_aeop_freight_calculate_for_buyer_d_t_o: `{"country_code": "DZ","product_id": "${id}","product_num": 1,"send_goods_country_code": "CN","price_currency": "EUR"}`,
+      },
+      function (error: IAEError, response: any) {
+        if (!error) {
+          if (response.result.success) {
+            aeop_freight_calculate_result_for_buyer_d_t_o_list =
+              response.result
+                .aeop_freight_calculate_result_for_buyer_d_t_o_list;
+          }
+        }
+      }
+    );
+
     try {
       if (session && session.user) {
         const email = session.user.email;
@@ -58,14 +85,18 @@ handler
             function (error: IAEError, response: IDSapiProductDetails) {
               if (!error) {
                 if (response.rsp_code === "200") {
+                  response.result.aeop_freight_calculate_result_for_buyer_d_t_o_list =
+                    aeop_freight_calculate_result_for_buyer_d_t_o_list;
                   res.status(200).json({
                     success: true,
                     data: response.result,
+                    rate: rate.live.parallel.sale,
+                    commission: commission.commission,
                     dropshipper: false,
                     message: "Successfully retrieved product details.",
                   });
                 }
-              } else console.log(error);
+              } else res.status(500).json({ success: false, message: error });
             }
           );
         } else {
@@ -79,13 +110,17 @@ handler
             },
             function (error: IAEError, response: any) {
               if (!error) {
+                response.result.aeop_freight_calculate_result_for_buyer_d_t_o_list =
+                  aeop_freight_calculate_result_for_buyer_d_t_o_list;
                 res.status(200).json({
                   success: true,
                   data: response.result,
+                  rate: rate.live.parallel.sale,
+                  commission: commission.commission,
                   dropshipper: true,
                   message: "Successfully retrieved product details.",
                 });
-              } else console.log(error);
+              } else res.status(500).json({ success: false, message: error });
             }
           );
         }
@@ -100,13 +135,17 @@ handler
           },
           function (error: IAEError, response: any) {
             if (!error) {
+              response.result.aeop_freight_calculate_result_for_buyer_d_t_o_list =
+                aeop_freight_calculate_result_for_buyer_d_t_o_list;
               res.status(200).json({
                 success: true,
                 data: response.result,
+                rate: rate.live.parallel.sale,
+                commission: commission.commission,
                 dropshipper: true,
                 message: "Successfully retrieved product details.",
               });
-            } else console.log(error);
+            } else res.status(500).json({ success: false, message: error });
           }
         );
       }

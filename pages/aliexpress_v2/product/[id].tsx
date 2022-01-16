@@ -11,41 +11,30 @@ import {
 
 const AliexpressProduct = () => {
   const router = useRouter();
-
+  const { id } = router.query;
   const [commission, setCommission] = useState<number>();
   const [rate, setRate] = useState<number>();
-  const fetchCommission = useCallback(async () => {
-    const { data } = await axios.get(`/api/commission`);
-    setCommission(data.data.commission);
-  }, []);
-  const fetchRate = useCallback(async () => {
-    const { data } = await axios.get(`/api/currency`);
-    setRate(data.data[0].live.parallel.sale);
-  }, []);
-  useEffect(() => {
-    fetchCommission();
-    fetchRate();
-  }, [fetchCommission, fetchRate]);
 
   const converter = (price: number) => {
     if (rate && commission)
       return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
   };
 
-  const { id } = router.query;
   const [dropshipperProduct, setDropshipperProduct] =
     useState<IDSProductDetails>();
   const [basicProduct, setBasicProduct] =
     useState<IDSapiProductDetails["result"]>();
+
   const fetchProduct = useCallback(async () => {
     const { data } = await axios.post("/api/aliexpress/ds/product/detail", {
       id,
       locale: router.locale?.toUpperCase(),
     });
-    if (data.dropshipper) {
-      setDropshipperProduct(data.data);
-    } else {
-      setBasicProduct(data.data);
+    if (data.success) {
+      setCommission(data.commission);
+      setRate(data.rate);
+      if (data.dropshipper) setDropshipperProduct(data.data);
+      if (!data.dropshipper) setBasicProduct(data.data);
     }
     console.log(data.data);
   }, [id, router.locale]);
@@ -65,7 +54,7 @@ const AliexpressProduct = () => {
           converter={converter}
         />
       )}
-      {(!basicProduct || !dropshipperProduct) && !rate && !commission && (
+      {!rate && !commission && (
         <div className="w-full h-128 text-xl font-bold select-none flex justify-center items-center">
           <Logo height={50} width={50} />
           Fetching data from AliExpress...

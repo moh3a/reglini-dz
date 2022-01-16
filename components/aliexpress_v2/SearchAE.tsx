@@ -6,13 +6,10 @@ import { Dialog, Transition } from "@headlessui/react";
 import axios from "axios";
 import ProductsList from "./ProductsList";
 
-const SearchAE = ({
-  converter,
-}: {
-  converter: (price: number) => number | undefined;
-}) => {
+const SearchAE = () => {
   const [url, setUrl] = useState("");
-
+  const [commission, setCommission] = useState<number>();
+  const [rate, setRate] = useState<number>();
   const [products, setProducts] = useState<any>();
   const t = useTranslations("Aliexpress");
   const router = useRouter();
@@ -24,6 +21,11 @@ const SearchAE = ({
   function openModal() {
     setIsOpen(true);
   }
+
+  const converter = (price: number) => {
+    if (rate && commission)
+      return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
+  };
 
   const aeQueryHandler = async (e: any) => {
     e.preventDefault();
@@ -40,6 +42,8 @@ const SearchAE = ({
         }
       );
       setProducts(data.data.products.product);
+      setCommission(data.commission);
+      setRate(data.rate);
     }
   };
 

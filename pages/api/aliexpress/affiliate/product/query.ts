@@ -5,6 +5,8 @@ require("dotenv").config();
 import { TopClient } from "../../../../../lib/api/topClient";
 import nc from "next-connect";
 import type { NextApiResponse, NextApiRequest } from "next";
+import Currency from "../../../../../models/Currency";
+import Finance from "../../../../../models/Finance";
 import {
   IAEAffiliateProductsResponse,
   IAEError,
@@ -18,6 +20,8 @@ const client = new TopClient({
 const handler = nc();
 handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
   const { keywords } = req.body;
+  const rate = await Currency.findOne({ exchange: "DZDEUR" }).select("live");
+  const commission = await Finance.findOne().select("commission");
   try {
     client.execute(
       "aliexpress.affiliate.product.query",
@@ -40,6 +44,8 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
           res.status(200).json({
             success: true,
             data: response.resp_result.result,
+            rate: rate.live.parallel.sale,
+            commission: commission.commission,
           });
         } else console.log(error);
       }

@@ -1,4 +1,3 @@
-import { useState, useEffect, useCallback } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
@@ -10,26 +9,6 @@ import RecommendedProducts from "../../components/store/RecommendedProducts";
 const Aliexpress = () => {
   const { user } = useSelector(selectUser);
   const router = useRouter();
-
-  const [commission, setCommission] = useState<number>();
-  const [rate, setRate] = useState<number>();
-  const fetchCommission = useCallback(async () => {
-    const { data } = await axios.get(`/api/commission`);
-    setCommission(data.data.commission);
-  }, []);
-  const fetchRate = useCallback(async () => {
-    const { data } = await axios.get(`/api/currency`);
-    setRate(data.data[0].live.parallel.sale);
-  }, []);
-  useEffect(() => {
-    fetchCommission();
-    fetchRate();
-  }, [fetchCommission, fetchRate]);
-
-  const converter = (price: number) => {
-    if (rate && commission)
-      return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
-  };
 
   const callaeauth = async () => {
     const { data } = await axios.post("/api/aliexpress/auth");
@@ -46,7 +25,7 @@ const Aliexpress = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SearchAE converter={converter} />
+      <SearchAE />
       {user && (!user.aeCredentials || !user.aeCredentials.token) && (
         <div className="px-5 py-6 flex flex-col justify-center items-center">
           <h2>

@@ -8,6 +8,9 @@ import { IDSProductDetails } from "../../../utils/AETypes";
 import StoreInfo from "./StoreInfo";
 import ProductImages from "./ProductImages";
 import ProductProperties from "./ProductProperties";
+import ProductReviews from "./ProductReviews";
+import ProductQuantity from "./ProductQuantity";
+import ProductShipping from "../ProductShipping";
 
 const ProductDetails = ({
   product,
@@ -19,6 +22,11 @@ const ProductDetails = ({
   const router = useRouter();
   const t = useTranslations("Aliexpress");
   const [showImage, setShowImage] = useState("/placeholder.png");
+  const [quantity, setQuantity] = useState(1);
+  const [selectedShipping, setSelectedShipping] = useState(
+    product.aeop_freight_calculate_result_for_buyer_d_t_o_list
+      .aeop_freight_calculate_result_for_buyer_dto[0]
+  );
 
   const images = product.image_u_r_ls.split(";");
   useEffect(() => {
@@ -57,10 +65,20 @@ const ProductDetails = ({
                 </h1>
               )}
             <p className="text-lg font-semibold">{product.subject}</p>
+            <ProductReviews product={product} />
+            <ProductProperties product={product} />
+            <ProductQuantity
+              product={product}
+              quantity={quantity}
+              setQuantity={setQuantity}
+            />
+            <ProductShipping
+              product={product}
+              setSelectedShipping={setSelectedShipping}
+              converter={converter}
+            />
           </div>
         </div>
-
-        <ProductProperties product={product} />
 
         <StoreInfo product={product} />
 
