@@ -12,8 +12,10 @@ import dbConnect from "../../../../../config/db";
 import { IExtendedAPIRequest, IUser } from "../../../../../utils/types";
 import {
   IAEError,
-  IDSapiProductDetails,
+  IDropshipperProductDetails,
+  IBasicProductDetails,
   IShippingInformation,
+  IProductProperties,
 } from "../../../../../utils/AETypes";
 
 const client = new TopClient({
@@ -29,8 +31,23 @@ handler
   })
   .post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
     const { id, locale } = req.body;
+    let properties: IProductProperties[] = [];
 
+    let user: any;
     const session: IUser | null = await getSession({ req });
+    if (session && session.user) {
+      const email = session.user.email;
+      const account = session.user.type;
+      let provider: IUser["user.provider"];
+      if (account === "oauth") {
+        provider = session.user.provider;
+      }
+      user = await User.findOne({
+        email,
+        account,
+        provider: provider || undefined,
+      });
+    }
     let aesession: any;
     let aeop_freight_calculate_result_for_buyer_d_t_o_list: IShippingInformation;
 
@@ -49,109 +66,191 @@ handler
             aeop_freight_calculate_result_for_buyer_d_t_o_list =
               response.result
                 .aeop_freight_calculate_result_for_buyer_d_t_o_list;
+            try {
+              if (user && user.aeCredentials && user.aeCredentials.token) {
+                const decoded = jwt.verify(
+                  user.aeCredentials.token,
+                  process.env.JWT_SECRET
+                );
+                aesession = decoded.session;
+                client.execute(
+                  "aliexpress.ds.product.get",
+                  {
+                    session: aesession.access_token,
+                    product_id: id,
+                    ship_to_country: "DZ",
+                    target_currency: "EUR",
+                    target_language: locale,
+                  },
+                  function (error: IAEError, response: IBasicProductDetails) {
+                    if (!error) {
+                      response.result.aeop_freight_calculate_result_for_buyer_d_t_o_list =
+                        aeop_freight_calculate_result_for_buyer_d_t_o_list;
+                      if (
+                        response.result.ae_item_sku_info_dtos &&
+                        response.result.ae_item_sku_info_dtos
+                          .ae_item_sku_info_d_t_o
+                      ) {
+                        response.result.ae_item_sku_info_dtos?.ae_item_sku_info_d_t_o.map(
+                          (variations) => {
+                            if (
+                              variations.ae_sku_property_dtos &&
+                              variations.ae_sku_property_dtos
+                                .ae_sku_property_d_t_o
+                            ) {
+                              variations.ae_sku_property_dtos?.ae_sku_property_d_t_o?.map(
+                                (props) => {
+                                  const index = properties.findIndex(
+                                    (e: any) =>
+                                      e.id === props.sku_property_id?.toString()
+                                  );
+                                  if (index !== -1) {
+                                    const exits = properties[index].values.find(
+                                      (e) =>
+                                        e.id ===
+                                        props.property_value_id?.toString()
+                                    );
+                                    if (!exits)
+                                      properties[index].values.push({
+                                        id: props.property_value_id?.toString(),
+                                        name: props.property_value_definition_name,
+                                        hasImage: props.sku_image
+                                          ? true
+                                          : false,
+                                        imageUrl: props.sku_image,
+                                        thumbnailImageUrl: props.sku_image,
+                                      });
+                                  } else {
+                                    properties.push({
+                                      id: props.sku_property_id?.toString(),
+                                      name: props.sku_property_name,
+                                      values: [
+                                        {
+                                          id: props.property_value_id?.toString(),
+                                          name: props.property_value_definition_name,
+                                          hasImage: props.sku_image
+                                            ? true
+                                            : false,
+                                          imageUrl: props.sku_image,
+                                          thumbnailImageUrl: props.sku_image,
+                                        },
+                                      ],
+                                    });
+                                  }
+                                }
+                              );
+                            }
+                          }
+                        );
+                      }
+                      response.result.properties = properties;
+                      if (response.rsp_code === "200") {
+                        res.status(200).json({
+                          success: true,
+                          data: response.result,
+                          rate: rate.live.parallel.sale,
+                          commission: commission.commission,
+                          dropshipper: false,
+                          message: "Successfully retrieved product details.",
+                        });
+                      }
+                    } else
+                      res.status(500).json({ success: false, message: error });
+                  }
+                );
+              } else {
+                client.execute(
+                  "aliexpress.postproduct.redefining.findaeproductbyidfordropshipper",
+                  {
+                    session: process.env.ALIEXPRESS_DS_ACCESS_TOKEN,
+                    local_country: "DZ",
+                    local_language: locale,
+                    product_id: id,
+                  },
+                  function (
+                    error: IAEError,
+                    response: IDropshipperProductDetails
+                  ) {
+                    if (!error) {
+                      response.result.aeop_freight_calculate_result_for_buyer_d_t_o_list =
+                        aeop_freight_calculate_result_for_buyer_d_t_o_list;
+                      if (
+                        response.result.aeop_ae_product_s_k_us &&
+                        response.result.aeop_ae_product_s_k_us
+                          .aeop_ae_product_sku
+                      ) {
+                        response.result.aeop_ae_product_s_k_us?.aeop_ae_product_sku.map(
+                          (variations) => {
+                            if (
+                              variations.aeop_s_k_u_propertys &&
+                              variations.aeop_s_k_u_propertys.aeop_sku_property
+                            ) {
+                              variations.aeop_s_k_u_propertys?.aeop_sku_property?.map(
+                                (props) => {
+                                  const index = properties.findIndex(
+                                    (e: any) =>
+                                      e.id === props.sku_property_id.toString()
+                                  );
+                                  if (index !== -1) {
+                                    const exits = properties[index].values.find(
+                                      (e) =>
+                                        e.id ===
+                                        props.property_value_id_long.toString()
+                                    );
+                                    if (!exits)
+                                      properties[index].values.push({
+                                        id: props.property_value_id_long.toString(),
+                                        name: props.property_value_definition_name,
+                                        hasImage: props.sku_image
+                                          ? true
+                                          : false,
+                                        imageUrl: props.sku_image,
+                                        thumbnailImageUrl: props.sku_image,
+                                      });
+                                  } else {
+                                    properties.push({
+                                      id: props.sku_property_id.toString(),
+                                      name: props.sku_property_name,
+                                      values: [
+                                        {
+                                          id: props.property_value_id_long.toString(),
+                                          name: props.property_value_definition_name,
+                                          hasImage: props.sku_image
+                                            ? true
+                                            : false,
+                                          imageUrl: props.sku_image,
+                                          thumbnailImageUrl: props.sku_image,
+                                        },
+                                      ],
+                                    });
+                                  }
+                                }
+                              );
+                            }
+                          }
+                        );
+                      }
+                      response.result.properties = properties;
+                      res.status(200).json({
+                        success: true,
+                        data: response.result,
+                        rate: rate.live.parallel.sale,
+                        commission: commission.commission,
+                        dropshipper: true,
+                        message: "Successfully retrieved product details.",
+                      });
+                    } else
+                      res.status(500).json({ success: false, message: error });
+                  }
+                );
+              }
+            } catch (error: any) {
+              console.log(error);
+            }
           }
         }
       }
     );
-
-    try {
-      if (session && session.user) {
-        const email = session.user.email;
-        const account = session.user.type;
-        let provider: IUser["user.provider"];
-        if (account === "oauth") {
-          provider = session.user.provider;
-        }
-        const user = await User.findOne({
-          email,
-          account,
-          provider: provider || undefined,
-        });
-        if (user.aeCredentials && user.aeCredentials.token) {
-          const decoded = jwt.verify(
-            user.aeCredentials.token,
-            process.env.JWT_SECRET
-          );
-          aesession = decoded.session;
-          client.execute(
-            "aliexpress.ds.product.get",
-            {
-              session: aesession.access_token,
-              product_id: id,
-              ship_to_country: "DZ",
-              target_currency: "EUR",
-              target_language: locale,
-            },
-            function (error: IAEError, response: IDSapiProductDetails) {
-              if (!error) {
-                if (response.rsp_code === "200") {
-                  response.result.aeop_freight_calculate_result_for_buyer_d_t_o_list =
-                    aeop_freight_calculate_result_for_buyer_d_t_o_list;
-                  res.status(200).json({
-                    success: true,
-                    data: response.result,
-                    rate: rate.live.parallel.sale,
-                    commission: commission.commission,
-                    dropshipper: false,
-                    message: "Successfully retrieved product details.",
-                  });
-                }
-              } else res.status(500).json({ success: false, message: error });
-            }
-          );
-        } else {
-          client.execute(
-            "aliexpress.postproduct.redefining.findaeproductbyidfordropshipper",
-            {
-              session: process.env.ALIEXPRESS_DS_ACCESS_TOKEN,
-              local_country: "DZ",
-              local_language: locale,
-              product_id: id,
-            },
-            function (error: IAEError, response: any) {
-              if (!error) {
-                response.result.aeop_freight_calculate_result_for_buyer_d_t_o_list =
-                  aeop_freight_calculate_result_for_buyer_d_t_o_list;
-                res.status(200).json({
-                  success: true,
-                  data: response.result,
-                  rate: rate.live.parallel.sale,
-                  commission: commission.commission,
-                  dropshipper: true,
-                  message: "Successfully retrieved product details.",
-                });
-              } else res.status(500).json({ success: false, message: error });
-            }
-          );
-        }
-      } else {
-        client.execute(
-          "aliexpress.postproduct.redefining.findaeproductbyidfordropshipper",
-          {
-            session: process.env.ALIEXPRESS_DS_ACCESS_TOKEN,
-            local_country: "DZ",
-            local_language: locale,
-            product_id: id,
-          },
-          function (error: IAEError, response: any) {
-            if (!error) {
-              response.result.aeop_freight_calculate_result_for_buyer_d_t_o_list =
-                aeop_freight_calculate_result_for_buyer_d_t_o_list;
-              res.status(200).json({
-                success: true,
-                data: response.result,
-                rate: rate.live.parallel.sale,
-                commission: commission.commission,
-                dropshipper: true,
-                message: "Successfully retrieved product details.",
-              });
-            } else res.status(500).json({ success: false, message: error });
-          }
-        );
-      }
-    } catch (error: any) {
-      console.log(error);
-    }
   });
 
 export default handler;

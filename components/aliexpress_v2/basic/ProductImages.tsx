@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { Dispatch, SetStateAction, useEffect } from "react";
-import { IDSapiProductDetails } from "../../../utils/AETypes";
+import { IBasicProductDetails } from "../../../utils/AETypes";
 
 const ProductImages = ({
   product,
   showImage,
   setShowImage,
 }: {
-  product: IDSapiProductDetails["result"];
+  product: IBasicProductDetails["result"];
   showImage: string;
   setShowImage: Dispatch<SetStateAction<string>>;
 }) => {

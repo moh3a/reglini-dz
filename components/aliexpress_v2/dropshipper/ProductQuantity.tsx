@@ -1,14 +1,14 @@
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/router";
 import { Dispatch, SetStateAction } from "react";
-import { IDSProductDetails } from "../../../utils/AETypes";
+import { IDropshipperProductDetails } from "../../../utils/AETypes";
 
 const ProductQuantity = ({
   product,
   quantity,
   setQuantity,
 }: {
-  product: IDSProductDetails;
+  product: IDropshipperProductDetails["result"];
   quantity: number;
   setQuantity: Dispatch<SetStateAction<number>>;
 }) => {

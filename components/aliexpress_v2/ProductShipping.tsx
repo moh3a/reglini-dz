@@ -3,14 +3,19 @@ import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
-import { IDSapiProductDetails, IDSProductDetails } from "../../utils/AETypes";
+import {
+  IBasicProductDetails,
+  IDropshipperProductDetails,
+} from "../../utils/AETypes";
 
 const ProductShipping = ({
   product,
   setSelectedShipping,
   converter,
 }: {
-  product: IDSapiProductDetails["result"] | IDSProductDetails;
+  product:
+    | IBasicProductDetails["result"]
+    | IDropshipperProductDetails["result"];
   setSelectedShipping: any;
   converter: (price: number) => number | undefined;
 }) => {

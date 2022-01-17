@@ -1,105 +1,110 @@
-export interface IDSProductDetails {
-  aeop_freight_calculate_result_for_buyer_d_t_o_list: IShippingInformation;
-  aeop_ae_product_s_k_us: {
-    aeop_ae_product_sku: [
-      {
-        sku_stock: boolean;
-        sku_price: string;
-        sku_code: string;
-        ipm_sku_stock: number;
-        id: string;
-        currency_code: string;
-        aeop_s_k_u_propertys: {
-          aeop_sku_property: [
-            {
-              sku_property_id: number;
-              sku_image: string;
-              property_value_id_long: number;
-              property_value_definition_name: string;
-              sku_property_value: string;
-              sku_property_name: string;
-            }
-          ];
-        };
-        barcode: string;
-        offer_sale_price: string;
-        offer_bulk_sale_price: string;
-        sku_bulk_order: number;
-        s_k_u_available_stock: number;
-      }
-    ];
-  };
-  detail: string;
-  is_success: boolean;
-  product_unit: number;
-  ws_offline_date: string;
-  ws_display: string;
-  category_id: number;
-  aeop_a_e_multimedia: {
-    aeop_a_e_videos: {
-      aeop_ae_video: [
+export interface IDropshipperProductDetails {
+  result: {
+    aeop_freight_calculate_result_for_buyer_d_t_o_list: IShippingInformation;
+    aeop_ae_product_s_k_us: {
+      aeop_ae_product_sku: [
         {
-          poster_url: string;
-          media_type: string;
-          media_status: string;
-          media_id: number;
-          ali_member_id: number;
+          sku_stock: boolean;
+          sku_price: string;
+          sku_code: string;
+          ipm_sku_stock: number;
+          id: string;
+          currency_code: string;
+          aeop_s_k_u_propertys: {
+            aeop_sku_property: [
+              {
+                sku_property_id: number;
+                sku_image: string;
+                property_value_id_long: number;
+                property_value_definition_name: string;
+                sku_property_value: string;
+                sku_property_name: string;
+              }
+            ];
+          };
+          barcode: string;
+          offer_sale_price: string;
+          offer_bulk_sale_price: string;
+          sku_bulk_order: number;
+          s_k_u_available_stock: number;
         }
       ];
     };
+    detail: string;
+    is_success: boolean;
+    product_unit: number;
+    ws_offline_date: string;
+    ws_display: string;
+    category_id: number;
+    aeop_a_e_multimedia: {
+      aeop_a_e_videos: {
+        aeop_ae_video: [
+          {
+            poster_url: string;
+            media_type: string;
+            media_status: string;
+            media_id: number;
+            ali_member_id: number;
+          }
+        ];
+      };
+    };
+    owner_member_id: string;
+    product_status_type: string;
+    properties: IProductProperties[];
+    aeop_ae_product_propertys: {
+      aeop_ae_product_property: [
+        {
+          attr_value_unit: string;
+          attr_value_start: string;
+          attr_value_id: number;
+          attr_value_end: string;
+          attr_value: string;
+          attr_name_id: number;
+          attr_name: string;
+        }
+      ];
+    };
+    gross_weight: string;
+    delivery_time: number;
+    ws_valid_num: number;
+    gmt_modified: string;
+    error_message: string;
+    package_type: boolean;
+    aeop_national_quote_configuration: {
+      configuration_type: string;
+      configuration_data: string;
+    };
+    subject: string;
+    base_unit: number;
+    package_length: number;
+    mobile_detail: string;
+    package_height: number;
+    package_width: number;
+    currency_code: string;
+    gmt_create: string;
+    image_u_r_ls: string;
+    product_id: number;
+    error_code: number;
+    product_price: string;
+    item_offer_site_sale_price: string;
+    total_available_stock: number;
+    store_info: {
+      communication_rating: string;
+      item_as_descriped_rating: string;
+      shipping_speed_rating: string;
+      store_id: number;
+      store_name: string;
+    };
+    evaluation_count: number;
+    avg_evaluation_rating: string;
+    order_count: number;
   };
-  owner_member_id: string;
-  product_status_type: string;
-  aeop_ae_product_propertys: {
-    aeop_ae_product_property: [
-      {
-        attr_value_unit: string;
-        attr_value_start: string;
-        attr_value_id: number;
-        attr_value_end: string;
-        attr_value: string;
-        attr_name_id: number;
-        attr_name: string;
-      }
-    ];
-  };
-  gross_weight: string;
-  delivery_time: number;
-  ws_valid_num: number;
-  gmt_modified: string;
-  error_message: string;
-  package_type: boolean;
-  aeop_national_quote_configuration: {
-    configuration_type: string;
-    configuration_data: string;
-  };
-  subject: string;
-  base_unit: number;
-  package_length: number;
-  mobile_detail: string;
-  package_height: number;
-  package_width: number;
-  currency_code: string;
-  gmt_create: string;
-  image_u_r_ls: string;
-  product_id: number;
-  error_code: number;
-  product_price: string;
-  item_offer_site_sale_price: string;
-  total_available_stock: number;
-  store_info: {
-    communication_rating: string;
-    item_as_descriped_rating: string;
-    shipping_speed_rating: string;
-    store_id: number;
-    store_name: string;
-  };
-  evaluation_count: number;
-  avg_evaluation_rating: string;
-  order_count: number;
+  rsp_msg: string;
+  rsp_code: string;
 }
 
-export interface IDSapiProductDetails {
+export interface IBasicProductDetails {
   result: {
     aeop_freight_calculate_result_for_buyer_d_t_o_list: IShippingInformation;
     ae_item_base_info_dto?: {
@@ -194,9 +199,24 @@ export interface IDSapiProductDetails {
       communication_rating?: string;
       shipping_speed_rating?: string;
     };
+    properties: IProductProperties[];
   };
   rsp_msg: string;
   rsp_code: string;
+}
+
+export interface IProductProperties {
+  id?: string;
+  name?: string;
+  values: [
+    {
+      id?: string;
+      name?: string;
+      hasImage?: boolean;
+      imageUrl?: string;
+      thumbnailImageUrl?: string;
+    }
+  ];
 }
 
 export interface IShippingInformation {
@@ -355,8 +375,8 @@ export interface MainAEProduct {
     storeUrl: string;
     storeId: string;
     storeName: string;
-    sellerId: string;
-    companyId: string;
+    sellerId?: string;
+    companyId?: string;
   };
   sellerDetails: {
     sellerDetailsUrl: string;
@@ -488,35 +508,35 @@ export interface MainAEProduct {
   reviewsRatings: {
     totalCount: number;
     averageRating: number;
-    positiveRatings: {
+    positiveRatings?: {
       count: number;
       percentage: number;
     };
-    negativeRatings: {
+    negativeRatings?: {
       count: number;
       percentage: number;
     };
-    neutralRatings: {
+    neutralRatings?: {
       count: number;
       percentage: number;
     };
-    fiveStar: {
+    fiveStar?: {
       count: number;
       percentage: number;
     };
-    fourStar: {
+    fourStar?: {
       count: number;
       percentage: number;
     };
-    threeStar: {
+    threeStar?: {
       count: number;
       percentage: number;
     };
-    twoStar: {
+    twoStar?: {
       count: number;
       percentage: number;
     };
-    oneStar: {
+    oneStar?: {
       count: number;
       percentage: number;
     };
@@ -531,8 +551,8 @@ export interface MainAEProduct {
           id: string;
           name: string;
           hasImage: boolean;
-          imageUrl: string;
-          thumbnailImageUrl: string;
+          imageUrl?: string;
+          thumbnailImageUrl?: string;
         }
       ];
     }

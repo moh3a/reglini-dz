@@ -1,9 +1,9 @@
-import { IDSapiProductDetails } from "../../../utils/AETypes";
+import { IBasicProductDetails } from "../../../utils/AETypes";
 
 const StoreInfo = ({
   product,
 }: {
-  product: IDSapiProductDetails["result"];
+  product: IBasicProductDetails["result"];
 }) => {
   return (
     <div className="w-52 my-2 bg-gray-100 hover:bg-gray-200 dark:bg-grim shadow-lg overflow-hidden rounded-lg px-4 py-2">

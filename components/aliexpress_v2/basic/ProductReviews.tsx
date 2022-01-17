@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
-import { IDSapiProductDetails } from "../../../utils/AETypes";
+import { IBasicProductDetails } from "../../../utils/AETypes";
 
 const ProductReviews = ({
   product,
 }: {
-  product: IDSapiProductDetails["result"];
+  product: IBasicProductDetails["result"];
 }) => {
   const router = useRouter();
   const t = useTranslations("AEProduct");

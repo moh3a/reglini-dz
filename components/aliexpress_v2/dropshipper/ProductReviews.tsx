@@ -1,8 +1,12 @@
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
-import { IDSProductDetails } from "../../../utils/AETypes";
+import { IDropshipperProductDetails } from "../../../utils/AETypes";
 
-const ProductReviews = ({ product }: { product: IDSProductDetails }) => {
+const ProductReviews = ({
+  product,
+}: {
+  product: IDropshipperProductDetails["result"];
+}) => {
   const router = useRouter();
   const t = useTranslations("AEProduct");
 

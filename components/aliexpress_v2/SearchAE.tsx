@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Dialog, Transition } from "@headlessui/react";
 import axios from "axios";
 import ProductsList from "./ProductsList";
+import HotProducts from "./HotProducts";
 
 const SearchAE = () => {
   const [url, setUrl] = useState("");
@@ -171,7 +172,8 @@ const SearchAE = () => {
           </div>
         </div>
       </section>
-      {products && <ProductsList products={products} converter={converter} />}
+      {/* {products && <ProductsList products={products} converter={converter} />} */}
+      <HotProducts />
     </>
   );
 };

@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
-import { IDSProductDetails } from "../../../utils/AETypes";
+import { IDropshipperProductDetails } from "../../../utils/AETypes";
 
-const ProductProperties = ({ product }: { product: IDSProductDetails }) => {
+const ProductProperties = ({
+  product,
+}: {
+  product: IDropshipperProductDetails["result"];
+}) => {
   return (
     <div>
       <h2>Product Properties</h2>

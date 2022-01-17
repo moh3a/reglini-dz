@@ -1,9 +1,9 @@
-import { IDSapiProductDetails } from "../../../utils/AETypes";
+import { IBasicProductDetails } from "../../../utils/AETypes";
 
 const ProductProperties = ({
   product,
 }: {
-  product: IDSapiProductDetails["result"];
+  product: IBasicProductDetails["result"];
 }) => {
   return (
     <div>

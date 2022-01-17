@@ -1,6 +1,10 @@
-import { IDSProductDetails } from "../../../utils/AETypes";
+import { IDropshipperProductDetails } from "../../../utils/AETypes";
 
-const StoreInfo = ({ product }: { product: IDSProductDetails }) => {
+const StoreInfo = ({
+  product,
+}: {
+  product: IDropshipperProductDetails["result"];
+}) => {
   return (
     <div className=" w-52 my-2 bg-gray-100 hover:bg-gray-200 dark:bg-grim shadow-lg overflow-hidden rounded-lg px-4 py-2">
       {product.store_info && (

@@ -5,8 +5,8 @@ import axios from "axios";
 import DropshipperProductDetails from "../../../components/aliexpress_v2/dropshipper/ProductDetails";
 import BasicProductDetails from "../../../components/aliexpress_v2/basic/ProductDetails";
 import {
-  IDSProductDetails,
-  IDSapiProductDetails,
+  IDropshipperProductDetails,
+  IBasicProductDetails,
 } from "../../../utils/AETypes";
 
 const AliexpressProduct = () => {
@@ -21,9 +21,9 @@ const AliexpressProduct = () => {
   };
 
   const [dropshipperProduct, setDropshipperProduct] =
-    useState<IDSProductDetails>();
+    useState<IDropshipperProductDetails["result"]>();
   const [basicProduct, setBasicProduct] =
-    useState<IDSapiProductDetails["result"]>();
+    useState<IBasicProductDetails["result"]>();
 
   const fetchProduct = useCallback(async () => {
     const { data } = await axios.post("/api/aliexpress/ds/product/detail", {
