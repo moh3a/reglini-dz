@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import axios from "axios";
 
 import DropshipperProductDetails from "../../../components/aliexpress_v2/dropshipper/ProductDetails";
@@ -45,6 +46,14 @@ const AliexpressProduct = () => {
 
   return (
     <>
+      <Head>
+        <title>Aliexpress product | reglini-dz</title>
+        <meta
+          name="description"
+          content="Query AliExpress for specific product details."
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {basicProduct && rate && commission && (
         <BasicProductDetails product={basicProduct} converter={converter} />
       )}

@@ -3,15 +3,12 @@ import { Fragment, useState } from "react";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import { Dialog, Transition } from "@headlessui/react";
-import axios from "axios";
-import ProductsList from "./ProductsList";
+import slugify from "slugify";
+
 import HotProducts from "./HotProducts";
 
 const SearchAE = () => {
   const [url, setUrl] = useState("");
-  const [commission, setCommission] = useState<number>();
-  const [rate, setRate] = useState<number>();
-  const [products, setProducts] = useState<any>();
   const t = useTranslations("Aliexpress");
   const router = useRouter();
 
@@ -23,11 +20,6 @@ const SearchAE = () => {
     setIsOpen(true);
   }
 
-  const converter = (price: number) => {
-    if (rate && commission)
-      return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
-  };
-
   const aeQueryHandler = async (e: any) => {
     e.preventDefault();
     if (url.includes("aliexpress.com/item/")) {
@@ -35,16 +27,8 @@ const SearchAE = () => {
       const secondSplit = firstSplit[1].split(".html");
       router.push(`/aliexpress_v2/product/${secondSplit[0]}`);
     } else {
-      const { data } = await axios.post(
-        "/api/aliexpress/affiliate/product/query",
-        {
-          keywords: url,
-          locale: router.locale?.toUpperCase(),
-        }
-      );
-      setProducts(data.data.products.product);
-      setCommission(data.commission);
-      setRate(data.rate);
+      const slug = slugify(url);
+      router.push(`/aliexpress_v2/search/${slug}`);
     }
   };
 
@@ -172,7 +156,6 @@ const SearchAE = () => {
           </div>
         </div>
       </section>
-      {/* {products && <ProductsList products={products} converter={converter} />} */}
       <HotProducts />
     </>
   );

@@ -27,7 +27,14 @@ const HotProducts = () => {
 
   return (
     <div>
-      {products && <ProductsList products={products} converter={converter} />}
+      {products && (
+        <>
+          <h2 className="text-2xl w-full text-center">
+            Recommended by AliExpress
+          </h2>
+          <ProductsList products={products} converter={converter} />
+        </>
+      )}
     </div>
   );
 };
