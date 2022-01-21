@@ -18,8 +18,10 @@ const client = new TopClient({
   appkey: process.env.ALIEXPRESS_AFFILIATE_APP_KEY,
   appsecret: process.env.ALIEXPRESS_AFFILIATE_APP_SECRET,
   REST_URL: process.env.NEXTAUTH_URL?.includes("https")
-    ? "https://api.taobao.com/router/rest"
-    : "http://api.taobao.com/router/rest",
+    ? // ? "https://api.taobao.com/router/rest"
+      // : "http://api.taobao.com/router/rest",
+      "	https://eco.taobao.com/router/rest"
+    : "http://gw.api.taobao.com/router/rest",
 });
 
 const handler = nc();
@@ -31,21 +33,26 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
 
   try {
     if (!category) {
+      console.log("call the affiliate category get");
       client.execute(
         "aliexpress.affiliate.category.get",
         {
           // app_signature: "moh3a",
         },
-        function (err: IAEError, result: any) {
-          if (!err) {
+        function (errorCategory: IAEError, responseCategory: any) {
+          if (!errorCategory) {
+            console.log(responseCategory);
             let categories: string = "";
-            if (result.resp_result.resp_code === 200) {
-              result.resp_result.result.categories.category.map((c: any) => {
-                if (!c.parent_category_id) {
-                  categories += c.category_id + ",";
+            if (responseCategory.resp_result.resp_code === 200) {
+              responseCategory.resp_result.result.categories.category.map(
+                (c: any) => {
+                  if (!c.parent_category_id) {
+                    categories += c.category_id + ",";
+                  }
                 }
-              });
+              );
             }
+            console.log("now call the hot products");
             client.execute(
               "aliexpress.affiliate.hotproduct.query",
               {
@@ -65,20 +72,21 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
                 ship_to_country: "DZ",
               },
               function (
-                error: IAEError,
-                response: IAEAffiliateProductDetailsResponse
+                errorHP: IAEError,
+                responseHP: IAEAffiliateProductDetailsResponse
               ) {
-                if (!error) {
+                if (!errorHP) {
+                  console.log(responseHP);
                   res.status(200).json({
                     success: true,
-                    data: response.resp_result.result,
+                    data: responseHP.resp_result.result,
                     rate: rate.live.parallel.sale,
                     commission: commission.commission,
                   });
-                } else console.log(error);
+                } else console.log(errorHP);
               }
             );
-          } else console.log(err);
+          } else console.log(errorCategory);
         }
       );
     } else {
@@ -105,6 +113,7 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
           response: IAEAffiliateProductDetailsResponse
         ) {
           if (!error) {
+            console.log(response);
             res.status(200).json({
               success: true,
               data: response.resp_result.result,
