@@ -25,10 +25,10 @@ const SearchAE = () => {
     if (url.includes("aliexpress.com/item/")) {
       const firstSplit = url.split("/item/");
       const secondSplit = firstSplit[1].split(".html");
-      router.push(`/aliexpress_v2/product/${secondSplit[0]}`);
+      router.push(`/aliexpress_v3/product/${secondSplit[0]}`);
     } else {
       const slug = slugify(url);
-      router.push(`/aliexpress_v2/search/${slug}`);
+      router.push(`/aliexpress_v3/search/${slug}`);
     }
   };
 

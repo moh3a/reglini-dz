@@ -133,8 +133,8 @@ const Aliexpress = () => {
 };
 
 import axios from "axios";
-import { GetServerSideProps } from "next";
-export const getServerSideProps: GetServerSideProps = async (context) => {
+import { GetStaticProps } from "next";
+export const getStaticProps: GetStaticProps = async (context) => {
   const { locale } = context;
 
   return {

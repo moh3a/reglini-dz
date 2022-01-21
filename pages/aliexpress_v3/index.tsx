@@ -3,8 +3,7 @@ import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
 import { selectUser } from "../../utils/redux/userSlice";
-import SearchAE from "../../components/aliexpress_v2/SearchAE";
-import RecommendedProducts from "../../components/store/RecommendedProducts";
+import SearchAE from "../../components/aliexpress_v3/SearchAE";
 
 const Aliexpress = () => {
   const { user } = useSelector(selectUser);
@@ -41,14 +40,13 @@ const Aliexpress = () => {
           </button>
         </div>
       )}
-      <RecommendedProducts />
     </>
   );
 };
 
 import axios from "axios";
-import { GetServerSideProps } from "next";
-export const getServerSideProps: GetServerSideProps = async (context) => {
+import { GetStaticProps } from "next";
+export const getStaticProps: GetStaticProps = async (context) => {
   const { locale } = context;
   return {
     props: {

@@ -33,7 +33,7 @@ const ProductsList = ({
         {products.map((product: IAffiliateProduct) => (
           <div key={product.product_id} className="my-8 mx-2 w-50 h-50">
             <Link
-              href={`/aliexpress_v2/product/${product.product_id}`}
+              href={`/aliexpress_v3/product/${product.product_id}`}
               passHref
             >
               <div className="flex justify-center items-center w-36 h-36 md:w-52 md:h-52 overflow-hidden bg-gray-200 cursor-pointer">

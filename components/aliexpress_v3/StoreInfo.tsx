@@ -1,4 +1,4 @@
-import { IDropshipperProductDetails } from "../../../utils/AETypes";
+import { IDropshipperProductDetails } from "../../utils/AETypes";
 
 const StoreInfo = ({
   product,

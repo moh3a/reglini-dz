@@ -2,6 +2,11 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import {
+  CheckCircleIcon,
+  ExclamationCircleIcon,
+} from "@heroicons/react/outline";
+
 import { IProductProperties } from "../../utils/AETypes";
 
 const ProductProperties = ({
@@ -53,6 +58,17 @@ const ProductProperties = ({
           <div
             className={`${router.locale === "ar" && "flex flex-row-reverse"}`}
           >
+            {selectedProperty.value ? (
+              <CheckCircleIcon
+                className="h-5 w-5 inline text-green-500 mr-1"
+                aria-hidden="true"
+              />
+            ) : (
+              <ExclamationCircleIcon
+                className="h-5 w-5 inline text-red-500 mr-1"
+                aria-hidden="true"
+              />
+            )}
             <span>{property.name}</span>
             <span>:</span>
             <span>{selectedProperty.value}</span>
@@ -64,7 +80,7 @@ const ProductProperties = ({
             }  flex-wrap`}
           >
             {property.values.map((value: any) => {
-              if (value.countryCode === "CN") {
+              if (value.id === "201336100") {
                 return (
                   <div
                     onClick={() => selectHandler(value.name)}
@@ -83,7 +99,7 @@ const ProductProperties = ({
                         <img src={value.thumbnailImageUrl} alt={value.name} />
                       </div>
                     ) : (
-                      value.name
+                      "China"
                     )}
                   </div>
                 );
@@ -98,7 +114,11 @@ const ProductProperties = ({
                         className="h-10 w-10 line-through"
                         onClick={() => setShowImage(value.imageUrl)}
                       >
-                        <img src={value.thumbnailImageUrl} alt={value.name} />
+                        <img
+                          className="h-10 w-10"
+                          src={value.thumbnailImageUrl}
+                          alt={value.name}
+                        />
                       </div>
                     ) : (
                       <span className="line-through">{value.name}</span>
@@ -117,6 +137,17 @@ const ProductProperties = ({
           <div
             className={`${router.locale === "ar" && "flex flex-row-reverse"}`}
           >
+            {selectedProperty.value ? (
+              <CheckCircleIcon
+                className="h-5 w-5 inline text-green-500 mr-1"
+                aria-hidden="true"
+              />
+            ) : (
+              <ExclamationCircleIcon
+                className="h-5 w-5 inline text-red-500 mr-1"
+                aria-hidden="true"
+              />
+            )}
             <span>{property.name}</span> <span>:</span>{" "}
             <span>{selectedProperty.value}</span>
           </div>
@@ -142,7 +173,11 @@ const ProductProperties = ({
                       className="h-10 w-10"
                       onClick={() => setShowImage(value.imageUrl)}
                     >
-                      <img src={value.thumbnailImageUrl} alt={value.name} />
+                      <img
+                        className="h-10 w-10"
+                        src={value.thumbnailImageUrl}
+                        alt={value.name}
+                      />
                     </div>
                   ) : (
                     value.name

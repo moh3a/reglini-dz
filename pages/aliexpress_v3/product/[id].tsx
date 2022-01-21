@@ -3,12 +3,8 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import axios from "axios";
 
-import DropshipperProductDetails from "../../../components/aliexpress_v2/dropshipper/ProductDetails";
-import BasicProductDetails from "../../../components/aliexpress_v2/basic/ProductDetails";
-import {
-  IDropshipperProductDetails,
-  IBasicProductDetails,
-} from "../../../utils/AETypes";
+import ProductDetails from "../../../components/aliexpress_v3/ProductDetails";
+import { IAffiliateProduct } from "../../../utils/AETypes";
 
 const AliexpressProduct = () => {
   const router = useRouter();
@@ -21,21 +17,20 @@ const AliexpressProduct = () => {
       return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
   };
 
-  const [dropshipperProduct, setDropshipperProduct] =
-    useState<IDropshipperProductDetails["result"]>();
-  const [basicProduct, setBasicProduct] =
-    useState<IBasicProductDetails["result"]>();
+  const [product, setProduct] = useState<IAffiliateProduct>();
 
   const fetchProduct = useCallback(async () => {
-    const { data } = await axios.post("/api/aliexpress/ds/product/detail", {
-      id,
-      locale: router.locale?.toUpperCase(),
-    });
+    const { data } = await axios.post(
+      "/api/aliexpress/affiliate/productdetail/get",
+      {
+        id,
+        locale: router.locale?.toUpperCase(),
+      }
+    );
     if (data.success) {
       setCommission(data.commission);
       setRate(data.rate);
-      if (data.dropshipper) setDropshipperProduct(data.data);
-      if (!data.dropshipper) setBasicProduct(data.data);
+      setProduct(data.data);
     }
     console.log(data.data);
   }, [id, router.locale]);
@@ -54,30 +49,14 @@ const AliexpressProduct = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {basicProduct && rate && commission && (
-        <BasicProductDetails product={basicProduct} converter={converter} />
-      )}
-      {dropshipperProduct && rate && commission && (
-        <DropshipperProductDetails
-          product={dropshipperProduct}
-          converter={converter}
-        />
+      {product && rate && commission && (
+        <ProductDetails product={product} converter={converter} />
       )}
       {!rate && !commission && (
         <div className="w-full h-128 text-xl font-bold select-none flex justify-center items-center">
           <Logo height={50} width={50} />
           Fetching data from AliExpress...
         </div>
-      )}
-      {basicProduct && (
-        <p className="text-center text-sm text-gray-400 dark:text-gray-800">
-          basic request
-        </p>
-      )}
-      {dropshipperProduct && (
-        <p className="text-center text-sm text-gray-400 dark:text-gray-800">
-          dropshipper request
-        </p>
       )}
     </>
   );

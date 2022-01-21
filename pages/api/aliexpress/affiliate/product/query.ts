@@ -15,6 +15,9 @@ import {
 const client = new TopClient({
   appkey: process.env.ALIEXPRESS_AFFILIATE_APP_KEY,
   appsecret: process.env.ALIEXPRESS_AFFILIATE_APP_SECRET,
+  REST_URL: process.env.NEXTAUTH_URL?.includes("https")
+    ? "	https://eco.taobao.com/router/rest"
+    : "http://gw.api.taobao.com/router/rest",
 });
 
 const handler = nc();

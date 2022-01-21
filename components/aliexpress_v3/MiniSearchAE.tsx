@@ -15,10 +15,10 @@ const MiniSearchAE = ({ slug }: { slug: string | string[] }) => {
     if (newquery.includes("aliexpress.com/item/")) {
       const firstSplit = newquery.split("/item/");
       const secondSplit = firstSplit[1].split(".html");
-      router.push(`/aliexpress_v2/product/${secondSplit[0]}`);
+      router.push(`/aliexpress_v3/product/${secondSplit[0]}`);
     } else {
       const slugged = slugify(newquery);
-      router.push(`/aliexpress_v2/search/${slugged}`);
+      router.push(`/aliexpress_v3/search/${slugged}`);
     }
   };
 
@@ -45,7 +45,7 @@ const MiniSearchAE = ({ slug }: { slug: string | string[] }) => {
                 name="url"
                 placeholder="exemple: watch, xt91, coat ... or https://www.aliexpress.com/item/xxxxxxx"
                 autoComplete="off"
-                value={newquery ? newquery : unslugify(slug)}
+                value={newquery}
                 onChange={(e) => setNewQuery(e.target.value)}
               />
             </div>

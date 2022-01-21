@@ -277,6 +277,7 @@
     "off": "off",
     "priceInDinars": "Show price in Algerian Dinars",
     "priceInEuro": "Show original price in Euro",
+    "priceInDollar": "Show original price in US Dollars",
     "shippingCarriers": "Shipping Carriers",
     "delieveredIn": "Delivered in",
     "days": "days",

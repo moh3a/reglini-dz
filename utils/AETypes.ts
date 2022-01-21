@@ -52,6 +52,7 @@ export interface IDropshipperProductDetails {
     owner_member_id: string;
     product_status_type: string;
     properties: IProductProperties[];
+    price: IProductPrice;
     aeop_ae_product_propertys: {
       aeop_ae_product_property: [
         {
@@ -219,6 +220,13 @@ export interface IProductProperties {
   ];
 }
 
+export interface IProductPrice {
+  hasDiscount: boolean;
+  discount?: number;
+  discountedPrice?: { min: number; max?: number };
+  originalPrice: { min: number; max?: number };
+}
+
 export interface IShippingInformation {
   aeop_freight_calculate_result_for_buyer_dto: [
     {
@@ -287,6 +295,7 @@ export interface IAEAffiliateProductDetailsResult {
 }
 
 export interface IAffiliateProduct {
+  ds_product_details: IDropshipperProductDetails["result"];
   app_sale_price?: string;
   app_sale_price_currency?: string;
   commission_rate?: string;

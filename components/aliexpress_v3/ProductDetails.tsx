@@ -5,39 +5,44 @@ import { useTranslations } from "next-intl";
 import { useSelector } from "react-redux";
 import parse from "html-react-parser";
 
-import { selectUser } from "../../../utils/redux/userSlice";
-import { IDropshipperProductDetails } from "../../../utils/AETypes";
+import { selectUser } from "../../utils/redux/userSlice";
+import {
+  IAffiliateProduct,
+  IDropshipperProductDetails,
+} from "../../utils/AETypes";
 import StoreInfo from "./StoreInfo";
 import ProductImages from "./ProductImages";
-import ProductProperties from "../ProductProperties";
+import ProductProperties from "./ProductProperties";
 import ProductReviews from "./ProductReviews";
 import ProductQuantity from "./ProductQuantity";
-import ProductShipping from "../ProductShipping";
+import ProductShipping from "./ProductShipping";
 import {
   ActionFeedback,
   BuyProduct,
   ProductToCart,
   ProductToWishlist,
-} from "../ProductActions";
+} from "./ProductActions";
+import ProductPrice from "./ProductPrice";
 
 const ProductDetails = ({
   product,
   converter,
 }: {
-  product: IDropshipperProductDetails["result"];
+  product: IAffiliateProduct;
   converter: (price: number) => number | undefined;
 }) => {
   const { user, message } = useSelector(selectUser);
   const router = useRouter();
-  const t = useTranslations("Aliexpress");
+  const t = useTranslations("AEProduct");
   const [showImage, setShowImage] = useState("/placeholder.png");
   const [quantity, setQuantity] = useState(1);
   const [error, setError] = useState("");
   const [properties, setProperties] = useState([{ name: "", value: "" }]);
   const [variation, setVariation] =
-    useState<({ name: string; value: string } | undefined)[]>();
+    useState<{ name: string; value: string }[]>();
   const [selectedShipping, setSelectedShipping] = useState(
-    product.aeop_freight_calculate_result_for_buyer_d_t_o_list
+    product.ds_product_details
+      .aeop_freight_calculate_result_for_buyer_d_t_o_list
       .aeop_freight_calculate_result_for_buyer_dto[0]
   );
 
@@ -51,21 +56,76 @@ const ProductDetails = ({
     stock?: number;
   }>();
 
-  const images = product.image_u_r_ls.split(";");
+  const images = product.ds_product_details.image_u_r_ls.split(";");
   useEffect(() => {
     if (images) setShowImage(images[0]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    if (product.properties && properties) {
+    if (product.ds_product_details.properties && properties) {
       let inverse = properties.slice().reverse();
-      let values = product.properties.map((prop: any) =>
+      let values: any = product.ds_product_details.properties.map((prop: any) =>
         inverse.find((property: any) => property.name === prop.name)
       );
       setVariation(values);
     }
   }, [product, properties]);
+
+  useEffect(() => {
+    if (
+      product.ds_product_details.aeop_ae_product_s_k_us &&
+      product.ds_product_details.aeop_ae_product_s_k_us.aeop_ae_product_sku &&
+      variation
+    ) {
+      let theOne: any = {};
+      if (
+        product.ds_product_details.aeop_ae_product_s_k_us.aeop_ae_product_sku
+          .length > 0
+      ) {
+        product.ds_product_details.aeop_ae_product_s_k_us.aeop_ae_product_sku.map(
+          (varia) => {
+            let checking: boolean[] = [];
+            varia.aeop_s_k_u_propertys.aeop_sku_property.map(() =>
+              checking.push(false)
+            );
+            varia.aeop_s_k_u_propertys.aeop_sku_property.map(
+              (prop, i: number = 0) => {
+                if (variation) {
+                  const index =
+                    variation[0] === undefined
+                      ? -2
+                      : variation.findIndex(
+                          (el) =>
+                            el.value ===
+                            (prop.property_value_definition_name
+                              ? prop.property_value_definition_name
+                              : prop.property_value_id_long.toString())
+                        );
+                  if (
+                    index !== -2 &&
+                    index !== -1 &&
+                    variation[index].name === prop.sku_property_name &&
+                    variation[index].value ===
+                      (prop.property_value_definition_name
+                        ? prop.property_value_definition_name
+                        : prop.property_value_id_long.toString())
+                  ) {
+                    checking[i] = true;
+                  } else {
+                    checking[i] = false;
+                  }
+                  i++;
+                }
+              }
+            );
+            if (!checking.includes(false)) theOne = varia;
+          }
+        );
+      }
+      setSelectedVariation({ ...theOne, quantity });
+    }
+  }, [product, variation, quantity]);
 
   return (
     <>
@@ -77,9 +137,9 @@ const ProductDetails = ({
               router.locale === "ar" && "flex-row-reverse"
             }`}
           >
-            {product.image_u_r_ls && (
+            {product.ds_product_details.image_u_r_ls && (
               <ProductImages
-                product={product}
+                product={product.ds_product_details}
                 showImage={showImage}
                 setShowImage={setShowImage}
               />
@@ -90,18 +150,25 @@ const ProductDetails = ({
                 router.locale === "ar" && "text-right"
               }`}
             >
-              {product.aeop_ae_product_propertys &&
-                product.aeop_ae_product_propertys.aeop_ae_product_property && (
+              {product.ds_product_details.aeop_ae_product_propertys &&
+                product.ds_product_details.aeop_ae_product_propertys
+                  .aeop_ae_product_property && (
                   <h1 className="font-bold">
                     {
-                      product.aeop_ae_product_propertys
+                      product.ds_product_details.aeop_ae_product_propertys
                         .aeop_ae_product_property[0].attr_value
                     }
                   </h1>
                 )}
-              <p className="text-lg font-semibold">{product.subject}</p>
-              <ProductReviews product={product} />
-              {product.properties.map((property) => (
+              <p className="text-lg font-semibold">{product.product_title}</p>
+              <ProductReviews product={product.ds_product_details} />
+              <p className="leading-relaxed text-gray-800 dark:text-gray-100">
+                {t("category")}:{" "}
+                {product.second_level_category_name
+                  ? product.second_level_category_name
+                  : product.first_level_category_name}
+              </p>
+              {product.ds_product_details.properties.map((property) => (
                 <ProductProperties
                   key={property.id}
                   property={property}
@@ -110,12 +177,18 @@ const ProductDetails = ({
                 />
               ))}
               <ProductQuantity
-                product={product}
+                product={product.ds_product_details}
                 quantity={quantity}
                 setQuantity={setQuantity}
+                selectedVariation={selectedVariation}
+              />
+              <ProductPrice
+                product={product.ds_product_details}
+                selectedVariation={selectedVariation}
+                converter={converter}
               />
               <ProductShipping
-                product={product}
+                product={product.ds_product_details}
                 setSelectedShipping={setSelectedShipping}
                 converter={converter}
               />
@@ -152,12 +225,13 @@ const ProductDetails = ({
         </div>
       </section>
 
-      <StoreInfo product={product} />
+      <StoreInfo product={product.ds_product_details} />
 
       <div className="hidden md:flex md:flex-col md:justify-center md:items-center">
         <h2 className="font-bold text-xl">Seller&apos;s Description</h2>
         <div className="hidden md:block md:max-w-screen-md md:overflow-hidden">
-          {product.detail && parse(product.detail)}
+          {product.ds_product_details.detail &&
+            parse(product.ds_product_details.detail)}
         </div>
       </div>
     </>

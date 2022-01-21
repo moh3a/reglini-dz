@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { unslugify } from "unslugify";
 
 import { selectUser } from "../../../utils/redux/userSlice";
-import MiniSearchAE from "../../../components/aliexpress_v2/MiniSearchAE";
+import MiniSearchAE from "../../../components/aliexpress_v3/MiniSearchAE";
 
 const AliexpressSearch = () => {
   const [commission, setCommission] = useState<number>();
@@ -29,7 +29,7 @@ const AliexpressSearch = () => {
         "/api/aliexpress/affiliate/product/query",
         {
           keywords: slug,
-          locale: router.locale?.toUpperCase(),
+          locale: router.locale,
         }
       );
       setProducts(data.data.products.product);
@@ -101,7 +101,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 import Layout from "../../../components/layout/Layout";
-import ProductsList from "../../../components/aliexpress_v2/ProductsList";
+import ProductsList from "../../../components/aliexpress_v3/ProductsList";
 import Logo from "../../../components/layout/Logo";
 AliexpressSearch.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;

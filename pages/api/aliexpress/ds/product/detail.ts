@@ -21,6 +21,9 @@ import {
 const client = new TopClient({
   appkey: process.env.ALIEXPRESS_DS_APP_KEY,
   appsecret: process.env.ALIEXPRESS_DS_APP_SECRET,
+  REST_URL: process.env.NEXTAUTH_URL?.includes("https")
+    ? "https://api.taobao.com/router/rest"
+    : "http://api.taobao.com/router/rest",
 });
 
 const handler = nc();
@@ -51,7 +54,6 @@ handler
     let aesession: any;
     let aeop_freight_calculate_result_for_buyer_d_t_o_list: IShippingInformation;
 
-    const rate = await Currency.findOne({ exchange: "DZDEUR" }).select("live");
     const commission = await Finance.findOne().select("commission");
 
     client.execute(
@@ -73,6 +75,11 @@ handler
                   process.env.JWT_SECRET
                 );
                 aesession = decoded.session;
+                //
+                //
+                //
+                //
+                // basic account product details
                 client.execute(
                   "aliexpress.ds.product.get",
                   {
@@ -82,8 +89,12 @@ handler
                     target_currency: "EUR",
                     target_language: locale,
                   },
-                  function (error: IAEError, response: IBasicProductDetails) {
+                  async (error: IAEError, response: IBasicProductDetails) => {
                     if (!error) {
+                      const rate = await Currency.findOne({
+                        exchange: "DZDEUR",
+                      }).select("live");
+
                       response.result.aeop_freight_calculate_result_for_buyer_d_t_o_list =
                         aeop_freight_calculate_result_for_buyer_d_t_o_list;
                       if (
@@ -113,7 +124,9 @@ handler
                                     if (!exits)
                                       properties[index].values.push({
                                         id: props.property_value_id?.toString(),
-                                        name: props.property_value_definition_name,
+                                        name: props.property_value_definition_name
+                                          ? props.property_value_definition_name
+                                          : props.property_value_id?.toString(),
                                         hasImage: props.sku_image
                                           ? true
                                           : false,
@@ -127,7 +140,9 @@ handler
                                       values: [
                                         {
                                           id: props.property_value_id?.toString(),
-                                          name: props.property_value_definition_name,
+                                          name: props.property_value_definition_name
+                                            ? props.property_value_definition_name
+                                            : props.property_value_id?.toString(),
                                           hasImage: props.sku_image
                                             ? true
                                             : false,
@@ -144,6 +159,7 @@ handler
                         );
                       }
                       response.result.properties = properties;
+                      console.log("euro rate " + rate.live.parallel.sale);
                       if (response.rsp_code === "200") {
                         res.status(200).json({
                           success: true,
@@ -158,7 +174,13 @@ handler
                       res.status(500).json({ success: false, message: error });
                   }
                 );
-              } else {
+              }
+              //
+              //
+              //
+              //
+              // dropshipper product details
+              else {
                 client.execute(
                   "aliexpress.postproduct.redefining.findaeproductbyidfordropshipper",
                   {
@@ -167,11 +189,15 @@ handler
                     local_language: locale,
                     product_id: id,
                   },
-                  function (
+                  async (
                     error: IAEError,
                     response: IDropshipperProductDetails
-                  ) {
+                  ) => {
                     if (!error) {
+                      const rate = await Currency.findOne({
+                        exchange: "DZDUSD",
+                      }).select("live");
+
                       response.result.aeop_freight_calculate_result_for_buyer_d_t_o_list =
                         aeop_freight_calculate_result_for_buyer_d_t_o_list;
                       if (
@@ -200,7 +226,9 @@ handler
                                     if (!exits)
                                       properties[index].values.push({
                                         id: props.property_value_id_long.toString(),
-                                        name: props.property_value_definition_name,
+                                        name: props.property_value_definition_name
+                                          ? props.property_value_definition_name
+                                          : props.property_value_id_long.toString(),
                                         hasImage: props.sku_image
                                           ? true
                                           : false,
@@ -214,7 +242,9 @@ handler
                                       values: [
                                         {
                                           id: props.property_value_id_long.toString(),
-                                          name: props.property_value_definition_name,
+                                          name: props.property_value_definition_name
+                                            ? props.property_value_definition_name
+                                            : props.property_value_id_long.toString(),
                                           hasImage: props.sku_image
                                             ? true
                                             : false,
@@ -231,6 +261,7 @@ handler
                         );
                       }
                       response.result.properties = properties;
+                      console.log("dollar rate " + rate.live.parallel.sale);
                       res.status(200).json({
                         success: true,
                         data: response.result,
