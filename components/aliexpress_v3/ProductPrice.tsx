@@ -117,7 +117,7 @@ const ProductPrice = ({
                 ) : (
                   <span>
                     {product.price.originalPrice.min ===
-                    product.price.originalPrice.min ? (
+                    product.price.originalPrice.max ? (
                       converter(product.price.originalPrice.min)
                     ) : (
                       <>

@@ -282,7 +282,9 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
       } else if (
         responseAffiliate.resp_result.result.current_record_count === 0
       ) {
-        res.status(200).redirect(`/aliexpress/product/${id}`);
+        res
+          .status(200)
+          .json({ success: false, redirect: `/aliexpress/product/${id}` });
       } else console.log(errorAffiliate);
     }
   );

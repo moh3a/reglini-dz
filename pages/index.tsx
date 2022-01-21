@@ -6,7 +6,6 @@ import { IUser } from "../utils/types";
 import SessionCTA from "../components/sections/SessionCTA";
 import AliexpressCTA from "../components/sections/AliexpressCTA";
 import AppCTA from "../components/sections/AppCTA";
-import RecommendedProducts from "../components/store/RecommendedProducts";
 
 const HomeScreen = () => {
   const [session, loading]: [IUser | null, boolean] = useSession();
@@ -22,7 +21,6 @@ const HomeScreen = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AliexpressCTA />
-      <RecommendedProducts />
       <SessionCTA session={session} />
       <AppCTA />
     </>

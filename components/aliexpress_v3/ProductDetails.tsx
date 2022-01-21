@@ -23,6 +23,7 @@ import {
   ProductToWishlist,
 } from "./ProductActions";
 import ProductPrice from "./ProductPrice";
+import ProductFeatures from "./ProductFeatures";
 
 const ProductDetails = ({
   product,
@@ -225,15 +226,7 @@ const ProductDetails = ({
         </div>
       </section>
 
-      <StoreInfo product={product.ds_product_details} />
-
-      <div className="hidden md:flex md:flex-col md:justify-center md:items-center">
-        <h2 className="font-bold text-xl">Seller&apos;s Description</h2>
-        <div className="hidden md:block md:max-w-screen-md md:overflow-hidden">
-          {product.ds_product_details.detail &&
-            parse(product.ds_product_details.detail)}
-        </div>
-      </div>
+      <ProductFeatures product={product} />
     </>
   );
 };

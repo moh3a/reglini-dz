@@ -11,7 +11,6 @@ import { selectAEApi } from "../../utils/redux/aeapiSlice";
 import SearchAE from "../../components/aliexpress/SearchAE";
 import ProductPreview from "../../components/aliexpress/ProductPreview";
 import ProductList from "../../components/store/ProductList";
-import RecommendedProducts from "../../components/store/RecommendedProducts";
 
 const Aliexpress = () => {
   const [session, loading]: [IUser | null, boolean] = useSession();
@@ -127,7 +126,6 @@ const Aliexpress = () => {
           undergoing maintenance
         </div>
       )}
-      <RecommendedProducts />
     </>
   );
 };

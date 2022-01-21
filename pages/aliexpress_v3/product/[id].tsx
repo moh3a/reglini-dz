@@ -31,9 +31,11 @@ const AliexpressProduct = () => {
       setCommission(data.commission);
       setRate(data.rate);
       setProduct(data.data);
+    } else {
+      router.push(data.redirect);
     }
-    console.log(data.data);
-  }, [id, router.locale]);
+    console.log(data);
+  }, [id, router]);
 
   useEffect(() => {
     fetchProduct();
@@ -73,6 +75,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 
 import Layout from "../../../components/layout/Layout";
 import Logo from "../../../components/layout/Logo";
+import { route } from "next/dist/next-server/server/router";
 AliexpressProduct.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

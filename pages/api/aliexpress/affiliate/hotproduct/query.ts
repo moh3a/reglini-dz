@@ -18,9 +18,7 @@ const client = new TopClient({
   appkey: process.env.ALIEXPRESS_AFFILIATE_APP_KEY,
   appsecret: process.env.ALIEXPRESS_AFFILIATE_APP_SECRET,
   REST_URL: process.env.NEXTAUTH_URL?.includes("https")
-    ? // ? "https://api.taobao.com/router/rest"
-      // : "http://api.taobao.com/router/rest",
-      "	https://eco.taobao.com/router/rest"
+    ? "	https://eco.taobao.com/router/rest"
     : "http://gw.api.taobao.com/router/rest",
 });
 
@@ -33,7 +31,6 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
 
   try {
     if (!category) {
-      console.log("call the affiliate category get");
       client.execute(
         "aliexpress.affiliate.category.get",
         {
@@ -41,7 +38,6 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
         },
         function (errorCategory: IAEError, responseCategory: any) {
           if (!errorCategory) {
-            console.log(responseCategory);
             let categories: string = "";
             if (responseCategory.resp_result.resp_code === 200) {
               responseCategory.resp_result.result.categories.category.map(
@@ -52,7 +48,7 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
                 }
               );
             }
-            console.log("now call the hot products");
+
             client.execute(
               "aliexpress.affiliate.hotproduct.query",
               {
@@ -76,7 +72,6 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
                 responseHP: IAEAffiliateProductDetailsResponse
               ) {
                 if (!errorHP) {
-                  console.log(responseHP);
                   res.status(200).json({
                     success: true,
                     data: responseHP.resp_result.result,
@@ -113,7 +108,6 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
           response: IAEAffiliateProductDetailsResponse
         ) {
           if (!error) {
-            console.log(response);
             res.status(200).json({
               success: true,
               data: response.resp_result.result,
