@@ -36,6 +36,7 @@ const AliexpressSearch = () => {
       setCommission(data.commission);
       setRate(data.rate);
       setLoading(false);
+      console.log(data);
     }
   }, [router.locale, slug]);
 

@@ -31,9 +31,10 @@ const AliexpressProduct = () => {
       setCommission(data.commission);
       setRate(data.rate);
       setProduct(data.data);
-    } else {
+    } else if (!data.success && data.redirect) {
       router.push(data.redirect);
     }
+    console.log(data);
   }, [id, router]);
 
   useEffect(() => {
