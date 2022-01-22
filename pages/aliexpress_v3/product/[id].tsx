@@ -34,7 +34,6 @@ const AliexpressProduct = () => {
     } else {
       router.push(data.redirect);
     }
-    console.log(data);
   }, [id, router]);
 
   useEffect(() => {

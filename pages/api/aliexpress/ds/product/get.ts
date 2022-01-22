@@ -15,9 +15,7 @@ import { IExtendedAPIRequest } from "../../../../../utils/types";
 const client = new TopClient({
   appkey: process.env.ALIEXPRESS_DS_APP_KEY,
   appsecret: process.env.ALIEXPRESS_DS_APP_SECRET,
-  REST_URL: process.env.NEXTAUTH_URL?.includes("https")
-    ? "https://api.taobao.com/router/rest"
-    : "http://api.taobao.com/router/rest",
+  REST_URL: process.env.ALIEXPRESS_API_URL,
 });
 
 const handler = nc();

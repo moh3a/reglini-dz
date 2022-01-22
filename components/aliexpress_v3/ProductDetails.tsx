@@ -145,7 +145,6 @@ const ProductDetails = ({
           }
         );
       }
-      console.log({ ...theOne, quantity, imageUrl });
       setSelectedVariation({ ...theOne, quantity, imageUrl });
     }
   }, [product, variation, quantity]);
