@@ -43,7 +43,9 @@ export default function NewOrder({ products, origin }: any) {
             carrierId: item.carrierId,
             orderMemo: `Please do not put invoices or any other document inside the package. Instead send them to this email address support@reglini-dz.com.
               ${
-                item.quantity > 1 && "Please send everything under one package."
+                item.quantity > 1
+                  ? "Please send everything under one package."
+                  : ""
               }
               Thank you very much.`,
           },

@@ -2,6 +2,7 @@
 // https://developers.aliexpress.com/en/doc.htm?docId=45794&docType=2
 
 require("dotenv").config();
+import dbConnect from "../../../../../config/db";
 import { TopClient } from "../../../../../lib/api/topClient";
 import type { NextApiResponse, NextApiRequest } from "next";
 
@@ -22,6 +23,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  await dbConnect();
   if (req.method === "POST") {
     const { search, category, locale } = req.body;
 

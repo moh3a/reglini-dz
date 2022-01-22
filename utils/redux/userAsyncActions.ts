@@ -131,12 +131,31 @@ export const removeFromCart = createAsyncThunk(
   }
 );
 
+// export const createOrder = createAsyncThunk(
+//   "user/createOrder",
+//   async ({ product, shippingAddress }: any, { rejectWithValue }) => {
+//     try {
+//       const { data } = await axios.post(
+//         `/api/aliexpress/order/create`,
+//         {
+//           product,
+//           shippingAddress,
+//         },
+//         { headers: { "Content-type": "application/json" } }
+//       );
+//       return data;
+//     } catch (error: any) {
+//       return rejectWithValue(error.response);
+//     }
+//   }
+// );
+
 export const createOrder = createAsyncThunk(
   "user/createOrder",
   async ({ product, shippingAddress }: any, { rejectWithValue }) => {
     try {
       const { data } = await axios.post(
-        `/api/aliexpress/order/create`,
+        `/api/aliexpress/ds/order/create`,
         {
           product,
           shippingAddress,

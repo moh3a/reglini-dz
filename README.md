@@ -1,4 +1,4 @@
 ## TODO
 
-- load user details, product details error in prod
+- place order doesnt work
 - hot product: locale, category

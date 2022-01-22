@@ -14,7 +14,6 @@ const HotProducts = () => {
     setProducts(data.data.products.product);
     setCommission(data.commission);
     setRate(data.rate);
-    console.log(data);
   }, []);
 
   useEffect(() => {

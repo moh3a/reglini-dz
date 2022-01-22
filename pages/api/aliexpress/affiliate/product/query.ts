@@ -2,6 +2,7 @@
 // https://developers.aliexpress.com/en/doc.htm?docId=45803&docType=2
 
 require("dotenv").config();
+import dbConnect from "../../../../../config/db";
 import { TopClient } from "../../../../../lib/api/topClient";
 import type { NextApiResponse, NextApiRequest } from "next";
 import Currency from "../../../../../models/Currency";
@@ -21,6 +22,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  await dbConnect();
   if (req.method === "POST") {
     const { keywords } = req.body;
     const rate = await Currency.findOne({ exchange: "DZDEUR" }).select("live");

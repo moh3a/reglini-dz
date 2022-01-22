@@ -6,12 +6,41 @@ import { CancelOrderAfterTimer } from "../../../../utils/methods";
 import User from "../../../../models/User";
 import { IUser } from "../../../../utils/types";
 
+export interface Product {
+  productId: string;
+  name: string;
+  sku: string;
+  imageUrl: string;
+  price: number;
+  shippingPrice: number;
+  totalPrice: number;
+  properties: [{}];
+  quantity: number;
+  carrierId: string;
+  orderMemo: string;
+}
+
+export interface ShippingAddress {
+  name: string;
+  phoneCountry: string;
+  mobilePhone: string;
+  addressLine1: string;
+  city: string;
+  province: string;
+  countryCode: string;
+  zipCode: string;
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   const session: IUser | null = await getSession({ req });
-  const { product, shippingAddress } = req.body;
+  const {
+    product,
+    shippingAddress,
+  }: { product: Product; shippingAddress: ShippingAddress } = req.body;
+
   let products = [
     {
       productId: product.productId,

@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import axios from "axios";
 
+import Logo from "../../../components/layout/Logo";
 import ProductDetails from "../../../components/aliexpress_v3/ProductDetails";
 import { IAffiliateProduct } from "../../../utils/AETypes";
 
@@ -34,7 +35,6 @@ const AliexpressProduct = () => {
     } else if (!data.success && data.redirect) {
       router.push(data.redirect);
     }
-    console.log(data);
   }, [id, router]);
 
   useEffect(() => {
@@ -44,10 +44,14 @@ const AliexpressProduct = () => {
   return (
     <>
       <Head>
-        <title>Aliexpress product | reglini-dz</title>
+        <title>
+          {product ? product.product_title : "Aliexpress product"} | reglini-dz
+        </title>
         <meta
           name="description"
-          content="Query AliExpress for specific product details."
+          content={`Query AliExpress for specific product details. ${
+            product ? "Results for: " + product.product_title : ""
+          }`}
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -74,8 +78,6 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 };
 
 import Layout from "../../../components/layout/Layout";
-import Logo from "../../../components/layout/Logo";
-import { route } from "next/dist/next-server/server/router";
 AliexpressProduct.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

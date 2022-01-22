@@ -1,4 +1,5 @@
 require("dotenv").config();
+import dbConnect from "../../../../../config/db";
 import { TopClient } from "../../../../../lib/api/topClient";
 import nc from "next-connect";
 import type { NextApiResponse, NextApiRequest } from "next";
@@ -27,6 +28,7 @@ const dsclient = new TopClient({
 
 const handler = nc();
 handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
+  await dbConnect();
   const { id, locale } = req.body;
   const rate = await Currency.findOne({
     exchange: "DZDUSD",

@@ -115,7 +115,7 @@ const ProductDetails = ({
                             el.value ===
                             (prop.property_value_definition_name
                               ? prop.property_value_definition_name
-                              : prop.property_value_id_long.toString())
+                              : prop.sku_property_value)
                         );
                   if (
                     index !== -2 &&
@@ -124,7 +124,7 @@ const ProductDetails = ({
                     variation[index].value ===
                       (prop.property_value_definition_name
                         ? prop.property_value_definition_name
-                        : prop.property_value_id_long.toString())
+                        : prop.sku_property_value)
                   ) {
                     checking[i] = true;
                   } else {
