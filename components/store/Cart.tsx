@@ -11,17 +11,7 @@ export default function Cart({ user }: any) {
   const t = useTranslations("Cart");
   const router = useRouter();
   const [openCart, setOpenCart] = useState(false);
-  const [items, setItems] = useState([
-    {
-      productId: "",
-      name: "",
-      price: 0,
-      imageUrl: "",
-      properties: {},
-      quantity: 0,
-      carrierId: "",
-    },
-  ]);
+  const [items, setItems] = useState<any[]>();
 
   useEffect(() => {
     if (user) {
@@ -107,8 +97,8 @@ export default function Cart({ user }: any) {
                             role="list"
                             className="-my-6 divide-y divide-gray-200"
                           >
-                            {items.length > 0 ? (
-                              items.map((item) => {
+                            {items && items.length > 0 ? (
+                              items.map((item: any) => {
                                 return (
                                   <CartItem key={item.productId} item={item} />
                                 );

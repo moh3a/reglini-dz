@@ -9,7 +9,32 @@ import {
   updateQuantity,
 } from "../../utils/redux/userAsyncActions";
 
-const CartItem = ({ item }: any) => {
+const CartItem = ({
+  item,
+}: {
+  item: {
+    productId: string;
+    name: string;
+    price: number;
+    originalPrice: number;
+    imageUrl: string;
+    properties: [
+      {
+        sku_property_id: number;
+        sku_image: string;
+        property_value_id_long: number;
+        property_value_definition_name: string;
+        sku_property_value: string;
+        sku_property_name: string;
+      }
+    ];
+    quantity: number;
+    sku: string;
+    carrierId: string;
+    shippingPrice: number;
+    totalPrice: number;
+  };
+}) => {
   const t = useTranslations("Cart");
   const router = useRouter();
   const [quantity, setQuantity] = useState(item.quantity);
@@ -60,17 +85,36 @@ const CartItem = ({ item }: any) => {
         <div className="flex flex-wrap items-end justify-between text-xs  my-2">
           {item.properties.map((property: any) => (
             <div
-              key={property.id}
+              key={
+                property.sku_property_id
+                  ? property.sku_property_id
+                  : property.id
+              }
               className={`hover:underline ${
                 router.locale === "ar" && "flex flex-row-reverse"
               }`}
             >
-              <span>{property.name}</span>
-              <span>:</span>
-              <span className="font-bold text-gray-500">
-                {" "}
-                {property.value.name}
-              </span>
+              {property.sku_property_id ? (
+                <>
+                  <span>{property.sku_property_name}</span>
+                  <span>:</span>
+                  <span className="font-bold text-gray-500">
+                    {" "}
+                    {property.property_value_definition_name
+                      ? property.property_value_definition_name
+                      : property.property_value_id_long}
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span>{property.name}</span>
+                  <span>:</span>
+                  <span className="font-bold text-gray-500">
+                    {" "}
+                    {property.value.name}
+                  </span>
+                </>
+              )}
             </div>
           ))}
         </div>

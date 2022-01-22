@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -12,6 +12,10 @@ import {
 } from "@heroicons/react/outline";
 
 import { IAffiliateProduct } from "../../utils/AETypes";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser } from "../../utils/redux/userSlice";
+import { addToWishlist } from "../../utils/redux/userAsyncActions";
+import { DangerDialog, SuccessDialog } from "../elements/Dialog";
 
 const ProductsList = ({
   products,
@@ -20,23 +24,53 @@ const ProductsList = ({
   products: IAffiliateProduct[];
   converter: (price: number) => number | undefined;
 }) => {
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const dispatch = useDispatch();
+  const { user, status } = useSelector(selectUser);
   const t = useTranslations("Aliexpress");
   const router = useRouter();
 
+  const addToWishlistHandler = (product: IAffiliateProduct) => {
+    if (!user) {
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+      setError(t("logInToAdd"));
+    } else if (user) {
+      dispatch(
+        addToWishlist({
+          productId: product.product_id?.toString(),
+          name: product.product_title,
+          price: converter(
+            product.target_app_sale_price
+              ? Number(product.target_app_sale_price)
+              : Number(product.target_original_price)
+          ),
+          imageUrl: product.product_main_image_url,
+        })
+      );
+      if (status === "complete") {
+        setTimeout(() => {
+          setSuccess("");
+        }, 3000);
+        setSuccess("Successfully added to wishlist!");
+      }
+    }
+  };
+
   return (
     <div className="my-8">
-      {/* <h1 className="text-2xl w-full text-center">
-        Search results from AliExpress
-      </h1> */}
-
-      <div className="w-full flex flex-wrap justify-center items-center">
+      {error && <DangerDialog>{error}</DangerDialog>}
+      {success && <SuccessDialog>{success}</SuccessDialog>}
+      <div className="w-full flex flex-wrap justify-around items-center">
         {products.map((product: IAffiliateProduct) => (
           <div key={product.product_id} className="my-8 mx-2 w-50 h-50">
             <Link
               href={`/aliexpress_v3/product/${product.product_id}`}
               passHref
             >
-              <div className="flex justify-center items-center w-36 h-36 md:w-52 md:h-52 overflow-hidden bg-gray-200 cursor-pointer">
+              <div className="flex justify-center items-center w-40 h-40 md:w-52 md:h-52 overflow-hidden bg-gray-200 cursor-pointer">
                 <img
                   className="w-50 h-50 object-center object-cover hover:opacity-75 rounded-lg shadow-lg"
                   src={product.product_main_image_url}
@@ -64,9 +98,6 @@ const ProductsList = ({
                   </p>
                 )}
               </div>
-              {/* <div className="relative top-2 w-6 h-6 cursor-pointer">
-                <DotsVerticalIcon className="h-5 w-5" aria-hidden="true" />
-              </div> */}
               <div>
                 <Menu as="div" className="relative z-100">
                   <div>
@@ -141,6 +172,7 @@ const ProductsList = ({
                         <Menu.Item>
                           {({ active }) => (
                             <button
+                              onClick={() => addToWishlistHandler(product)}
                               className={`${
                                 active && "bg-gray-200 dark:bg-gray-600"
                               } group flex rounded-md items-center w-full px-2 py-2 text-sm`}

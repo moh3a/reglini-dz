@@ -3,14 +3,9 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import { useSelector } from "react-redux";
-import parse from "html-react-parser";
 
 import { selectUser } from "../../utils/redux/userSlice";
-import {
-  IAffiliateProduct,
-  IDropshipperProductDetails,
-} from "../../utils/AETypes";
-import StoreInfo from "./StoreInfo";
+import { IAffiliateProduct } from "../../utils/AETypes";
 import ProductImages from "./ProductImages";
 import ProductProperties from "./ProductProperties";
 import ProductReviews from "./ProductReviews";
@@ -49,12 +44,30 @@ const ProductDetails = ({
 
   const [selectedVariation, setSelectedVariation] = useState<{
     imageUrl: string;
-    price: {};
-    properties: any[];
-    sku: string;
-    thumbnailImageUrl: string;
-    quantity?: number;
-    stock?: number;
+    quantity: number;
+    sku_stock: boolean;
+    sku_price: string;
+    sku_code: string;
+    ipm_sku_stock: number;
+    id: string;
+    currency_code: string;
+    aeop_s_k_u_propertys: {
+      aeop_sku_property: [
+        {
+          sku_property_id: number;
+          sku_image: string;
+          property_value_id_long: number;
+          property_value_definition_name: string;
+          sku_property_value: string;
+          sku_property_name: string;
+        }
+      ];
+    };
+    barcode: string;
+    offer_sale_price: string;
+    offer_bulk_sale_price: string;
+    sku_bulk_order: number;
+    s_k_u_available_stock: number;
   }>();
 
   const images = product.ds_product_details.image_u_r_ls.split(";");
@@ -79,6 +92,7 @@ const ProductDetails = ({
       product.ds_product_details.aeop_ae_product_s_k_us.aeop_ae_product_sku &&
       variation
     ) {
+      let imageUrl: any;
       let theOne: any = {};
       if (
         product.ds_product_details.aeop_ae_product_s_k_us.aeop_ae_product_sku
@@ -120,11 +134,19 @@ const ProductDetails = ({
                 }
               }
             );
-            if (!checking.includes(false)) theOne = varia;
+            if (!checking.includes(false)) {
+              varia.aeop_s_k_u_propertys.aeop_sku_property.find((sku) => {
+                if (sku.sku_image) {
+                  imageUrl = sku.sku_image;
+                }
+              });
+              theOne = varia;
+            }
           }
         );
       }
-      setSelectedVariation({ ...theOne, quantity });
+      console.log({ ...theOne, quantity, imageUrl });
+      setSelectedVariation({ ...theOne, quantity, imageUrl });
     }
   }, [product, variation, quantity]);
 

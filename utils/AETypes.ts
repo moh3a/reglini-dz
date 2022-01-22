@@ -233,11 +233,11 @@ export interface IShippingInformation {
       error_code: number;
       estimated_delivery_time: string;
       freight: {
-        amount: string;
+        amount: number;
         cent: number;
         currency_code: string;
       };
-      service_name: number;
+      service_name: string;
     }
   ];
 }
