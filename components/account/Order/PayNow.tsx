@@ -9,8 +9,9 @@ import { RadioGroup } from "@headlessui/react";
 import { selectUser } from "../../../utils/redux/userSlice";
 import { submitPayment } from "../../../utils/redux/userAsyncActions";
 import AlertMessage from "../../elements/AlertMessage";
+import { IAEOrderDetails } from "../../../utils/AETypes";
 
-function PayNow({ order }: any) {
+function PayNow({ order }: { order: IAEOrderDetails }) {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
   const { status } = useSelector(selectUser);
@@ -61,19 +62,16 @@ function PayNow({ order }: any) {
 
   return (
     <div>
-      {order.status &&
-        order.status !== "COMPLETED" &&
-        !order.isPaid &&
-        !order.payment.receipt && (
-          <div>
-            <button
-              className="bg-indigo-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-indigo-300 dark:bg-indigo-400"
-              onClick={openModal}
-            >
-              {t("payNow")}
-            </button>
-          </div>
-        )}
+      {order.details.order_status && !order.payment.receipt && (
+        <div>
+          <button
+            className="bg-indigo-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-indigo-300 dark:bg-indigo-400"
+            onClick={openModal}
+          >
+            {t("payNow")}
+          </button>
+        </div>
+      )}
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"

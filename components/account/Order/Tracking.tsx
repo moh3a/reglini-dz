@@ -3,8 +3,9 @@ import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useTranslations } from "next-intl";
 import { LinkIcon } from "@heroicons/react/outline";
+import { IAEOrderDetails } from "../../../utils/AETypes";
 
-function Tracking({ order }: any) {
+function Tracking({ order }: { order: IAEOrderDetails }) {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations("Orders");
 
@@ -18,7 +19,7 @@ function Tracking({ order }: any) {
 
   return (
     <div>
-      {order.tracking.isTrackingAvailable && (
+      {order.tracking.hasTracking && (
         <div>
           <button
             className="bg-indigo-200 px-4 py-1 my-1 lg:mx-1 rounded-lg hover:bg-indigo-300 dark:bg-indigo-400"
@@ -72,30 +73,36 @@ function Tracking({ order }: any) {
 
                 {/* payment UI */}
 
-                {order.tracking.isTrackingAvailable && (
+                {order.tracking.hasTracking && (
                   <div>
                     <div className="px-4 py-5 sm:px-6">
                       <p className="text-green-500">{t("trackingAvailable")}</p>
                     </div>
-                    <p className="text-xl font-bold">
-                      {order.tracking.packages[0].caption}
-                    </p>
+                    {order.tracking.details.map((event) => (
+                      <p key={event.event_date} className="text-lg font-bold">
+                        {event.event_date}
+                        {" - "}
+                        {event.event_desc}
+                      </p>
+                    ))}
                     <p className="my-1 border border-gray-200 bg-gray-100 dark:border-yellow-200 dark:bg-black py-1 px-3">
-                      The product will be shipped from{" "}
-                      {order.tracking.packages[0].shipFrom} to{" "}
-                      {order.tracking.packages[0].shipTo} by{" "}
-                      {order.tracking.packages[0].carrier.name}.
+                      The product will be shipped from China to Algeria by{" "}
+                      {
+                        order.details.logistics_info_list
+                          .aeop_order_logistics_info[0].logistics_service
+                      }
+                      .
                     </p>
-                    <p>
+                    {/* <p>
                       Estimated progress percentage{" "}
                       <span className="font-semibold">
                         {order.tracking.packages[0].progressPercentage}%
                       </span>
                       .
-                    </p>
+                    </p> */}
                     <p className="underline font-semibold">
                       <a
-                        href={order.tracking.packages[0].trackingUrl}
+                        href={order.tracking.official_website}
                         target="_blank"
                         rel="noreferrer"
                       >

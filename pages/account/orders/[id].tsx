@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useSession } from "next-auth/client";
 
+import OrderDetails from "../../../components/account/Order/OrderDetails";
 import { IUser } from "../../../utils/types";
 import { selectUser } from "../../../utils/redux/userSlice";
 
@@ -42,7 +43,7 @@ const OrderScreen = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <div>{order && <OrderDetails order={order} />}</div> */}
-      {id && <OrderDetails id={id} />}
+      {id && <OrderDetails id={id as string} />}
     </>
   );
 };
@@ -58,7 +59,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 import Layout from "../../../components/layout/Layout";
-import OrderDetails from "../../../components/account/Order/OrderDetails";
 OrderScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

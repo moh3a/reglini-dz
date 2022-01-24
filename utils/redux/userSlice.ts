@@ -11,8 +11,6 @@ import {
   cancelOrder,
   deleteOrder,
   getOrderDetails,
-  updateOrderDetails,
-  getOrderTracking,
   editRealName,
   editPhoneNumber,
   editAddress,
@@ -147,13 +145,10 @@ export const userSlice = createSlice({
       })
       .addCase(createOrder.fulfilled, (state, action) => {
         state.status = "complete";
-        if (action.payload.errorCode) {
-          state.orderStatusCode = action.payload.errorCode;
-          state.orderMessage = action.payload.message;
-        } else {
-          state.message = action.payload.message;
+        if (action.payload.success) {
+          state.user = action.payload.data;
         }
-        state.user = action.payload.data;
+        state.message = action.payload.message;
       })
       .addCase(createOrder.rejected, (state, action) => {
         state.status = "failed";
@@ -198,34 +193,6 @@ export const userSlice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(getOrderDetails.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.error;
-      })
-      //========================================================================================updateOrderDetails
-      .addCase(updateOrderDetails.pending, (state, action) => {
-        state.status = "loading";
-        state.message = "";
-      })
-      .addCase(updateOrderDetails.fulfilled, (state, action) => {
-        state.status = "complete";
-        state.user = action.payload.data;
-        state.message = action.payload.message;
-      })
-      .addCase(updateOrderDetails.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.error;
-      })
-      //========================================================================================
-      .addCase(getOrderTracking.pending, (state, action) => {
-        state.status = "loading";
-        state.message = "";
-      })
-      .addCase(getOrderTracking.fulfilled, (state, action) => {
-        state.status = "complete";
-        state.user = action.payload.data;
-        state.message = action.payload.message;
-      })
-      .addCase(getOrderTracking.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error;
       })

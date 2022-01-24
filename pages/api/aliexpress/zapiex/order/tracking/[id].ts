@@ -1,17 +1,17 @@
 require("dotenv").config();
-import { getSession } from "next-auth/client";
 import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
+import { getSession } from "next-auth/client";
 
-import User from "../../../../models/User";
-import { IUser } from "../../../../utils/types";
+import User from "../../../../../../models/User";
+import { IUser } from "../../../../../../utils/types";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { id } = req.body;
   const session: IUser | null = await getSession({ req });
+  const { id } = req.query;
 
   if (req.method === "POST") {
     try {
@@ -34,9 +34,9 @@ export default async function handler(
             .status(400)
             .json({ success: false, message: "User does not exist" });
 
-        axios({
+        await axios({
           method: "POST",
-          url: "https://api.zapiex.com/v3/order/cancel",
+          url: "https://api.zapiex.com/v3/order/tracking",
           headers: {
             "x-api-key": process.env.ZAPIEX_KEY,
             "Content-Type": "application/json",
@@ -48,30 +48,34 @@ export default async function handler(
           },
         })
           .then((response) => {
+            let data = response.data.data;
             const index = user.orders.findIndex(
               (order: any) => order.orderId === id
             );
             if (index === -1) {
               res
-                .status(404)
-                .json({ success: false, message: "Order not found." });
+                .status(200)
+                .json({ success: false, message: "No order with this ID." });
             } else {
-              user.orders.splice(index, 1);
-              user.save(function (err: any, result: any) {
-                if (err) {
-                  console.log(err);
+              user.orders[index].tracking = data;
+              user.save(function (error: any, result: any) {
+                if (error) {
+                  console.log(error);
                 } else {
                   res.status(200).json({
                     success: true,
+                    message: "Successfully retrieved tracking for your order.",
                     data: user,
-                    message: "Order successfully deleted.",
                   });
                 }
               });
             }
           })
-          .catch((err) => {
-            res.status(400).json({ success: false, message: err });
+          .catch((error) => {
+            res.status(200).json({
+              success: false,
+              message: "Could not retrieve tracking for your order.",
+            });
           });
       }
     } catch (error: any) {

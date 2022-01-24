@@ -81,7 +81,8 @@ export const BuyProduct = ({
       } else if (selectedVariation.id) {
         price =
           selectedVariation.sku_price && discount
-            ? Number(selectedVariation.sku_price) * discount
+            ? Number(selectedVariation.sku_price) -
+              Number(selectedVariation.sku_price) * discount
             : Number(selectedVariation.sku_price);
         shippingPrice = selectedShipping.freight.amount;
         localStorage.setItem(
@@ -156,31 +157,30 @@ export const ProductToCart = ({
       } else if (selectedVariation.id) {
         price =
           selectedVariation.sku_price && discount
-            ? Number(selectedVariation.sku_price) * discount
+            ? Number(selectedVariation.sku_price) -
+              Number(selectedVariation.sku_price) * discount
             : Number(selectedVariation.sku_price);
         shippingPrice = selectedShipping.freight.amount;
-        if (price && shippingPrice) {
-          dispatch(
-            addToCart({
-              productId: product.product_id?.toString(),
-              name: product.product_title,
-              price: converter(price),
-              originalPrice: price,
-              imageUrl: selectedVariation.imageUrl
-                ? selectedVariation.imageUrl
-                : product.product_main_image_url,
-              properties:
-                selectedVariation.aeop_s_k_u_propertys.aeop_sku_property,
-              quantity: selectedVariation.quantity,
-              sku: selectedVariation.id,
-              carrierId: selectedShipping.service_name,
-              shippingPrice: converter(shippingPrice),
-              totalPrice:
-                (converter(price + shippingPrice) as number) *
-                selectedVariation.quantity,
-            })
-          );
-        }
+        dispatch(
+          addToCart({
+            productId: product.product_id?.toString(),
+            name: product.product_title,
+            price: converter(price),
+            originalPrice: price,
+            imageUrl: selectedVariation.imageUrl
+              ? selectedVariation.imageUrl
+              : product.product_main_image_url,
+            properties:
+              selectedVariation.aeop_s_k_u_propertys.aeop_sku_property,
+            quantity: selectedVariation.quantity,
+            sku: selectedVariation.id,
+            carrierId: selectedShipping.service_name,
+            shippingPrice: converter(shippingPrice),
+            totalPrice:
+              (converter(price + shippingPrice) as number) *
+              selectedVariation.quantity,
+          })
+        );
       }
     }
   };

@@ -350,6 +350,115 @@ export interface IAEError {
   sub_code: string;
 }
 
+export interface IAEOrderTrackingResponse {
+  details: IAEOrderTracking["details"];
+  official_website: IAEOrderTracking["official_website"];
+  error_desc: string;
+  result_success: boolean;
+}
+
+export interface IAEOrderTracking {
+  details: {
+    details: [
+      {
+        event_desc: string;
+        signed_name: string;
+        status: string;
+        address: string;
+        event_date: string;
+      }
+    ];
+  };
+  official_website: string;
+}
+export interface IAEOrderDetails {
+  orderId: string;
+  createdAt: string;
+  product: {
+    productId: string;
+    name: string;
+    sku: string;
+    price: number;
+    shippingPrice: number;
+    totalPrice: number;
+    imageUrl: string;
+    properties: any;
+    quantity: number;
+    carrierId: string;
+    orderMemo: string;
+  };
+  shippingAddress: {
+    name: string;
+    countryCode: string;
+    city: string;
+    zipCode: string;
+    addressLine1: string;
+    phoneCountry: string;
+    mobilePhone: string;
+    province: string;
+  };
+  details: {
+    gmt_create: string;
+    order_status: string;
+    logistics_status: string;
+    order_amount: {
+      amount: string;
+      currency_code: string;
+    };
+    child_order_list: {
+      aeop_child_order_info: [
+        {
+          product_id: number;
+          product_price: {
+            amount: string;
+            currency_code: string;
+          };
+          product_name: string;
+          product_count: number;
+        }
+      ];
+    };
+    logistics_info_list: {
+      aeop_order_logistics_info: [
+        {
+          logistics_no: string;
+          logistics_service: string;
+        }
+      ];
+    };
+    store_info: {
+      store_id: number;
+      store_name: string;
+      store_url: string;
+    };
+  };
+  tracking: {
+    hasTracking: boolean;
+    details: [
+      {
+        event_desc: string;
+        signed_name: string;
+        status: string;
+        address: string;
+        event_date: string;
+      }
+    ];
+    official_website: string;
+  };
+  payment: {
+    hasTimedOut: boolean;
+    isPaymentConfirmed: boolean;
+    wasDeclined: boolean;
+    receipt: string;
+    paymentMethod: string;
+    paymentTime: string;
+  };
+  packageReceived: {
+    wasReceived: boolean;
+    packagePicture: string;
+  };
+}
+
 export interface MainAEProduct {
   productUrl: string;
   productId: string;

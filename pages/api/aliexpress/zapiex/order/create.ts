@@ -2,9 +2,9 @@ require("dotenv").config();
 import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 import { getSession } from "next-auth/client";
-import { CancelOrderAfterTimer } from "../../../../utils/methods";
-import User from "../../../../models/User";
-import { IUser } from "../../../../utils/types";
+import { CancelOrderAfterTimer } from "../../../../../utils/methods";
+import User from "../../../../../models/User";
+import { IUser } from "../../../../../utils/types";
 
 export interface Product {
   productId: string;

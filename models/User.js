@@ -92,6 +92,9 @@ const AddressSchema = new mongoose.Schema({
 
 const OrderSchema = new mongoose.Schema(
   {
+    // common params
+    // params from zapiex
+    // params from ae ds
     orderId: String,
     product: {
       productId: String,
@@ -119,37 +122,85 @@ const OrderSchema = new mongoose.Schema(
       mobilePhone: String,
       province: String,
     },
-    status: String,
-    orderDetailsUrl: String,
-    creationTime: String,
-    totalPrice: {
-      productsPrice: { value: Number, display: String },
-      shippingPrice: { value: Number, display: String },
-      fullOrderPrice: { value: Number, display: String },
+    details: {
+      gmt_create: String,
+      order_status: String,
+      logistics_status: String,
+      order_amount: {
+        amount: String,
+        currency_code: String,
+      },
+      child_order_list: {
+        aeop_child_order_info: [
+          {
+            product_id: Number,
+            product_price: {
+              amount: String,
+              currency_code: String,
+            },
+            product_name: String,
+            product_count: Number,
+          },
+        ],
+      },
+      logistics_info_list: {
+        aeop_order_logistics_info: [
+          {
+            logistics_no: String,
+            logistics_service: String,
+          },
+        ],
+      },
+      store_info: {
+        store_id: Number,
+        store_name: String,
+        store_url: String,
+      },
     },
-    paymentTime: String,
-    readyForDispatchTime: String,
-    isPaid: Boolean,
-    isShipped: Boolean,
-    isFrozen: Boolean,
-    canResume: Boolean,
-    canCancel: Boolean,
-    endReason: String,
-    currency: String,
     tracking: {
-      isTrackingAvailable: Boolean,
-      packages: [
+      hasTracking: { type: Boolean, default: false },
+      details: [
         {
-          caption: String,
-          readyForDispatchTime: String,
-          deliveryTimeRange: { min: String, max: String },
-          trackingNumber: String,
-          trackingUrl: String,
-          carrier: { id: String, name: String },
-          progressPercentage: Number,
+          event_desc: String,
+          signed_name: String,
+          status: String,
+          address: String,
+          event_date: String,
         },
       ],
+      official_website: String,
     },
+    // status: String,
+    // orderDetailsUrl: String,
+    // creationTime: String,
+    // totalPrice: {
+    //   productsPrice: { value: Number, display: String },
+    //   shippingPrice: { value: Number, display: String },
+    //   fullOrderPrice: { value: Number, display: String },
+    // },
+    // paymentTime: String,
+    // readyForDispatchTime: String,
+    // isPaid: Boolean,
+    // isShipped: Boolean,
+    // isFrozen: Boolean,
+    // canResume: Boolean,
+    // canCancel: Boolean,
+    // endReason: String,
+    currency: String,
+    // tracking: {
+    //   isTrackingAvailable: Boolean,
+    //   packages: [
+    //     {
+    //       caption: String,
+    //       readyForDispatchTime: String,
+    //       deliveryTimeRange: { min: String, max: String },
+    //       trackingNumber: String,
+    //       trackingUrl: String,
+    //       carrier: { id: String, name: String },
+    //       progressPercentage: Number,
+    //     },
+    //   ],
+    // },
     payment: {
       hasTimedOut: {
         type: Boolean,

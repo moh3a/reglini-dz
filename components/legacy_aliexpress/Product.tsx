@@ -37,7 +37,7 @@ const Product = ({ product, session, converter }: any) => {
   return (
     <div className="my-8">
       {error && <DangerDialog>{error} </DangerDialog>}
-      <Link href={`/aliexpress/product/${product.productId}`} passHref>
+      <Link href={`/legacyaliexpress/product/${product.productId}`} passHref>
         <a className="block w-50 h-50 bg-gray-200 cursor-pointer">
           <img
             className="w-50 h-50 object-center object-cover hover:opacity-75 rounded-lg shadow-lg"
@@ -49,7 +49,7 @@ const Product = ({ product, session, converter }: any) => {
       <div className="relative">
         <div>
           <h1 className="mt-2 text-sm h-5 overflow-hidden">
-            <Link href={`/aliexpress/product/${product.productId}`}>
+            <Link href={`/legacyaliexpress/product/${product.productId}`}>
               {product.title}
             </Link>
           </h1>

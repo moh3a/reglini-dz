@@ -3,8 +3,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 import { getSession } from "next-auth/client";
 
-import User from "../../../../../models/User";
-import { IUser } from "../../../../../utils/types";
+import User from "../../../../../../models/User";
+import { IUser } from "../../../../../../utils/types";
 
 export default async function handler(
   req: NextApiRequest,

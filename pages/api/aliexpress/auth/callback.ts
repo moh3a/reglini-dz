@@ -56,11 +56,7 @@ handler
           };
           await user.save();
         }
-        res.status(200).redirect("/aliexpress_v3");
-        // .json({
-        //   success: true,
-        //   message: "AE user successfully logged in.",
-        // })
+        res.status(200).redirect("/aliexpress");
       } else {
         res.status(403).json({
           success: false,

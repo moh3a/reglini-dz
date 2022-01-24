@@ -15,10 +15,10 @@ const MiniSearchAE = ({ slug }: { slug: string | string[] }) => {
     if (newquery.includes("aliexpress.com/item/")) {
       const firstSplit = newquery.split("/item/");
       const secondSplit = firstSplit[1].split(".html");
-      router.push(`/aliexpress_v3/product/${secondSplit[0]}`);
+      router.push(`/aliexpress/product/${secondSplit[0]}`);
     } else {
       const slugged = slugify(newquery);
-      router.push(`/aliexpress_v3/search/${slugged}`);
+      router.push(`/aliexpress/search/${slugged}`);
     }
   };
 

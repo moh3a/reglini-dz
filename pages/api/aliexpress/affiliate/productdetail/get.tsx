@@ -284,7 +284,10 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
       ) {
         res
           .status(200)
-          .json({ success: false, redirect: `/aliexpress/product/${id}` });
+          .json({
+            success: false,
+            redirect: `/legacyaliexpress/product/${id}`,
+          });
       } else res.status(200).json({ success: false, error: errorAffiliate });
     }
   );

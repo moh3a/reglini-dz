@@ -131,25 +131,6 @@ export const removeFromCart = createAsyncThunk(
   }
 );
 
-// export const createOrder = createAsyncThunk(
-//   "user/createOrder",
-//   async ({ product, shippingAddress }: any, { rejectWithValue }) => {
-//     try {
-//       const { data } = await axios.post(
-//         `/api/aliexpress/order/create`,
-//         {
-//           product,
-//           shippingAddress,
-//         },
-//         { headers: { "Content-type": "application/json" } }
-//       );
-//       return data;
-//     } catch (error: any) {
-//       return rejectWithValue(error.response);
-//     }
-//   }
-// );
-
 export const createOrder = createAsyncThunk(
   "user/createOrder",
   async ({ product, shippingAddress }: any, { rejectWithValue }) => {
@@ -162,7 +143,11 @@ export const createOrder = createAsyncThunk(
         },
         { headers: { "Content-type": "application/json" } }
       );
-      return data;
+      if (data.success) {
+        return data;
+      } else {
+        console.log(data);
+      }
     } catch (error: any) {
       return rejectWithValue(error.response);
     }
@@ -173,7 +158,9 @@ export const cancelOrder = createAsyncThunk(
   "user/cancelOrder",
   async ({ id }: any, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(`/api/aliexpress/order/cancel`, { id });
+      const { data } = await axios.post(`/api/aliexpress/zapiex/order/cancel`, {
+        id,
+      });
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response);
@@ -185,7 +172,9 @@ export const deleteOrder = createAsyncThunk(
   "user/deleteOrder",
   async ({ id }: any, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(`/api/aliexpress/order/delete/${id}`);
+      const { data } = await axios.post(
+        `/api/aliexpress/zapiex/order/delete/${id}`
+      );
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response);
@@ -197,26 +186,9 @@ export const getOrderDetails = createAsyncThunk(
   "user/getOrderDetails",
   async ({ id }: any, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(`/api/aliexpress/order/retrieve/${id}`);
-      return data;
-    } catch (error: any) {
-      return rejectWithValue(error.response);
-    }
-  }
-);
-
-export const updateOrderDetails = createAsyncThunk(
-  "user/updateOrderDetails",
-  async ({ data }: any) => {
-    return data;
-  }
-);
-
-export const getOrderTracking = createAsyncThunk(
-  "user/getOrderTracking",
-  async ({ id }: any, { rejectWithValue }) => {
-    try {
-      const { data } = await axios.post(`/api/aliexpress/order/tracking/${id}`);
+      const { data } = await axios.post(`/api/aliexpress/ds/order/get`, {
+        orderId: id,
+      });
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response);

@@ -66,10 +66,7 @@ const ProductsList = ({
       <div className="w-full flex flex-wrap justify-around items-center">
         {products.map((product: IAffiliateProduct) => (
           <div key={product.product_id} className="my-8 mx-2 w-50 h-50">
-            <Link
-              href={`/aliexpress_v3/product/${product.product_id}`}
-              passHref
-            >
+            <Link href={`/aliexpress/product/${product.product_id}`} passHref>
               <div className="flex justify-center items-center w-40 h-40 md:w-52 md:h-52 overflow-hidden bg-gray-200 cursor-pointer">
                 <img
                   className="w-50 h-50 object-center object-cover hover:opacity-75 rounded-lg shadow-lg"

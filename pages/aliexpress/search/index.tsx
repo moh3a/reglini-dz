@@ -5,7 +5,7 @@ const RedirectSearch = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace("/aliexpress_v3");
+    router.replace("/aliexpress");
   }, [router]);
   return <div>Wait until you will redirected ...</div>;
 };

@@ -2,7 +2,7 @@ require("dotenv").config();
 import type { NextApiResponse } from "next";
 import axios from "axios";
 import nc from "next-connect";
-import { IExtendedAPIRequest } from "../../../utils/types";
+import { IExtendedAPIRequest } from "../../../../utils/types";
 
 const handler = nc();
 handler.post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {

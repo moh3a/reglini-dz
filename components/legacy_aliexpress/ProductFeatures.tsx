@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import parse from "html-react-parser";
 import Link from "next/link";
 
 export default function ProductFeatures({ product }: any) {

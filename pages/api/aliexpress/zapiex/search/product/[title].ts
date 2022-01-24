@@ -3,7 +3,7 @@ import type { NextApiResponse } from "next";
 import axios from "axios";
 import nc from "next-connect";
 import { unslugify } from "unslugify";
-import { IExtendedAPIRequest } from "../../../../../utils/types";
+import { IExtendedAPIRequest } from "../../../../../../utils/types";
 
 const handler = nc();
 handler.post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {

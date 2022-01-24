@@ -10,7 +10,7 @@ export const getAEProductInfo = createAsyncThunk(
     try {
       const { data } = await axios({
         method: "POST",
-        url: `/api/aliexpress/${id}`,
+        url: `/api/aliexpress/zapiex/${id}`,
         data: {
           locale,
         },
@@ -28,7 +28,7 @@ export const searchAEProductByName = createAsyncThunk(
     try {
       const { data } = await axios({
         method: "POST",
-        url: `/api/aliexpress/search/product/${name}`,
+        url: `/api/aliexpress/zapiex/search/product/${name}`,
         data: {
           locale,
         },

@@ -1,4 +1,3 @@
 ## TODO
 
-- place order doesnt work
-- hot product: locale, category
+- hot product: locale, category, pagination

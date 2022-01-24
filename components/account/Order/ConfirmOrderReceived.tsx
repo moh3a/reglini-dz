@@ -7,8 +7,9 @@ import { useTranslations } from "next-intl";
 import { selectUser } from "../../../utils/redux/userSlice";
 import { submitFeedback } from "../../../utils/redux/userAsyncActions";
 import Feedback from "../../elements/Feedback";
+import { IAEOrderDetails } from "../../../utils/AETypes";
 
-function ConfirmOrderReceived({ order }: any) {
+function ConfirmOrderReceived({ order }: { order: IAEOrderDetails }) {
   const [message, setMessage] = useState("");
   const [rate, setRate] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -53,9 +54,8 @@ function ConfirmOrderReceived({ order }: any) {
 
   return (
     <div>
-      {order.status &&
-        order.status !== "COMPLETE" &&
-        order.status !== "AWAITING_PAYMENT" &&
+      {order.details.order_status &&
+        order.payment.isPaymentConfirmed &&
         !order.packageReceived.wasReceived && (
           <div>
             <button
