@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 import { getBlogs, createBlog, addComment } from "./blogsAsyncActions";
+import { getBlogDetails } from "./blogAsyncActions";
 
 export interface IBlog {
   userId?: string;
@@ -27,11 +28,13 @@ export interface IBlogs {
   error?: any;
   message?: string;
   blogs: any[];
+  blog: IBlog;
 }
 
 const initialState: IBlogs = {
   status: "idle",
   blogs: [],
+  blog: {},
 };
 
 export const blogsSlice = createSlice({
@@ -53,6 +56,7 @@ export const blogsSlice = createSlice({
         state.status = "failed";
         state.message = action.error.message;
       })
+      // ========================================================================
       .addCase(createBlog.pending, (state, action) => {
         state.status = "loading";
         state.message = "";
@@ -66,6 +70,7 @@ export const blogsSlice = createSlice({
         state.status = "failed";
         state.message = action.error.message;
       })
+      // ========================================================================
       .addCase(addComment.pending, (state, action) => {
         state.status = "loading";
         state.message = "";
@@ -82,6 +87,20 @@ export const blogsSlice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(addComment.rejected, (state, action) => {
+        state.status = "failed";
+        state.message = action.error.message;
+      })
+      // ========================================================================
+      .addCase(getBlogDetails.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(getBlogDetails.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.blog = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(getBlogDetails.rejected, (state, action) => {
         state.status = "failed";
         state.message = action.error.message;
       });

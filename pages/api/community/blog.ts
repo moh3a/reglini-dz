@@ -1,6 +1,3 @@
-// find many with ids
-// const records = await Model.find({ '_id': { $in: ids } });
-
 import nc from "next-connect";
 import type { NextApiResponse } from "next";
 import slugify from "slugify";
@@ -21,9 +18,14 @@ handler
   .use(async (req: IExtendedAPIRequest, res: NextApiResponse, next) =>
     CheckSession(req, res, next)
   )
+  .get(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
+    const { slug } = req.body;
+    console.log(slug);
+  })
   .post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
     const { title, text } = req.body;
-    const slug = slugify(title);
+    let sluggable = title + Math.round(Math.random() * 10000).toString();
+    const slug = slugify(sluggable);
 
     const user = await User.findOne({
       email: req.userData.email,
@@ -38,7 +40,7 @@ handler
       userId: user._id,
     });
 
-    Blog.watch().on("change", (data) => console.log(new Date(), data));
+    // Blog.watch().on("change", (data) => console.log(new Date(), data));
 
     user.blogs.unshift({ blogId: createdBlog._id });
     await user.save();

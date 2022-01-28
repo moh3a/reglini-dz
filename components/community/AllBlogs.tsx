@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import parse from "html-react-parser";
 
 import { selectBlogs } from "../../utils/redux/blogsSlice";
 import { getBlogs, addComment } from "../../utils/redux/blogsAsyncActions";
@@ -17,7 +18,7 @@ function AllBlogs({ user }: any) {
     dispatch(getBlogs());
   }, [dispatch]);
 
-  const commentHandler = (e: any, blogId: string) => {
+  const commentHandler = (e: React.FormEvent, blogId: string) => {
     e.preventDefault();
     if (comment) {
       dispatch(addComment({ blogId, text: comment }));
@@ -60,29 +61,38 @@ function AllBlogs({ user }: any) {
               key={blog._id}
               className="my-2 mx-4 rounded-lg border border-gray-200 bg-gray-50 dark:border-yellow-200 dark:bg-grim"
             >
-              <div className="flex">
-                <div className="m-2 h-12 w-12">
-                  {blog.userPicture && (
-                    <Avatar picture={blog.userPicture} size="sm" />
-                  )}
+              <a href={`/community/blog/${blog.slug}`}>
+                <div className="flex">
+                  <div className="m-2 h-12 w-12">
+                    {blog.userPicture && (
+                      <Avatar picture={blog.userPicture} size="sm" />
+                    )}
+                  </div>
+                  <div className="mt-2">
+                    <p className="font-semibold">{blog.userName}</p>
+                    <small>
+                      {blog.createdAt.substring(0, 10)}{" "}
+                      {blog.createdAt.substring(11, 16)}
+                    </small>
+                  </div>
                 </div>
-                <div className="mt-2">
-                  <p className="font-semibold">{blog.userName}</p>
-                  <small>
-                    {blog.createdAt.substring(0, 10)}{" "}
-                    {blog.createdAt.substring(11, 16)}
-                  </small>
+                <div className="flex flex-col md:flex-row md:justify-between">
+                  <h1 className="w-full text-xl font-bold mx-1">
+                    {blog.title}
+                  </h1>
+                  <p className="w-full  text-center md:text-right px-4">
+                    <span className="mx-4 text-sm font-semibold">
+                      {blog.votes} votes
+                    </span>
+                    <span className="mx-4 text-sm font-semibold">
+                      {blog.commentsCounter} comments
+                    </span>
+                  </p>
                 </div>
-              </div>
-              <div className="flex flex-col md:flex-row md:justify-between">
-                <h1 className="w-full text-xl font-bold mx-1">{blog.title}</h1>
-                <p className="w-full md:w-36 text-center md:text-right px-4">
-                  {blog.votes} votes
-                </p>
-              </div>
-              <p className="mb-3 border border-gray-100 bg-white dark:border-gray-100 dark:bg-gray-600 px-4 py-2 m-1 rounded-lg">
-                {blog.text}
-              </p>
+                <div className="mb-3 border border-gray-100 bg-white dark:border-gray-100 dark:bg-gray-600 px-4 py-2 m-1 rounded-lg">
+                  {parse(blog.text)}
+                </div>
+              </a>
               {blog.comments.length > 0 && (
                 <h1 className="w-full text-lg font-bold mx-1">Comments:</h1>
               )}

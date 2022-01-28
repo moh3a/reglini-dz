@@ -6,6 +6,7 @@ import { Provider as NextAuthProvider } from "next-auth/client";
 import { Provider as ReduxProvider } from "react-redux";
 import { NextIntlProvider } from "next-intl";
 
+import "react-quill/dist/quill.snow.css";
 import "../styles/globals.css";
 import { useStore } from "../utils/redux/store";
 

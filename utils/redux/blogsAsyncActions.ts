@@ -17,7 +17,7 @@ export const createBlog = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      const { data } = await axios.post(`/api/community/newblog`, {
+      const { data } = await axios.post(`/api/community/blog`, {
         title,
         text,
       });
@@ -35,7 +35,7 @@ export const addComment = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      const { data } = await axios.post(`/api/community/newcomment`, {
+      const { data } = await axios.post(`/api/community/comment`, {
         blogId,
         text,
       });

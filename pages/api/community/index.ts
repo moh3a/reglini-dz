@@ -4,7 +4,6 @@ import type { NextApiResponse } from "next";
 import Blog from "../../../models/Blog";
 import User from "../../../models/User";
 import { IExtendedAPIRequest } from "../../../utils/types";
-
 import dbConnect from "../../../config/db";
 
 const handler = nc();
@@ -20,7 +19,6 @@ handler
     blogs.map((blog: any) => {
       userIds.push(blog.userId);
     });
-    console.log(userIds);
 
     const data = await User.find({ _id: { $in: userIds } }).select(
       "name picture"
@@ -35,8 +33,6 @@ handler
         blog.userName = data[index].name;
       }
     });
-
-    console.log(blogs);
 
     res.status(200).json({
       success: true,

@@ -19,17 +19,13 @@ const AliexpressProduct = () => {
   const [commission, setCommission] = useState<number>();
   const [rate, setRate] = useState<number>();
   const fetchCommission = useCallback(async () => {
-    const { data } = await axios.get(`/api/commission`);
-    setCommission(data.data.commission);
-  }, []);
-  const fetchRate = useCallback(async () => {
-    const { data } = await axios.get(`/api/currency`);
-    setRate(data.data[0].live.parallel.sale);
+    const { data } = await axios.post(`/api/commission`);
+    setCommission(data.commission);
+    setRate(data.rate);
   }, []);
   useEffect(() => {
     fetchCommission();
-    fetchRate();
-  }, [fetchCommission, fetchRate]);
+  }, [fetchCommission]);
 
   const [locale, setLocale] = useState("");
   const [message, setMessage] = useState("");
