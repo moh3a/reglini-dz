@@ -15,7 +15,7 @@ function SimulateAdResults({
   const [budget, setBudget] = useState(3);
 
   return (
-    <div className="my-4">
+    <div className="my-4 mx-2">
       <label className="font-bold">Select your ad emplacement</label>
       <div onChange={(e: any) => setEmplacement(e.target.value)}>
         <input

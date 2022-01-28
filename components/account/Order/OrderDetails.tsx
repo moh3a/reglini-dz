@@ -41,7 +41,6 @@ export default function OrderDetails({ id }: { id: string }) {
 
   return (
     <div className="my-5 shadow-md border-2 text-black dark:text-yellow-100 border-yellow-200 bg-white dark:bg-grim overflow-hidden rounded-lg">
-      order details 2 - beta
       {order && (
         <div className="flex shadow ">
           <div className="relative w-full">
