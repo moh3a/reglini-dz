@@ -1,10 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { Fragment, useState, useEffect } from "react";
-import { Dialog, Transition } from "@headlessui/react";
+import { Dialog, Transition, RadioGroup } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { RadioGroup } from "@headlessui/react";
 
 import { selectUser } from "../../../utils/redux/userSlice";
 import { submitPayment } from "../../../utils/redux/userAsyncActions";
@@ -43,7 +42,7 @@ function PayNow({ order }: { order: IAEOrderDetails }) {
     body.append("file", image);
     body.append("orderId", order.orderId);
     body.append("paymentMethod", selected);
-    dispatch(submitPayment({ body }));
+    dispatch(submitPayment({ body, url: "/api/user/details/orderpayment" }));
     setTimeout(() => {
       if (status !== "loading") {
         setWait(false);

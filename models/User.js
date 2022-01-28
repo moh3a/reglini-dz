@@ -92,9 +92,6 @@ const AddressSchema = new mongoose.Schema({
 
 const OrderSchema = new mongoose.Schema(
   {
-    // common params
-    // params from zapiex
-    // params from ae ds
     orderId: String,
     product: {
       productId: String,
@@ -170,37 +167,7 @@ const OrderSchema = new mongoose.Schema(
       ],
       official_website: String,
     },
-    // status: String,
-    // orderDetailsUrl: String,
-    // creationTime: String,
-    // totalPrice: {
-    //   productsPrice: { value: Number, display: String },
-    //   shippingPrice: { value: Number, display: String },
-    //   fullOrderPrice: { value: Number, display: String },
-    // },
-    // paymentTime: String,
-    // readyForDispatchTime: String,
-    // isPaid: Boolean,
-    // isShipped: Boolean,
-    // isFrozen: Boolean,
-    // canResume: Boolean,
-    // canCancel: Boolean,
-    // endReason: String,
     currency: String,
-    // tracking: {
-    //   isTrackingAvailable: Boolean,
-    //   packages: [
-    //     {
-    //       caption: String,
-    //       readyForDispatchTime: String,
-    //       deliveryTimeRange: { min: String, max: String },
-    //       trackingNumber: String,
-    //       trackingUrl: String,
-    //       carrier: { id: String, name: String },
-    //       progressPercentage: Number,
-    //     },
-    //   ],
-    // },
     payment: {
       hasTimedOut: {
         type: Boolean,
@@ -232,9 +199,7 @@ const OrderSchema = new mongoose.Schema(
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    // required: [true, "Please provide a username."],
     lowercase: true,
-    // unique: true,
     index: true,
   },
   realName: String,
@@ -242,7 +207,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide an email address."],
     lowercase: true,
-    // unique: true,
     match: [
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       "Please provide a valid email",
@@ -270,7 +234,6 @@ const UserSchema = new mongoose.Schema({
   verifyCredentialsToken: String,
   password: {
     type: String,
-    // required: [true, "Please add a password."],
     minlength: 6,
     select: false,
   },
@@ -292,6 +255,55 @@ const UserSchema = new mongoose.Schema({
     user_nick: String,
     expire_time: Number,
   },
+  facebookPages: [
+    {
+      page_id: mongoose.SchemaTypes.ObjectId,
+      page_name: String,
+      page_url: String,
+      instagram_page_linked: {
+        type: Boolean,
+        default: false,
+      },
+      access_status: {
+        type: String,
+        enum: [
+          "processing_demand",
+          "access_request_sent",
+          "processing_validation",
+          "access_granted",
+          "processing_deletion",
+        ],
+      },
+      page_ads: [
+        {
+          ad_status: {
+            type: String,
+            enum: [
+              "request_new_ad",
+              "awaiting_payment",
+              "processing_payment",
+              "ad_success",
+              "ad_fail",
+            ],
+          },
+          created_at: String,
+          ad_emplacement: String,
+          post_url: String,
+          ad_audience: String,
+          ad_duration: Number,
+          ad_daily_bugdet: Number,
+          ad_total_budget: Number,
+          ad_price: Number,
+          payment: {
+            wasDeclined: Boolean,
+            receipt: String,
+            paymentMethod: String,
+            paymentTime: String,
+          },
+        },
+      ],
+    },
+  ],
 });
 
 UserSchema.pre("save", async function (next) {

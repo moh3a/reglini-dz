@@ -3,11 +3,15 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { unslugify } from "unslugify";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 
-import { selectUser } from "../../../utils/redux/userSlice";
-import MiniSearchAE from "../../../components/aliexpress_v3/MiniSearchAE";
+import { selectUser } from "../../../../../utils/redux/userSlice";
+import MiniSearchAE from "../../../../../components/aliexpress_v3/MiniSearchAE";
+import ProductsList from "../../../../../components/aliexpress_v3/ProductsList";
+import Logo from "../../../../../components/layout/Logo";
 
-const AliexpressSearch = () => {
+const AliexpressSearchPage = () => {
+  const [totalRecordCount, setTotalRecordCount] = useState<number>();
   const [commission, setCommission] = useState<number>();
   const [rate, setRate] = useState<number>();
   const [products, setProducts] = useState<any>();
@@ -15,7 +19,7 @@ const AliexpressSearch = () => {
 
   const { user } = useSelector(selectUser);
   const router = useRouter();
-  const { slug } = router.query;
+  const { num, slug } = router.query;
 
   const converter = (price: number) => {
     if (rate && commission)
@@ -23,25 +27,37 @@ const AliexpressSearch = () => {
   };
 
   const queryAE = useCallback(async () => {
-    if (slug) {
+    if (num && slug) {
       setLoading(true);
       const { data } = await axios.post(
         "/api/aliexpress/affiliate/product/query",
         {
+          page: num,
           keywords: slug,
           locale: router.locale,
         }
       );
-      setProducts(data.data.products.product);
-      setCommission(data.commission);
-      setRate(data.rate);
-      setLoading(false);
+      if (data.success && data.data) {
+        setProducts(data.data.products.product);
+        setTotalRecordCount(data.data.total_record_count);
+        setCommission(data.commission);
+        setRate(data.rate);
+        setLoading(false);
+      } else {
+        router.replace(`/aliexpress/search/${slug}`);
+      }
     }
-  }, [router.locale, slug]);
+  }, [router, num, slug]);
+
+  useEffect(() => {
+    if (num && Number(num) < 2) {
+      router.push(`/aliexpress/search/${slug}`);
+    }
+  }, [num, router, slug]);
 
   useEffect(() => {
     queryAE();
-  }, [queryAE]);
+  }, [queryAE, router.query]);
 
   const callaeauth = async () => {
     const { data } = await axios.post("/api/aliexpress/auth");
@@ -69,7 +85,37 @@ const AliexpressSearch = () => {
           Search results for: {unslugify(slug)}
         </h2>
       )}
-      {products && <ProductsList products={products} converter={converter} />}
+      {products && (
+        <>
+          <ProductsList products={products} converter={converter} />
+          <div className="flex justify-center items-center text-xl mt-2 mb-6">
+            <ChevronLeftIcon
+              onClick={() =>
+                router.push(`/aliexpress/search/${slug}/p/${Number(num) - 1}`)
+              }
+              className="h-6 w-6 inline mr-3 cursor-pointer border border-black dark:border-white rounded-full p-1"
+              aria-hidden="true"
+            />
+            page {num}
+            {totalRecordCount && totalRecordCount - 50 * Number(num) < 0 ? (
+              <ChevronRightIcon
+                className="h-6 w-6 inline ml-3 cursor-not-allowed border text-gray-300 border-gray-300 dark:text-black dark:border-black rounded-full p-1"
+                aria-hidden="true"
+              />
+            ) : (
+              <ChevronRightIcon
+                onClick={() =>
+                  router.push(`/aliexpress/search/${slug}/p/${Number(num) + 1}`)
+                }
+                className="h-6 w-6 inline ml-3 cursor-pointer border border-black dark:border-white rounded-full p-1"
+                aria-hidden="true"
+              />
+            )}
+          </div>
+        </>
+      )}
+
+      {/* user log in to ae */}
       {user && (!user.aeCredentials || !user.aeCredentials.token) && (
         <div className="px-5 py-6 flex flex-col justify-center items-center">
           <h2>
@@ -95,16 +141,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { locale } = context;
   return {
     props: {
-      messages: require(`../../../locales/${locale}.json`),
+      messages: require(`../../../../../locales/${locale}.json`),
     },
   };
 };
 
-import Layout from "../../../components/layout/Layout";
-import ProductsList from "../../../components/aliexpress_v3/ProductsList";
-import Logo from "../../../components/layout/Logo";
-AliexpressSearch.getLayout = function getLayout(page: any) {
+import Layout from "../../../../../components/layout/Layout";
+AliexpressSearchPage.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };
 
-export default AliexpressSearch;
+export default AliexpressSearchPage;

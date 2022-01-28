@@ -1,6 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { IUserRedux, IWished, ICartItem } from "../../utils/types";
+import {
+  IUserRedux,
+  IWished,
+  ICartItem,
+  IFacebookPage,
+  IFacebookPageAd,
+} from "../../utils/types";
 
 export const getUser = createAsyncThunk(
   "user/getUser",
@@ -304,9 +310,9 @@ export const editProfileAvatar = createAsyncThunk(
 
 export const submitPayment = createAsyncThunk(
   "user/submitPayment",
-  async ({ body }: any, { rejectWithValue }) => {
+  async ({ body, url }: any, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post("/api/user/details/orderpayment", body);
+      const { data } = await axios.post(url, body);
 
       return data;
     } catch (error: any) {
@@ -322,6 +328,76 @@ export const submitFeedback = createAsyncThunk(
       const { data } = await axios.post(
         "/api/user/details/orderreceived",
         body
+      );
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const demandAccessRequest = createAsyncThunk(
+  "user/demandAccessRequest",
+  async ({ pageName, pageUrl, instagramPage }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post(
+        "/api/user/metaads/demandaccessrequest",
+        { pageName, pageUrl, instagramPage }
+      );
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const deleteFacebookPageAccess = createAsyncThunk(
+  "user/deleteFacebookPageAccess",
+  async ({ pageId }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post("/api/user/metaads/deletepageaccess", {
+        pageId,
+      });
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const validateFacebookPageAccess = createAsyncThunk(
+  "user/validateFacebookPageAccess",
+  async ({ pageId }: any, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post(
+        "/api/user/metaads/validatepageaccess",
+        {
+          pageId,
+        }
+      );
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const createAdRequest = createAsyncThunk(
+  "user/createAdRequest",
+  async (
+    {
+      pageId,
+      pageAd,
+    }: { pageId: IFacebookPage["page_id"]; pageAd: IFacebookPageAd },
+    { rejectWithValue }
+  ) => {
+    try {
+      const { data } = await axios.post(
+        "/api/user/metaads/ad/createadrequest",
+        {
+          pageId,
+          pageAd,
+        }
       );
       return data;
     } catch (error: any) {

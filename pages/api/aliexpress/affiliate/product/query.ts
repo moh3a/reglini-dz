@@ -24,7 +24,7 @@ export default async function handler(
 ) {
   await dbConnect();
   if (req.method === "POST") {
-    const { keywords } = req.body;
+    const { keywords, page } = req.body;
     const rate = await Currency.findOne({ exchange: "DZDEUR" }).select("live");
     const commission = await Finance.findOne().select("commission");
     try {
@@ -36,7 +36,7 @@ export default async function handler(
           keywords,
           // max_sale_price: "50000",
           // min_sale_price: "5000",
-          page_no: "1",
+          page_no: page ? page : "1",
           page_size: "50",
           platform_product_type: "ALL",
           target_currency: "EUR",

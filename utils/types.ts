@@ -131,3 +131,40 @@ export interface IExtendedAPIRequest extends NextApiRequest {
   params?: any;
   userData?: any;
 }
+
+export interface IFacebookPageAd {
+  ad_status:
+    | "request_new_ad"
+    | "awaiting_payment"
+    | "processing_payment"
+    | "ad_success"
+    | "ad_fail";
+  created_at: string;
+  ad_emplacement: string;
+  post_url: string;
+  ad_audience: string;
+  ad_duration: number;
+  ad_daily_bugdet: number;
+  ad_total_budget: number;
+  ad_price: number;
+  payment?: {
+    wasDeclined: boolean;
+    receipt: string;
+    paymentMethod: string;
+    paymentTime: string;
+  };
+}
+
+export interface IFacebookPage {
+  page_id: string;
+  page_name: string;
+  page_url: string;
+  instagram_page_linked: boolean;
+  access_status:
+    | "processing_demand"
+    | "access_request_sent"
+    | "processing_validation"
+    | "access_granted"
+    | "processing_deletion";
+  page_ads: [IFacebookPageAd];
+}

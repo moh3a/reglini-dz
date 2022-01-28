@@ -6,6 +6,7 @@ import {
   BellIcon,
   ChartBarIcon,
   ClipboardListIcon,
+  GlobeIcon,
 } from "@heroicons/react/outline";
 
 import Avatar from "../elements/Avatar";
@@ -101,6 +102,20 @@ const AdminSidebar = ({ user }: any) => {
                 />
                 {router.asPath === "/admin/notifications" && (
                   <p className="text-xs mt-1 select-none">Notifications</p>
+                )}
+              </li>
+              <li
+                className={`py-6 flex flex-col items-center justify-center ${
+                  router.asPath === "/admin/ads" ? "bg-white dark:bg-grim" : ""
+                }`}
+                onClick={() => router.push("/admin/ads")}
+              >
+                <GlobeIcon
+                  className="flex-shink-0 h-6 w-6  text-gray-800 dark:text-gray-100 hover:text-red-700  dark:hover:text-red-400"
+                  aria-hidden="true"
+                />
+                {router.asPath === "/admin/ads" && (
+                  <p className="text-xs mt-1 select-none">Ads</p>
                 )}
               </li>
             </ul>

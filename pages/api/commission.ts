@@ -1,6 +1,7 @@
 import dbConnect from "../../config/db";
 import type { NextApiRequest, NextApiResponse } from "next";
 import Finance from "../../models/Finance";
+import Currency from "../../models/Currency";
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,6 +13,24 @@ export default async function handler(
     try {
       const data = await Finance.findOne();
       res.status(200).json({ success: true, data });
+    } catch (e) {
+      res
+        .status(400)
+        .json({ success: false, message: "An error have occured." });
+    }
+  }
+
+  if (req.method === "POST") {
+    try {
+      const commission = await Finance.findOne().select("commission");
+      const rate = await Currency.findOne({
+        exchange: "DZDEUR",
+      }).select("live");
+      res.status(200).json({
+        success: true,
+        commission: commission.commission,
+        rate: rate.live.parallel.sale,
+      });
     } catch (e) {
       res
         .status(400)

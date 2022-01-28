@@ -13,7 +13,7 @@ const Categories = () => {
     ]
   >();
   const fetchCategories = useCallback(async () => {
-    const { data } = await axios.get("/api/aliexpress/affiliate/category/get");
+    const { data } = await axios.post("/api/aliexpress/affiliate/category/get");
     if (data.success) {
       setCategories(data.data);
     }

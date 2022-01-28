@@ -35,7 +35,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   await dbConnect();
-  if (req.method === "GET") {
+  if (req.method === "POST") {
     client.execute(
       "aliexpress.affiliate.category.get",
       {
