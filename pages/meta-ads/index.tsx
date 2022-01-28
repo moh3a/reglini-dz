@@ -1,35 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
-import { TrashIcon } from "@heroicons/react/outline";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-import {
-  deleteFacebookPageAccess,
-  validateFacebookPageAccess,
-} from "../../utils/redux/userAsyncActions";
 import { selectUser } from "../../utils/redux/userSlice";
-import { IFacebookPage } from "../../utils/types";
+import PagesList from "../../components/meta_ads/PagesList";
 
 const MetaAdsScreen = () => {
   const { user } = useSelector(selectUser);
-  const dispatch = useDispatch();
-  const router = useRouter();
-
-  const deletePageAccess = (id: string) => {
-    dispatch(deleteFacebookPageAccess({ pageId: id }));
-  };
-
-  const validatePageAccess = (id: string) => {
-    dispatch(validateFacebookPageAccess({ pageId: id }));
-  };
 
   return (
     <>
       <Head>
-        <title>Coming soon | Meta Ads | reglini-dz</title>
+        <title>Meta Ads | reglini-dz</title>
         <meta
           name="description"
           content="Welcome to reglini-dz (reglini-dz.com). Checkout the services we provide, from buying from Aliexpress using algerians dinars, to subscribing to Netflix and many more to come."
@@ -42,8 +26,10 @@ const MetaAdsScreen = () => {
         </div>
         {user ? (
           <div className="mt-10 w-full">
-            <div className="flex flex-col text-center md:text-left md:flex-row md:justify-between">
-              <div>Demand an access request to your Facebook page...</div>
+            <div className="my-8 flex flex-col md:mx-44 text-center md:text-left md:flex-row md:justify-between">
+              <div className="text-sm">
+                Demand an access request to your Facebook page...
+              </div>
               <div>
                 <Link href="/meta-ads/access_request" passHref>
                   <button className="px-4 py-1 bg-facebook text-white rounded-lg cursor-pointer">
@@ -52,87 +38,8 @@ const MetaAdsScreen = () => {
                 </Link>
               </div>
             </div>
-            <h2 className="text-lg font-bold">Facebook pages</h2>
-            <div className="mx-1  flex border-b border-black bg-gray-200 dark:bg-gray-800">
-              <div className="w-10 text-center font-bold border-r border-black overflow-hidden">
-                d
-              </div>
-              <div className="w-52 text-center font-bold border-r border-black overflow-hidden">
-                Page name
-              </div>
-              <div className="w-96 text-center font-bold border-r border-black overflow-hidden">
-                Page URL
-              </div>
-              <div className="w-52 text-center font-bold border-r border-black overflow-hidden">
-                Access status
-              </div>
-            </div>
-            {user && user.facebookPages && user.facebookPages.length > 0 ? (
-              user.facebookPages.map((page: IFacebookPage) => (
-                <div
-                  key={page.page_id}
-                  className="mx-1 mb-20 flex  border-b border-gray-400 bg-white dark:bg-black"
-                >
-                  <div
-                    onClick={() => deletePageAccess(page.page_id)}
-                    className="w-10 flex justify-center items-center border-r border-gray-300 overflow-hidden cursor-pointer text-red-500"
-                  >
-                    <TrashIcon className="h-5 w-5 inline" aria-hidden="true" />
-                  </div>
-                  <div className="w-52 flex justify-center items-center border-r border-gray-300 overflow-hidden">
-                    {page.page_name}
-                  </div>
-                  <div className="w-96 flex justify-center items-center border-r border-gray-300 overflow-hidden">
-                    {page.page_url}
-                  </div>
-                  <div className="w-52 text-center border-r border-gray-300 overflow-hidden">
-                    <span className="font-semibold">{page.access_status}</span>
-                    {page.access_status === "access_granted" && (
-                      <>
-                        <button
-                          onClick={() =>
-                            router.push(`/meta-ads/pages/${page.page_id}`)
-                          }
-                          className="py-1 px-3 bg-green-500 text-white rounded-lg m-1"
-                        >
-                          manage
-                        </button>
-                      </>
-                    )}
-                    {page.access_status === "access_request_sent" && (
-                      <>
-                        <br />
-                        <p className="text-xs">
-                          An email of an access request was sent to your
-                          page&apos;s email address. Please check your inbox.
-                          <br />
-                          After you have accepted the access request, please
-                          click on &quot;validated access&quot;.
-                        </p>
-                        <div>
-                          <button
-                            onClick={() => deletePageAccess(page.page_id)}
-                            className="py-1 px-3 bg-red-500 text-white rounded-lg m-1"
-                          >
-                            denied access
-                          </button>
-                          <button
-                            onClick={() => validatePageAccess(page.page_id)}
-                            className="py-1 px-3 bg-green-500 text-white rounded-lg m-1"
-                          >
-                            validated access
-                          </button>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="mb-20 text-center bg-white">
-                No Facebook Pages added.
-              </div>
-            )}
+
+            <PagesList />
           </div>
         ) : (
           <div className="mb-20 mx-4 md:mx-10 text-center text-2xl font-semibold">
@@ -146,6 +53,20 @@ const MetaAdsScreen = () => {
             </div>
           </div>
         )}
+        <div className="mb-20" />
+        <div className="w-full text-center">
+          <div className="text-2xl font-semibold">
+            Discover your business&apos;s potential reach !
+          </div>
+          <div>
+            <i className="fab fa-facebook-square text-facebook p-1"></i>
+            <i className="fab fa-instagram text-pink-600 p-1"></i>
+          </div>
+          <Link href="/meta-ads/simulate" passHref>
+            <button className="underline">plan your Meta ad</button>
+          </Link>
+        </div>
+        <div className="mb-20" />
       </div>
     </>
   );

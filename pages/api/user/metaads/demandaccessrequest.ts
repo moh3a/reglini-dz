@@ -25,21 +25,30 @@ handler
       provider: req.userData.provider,
     });
 
-    user.facebookPages.push({
-      page_id: mongoose.Types.ObjectId(),
-      page_name: pageName,
-      page_url: pageUrl,
-      instagram_page_linked: instagramPage,
-      access_status: "processing_demand",
-    });
-    await user.save();
-    console.log(user.facebookPages);
+    const page = user.facebookPages.find((e: any) => e.page_name === pageName);
+    if (page && page.access_status !== "processing_deletion") {
+      res.status(200).json({
+        success: false,
+        data: user,
+        message: "Page already exists.",
+      });
+    } else {
+      user.facebookPages.push({
+        page_id: mongoose.Types.ObjectId(),
+        page_name: pageName,
+        page_url: pageUrl,
+        instagram_page_linked: instagramPage,
+        access_status: "processing_demand",
+      });
+      await user.save();
 
-    res.status(200).json({
-      success: true,
-      data: user,
-      message: "A demand for an access request to your Facebook page was sent.",
-    });
+      res.status(200).json({
+        success: true,
+        data: user,
+        message:
+          "A demand for an access request to your Facebook page was sent.",
+      });
+    }
   });
 
 export default handler;
