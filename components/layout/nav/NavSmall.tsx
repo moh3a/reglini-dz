@@ -145,14 +145,9 @@ const NavSmall = ({ open, setOpen, user, placeholder }: any) => {
               <Link href="/meta-ads" passHref>
                 <div onClick={() => setOpen(false)} className="my-2">
                   <h1 className="cursor-pointer text-lg text-black dark:text-white">
-                    Meta ads{" "}
-                    <span className="text-xs cursor-wait rounded-lg border text-facebook border-blue-100 bg-blue-50 p-1">
-                      coming soon
-                    </span>
+                    Meta ads
                   </h1>
-                  <p className="hover:underline cursor-not-allowed text-sm">
-                    Sponsor Now
-                  </p>
+                  <p className="hover:underline text-sm">Sponsor Now</p>
                 </div>
               </Link>
               <div className="my-2 text-lg text-black dark:text-white">

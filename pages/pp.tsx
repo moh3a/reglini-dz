@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Logo from "../components/layout/Logo";
 
 const PrivacyPolicy = () => {
   return (
@@ -8,7 +9,10 @@ const PrivacyPolicy = () => {
         <meta name="description" content="reglini-dz's privacy policy" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>Privacy Policy</div>
+      <div className="flex h-128 flex-col justify-center items-center">
+        <Logo width="80" height="80" />
+        <h1 className="text-4xl font-semibold my-2">Privacy Policy</h1>
+      </div>
     </>
   );
 };

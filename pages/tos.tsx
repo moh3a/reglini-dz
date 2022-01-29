@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Logo from "../components/layout/Logo";
 
 const TermsOfService = () => {
   return (
@@ -8,7 +9,11 @@ const TermsOfService = () => {
         <meta name="description" content="reglini-dz's terms of service." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>Terms of Service</div>
+
+      <div className="flex h-128 flex-col justify-center items-center">
+        <Logo width="80" height="80" />
+        <h1 className="text-4xl font-semibold my-2">Terms of Service</h1>
+      </div>
     </>
   );
 };

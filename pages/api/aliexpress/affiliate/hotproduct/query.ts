@@ -63,7 +63,7 @@ export default async function handler(
                   page_size: "50",
                   // platform_product_type: "TMALL",
                   // sort: "SALE_PRICE_ASC",
-                  target_currency: "EUR",
+                  target_currency: "USD",
                   target_language: "FR",
                   tracking_id: "reglinidz",
                   ship_to_country: "DZ",
