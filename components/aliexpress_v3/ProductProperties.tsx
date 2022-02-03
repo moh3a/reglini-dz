@@ -52,143 +52,58 @@ const ProductProperties = ({
   };
 
   return (
-    <>
-      {property.id === "200007763" ? (
-        <div key={property.name} className="mt-4">
-          <div
-            className={`${router.locale === "ar" && "flex flex-row-reverse"}`}
-          >
-            {selectedProperty.value ? (
-              <CheckCircleIcon
-                className="h-5 w-5 inline text-green-500 mr-1"
-                aria-hidden="true"
-              />
-            ) : (
-              <ExclamationCircleIcon
-                className="h-5 w-5 inline text-red-500 mr-1"
-                aria-hidden="true"
-              />
-            )}
-            <span>{property.name}</span>
-            <span>:</span>
-            <span>{selectedProperty.value}</span>
-          </div>
+    <div key={property.name} className="mt-4">
+      <div className={`${router.locale === "ar" && "flex flex-row-reverse"}`}>
+        {selectedProperty.value ? (
+          <CheckCircleIcon
+            className="h-5 w-5 inline text-green-500 mr-1"
+            aria-hidden="true"
+          />
+        ) : (
+          <ExclamationCircleIcon
+            className="h-5 w-5 inline text-red-500 mr-1"
+            aria-hidden="true"
+          />
+        )}
+        <span>{property.name}</span> <span>:</span>{" "}
+        <span>{selectedProperty.value}</span>
+      </div>
 
-          <div
-            className={`flex ${
-              router.locale === "ar" ? "justify-end" : "items-center"
-            }  flex-wrap`}
-          >
-            {property.values.map((value: any) => {
-              if (value.id === "201336100") {
-                return (
-                  <div
-                    onClick={() => selectHandler(value.name)}
-                    key={value.id}
-                    className={`${
-                      selectedProperty.value === value.name
-                        ? "border-red-500"
-                        : "border-gray-300"
-                    } ml-2 p-1 border-2 text-center  hover:border-red-400 focus:outline-none cursor-pointer`}
-                  >
-                    {value.hasImage ? (
-                      <div
-                        className="h-10 w-10"
-                        onClick={() => setShowImage(value.imageUrl)}
-                      >
-                        <img src={value.thumbnailImageUrl} alt={value.name} />
-                      </div>
-                    ) : (
-                      "China"
-                    )}
-                  </div>
-                );
-              } else {
-                return (
-                  <div
-                    key={value.id}
-                    className={`ml-2 p-1 border-2 text-center border-gray-100 text-gray-400 bg-gray-200 focus:outline-none cursor-not-allowed`}
-                  >
-                    {value.hasImage ? (
-                      <div
-                        className="h-10 w-10 line-through"
-                        onClick={() => setShowImage(value.imageUrl)}
-                      >
-                        <img
-                          className="h-10 w-10"
-                          src={value.thumbnailImageUrl}
-                          alt={value.name}
-                        />
-                      </div>
-                    ) : (
-                      <span className="line-through">{value.name}</span>
-                    )}
-                  </div>
-                );
-              }
-            })}
-          </div>
-          <div>
-            <small>{t("shipFromChina")}</small>
-          </div>
-        </div>
-      ) : (
-        <div key={property.name} className="mt-4">
-          <div
-            className={`${router.locale === "ar" && "flex flex-row-reverse"}`}
-          >
-            {selectedProperty.value ? (
-              <CheckCircleIcon
-                className="h-5 w-5 inline text-green-500 mr-1"
-                aria-hidden="true"
-              />
-            ) : (
-              <ExclamationCircleIcon
-                className="h-5 w-5 inline text-red-500 mr-1"
-                aria-hidden="true"
-              />
-            )}
-            <span>{property.name}</span> <span>:</span>{" "}
-            <span>{selectedProperty.value}</span>
-          </div>
-
-          <div
-            className={`flex ${
-              router.locale === "ar" ? "justify-end" : "items-center"
-            } flex-wrap`}
-          >
-            {property.values.map((value: any) => {
-              return (
+      <div
+        className={`flex ${
+          router.locale === "ar" ? "justify-end" : "items-center"
+        } flex-wrap`}
+      >
+        {property.values.map((value: any) => {
+          return (
+            <div
+              onClick={() => selectHandler(value.name)}
+              key={value.id}
+              className={`${
+                selectedProperty.value === value.name
+                  ? "border-red-500"
+                  : "border-gray-300"
+              } ml-2 p-1 border-2 text-center hover:border-red-400 focus:outline-none cursor-pointer`}
+            >
+              {value.hasImage ? (
                 <div
-                  onClick={() => selectHandler(value.name)}
-                  key={value.id}
-                  className={`${
-                    selectedProperty.value === value.name
-                      ? "border-red-500"
-                      : "border-gray-300"
-                  } ml-2 p-1 border-2 text-center hover:border-red-400 focus:outline-none cursor-pointer`}
+                  className="h-10 w-10"
+                  onClick={() => setShowImage(value.imageUrl)}
                 >
-                  {value.hasImage ? (
-                    <div
-                      className="h-10 w-10"
-                      onClick={() => setShowImage(value.imageUrl)}
-                    >
-                      <img
-                        className="h-10 w-10"
-                        src={value.thumbnailImageUrl}
-                        alt={value.name}
-                      />
-                    </div>
-                  ) : (
-                    value.name
-                  )}
+                  <img
+                    className="h-10 w-10"
+                    src={value.thumbnailImageUrl}
+                    alt={value.name}
+                  />
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
-    </>
+              ) : (
+                value.name
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 

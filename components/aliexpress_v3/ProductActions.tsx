@@ -85,30 +85,37 @@ export const BuyProduct = ({
               Number(selectedVariation.sku_price) * discount
             : Number(selectedVariation.sku_price);
         shippingPrice = selectedShipping.freight.amount;
-        localStorage.setItem(
-          "aeno",
-          JSON.stringify([
-            {
-              productId: product.product_id?.toString(),
-              name: product.product_title,
-              price: converter(price),
-              originalPrice: price,
-              imageUrl: selectedVariation.imageUrl
-                ? selectedVariation.imageUrl
-                : product.product_main_image_url,
-              properties:
-                selectedVariation.aeop_s_k_u_propertys.aeop_sku_property,
-              quantity: selectedVariation.quantity,
-              sku: selectedVariation.id,
-              carrierId: selectedShipping.service_name,
-              shippingPrice: converter(shippingPrice),
-              totalPrice:
-                (converter(price + shippingPrice) as number) *
-                selectedVariation.quantity,
-            },
-          ])
-        );
-        router.push("/account/orders/new");
+        if (selectedVariation.quantity > 0) {
+          localStorage.setItem(
+            "aeno",
+            JSON.stringify([
+              {
+                productId: product.product_id?.toString(),
+                name: product.product_title,
+                price: converter(price),
+                originalPrice: price,
+                imageUrl: selectedVariation.imageUrl
+                  ? selectedVariation.imageUrl
+                  : product.product_main_image_url,
+                properties:
+                  selectedVariation.aeop_s_k_u_propertys.aeop_sku_property,
+                quantity: selectedVariation.quantity,
+                sku: selectedVariation.id,
+                carrierId: selectedShipping.service_name,
+                shippingPrice: converter(shippingPrice),
+                totalPrice:
+                  (converter(price + shippingPrice) as number) *
+                  selectedVariation.quantity,
+              },
+            ])
+          );
+          router.push("/account/orders/new");
+        } else {
+          setTimeout(() => {
+            setError("");
+          }, 3000);
+          setError("Item is out of stock.");
+        }
       }
     }
   };
@@ -161,26 +168,33 @@ export const ProductToCart = ({
               Number(selectedVariation.sku_price) * discount
             : Number(selectedVariation.sku_price);
         shippingPrice = selectedShipping.freight.amount;
-        dispatch(
-          addToCart({
-            productId: product.product_id?.toString(),
-            name: product.product_title,
-            price: converter(price),
-            originalPrice: price,
-            imageUrl: selectedVariation.imageUrl
-              ? selectedVariation.imageUrl
-              : product.product_main_image_url,
-            properties:
-              selectedVariation.aeop_s_k_u_propertys.aeop_sku_property,
-            quantity: selectedVariation.quantity,
-            sku: selectedVariation.id,
-            carrierId: selectedShipping.service_name,
-            shippingPrice: converter(shippingPrice),
-            totalPrice:
-              (converter(price + shippingPrice) as number) *
-              selectedVariation.quantity,
-          })
-        );
+        if (selectedVariation.quantity > 0) {
+          dispatch(
+            addToCart({
+              productId: product.product_id?.toString(),
+              name: product.product_title,
+              price: converter(price),
+              originalPrice: price,
+              imageUrl: selectedVariation.imageUrl
+                ? selectedVariation.imageUrl
+                : product.product_main_image_url,
+              properties:
+                selectedVariation.aeop_s_k_u_propertys.aeop_sku_property,
+              quantity: selectedVariation.quantity,
+              sku: selectedVariation.id,
+              carrierId: selectedShipping.service_name,
+              shippingPrice: converter(shippingPrice),
+              totalPrice:
+                (converter(price + shippingPrice) as number) *
+                selectedVariation.quantity,
+            })
+          );
+        } else {
+          setTimeout(() => {
+            setError("");
+          }, 3000);
+          setError("Item is out of stock.");
+        }
       }
     }
   };

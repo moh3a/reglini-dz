@@ -19,6 +19,7 @@ import {
 } from "./ProductActions";
 import ProductPrice from "./ProductPrice";
 import ProductFeatures from "./ProductFeatures";
+import { submitFeedback } from "../../utils/redux/userAsyncActions";
 
 const ProductDetails = ({
   product,
@@ -140,12 +141,15 @@ const ProductDetails = ({
                   imageUrl = sku.sku_image;
                 }
               });
-              theOne = varia;
+              theOne = {
+                ...varia,
+                quantity: varia.s_k_u_available_stock > 0 ? quantity : 0,
+              };
             }
           }
         );
       }
-      setSelectedVariation({ ...theOne, quantity, imageUrl });
+      setSelectedVariation({ ...theOne, imageUrl });
     }
   }, [product, variation, quantity]);
 
