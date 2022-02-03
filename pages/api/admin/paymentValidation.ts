@@ -93,7 +93,7 @@ handler
           finance.acceptedPayments.push({ userId, orderId });
           finance.ordersMoneySumDinars += user.orders[index].product.totalPrice;
           finance.ordersMoneySumEuros +=
-            user.orders[index].totalPrice.fullOrderPrice.value;
+            user.orders[index].details.order_amount.amount * 0.87;
           await finance.save();
           let message = `
           <h1>Your order was successfull</h1>
@@ -108,40 +108,6 @@ handler
             text: message,
           });
         } else {
-          const d1 = new Date(user.orders[index].createdAt);
-          const d2 = new Date();
-          const timeSpent = d2.getTime() - d1.getTime();
-          const timeRemaining = 172800000 - timeSpent;
-          if (timeRemaining < 0 && user.orders[index].canCancel) {
-            await axios({
-              method: "POST",
-              url: "https://api.zapiex.com/v3/order/cancel",
-              headers: {
-                "x-api-key": process.env.ZAPIEX_KEY,
-                "Content-Type": "application/json",
-              },
-              data: {
-                username: process.env.ALIEXPRESS_USERNAME,
-                password: process.env.ALIEXPRESS_PASSWORD,
-                orderId: user.orders[index].orderId,
-              },
-            })
-              .then(() => {
-                user.orders[index] = {
-                  orderId: user.orders[index].orderId,
-                  product: undefined,
-                  shippingAddress: undefined,
-                  tracking: undefined,
-                  payment: { hasTimedOut: true },
-                };
-                user.save(function (err: any, result: any) {
-                  if (err) {
-                    console.log(err);
-                  }
-                });
-              })
-              .catch((err: any) => console.log(err));
-          }
           user.orders[index].payment.receipt = undefined;
           user.orders[index].payment.paymentMethod = undefined;
           user.orders[index].payment.paymentTime = undefined;
