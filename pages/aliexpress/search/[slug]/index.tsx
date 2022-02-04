@@ -65,7 +65,7 @@ const AliexpressSearch = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {slug && <MiniSearchAE slug={slug} />}
+      <MiniSearchAE />
       {loading ? (
         <div className="w-full h-24 text-xl font-bold select-none flex justify-center items-center">
           <Logo height={50} width={50} />
