@@ -34,6 +34,8 @@ const AliexpressProduct = () => {
       setProduct(data.data);
     } else if (!data.success && data.redirect) {
       router.push(data.redirect);
+    } else if (!data.success && !data.redirect) {
+      router.reload();
     }
   }, [id, router]);
 

@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import { useSelector } from "react-redux";
+import { ArrowLeftIcon } from "@heroicons/react/outline";
 
+import MiniSearchAE from "./MiniSearchAE";
 import { selectUser } from "../../utils/redux/userSlice";
 import { IAffiliateProduct } from "../../utils/AETypes";
 import ProductImages from "./ProductImages";
@@ -155,6 +157,22 @@ const ProductDetails = ({
 
   return (
     <>
+      <div className="hidden md:block">
+        <MiniSearchAE />
+      </div>
+      <div className="flex md:hidden bg-red-50 dark:bg-grim text-gray-800 dark:text-yellow-100 ">
+        <div
+          onClick={() => router.push("/aliexpress")}
+          className="cursor-pointer mx-1 my-2 w-full border border-gray-600 dark:border-yellow-200 rounded-lg px-3 py-1"
+        >
+          <span className="text-xl font-bold">
+            <ArrowLeftIcon className="h-5 w-5 inline" aria-hidden="true" />
+          </span>{" "}
+          <span className="text-lg font-light italic">
+            Search for other products
+          </span>
+        </div>
+      </div>
       <section className="bg-red-50 dark:bg-grim text-gray-800 dark:text-yellow-100 body-font">
         <ActionFeedback message={message} error={error} />
         <div className="container px-5 py-24 mx-auto">

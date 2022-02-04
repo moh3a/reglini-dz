@@ -60,23 +60,36 @@ const ProductsList = ({
   };
 
   return (
-    <div className="my-8">
+    <div className="my-8 mx-2">
       {error && <DangerDialog>{error}</DangerDialog>}
       {success && <SuccessDialog>{success}</SuccessDialog>}
-      <div className="w-full flex flex-wrap justify-around items-center">
+      <div className="grid grid-cols-2 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
         {products.map((product: IAffiliateProduct) => (
-          <div key={product.product_id} className="my-8 mx-2 w-50 h-50">
-            <Link href={`/aliexpress/product/${product.product_id}`} passHref>
-              <div className="flex justify-center items-center w-40 h-40 md:w-52 md:h-52 overflow-hidden bg-gray-200 cursor-pointer">
-                <img
-                  className="w-50 h-50 object-center object-cover hover:opacity-75 rounded-lg shadow-lg"
-                  src={product.product_main_image_url}
-                  alt={product.product_title}
-                />
-              </div>
-            </Link>
+          <div
+            key={product.product_id}
+            // className="my-8 mx-2 w-50 h-50"
+            // className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8"
+            className="group"
+          >
+            <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+              <Link href={`/aliexpress/product/${product.product_id}`} passHref>
+                <div
+                  // className="flex justify-center items-center w-40 h-40 md:w-52 md:h-52 overflow-hidden bg-gray-200 cursor-pointer"
+                  className="flex justify-center items-center overflow-hidden bg-gray-200 cursor-pointer"
+                >
+                  <img
+                    // className="w-50 h-50 object-center object-cover hover:opacity-75 rounded-lg shadow-lg"
+                    className="object-center object-cover hover:opacity-75 rounded-lg shadow-lg"
+                    src={product.product_main_image_url}
+                    alt={product.product_title}
+                  />
+                </div>
+              </Link>
+            </div>
             <div className="flex justify-between">
-              <div className="w-32 md:w-44">
+              <div
+              // className="w-32 md:w-44"
+              >
                 <h1 className="mt-2 text-sm h-5 overflow-hidden">
                   {product.second_level_category_name
                     ? product.second_level_category_name
@@ -191,6 +204,8 @@ const ProductsList = ({
           </div>
         ))}
       </div>
+      {/* <div className="w-full flex flex-wrap justify-around items-center">
+      </div> */}
     </div>
   );
 };
