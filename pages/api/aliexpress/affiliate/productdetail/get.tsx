@@ -205,6 +205,7 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
                         responseAffiliate.resp_result.result.products.product[0]
                       ) {
                         let max = 0;
+                        let discount = 0;
                         responseDS.result.aeop_ae_product_s_k_us.aeop_ae_product_sku.map(
                           (sku) => {
                             if (max < Number(sku.sku_price)) {
@@ -214,7 +215,22 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
                         );
                         if (
                           responseAffiliate.resp_result.result.products
-                            .product[0].discount
+                            .product[0].discount &&
+                          //================================================
+                          // this because of the 99% discount  !!!!
+                          parseInt(
+                            responseAffiliate.resp_result.result.products
+                              .product[0].discount
+                          ) < 95 &&
+                          Number(
+                            responseDS.result.aeop_ae_product_s_k_us
+                              .aeop_ae_product_sku[0].sku_price
+                          ) >
+                            Number(
+                              responseDS.result.aeop_ae_product_s_k_us
+                                .aeop_ae_product_sku[0].offer_sale_price
+                            )
+                          //================================================
                         ) {
                           price.hasDiscount = true;
                           price.discount = parseInt(
@@ -282,12 +298,10 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
       } else if (
         responseAffiliate.resp_result.result.current_record_count === 0
       ) {
-        res
-          .status(200)
-          .json({
-            success: false,
-            redirect: `/legacyaliexpress/product/${id}`,
-          });
+        res.status(200).json({
+          success: false,
+          redirect: `/legacyaliexpress/product/${id}`,
+        });
       } else res.status(200).json({ success: false, error: errorAffiliate });
     }
   );

@@ -7,6 +7,7 @@ import slugify from "slugify";
 
 import HotProducts from "./HotProducts";
 import Categories from "./Categories";
+import { SearchIcon } from "@heroicons/react/outline";
 
 const SearchAE = () => {
   const [url, setUrl] = useState("");
@@ -49,29 +50,27 @@ const SearchAE = () => {
             </h2>
             <form
               onSubmit={aeQueryHandler}
-              className={`flex flex-col ${
+              className={`flex ${
                 router.locale === "ar" ? "md:flex-row-reverse" : "md:flex-row"
               }  items-center mt-8 lg:mx-auto justify-center lg:w-1/2`}
             >
-              <div className="md:mr-2 w-full">
-                <input
-                  className={`${
-                    router.locale === "ar" && "text-right"
-                  } flex-grow w-full px-4 py-2 mb-4 mr-4 text-base text-black transition duration-650 ease-in-out transform rounded-lg bg-gray-200 focus:outline-none focus:border-red-500 md:mb-0 focus:bg-white focus:shadow-outline focus:ring-2 focus:ring-red-500 ring-offset-current ring-offset-2`}
-                  type="text"
-                  id="url"
-                  name="url"
-                  placeholder="exemple: watch, xt91, coat ... or https://www.aliexpress.com/item/xxxxxxx"
-                  autoComplete="off"
-                  value={url}
-                  onChange={(e) => setUrl(e.target.value)}
-                />
-              </div>
+              <input
+                className={`${
+                  router.locale === "ar" && "text-right"
+                } w-full px-4 py-2 border border-gray-400 text-black transition duration-650 ease-in-out transform bg-gray-200 focus:outline-none focus:border-red-500 md:mb-0 focus:ring-0`}
+                type="text"
+                id="url"
+                name="url"
+                placeholder="exemple: watch, xt91, coat ... or https://www.aliexpress.com/item/xxxxxxx"
+                autoComplete="off"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+              />
               <button
-                className="flex items-center px-6 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform bg-aliexpress rounded-lg hover:opacity-60 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2"
+                className="p-2 border border-gray-400 bg-aliexpress text-white"
                 type="submit"
               >
-                {t("find")}
+                <SearchIcon className="h-5 w-5 inline" aria-hidden="true" />
               </button>
             </form>
             <p className="mt-2 mb-8 text-xs lg:text-sm text-center lg:mx-auto lg:w-1/3 ">
