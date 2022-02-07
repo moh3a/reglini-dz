@@ -419,7 +419,7 @@ export interface IAEOrderDetails {
       ];
     };
     logistics_info_list: {
-      aeop_order_logistics_info: [
+      ae_order_logistics_info: [
         {
           logistics_no: string;
           logistics_service: string;

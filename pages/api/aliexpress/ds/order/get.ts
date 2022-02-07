@@ -45,7 +45,7 @@ export interface IOrderDetailsResponse {
       ];
     };
     logistics_info_list: {
-      aeop_order_logistics_info: [
+      ae_order_logistics_info: [
         {
           logistics_no: string;
           logistics_service: string;
@@ -100,11 +100,7 @@ handler
               const d2 = new Date();
               const timeSpent = d2.getTime() - d1.getTime();
               const timeRemaining = 172800000 - timeSpent;
-              if (
-                timeRemaining < 0 &&
-                // data.canCancel &&
-                !user.orders[index].receipt
-              ) {
+              if (timeRemaining < 0 && !user.orders[index].payment.receipt) {
                 //
                 // cancel order here
                 //
@@ -153,7 +149,7 @@ handler
                   responseDetails.result.logistics_status !== "NO_LOGISTICS" &&
                   responseDetails.result.logistics_info_list &&
                   responseDetails.result.logistics_info_list
-                    .aeop_order_logistics_info
+                    .ae_order_logistics_info
                 ) {
                   user.orders[index].tracking.hasTracking = true;
                 } else {
@@ -166,12 +162,12 @@ handler
                       session: process.env.ALIEXPRESS_DS_ACCESS_TOKEN,
                       logistics_no:
                         responseDetails.result.logistics_info_list
-                          .aeop_order_logistics_info[0].logistics_no,
+                          .ae_order_logistics_info[0].logistics_no,
                       origin: "ESCROW",
                       out_ref: orderId,
                       service_name:
                         responseDetails.result.logistics_info_list
-                          .aeop_order_logistics_info[0].logistics_service,
+                          .ae_order_logistics_info[0].logistics_service,
                       to_area: "DZ",
                     },
                     function (
@@ -181,7 +177,7 @@ handler
                       if (!errorTracking && responseTracking.result_success) {
                         user.orders[index].tracking.details =
                           responseTracking.details.details;
-                        user.orders[index].tracking.website =
+                        user.orders[index].tracking.official_website =
                           responseTracking.official_website;
                         user.save(function (error: any, result: any) {
                           if (error) {

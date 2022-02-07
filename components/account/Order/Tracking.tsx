@@ -71,12 +71,19 @@ function Tracking({ order }: { order: IAEOrderDetails }) {
                   Tracking information
                 </Dialog.Title>
 
-                {/* payment UI */}
-
                 {order.tracking.hasTracking && (
                   <div>
                     <div className="px-4 py-5 sm:px-6">
                       <p className="text-green-500">{t("trackingAvailable")}</p>
+                      <p>
+                        Tracking ID:{" "}
+                        <span className="font-bold text-indigo-500">
+                          {
+                            order.details.logistics_info_list
+                              .ae_order_logistics_info[0].logistics_no
+                          }
+                        </span>
+                      </p>
                     </div>
                     {order.tracking.details.map((event) => (
                       <p key={event.event_date} className="text-lg font-bold">
@@ -89,17 +96,10 @@ function Tracking({ order }: { order: IAEOrderDetails }) {
                       The product will be shipped from China to Algeria by{" "}
                       {
                         order.details.logistics_info_list
-                          .aeop_order_logistics_info[0].logistics_service
+                          .ae_order_logistics_info[0].logistics_service
                       }
                       .
                     </p>
-                    {/* <p>
-                      Estimated progress percentage{" "}
-                      <span className="font-semibold">
-                        {order.tracking.packages[0].progressPercentage}%
-                      </span>
-                      .
-                    </p> */}
                     <p className="underline font-semibold">
                       <a
                         href={order.tracking.official_website}
@@ -108,7 +108,7 @@ function Tracking({ order }: { order: IAEOrderDetails }) {
                       >
                         Follow this link to the carrier&apos;s tracking page{" "}
                         <LinkIcon
-                          className="flex-shink-0 h-6 w-6 "
+                          className="flex-shink-0 h-6 w-6 inline"
                           aria-hidden="true"
                         />
                       </a>

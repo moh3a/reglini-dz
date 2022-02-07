@@ -141,7 +141,7 @@ const OrderSchema = new mongoose.Schema(
         ],
       },
       logistics_info_list: {
-        aeop_order_logistics_info: [
+        ae_order_logistics_info: [
           {
             logistics_no: String,
             logistics_service: String,
