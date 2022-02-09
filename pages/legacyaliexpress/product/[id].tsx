@@ -19,7 +19,9 @@ const AliexpressProduct = () => {
   const [commission, setCommission] = useState<number>();
   const [rate, setRate] = useState<number>();
   const fetchCommission = useCallback(async () => {
-    const { data } = await axios.post(`/api/commission`);
+    const { data } = await axios.post(`/api/commission`, {
+      exchange: "DZDEUR",
+    });
     setCommission(data.commission);
     setRate(data.rate);
   }, []);

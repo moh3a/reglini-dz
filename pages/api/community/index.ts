@@ -8,7 +8,7 @@ import dbConnect from "../../../config/db";
 
 const handler = nc();
 handler
-  .use(async (req, res, next) => {
+  .use(async (req: IExtendedAPIRequest, res: NextApiResponse, next) => {
     await dbConnect();
     next();
   })

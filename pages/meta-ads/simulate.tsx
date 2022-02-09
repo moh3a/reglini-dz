@@ -12,7 +12,9 @@ const MetaAdsScreen = () => {
   const [rate, setRate] = useState<number>();
 
   const fetchRate = useCallback(async () => {
-    const { data } = await axios.post("/api/commission");
+    const { data } = await axios.post("/api/commission", {
+      exchange: "DZDEUR",
+    });
     if (data.success) {
       setCommission(data.commission);
       setRate(data.rate);

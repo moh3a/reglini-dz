@@ -9,9 +9,9 @@ const AdminFinance = () => {
   const [error, setError] = useState("");
 
   const getCommission = useCallback(async () => {
-    const { data } = await axios.get("/api/commission");
+    const { data } = await axios.post("/api/commission");
     if (data.success) {
-      setCommission(data.data.commission);
+      setCommission(data.commission);
     } else {
       setError(data.message);
       setTimeout(() => setError(""), 3000);

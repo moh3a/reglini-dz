@@ -16,22 +16,20 @@ const Aliexpress = () => {
   const [session, loading]: [IUser | null, boolean] = useSession();
   const { search, product, status } = useSelector(selectAEApi);
   const [url, setUrl] = useState("");
-
   const router = useRouter();
+
   const [commission, setCommission] = useState<number>();
   const [rate, setRate] = useState<number>();
   const fetchCommission = useCallback(async () => {
-    const { data } = await axios.get(`/api/commission`);
-    setCommission(data.data.commission);
-  }, []);
-  const fetchRate = useCallback(async () => {
-    const { data } = await axios.get(`/api/currency`);
-    setRate(data.data[0].live.parallel.sale);
+    const { data } = await axios.post(`/api/commission`, {
+      exchange: "DZDEUR",
+    });
+    setCommission(data.commission);
+    setRate(data.rate);
   }, []);
   useEffect(() => {
     fetchCommission();
-    fetchRate();
-  }, [fetchCommission, fetchRate]);
+  }, [fetchCommission]);
 
   const [message, setMessage] = useState("");
   useEffect(() => {

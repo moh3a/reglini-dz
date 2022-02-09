@@ -9,27 +9,20 @@ export default async function handler(
 ) {
   await dbConnect();
 
-  if (req.method === "GET") {
-    try {
-      const data = await Finance.findOne();
-      res.status(200).json({ success: true, data });
-    } catch (e) {
-      res
-        .status(400)
-        .json({ success: false, message: "An error have occured." });
-    }
-  }
-
   if (req.method === "POST") {
+    const { exchange } = req.body;
     try {
       const commission = await Finance.findOne().select("commission");
-      const rate = await Currency.findOne({
-        exchange: "DZDEUR",
-      }).select("live");
+      let rate: any;
+      if (exchange) {
+        rate = await Currency.findOne({
+          exchange,
+        }).select("live");
+      }
       res.status(200).json({
         success: true,
         commission: commission.commission,
-        rate: rate.live.parallel.sale,
+        rate: rate ? rate.live.parallel.sale : undefined,
       });
     } catch (e) {
       res

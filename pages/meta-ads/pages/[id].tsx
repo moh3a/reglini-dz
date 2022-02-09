@@ -16,7 +16,9 @@ const FacebookPageDetails = () => {
   const { user, status } = useSelector(selectUser);
 
   const fetchRate = useCallback(async () => {
-    const { data } = await axios.post("/api/commission");
+    const { data } = await axios.post("/api/commission", {
+      exchange: "DZDEUR",
+    });
     if (data.success) {
       setCommission(data.commission);
       setRate(data.rate);

@@ -29,15 +29,15 @@ export const LocalISODate = () => {
 };
 
 import axios from "axios";
-export const ConvertPrice = async (price: number) => {
+export const ConvertPrice = async (price: number, exchange: string) => {
   let commission = 0;
   let rate = 0;
-  const { data } = await axios.get(
-    `${process.env.NEXTAUTH_URL}/api/commission`
+  const { data } = await axios.post(
+    `${process.env.NEXTAUTH_URL}/api/commission`,
+    { exchange }
   );
-  commission = data.data.commission;
-  const res = await axios.get(`${process.env.NEXTAUTH_URL}/api/currency`);
-  rate = res.data.data[0].live.parallel.sale;
+  commission = data.commission;
+  rate = data.rate;
   let newPrice = price * rate + price * rate * commission;
   return newPrice;
 };
