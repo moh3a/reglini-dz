@@ -2,12 +2,12 @@ import nc from "next-connect";
 import type { NextApiResponse } from "next";
 import slugify from "slugify";
 
-import User from "../../../models/User";
-import Blog from "../../../models/Blog";
-import CheckSession from "../../../utils/checkSession";
-import { IExtendedAPIRequest } from "../../../utils/types";
+import User from "../../../../models/User";
+import Blog from "../../../../models/Blog";
+import CheckSession from "../../../../utils/checkSession";
+import { IExtendedAPIRequest } from "../../../../utils/types";
 
-import dbConnect from "../../../config/db";
+import dbConnect from "../../../../config/db";
 
 const handler = nc();
 handler
@@ -18,10 +18,6 @@ handler
   .use(async (req: IExtendedAPIRequest, res: NextApiResponse, next) =>
     CheckSession(req, res, next)
   )
-  .get(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
-    const { slug } = req.body;
-    console.log(slug);
-  })
   .post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
     const { title, text } = req.body;
     let sluggable = title + Math.round(Math.random() * 10000).toString();
@@ -51,12 +47,10 @@ handler
         message: "blog successfully created",
       });
     } else {
-      res
-        .status(200)
-        .json({
-          success: false,
-          message: "A title and a text must be provided.",
-        });
+      res.status(200).json({
+        success: false,
+        message: "A title and a text must be provided.",
+      });
     }
   });
 

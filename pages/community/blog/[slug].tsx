@@ -25,7 +25,7 @@ const BlogScreen = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>Hello world</div>
+      <Blog />
     </>
   );
 };
@@ -39,6 +39,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 };
 
 import Layout from "../../../components/layout/Layout";
+import Blog from "../../../components/community/Blog";
 BlogScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import { useDispatch } from "react-redux";
-import { ExclamationCircleIcon } from "@heroicons/react/outline";
+import {
+  ChevronLeftIcon,
+  ExclamationCircleIcon,
+} from "@heroicons/react/outline";
 
 import { createBlog } from "../../utils/redux/blogsAsyncActions";
 
@@ -71,6 +74,11 @@ function CreateBlog() {
   return (
     <div>
       <h1 className="my-4 mx-4 md:mx-10 py-4 px-2 md:px-4 text-xl">
+        <ChevronLeftIcon
+          onClick={() => router.push("/community")}
+          className="h-6 w-6 inline mr-3 cursor-pointer border dark:text-gray-300 dark:border-gray-300 text-black border-black rounded-full p-1"
+          aria-hidden="true"
+        />
         Create a new blog
       </h1>
       <form
@@ -81,6 +89,7 @@ function CreateBlog() {
           <label>Title</label>
           <input
             required
+            maxLength={100}
             className="ml-4 border border-gray-200 bg-gray-50"
             type="text"
             placeholder="Blog title"

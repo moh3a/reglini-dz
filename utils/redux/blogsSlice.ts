@@ -4,6 +4,7 @@ import { getBlogs, createBlog, addComment } from "./blogsAsyncActions";
 import { getBlogDetails } from "./blogAsyncActions";
 
 export interface IBlog {
+  _id?: string;
   userId?: string;
   userName?: string;
   userPicture?: string;
@@ -21,6 +22,7 @@ export interface IBlog {
       voters?: [{ userId: string }];
     }
   ];
+  createdAt?: string;
 }
 
 export interface IBlogs {
