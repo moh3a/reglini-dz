@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Contact from "../components/Contact";
 
-const Support = ({ messages }: any) => {
+const Support = () => {
   return (
     <>
       <Head>

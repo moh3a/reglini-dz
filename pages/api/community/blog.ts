@@ -33,22 +33,31 @@ handler
       provider: req.userData.provider,
     });
 
-    const createdBlog = await Blog.create({
-      title,
-      slug,
-      text,
-      userId: user._id,
-    });
+    if (title && text) {
+      const createdBlog = await Blog.create({
+        title,
+        slug,
+        text,
+        userId: user._id,
+      });
 
-    // Blog.watch().on("change", (data) => console.log(new Date(), data));
+      // Blog.watch().on("change", (data) => console.log(new Date(), data));
 
-    user.blogs.unshift({ blogId: createdBlog._id });
-    await user.save();
-    res.status(200).json({
-      success: true,
-      data: createdBlog,
-      message: "blog successfully created",
-    });
+      user.blogs.unshift({ blogId: createdBlog._id });
+      await user.save();
+      res.status(200).json({
+        success: true,
+        data: createdBlog,
+        message: "blog successfully created",
+      });
+    } else {
+      res
+        .status(200)
+        .json({
+          success: false,
+          message: "A title and a text must be provided.",
+        });
+    }
   });
 
 export default handler;

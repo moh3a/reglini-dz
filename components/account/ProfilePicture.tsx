@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
+import React, { useState } from "react";
 import parse from "html-react-parser";
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser } from "../../utils/redux/userSlice";
 import {
@@ -15,7 +14,7 @@ import * as style from "@dicebear/avatars-bottts-sprites";
 import AlertMessage from "../elements/AlertMessage";
 import Avatar from "../elements/Avatar";
 
-const ProfilePicture = ({ size }: { user: any; size?: "sm" | "md" | "lg" }) => {
+const ProfilePicture = ({ size }: { size?: "sm" | "md" | "lg" }) => {
   const t = useTranslations("Profile");
   const [pp, setPp] = useState("");
   const [generated, setGenerated] = useState("");

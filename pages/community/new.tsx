@@ -1,12 +1,17 @@
+import { useEffect } from "react";
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
-import { selectUser } from "../../utils/redux/userSlice";
 import CreateBlog from "../../components/community/CreateBlog";
 
-const NewBlogScreen = ({ messages }: any) => {
-  const { user } = useSelector(selectUser);
+const NewBlogScreen = () => {
+  const router = useRouter();
+  const { status, user } = useSelector(selectUser);
+  useEffect(() => {
+    if (status === "complete" && !user) router.replace("/community");
+  }, [user, status, router]);
 
   return (
     <>
@@ -18,7 +23,7 @@ const NewBlogScreen = ({ messages }: any) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <CreateBlog user={user} />
+      <CreateBlog />
     </>
   );
 };
@@ -32,6 +37,7 @@ export const getStaticProps: GetStaticProps = ({ locale }) => {
 };
 
 import Layout from "../../components/layout/Layout";
+import { selectUser } from "../../utils/redux/userSlice";
 NewBlogScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

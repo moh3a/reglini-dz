@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
@@ -14,7 +14,7 @@ const Contact = () => {
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
-  const submitHandler = async (e: any) => {
+  const submitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
     const data = await axios.post("/api/email", {
       subject: subject,

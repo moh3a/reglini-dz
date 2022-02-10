@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslations } from "next-intl";
 
@@ -48,7 +48,7 @@ const Address = () => {
     return str;
   };
 
-  const addressSaveHandler = async (e: any) => {
+  const addressSaveHandler = async (e: React.FormEvent) => {
     e.preventDefault();
     if (wilaya && postalCode && addressLine && commune) {
       dispatch(

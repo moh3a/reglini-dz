@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
-const Item = ({ title, children }: any) => {
+const Item = ({ title, children }: { title: string; children: any }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

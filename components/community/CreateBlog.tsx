@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import { useDispatch } from "react-redux";
+import { ExclamationCircleIcon } from "@heroicons/react/outline";
+
 import { createBlog } from "../../utils/redux/blogsAsyncActions";
 
 const QuillNoSSRWrapper = dynamic(import("react-quill"), {
@@ -46,17 +48,23 @@ const formats = [
   "video",
 ];
 
-function CreateBlog({ user }: any) {
+function CreateBlog() {
   const router = useRouter();
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
+  const [error, setError] = useState("");
 
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
     if (title && text) {
       dispatch(createBlog({ title, text }));
       router.push("/community");
+    } else if (!text) {
+      setError("You should add some content to your blog.");
+      setInterval(() => {
+        setError("");
+      }, 3000);
     }
   };
 
@@ -72,6 +80,7 @@ function CreateBlog({ user }: any) {
         <div className="my-2">
           <label>Title</label>
           <input
+            required
             className="ml-4 border border-gray-200 bg-gray-50"
             type="text"
             placeholder="Blog title"
@@ -91,6 +100,15 @@ function CreateBlog({ user }: any) {
             onChange={(e) => setText(e.target.value)}
           />
         </div> */}
+        {error && (
+          <p className="text-red-500">
+            <ExclamationCircleIcon
+              className="h-5 w-5 inline"
+              aria-hidden="true"
+            />{" "}
+            {error}{" "}
+          </p>
+        )}
         <QuillNoSSRWrapper
           className="my-2"
           placeholder="Here goes the body of your blog"

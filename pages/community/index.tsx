@@ -1,13 +1,9 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import { useSelector } from "react-redux";
 
-import { selectUser } from "../../utils/redux/userSlice";
 import AllBlogs from "../../components/community/AllBlogs";
 
-const CommunityScreen = ({ messages }: any) => {
-  const { user } = useSelector(selectUser);
-
+const CommunityScreen = () => {
   return (
     <>
       <Head>
@@ -18,7 +14,7 @@ const CommunityScreen = ({ messages }: any) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AllBlogs user={user} />
+      <AllBlogs />
     </>
   );
 };

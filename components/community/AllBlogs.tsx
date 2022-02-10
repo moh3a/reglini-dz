@@ -2,15 +2,42 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import parse from "html-react-parser";
+import parse, {
+  domToReact,
+  Element,
+  HTMLReactParserOptions,
+} from "html-react-parser";
 
+import { selectUser } from "../../utils/redux/userSlice";
 import { selectBlogs } from "../../utils/redux/blogsSlice";
 import { getBlogs, addComment } from "../../utils/redux/blogsAsyncActions";
 import Avatar from "../elements/Avatar";
 
-function AllBlogs({ user }: any) {
+// const options: HTMLReactParserOptions = {
+//   replace: (DOMNode) => {
+//     if (!DOMNode) return;
+//     if (DOMNode instanceof Element && DOMNode.attribs.name === "h1") {
+//       return (
+//         <h1 style={{ fontSize: 42, fontWeight: 50 }}>
+//           {domToReact(DOMNode.children, options)}
+//         </h1>
+//       );
+//     }
+
+//     if (DOMNode instanceof Element && DOMNode.attribs.name === "h2") {
+//       return (
+//         <h2 style={{ fontSize: 30, fontWeight: 30 }}>
+//           {domToReact(DOMNode.children, options)}
+//         </h2>
+//       );
+//     }
+//   },
+// };
+
+function AllBlogs() {
   const dispatch = useDispatch();
   const { blogs } = useSelector(selectBlogs);
+  const { user } = useSelector(selectUser);
   const [comment, setComment] = useState("");
   const router = useRouter();
 
@@ -90,7 +117,8 @@ function AllBlogs({ user }: any) {
                   </p>
                 </div>
                 <div className="mb-3 border border-gray-100 bg-white dark:border-gray-100 dark:bg-gray-600 px-4 py-2 m-1 rounded-lg">
-                  {parse(blog.text)}
+                  {/* {blog.text && parse(blog.text, options)} */}
+                  {blog.text && parse(blog.text)}
                 </div>
               </a>
               {blog.comments.length > 0 && (

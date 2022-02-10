@@ -14,7 +14,13 @@ import Address from "../Address/Address";
 import PhoneNumber from "../PhoneNumber";
 import RealName from "../RealName";
 
-export default function NewOrder({ products, origin }: any) {
+export default function NewOrder({
+  products,
+  origin,
+}: {
+  products: any;
+  origin: "localStorage" | "cart";
+}) {
   const t = useTranslations("NewOrder");
   const dispatch = useDispatch();
   const router = useRouter();

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -30,7 +30,7 @@ export default function AccountDetails() {
   const [username, setUsername] = useState("");
   const [usernameMessage, setUsernameMessage] = useState("");
 
-  const emailResendHandler = async (e: any) => {
+  const emailResendHandler = async (e: React.FormEvent) => {
     e.preventDefault();
     const { data } = await axios.post("/api/auth/verifycredentials/resend", {});
     if (data.success) {
@@ -82,7 +82,7 @@ export default function AccountDetails() {
           <div className=" px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 ">
             <dt className="text-sm font-medium ">{t("pp")}</dt>
             <dd className="mt-1 text-sm  sm:mt-0 sm:col-span-2">
-              <ProfilePicture user={user} size="lg" />
+              <ProfilePicture size="lg" />
             </dd>
           </div>
           <div className="border-t border-white dark:border-black  px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

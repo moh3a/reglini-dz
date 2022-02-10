@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslations } from "next-intl";
 import { DangerDialog, SuccessDialog } from "./../elements/Dialog";
@@ -20,7 +20,7 @@ const PhoneNumber = () => {
     }
   }, [user]);
 
-  const phoneNumberSaveHandler = async (e: any) => {
+  const phoneNumberSaveHandler = async (e: React.FormEvent) => {
     e.preventDefault();
     if (phoneNumber) {
       dispatch(editPhoneNumber({ phoneNumber }));

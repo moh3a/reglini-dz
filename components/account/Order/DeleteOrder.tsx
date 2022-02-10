@@ -6,7 +6,7 @@ import { TrashIcon } from "@heroicons/react/outline";
 import { Dialog, Transition } from "@headlessui/react";
 import { deleteOrder } from "../../../utils/redux/userAsyncActions";
 
-function DeleteOrder({ id }: any) {
+function DeleteOrder({ id }: { id: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations("Orders");
   const dispatch = useDispatch();

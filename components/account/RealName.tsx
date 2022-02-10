@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useTranslations } from "next-intl";
 
@@ -21,7 +21,7 @@ const RealName = () => {
     }
   }, [user]);
 
-  const realNameSaveHandler = async (e: any) => {
+  const realNameSaveHandler = async (e: React.FormEvent) => {
     e.preventDefault();
     if (realName) {
       dispatch(editRealName({ realName }));
