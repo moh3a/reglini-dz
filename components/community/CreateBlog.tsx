@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/outline";
 
 import { createBlog } from "../../utils/redux/blogsAsyncActions";
+import { getRawText } from "../../utils/rawText";
 
 const QuillNoSSRWrapper = dynamic(import("react-quill"), {
   ssr: false,
@@ -17,7 +18,11 @@ const QuillNoSSRWrapper = dynamic(import("react-quill"), {
 
 const modules = {
   toolbar: [
-    [{ header: "1" }, { header: "2" }, { font: [] }],
+    [
+      // { header: "1" },
+      // { header: "2" },
+      { font: [] },
+    ],
     [{ size: [] }],
     ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
     [
@@ -40,7 +45,7 @@ const modules = {
 };
 
 const formats = [
-  "header",
+  // "header",
   "font",
   "size",
   "bold",
@@ -66,8 +71,10 @@ function CreateBlog() {
 
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
-    if (title && text) {
-      dispatch(createBlog({ title, text }));
+    let raw_text = getRawText(text).replace("[object Object]", "");
+
+    if (title && text && raw_text) {
+      dispatch(createBlog({ title, text, raw_text }));
       router.push("/community");
     } else if (!text) {
       setError("You should add some content to your blog.");

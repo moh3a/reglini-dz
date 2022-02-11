@@ -20,6 +20,7 @@ export const BlogSchema = new mongoose.Schema(
     slug: String,
     title: String,
     text: String,
+    raw_text: String,
     votes: { type: Number, default: 0 },
     voters: [{ userId: mongoose.SchemaTypes.ObjectId }],
     comments: [CommentSchema],

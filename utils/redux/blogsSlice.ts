@@ -1,7 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
-import { getBlogs, createBlog, addComment } from "./blogsAsyncActions";
-import { getBlogDetails } from "./blogAsyncActions";
+import { getBlogs, createBlog } from "./blogsAsyncActions";
+import {
+  getBlogDetails,
+  deleteBlog,
+  addComment,
+  deleteComment,
+} from "./blogAsyncActions";
 
 export interface IBlog {
   _id?: string;
@@ -11,15 +16,20 @@ export interface IBlog {
   slug?: string;
   title?: string;
   text?: string;
+  raw_text?: string;
   votes?: number;
   voters?: [{ userId: string }];
   commentsCounter?: number;
   comments?: [
     {
+      _id?: string;
       userId?: string;
       text?: string;
       votes?: number;
       voters?: [{ userId: string }];
+      userPicture?: string;
+      userName?: string;
+      createdAt?: string;
     }
   ];
   createdAt?: string;
@@ -73,22 +83,15 @@ export const blogsSlice = createSlice({
         state.message = action.error.message;
       })
       // ========================================================================
-      .addCase(addComment.pending, (state, action) => {
+      .addCase(deleteBlog.pending, (state, action) => {
         state.status = "loading";
         state.message = "";
       })
-      .addCase(addComment.fulfilled, (state, action) => {
+      .addCase(deleteBlog.fulfilled, (state, action) => {
         state.status = "complete";
-        const index = state.blogs.findIndex(
-          (blog: any) =>
-            blog._id.toString() === action.payload.data._id.toString()
-        );
-        if (index !== -1) {
-          state.blogs[index] = action.payload.data;
-        }
         state.message = action.payload.message;
       })
-      .addCase(addComment.rejected, (state, action) => {
+      .addCase(deleteBlog.rejected, (state, action) => {
         state.status = "failed";
         state.message = action.error.message;
       })
@@ -103,6 +106,34 @@ export const blogsSlice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(getBlogDetails.rejected, (state, action) => {
+        state.status = "failed";
+        state.message = action.error.message;
+      })
+      // ========================================================================
+      .addCase(addComment.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(addComment.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.blog = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(addComment.rejected, (state, action) => {
+        state.status = "failed";
+        state.message = action.error.message;
+      })
+      // ========================================================================
+      .addCase(deleteComment.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(deleteComment.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.blog = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(deleteComment.rejected, (state, action) => {
         state.status = "failed";
         state.message = action.error.message;
       });

@@ -13,31 +13,18 @@ export const getBlogs = createAsyncThunk("blogs/getBlogs", async () => {
 export const createBlog = createAsyncThunk(
   "blogs/createBlog",
   async (
-    { title, text }: { title: string; text: string },
+    {
+      title,
+      text,
+      raw_text,
+    }: { title: string; text: string; raw_text: string },
     { rejectWithValue }
   ) => {
     try {
       const { data } = await axios.post(`/api/community/blog`, {
         title,
         text,
-      });
-      return data;
-    } catch (error: any) {
-      return rejectWithValue(error.response);
-    }
-  }
-);
-
-export const addComment = createAsyncThunk(
-  "blogs/addComment",
-  async (
-    { blogId, text }: { blogId: string; text: string },
-    { rejectWithValue }
-  ) => {
-    try {
-      const { data } = await axios.post(`/api/community/comment`, {
-        blogId,
-        text,
+        raw_text,
       });
       return data;
     } catch (error: any) {

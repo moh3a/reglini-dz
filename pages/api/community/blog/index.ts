@@ -19,7 +19,7 @@ handler
     CheckSession(req, res, next)
   )
   .post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
-    const { title, text } = req.body;
+    const { title, text, raw_text } = req.body;
     let sluggable = title + Math.round(Math.random() * 10000).toString();
     const slug = slugify(sluggable);
 
@@ -34,6 +34,7 @@ handler
         title,
         slug,
         text,
+        raw_text,
         userId: user._id,
       });
 
