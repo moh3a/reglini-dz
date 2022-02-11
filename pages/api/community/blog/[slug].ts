@@ -30,6 +30,13 @@ handler
     } else {
       res.status(200).json({ success: false, message: "Blog post not found." });
     }
+  })
+  .delete(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
+    const { slug } = req.query; // slug is actually id
+    await Blog.deleteOne({ _id: slug });
+    res
+      .status(200)
+      .json({ success: true, message: "Blog post successfully deleted." });
   });
 
 export default handler;

@@ -19,16 +19,21 @@ const modules = {
   toolbar: [
     [{ header: "1" }, { header: "2" }, { font: [] }],
     [{ size: [] }],
-    ["bold", "italic", "underline", "strike", "blockquote"],
+    ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
     [
       { list: "ordered" },
       { list: "bullet" },
-      { indent: "-1" },
-      { indent: "+1" },
+      // { indent: "-1" },
+      // { indent: "+1" },
     ],
-    ["link", "image", "video"],
-    ["clean"],
+    [
+      "link",
+      "image",
+      // "video"
+    ],
+    // ["clean"],
   ],
+  // syntax: true, // requires highlight.js
   clipboard: {
     matchVisual: false,
   },
@@ -43,6 +48,7 @@ const formats = [
   "underline",
   "strike",
   "blockquote",
+  "code-block",
   "list",
   "bullet",
   "indent",
@@ -76,10 +82,10 @@ function CreateBlog() {
       <h1 className="my-4 mx-4 md:mx-10 py-4 px-2 md:px-4 text-xl">
         <ChevronLeftIcon
           onClick={() => router.push("/community")}
-          className="h-6 w-6 inline mr-3 cursor-pointer border dark:text-gray-300 dark:border-gray-300 text-black border-black rounded-full p-1"
+          className="relative bottom-1 h-6 w-6 inline mr-3 cursor-pointer border dark:text-gray-300 dark:border-gray-300 text-black border-black rounded-full p-1"
           aria-hidden="true"
         />
-        Create a new blog
+        <span>Create a new blog</span>
       </h1>
       <form
         onSubmit={submitHandler}
@@ -97,18 +103,6 @@ function CreateBlog() {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        {/* <div className="my-2">
-          <label>Blog body</label>
-          <br />
-          <textarea
-            lang=""
-            className="w-full rounded-lg border border-gray-200 bg-gray-50"
-            rows={8}
-            placeholder="Here goes the body of your blog"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-          />
-        </div> */}
         {error && (
           <p className="text-red-500">
             <ExclamationCircleIcon

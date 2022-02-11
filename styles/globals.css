@@ -25,6 +25,42 @@ main {
   min-height: calc(100vh - 370px);
 }
 
+/* h1 {
+  font-size: xx-large;
+}
+
+h2 {
+  font-size: x-large;
+} */
+
+.ql-font-serif {
+  font-family: serif;
+}
+
+.ql-font-monospace {
+  font-family: monospace;
+}
+
+/* .ql-size-large */
+
+blockquote {
+  padding-left: 1rem;
+  border-left: 2px solid gray;
+  font-style: italic;
+}
+
+ul {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  list-style: square;
+}
+
+ol {
+  list-style: numeric;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
 a {
   color: inherit;
   text-decoration: none;

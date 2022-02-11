@@ -13,3 +13,15 @@ export const getBlogDetails = createAsyncThunk(
     }
   }
 );
+
+export const deleteBlog = createAsyncThunk(
+  "blogs/deleteBlog",
+  async ({ id }: { id: string | undefined }, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.delete(`/api/community/blog/${id}`);
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
