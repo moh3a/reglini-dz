@@ -286,13 +286,17 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
                         commission: commission.commission,
                         message: "Successfully retrieved product details.",
                       });
-                    } else
+                    } else {
+                      console.log(errorDS);
                       res.status(200).json({ success: false, error: errorDS });
+                    }
                   }
                 );
               }
-            } else
+            } else {
+              console.log(errorShipping);
               res.status(200).json({ success: false, error: errorShipping });
+            }
           }
         );
       } else if (
@@ -302,7 +306,12 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
           success: false,
           redirect: `/legacyaliexpress/product/${id}`,
         });
-      } else res.status(200).json({ success: false, error: errorAffiliate });
+      } else
+        res.status(200).json({
+          success: false,
+          redirect: `/legacyaliexpress/product/${id}`,
+          error: errorAffiliate,
+        });
     }
   );
 });

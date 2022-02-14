@@ -141,7 +141,7 @@ export default function Cart({ user }: any) {
                         {t("atCheckout")}
                       </p>
                       <div className="mt-6">
-                        <Link href="/account/orders/new" passHref>
+                        <Link href="/account/orders/new?ref=cart" passHref>
                           <a
                             onClick={() => setOpenCart(false)}
                             className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium cursor-pointer text-white bg-green-800 hover:bg-green-900"

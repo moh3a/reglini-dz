@@ -24,6 +24,7 @@ handler
       const { data } = await axios.post(
         `https://oauth.aliexpress.com/token?client_id=${process.env.ALIEXPRESS_DS_APP_KEY}&client_secret=${process.env.ALIEXPRESS_DS_APP_SECRET}&grant_type=authorization_code&code=${code}&redirect_uri=${process.env.NEXTAUTH_URL}/api/aliexpress/auth/callback&sp=ae`
       );
+      console.log(data);
       if (data.access_token) {
         const token = jwt.sign(
           {

@@ -45,21 +45,26 @@ const NewOrderScreen = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {user && localStorage.getItem("aeno") && (
-        <>
-          <h1 className="px-4 pt-5 sm:px-6">{t("directOrder")}</h1>
-          <NewOrder
-            products={JSON.parse(localStorage.getItem("aeno") as string)}
-            origin={"localStorage"}
-          />
-        </>
-      )}
-      {user && user.cart.cartItems.length > 0 && (
-        <>
-          <h1 className="px-4 pt-5 sm:px-6">{t("fromCart")}</h1>
-          <NewOrder products={user.cart.cartItems} origin={"cart"} />
-        </>
-      )}
+      {user &&
+        (!router.query || !router.query.ref || router.query.ref !== "cart") &&
+        localStorage.getItem("aeno") && (
+          <>
+            <h1 className="px-4 pt-5 sm:px-6">{t("directOrder")}</h1>
+            <NewOrder
+              products={JSON.parse(localStorage.getItem("aeno") as string)}
+              origin={"localStorage"}
+            />
+          </>
+        )}
+      {user &&
+        router.query &&
+        router.query.ref === "cart" &&
+        user.cart.cartItems.length > 0 && (
+          <>
+            <h1 className="px-4 pt-5 sm:px-6">{t("fromCart")}</h1>
+            <NewOrder products={user.cart.cartItems} origin={"cart"} />
+          </>
+        )}
     </>
   );
 };
