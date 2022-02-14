@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { TrashIcon, ExclamationIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,90 +28,138 @@ function PagesList() {
 
   return (
     <div>
-      <h2 className="text-lg font-bold">Facebook pages</h2>
-      <div className="mx-1 flex text-xs md:text-base">
-        <div className="w-10 text-center font-bold border-r border-black border-b bg-gray-200 dark:bg-gray-800 overflow-hidden">
-          d
-        </div>
-        <div className="w-52 text-center font-bold border-r border-black border-b bg-gray-200 dark:bg-gray-800 overflow-hidden">
-          Page name
-        </div>
-        <div className="w-96 text-center font-bold border-r border-black border-b bg-gray-200 dark:bg-gray-800 overflow-hidden">
-          Page URL
-        </div>
-        <div className="w-52 text-center font-bold border-r border-black border-b bg-gray-200 dark:bg-gray-800 overflow-hidden">
-          Access status
-        </div>
-      </div>
-      {user && user.facebookPages && user.facebookPages.length > 0 ? (
-        user.facebookPages.map((page: IFacebookPage) => (
-          <div key={page.page_id} className="mx-1 flex text-xs md:text-base">
-            <DangerDialog
-              open={open}
-              setOpen={setOpen}
-              deletePageAccess={deletePageAccess}
-              id={page.page_id}
-            />
-            <div
-              onClick={() => setOpen(true)}
-              className="w-10 flex justify-center items-center border-r border-b border-gray-400 bg-white dark:bg-black overflow-hidden cursor-pointer text-red-500"
-            >
-              <TrashIcon className="h-5 w-5 inline" aria-hidden="true" />
-            </div>
-            <div className="w-52 flex justify-center items-center border-r border-b border-gray-400 bg-white dark:bg-black overflow-hidden">
-              {page.page_name}
-            </div>
-            <div className="w-96 flex justify-center items-center border-r border-b border-gray-400 bg-white dark:bg-black overflow-hidden">
-              {page.page_url}
-            </div>
-            <div className="w-52 text-center border-r border-b border-gray-400 bg-white dark:bg-black overflow-hidden">
-              <span className="font-semibold">{page.access_status}</span>
-              {page.access_status === "access_granted" && (
-                <>
-                  <button
-                    onClick={() =>
-                      router.push(`/meta-ads/pages/${page.page_id}`)
-                    }
-                    className="py-1 px-3 bg-green-500 text-white rounded-lg m-1"
-                  >
-                    manage
-                  </button>
-                </>
-              )}
-              {page.access_status === "access_request_sent" && (
-                <>
-                  <br />
-                  <p className="text-xs">
-                    An email of an access request was sent to your page&apos;s
-                    email address. Please check your inbox.
-                    <br />
-                    After you have accepted the access request, please click on
-                    &quot;validated access&quot;.
-                  </p>
-                  <div>
-                    <button
-                      onClick={() => deletePageAccess(page.page_id)}
-                      className="py-1 px-3 bg-red-500 text-white rounded-lg m-1"
+      <h2 className="text-xl text-center font-bold mb-4 mt-8">
+        Facebook pages
+      </h2>
+      <div className="flex flex-col">
+        <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+            <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th scope="col" className="relative px-2 py-3">
+                      <span className="sr-only">delete</span>
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      denied access
-                    </button>
-                    <button
-                      onClick={() => validatePageAccess(page.page_id)}
-                      className="py-1 px-3 bg-green-500 text-white rounded-lg m-1"
+                      Page Name
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      validated access
-                    </button>
+                      Page URL
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Access Status
+                    </th>
+                  </tr>
+                </thead>
+                {user && user.facebookPages && user.facebookPages.length > 0 && (
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    {user.facebookPages.map((page: IFacebookPage) => (
+                      <>
+                        <tr key={page.page_id}>
+                          <DangerDialog
+                            open={open}
+                            setOpen={setOpen}
+                            deletePageAccess={deletePageAccess}
+                            id={page.page_id}
+                          />
+                          <td
+                            onClick={() => setOpen(true)}
+                            className="py-4 px-2 whitespace-nowrap text-right text-sm font-medium text-red-500"
+                          >
+                            <TrashIcon
+                              className="h-5 w-5 inline"
+                              aria-hidden="true"
+                            />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            {page.page_name}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            {page.page_url}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <span
+                              className={`${
+                                page.access_status === "processing_deletion" &&
+                                "bg-red-100 text-red-800 rounded-full px-3 py-1"
+                              } font-semibold`}
+                            >
+                              {page.access_status}
+                            </span>
+
+                            {page.access_status === "access_granted" && (
+                              <>
+                                <button
+                                  onClick={() =>
+                                    router.push(
+                                      `/meta-ads/pages/${page.page_id}`
+                                    )
+                                  }
+                                  className="py-1 px-3 bg-green-500 text-white rounded-lg m-1"
+                                >
+                                  manage
+                                </button>
+                              </>
+                            )}
+                            {page.access_status === "access_request_sent" && (
+                              <>
+                                <br />
+                                <p className="text-xs">
+                                  An email of an access request was sent to your
+                                  page&apos;s email address. Please check your
+                                  inbox.
+                                  <br />
+                                  After you have accepted the access request,
+                                  please click on &quot;validated access&quot;.
+                                </p>
+                                <div>
+                                  <button
+                                    onClick={() =>
+                                      deletePageAccess(page.page_id)
+                                    }
+                                    className="py-1 px-3 bg-red-500 text-white rounded-lg m-1"
+                                  >
+                                    denied access
+                                  </button>
+                                  <button
+                                    onClick={() =>
+                                      validatePageAccess(page.page_id)
+                                    }
+                                    className="py-1 px-3 bg-green-500 text-white rounded-lg m-1"
+                                  >
+                                    validated access
+                                  </button>
+                                </div>
+                              </>
+                            )}
+                          </td>
+                        </tr>
+                      </>
+                    ))}
+                  </tbody>
+                )}
+              </table>
+              {user &&
+                user.facebookPages &&
+                user.facebookPages.length === 0 && (
+                  <div className="w-full text-center bg-white">
+                    No Facebook Pages added.
                   </div>
-                </>
-              )}
+                )}
             </div>
           </div>
-        ))
-      ) : (
-        <div className="mb-20 text-center bg-white">
-          No Facebook Pages added.
         </div>
-      )}
+      </div>
     </div>
   );
 }

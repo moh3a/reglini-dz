@@ -26,11 +26,11 @@ const MetaAdsScreen = () => {
         </div>
         {user ? (
           <div className="mt-10 w-full">
-            <div className="my-8 flex flex-col md:mx-44 text-center md:text-left md:flex-row md:justify-between">
-              <div className="text-sm">
-                Demand an access request to your Facebook page...
+            <div className="my-8 flex flex-col md:mx-44 text-center md:text-left md:flex-row md:justify-center">
+              <div className="text-sm md:mr-3">
+                Demand an access request to your Facebook page
               </div>
-              <div>
+              <div className="relative mt-2 md:mt-0 bottom-1">
                 <Link href="/meta-ads/access_request" passHref>
                   <button className="px-4 py-1 bg-facebook text-white rounded-lg cursor-pointer">
                     Demand
