@@ -28,7 +28,7 @@ export const deleteBlog = createAsyncThunk(
 export const addComment = createAsyncThunk(
   "blogs/addComment",
   async (
-    { blogId, text }: { blogId: string; text: string },
+    { blogId, text }: { blogId: string | undefined; text: string | undefined },
     { rejectWithValue }
   ) => {
     try {
@@ -48,12 +48,47 @@ export const addComment = createAsyncThunk(
 export const deleteComment = createAsyncThunk(
   "blogs/deleteComment",
   async (
-    { blogId, commentId }: { blogId: string; commentId: string },
+    {
+      blogId,
+      commentId,
+    }: { blogId: string | undefined; commentId: string | undefined },
     { rejectWithValue }
   ) => {
     try {
       const { data } = await axios.delete(
         `/api/community/blog/${blogId}/comment/${commentId}`
+      );
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const blogLike = createAsyncThunk(
+  "blogs/blogLike",
+  async ({ blogId }: { blogId: string | undefined }, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post(`/api/community/blog/${blogId}/vote`);
+      return data;
+    } catch (error: any) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
+
+export const commentLike = createAsyncThunk(
+  "blogs/commentLike",
+  async (
+    {
+      blogId,
+      commentId,
+    }: { blogId: string | undefined; commentId: string | undefined },
+    { rejectWithValue }
+  ) => {
+    try {
+      const { data } = await axios.post(
+        `/api/community/blog/${blogId}/comment/${commentId}/vote`
       );
       return data;
     } catch (error: any) {

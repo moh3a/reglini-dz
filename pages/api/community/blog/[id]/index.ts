@@ -29,7 +29,11 @@ handler
     if (blog.ok) {
       res
         .status(200)
-        .json({ success: true, message: "Blog post successfully deleted." });
+        .json({
+          success: true,
+          id,
+          message: "Blog post successfully deleted.",
+        });
     } else {
       res
         .status(200)

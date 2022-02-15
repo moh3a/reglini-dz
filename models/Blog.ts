@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const CommentSchema = new mongoose.Schema(
   {
+    blogId: mongoose.SchemaTypes.ObjectId,
     userId: mongoose.SchemaTypes.ObjectId,
     userName: String,
     userPicture: String,

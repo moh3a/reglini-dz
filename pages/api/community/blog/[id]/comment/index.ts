@@ -28,6 +28,7 @@ handler
     });
 
     const comment = {
+      blogId: id,
       userId: user._id,
       userName: user.name,
       userPicture: user.picture,
@@ -45,20 +46,5 @@ handler
       message: "comment successfully added",
     });
   });
-// .delete(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
-//   const { blogId, commentId } = req.body;
-
-//   const user = await User.findOne({
-//     email: req.userData.email,
-//     account: req.userData.account,
-//     provider: req.userData.provider,
-//   });
-
-//   const blog = await Blog.findById(blogId);
-//   const comment = blog.comments.find(
-//     (comment: any) => comment._id.toString() === commentId
-//   );
-//   console.log(comment);
-// });
 
 export default handler;

@@ -8,6 +8,7 @@ import {
   DotsVerticalIcon,
   TrashIcon,
   ChatIcon,
+  PlusCircleIcon,
 } from "@heroicons/react/outline";
 import { HeartIcon as SolidHeartIcon } from "@heroicons/react/solid";
 import parse from "html-react-parser";
@@ -19,9 +20,11 @@ import {
   deleteBlog,
   addComment,
   deleteComment,
+  blogLike,
 } from "../../utils/redux/blogAsyncActions";
 import { selectUser } from "../../utils/redux/userSlice";
 import { IUserRedux } from "../../utils/types";
+import BlogComment from "./BlogComment";
 
 const Blog = () => {
   const dispatch = useDispatch();
@@ -118,8 +121,10 @@ const Blog = () => {
           {/* interactions block */}
           <div className="my-4 flex justify-around items-center">
             <div
-              onClick={() => console.log("upvote")}
-              className="flex items-center"
+              onClick={() => {
+                if (user && user.name) dispatch(blogLike({ blogId: blog._id }));
+              }}
+              className={`flex items-center px-3 py-1 rounded-full cursor-pointer hover:underline hover:border`}
             >
               {blog.voters?.find(
                 (voter) => user && voter.userId === user._id
@@ -152,67 +157,28 @@ const Blog = () => {
 
           {user && (
             <form
-              className="flex justify-between mx-2 md:mx-8 my-2"
+              className="flex w-full mx-2 my-2"
               onSubmit={(e) => commentHandler(e, blog._id as string)}
             >
               <input
-                className="w-full border border-gray-200 bg-gray-50 rounded-lg"
+                className="w-full pr-7 border border-gray-200 bg-gray-50 dark:bg-grim rounded-lg ring-0 focus:ring-green-500 focus:border-green-500"
                 type="text"
                 placeholder="add a comment..."
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
               />
-              <button
-                type="submit"
-                className="ml-1 py-1 px-2 rounded-lg text-white border border-b-4 border-green-600 bg-green-500"
-              >
-                comment
+              <button className="relative right-7" type="submit">
+                <PlusCircleIcon
+                  className="w-6 h-6 mr-2 text-green-500"
+                  aria-hidden="true"
+                />
               </button>
             </form>
           )}
+
           {blog.comments &&
             blog.comments.map((comment) => (
-              <div key={comment._id} className="flex my-4">
-                <div className="m-2 h-10 w-10">
-                  <img
-                    className="rounded-full"
-                    src={
-                      comment.userPicture
-                        ? comment.userPicture
-                        : "/placeholder.png"
-                    }
-                    alt={comment.userName}
-                  />
-                </div>
-                <div className="w-full">
-                  <p>
-                    <span className="font-semibold">{comment.userName}</span> -{" "}
-                    <span className="text-sm">
-                      {comment.createdAt?.substring(0, 10)}{" "}
-                      {comment.createdAt?.substring(11, 16)}
-                    </span>
-                  </p>
-                  <div className="flex justify-between">
-                    <p>{comment.text}</p>
-                    {user && comment.userId === user._id && (
-                      <div className="w-7">
-                        <TrashIcon
-                          onClick={() =>
-                            dispatch(
-                              deleteComment({
-                                blogId: blog._id as string,
-                                commentId: comment._id as string,
-                              })
-                            )
-                          }
-                          className="w-6 h-6 inline mr-1 text-red-500 cursor-pointer"
-                          aria-hidden="true"
-                        />
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
+              <BlogComment key={comment._id} comment={comment} />
             ))}
         </>
       )}

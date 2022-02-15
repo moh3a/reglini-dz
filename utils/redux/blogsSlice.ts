@@ -6,7 +6,21 @@ import {
   deleteBlog,
   addComment,
   deleteComment,
+  blogLike,
+  commentLike,
 } from "./blogAsyncActions";
+
+export interface IComment {
+  _id?: string;
+  blogId?: string;
+  userId?: string;
+  text?: string;
+  votes?: number;
+  voters?: [{ userId: string }];
+  userPicture?: string;
+  userName?: string;
+  createdAt?: string;
+}
 
 export interface IBlog {
   _id?: string;
@@ -20,18 +34,7 @@ export interface IBlog {
   votes?: number;
   voters?: [{ userId: string }];
   commentsCounter?: number;
-  comments?: [
-    {
-      _id?: string;
-      userId?: string;
-      text?: string;
-      votes?: number;
-      voters?: [{ userId: string }];
-      userPicture?: string;
-      userName?: string;
-      createdAt?: string;
-    }
-  ];
+  comments?: [IComment];
   createdAt?: string;
 }
 
@@ -39,7 +42,7 @@ export interface IBlogs {
   status?: "idle" | "loading" | "complete" | "failed";
   error?: any;
   message?: string;
-  blogs: any[];
+  blogs: IBlog[];
   blog: IBlog;
 }
 
@@ -90,6 +93,14 @@ export const blogsSlice = createSlice({
       .addCase(deleteBlog.fulfilled, (state, action) => {
         state.status = "complete";
         state.message = action.payload.message;
+        if (action.payload.id) {
+          const index = state.blogs.findIndex(
+            (blog) => blog._id?.toString() === action.payload.id
+          );
+          if (index !== -1) {
+            state.blogs.splice(index, 1);
+          }
+        }
       })
       .addCase(deleteBlog.rejected, (state, action) => {
         state.status = "failed";
@@ -134,6 +145,34 @@ export const blogsSlice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(deleteComment.rejected, (state, action) => {
+        state.status = "failed";
+        state.message = action.error.message;
+      })
+      // ========================================================================
+      .addCase(blogLike.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(blogLike.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.blog = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(blogLike.rejected, (state, action) => {
+        state.status = "failed";
+        state.message = action.error.message;
+      })
+      // ========================================================================
+      .addCase(commentLike.pending, (state, action) => {
+        state.status = "loading";
+        state.message = "";
+      })
+      .addCase(commentLike.fulfilled, (state, action) => {
+        state.status = "complete";
+        state.blog = action.payload.data;
+        state.message = action.payload.message;
+      })
+      .addCase(commentLike.rejected, (state, action) => {
         state.status = "failed";
         state.message = action.error.message;
       });

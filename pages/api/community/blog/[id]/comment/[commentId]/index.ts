@@ -1,12 +1,12 @@
 import nc from "next-connect";
 import type { NextApiResponse } from "next";
 
-import User from "../../../../../../models/User";
-import Blog from "../../../../../../models/Blog";
-import CheckSession from "../../../../../../utils/checkSession";
-import { IExtendedAPIRequest } from "../../../../../../utils/types";
+import User from "../../../../../../../models/User";
+import Blog from "../../../../../../../models/Blog";
+import CheckSession from "../../../../../../../utils/checkSession";
+import { IExtendedAPIRequest } from "../../../../../../../utils/types";
 
-import dbConnect from "../../../../../../config/db";
+import dbConnect from "../../../../../../../config/db";
 
 const handler = nc();
 handler

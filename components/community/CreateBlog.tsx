@@ -103,7 +103,7 @@ function CreateBlog() {
           <input
             required
             maxLength={100}
-            className="ml-4 border border-gray-200 bg-gray-50"
+            className="ml-4 border border-gray-200 bg-gray-50 dark:bg-grim"
             type="text"
             placeholder="Blog title"
             value={title}
@@ -120,7 +120,7 @@ function CreateBlog() {
           </p>
         )}
         <QuillNoSSRWrapper
-          className="my-2"
+          className="my-8 bg-white text-black"
           placeholder="Here goes the body of your blog"
           value={text}
           onChange={setText}
