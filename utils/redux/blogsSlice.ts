@@ -28,6 +28,7 @@ export interface IBlog {
   userName?: string;
   userPicture?: string;
   slug?: string;
+  category?: "dev" | "question" | "news" | "other";
   title?: string;
   text?: string;
   raw_text?: string;

@@ -61,18 +61,36 @@ const Blog = () => {
                 )}
               </div>
               <div className="ml-2">
-                <p>{blog.userName}</p>
+                <p className="text-lg">{blog.userName}</p>
                 {blog.createdAt && (
                   <p className="text-xs">
                     {blog.createdAt.substring(0, 10)}{" "}
                     {blog.createdAt.substring(11, 16)}
                   </p>
                 )}
+                <p
+                  className={`text-xs ${
+                    blog.category === "other"
+                      ? " text-green-800"
+                      : blog.category === "dev"
+                      ? " text-indigo-800"
+                      : blog.category === "news"
+                      ? "text-red-800"
+                      : blog.category === "question"
+                      ? "text-orange-800"
+                      : ""
+                  }`}
+                >
+                  Category: {blog.category}
+                </p>
               </div>
             </div>
-            <Menu as="div" className="relative z-100">
+            <Menu
+              as="div"
+              className="relative z-100 flex justify-center items-center"
+            >
               <div>
-                <Menu.Button className="h-6 w-6 cursor-pointer relative top-2">
+                <Menu.Button className="h-6 w-6 cursor-pointer">
                   <DotsVerticalIcon className="w-6 h-6" aria-hidden="true" />
                 </Menu.Button>
               </div>
@@ -85,7 +103,7 @@ const Blog = () => {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute right-1 w-40 md:w-52 mt-2 bg-gray-100 dark:bg-grim divide-y divide-gray-100 rounded-lg shadow-md">
+                <Menu.Items className="absolute right-2 top-8 w-40 md:w-52 mt-2 bg-gray-100 dark:bg-grim divide-y divide-gray-100 rounded-lg shadow-md">
                   {blog && user && blog.userId === user._id && (
                     <div className="px-1 py-1 ">
                       <Menu.Item>
@@ -113,7 +131,8 @@ const Blog = () => {
               </Transition>
             </Menu>
           </div>
-          <div className="text-4xl md:text-8xl font-bold my-8 md:my-24">
+
+          <div className="text-4xl md:text-8xl font-bold my-12 md:my-24">
             {blog.title}
           </div>
           <div className="my-8 md:my-16">{blog.text && parse(blog.text)}</div>

@@ -18,6 +18,11 @@ export const BlogSchema = new mongoose.Schema(
     userId: mongoose.SchemaTypes.ObjectId,
     userName: String,
     userPicture: String,
+    category: {
+      type: String,
+      enum: ["dev", "question", "news", "other"],
+      default: "other",
+    },
     slug: String,
     title: String,
     text: String,

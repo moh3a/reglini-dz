@@ -1,72 +1,22 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import dynamic from "next/dynamic";
 import { useDispatch } from "react-redux";
 import {
   ChevronLeftIcon,
   ExclamationCircleIcon,
 } from "@heroicons/react/outline";
 
-import { createBlog } from "../../utils/redux/blogsAsyncActions";
-import { getRawText } from "../../utils/rawText";
-
-const QuillNoSSRWrapper = dynamic(import("react-quill"), {
-  ssr: false,
-  // eslint-disable-next-line react/display-name
-  loading: () => <p>Loading ...</p>,
-});
-
-const modules = {
-  toolbar: [
-    [
-      // { header: "1" },
-      // { header: "2" },
-      { font: [] },
-    ],
-    [{ size: [] }],
-    ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
-    [
-      { list: "ordered" },
-      { list: "bullet" },
-      // { indent: "-1" },
-      // { indent: "+1" },
-    ],
-    [
-      "link",
-      "image",
-      // "video"
-    ],
-    // ["clean"],
-  ],
-  // syntax: true, // requires highlight.js
-  clipboard: {
-    matchVisual: false,
-  },
-};
-
-const formats = [
-  // "header",
-  "font",
-  "size",
-  "bold",
-  "italic",
-  "underline",
-  "strike",
-  "blockquote",
-  "code-block",
-  "list",
-  "bullet",
-  "indent",
-  "link",
-  "image",
-  "video",
-];
+import { createBlog } from "../../../utils/redux/blogsAsyncActions";
+import { getRawText } from "../../../utils/rawText";
+import TextEditor from "./TextEditor";
+import BlogCategory from "./BlogCategory";
 
 function CreateBlog() {
   const router = useRouter();
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
+  const [category, setCategory] = useState("other");
   const [error, setError] = useState("");
 
   const submitHandler = (e: React.FormEvent) => {
@@ -74,7 +24,7 @@ function CreateBlog() {
     let raw_text = getRawText(text).replace("[object Object]", "");
 
     if (title && text && raw_text) {
-      dispatch(createBlog({ title, text, raw_text }));
+      dispatch(createBlog({ title, text, raw_text, category }));
       router.push("/community");
     } else if (!text) {
       setError("You should add some content to your blog.");
@@ -103,13 +53,14 @@ function CreateBlog() {
           <input
             required
             maxLength={100}
-            className="ml-4 border border-gray-200 bg-gray-50 dark:bg-grim"
+            className="ml-4 border border-gray-200 bg-gray-50 dark:bg-grim rounded-lg"
             type="text"
             placeholder="Blog title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
+        <BlogCategory category={category} setCategory={setCategory} />
         {error && (
           <p className="text-red-500">
             <ExclamationCircleIcon
@@ -119,15 +70,8 @@ function CreateBlog() {
             {error}{" "}
           </p>
         )}
-        <QuillNoSSRWrapper
-          className="my-8 bg-white text-black"
-          placeholder="Here goes the body of your blog"
-          value={text}
-          onChange={setText}
-          modules={modules}
-          formats={formats}
-          theme="snow"
-        />
+        <TextEditor text={text} setText={setText} />
+
         <div className="flex justify-end">
           <button
             className="border border-green-400 bg-green-300 hover:bg-green-400 px-2 py-1 rounded-lg"

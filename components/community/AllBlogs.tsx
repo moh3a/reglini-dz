@@ -54,38 +54,63 @@ function AllBlogs() {
         {blogs ? (
           <div className="grid grid-cols-2 gap-y-4 md:grid-cols-3 gap-x-2 md:gap-x-4 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-6">
             {blogs.map((blog: IBlog) => (
-              <div
-                key={blog._id}
-                className="group cursor-pointer"
-                onClick={() => router.push(`/community/blog/${blog.slug}`)}
-              >
-                <div className="w-full aspect-w-1 aspect-h-1 bg-gray-100 rounded-lg overflow-hidden shadow-md ">
-                  <div className="flex flex-col justify-evenly">
-                    <div className="flex">
-                      <div className="m-2">
-                        {blog.userPicture && (
-                          <Avatar picture={blog.userPicture} size="sm" />
-                        )}
+              <div key={blog._id} className="group cursor-pointer">
+                <a href={`/community/blog/${blog.slug}`}>
+                  <div className="w-full aspect-w-1 aspect-h-1 bg-gray-100 dark:bg-grim rounded-lg overflow-hidden shadow-md ">
+                    <div
+                      className={`h-1 w-full ${
+                        blog.category === "other"
+                          ? "bg-green-600"
+                          : blog.category === "dev"
+                          ? "bg-indigo-600"
+                          : blog.category === "news"
+                          ? "bg-red-600"
+                          : blog.category === "question"
+                          ? "bg-orange-600"
+                          : ""
+                      }`}
+                    />
+                    <div className="flex flex-col justify-evenly">
+                      <div className="flex">
+                        <div className="m-2">
+                          {blog.userPicture && (
+                            <Avatar picture={blog.userPicture} size="sm" />
+                          )}
+                        </div>
+                        <div className="mt-2">
+                          <span className="font-semibold">{blog.userName}</span>
+                          <br />
+                          <small className="text-xs relative bottom-2">
+                            {blog.createdAt?.substring(0, 10)}{" "}
+                            {blog.createdAt?.substring(11, 16)}
+                          </small>
+                        </div>
                       </div>
-                      <div className="mt-2">
-                        <span className="font-semibold">{blog.userName}</span>
+                      <p className="mx-2 font-bold text-sm md:text-base">
+                        <span
+                          className={`px-2 rounded-lg text-xs ${
+                            blog.category === "other"
+                              ? "bg-green-200 border text-green-800 border-green-600 dark:text-green-50  dark:bg-green-600"
+                              : blog.category === "dev"
+                              ? "bg-indigo-200 border text-indigo-800 border-indigo-600 dark:text-indigo-50  dark:bg-indigo-600"
+                              : blog.category === "news"
+                              ? "bg-red-200 border text-red-800 border-red-600 dark:text-red-50  dark:bg-red-600"
+                              : blog.category === "question"
+                              ? "bg-orange-200 border text-orange-800 border-orange-600 dark:text-orange-50  dark:bg-orange-600"
+                              : ""
+                          }`}
+                        >
+                          {blog.category}
+                        </span>
                         <br />
-                        <small className="text-xs relative bottom-2">
-                          {blog.createdAt?.substring(0, 10)}{" "}
-                          {blog.createdAt?.substring(11, 16)}
-                        </small>
-                      </div>
+                        <span>{blog.title}</span>
+                      </p>
+                      <p className="mx-2 h-8 overflow-hidden text-xs md:text-sm md:h-10">
+                        <span>{blog.raw_text}</span>
+                      </p>
                     </div>
-                    <p className="mx-2 font-bold text-sm md:text-base">
-                      <span className="bg-grim text-white">{blog.title}</span>
-                    </p>
-                    <p className="mx-2 h-8 overflow-hidden text-xs md:text-sm md:h-10">
-                      <span className="bg-grim text-white">
-                        {blog.raw_text}
-                      </span>
-                    </p>
                   </div>
-                </div>
+                </a>
               </div>
             ))}
           </div>

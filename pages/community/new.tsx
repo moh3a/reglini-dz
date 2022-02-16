@@ -4,7 +4,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
-import CreateBlog from "../../components/community/CreateBlog";
+import CreateBlog from "../../components/community/new/CreateBlog";
 
 const NewBlogScreen = () => {
   const router = useRouter();

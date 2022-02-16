@@ -17,7 +17,8 @@ export const createBlog = createAsyncThunk(
       title,
       text,
       raw_text,
-    }: { title: string; text: string; raw_text: string },
+      category,
+    }: { title: string; text: string; raw_text: string; category: string },
     { rejectWithValue }
   ) => {
     try {
@@ -25,6 +26,7 @@ export const createBlog = createAsyncThunk(
         title,
         text,
         raw_text,
+        category,
       });
       return data;
     } catch (error: any) {
