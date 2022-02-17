@@ -12,7 +12,7 @@ const LiveRate = ({ currency }: any) => {
 
   return (
     <>
-      <div className="py-8 lg:py-16 px-4 flex flex-col items-center border-t-2 border-black dark:border-yellow-200 bg-yellow-100 dark:bg-grim">
+      <div className="py-8 lg:py-16 px-4 flex flex-col items-center border-t-2 border-black dark:border-yellow-200 dark:bg-grim">
         <h1 className="text-center text-xl lg:text-4xl font-bold">
           {t("inMarket")}{" "}
           <span className="underline text-gray-700 dark:text-gray-300">
@@ -28,7 +28,7 @@ const LiveRate = ({ currency }: any) => {
           {currency.map((current: any) => {
             return (
               <div key={current.exchange}>
-                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-black">
+                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-gray-100 dark:bg-black">
                   <div className="flex items-center">
                     {current.exchange === "DZDUSD" ? (
                       <>
@@ -36,7 +36,7 @@ const LiveRate = ({ currency }: any) => {
                           <CurrencyDollarIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                         </span>
                         <p className="text-md text-black dark:text-white ml-2">
-                          1 USD =
+                          1 $ =
                         </p>
                       </>
                     ) : current.exchange === "DZDEUR" ? (
@@ -45,7 +45,7 @@ const LiveRate = ({ currency }: any) => {
                           <CurrencyEuroIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                         </span>
                         <p className="text-md text-black dark:text-white ml-2">
-                          1 EUR =
+                          1 € =
                         </p>
                       </>
                     ) : (
@@ -54,13 +54,13 @@ const LiveRate = ({ currency }: any) => {
                           <CurrencyPoundIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                         </span>
                         <p className="text-md text-black dark:text-white ml-2">
-                          1 GBP =
+                          1 £ =
                         </p>
                       </>
                     )}
                   </div>
                   <small className="text-xs">
-                    {t("updated")}: {current.live.time}{" "}
+                    {t("updated")}: {current.live.updated}{" "}
                   </small>
                   <div className="flex flex-col justify-start">
                     <p className="text-gray-700 dark:text-gray-100 text-4xl text-left font-bold my-4">
@@ -109,7 +109,7 @@ const LiveRate = ({ currency }: any) => {
           {currency.map((current: any) => {
             return (
               <div key={current.exchange}>
-                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-black">
+                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-gray-100 dark:bg-black">
                   <div className="flex items-center">
                     {current.exchange === "DZDUSD" ? (
                       <>
@@ -117,7 +117,7 @@ const LiveRate = ({ currency }: any) => {
                           <CurrencyDollarIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                         </span>
                         <p className="text-md text-black dark:text-white ml-2">
-                          1 USD =
+                          1 $ =
                         </p>
                       </>
                     ) : current.exchange === "DZDEUR" ? (
@@ -126,7 +126,7 @@ const LiveRate = ({ currency }: any) => {
                           <CurrencyEuroIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                         </span>
                         <p className="text-md text-black dark:text-white ml-2">
-                          1 EUR =
+                          1 € =
                         </p>
                       </>
                     ) : (
@@ -135,13 +135,13 @@ const LiveRate = ({ currency }: any) => {
                           <CurrencyPoundIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                         </span>
                         <p className="text-md text-black dark:text-white ml-2">
-                          1 GBP =
+                          1 £ =
                         </p>
                       </>
                     )}
                   </div>
                   <small className="text-xs">
-                    {t("updated")}: {current.live.time}{" "}
+                    {t("updated")}: {current.live.updated}{" "}
                   </small>
 
                   <div className="flex flex-col justify-start">
@@ -185,7 +185,7 @@ const LiveRate = ({ currency }: any) => {
           })}
         </div>
       </div>
-      <div className="py-8 lg:py-16 px-4 flex flex-col items-center border-t-2 border-b-2 border-black dark:border-yellow-200 bg-yellow-100 dark:bg-grim">
+      <div className="py-8 lg:py-16 px-4 flex flex-col items-center border-t-2 border-b-2 border-black dark:border-yellow-200  dark:bg-grim">
         <h1 className="text-center text-xl lg:text-4xl font-bold">
           {t("inMarket")}{" "}
           <span className="underline text-gray-700 dark:text-gray-300">
@@ -198,7 +198,7 @@ const LiveRate = ({ currency }: any) => {
           {currency.map((current: any) => {
             return (
               <div key={current.exchange}>
-                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-white dark:bg-black">
+                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-gray-100 dark:bg-black">
                   <div className="flex items-center">
                     {current.exchange === "DZDUSD" ? (
                       <>
@@ -206,7 +206,7 @@ const LiveRate = ({ currency }: any) => {
                           <CurrencyDollarIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                         </span>
                         <p className="text-md text-black dark:text-white ml-2">
-                          1 USD =
+                          1 $ =
                         </p>
                       </>
                     ) : current.exchange === "DZDEUR" ? (
@@ -215,7 +215,7 @@ const LiveRate = ({ currency }: any) => {
                           <CurrencyEuroIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                         </span>
                         <p className="text-md text-black dark:text-white ml-2">
-                          1 EUR =
+                          1 € =
                         </p>
                       </>
                     ) : (
@@ -224,13 +224,13 @@ const LiveRate = ({ currency }: any) => {
                           <CurrencyPoundIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                         </span>
                         <p className="text-md text-black dark:text-white ml-2">
-                          1 GBP =
+                          1 £ =
                         </p>
                       </>
                     )}
                   </div>
                   <small className="text-xs">
-                    {t("updated")}: {current.live.time}{" "}
+                    {t("updated")}: {current.live.updated}{" "}
                   </small>
                   <div className="flex flex-col justify-start">
                     <p className="text-gray-700 dark:text-gray-100 text-4xl text-left font-bold my-4">

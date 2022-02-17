@@ -14,7 +14,9 @@ handler
   })
   .get(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
     let userIds: any[] = [];
-    const blogs = await Blog.find().sort({ createdAt: -1 });
+    const blogs = await Blog.find()
+      .select("-text -comments -voters")
+      .sort({ createdAt: -1 });
 
     blogs.map((blog: any) => {
       userIds.push(blog.userId);
@@ -38,6 +40,13 @@ handler
       success: true,
       data: blogs,
       message: "successfully retrieved all blogs",
+    });
+  })
+  .post(async (req: IExtendedAPIRequest, res: NextApiResponse) => {
+    // to get static paths for /community/blog/[slug]
+    const blogs = await Blog.find().select("slug");
+    res.status(200).json({
+      blogs,
     });
   });
 

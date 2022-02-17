@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 import { getBlogs, createBlog } from "./blogsAsyncActions";
 import {
-  getBlogDetails,
+  // getBlogDetails,
   deleteBlog,
   addComment,
   deleteComment,
@@ -56,7 +56,13 @@ const initialState: IBlogs = {
 export const blogsSlice = createSlice({
   name: "blogs",
   initialState,
-  reducers: {},
+  reducers: {
+    getBlogDetails(state, action) {
+      state.blog = action.payload.data;
+      state.status = "complete";
+      state.message = action.payload.message;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getBlogs.pending, (state, action) => {
@@ -108,19 +114,19 @@ export const blogsSlice = createSlice({
         state.message = action.error.message;
       })
       // ========================================================================
-      .addCase(getBlogDetails.pending, (state, action) => {
-        state.status = "loading";
-        state.message = "";
-      })
-      .addCase(getBlogDetails.fulfilled, (state, action) => {
-        state.status = "complete";
-        state.blog = action.payload.data;
-        state.message = action.payload.message;
-      })
-      .addCase(getBlogDetails.rejected, (state, action) => {
-        state.status = "failed";
-        state.message = action.error.message;
-      })
+      // .addCase(getBlogDetails.pending, (state, action) => {
+      //   state.status = "loading";
+      //   state.message = "";
+      // })
+      // .addCase(getBlogDetails.fulfilled, (state, action) => {
+      //   state.status = "complete";
+      //   state.blog = action.payload.data;
+      //   state.message = action.payload.message;
+      // })
+      // .addCase(getBlogDetails.rejected, (state, action) => {
+      //   state.status = "failed";
+      //   state.message = action.error.message;
+      // })
       // ========================================================================
       .addCase(addComment.pending, (state, action) => {
         state.status = "loading";
@@ -181,6 +187,6 @@ export const blogsSlice = createSlice({
 });
 
 export const selectBlogs = (state: RootState) => state.blogs;
-export const {} = blogsSlice.actions;
+export const { getBlogDetails } = blogsSlice.actions;
 
 export default blogsSlice.reducer;

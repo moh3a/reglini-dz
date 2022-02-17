@@ -17,7 +17,7 @@ const AdminCurrency = () => {
   const getCurrency = useCallback(async () => {
     const { data } = await axios.get("/api/currency");
     if (data.success) {
-      if (data.data[0].live.time === date) {
+      if (data.data[0].live.updated === date) {
         setDone(true);
       } else {
         setDone(false);

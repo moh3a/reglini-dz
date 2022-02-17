@@ -19,12 +19,7 @@ const Currency = ({ currency }: any) => {
           <Tab
             key={name}
             className={({ selected }) =>
-              classNames(
-                "w-full p-4 bg-yellow-100 hover:bg-yellow-200 dark:text-black",
-                selected
-                  ? "bg-yellow-600 text-yellow-50 dark:text-yellow-50"
-                  : ""
-              )
+              classNames("w-full p-4", selected && "bg-gray-200 dark:bg-grim")
             }
           >
             {name}

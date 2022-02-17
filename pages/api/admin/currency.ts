@@ -47,7 +47,7 @@ handler
 
     data.historical.push(live);
     data.live = {
-      time: live.time,
+      time: live.updated,
       rate: {
         parallelsalerate,
         parallelpurchaserate,

@@ -1,30 +1,29 @@
 import { useEffect } from "react";
-import { GetServerSideProps } from "next";
-import { useRouter } from "next/router";
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
-import { getBlogDetails } from "../../../utils/redux/blogAsyncActions";
+import Blog from "../../../components/community/Blog";
+import { getBlogDetails } from "../../../utils/redux/blogsSlice";
 
-const BlogScreen = () => {
+const BlogScreen = ({ data }: any) => {
   const dispatch = useDispatch();
-  const router = useRouter();
-  const { slug } = router.query;
 
-  useEffect(() => {
-    if (slug) dispatch(getBlogDetails({ slug: slug as string }));
-  }, [slug, dispatch]);
+  // useEffect(() => {
+  //   dispatch(getBlogDetails(data));
+  // }, [dispatch, data]);
 
   return (
     <>
-      <Head>
-        <title>Blog | reglini-dz</title>
+      {/* <Head>
+        <title>{data.data.title} | Blog | reglini-dz</title>
         <meta
           name="description"
-          content="Welcome to reglini-dz (reglini-dz.com). Checkout the services we provide, from buying from Aliexpress using algerians dinars, to subscribing to Netflix and many more to come."
+          content={data.data.raw_text.substring(0, 200)}
         />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </Head> */}
       <Blog />
     </>
   );
@@ -38,8 +37,34 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   };
 };
 
+// export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
+//     const {data} = await axios.get(
+//       `${process.env.NEXTAUTH_URL}/api/community/blogslug/${params?.slug}`
+//     );
+//   return {
+//     props: {
+//       data,
+//       messages: require(`../../../locales/${locale}.json`),
+//     },
+//     revalidate: 30,
+//   };
+// };
+
+// export const getStaticPaths: GetStaticPaths = async ({}) => {
+//   const { data } = await axios.post(
+//     `${process.env.NEXTAUTH_URL}/api/community`
+//   );
+//   const paths = data.blogs.map((blog: any) => ({
+//     params: { slug: blog.slug },
+//   }));
+
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
+
 import Layout from "../../../components/layout/Layout";
-import Blog from "../../../components/community/Blog";
 BlogScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };
