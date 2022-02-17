@@ -9,38 +9,50 @@ import { getBlogDetails } from "../../../utils/redux/blogsSlice";
 
 const BlogScreen = ({ data }: any) => {
   const dispatch = useDispatch();
+  const router = useRouter();
 
-  // useEffect(() => {
-  //   dispatch(getBlogDetails(data));
-  // }, [dispatch, data]);
+  useEffect(() => {
+    dispatch(getBlogDetails(data));
+  }, [dispatch, data]);
+
+  if (!data.success) {
+    router.replace("/community");
+  }
 
   return (
     <>
-      {/* <Head>
+      <Head>
         <title>{data.data.title} | Blog | reglini-dz</title>
         <meta
           name="description"
           content={data.data.raw_text.substring(0, 200)}
         />
         <link rel="icon" href="/favicon.ico" />
-      </Head> */}
+      </Head>
       <Blog />
     </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({
+  locale,
+  params,
+}) => {
+  const { data } = await axios.get(
+    `https://reglini-dz.com/api/community/blogslug/${params?.slug}`
+  );
   return {
     props: {
+      data,
       messages: require(`../../../locales/${locale}.json`),
     },
   };
 };
 
 // export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
-//     const {data} = await axios.get(
-//       `${process.env.NEXTAUTH_URL}/api/community/blogslug/${params?.slug}`
-//     );
+//   const { data } = await axios.get(
+//     `https://reglini-dz.com/api/community/blogslug/${params?.slug}`
+//   );
 //   return {
 //     props: {
 //       data,
@@ -51,9 +63,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 // };
 
 // export const getStaticPaths: GetStaticPaths = async ({}) => {
-//   const { data } = await axios.post(
-//     `${process.env.NEXTAUTH_URL}/api/community`
-//   );
+//   const { data } = await axios.post(`https://reglini-dz.com/api/community`);
 //   const paths = data.blogs.map((blog: any) => ({
 //     params: { slug: blog.slug },
 //   }));
@@ -65,6 +75,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 // };
 
 import Layout from "../../../components/layout/Layout";
+import { useRouter } from "next/router";
 BlogScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

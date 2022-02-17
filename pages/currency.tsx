@@ -1,4 +1,4 @@
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import axios from "axios";
 import Head from "next/head";
 import Currency from "../components/currency";
@@ -19,8 +19,8 @@ const CurrencyView = ({ currency }: any) => {
   );
 };
 
+// export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
-  // export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   const { data } = await axios.get(`${process.env.NEXTAUTH_URL}/api/currency`);
   return {
     props: {
