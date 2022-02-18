@@ -10,8 +10,8 @@ import {
   ClientSafeProvider,
 } from "next-auth/client";
 
-import Login from "../../components/auth/Login";
-import LoginSocialMedia from "../../components/auth/LoginSocialMedia";
+import Login from "../../../components/auth/Login";
+import LoginSocialMedia from "../../../components/auth/LoginSocialMedia";
 
 const LoginScreen = ({
   providers,
@@ -83,11 +83,11 @@ LoginScreen.getInitialProps = async (context: any) => {
     session: undefined,
     providers: await providers(),
     csrfToken: await csrfToken(context),
-    messages: require(`../../locales/${locale}.json`),
+    messages: require(`../../../locales/${locale}.json`),
   };
 };
 
-import Layout from "../../components/layout/Layout";
+import Layout from "../../../components/layout/Layout";
 LoginScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

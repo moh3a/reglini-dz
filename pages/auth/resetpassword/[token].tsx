@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import ResetPassword from "../../components/auth/ResetPassword";
+import ResetPassword from "../../../components/auth/ResetPassword";
 
 const ResetPasswordScreen = ({}) => {
   const router = useRouter();
@@ -25,12 +25,12 @@ const ResetPasswordScreen = ({}) => {
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      messages: require(`../../locales/${locale}.json`),
+      messages: require(`../../../locales/${locale}.json`),
     },
   };
 };
 
-import Layout from "../../components/layout/Layout";
+import Layout from "../../../components/layout/Layout";
 ResetPasswordScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

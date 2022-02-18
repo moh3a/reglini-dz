@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 
@@ -34,10 +35,7 @@ const BlogScreen = ({ data }: any) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({
-  locale,
-  params,
-}) => {
+export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   const { data } = await axios.get(
     `https://reglini-dz.com/api/community/blogslug/${params?.slug}`
   );
@@ -46,36 +44,23 @@ export const getServerSideProps: GetServerSideProps = async ({
       data,
       messages: require(`../../../locales/${locale}.json`),
     },
+    revalidate: 30,
   };
 };
 
-// export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
-//   const { data } = await axios.get(
-//     `https://reglini-dz.com/api/community/blogslug/${params?.slug}`
-//   );
-//   return {
-//     props: {
-//       data,
-//       messages: require(`../../../locales/${locale}.json`),
-//     },
-//     revalidate: 30,
-//   };
-// };
+export const getStaticPaths: GetStaticPaths = async ({}) => {
+  const { data } = await axios.post(`https://reglini-dz.com/api/community`);
+  const paths = data.blogs.map((blog: any) => ({
+    params: { slug: blog.slug },
+  }));
 
-// export const getStaticPaths: GetStaticPaths = async ({}) => {
-//   const { data } = await axios.post(`https://reglini-dz.com/api/community`);
-//   const paths = data.blogs.map((blog: any) => ({
-//     params: { slug: blog.slug },
-//   }));
-
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
+  return {
+    paths,
+    fallback: false,
+  };
+};
 
 import Layout from "../../../components/layout/Layout";
-import { useRouter } from "next/router";
 BlogScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

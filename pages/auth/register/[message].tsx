@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import { providers, getSession, csrfToken } from "next-auth/client";
 import { useEffect, useState } from "react";
-import LoginScreen from ".";
-import AlertMessage from "../../components/elements/AlertMessage";
-import { LoginErrorMessages } from "../../data/LoginMessages";
+import RegisterScreen from ".";
+import AlertMessage from "../../../components/elements/AlertMessage";
+import { LoginErrorMessages } from "../../../data/LoginMessages";
 
-const LoginError = ({ csrfToken, providers }: any) => {
+const RegisterError = ({ csrfToken, providers }: any) => {
   const router = useRouter();
   const { message } = router.query;
   const [error, setError] = useState("");
@@ -20,14 +20,14 @@ const LoginError = ({ csrfToken, providers }: any) => {
 
   return (
     <>
-      <LoginScreen providers={providers} csrfToken={csrfToken}>
+      <RegisterScreen providers={providers} csrfToken={csrfToken}>
         {error && <AlertMessage type="error" message={error} />}
-      </LoginScreen>
+      </RegisterScreen>
     </>
   );
 };
 
-LoginError.getInitialProps = async (context: any) => {
+RegisterError.getInitialProps = async (context: any) => {
   const { req, res, locale } = context;
   const session = await getSession({ req });
   if (session && res && session.accessToken) {
@@ -41,13 +41,13 @@ LoginError.getInitialProps = async (context: any) => {
     session: undefined,
     providers: await providers(),
     csrfToken: await csrfToken(context),
-    messages: require(`../../locales/${locale}.json`),
+    messages: require(`../../../locales/${locale}.json`),
   };
 };
 
-import Layout from "../../components/layout/Layout";
-LoginError.getLayout = function getLayout(page: any) {
+import Layout from "../../../components/layout/Layout";
+RegisterError.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };
 
-export default LoginError;
+export default RegisterError;

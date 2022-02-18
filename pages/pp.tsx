@@ -1,7 +1,16 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
+
 import Logo from "../components/layout/Logo";
 
 const PrivacyPolicy = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/");
+  }, [router]);
+
   return (
     <>
       <Head>

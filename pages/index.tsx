@@ -1,15 +1,11 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import { useSession } from "next-auth/client";
 
-import { IUser } from "../utils/types";
 import SessionCTA from "../components/sections/SessionCTA";
 import AliexpressCTA from "../components/sections/AliexpressCTA";
 import AppCTA from "../components/sections/AppCTA";
 
 const HomeScreen = () => {
-  const [session, loading]: [IUser | null, boolean] = useSession();
-
   return (
     <>
       <Head>
@@ -21,7 +17,7 @@ const HomeScreen = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AliexpressCTA />
-      <SessionCTA session={session} />
+      <SessionCTA />
       <AppCTA />
     </>
   );

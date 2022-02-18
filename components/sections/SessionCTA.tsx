@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { signOut } from "next-auth/client";
+import { signOut, useSession } from "next-auth/client";
 import { useTranslations } from "next-intl";
 
-const SessionCTA = ({ session }: any) => {
+import { IUser } from "../../utils/types";
+
+const SessionCTA = () => {
+  const [session, loading]: [IUser | null, boolean] = useSession();
   const t = useTranslations("SessionCTA");
   const router = useRouter();
 

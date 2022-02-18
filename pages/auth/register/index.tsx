@@ -3,8 +3,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { providers, getSession, csrfToken, useSession } from "next-auth/client";
 
-import LoginSocialMedia from "../../components/auth/LoginSocialMedia";
-import Register from "../../components/auth/Register";
+import LoginSocialMedia from "../../../components/auth/LoginSocialMedia";
+import Register from "../../../components/auth/Register";
 
 const RegisterScreen = ({ providers, csrfToken, children }: any) => {
   const [session, loading] = useSession();
@@ -75,11 +75,11 @@ RegisterScreen.getInitialProps = async (context: any) => {
     session: undefined,
     providers: await providers(),
     csrfToken: await csrfToken(context),
-    messages: require(`../../locales/${locale}.json`),
+    messages: require(`../../../locales/${locale}.json`),
   };
 };
 
-import Layout from "../../components/layout/Layout";
+import Layout from "../../../components/layout/Layout";
 RegisterScreen.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };
