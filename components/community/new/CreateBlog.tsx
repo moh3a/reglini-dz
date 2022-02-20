@@ -21,11 +21,10 @@ function CreateBlog() {
 
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
-    let images = getImages(text);
     let raw_text = getRawText(text)?.replace("[object Object]", "");
 
     if (title && text && raw_text) {
-      dispatch(createBlog({ title, text, raw_text, category, images }));
+      dispatch(createBlog({ title, text, raw_text, category }));
       router.push("/community");
     } else if (!text) {
       setError("You should add some content to your blog.");

@@ -18,13 +18,11 @@ export const createBlog = createAsyncThunk(
       text,
       raw_text,
       category,
-      images,
     }: {
       title: string;
       text: string;
       raw_text: string;
       category: string;
-      images: any;
     },
     { rejectWithValue }
   ) => {
