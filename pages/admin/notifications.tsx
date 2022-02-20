@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 import AdminScreen from "./index";
 import AdminPayment from "../../components/admin/AdminPayment";
-import { IUser } from "../../utils/types";
+import { IUser } from "../../types";
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";
 

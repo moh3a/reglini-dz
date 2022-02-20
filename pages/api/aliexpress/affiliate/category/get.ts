@@ -3,7 +3,7 @@ import dbConnect from "../../../../../config/db";
 import { TopClient } from "../../../../../lib/api/topClient";
 import type { NextApiResponse, NextApiRequest } from "next";
 
-import { IAEError } from "../../../../../utils/AETypes";
+import { IAEError } from "../../../../../types/AETypes";
 
 export interface IAECategoriesResponse {
   resp_result: {

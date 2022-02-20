@@ -11,7 +11,7 @@ import {
   IExtendedAPIRequest,
   IFacebookPage,
   IFacebookPageAd,
-} from "../../../../../utils/types";
+} from "../../../../../types";
 import { LocalISODate } from "../../../../../utils/methods";
 
 export const config = {

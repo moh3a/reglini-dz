@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 
 import dbConnect from "../../../config/db";
 import User from "../../../models/User";
-import { IExtendedAPIRequest, IUser } from "../../../utils/types";
+import { IExtendedAPIRequest, IUser } from "../../../types";
 
 export default async function handler(
   req: IExtendedAPIRequest,

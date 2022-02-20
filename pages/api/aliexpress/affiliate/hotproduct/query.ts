@@ -11,7 +11,7 @@ import Finance from "../../../../../models/Finance";
 import {
   IAEAffiliateProductDetailsResponse,
   IAEError,
-} from "../../../../../utils/AETypes";
+} from "../../../../../types/AETypes";
 
 const client = new TopClient({
   appkey: process.env.ALIEXPRESS_AFFILIATE_APP_KEY,

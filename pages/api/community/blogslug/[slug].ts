@@ -3,7 +3,7 @@ import type { NextApiResponse } from "next";
 
 import Blog from "../../../../models/Blog";
 import User from "../../../../models/User";
-import { IExtendedAPIRequest } from "../../../../utils/types";
+import { IExtendedAPIRequest } from "../../../../types";
 import dbConnect from "../../../../config/db";
 
 const handler = nc();

@@ -4,7 +4,7 @@ import nc from "next-connect";
 import User from "../../../../models/User";
 import { cartCount, cartSubtotal } from "../../../../utils/cartMethods";
 import CheckSession from "../../../../utils/checkSession";
-import { IExtendedAPIRequest } from "../../../../utils/types";
+import { IExtendedAPIRequest } from "../../../../types";
 
 const handler = nc();
 handler

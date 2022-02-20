@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import axios from "axios";
 
-import { IFacebookPage } from "../../../utils/types";
+import { IFacebookPage } from "../../../types";
 import { selectUser } from "../../../utils/redux/userSlice";
 
 const FacebookPageDetails = () => {

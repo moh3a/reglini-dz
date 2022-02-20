@@ -4,7 +4,7 @@ import axios from "axios";
 import { getSession } from "next-auth/client";
 import { CancelOrderAfterTimer } from "../../../../../utils/methods";
 import User from "../../../../../models/User";
-import { IUser } from "../../../../../utils/types";
+import { IUser } from "../../../../../types";
 
 export interface Product {
   productId: string;

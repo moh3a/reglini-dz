@@ -6,7 +6,7 @@ import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import {
   IBasicProductDetails,
   IDropshipperProductDetails,
-} from "../../utils/AETypes";
+} from "../../types/AETypes";
 
 const ProductShipping = ({
   product,

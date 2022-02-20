@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/outline";
 
 import { createBlog } from "../../../utils/redux/blogsAsyncActions";
-import { getRawText } from "../../../utils/rawText";
+import { getImages, getRawText } from "../../../utils/rawText";
 import TextEditor from "./TextEditor";
 import BlogCategory from "./BlogCategory";
 
@@ -21,13 +21,19 @@ function CreateBlog() {
 
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
-    let raw_text = getRawText(text).replace("[object Object]", "");
+    let images = getImages(text);
+    let raw_text = getRawText(text)?.replace("[object Object]", "");
 
     if (title && text && raw_text) {
-      dispatch(createBlog({ title, text, raw_text, category }));
+      dispatch(createBlog({ title, text, raw_text, category, images }));
       router.push("/community");
     } else if (!text) {
       setError("You should add some content to your blog.");
+      setInterval(() => {
+        setError("");
+      }, 3000);
+    } else if (!raw_text) {
+      setError("Some text should be added to your blog.");
       setInterval(() => {
         setError("");
       }, 3000);
@@ -61,6 +67,8 @@ function CreateBlog() {
           />
         </div>
         <BlogCategory category={category} setCategory={setCategory} />
+
+        <TextEditor text={text} setText={setText} />
         {error && (
           <p className="text-red-500">
             <ExclamationCircleIcon
@@ -70,8 +78,6 @@ function CreateBlog() {
             {error}{" "}
           </p>
         )}
-        <TextEditor text={text} setText={setText} />
-
         <div className="flex justify-end">
           <button
             className="border border-green-400 bg-green-300 hover:bg-green-400 px-2 py-1 rounded-lg"

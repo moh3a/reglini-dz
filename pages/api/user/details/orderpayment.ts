@@ -9,7 +9,7 @@ import User from "../../../../models/User";
 import SendEmail from "../../../../utils/sendEmail";
 import { LocalISODate } from "../../../../utils/methods";
 import CheckSession from "../../../../utils/checkSession";
-import { IExtendedAPIRequest } from "../../../../utils/types";
+import { IExtendedAPIRequest } from "../../../../types";
 
 export const config = {
   api: {

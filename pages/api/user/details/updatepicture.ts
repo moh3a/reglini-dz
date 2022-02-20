@@ -7,7 +7,7 @@ const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
 import User from "../../../../models/User";
 import CheckSession from "../../../../utils/checkSession";
-import { IExtendedAPIRequest } from "../../../../utils/types";
+import { IExtendedAPIRequest } from "../../../../types";
 
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,

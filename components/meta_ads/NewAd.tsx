@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { emplacement_instagram, facebook_reach } from "../../data/AdReach";
 import { LocalISODate } from "../../utils/methods";
-import { IFacebookPage } from "../../utils/types";
+import { IFacebookPage } from "../../types";
 import { createAdRequest } from "../../utils/redux/userAsyncActions";
 import { DangerDialog } from "../../components/elements/Dialog";
 

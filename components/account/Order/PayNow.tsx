@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 import { selectUser } from "../../../utils/redux/userSlice";
 import { submitPayment } from "../../../utils/redux/userAsyncActions";
 import AlertMessage from "../../elements/AlertMessage";
-import { IAEOrderDetails } from "../../../utils/AETypes";
+import { IAEOrderDetails } from "../../../types/AETypes";
 
 function PayNow({ order }: { order: IAEOrderDetails }) {
   const [isOpen, setIsOpen] = useState(false);

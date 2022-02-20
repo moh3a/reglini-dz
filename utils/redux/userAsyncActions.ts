@@ -6,7 +6,7 @@ import {
   ICartItem,
   IFacebookPage,
   IFacebookPageAd,
-} from "../../utils/types";
+} from "../../types";
 
 export const getUser = createAsyncThunk(
   "user/getUser",

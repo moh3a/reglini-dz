@@ -8,7 +8,7 @@ import { signOut, useSession } from "next-auth/client";
 import axios from "axios";
 import { useTranslations } from "next-intl";
 
-import { IUser } from "../../utils/types";
+import { IUser } from "../../types";
 import { DangerDialog } from "../../components/elements/Dialog";
 import { selectUser } from "../../utils/redux/userSlice";
 

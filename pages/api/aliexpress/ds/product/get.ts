@@ -10,7 +10,7 @@ import { TopClient } from "../../../../../lib/api/topClient";
 import User from "../../../../../models/User";
 import CheckSession from "../../../../../utils/checkSession";
 import dbConnect from "../../../../../config/db";
-import { IExtendedAPIRequest } from "../../../../../utils/types";
+import { IExtendedAPIRequest } from "../../../../../types";
 
 const client = new TopClient({
   appkey: process.env.ALIEXPRESS_DS_APP_KEY,

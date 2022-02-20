@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import { selectUser } from "../../../utils/redux/userSlice";
 import { submitFeedback } from "../../../utils/redux/userAsyncActions";
 import Feedback from "../../elements/Feedback";
-import { IAEOrderDetails } from "../../../utils/AETypes";
+import { IAEOrderDetails } from "../../../types/AETypes";
 
 function ConfirmOrderReceived({ order }: { order: IAEOrderDetails }) {
   const [message, setMessage] = useState("");

@@ -4,7 +4,7 @@ import { Dialog, Transition, RadioGroup } from "@headlessui/react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-import { IFacebookPage } from "../../utils/types";
+import { IFacebookPage } from "../../types";
 import AlertMessage from "../elements/AlertMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { submitPayment } from "../../utils/redux/userAsyncActions";

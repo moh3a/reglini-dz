@@ -7,7 +7,7 @@ import User from "../../../models/User";
 import Finance from "../../../models/Finance";
 import CheckSession from "../../../utils/checkSession";
 import sendEmail from "../../../utils/sendEmail";
-import { IExtendedAPIRequest } from "../../../utils/types";
+import { IExtendedAPIRequest } from "../../../types";
 
 const handler = nc();
 handler

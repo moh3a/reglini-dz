@@ -4,8 +4,8 @@ import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import { SuccessDialog, DangerDialog, WarningDialog } from "../elements/Dialog";
 import { addToWishlist, addToCart } from "../../utils/redux/userAsyncActions";
-import { IAffiliateProduct } from "../../utils/AETypes";
-import { IUserRedux } from "../../utils/types";
+import { IAffiliateProduct } from "../../types/AETypes";
+import { IUserRedux } from "../../types";
 
 export interface SelectedVariation {
   imageUrl: string;

@@ -5,7 +5,7 @@ import type { NextApiResponse } from "next";
 const jwt = require("jsonwebtoken");
 
 import User from "../../../../models/User";
-import { IExtendedAPIRequest } from "../../../../utils/types";
+import { IExtendedAPIRequest } from "../../../../types";
 import CheckSession from "../../../../utils/checkSession";
 import dbConnect from "../../../../config/db";
 

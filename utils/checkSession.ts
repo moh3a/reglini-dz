@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import Cookies from "js-cookie";
 
 import User from "../models/User";
-import { IUser, IExtendedAPIRequest } from "./types";
+import { IUser, IExtendedAPIRequest } from "../types";
 
 const CheckSession = async (
   req: IExtendedAPIRequest,

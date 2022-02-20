@@ -9,14 +9,14 @@ import User from "../../../../../models/User";
 import Currency from "../../../../../models/Currency";
 import Finance from "../../../../../models/Finance";
 import dbConnect from "../../../../../config/db";
-import { IExtendedAPIRequest, IUser } from "../../../../../utils/types";
+import { IExtendedAPIRequest, IUser } from "../../../../../types";
 import {
   IAEError,
   IDropshipperProductDetails,
   IBasicProductDetails,
   IShippingInformation,
   IProductProperties,
-} from "../../../../../utils/AETypes";
+} from "../../../../../types/AETypes";
 
 const client = new TopClient({
   appkey: process.env.ALIEXPRESS_DS_APP_KEY,

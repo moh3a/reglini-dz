@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import parse from "html-react-parser";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
 
-import { IAffiliateProduct } from "../../utils/AETypes";
+import { IAffiliateProduct } from "../../types/AETypes";
 import StoreInfo from "./StoreInfo";
 
 const Item = ({ title, children }: any) => {

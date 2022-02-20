@@ -4,7 +4,7 @@ import type { NextApiResponse } from "next";
 import Blog from "../../../../../models/Blog";
 import CheckSession from "../../../../../utils/checkSession";
 import User from "../../../../../models/User";
-import { IExtendedAPIRequest } from "../../../../../utils/types";
+import { IExtendedAPIRequest } from "../../../../../types";
 import dbConnect from "../../../../../config/db";
 
 const handler = nc();
@@ -27,13 +27,11 @@ handler
 
     const blog = await Blog.deleteOne({ _id: id, userId: user._id });
     if (blog.ok) {
-      res
-        .status(200)
-        .json({
-          success: true,
-          id,
-          message: "Blog post successfully deleted.",
-        });
+      res.status(200).json({
+        success: true,
+        id,
+        message: "Blog post successfully deleted.",
+      });
     } else {
       res
         .status(200)

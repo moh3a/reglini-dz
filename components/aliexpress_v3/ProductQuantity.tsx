@@ -6,7 +6,7 @@ import {
   ExclamationCircleIcon,
 } from "@heroicons/react/outline";
 
-import { IDropshipperProductDetails } from "../../utils/AETypes";
+import { IDropshipperProductDetails } from "../../types/AETypes";
 
 const ProductQuantity = ({
   product,

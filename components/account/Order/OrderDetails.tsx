@@ -15,7 +15,7 @@ import {
   getOrderDetails,
   cancelOrder,
 } from "../../../utils/redux/userAsyncActions";
-import { IAEOrderDetails } from "../../../utils/AETypes";
+import { IAEOrderDetails } from "../../../types/AETypes";
 
 export default function OrderDetails({ id }: { id: string }) {
   const t = useTranslations("Orders");

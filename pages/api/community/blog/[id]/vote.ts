@@ -4,7 +4,7 @@ import type { NextApiResponse } from "next";
 import User from "../../../../../models/User";
 import Blog from "../../../../../models/Blog";
 import CheckSession from "../../../../../utils/checkSession";
-import { IExtendedAPIRequest } from "../../../../../utils/types";
+import { IExtendedAPIRequest } from "../../../../../types";
 
 import dbConnect from "../../../../../config/db";
 

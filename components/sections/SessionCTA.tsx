@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { signOut, useSession } from "next-auth/client";
 import { useTranslations } from "next-intl";
 
-import { IUser } from "../../utils/types";
+import { IUser } from "../../types";
 
 const SessionCTA = () => {
   const [session, loading]: [IUser | null, boolean] = useSession();

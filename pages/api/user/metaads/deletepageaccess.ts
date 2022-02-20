@@ -4,7 +4,7 @@ import dbConnect from "../../../../config/db";
 
 import User from "../../../../models/User";
 import CheckSession from "../../../../utils/checkSession";
-import { IExtendedAPIRequest } from "../../../../utils/types";
+import { IExtendedAPIRequest } from "../../../../types";
 
 const handler = nc();
 handler
@@ -34,13 +34,11 @@ handler
     } else {
       user.facebookPages[index].access_status = "processing_deletion";
       await user.save();
-      res
-        .status(200)
-        .json({
-          success: true,
-          data: user,
-          message: "Access status to processing deletion done.",
-        });
+      res.status(200).json({
+        success: true,
+        data: user,
+        message: "Access status to processing deletion done.",
+      });
     }
   });
 

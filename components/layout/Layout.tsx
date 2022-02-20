@@ -3,10 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/client";
 
-import StoreNavigation from "./nav/StoreNavigation";
+import Navigation from "./nav/Navigation";
 import Footer from "./Footer";
-import Loading from "../layout/Loading";
-import { IUser } from "../../utils/types";
+import { IUser } from "../../types";
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";
 
@@ -54,7 +53,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <StoreNavigation placeholder={placeholder} user={user} />
+      <Navigation placeholder={placeholder} user={user} />
       <main>{children}</main>
       <Footer />
     </>

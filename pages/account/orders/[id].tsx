@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { useSession } from "next-auth/client";
 
 import OrderDetails from "../../../components/account/Order/OrderDetails";
-import { IUser } from "../../../utils/types";
+import { IUser } from "../../../types";
 import { selectUser } from "../../../utils/redux/userSlice";
 
 const OrderScreen = () => {

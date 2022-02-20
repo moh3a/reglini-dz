@@ -6,7 +6,7 @@ import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 
 import AdminSidebar from "../../components/admin/AdminSidebar";
-import { IUser } from "../../utils/types";
+import { IUser } from "../../types";
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";
 

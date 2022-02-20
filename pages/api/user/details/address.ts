@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/client";
 
 import User from "../../../../models/User";
-import { IUser } from "../../../../utils/types";
+import { IUser } from "../../../../types";
 
 export default async function handler(
   req: NextApiRequest,

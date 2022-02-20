@@ -3,7 +3,7 @@ import nc from "next-connect";
 
 import User from "../../../../models/User";
 import CheckSession from "../../../../utils/checkSession";
-import { IExtendedAPIRequest } from "../../../../utils/types";
+import { IExtendedAPIRequest } from "../../../../types";
 
 const handler = nc();
 handler

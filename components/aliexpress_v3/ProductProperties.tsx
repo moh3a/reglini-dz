@@ -7,7 +7,7 @@ import {
   ExclamationCircleIcon,
 } from "@heroicons/react/outline";
 
-import { IProductProperties } from "../../utils/AETypes";
+import { IProductProperties } from "../../types/AETypes";
 
 const ProductProperties = ({
   property,

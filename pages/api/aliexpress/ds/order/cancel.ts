@@ -6,8 +6,8 @@ import dbConnect from "../../../../../config/db";
 import { TopClient } from "../../../../../lib/api/topClient";
 import User from "../../../../../models/User";
 import CheckSession from "../../../../../utils/checkSession";
-import { IAEError } from "../../../../../utils/AETypes";
-import { IExtendedAPIRequest } from "../../../../../utils/types";
+import { IAEError } from "../../../../../types/AETypes";
+import { IExtendedAPIRequest } from "../../../../../types";
 
 const client = new TopClient({
   appkey: process.env.ALIEXPRESS_DS_APP_KEY,

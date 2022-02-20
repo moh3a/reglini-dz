@@ -5,7 +5,7 @@ import axios from "axios";
 
 import Logo from "../../../components/layout/Logo";
 import ProductDetails from "../../../components/aliexpress_v3/ProductDetails";
-import { IAffiliateProduct } from "../../../utils/AETypes";
+import { IAffiliateProduct } from "../../../types/AETypes";
 
 const AliexpressProduct = () => {
   const router = useRouter();

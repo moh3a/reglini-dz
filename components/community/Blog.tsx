@@ -23,7 +23,7 @@ import {
   blogLike,
 } from "../../utils/redux/blogAsyncActions";
 import { selectUser } from "../../utils/redux/userSlice";
-import { IUserRedux } from "../../utils/types";
+import { IUserRedux } from "../../types";
 import BlogComment from "./BlogComment";
 
 const Blog = () => {

@@ -13,8 +13,8 @@ import CheckSession from "../../../../../utils/checkSession";
 import {
   IAEError,
   IAEOrderTrackingResponse,
-} from "../../../../../utils/AETypes";
-import { IExtendedAPIRequest } from "../../../../../utils/types";
+} from "../../../../../types/AETypes";
+import { IExtendedAPIRequest } from "../../../../../types";
 
 const client = new TopClient({
   appkey: process.env.ALIEXPRESS_DS_APP_KEY,

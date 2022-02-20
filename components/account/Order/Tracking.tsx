@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useTranslations } from "next-intl";
 import { LinkIcon } from "@heroicons/react/outline";
-import { IAEOrderDetails } from "../../../utils/AETypes";
+import { IAEOrderDetails } from "../../../types/AETypes";
 
 function Tracking({ order }: { order: IAEOrderDetails }) {
   const [isOpen, setIsOpen] = useState(false);

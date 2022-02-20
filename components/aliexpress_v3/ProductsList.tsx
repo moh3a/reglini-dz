@@ -11,7 +11,7 @@ import {
   TagIcon,
 } from "@heroicons/react/outline";
 
-import { IAffiliateProduct } from "../../utils/AETypes";
+import { IAffiliateProduct } from "../../types/AETypes";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../utils/redux/userSlice";
 import { addToWishlist } from "../../utils/redux/userAsyncActions";

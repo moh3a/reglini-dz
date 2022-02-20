@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
-import { IDropshipperProductDetails } from "../../utils/AETypes";
+import { IDropshipperProductDetails } from "../../types/AETypes";
 
 const ProductReviews = ({
   product,

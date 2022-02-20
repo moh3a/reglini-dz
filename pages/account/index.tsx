@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useSession } from "next-auth/client";
 
-import { IUser } from "../../utils/types";
+import { IUser } from "../../types";
 import AccountDetails from "../../components/account/AccountDetails";
 import { selectUser } from "../../utils/redux/userSlice";
 

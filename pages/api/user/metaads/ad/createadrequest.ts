@@ -8,7 +8,7 @@ import {
   IExtendedAPIRequest,
   IFacebookPage,
   IFacebookPageAd,
-} from "../../../../../utils/types";
+} from "../../../../../types";
 
 const handler = nc();
 handler

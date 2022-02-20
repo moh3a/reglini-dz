@@ -12,7 +12,7 @@ import {
   IDropshipperProductDetails,
   IProductProperties,
   IProductPrice,
-} from "../../../../../utils/AETypes";
+} from "../../../../../types/AETypes";
 
 const affiliateclient = new TopClient({
   appkey: process.env.ALIEXPRESS_AFFILIATE_APP_KEY,

@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 import { getSession } from "next-auth/client";
 
 import User from "../../../../models/User";
-import { IUser } from "../../../../utils/types";
+import { IUser } from "../../../../types";
 import sendEmail from "../../../../utils/sendEmail";
 
 export default async function handler(

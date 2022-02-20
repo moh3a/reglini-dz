@@ -7,7 +7,7 @@ import { ArrowLeftIcon } from "@heroicons/react/outline";
 
 import MiniSearchAE from "./MiniSearchAE";
 import { selectUser } from "../../utils/redux/userSlice";
-import { IAffiliateProduct } from "../../utils/AETypes";
+import { IAffiliateProduct } from "../../types/AETypes";
 import ProductImages from "./ProductImages";
 import ProductProperties from "./ProductProperties";
 import ProductReviews from "./ProductReviews";

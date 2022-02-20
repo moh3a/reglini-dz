@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { Dispatch, SetStateAction } from "react";
-import { IDropshipperProductDetails } from "../../utils/AETypes";
+import { IDropshipperProductDetails } from "../../types/AETypes";
 
 const ProductImages = ({
   product,

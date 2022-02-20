@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect, useCallback, Fragment } from "react";
 import axios from "axios";
-import { IFacebookPage } from "../../utils/types";
+import { IFacebookPage } from "../../types";
 
 const AdminAds = () => {
   const [pages, setPages] = useState<any[]>();

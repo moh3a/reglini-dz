@@ -3,7 +3,7 @@ import type { NextApiResponse } from "next";
 import nc from "next-connect";
 import { getSession } from "next-auth/client";
 import dbConnect from "../../../config/db";
-import { IExtendedAPIRequest, IUser } from "../../../utils/types";
+import { IExtendedAPIRequest, IUser } from "../../../types";
 import axios from "axios";
 
 const adsSdk = require("facebook-nodejs-business-sdk");

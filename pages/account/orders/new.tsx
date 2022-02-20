@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/client";
 
-import { IUser } from "../../../utils/types";
+import { IUser } from "../../../types";
 import { selectUser } from "../../../utils/redux/userSlice";
 import NewOrder from "../../../components/account/Order/NewOrder";
 

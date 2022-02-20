@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { useSession } from "next-auth/client";
 import { TerminalIcon } from "@heroicons/react/outline";
 
-import { IUser } from "../../utils/types";
+import { IUser } from "../../types";
 import { selectAEApi } from "../../utils/redux/aeapiSlice";
 import SearchAE from "../../components/legacy_aliexpress/SearchAE";
 import ProductPreview from "../../components/legacy_aliexpress/ProductPreview";

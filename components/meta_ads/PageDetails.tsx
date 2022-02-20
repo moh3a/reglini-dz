@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IFacebookPage } from "../../utils/types";
+import { IFacebookPage } from "../../types";
 import CreatedAds from "./CreatedAds";
 import NewAd from "./NewAd";
 

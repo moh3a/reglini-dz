@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useSession } from "next-auth/client";
 import { useTranslations } from "next-intl";
 
-import { IUser } from "../../utils/types";
+import { IUser } from "../../types";
 import { selectUser } from "../../utils/redux/userSlice";
 import WishedItems from "../../components/store/WishedItems";
 

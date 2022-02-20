@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useTranslations } from "next-intl";
 import {
   CurrencyDollarIcon,
@@ -6,6 +7,45 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
 } from "@heroicons/react/outline";
+
+const FlagEU = () => {
+  return (
+    <div className="w-6 h-6 inline rounded-full">
+      <img src="/flag-eu.png" alt="EU flag" />
+    </div>
+  );
+};
+
+const FlagUK = () => {
+  return (
+    <div className="w-6 h-6 inline">
+      <a
+        className="sr-only"
+        href="https://icons8.com/icon/t3NE3BsOAQwq/great-britain"
+      >
+        Great Britain icon by Icons8
+      </a>
+      <img
+        src="https://img.icons8.com/color/48/000000/great-britain-circular.png"
+        alt="UK flag"
+      />
+    </div>
+  );
+};
+
+const FlagUS = () => {
+  return (
+    <div className="w-6 h-6 inline">
+      <a className="sr-only" href="https://icons8.com/icon/aRiu1GGi6Aoe/usa">
+        Usa icon by Icons8
+      </a>
+      <img
+        src="https://img.icons8.com/color/48/000000/usa-circular.png"
+        alt="USA flag"
+      />
+    </div>
+  );
+};
 
 const LiveRate = ({ currency }: any) => {
   const t = useTranslations("Currency.liveRate");
@@ -32,27 +72,21 @@ const LiveRate = ({ currency }: any) => {
                   <div className="flex items-center">
                     {current.exchange === "DZDUSD" ? (
                       <>
-                        <span className="rounded-xl relative p-4">
-                          <CurrencyDollarIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                        </span>
+                        <FlagUS />
                         <p className="text-md text-black dark:text-white ml-2">
                           1 $ =
                         </p>
                       </>
                     ) : current.exchange === "DZDEUR" ? (
                       <>
-                        <span className="rounded-xl relative p-4">
-                          <CurrencyEuroIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                        </span>
+                        <FlagEU />
                         <p className="text-md text-black dark:text-white ml-2">
                           1 € =
                         </p>
                       </>
                     ) : (
                       <>
-                        <span className="rounded-xl relative p-4">
-                          <CurrencyPoundIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                        </span>
+                        <FlagUK />
                         <p className="text-md text-black dark:text-white ml-2">
                           1 £ =
                         </p>
@@ -113,27 +147,21 @@ const LiveRate = ({ currency }: any) => {
                   <div className="flex items-center">
                     {current.exchange === "DZDUSD" ? (
                       <>
-                        <span className="rounded-xl relative p-4">
-                          <CurrencyDollarIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                        </span>
+                        <FlagUS />
                         <p className="text-md text-black dark:text-white ml-2">
                           1 $ =
                         </p>
                       </>
                     ) : current.exchange === "DZDEUR" ? (
                       <>
-                        <span className="rounded-xl relative p-4">
-                          <CurrencyEuroIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                        </span>
+                        <FlagEU />
                         <p className="text-md text-black dark:text-white ml-2">
                           1 € =
                         </p>
                       </>
                     ) : (
                       <>
-                        <span className="rounded-xl relative p-4">
-                          <CurrencyPoundIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                        </span>
+                        <FlagUK />
                         <p className="text-md text-black dark:text-white ml-2">
                           1 £ =
                         </p>
@@ -194,35 +222,30 @@ const LiveRate = ({ currency }: any) => {
           {t("market")}
         </h1>
         <div className="text-xs lg:text-sm">{t("dailyRatesOfficial")}</div>
-        <div className="flex flex-wrap flex-center select-none">
+        <div className="grid grid-cols-3 gap-x-3 md:gap-x-6 select-none">
           {currency.map((current: any) => {
             return (
               <div key={current.exchange}>
-                <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-gray-100 dark:bg-black">
+                {/* <div className="shadow-lg rounded-2xl p-4 mx-2 my-4 bg-gray-100 dark:bg-black"> */}
+                <div className="shadow-lg rounded-2xl p-4 bg-gray-100 dark:bg-black">
                   <div className="flex items-center">
                     {current.exchange === "DZDUSD" ? (
                       <>
-                        <span className="rounded-xl relative p-4">
-                          <CurrencyDollarIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                        </span>
+                        <FlagUS />
                         <p className="text-md text-black dark:text-white ml-2">
                           1 $ =
                         </p>
                       </>
                     ) : current.exchange === "DZDEUR" ? (
                       <>
-                        <span className="rounded-xl relative p-4">
-                          <CurrencyEuroIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                        </span>
+                        <FlagEU />
                         <p className="text-md text-black dark:text-white ml-2">
                           1 € =
                         </p>
                       </>
                     ) : (
                       <>
-                        <span className="rounded-xl relative p-4">
-                          <CurrencyPoundIcon className="text-gray-500 dark:text-gray-200 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-                        </span>
+                        <FlagUK />
                         <p className="text-md text-black dark:text-white ml-2">
                           1 £ =
                         </p>

@@ -25,7 +25,7 @@ import {
   createAdRequest,
 } from "./userAsyncActions";
 import { signOut } from "next-auth/client";
-import { IAuth } from "../../utils/types";
+import { IAuth } from "../../types";
 
 const initialState: IAuth = {
   isAuthenticated: false,

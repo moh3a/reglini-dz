@@ -1,4 +1,4 @@
-import { IEmailOptions } from "../utils/types";
+import { IEmailOptions } from "../types";
 
 // USING SMTP RELAY
 

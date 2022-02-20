@@ -5,7 +5,7 @@ import dbConnect from "../../../config/db";
 import User from "../../../models/User";
 import Currency from "../../../models/Currency";
 import CheckSession from "../../../utils/checkSession";
-import { IExtendedAPIRequest } from "../../../utils/types";
+import { IExtendedAPIRequest } from "../../../types";
 
 const handler = nc();
 handler

@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ExternalLinkIcon } from "@heroicons/react/outline";
-import { IDropshipperProductDetails } from "../../utils/AETypes";
+import { IDropshipperProductDetails } from "../../types/AETypes";
 
 const StoreInfo = ({
   product,

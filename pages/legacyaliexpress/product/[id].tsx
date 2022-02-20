@@ -6,7 +6,7 @@ import Head from "next/head";
 import { useSession } from "next-auth/client";
 import { TerminalIcon } from "@heroicons/react/outline";
 
-import { IUser } from "../../../utils/types";
+import { IUser } from "../../../types";
 import { getAEProductInfo } from "../../../utils/redux/aeapiAsyncActions";
 import { selectAEApi } from "../../../utils/redux/aeapiSlice";
 import ProductDetails from "../../../components/legacy_aliexpress/ProductDetails";

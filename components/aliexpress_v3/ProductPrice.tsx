@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 
-import { IDropshipperProductDetails } from "../../utils/AETypes";
+import { IDropshipperProductDetails } from "../../types/AETypes";
 
 const ProductPrice = ({
   product,
