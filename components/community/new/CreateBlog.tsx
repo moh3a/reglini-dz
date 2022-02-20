@@ -7,7 +7,7 @@ import {
 } from "@heroicons/react/outline";
 
 import { createBlog } from "../../../utils/redux/blogsAsyncActions";
-import { getImages, getRawText } from "../../../utils/rawText";
+import { getRawText } from "../../../utils/rawText";
 import TextEditor from "./TextEditor";
 import BlogCategory from "./BlogCategory";
 
