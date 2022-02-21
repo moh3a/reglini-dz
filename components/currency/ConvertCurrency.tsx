@@ -33,7 +33,7 @@ const ConvertCurrency = ({ currency }: any) => {
   }, [rate]);
 
   return (
-    <div className="py-32 lg:py-44 px-4 flex flex-col items-center dark:text-yellow-100 bg-yellow-100 dark:bg-grim">
+    <div className="py-32 lg:py-44 px-4 flex flex-col items-center dark:text-yellow-100 bg-white dark:bg-grim">
       <h1 className="text-center text-xl lg:text-4xl font-bold">
         {t("inParallelMarket", { devise: selectedDevise.name })}{" "}
         <span className="underline text-gray-700 dark:text-gray-300">

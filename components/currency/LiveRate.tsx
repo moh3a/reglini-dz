@@ -1,12 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useTranslations } from "next-intl";
-import {
-  CurrencyDollarIcon,
-  CurrencyEuroIcon,
-  CurrencyPoundIcon,
-  ArrowDownIcon,
-  ArrowUpIcon,
-} from "@heroicons/react/outline";
+import { ArrowDownIcon, ArrowUpIcon } from "@heroicons/react/outline";
 
 const FlagEU = () => {
   return (

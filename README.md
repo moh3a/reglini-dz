@@ -1,5 +1,3 @@
 ## TODO
 
-- redesign currency route
-- admin table facebook pages and diagram? to explain access status
-- a lot of work on admin
+- a lot of work on admin...admin table facebook pages and diagram? to explain access status

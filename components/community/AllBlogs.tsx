@@ -21,9 +21,6 @@ function AllBlogs() {
 
   return (
     <>
-      <div className="text-white bg-red-500 py-6 text-center font-bold text-2xl select-none">
-        UNDER DEVELOPMENT !
-      </div>
       {user && (
         <div className="flex justify-around w-full py-8">
           <div className="flex items-center">
@@ -51,7 +48,7 @@ function AllBlogs() {
 
       <h1 className="text-2xl my-4 mx-4">Community blogs</h1>
       <div className="mx-4 my-6">
-        {blogs ? (
+        {blogs && blogs.length > 0 ? (
           <div className="grid grid-cols-2 gap-y-4 md:grid-cols-3 gap-x-2 md:gap-x-4 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-6">
             {blogs.map((blog: IBlog) => (
               <div key={blog._id} className="group cursor-pointer">
@@ -115,7 +112,9 @@ function AllBlogs() {
             ))}
           </div>
         ) : (
-          <div className="py-4 text-center">Fetching community blogs...</div>
+          <div className="py-4 text-xl font-bold text-center">
+            Fetching community blogs...
+          </div>
         )}
       </div>
     </>
