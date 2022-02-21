@@ -308,13 +308,13 @@ const NavLarge = ({ setOpen, user, placeholder }: any) => {
                   </div>
                 ) : (
                   <>
-                    <Link href="/login" passHref>
+                    <Link href="/auth/login" passHref>
                       <a className="text-sm font-medium text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400 ">
                         {t("signIn")}
                       </a>
                     </Link>
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                    <Link href="/register" passHref>
+                    <Link href="/auth/register" passHref>
                       <a className="text-sm font-medium text-gray-800 hover:text-grim dark:text-gray-100 dark:hover:text-gray-400 ">
                         {t("register")}
                       </a>

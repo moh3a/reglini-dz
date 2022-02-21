@@ -122,7 +122,7 @@ const Login = ({ csrfToken }: any) => {
       <ForgotPasswordModal />
       <p className="mt-2 mb-8 text-center">
         Don&apos;t have an account?{" "}
-        <Link href="/register" passHref>
+        <Link href="/auth/register" passHref>
           <a
             tabIndex={4}
             className="font-semibold text-gray-800 dark:text-gray-100 hover:text-black cursor-pointer"

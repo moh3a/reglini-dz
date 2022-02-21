@@ -45,7 +45,7 @@ const MetaAdsScreen = () => {
           <div className="mb-20 mx-4 md:mx-10 text-center text-2xl font-semibold">
             <h2>You have to be logged in to use this service.</h2>
             <div>
-              <Link href="/login" passHref>
+              <Link href="/auth/login" passHref>
                 <button className="bg-facebook text-white py-1 px-4 rounded-lg my-4">
                   Login
                 </button>

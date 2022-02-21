@@ -25,11 +25,11 @@ export default NextAuth({
         if (user) {
           const isMatch = await user.matchPasswords(credentials.password);
           if (!isMatch) {
-            throw `/login/${"invalid_credentials"}`;
+            throw `/auth/login/${"invalid_credentials"}`;
           }
           return user;
         } else {
-          throw `/login/${"user_not_found"}`;
+          throw `/auth/login/${"user_not_found"}`;
         }
       },
     }),
@@ -47,14 +47,14 @@ export default NextAuth({
           name: credentials.name,
         });
         if (checkname) {
-          throw `/register/${"username_taken"}`;
+          throw `/auth/register/${"username_taken"}`;
         }
         const checkemail = await User.findOne({
           account: "credentials",
           email: credentials.email,
         });
         if (checkemail) {
-          throw `/register/${"email_exists"}`;
+          throw `/auth/register/${"email_exists"}`;
         }
         if (!credentials.name) {
           credentials.name = credentials.email.split("@")[0];
@@ -96,7 +96,7 @@ export default NextAuth({
       if (isAllowedToSignIn) {
         return true;
       } else {
-        return "/login/blocked_from_signing_up";
+        return "/auth/login/blocked_from_signing_up";
       }
     },
     async jwt(token, user, account, profile, isNewUser) {
@@ -133,7 +133,7 @@ export default NextAuth({
     // verifyRequest,
     // newUser,
     // signOut,
-    signIn: "/login",
+    signIn: "/auth/login",
   },
   session: {
     jwt: true,

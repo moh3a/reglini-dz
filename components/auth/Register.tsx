@@ -47,7 +47,7 @@ const Register = ({ csrfToken }: any) => {
       </form>
       <p className="mt-8 text-center">
         Already have an account?{" "}
-        <Link href="/login" passHref>
+        <Link href="/auth/login" passHref>
           <a
             className="font-semibold text-gray-800 dark:text-gray-100 hover:text-black"
             tabIndex={6}

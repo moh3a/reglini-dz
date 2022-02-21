@@ -18,7 +18,7 @@ const Profile = () => {
   useEffect(() => {
     if (!loading && !session && !isAuthenticated)
       router.push({
-        pathname: "/login/[message]",
+        pathname: "/auth/login/[message]",
         query: { message: "login_to_view_account" },
       });
   }, [router, session, loading, dispatch, isAuthenticated, status]);

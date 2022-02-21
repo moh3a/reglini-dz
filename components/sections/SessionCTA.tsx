@@ -52,7 +52,7 @@ const SessionCTA = () => {
               </div>
             ) : (
               <div className="max-w-sm bg-white rounded-lg dark:bg-gray-800">
-                <Link href="/login" passHref>
+                <Link href="/auth/login" passHref>
                   <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700">
                     {t("signIn")}
                   </a>

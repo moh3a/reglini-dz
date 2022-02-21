@@ -22,7 +22,7 @@ const Wishlist = ({ messages }: any) => {
   useEffect(() => {
     if (!loading && !session && !isAuthenticated)
       router.push({
-        pathname: "/login/[message]",
+        pathname: "/auth/login/[message]",
         query: { message: "login_to_view_wishlist" },
       });
   }, [router, session, loading, dispatch, isAuthenticated, status]);

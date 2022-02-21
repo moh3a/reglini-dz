@@ -20,7 +20,7 @@ const NewOrderScreen = () => {
   useEffect(() => {
     if (!loading && !session && !isAuthenticated)
       router.push({
-        pathname: "/login/[message]",
+        pathname: "/auth/login/[message]",
         query: { message: "login_to_place_order" },
       });
   }, [router, session, loading, dispatch, isAuthenticated, status]);

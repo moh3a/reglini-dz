@@ -123,7 +123,7 @@ const NavSmall = ({ open, setOpen, user, placeholder }: any) => {
               ) : (
                 <>
                   <div className="flow-root">
-                    <Link href="/login" passHref>
+                    <Link href="/auth/login" passHref>
                       <a
                         onClick={() => setOpen(false)}
                         className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100"
@@ -133,7 +133,7 @@ const NavSmall = ({ open, setOpen, user, placeholder }: any) => {
                     </Link>
                   </div>
                   <div className="flow-root">
-                    <Link href="/register" passHref>
+                    <Link href="/auth/register" passHref>
                       <a
                         onClick={() => setOpen(false)}
                         className="-m-2 p-2 block font-medium text-gray-800 dark:text-gray-100"

@@ -234,7 +234,7 @@ export const ActionFeedback = ({
       {success && <SuccessDialog>{success}</SuccessDialog>}
       {error && (
         <DangerDialog
-        // action="Login" actionUrl="/login"
+        // action="Login" actionUrl="/auth/login"
         >
           {error}
         </DangerDialog>

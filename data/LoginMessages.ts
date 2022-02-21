@@ -10,7 +10,7 @@ export const LoginErrorMessages: ILoginMessage[] = [
   },
   {
     name: "user_not_found",
-    text: "No user was found, please register following <Link href='/register'>this link<Link>.",
+    text: "No user was found, please register following <Link href='/auth/register'>this link<Link>.",
   },
   {
     name: "login_to_view_wishlist",

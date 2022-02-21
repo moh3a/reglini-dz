@@ -49,7 +49,7 @@ const DeleteAccount = ({ messages }: any) => {
         }, 5000);
       } else if (data.success) {
         signOut();
-        router.push(`/login/account_deleted`);
+        router.push(`/auth/login/account_deleted`);
       }
     } catch (error: any) {
       setError(error.response.data.error);
