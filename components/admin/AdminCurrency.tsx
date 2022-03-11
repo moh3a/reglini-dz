@@ -38,7 +38,7 @@ const AdminCurrency = () => {
   const submitHandler = async (e: any) => {
     e.preventDefault();
     let live = {
-      time: date,
+      updated: date,
       official: {
         sale: officialRate,
       },

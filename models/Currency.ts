@@ -18,7 +18,7 @@ const currencySchema = new mongoose.Schema({
   },
   historical: [
     {
-      time: String,
+      updated: String,
       official: {
         sale: Number,
       },
