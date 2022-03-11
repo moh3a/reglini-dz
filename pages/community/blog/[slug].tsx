@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
@@ -35,28 +35,15 @@ const BlogScreen = ({ data }: any) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
+export const getServerSideProps: GetServerSideProps = async ({
+  locale,
+  params,
+}) => {
   const { data } = await axios.get(
     `https://reglini-dz.com/api/community/blogslug/${params?.slug}`
   );
   return {
-    props: {
-      data,
-      messages: require(`../../../locales/${locale}.json`),
-    },
-    revalidate: 30,
-  };
-};
-
-export const getStaticPaths: GetStaticPaths = async ({}) => {
-  const { data } = await axios.post(`https://reglini-dz.com/api/community`);
-  const paths = data.blogs.map((blog: any) => ({
-    params: { slug: blog.slug },
-  }));
-
-  return {
-    paths,
-    fallback: false,
+    props: { data, messages: require(`../../../locales/${locale}.json`) },
   };
 };
 
