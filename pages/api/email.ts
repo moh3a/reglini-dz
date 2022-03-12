@@ -10,7 +10,7 @@ export default async function handler(
   const session: IUser | null = await getSession({ req });
 
   if (req.method === "POST") {
-    const { subject, message } = req.body;
+    const { subject, message, to, from } = req.body;
 
     try {
       let name: IUser["user.name"],
@@ -26,8 +26,6 @@ export default async function handler(
           provider = session.user.provider;
         }
       }
-      const to = "support@reglini-dz.com";
-      const from = "moh3a@reglini-dz.com";
       const userinfo =
         session && session.user
           ? `

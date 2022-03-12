@@ -17,6 +17,8 @@ const Contact = () => {
   const submitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
     const data = await axios.post("/api/email", {
+      to: "support@reglini-dz.com",
+      from: "moh3a@reglini-dz.com",
       subject: subject,
       message: message,
     });
