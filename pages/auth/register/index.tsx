@@ -29,8 +29,8 @@ const RegisterScreen = ({ providers, csrfToken, children }: any) => {
         <section className="flex flex-col items-center lg:my-8 sm:my-4 md:flex-row">
           <div className="container mx-auto">
             <div className="flex justify-center px-2 py-6 ">
-              <div className="flex w-full rounded-lg xl:w-3/4 lg:w-11/12 lg:shadow-xl border border-yellow-200">
-                <div className="relative hidden w-full h-auto bg-white  bg-cover dark:bg-grim border-r rounded-l-lg lg:block lg:w-6/12">
+              <div className="flex w-full rounded-lg xl:w-3/4 lg:w-11/12 lg:shadow-xl">
+                <div className="relative hidden w-full h-auto bg-gray-100  bg-cover dark:bg-grim border-r rounded-l-lg lg:block lg:w-6/12">
                   <div className="relative z-0 m-12 text-left ">
                     <h1 className="mt-12 mb-2 text-2xl font-semibold tracking-tighter text-gray-800 dark:text-gray-100 sm:text-3xl title-font">
                       {" "}
@@ -43,7 +43,7 @@ const RegisterScreen = ({ providers, csrfToken, children }: any) => {
                     </div>
                   </div>
                 </div>
-                <div className="w-full px-8 py-24 bg-white dark:bg-grim rounded-lg border-gray-800 lg:w-8/12 lg:px-24 lg:py-4 lg:rounded-l-none s">
+                <div className="w-full px-8 py-24 bg-gray-50 dark:bg-grim rounded-lg border-gray-800 lg:w-8/12 lg:px-24 lg:py-4 lg:rounded-l-none s">
                   <div className="relative z-0 text-left ">
                     <h1 className="lg:hidden text-3xl font-semibold text-center text-gray-800 dark:text-gray-100">
                       Sign Up

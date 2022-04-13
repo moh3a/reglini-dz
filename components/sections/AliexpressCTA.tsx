@@ -9,11 +9,9 @@ export default function AliexpressCTA() {
   return (
     <div
       className={`flex items-center  h-[calc(100vh-6rem)] md:h-[calc(100vh-5rem)] 
-      bg-aliexpress-svg bg-pink-50 bg-no-repeat bg-content bg-top dark:bg-grim
+      bg-aliexpress-svg bg-white bg-no-repeat bg-content bg-top dark:bg-grim
       `}
     >
-      {/* make this the norm */}
-      {/* bg-gradient-to-br from-[#af4670] via-[#c07eec] to-[#a992f7] dark:from-black dark:via-grim dark:to-gray-600 */}
       <div
         className={`max-w-7xl mx-auto py-12 px-4 ${
           router.locale === "ar" ? "text-right lg:flex-row-reverse" : ""

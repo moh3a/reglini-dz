@@ -11,7 +11,7 @@ const SessionCTA = () => {
   const router = useRouter();
 
   return (
-    <header className="py-64 bg-white dark:bg-grim border-t border-b border-yellow-200 text-black dark:text-yellow-100">
+    <header className="py-64 bg-gray-50 dark:bg-grim text-black dark:text-yellow-100">
       <div className="container px-6 mx-auto">
         <div
           className={`flex flex-col ${

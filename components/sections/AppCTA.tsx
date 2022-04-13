@@ -6,7 +6,7 @@ const AppCTA = () => {
   const router = useRouter();
 
   return (
-    <section className="py-64 text-gray-800 dark:text-gray-100 bg-yellow-50 dark:bg-grim border-b border-yellow-200 body-font">
+    <section className="py-64 text-gray-800 dark:text-gray-100 dark:bg-grim body-font">
       <div
         className={`container px-5 mx-auto flex items-center ${
           router.locale === "ar"

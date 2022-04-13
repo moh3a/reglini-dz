@@ -32,7 +32,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="w-full max-w-2xl px-6 py-4 mx-auto lg:mb-32 my-16 bg-yellow-100 border-2 border-yellow-200 rounded-md shadow-md dark:bg-grim dark:text-yellow-100">
+    <section className="w-full max-w-2xl px-6 py-4 mx-auto lg:mb-32 my-16 border-2 border-yellow-200 rounded-md shadow-md dark:bg-grim dark:text-yellow-100">
       {success && <SuccessDialog>{success} </SuccessDialog>}
       {error && <DangerDialog>{error} </DangerDialog>}
       <h1 className="text-3xl font-semibold text-center ">{t("getInTouch")}</h1>

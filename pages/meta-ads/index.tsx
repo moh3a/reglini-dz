@@ -20,7 +20,7 @@ const MetaAdsScreen = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col justify-center items-center w-full bg-gray-100 dark:bg-gray-700">
+      <div className="flex flex-col justify-center items-center w-full bg-gray-100 dark:bg-grim">
         <div className="h-28 w-28 lg:h-60 lg:w-60 select-none">
           <img src="/meta-icon.png" alt="meta logo" />
         </div>
