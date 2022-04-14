@@ -35,7 +35,7 @@ export default function Orders() {
   }, [orderStatusCode, orderMessage, message]);
 
   return (
-    <div className="bg-white dark:bg-grim shadow overflow-hidden sm:rounded-lg">
+    <div className=" overflow-hidden">
       {errorCode && messages && (
         <AlertMessage type="error" message={messages} />
       )}
@@ -50,7 +50,7 @@ export default function Orders() {
           user.orders.map((order: any) => (
             <div
               key={order.orderId}
-              className="my-2 rounded-lg border border-black dark:border-yellow-200 bg-yellow-100 dark:bg-black"
+              className="my-2 rounded-lg bg-gray-50 dark:bg-grim shadow-lg"
             >
               <Link href={`/account/orders/${order.orderId}`} passHref>
                 <div className="flex cursor-pointer">
@@ -81,7 +81,7 @@ export default function Orders() {
                         </small>
                       </p>
                     </div>
-                    <div className="absolute bottom-0 right-0 border border-yellow-700 bg-yellow-600 text-white font-bold m-1 py-1 px-3 rounded-lg">
+                    <div className="absolute bottom-0 right-0 bg-aliexpress text-white font-bold m-1 py-1 px-3 rounded-lg">
                       View details
                     </div>
                   </div>

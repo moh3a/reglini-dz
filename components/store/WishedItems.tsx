@@ -32,7 +32,7 @@ const WishedItems = ({ wishlist }: any) => {
           return (
             <div
               key={item.productId}
-              className="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-grim"
+              className="max-w-xs mx-auto overflow-hidden bg-gray-50 dark:bg-grim rounded-lg shadow-lg "
             >
               <div className="px-4 py-2">
                 <h1 className="h-10 w-10">

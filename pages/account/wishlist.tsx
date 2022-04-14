@@ -44,7 +44,7 @@ const Wishlist = ({ messages }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {session && (
-        <div className="flex flex-col bg-white dark:bg-grim">
+        <div className="flex flex-col">
           <div
             className={`m-4 p-4 text-4xl ${
               router.locale === "ar" && "text-right"
@@ -52,7 +52,7 @@ const Wishlist = ({ messages }: any) => {
           >
             {t("yourWishlist")}
           </div>
-          <div className="border-t border-b border-black dark:border-yellow-200 bg-yellow-100 dark:bg-black">
+          <div>
             {user && wishlist.length > 0 ? (
               <WishedItems wishlist={wishlist} />
             ) : (
