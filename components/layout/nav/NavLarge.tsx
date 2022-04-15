@@ -254,6 +254,24 @@ const NavLarge = ({ setOpen, user, placeholder }: any) => {
                                 </Link>
                               )}
                             </Menu.Item>
+                            {user.role === "admin" && (
+                              <Menu.Item>
+                                {({ active }) => (
+                                  <Link href="/admin">
+                                    <a
+                                      className={classNames(
+                                        active
+                                          ? "bg-gray-200 dark:bg-gray-800"
+                                          : "",
+                                        "block px-4 py-2 text-sm text-black dark:text-yellow-100 hover:bg-yellow-200 dark:hover:text-black"
+                                      )}
+                                    >
+                                      Admin
+                                    </a>
+                                  </Link>
+                                )}
+                              </Menu.Item>
+                            )}
                             <Menu.Item>
                               {({ active }) => (
                                 <Link href="/account/wishlist">

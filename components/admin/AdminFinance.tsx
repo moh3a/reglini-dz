@@ -39,29 +39,29 @@ const AdminFinance = () => {
   };
 
   return (
-    <div className="my-2 p-2 border-2 border-black dark:border-yellow-200 rounded-lg">
-      <div className="my-2">
-        {error && <AlertMessage type="error" message={error} />}
-        {success && <AlertMessage type="success" message={success} />}
-        <h1 className="text-xl font-semibold mb-1">Finance</h1>
-        <form className="flex flex-col" onSubmit={submitHandler}>
-          <div className="flex my-1">
-            <label className="flex-1">Commission rate</label>
-            <input
-              className="flex-1 text-center rounded-full text-black"
-              type="number"
-              value={commission}
-              onChange={(e) => setCommission(parseFloat(e.target.value))}
-            />
-          </div>
+    <div className="my-2">
+      {error && <AlertMessage type="error" message={error} />}
+      {success && <AlertMessage type="success" message={success} />}
+      <h1 className="text-xl font-semibold mb-1">Finance</h1>
+      <form className="flex flex-col" onSubmit={submitHandler}>
+        <div className="flex my-1">
+          <label className="flex-1">Commission rate</label>
+          <input
+            className="flex-1 text-center rounded-full text-black"
+            type="number"
+            value={commission}
+            onChange={(e) => setCommission(parseFloat(e.target.value))}
+          />
+        </div>
+        <div className="mt-2">
           <button
             type="submit"
-            className="mt-2 border-2 border-green-300 bg-green-200 dark:bg-green-500 rounded-lg p-1"
+            className="bg-green-200 hover:bg-green-300 dark:bg-green-600 dark:hover:bg-green-700 rounded-lg py-1 px-3"
           >
             Submit
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   );
 };

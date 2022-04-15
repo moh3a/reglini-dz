@@ -44,7 +44,7 @@ const AdminScreen = ({ children }: { children: ReactNode }) => {
       {user && user.role === "admin" && (
         <div className="flex">
           <AdminSidebar user={user} />
-          <div className="ml-20 px-5 w-full bg-white dark:bg-grim">
+          <div className="ml-32 px-5 w-full">
             <h1 className="my-10 text-2xl font-bold">Welcome {user.name}.</h1>
             {router.asPath === "/admin" && (
               <div>

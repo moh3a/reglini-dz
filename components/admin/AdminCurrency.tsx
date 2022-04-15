@@ -4,6 +4,12 @@ import axios from "axios";
 
 import AlertMessage from "../elements/AlertMessage";
 
+const currenciesLabels = [
+  { id: "DZDEUR", text: "DZD / EUR" },
+  { id: "DZDUSD", text: "DZD / USD" },
+  { id: "DZDGBP", text: "DZD / GBP" },
+];
+
 const AdminCurrency = () => {
   let date = new Date().toISOString().substring(0, 10);
   const [currency, setCurrency] = useState("DZDEUR");
@@ -66,114 +72,86 @@ const AdminCurrency = () => {
   };
 
   return (
-    <div className="my-2 p-2 border-2 border-black dark:border-yellow-200 rounded-lg">
-      <div className="my-2">
-        {error && <AlertMessage type="error" message={error} />}
-        {success && <AlertMessage type="success" message={success} />}
-        <h1 className="text-xl font-semibold mb-1">Currency Rates</h1>
-        {done ? (
-          <p className="font-bold text-green-600">Task already done.</p>
-        ) : (
-          <>
-            <p className="font-bold text-red-600">
-              You should add daily currecny rates for this date {date}{" "}
-            </p>
-            <form className="flex flex-col" onSubmit={submitHandler}>
-              <RadioGroup
-                value={currency}
-                onChange={setCurrency}
-                className="flex my-2"
-              >
-                <RadioGroup.Label>Currency: </RadioGroup.Label>
-                <RadioGroup.Option value="DZDEUR">
+    <div className="my-2">
+      {error && <AlertMessage type="error" message={error} />}
+      {success && <AlertMessage type="success" message={success} />}
+      <h1 className="text-xl font-semibold mb-1">Currency Rates</h1>
+      {done ? (
+        <p className="font-bold text-green-600">Task already done.</p>
+      ) : (
+        <>
+          <p className="font-bold text-red-600">
+            You should add daily currecny rates for this date {date}{" "}
+          </p>
+          <form className="flex flex-col" onSubmit={submitHandler}>
+            <RadioGroup
+              value={currency}
+              onChange={setCurrency}
+              className="flex my-2"
+            >
+              <RadioGroup.Label>Currency: </RadioGroup.Label>
+              {currenciesLabels.map((c) => (
+                <RadioGroup.Option key={c.id} value={c.id}>
                   {({ checked }) => (
                     <span
-                      className={`mx-1 border-2 rounded-md p-1 ${
+                      className={`mx-1 rounded-lg p-1 shadow cursor-pointer ${
                         checked
-                          ? "border-red-300 bg-red-200 dark:bg-red-500"
-                          : "border-gray-200 bg-gray-200 dark:bg-gray-500"
+                          ? "bg-red-200 dark:bg-red-600"
+                          : "bg-gray-100 dark:bg-grim"
                       }`}
                     >
-                      DZD / EUR
+                      {c.text}
                     </span>
                   )}
                 </RadioGroup.Option>
-                <RadioGroup.Option value="DZDUSD">
-                  {({ checked }) => (
-                    <span
-                      className={`mx-1 border-2 rounded-md p-1 ${
-                        checked
-                          ? "border-red-300 bg-red-200 dark:bg-red-500"
-                          : "border-gray-200 bg-gray-200 dark:bg-gray-500"
-                      }`}
-                    >
-                      DZD / USD
-                    </span>
-                  )}
-                </RadioGroup.Option>
-                <RadioGroup.Option value="DZDGBP">
-                  {({ checked }) => (
-                    <span
-                      className={`mx-1 border-2 rounded-md p-1 ${
-                        checked
-                          ? "border-red-300 bg-red-200 dark:bg-red-500"
-                          : "border-gray-200 bg-gray-200 dark:bg-gray-500"
-                      }`}
-                    >
-                      DZD / GBP
-                    </span>
-                  )}
-                </RadioGroup.Option>
-              </RadioGroup>
-              <div>
-                <p>{currency} Parallel market</p>
-                <div className="flex my-1">
-                  <label className="flex-1">purchase</label>
-                  <input
-                    className="flex-1 text-center rounded-full text-black"
-                    type="number"
-                    value={parallelPurchase ? parallelPurchase : 0}
-                    onChange={(e) =>
-                      setParallelPurchase(parseFloat(e.target.value))
-                    }
-                  />
-                </div>
-                <div className="flex my-1">
-                  <label className="flex-1">sale</label>
-                  <input
-                    className="flex-1 text-center rounded-full text-black"
-                    type="number"
-                    value={parallelSale ? parallelSale : 0}
-                    onChange={(e) =>
-                      setParallelSale(parseFloat(e.target.value))
-                    }
-                  />
-                </div>
+              ))}
+            </RadioGroup>
+            <div>
+              <p>{currency} Parallel market</p>
+              <div className="flex my-1">
+                <label className="flex-1">purchase</label>
+                <input
+                  className="flex-1 text-center rounded-full text-black"
+                  type="number"
+                  value={parallelPurchase ? parallelPurchase : 0}
+                  onChange={(e) =>
+                    setParallelPurchase(parseFloat(e.target.value))
+                  }
+                />
               </div>
-              <div>
-                <p>{currency} Official market</p>
-                <div className="flex my-1">
-                  <label className="flex-1">sale</label>
-                  <input
-                    className="flex-1 text-center rounded-full text-black"
-                    type="number"
-                    value={officialRate ? officialRate : 0}
-                    onChange={(e) =>
-                      setOfficialRate(parseFloat(e.target.value))
-                    }
-                  />
-                </div>
+              <div className="flex my-1">
+                <label className="flex-1">sale</label>
+                <input
+                  className="flex-1 text-center rounded-full text-black"
+                  type="number"
+                  value={parallelSale ? parallelSale : 0}
+                  onChange={(e) => setParallelSale(parseFloat(e.target.value))}
+                />
               </div>
+            </div>
+            <div>
+              <p>{currency} Official market</p>
+              <div className="flex my-1">
+                <label className="flex-1">sale</label>
+                <input
+                  className="flex-1 text-center rounded-full text-black"
+                  type="number"
+                  value={officialRate ? officialRate : 0}
+                  onChange={(e) => setOfficialRate(parseFloat(e.target.value))}
+                />
+              </div>
+            </div>
+            <div className="mt-2">
               <button
                 type="submit"
-                className="mt-2 border-2 border-green-300 bg-green-200 dark:bg-green-500 rounded-lg p-1"
+                className="bg-green-200 hover:bg-green-300 dark:bg-green-600 dark:hover:bg-green-700 rounded-lg py-1 px-3"
               >
                 Submit
               </button>
-            </form>
-          </>
-        )}
-      </div>
+            </div>
+          </form>
+        </>
+      )}
     </div>
   );
 };
