@@ -38,7 +38,7 @@ const AdminCurrencyScreen = () => {
   return (
     <>
       <Head>
-        <title>reglini-dz Admin Page</title>
+        <title>Order commission control | reglini-dz Admin</title>
         <meta name="description" content="Private admin page." />
         <link rel="icon" href="/favicon.ico" />
       </Head>

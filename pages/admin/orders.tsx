@@ -38,7 +38,7 @@ const AdminOrdersScreen = () => {
   return (
     <>
       <Head>
-        <title>reglini-dz Admin Page</title>
+        <title>List of all orders | reglini-dz Admin</title>
         <meta name="description" content="Private admin page." />
         <link rel="icon" href="/favicon.ico" />
       </Head>

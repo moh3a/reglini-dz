@@ -5,6 +5,7 @@ import dbConnect from "../../../config/db";
 import User from "../../../models/User";
 import Currency from "../../../models/Currency";
 import Finance from "../../../models/Finance";
+import Feedback from "../../../models/Feedback";
 import CheckSession from "../../../utils/checkSession";
 import { IExtendedAPIRequest } from "../../../types";
 
@@ -38,11 +39,15 @@ handler
         "live"
       );
       const finance = await Finance.findOne();
+      const feedback = await Feedback.findOne({}).select(
+        "averageRate feedbackCount"
+      );
       res.status(200).json({
         success: true,
         data: {
           finance,
           rate: currency,
+          feedback,
         },
       });
     } catch (error: any) {

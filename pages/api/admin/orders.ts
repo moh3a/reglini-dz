@@ -36,6 +36,7 @@ handler
     try {
       const data = await User.find()
         .select("email picture orders")
+        .sort({ "orders.createdAt": 1 })
         .map((res) => {
           let u: any[] = [];
           res.map((user: any) => {

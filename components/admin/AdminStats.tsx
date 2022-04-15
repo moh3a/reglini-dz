@@ -1,13 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
+import { StarIcon } from "@heroicons/react/solid";
 
 const AdminStats = () => {
   const [finance, setFinance] = useState<any>();
   const [rate, setRate] = useState<any>();
+  const [feedback, setFeedback] = useState<any>();
 
   const fetchUsers = useCallback(async () => {
     const { data } = await axios.get("/api/admin/stats");
+    console.log(data);
+    setFeedback(data.data.feedback);
     setRate(data.data.rate.live.parallel.purchase);
     setFinance(data.data.finance);
   }, []);
@@ -18,41 +22,58 @@ const AdminStats = () => {
 
   return (
     <div className="my-2 p-2">
-      <h1 className="text-xl font-semibold mb-1">Feedback stats</h1>
-      <div className="flex flex-col items-center justify-center md:flex-row md:justify-around">
-        To be continued...
-      </div>
+      {feedback && (
+        <div className="my-4">
+          <h1 className="text-xl font-semibold mb-1">Feedback stats</h1>
+          <p>
+            <span className="text-gray-600 dark:text-gray-400">
+              Average service rating
+            </span>{" "}
+            <span className="text-yellow-400">
+              <StarIcon className="h-6 w-6 mr-1 inline" aria-hidden="true" />
+              {feedback.averageRate}
+            </span>
+          </p>
+          <p>
+            <span className="text-gray-600 dark:text-gray-400">
+              Feedback count:
+            </span>{" "}
+            {feedback.feedbackCount}
+          </p>
+        </div>
+      )}
+
       {finance && (
-        <>
+        <div className="my-4">
           <h1 className="text-xl font-semibold mb-1">Money stats</h1>
-          <div className="flex flex-col items-center justify-center md:flex-row md:justify-around">
-            <>
-              <div className="my-1 cursor-pointer bg-gray-100 hover:bg-gray-200 border border-gray-200 dark:bg-gray-600 dark:hover:bg-gray-800 text-center w-44 h-44 rounded-lg shadow-md flex flex-col justify-center items-center">
-                <div className="text-xl font-bold ">Revenue DZD</div>
-                <div>{finance.ordersMoneySumDinars} DZD</div>
-              </div>
-              <div className="my-1 cursor-pointer bg-gray-100 hover:bg-gray-200 border border-gray-200 dark:bg-gray-600 dark:hover:bg-gray-800 text-center w-44 h-44 rounded-lg shadow-md flex flex-col justify-center items-center">
-                <div className="text-xl font-bold ">Paid in Euros</div>
-                <div>{finance.ordersMoneySumEuros} euros</div>
-              </div>
-              <div className="my-1 cursor-pointer bg-gray-100 hover:bg-gray-200 border border-gray-200 dark:bg-gray-600 dark:hover:bg-gray-800 text-center w-44 h-44 rounded-lg shadow-md flex flex-col justify-center items-center">
-                <div className="text-xl font-bold ">Profit DZD</div>
-                <div>
-                  {Math.round(
-                    finance.ordersMoneySumDinars -
-                      finance.ordersMoneySumEuros * rate
-                  )}{" "}
-                  DZD
-                </div>
-              </div>
-            </>
-          </div>
-          <h1 className="text-xl font-semibold mb-1">Accepted payments</h1>
-          <div className="m-1 cursor-pointer bg-gray-100 hover:bg-gray-200 border border-gray-200 dark:bg-gray-600 dark:hover:bg-gray-800 text-center w-44 h-44 rounded-lg shadow-md flex flex-col justify-center items-center">
-            <div className="text-xl font-bold ">Accepted payments</div>
-            <div>{finance.acceptedPayments.length} payments</div>
-          </div>
-        </>
+          <p>
+            <span className="text-gray-600 dark:text-gray-400">
+              Revenue DZD:
+            </span>{" "}
+            {finance.ordersMoneySumDinars} DZD
+          </p>
+          <p>
+            <span className="text-gray-600 dark:text-gray-400">
+              Paid in Euros:
+            </span>{" "}
+            {finance.ordersMoneySumEuros} euros
+          </p>
+          <p>
+            <span className="text-gray-600 dark:text-gray-400">
+              Profit DZD:
+            </span>{" "}
+            {Math.round(
+              finance.ordersMoneySumDinars - finance.ordersMoneySumEuros * rate
+            )}{" "}
+            DZD
+          </p>
+          <p>
+            <span className="text-gray-600 dark:text-gray-400">
+              Number of accepted payments:
+            </span>{" "}
+            {finance.acceptedPayments.length}
+          </p>
+        </div>
       )}
     </div>
   );
