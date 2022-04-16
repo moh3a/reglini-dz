@@ -19,7 +19,6 @@ const CurrencyView = ({ currency }: any) => {
   );
 };
 
-// export const getStaticProps: GetStaticProps = async ({ locale }) => {
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   const { data } = await axios.get(`${process.env.NEXTAUTH_URL}/api/currency`);
   return {

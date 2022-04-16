@@ -39,6 +39,11 @@ export default function Orders() {
       {errorCode && messages && (
         <AlertMessage type="error" message={messages} />
       )}
+      {router.query &&
+        router.query.error &&
+        router.query.error === "order_not_found" && (
+          <AlertMessage type="error" message={"Order not found."} />
+        )}
       <h1
         className={`${router.locale === "ar" && "text-right"} m-4 p-4 text-4xl`}
       >

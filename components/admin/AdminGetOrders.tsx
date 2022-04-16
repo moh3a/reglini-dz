@@ -1,7 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import { XCircleIcon, CheckCircleIcon } from "@heroicons/react/outline";
+import {
+  XCircleIcon,
+  CheckCircleIcon,
+  CursorClickIcon,
+} from "@heroicons/react/outline";
 
 import Avatar from "../elements/Avatar";
 
@@ -53,10 +57,43 @@ const AdminPayment = () => {
                   />
                 </div>
                 <div>
+                  <a
+                    href={`https://www.aliexpress.com/p/order/detail.html?orderId=${receipt.order.orderId}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block"
+                  >
+                    <span className="font-bold text-gray-600 dark:text-gray-400">
+                      Order ID{" "}
+                      <CursorClickIcon
+                        className="flex-shink-0 h-6 w-6 inline"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    : {receipt.order.orderId}
+                  </a>
                   <p>
-                    <span className="font-bold">Order ID</span>:{" "}
-                    {receipt.order.orderId}
+                    <span className="font-bold text-gray-600 dark:text-gray-400">
+                      Order created at
+                    </span>
+                    : {receipt.order.createdAt.substring(0, 10)}{" "}
+                    {receipt.order.createdAt.substring(11, 16)}
                   </p>
+                  <a
+                    href={`https://www.reglini-dz.com/aliexpress/product/${receipt.order.product.productId}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block"
+                  >
+                    <span className="font-bold text-gray-600 dark:text-gray-400">
+                      Product ID{" "}
+                      <CursorClickIcon
+                        className="flex-shink-0 h-6 w-6 inline"
+                        aria-hidden="true"
+                      />
+                    </span>
+                    : {receipt.order.product.productId}
+                  </a>
                   <p className="font-serif font-semibold">
                     {receipt.order.product.name}
                   </p>

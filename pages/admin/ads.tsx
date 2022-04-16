@@ -38,7 +38,7 @@ const AdminAdsScreen = () => {
   return (
     <>
       <Head>
-        <title>reglini-dz Admin Page</title>
+        <title>Meta ads | reglini-dz Admin</title>
         <meta name="description" content="Private admin page." />
         <link rel="icon" href="/favicon.ico" />
       </Head>

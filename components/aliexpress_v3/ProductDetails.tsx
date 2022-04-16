@@ -160,7 +160,7 @@ const ProductDetails = ({
       <div className="hidden md:block">
         <MiniSearchAE />
       </div>
-      <div className="flex md:hidden bg-red-50 dark:bg-grim text-gray-800 dark:text-yellow-100 ">
+      <div className="flex md:hidden bg-gray-50 dark:bg-grim dark:text-yellow-50 ">
         <div
           onClick={() => router.push("/aliexpress")}
           className="cursor-pointer mx-1 my-2 w-full border border-gray-600 dark:border-yellow-200 rounded-lg px-3 py-1"
@@ -173,7 +173,7 @@ const ProductDetails = ({
           </span>
         </div>
       </div>
-      <section className="bg-red-50 dark:bg-grim text-gray-800 dark:text-yellow-100 body-font">
+      <section className="bg-gray-50 dark:bg-grim dark:text-yellow-50 body-font">
         <ActionFeedback message={message} error={error} />
         <div className="container px-5 py-24 mx-auto">
           <div

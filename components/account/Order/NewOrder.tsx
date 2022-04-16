@@ -74,7 +74,7 @@ export default function NewOrder({
   };
 
   return (
-    <div className="border-t border-b mb-12 border-yellow-200 bg-white dark:bg-grim text-black dark:text-white shadow overflow-hidden sm:rounded-lg">
+    <div className="mb-12 dark:bg-grim shadow-lg overflow-hidden">
       <ActionFeedback message={message} />
       <div className="px-4 pb-5 sm:px-6">
         <h1 className="text-lg leading-6 font-medium">{t("placeNewOrder")}</h1>

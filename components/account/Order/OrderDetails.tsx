@@ -35,9 +35,11 @@ export default function OrderDetails({ id }: { id: string }) {
       );
       if (index !== -1) {
         setOrder(user.orders[index]);
+      } else {
+        router.push("/account/orders?error=order_not_found");
       }
     }
-  }, [id, user]);
+  }, [id, user, router]);
 
   return (
     <div className="py-10 dark:bg-grim overflow-hidden">
@@ -73,31 +75,46 @@ export default function OrderDetails({ id }: { id: string }) {
               <div className="px-4 py-5 sm:px-6 text-center lg:text-left">
                 <h1 className="text-lg leading-6 font-medium">
                   <Link href={`/account/orders/${order.orderId}`} passHref>
-                    <div>
-                      {t("orderId")}: {order.orderId}
-                    </div>
+                    <>
+                      <span className="text-gray-600 dark:text-gray-300">
+                        {t("orderId")}:
+                      </span>{" "}
+                      {order.orderId}
+                    </>
                   </Link>
                 </h1>
                 {!order.payment.hasTimedOut && (
                   <>
                     {order.createdAt && (
                       <p>
-                        {t("orderTime")}: {order.createdAt.substring(0, 10)}{" "}
+                        <span className="text-gray-600 dark:text-gray-300">
+                          {t("orderTime")}:
+                        </span>{" "}
+                        {order.createdAt.substring(0, 10)}{" "}
                         {order.createdAt.substring(11, 16)} GMT
                       </p>
                     )}
                     {order.details.order_status && (
                       <p>
-                        {t("orderStatus")}:{" "}
-                        <span className="text-lg font-semibold text-gray-500">
-                          {order.details.order_status}
-                        </span>
+                        <span className="text-gray-600 dark:text-gray-300">
+                          {t("orderStatus")}:
+                        </span>{" "}
+                        {order.details.order_status}
                       </p>
                     )}
-                    <small>
-                      {t("productId")}: {order.product.productId}
-                    </small>
-                    <p className="text-2xl">{order.product.name} </p>
+                    <p>
+                      <span className="text-gray-600 dark:text-gray-300">
+                        {t("productId")}:
+                      </span>
+                      {order.product.productId}
+                    </p>
+                    <p className="text-2xl">
+                      <Link
+                        href={`/aliexpress/product/${order.product.productId}`}
+                      >
+                        {order.product.name}
+                      </Link>
+                    </p>
                     <p className="font-bold text-xl text-red-500">
                       {order.product.totalPrice} DZD
                     </p>

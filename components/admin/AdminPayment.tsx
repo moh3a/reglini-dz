@@ -1,18 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect, useCallback } from "react";
-import { useSelector } from "react-redux";
 import axios from "axios";
+import {
+  CursorClickIcon,
+  InformationCircleIcon,
+} from "@heroicons/react/outline";
 
-import { selectUser } from "../../utils/redux/userSlice";
 import Avatar from "../elements/Avatar";
-import { InformationCircleIcon } from "@heroicons/react/outline";
 
 const AdminPayment = () => {
   const [receipts, setReceipts] = useState<any>();
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const [message, setMessage] = useState({ message: "", orderId: "" });
-  const { user } = useSelector(selectUser);
 
   const fetchUsers = useCallback(async () => {
     const { data } = await axios.get("/api/admin/paymentValidation");
@@ -58,7 +58,7 @@ const AdminPayment = () => {
         receipts.map((receipt: any) => (
           <div
             key={receipt.order.orderId}
-            className="border border-yellow-200 rounded-lg my-1 p-2"
+            className="bg-gray-50 dark:bg-grim rounded-lg shadow-lg my-4 p-2"
           >
             <div className="flex">
               {receipt.picture && (
@@ -77,19 +77,71 @@ const AdminPayment = () => {
             </div>
 
             <div>
-              <div className="border border-gray-100 shadow-md">
+              <div className="">
+                <a
+                  href={`https://www.aliexpress.com/p/order/detail.html?orderId=${receipt.order.orderId}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block"
+                >
+                  <span className="font-bold text-gray-600 dark:text-gray-400">
+                    Order ID{" "}
+                    <CursorClickIcon
+                      className="flex-shink-0 h-6 w-6 inline"
+                      aria-hidden="true"
+                    />
+                  </span>
+                  : {receipt.order.orderId}
+                </a>
                 <p>
-                  <span className="font-bold">Order ID</span>:{" "}
-                  {receipt.order.orderId}
+                  <span className="font-bold text-gray-600 dark:text-gray-400">
+                    Order created at
+                  </span>
+                  : {receipt.order.createdAt.substring(0, 10)}{" "}
+                  {receipt.order.createdAt.substring(11, 16)}
                 </p>
-                <p>
-                  <span className="font-bold">Payment method</span>:{" "}
-                  {receipt.order.payment.paymentMethod}
-                </p>
+                <a
+                  href={`https://www.reglini-dz.com/aliexpress/product/${receipt.order.product.productId}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block"
+                >
+                  <span className="font-bold text-gray-600 dark:text-gray-400">
+                    Product ID{" "}
+                    <CursorClickIcon
+                      className="flex-shink-0 h-6 w-6 inline"
+                      aria-hidden="true"
+                    />
+                  </span>
+                  : {receipt.order.product.productId}
+                </a>
                 <p className="font-serif font-semibold">
                   {receipt.order.product.name}
                 </p>
-                <p className="text-red-500 text-lg">
+                <p>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    Payment method
+                  </span>
+                  : {receipt.order.payment.paymentMethod}
+                </p>
+              </div>
+              <div>
+                <p>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    Product price:
+                  </span>{" "}
+                  {receipt.order.product.price} DZD
+                </p>
+                <p>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    Shipping price:
+                  </span>{" "}
+                  {receipt.order.product.shippingPrice} DZD
+                </p>
+                <p>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    Total price:
+                  </span>{" "}
                   {receipt.order.product.totalPrice} DZD
                 </p>
               </div>
@@ -135,10 +187,10 @@ const AdminPayment = () => {
               {message && message.orderId === receipt.order.orderId && (
                 <p className="text-indigo-500">
                   <InformationCircleIcon
-                    className="flex-shink-0 h-6 w-6 mr-2"
+                    className="flex-shink-0 h-6 w-6 inline mr-2"
                     aria-hidden="true"
                   />{" "}
-                  {message}
+                  {message.message}
                 </p>
               )}
             </div>

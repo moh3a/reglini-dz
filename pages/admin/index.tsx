@@ -36,11 +36,6 @@ const AdminScreen = ({ children }: { children: ReactNode }) => {
 
   return (
     <>
-      <Head>
-        <title>reglini-dz Admin Page</title>
-        <meta name="description" content="Private admin page." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       {user && user.role === "admin" && (
         <div className="flex">
           <AdminSidebar user={user} />

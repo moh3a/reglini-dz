@@ -121,7 +121,7 @@ export const BuyProduct = ({
   };
   return (
     <button
-      className="flex ml-auto text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded"
+      className="flex ml-auto text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded-lg"
       onClick={buyHandler}
     >
       {t("buy")}
@@ -202,7 +202,7 @@ export const ProductToCart = ({
   return (
     <button
       onClick={addToCartHandler}
-      className="flex ml-4 text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded"
+      className="flex ml-4 text-white bg-aliexpress border-0 py-2 px-6 focus:outline-none hover:opacity-60 rounded-lg"
     >
       {t("cart")}
     </button>
