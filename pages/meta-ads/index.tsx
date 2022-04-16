@@ -20,13 +20,13 @@ const MetaAdsScreen = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col justify-center items-center w-full bg-gray-100 dark:bg-grim">
+      <div className="flex flex-col justify-center items-center">
         <div className="h-28 w-28 lg:h-60 lg:w-60 select-none">
           <img src="/meta-icon.png" alt="meta logo" />
         </div>
         {user ? (
-          <div className="mt-10 w-full">
-            <div className="my-8 flex flex-col md:mx-44 text-center md:text-left md:flex-row md:justify-center">
+          <div className="w-full">
+            <div className="mt-2 mb-8 flex flex-col md:mx-44 text-center md:text-left md:flex-row md:justify-center">
               <div className="text-sm md:mr-3">
                 Demand an access request to your Facebook page
               </div>

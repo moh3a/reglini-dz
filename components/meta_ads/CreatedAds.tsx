@@ -61,7 +61,7 @@ function CreatedAds({ page }: { page: IFacebookPage }) {
       {page.page_ads && page.page_ads.length > 0 ? (
         page.page_ads.map((ad) => (
           <div
-            className="w-full border border-gray-600 dark:border-white rounded-lg my-2 p-1 md:py-1 md:px-5"
+            className="w-full bg-gray-50 dark:bg-grim shadow-lg rounded-lg my-2 p-1 md:py-1 md:px-5"
             key={ad.created_at}
           >
             <div>Created ad: {ad.created_at}</div>

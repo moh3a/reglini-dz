@@ -58,7 +58,7 @@ function NewAd({
   return (
     <form
       onSubmit={submitHandler}
-      className="my-4 border-b border-indigo-500 pb-1"
+      className="py-4 px-3 border-b rounded-b-lg bg-gray-50 dark:bg-grim border-indigo-500 pb-1 shadow-xl"
     >
       {error && <DangerDialog>{error}</DangerDialog>}
 

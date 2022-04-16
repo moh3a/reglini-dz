@@ -106,6 +106,7 @@ export interface IUserRedux {
   orders?: Array<IOrder>;
   cart?: ICart;
   wishlist?: Array<IWished>;
+  facebookPages?: [IFacebookPage];
 }
 
 export interface IAuth {
