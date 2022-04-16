@@ -64,7 +64,10 @@ export const BuyProduct = ({
   const t = useTranslations("AEProduct");
   const router = useRouter();
   const buyHandler = (e: any) => {
-    let discount = product.discount ? parseInt(product.discount) / 100 : 0;
+    let discount =
+      product.discount && parseInt(product.discount) < 95
+        ? parseInt(product.discount) / 100
+        : 0;
     let price: number, shippingPrice: number;
     e.preventDefault();
     if (!user) {
@@ -147,7 +150,10 @@ export const ProductToCart = ({
   const t = useTranslations("AEProduct");
   const dispatch = useDispatch();
   const addToCartHandler = (e: any) => {
-    let discount = product.discount ? parseInt(product.discount) / 100 : 0;
+    let discount =
+      product.discount && parseInt(product.discount) < 95
+        ? parseInt(product.discount) / 100
+        : 0;
     let price: number, shippingPrice: number;
     e.preventDefault();
     if (!user) {
