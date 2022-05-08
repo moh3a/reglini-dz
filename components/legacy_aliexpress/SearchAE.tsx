@@ -40,12 +40,7 @@ const SearchAE = ({ url, setUrl }: any) => {
       const firstSplit = url.split("/item/");
       const secondSplit = firstSplit[1].split(".html");
       dispatch(getAEProductInfo({ id: secondSplit[0], locale }));
-    }
-    // else if (url.includes("https://a.aliexpress.com/")) {
-    //   const newurl = "https://" + url.split("https://")[1];
-    //   console.log(newurl);
-    // }
-    else {
+    } else {
       dispatch(searchAEProductByName({ name: url, locale }));
     }
   };

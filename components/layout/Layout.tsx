@@ -8,6 +8,11 @@ import Footer from "./Footer";
 import { IUser } from "../../types";
 import { selectUser } from "../../utils/redux/userSlice";
 import { getUser } from "../../utils/redux/userAsyncActions";
+import {
+  fetchCommission,
+  fetchCurrencyRate,
+  selectFinance,
+} from "../../utils/redux/financeSlice";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const [session, loading]: [IUser | null, boolean] = useSession();
@@ -50,6 +55,16 @@ export default function Layout({ children }: { children: ReactNode }) {
       setPlaceholder(false);
     }
   }, [loading, status]);
+
+  const { rate, commission } = useSelector(selectFinance);
+
+  useEffect(() => {
+    if (!rate) dispatch(fetchCurrencyRate());
+  }, [rate, dispatch]);
+
+  useEffect(() => {
+    if (!commission) dispatch(fetchCommission());
+  }, [commission, dispatch]);
 
   return (
     <>

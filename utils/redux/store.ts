@@ -5,6 +5,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 // REDUCERS
 import aeapiSlice from "./aeapiSlice";
+import financeSlice from "./financeSlice";
 import userSlice from "./userSlice";
 import blogsSlice from "./blogsSlice";
 
@@ -16,6 +17,7 @@ const initialState = {};
 // ROOT REDUCER
 const reducer = combineReducers({
   aeapi: aeapiSlice,
+  finance: financeSlice,
   user: userSlice,
   blogs: blogsSlice,
 });

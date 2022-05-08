@@ -92,7 +92,6 @@ const ProductDetails = ({ product, session, converter }: any) => {
         theOne = product.variations[0];
       }
       setSelectedVariation({ ...theOne, quantity });
-      console.log({ ...theOne, quantity });
     }
   }, [product, variation, quantity]);
 
