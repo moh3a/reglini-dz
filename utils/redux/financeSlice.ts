@@ -24,7 +24,6 @@ export const fetchCurrencyRate = createAsyncThunk(
         method: "GET",
         url: `/api/currency`,
       });
-      console.log(data);
       return data.data;
     } catch (error: any) {
       return error.response;
@@ -40,7 +39,6 @@ export const fetchCommission = createAsyncThunk(
         method: "POST",
         url: `/api/commission`,
       });
-      console.log(data);
       return data.commission;
     } catch (error: any) {
       return error.response;
