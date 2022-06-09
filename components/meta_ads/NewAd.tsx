@@ -1,22 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { emplacement_instagram, facebook_reach } from "../../data/AdReach";
-import { LocalISODate } from "../../utils/methods";
+import { LocalCurrencyConverter, LocalISODate } from "../../utils/methods";
 import { IFacebookPage } from "../../types";
 import { createAdRequest } from "../../utils/redux/userAsyncActions";
 import { DangerDialog } from "../../components/elements/Dialog";
 
 function NewAd({
   page,
-  converter,
-  rate,
-  commission,
   setCreateAd,
 }: {
   page: IFacebookPage;
-  commission: number | undefined;
-  rate: number | undefined;
-  converter: (price: number) => number | undefined;
   setCreateAd: any;
 }) {
   const [error, setError] = useState("");
@@ -42,7 +36,8 @@ function NewAd({
             ad_duration: duration,
             ad_daily_bugdet: budget,
             ad_total_budget: budget * duration,
-            ad_price: (converter(budget) as number) * duration,
+            ad_price:
+              (LocalCurrencyConverter(budget, "DZDEUR") as number) * duration,
           },
         })
       );
@@ -147,11 +142,7 @@ function NewAd({
         />
         <span className="relative bottom-1 ml-2 text-gray-500">
           daily budget:{" "}
-          {rate && commission ? (
-            <span>{converter(budget)} DZD</span>
-          ) : (
-            <span>{budget} euros</span>
-          )}
+          <span>{LocalCurrencyConverter(budget, "DZDEUR")} DZD</span>
         </span>
       </div>
       <div className="my-2 font-bold text-gray-600 dark:text-gray-400">
@@ -177,11 +168,10 @@ function NewAd({
         )}
         <div>
           Total budget:
-          {rate && commission ? (
-            <span>{(converter(budget) as number) * duration} DZD</span>
-          ) : (
-            <span>{duration * budget} euros</span>
-          )}
+          <span>
+            {(LocalCurrencyConverter(budget, "DZDEUR") as number) * duration}{" "}
+            DZD
+          </span>
         </div>
       </div>
       <div className="flex justify-center items-center">

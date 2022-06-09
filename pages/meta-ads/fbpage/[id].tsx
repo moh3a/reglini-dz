@@ -1,33 +1,17 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import axios from "axios";
 
+import PageDetails from "../../../components/meta_ads/PageDetails";
 import { IFacebookPage } from "../../../types";
 import { selectUser } from "../../../utils/redux/userSlice";
 
 const FacebookPageDetails = () => {
-  const [commission, setCommission] = useState<number>();
-  const [rate, setRate] = useState<number>();
   const [page, setPage] = useState<IFacebookPage>();
   const router = useRouter();
   const { id } = router.query;
   const { user, status } = useSelector(selectUser);
-
-  const fetchRate = useCallback(async () => {
-    const { data } = await axios.post("/api/commission", {
-      exchange: "DZDEUR",
-    });
-    if (data.success) {
-      setCommission(data.commission);
-      setRate(data.rate);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchRate();
-  }, [fetchRate]);
 
   useEffect(() => {
     if (status === "complete" && !user) router.replace("/meta-ads");
@@ -50,11 +34,6 @@ const FacebookPageDetails = () => {
     }
   }, [status, id, user, router]);
 
-  const converter = (price: number) => {
-    if (rate && commission)
-      return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
-  };
-
   return (
     <>
       <Head>
@@ -65,14 +44,7 @@ const FacebookPageDetails = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {page && (
-        <PageDetails
-          page={page}
-          converter={converter}
-          rate={rate}
-          commission={commission}
-        />
-      )}
+      {page && <PageDetails page={page} />}
     </>
   );
 };
@@ -87,7 +59,6 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 };
 
 import Layout from "../../../components/layout/Layout";
-import PageDetails from "../../../components/meta_ads/PageDetails";
 FacebookPageDetails.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

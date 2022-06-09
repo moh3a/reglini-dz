@@ -2,38 +2,10 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
-import axios from "axios";
 
 import SimulateAdResults from "../../components/meta_ads/SimulateAdResults";
 
 const MetaAdsScreen = () => {
-  const [commission, setCommission] = useState<number>();
-  const [rate, setRate] = useState<number>();
-
-  const fetchRate = useCallback(async () => {
-    try {
-      const { data } = await axios.post("/api/commission", {
-        exchange: "DZDEUR",
-      });
-      if (data.success) {
-        setCommission(data.commission);
-        setRate(data.rate);
-      }
-    } catch (error: any) {
-      console.log(error);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchRate();
-  }, [fetchRate]);
-
-  const converter = (price: number) => {
-    if (rate && commission)
-      return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
-  };
-
   return (
     <>
       <Head>
@@ -48,24 +20,18 @@ const MetaAdsScreen = () => {
         <div className="h-28 w-28 lg:h-60 lg:w-60 select-none">
           <img src="/meta-icon.png" alt="meta logo" />
         </div>
-        {rate && commission && (
-          <>
-            <SimulateAdResults
-              commission={commission}
-              converter={converter}
-              rate={rate}
-            />
-            <div className="mb-20" />
-            <div className="w-full flex justify-center items-center">
-              <Link href="/meta-ads/access_request" passHref>
-                <button className="bg-facebook text-white px-3 py-1 rounded-lg">
-                  Start by adding your facebook page
-                </button>
-              </Link>
-            </div>
-            <div className="mb-20" />
-          </>
-        )}
+
+        <SimulateAdResults />
+        <div className="mb-20" />
+        <div className="w-full flex justify-center items-center">
+          <Link href="/meta-ads/access_request" passHref>
+            <button className="bg-facebook text-white px-3 py-1 rounded-lg">
+              Start by adding your facebook page
+            </button>
+          </Link>
+        </div>
+        <div className="mb-20" />
+
         <div className="mb-20" />
       </div>
     </>

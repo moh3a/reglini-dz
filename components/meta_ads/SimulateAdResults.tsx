@@ -1,15 +1,8 @@
 import React, { useState } from "react";
 import { emplacement_instagram, facebook_reach } from "../../data/AdReach";
+import { LocalCurrencyConverter } from "../../utils/methods";
 
-function SimulateAdResults({
-  converter,
-  rate,
-  commission,
-}: {
-  commission: number | undefined;
-  rate: number | undefined;
-  converter: (price: number) => number | undefined;
-}) {
+function SimulateAdResults() {
   const [emplacement, setEmplacement] = useState("facebook");
   const [duration, setDuration] = useState(2);
   const [budget, setBudget] = useState(3);
@@ -80,12 +73,8 @@ function SimulateAdResults({
           onChange={(e) => setBudget(parseInt(e.target.value))}
         />
         <span className="relative bottom-1 ml-2 text-gray-500">
-          daily budget:{" "}
-          {rate && commission ? (
-            <span>{converter(budget)} DZD</span>
-          ) : (
-            <span>{budget} euros</span>
-          )}
+          daily budget: (
+          <span>{LocalCurrencyConverter(budget, "DZDEUR")} DZD</span>)
         </span>
       </div>
       <div className="my-2 font-bold text-gray-600 dark:text-gray-400">
@@ -113,11 +102,10 @@ function SimulateAdResults({
         )}
         <div>
           Total budget:
-          {rate && commission ? (
-            <span>{(converter(budget) as number) * duration} DZD</span>
-          ) : (
-            <span>{duration * budget} euros</span>
-          )}
+          <span>
+            {(LocalCurrencyConverter(budget, "DZDEUR") as number) * duration}{" "}
+            DZD
+          </span>
         </div>
       </div>
     </div>

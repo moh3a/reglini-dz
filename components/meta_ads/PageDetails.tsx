@@ -3,17 +3,7 @@ import { IFacebookPage } from "../../types";
 import CreatedAds from "./CreatedAds";
 import NewAd from "./NewAd";
 
-function PageDetails({
-  page,
-  commission,
-  rate,
-  converter,
-}: {
-  page: IFacebookPage;
-  commission: number | undefined;
-  rate: number | undefined;
-  converter: (price: number) => number | undefined;
-}) {
+function PageDetails({ page }: { page: IFacebookPage }) {
   const [createAd, setCreateAd] = useState(false);
 
   return (
@@ -52,15 +42,7 @@ function PageDetails({
             )}
           </div>
         </div>
-        {createAd && (
-          <NewAd
-            page={page}
-            commission={commission}
-            rate={rate}
-            converter={converter}
-            setCreateAd={setCreateAd}
-          />
-        )}
+        {createAd && <NewAd page={page} setCreateAd={setCreateAd} />}
       </div>
       <CreatedAds page={page} />
     </div>

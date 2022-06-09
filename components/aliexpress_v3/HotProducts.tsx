@@ -32,7 +32,7 @@ const HotProducts = () => {
           <h2 className="mt-6 text-2xl w-full text-center">
             Recommended by AliExpress
           </h2>
-          <ProductsList products={products} converter={converter} />
+          <ProductsList products={products} />
         </>
       )}
     </div>
