@@ -14,20 +14,6 @@ import ProductDetails from "../../../components/legacy_aliexpress/ProductDetails
 const AliexpressProduct = () => {
   const dispatch = useDispatch();
   const router = useRouter();
-  const [session, loading]: [IUser | null, boolean] = useSession();
-
-  const [commission, setCommission] = useState<number>();
-  const [rate, setRate] = useState<number>();
-  const fetchCommission = useCallback(async () => {
-    const { data } = await axios.post(`/api/commission`, {
-      exchange: "DZDEUR",
-    });
-    setCommission(data.commission);
-    setRate(data.rate);
-  }, []);
-  useEffect(() => {
-    fetchCommission();
-  }, [fetchCommission]);
 
   const [locale, setLocale] = useState("");
   const [message, setMessage] = useState("");
@@ -43,11 +29,6 @@ const AliexpressProduct = () => {
       setLocale("ar_MA");
     }
   }, [router.locale]);
-
-  const converter = (price: number) => {
-    if (rate && commission)
-      return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
-  };
 
   const { product, status } = useSelector(selectAEApi);
   const { id } = router.query;
@@ -106,12 +87,8 @@ const AliexpressProduct = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {status === "loading" && <Loading text={message} />}
-      {product && product.status === "active" && rate && commission ? (
-        <ProductDetails
-          converter={converter}
-          product={product}
-          session={session}
-        />
+      {product && product.status === "active" ? (
+        <ProductDetails product={product} />
       ) : (
         <div className="w-full h-128 flex justify-center items-center text-2xl font-semibold select-none">
           <TerminalIcon className="h-10 w-10 inline mr-4" aria-hidden="true" />_

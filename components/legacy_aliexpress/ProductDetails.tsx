@@ -18,7 +18,7 @@ import {
 import ProductFeatures from "./ProductFeatures";
 import { selectUser } from "../../utils/redux/userSlice";
 
-const ProductDetails = ({ product, session, converter }: any) => {
+const ProductDetails = ({ product }: any) => {
   const router = useRouter();
   const t = useTranslations("AEProduct");
   const [properties, setProperties] = useState([{ name: "", value: "" }]);
@@ -168,21 +168,17 @@ const ProductDetails = ({ product, session, converter }: any) => {
                 />
               </div>
               <ProductPrice
-                converter={converter}
                 product={product}
                 selectedVariation={selectedVariation}
               />
               <ProductShipping
-                converter={converter}
                 product={product}
                 setSelectedShipping={setSelectedShipping}
               />
               <div className="mt-4 flex">
                 {
                   <BuyProduct
-                    converter={converter}
                     product={product}
-                    session={session}
                     setError={setError}
                     selectedVariation={selectedVariation}
                     selectedShipping={selectedShipping}
@@ -190,20 +186,13 @@ const ProductDetails = ({ product, session, converter }: any) => {
                 }
                 {
                   <ProductToCart
-                    converter={converter}
                     product={product}
-                    session={session}
                     setError={setError}
                     selectedVariation={selectedVariation}
                     selectedShipping={selectedShipping}
                   />
                 }
-                <ProductToWishlist
-                  converter={converter}
-                  product={product}
-                  session={session}
-                  setError={setError}
-                />
+                <ProductToWishlist product={product} setError={setError} />
               </div>
             </div>
           </div>

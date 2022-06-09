@@ -8,8 +8,12 @@ import { HeartIcon } from "@heroicons/react/outline";
 
 import { DangerDialog } from "../elements/Dialog";
 import { addToWishlist } from "../../utils/redux/userAsyncActions";
+import { useSession } from "next-auth/client";
+import { IUser } from "../../types";
+import { LocalCurrencyConverter } from "../../utils/methods";
 
-const Product = ({ product, session, converter }: any) => {
+const Product = ({ product }: any) => {
+  const [session, loading]: [IUser | null, boolean] = useSession();
   const router = useRouter();
   const t = useTranslations("AEProduct");
   const [error, setError] = useState("");
@@ -59,8 +63,9 @@ const Product = ({ product, session, converter }: any) => {
             }`}
           >
             <span>
-              {converter(
-                product.productMinPrice.value + product.shippingMinPrice.value
+              {LocalCurrencyConverter(
+                product.productMinPrice.value + product.shippingMinPrice.value,
+                "DZDEUR"
               )}
             </span>{" "}
             <span>{t("dzd")}</span>

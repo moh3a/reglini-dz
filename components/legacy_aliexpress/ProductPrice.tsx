@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { LocalCurrencyConverter } from "../../utils/methods";
 
-const ProductPrice = ({ product, selectedVariation, converter }: any) => {
+const ProductPrice = ({ product, selectedVariation }: any) => {
   const t = useTranslations("AEProduct");
   const [showEuro, setShowEuro] = useState(false);
   let [currency, setCurrency] = useState("");
@@ -24,8 +25,9 @@ const ProductPrice = ({ product, selectedVariation, converter }: any) => {
                 <div>
                   {showEuro
                     ? selectedVariation.price.app.discountedPrice.value
-                    : converter(
-                        selectedVariation.price.app.discountedPrice.value
+                    : LocalCurrencyConverter(
+                        selectedVariation.price.app.discountedPrice.value,
+                        "DZDEUR"
                       )}{" "}
                   {currency}
                 </div>
@@ -33,8 +35,9 @@ const ProductPrice = ({ product, selectedVariation, converter }: any) => {
                   <span className="line-through mr-4">
                     {showEuro
                       ? selectedVariation.price.app.originalPrice.value
-                      : converter(
-                          selectedVariation.price.app.originalPrice.value
+                      : LocalCurrencyConverter(
+                          selectedVariation.price.app.originalPrice.value,
+                          "DZDEUR"
                         )}{" "}
                     {currency}
                   </span>{" "}
@@ -45,8 +48,9 @@ const ProductPrice = ({ product, selectedVariation, converter }: any) => {
               <>
                 {showEuro
                   ? selectedVariation.price.app.originalPrice.value
-                  : converter(
-                      selectedVariation.price.app.originalPrice.value
+                  : LocalCurrencyConverter(
+                      selectedVariation.price.app.originalPrice.value,
+                      "DZDEUR"
                     )}{" "}
                 {currency}
               </>
@@ -59,14 +63,20 @@ const ProductPrice = ({ product, selectedVariation, converter }: any) => {
                 <div>
                   {showEuro
                     ? product.price.app.discountedPrice.value
-                    : converter(product.price.app.discountedPrice.value)}{" "}
+                    : LocalCurrencyConverter(
+                        product.price.app.discountedPrice.value,
+                        "DZDEUR"
+                      )}{" "}
                   {currency}
                 </div>
                 <div className="text-xs lg:text-sm">
                   <span className="line-through mr-4">
                     {showEuro
                       ? product.price.app.originalPrice.value
-                      : converter(product.price.app.originalPrice.value)}{" "}
+                      : LocalCurrencyConverter(
+                          product.price.app.originalPrice.value,
+                          "DZDEUR"
+                        )}{" "}
                     {currency}
                   </span>{" "}
                   {product.price.app.discountPercentage}% {t("off")}
@@ -77,7 +87,10 @@ const ProductPrice = ({ product, selectedVariation, converter }: any) => {
                 {" "}
                 {showEuro
                   ? product.price.app.originalPrice.value
-                  : converter(product.price.app.originalPrice.value)}{" "}
+                  : LocalCurrencyConverter(
+                      product.price.app.originalPrice.value,
+                      "DZDEUR"
+                    )}{" "}
                 {currency}
               </>
             )}
@@ -89,14 +102,16 @@ const ProductPrice = ({ product, selectedVariation, converter }: any) => {
                 <div>
                   {showEuro
                     ? product.priceSummary.app.discountedPrice.min.value
-                    : converter(
-                        product.priceSummary.app.discountedPrice.min.value
+                    : LocalCurrencyConverter(
+                        product.priceSummary.app.discountedPrice.min.value,
+                        "DZDEUR"
                       )}{" "}
                   {currency} -{" "}
                   {showEuro
                     ? product.priceSummary.app.discountedPrice.max.value
-                    : converter(
-                        product.priceSummary.app.discountedPrice.max.value
+                    : LocalCurrencyConverter(
+                        product.priceSummary.app.discountedPrice.max.value,
+                        "DZDEUR"
                       )}{" "}
                   {currency}
                 </div>
@@ -104,14 +119,16 @@ const ProductPrice = ({ product, selectedVariation, converter }: any) => {
                   <span className="line-through mr-4">
                     {showEuro
                       ? product.priceSummary.app.originalPrice.min.value
-                      : converter(
-                          product.priceSummary.app.originalPrice.min.value
+                      : LocalCurrencyConverter(
+                          product.priceSummary.app.originalPrice.min.value,
+                          "DZDEUR"
                         )}{" "}
                     {currency} -{" "}
                     {showEuro
                       ? product.priceSummary.app.originalPrice.max.value
-                      : converter(
-                          product.priceSummary.app.originalPrice.max.value
+                      : LocalCurrencyConverter(
+                          product.priceSummary.app.originalPrice.max.value,
+                          "DZDEUR"
                         )}{" "}
                     {currency}
                   </span>{" "}
@@ -122,14 +139,16 @@ const ProductPrice = ({ product, selectedVariation, converter }: any) => {
               <>
                 {showEuro
                   ? product.priceSummary.app.originalPrice.min.value
-                  : converter(
-                      product.priceSummary.app.originalPrice.min.value
+                  : LocalCurrencyConverter(
+                      product.priceSummary.app.originalPrice.min.value,
+                      "DZDEUR"
                     )}{" "}
                 {currency} -{" "}
                 {showEuro
                   ? product.priceSummary.app.originalPrice.max.value
-                  : converter(
-                      product.priceSummary.app.originalPrice.max.value
+                  : LocalCurrencyConverter(
+                      product.priceSummary.app.originalPrice.max.value,
+                      "DZDEUR"
                     )}{" "}
                 {currency}
               </>

@@ -16,14 +16,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../utils/redux/userSlice";
 import { addToWishlist } from "../../utils/redux/userAsyncActions";
 import { DangerDialog, SuccessDialog } from "../elements/Dialog";
+import { LocalCurrencyConverter } from "../../utils/methods";
 
-const ProductsList = ({
-  products,
-  converter,
-}: {
-  products: IAffiliateProduct[];
-  converter: (price: number) => number | undefined;
-}) => {
+const ProductsList = ({ products }: { products: IAffiliateProduct[] }) => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const dispatch = useDispatch();
@@ -42,10 +37,11 @@ const ProductsList = ({
         addToWishlist({
           productId: product.product_id?.toString(),
           name: product.product_title,
-          price: converter(
+          price: LocalCurrencyConverter(
             product.target_app_sale_price
               ? Number(product.target_app_sale_price)
-              : Number(product.target_original_price)
+              : Number(product.target_original_price),
+            "DZDUSD"
           ),
           imageUrl: product.product_main_image_url,
         })
@@ -97,7 +93,10 @@ const ProductsList = ({
                     }`}
                   >
                     <span>
-                      {converter(Number(product.target_app_sale_price))}
+                      {LocalCurrencyConverter(
+                        Number(product.target_app_sale_price),
+                        "DZDUSD"
+                      )}
                     </span>{" "}
                     <span>DZD</span>
                   </p>

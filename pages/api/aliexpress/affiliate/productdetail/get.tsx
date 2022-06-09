@@ -3,8 +3,6 @@ import dbConnect from "../../../../../config/db";
 import { TopClient } from "../../../../../lib/api/topClient";
 import nc from "next-connect";
 import type { NextApiResponse, NextApiRequest } from "next";
-import Currency from "../../../../../models/Currency";
-import Finance from "../../../../../models/Finance";
 import {
   IAEAffiliateProductDetailsResponse,
   IAEError,
@@ -30,10 +28,6 @@ const handler = nc();
 handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
   await dbConnect();
   const { id, locale } = req.body;
-  const rate = await Currency.findOne({
-    exchange: "DZDUSD",
-  }).select("live");
-  const commission = await Finance.findOne().select("commission");
   let properties: IProductProperties[] = [];
   let price: IProductPrice = {
     hasDiscount: false,
@@ -282,8 +276,6 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
                         success: true,
                         data: responseAffiliate.resp_result.result.products
                           .product[0],
-                        rate: rate.live.parallel.sale,
-                        commission: commission.commission,
                         message: "Successfully retrieved product details.",
                       });
                     } else {

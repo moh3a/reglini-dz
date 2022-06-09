@@ -21,15 +21,8 @@ import {
 } from "./ProductActions";
 import ProductPrice from "./ProductPrice";
 import ProductFeatures from "./ProductFeatures";
-import { submitFeedback } from "../../utils/redux/userAsyncActions";
 
-const ProductDetails = ({
-  product,
-  converter,
-}: {
-  product: IAffiliateProduct;
-  converter: (price: number) => number | undefined;
-}) => {
+const ProductDetails = ({ product }: { product: IAffiliateProduct }) => {
   const { user, message } = useSelector(selectUser);
   const router = useRouter();
   const t = useTranslations("AEProduct");
@@ -229,17 +222,14 @@ const ProductDetails = ({
               <ProductPrice
                 product={product.ds_product_details}
                 selectedVariation={selectedVariation}
-                converter={converter}
               />
               <ProductShipping
                 product={product.ds_product_details}
                 setSelectedShipping={setSelectedShipping}
-                converter={converter}
               />
               <div className="mt-4 flex">
                 {
                   <BuyProduct
-                    converter={converter}
                     product={product}
                     user={user}
                     setError={setError}
@@ -249,7 +239,6 @@ const ProductDetails = ({
                 }
                 {
                   <ProductToCart
-                    converter={converter}
                     product={product}
                     user={user}
                     setError={setError}
@@ -258,7 +247,6 @@ const ProductDetails = ({
                   />
                 }
                 <ProductToWishlist
-                  converter={converter}
                   product={product}
                   user={user}
                   setError={setError}

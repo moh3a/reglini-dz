@@ -3,8 +3,9 @@ import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
+import { LocalCurrencyConverter } from "../../utils/methods";
 
-const ProductShipping = ({ product, setSelectedShipping, converter }: any) => {
+const ProductShipping = ({ product, setSelectedShipping }: any) => {
   const router = useRouter();
   const t = useTranslations("AEProduct");
   const [selected, setSelected] = useState(product.shipping.carriers[0]);
@@ -87,7 +88,11 @@ const ProductShipping = ({ product, setSelectedShipping, converter }: any) => {
                                 </span>
                               )}
                               <span className="absolute inset-y-0 right-0 flex items-center pr-3">
-                                {converter(carrier.price.value)} {t("dzd")}
+                                {LocalCurrencyConverter(
+                                  carrier.price.value,
+                                  "DZDEUR"
+                                )}{" "}
+                                {t("dzd")}
                               </span>
                               {selected ? (
                                 <span
@@ -118,7 +123,8 @@ const ProductShipping = ({ product, setSelectedShipping, converter }: any) => {
               {selected.deliveryTimeInDays.max} {t("days")}
             </span>
             <span className="absolute inset-y-0 right-0 flex items-center pr-3">
-              {converter(selected.price.value)} {t("dzd")}
+              {LocalCurrencyConverter(selected.price.value, "DZDEUR")}{" "}
+              {t("dzd")}
             </span>
           </p>
         </>

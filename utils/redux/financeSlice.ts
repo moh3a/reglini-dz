@@ -2,8 +2,17 @@ import { RootState } from "./store";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-interface IFinance {
-  rate?: number;
+export interface IFinance {
+  rate?: [
+    {
+      exchange: string;
+      live: {
+        official: { sale: number };
+        parallel: { sale: number; purchase: number };
+      };
+      updated: string;
+    }
+  ];
   commission?: number;
   status: "idle" | "loading" | "complete" | "failed";
   error?: string;

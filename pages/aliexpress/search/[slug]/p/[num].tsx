@@ -12,19 +12,12 @@ import Logo from "../../../../../components/layout/Logo";
 
 const AliexpressSearchPage = () => {
   const [totalRecordCount, setTotalRecordCount] = useState<number>();
-  const [commission, setCommission] = useState<number>();
-  const [rate, setRate] = useState<number>();
   const [products, setProducts] = useState<any>();
   const [loading, setLoading] = useState(true);
 
   const { user } = useSelector(selectUser);
   const router = useRouter();
   const { num, slug } = router.query;
-
-  const converter = (price: number) => {
-    if (rate && commission)
-      return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
-  };
 
   const queryAE = useCallback(async () => {
     if (num && slug) {
@@ -40,8 +33,6 @@ const AliexpressSearchPage = () => {
       if (data.success && data.data) {
         setProducts(data.data.products.product);
         setTotalRecordCount(data.data.total_record_count);
-        setCommission(data.commission);
-        setRate(data.rate);
         setLoading(false);
       } else {
         router.replace(`/aliexpress/search/${slug}`);
@@ -87,7 +78,7 @@ const AliexpressSearchPage = () => {
       )}
       {products && (
         <>
-          <ProductsList products={products} converter={converter} />
+          <ProductsList products={products} />
           <div className="flex justify-center items-center text-xl mt-2 mb-6">
             <ChevronLeftIcon
               onClick={() =>

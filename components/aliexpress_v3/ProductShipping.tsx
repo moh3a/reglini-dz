@@ -7,17 +7,16 @@ import {
   IBasicProductDetails,
   IDropshipperProductDetails,
 } from "../../types/AETypes";
+import { LocalCurrencyConverter } from "../../utils/methods";
 
 const ProductShipping = ({
   product,
   setSelectedShipping,
-  converter,
 }: {
   product:
     | IBasicProductDetails["result"]
     | IDropshipperProductDetails["result"];
   setSelectedShipping: any;
-  converter: (price: number) => number | undefined;
 }) => {
   const router = useRouter();
   const t = useTranslations("AEProduct");
@@ -104,7 +103,10 @@ const ProductShipping = ({
                                 </span>
                               )} */}
                               <span className="absolute inset-y-0 right-0 flex items-center pr-3">
-                                {converter(carrier.freight.cent / 100)}{" "}
+                                {LocalCurrencyConverter(
+                                  carrier.freight.cent / 100,
+                                  "DZDUSD"
+                                )}{" "}
                                 {t("dzd")}
                               </span>
                               {selected ? (
@@ -135,7 +137,8 @@ const ProductShipping = ({
               {t("delieveredIn")} {selected.estimated_delivery_time}
             </span>
             <span className="absolute inset-y-0 right-0 flex items-center pr-3">
-              {converter(selected.freight.cent / 100)} {t("dzd")}
+              {LocalCurrencyConverter(selected.freight.cent / 100, "DZDUSD")}{" "}
+              {t("dzd")}
             </span>
           </p>
         </>

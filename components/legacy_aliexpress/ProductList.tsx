@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import Product from "./Product";
 
-export default function ProductList({ search, session, url, converter }: any) {
+export default function ProductList({ search, url }: any) {
   const router = useRouter();
   const t = useTranslations("AEProduct");
   return (
@@ -26,12 +26,7 @@ export default function ProductList({ search, session, url, converter }: any) {
 
         <div className="my-4 grid mt-10 grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {search.items.map((item: any) => (
-            <Product
-              product={item}
-              key={item.productId}
-              session={session}
-              converter={converter}
-            />
+            <Product product={item} key={item.productId} />
           ))}
         </div>
         <div className="text-center mt-16 mb-6">

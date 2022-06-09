@@ -3,33 +3,17 @@ import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import { useSession } from "next-auth/client";
 import { TerminalIcon } from "@heroicons/react/outline";
 
-import { IUser } from "../../types";
 import { selectAEApi } from "../../utils/redux/aeapiSlice";
 import SearchAE from "../../components/legacy_aliexpress/SearchAE";
 import ProductPreview from "../../components/legacy_aliexpress/ProductPreview";
 import ProductList from "../../components/legacy_aliexpress/ProductList";
 
 const Aliexpress = () => {
-  const [session, loading]: [IUser | null, boolean] = useSession();
   const { search, product, status } = useSelector(selectAEApi);
   const [url, setUrl] = useState("");
   const router = useRouter();
-
-  const [commission, setCommission] = useState<number>();
-  const [rate, setRate] = useState<number>();
-  const fetchCommission = useCallback(async () => {
-    const { data } = await axios.post(`/api/commission`, {
-      exchange: "DZDEUR",
-    });
-    setCommission(data.commission);
-    setRate(data.rate);
-  }, []);
-  useEffect(() => {
-    fetchCommission();
-  }, [fetchCommission]);
 
   const [message, setMessage] = useState("");
   useEffect(() => {
@@ -41,11 +25,6 @@ const Aliexpress = () => {
       setMessage("إحضار البيانات");
     }
   }, [router.locale]);
-
-  const converter = (price: number) => {
-    if (rate && commission)
-      return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
-  };
 
   if (product && product.statusId !== "0") {
     return (
@@ -101,21 +80,10 @@ const Aliexpress = () => {
         </div>
       ) : (
         <>
-          {product && product.status === "active" && rate && commission && (
-            <ProductPreview
-              converter={converter}
-              session={session}
-              product={product}
-            />
+          {product && product.status === "active" && (
+            <ProductPreview product={product} />
           )}
-          {search && rate && commission && (
-            <ProductList
-              converter={converter}
-              session={session}
-              search={search}
-              url={url}
-            />
-          )}
+          {search && <ProductList search={search} url={url} />}
         </>
       )}
       {status === "failed" && (
@@ -128,7 +96,6 @@ const Aliexpress = () => {
   );
 };
 
-import axios from "axios";
 import { GetStaticProps } from "next";
 export const getStaticProps: GetStaticProps = async (context) => {
   const { locale } = context;

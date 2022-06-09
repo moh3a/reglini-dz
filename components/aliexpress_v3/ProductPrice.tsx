@@ -2,15 +2,14 @@ import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 
 import { IDropshipperProductDetails } from "../../types/AETypes";
+import { LocalCurrencyConverter } from "../../utils/methods";
 
 const ProductPrice = ({
   product,
   selectedVariation,
-  converter,
 }: {
   product: IDropshipperProductDetails["result"];
   selectedVariation: any;
-  converter: (price: number) => number | undefined;
 }) => {
   const t = useTranslations("AEProduct");
   const [showDollar, setShowDollar] = useState(false);
@@ -41,11 +40,12 @@ const ProductPrice = ({
                           100) *
                         100
                     ) / 100
-                  : converter(
+                  : LocalCurrencyConverter(
                       Number(selectedVariation.sku_price) -
                         (Number(selectedVariation.sku_price) *
                           product.price.discount) /
-                          100
+                          100,
+                      "DZDUSD"
                     )}{" "}
                 {currency}
               </div>
@@ -53,7 +53,10 @@ const ProductPrice = ({
                 <span className="line-through mr-2">
                   {showDollar
                     ? selectedVariation.sku_price
-                    : converter(Number(selectedVariation.sku_price))}{" "}
+                    : LocalCurrencyConverter(
+                        Number(selectedVariation.sku_price),
+                        "DZDUSD"
+                      )}{" "}
                   {currency}
                 </span>{" "}
                 -{product.price.discount}%
@@ -63,7 +66,10 @@ const ProductPrice = ({
             <div className="border-aliexpress bg-aliexpress text-white py-2 px-6 text-xl font-bold">
               {showDollar
                 ? selectedVariation.sku_price
-                : converter(Number(selectedVariation.sku_price))}{" "}
+                : LocalCurrencyConverter(
+                    Number(selectedVariation.sku_price),
+                    "DZDUSD"
+                  )}{" "}
               {currency}
             </div>
           )
@@ -88,12 +94,22 @@ const ProductPrice = ({
                 <span>
                   {product.price.originalPrice.min ===
                   product.price.originalPrice.max ? (
-                    converter(product.price.discountedPrice.min)
+                    LocalCurrencyConverter(
+                      product.price.discountedPrice.min,
+                      "DZDUSD"
+                    )
                   ) : (
                     <>
-                      {converter(product.price.discountedPrice.min)} -{" "}
+                      {LocalCurrencyConverter(
+                        product.price.discountedPrice.min,
+                        "DZDUSD"
+                      )}{" "}
+                      -{" "}
                       {product.price.discountedPrice.max &&
-                        converter(product.price.discountedPrice.max)}
+                        LocalCurrencyConverter(
+                          product.price.discountedPrice.max,
+                          "DZDUSD"
+                        )}
                     </>
                   )}
                 </span>
@@ -118,12 +134,22 @@ const ProductPrice = ({
                   <span>
                     {product.price.originalPrice.min ===
                     product.price.originalPrice.max ? (
-                      converter(product.price.originalPrice.min)
+                      LocalCurrencyConverter(
+                        product.price.originalPrice.min,
+                        "DZDUSD"
+                      )
                     ) : (
                       <>
-                        {converter(product.price.originalPrice.min)} -{" "}
+                        {LocalCurrencyConverter(
+                          product.price.originalPrice.min,
+                          "DZDUSD"
+                        )}{" "}
+                        -{" "}
                         {product.price.originalPrice.max &&
-                          converter(product.price.originalPrice.max)}
+                          LocalCurrencyConverter(
+                            product.price.originalPrice.max,
+                            "DZDUSD"
+                          )}
                       </>
                     )}
                   </span>
@@ -151,12 +177,22 @@ const ProductPrice = ({
               <span>
                 {product.price.originalPrice.min ===
                 product.price.originalPrice.max ? (
-                  converter(product.price.originalPrice.min)
+                  LocalCurrencyConverter(
+                    product.price.originalPrice.min,
+                    "DZDUSD"
+                  )
                 ) : (
                   <>
-                    {converter(product.price.originalPrice.min)} -{" "}
+                    {LocalCurrencyConverter(
+                      product.price.originalPrice.min,
+                      "DZDUSD"
+                    )}{" "}
+                    -{" "}
                     {product.price.originalPrice.max &&
-                      converter(product.price.originalPrice.max)}
+                      LocalCurrencyConverter(
+                        product.price.originalPrice.max,
+                        "DZDUSD"
+                      )}
                   </>
                 )}
               </span>

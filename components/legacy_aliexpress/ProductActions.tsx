@@ -5,6 +5,9 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { SuccessDialog, DangerDialog, WarningDialog } from "../elements/Dialog";
 import { addToWishlist, addToCart } from "../../utils/redux/userAsyncActions";
+import { LocalCurrencyConverter } from "../../utils/methods";
+import { useSession } from "next-auth/client";
+import { IUser } from "../../types";
 
 export const ToDetails = ({ id }: { id: string }) => {
   const t = useTranslations("AEProduct");
@@ -19,12 +22,11 @@ export const ToDetails = ({ id }: { id: string }) => {
 
 export const BuyProduct = ({
   product,
-  session,
   setError,
   selectedVariation,
   selectedShipping,
-  converter,
 }: any) => {
+  const [session, loading]: [IUser | null, boolean] = useSession();
   const t = useTranslations("AEProduct");
   const router = useRouter();
   const buyHandler = (e: any) => {
@@ -54,16 +56,17 @@ export const BuyProduct = ({
             {
               productId: product.productId,
               name: product.title,
-              price: converter(price),
+              price: LocalCurrencyConverter(price, "DZDEUR"),
               originalPrice: price,
               imageUrl: selectedVariation.imageUrl,
               properties: selectedVariation.properties,
               quantity: selectedVariation.quantity,
               sku: selectedVariation.sku,
               carrierId: selectedShipping.company.id,
-              shippingPrice: converter(shippingPrice),
+              shippingPrice: LocalCurrencyConverter(shippingPrice, "DZDEUR"),
               totalPrice:
-                (converter(price) + converter(shippingPrice)) *
+                ((LocalCurrencyConverter(price, "DZDEUR") as number) +
+                  (LocalCurrencyConverter(shippingPrice, "DZDEUR") as number)) *
                 selectedVariation.quantity,
             },
           ])
@@ -84,12 +87,11 @@ export const BuyProduct = ({
 
 export const ProductToCart = ({
   product,
-  session,
   setError,
   selectedVariation,
   selectedShipping,
-  converter,
 }: any) => {
+  const [session, loading]: [IUser | null, boolean] = useSession();
   const t = useTranslations("AEProduct");
   const dispatch = useDispatch();
   const addToCartHandler = (e: any) => {
@@ -117,16 +119,17 @@ export const ProductToCart = ({
           addToCart({
             productId: product.productId,
             name: product.title,
-            price: converter(price),
+            price: LocalCurrencyConverter(price, "DZDEUR"),
             originalPrice: price,
             imageUrl: selectedVariation.imageUrl,
             properties: selectedVariation.properties,
             quantity: selectedVariation.quantity,
             sku: selectedVariation.sku,
             carrierId: selectedShipping.company.id,
-            shippingPrice: converter(shippingPrice),
+            shippingPrice: LocalCurrencyConverter(shippingPrice, "DZDEUR"),
             totalPrice:
-              (converter(price) + converter(shippingPrice)) *
+              ((LocalCurrencyConverter(price, "DZDEUR") as number) +
+                (LocalCurrencyConverter(shippingPrice, "DZDEUR") as number)) *
               selectedVariation.quantity,
           })
         );
@@ -144,12 +147,8 @@ export const ProductToCart = ({
   );
 };
 
-export const ProductToWishlist = ({
-  product,
-  session,
-  setError,
-  converter,
-}: any) => {
+export const ProductToWishlist = ({ product, setError }: any) => {
+  const [session, loading]: [IUser | null, boolean] = useSession();
   const t = useTranslations("AEProduct");
   const dispatch = useDispatch();
   const addToWishlistHandler = (e: any) => {
@@ -164,10 +163,11 @@ export const ProductToWishlist = ({
         addToWishlist({
           productId: product.productId,
           name: product.title,
-          price: converter(
+          price: LocalCurrencyConverter(
             product.priceSummary
               ? product.priceSummary.app.originalPrice.min.value
-              : product.price.app.originalPrice.value
+              : product.price.app.originalPrice.value,
+            "DZDEUR"
           ),
           imageUrl: product.productImages[0],
         })

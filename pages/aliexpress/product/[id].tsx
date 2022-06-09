@@ -10,13 +10,6 @@ import { IAffiliateProduct } from "../../../types/AETypes";
 const AliexpressProduct = () => {
   const router = useRouter();
   const { id } = router.query;
-  const [commission, setCommission] = useState<number>();
-  const [rate, setRate] = useState<number>();
-
-  const converter = (price: number) => {
-    if (rate && commission)
-      return Math.ceil((price * rate + price * rate * commission) / 10) * 10;
-  };
 
   const [product, setProduct] = useState<IAffiliateProduct>();
 
@@ -29,8 +22,6 @@ const AliexpressProduct = () => {
       }
     );
     if (data.success) {
-      setCommission(data.commission);
-      setRate(data.rate);
       setProduct(data.data);
     } else if (!data.success && data.redirect) {
       router.push(data.redirect);
@@ -57,10 +48,8 @@ const AliexpressProduct = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {product && rate && commission && (
-        <ProductDetails product={product} converter={converter} />
-      )}
-      {!rate && !commission && (
+      {product && <ProductDetails product={product} />}
+      {!product && (
         <div className="w-full h-128 text-xl font-bold select-none flex justify-center items-center">
           <Logo height={50} width={50} />
           Fetching data from AliExpress...

@@ -5,8 +5,6 @@ require("dotenv").config();
 import dbConnect from "../../../../../config/db";
 import { TopClient } from "../../../../../lib/api/topClient";
 import type { NextApiResponse, NextApiRequest } from "next";
-import Currency from "../../../../../models/Currency";
-import Finance from "../../../../../models/Finance";
 import {
   IAEAffiliateProductsResponse,
   IAEError,
@@ -25,8 +23,6 @@ export default async function handler(
   await dbConnect();
   if (req.method === "POST") {
     const { keywords, page } = req.body;
-    const rate = await Currency.findOne({ exchange: "DZDEUR" }).select("live");
-    const commission = await Finance.findOne().select("commission");
     try {
       client.execute(
         "aliexpress.affiliate.product.query",
@@ -49,8 +45,6 @@ export default async function handler(
             res.status(200).json({
               success: true,
               data: response.resp_result.result,
-              rate: rate.live.parallel.sale,
-              commission: commission.commission,
             });
           } else res.status(200).json({ success: false, error });
         }

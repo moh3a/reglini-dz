@@ -6,6 +6,7 @@ import { SuccessDialog, DangerDialog, WarningDialog } from "../elements/Dialog";
 import { addToWishlist, addToCart } from "../../utils/redux/userAsyncActions";
 import { IAffiliateProduct } from "../../types/AETypes";
 import { IUserRedux } from "../../types";
+import { LocalCurrencyConverter } from "../../utils/methods";
 
 export interface SelectedVariation {
   imageUrl: string;
@@ -52,14 +53,12 @@ export const BuyProduct = ({
   setError,
   selectedVariation,
   selectedShipping,
-  converter,
 }: {
   product: IAffiliateProduct;
   user: IUserRedux;
   setError: any;
   selectedVariation: SelectedVariation | undefined;
   selectedShipping: SelectedShipping;
-  converter: (price: number) => number | undefined;
 }) => {
   const t = useTranslations("AEProduct");
   const router = useRouter();
@@ -95,7 +94,7 @@ export const BuyProduct = ({
               {
                 productId: product.product_id?.toString(),
                 name: product.product_title,
-                price: converter(price),
+                price: LocalCurrencyConverter(price, "DZDUSD"),
                 originalPrice: price,
                 imageUrl: selectedVariation.imageUrl
                   ? selectedVariation.imageUrl
@@ -105,10 +104,12 @@ export const BuyProduct = ({
                 quantity: selectedVariation.quantity,
                 sku: selectedVariation.id,
                 carrierId: selectedShipping.service_name,
-                shippingPrice: converter(shippingPrice),
+                shippingPrice: LocalCurrencyConverter(shippingPrice, "DZDUSD"),
                 totalPrice:
-                  (converter(price + shippingPrice) as number) *
-                  selectedVariation.quantity,
+                  (LocalCurrencyConverter(
+                    price + shippingPrice,
+                    "DZDUSD"
+                  ) as number) * selectedVariation.quantity,
               },
             ])
           );
@@ -138,14 +139,12 @@ export const ProductToCart = ({
   setError,
   selectedVariation,
   selectedShipping,
-  converter,
 }: {
   product: IAffiliateProduct;
   user: IUserRedux;
   setError: any;
   selectedVariation: SelectedVariation | undefined;
   selectedShipping: SelectedShipping;
-  converter: (price: number) => number | undefined;
 }) => {
   const t = useTranslations("AEProduct");
   const dispatch = useDispatch();
@@ -179,7 +178,7 @@ export const ProductToCart = ({
             addToCart({
               productId: product.product_id?.toString(),
               name: product.product_title,
-              price: converter(price),
+              price: LocalCurrencyConverter(price, "DZDUSD"),
               originalPrice: price,
               imageUrl: selectedVariation.imageUrl
                 ? selectedVariation.imageUrl
@@ -189,10 +188,12 @@ export const ProductToCart = ({
               quantity: selectedVariation.quantity,
               sku: selectedVariation.id,
               carrierId: selectedShipping.service_name,
-              shippingPrice: converter(shippingPrice),
+              shippingPrice: LocalCurrencyConverter(shippingPrice, "DZDUSD"),
               totalPrice:
-                (converter(price + shippingPrice) as number) *
-                selectedVariation.quantity,
+                (LocalCurrencyConverter(
+                  price + shippingPrice,
+                  "DZDUSD"
+                ) as number) * selectedVariation.quantity,
             })
           );
         } else {
@@ -219,12 +220,10 @@ export const ProductToWishlist = ({
   product,
   user,
   setError,
-  converter,
 }: {
   product: IAffiliateProduct;
   user: IUserRedux;
   setError: any;
-  converter: (price: number) => number | undefined;
 }) => {
   const t = useTranslations("AEProduct");
   const dispatch = useDispatch();
@@ -241,10 +240,11 @@ export const ProductToWishlist = ({
         addToWishlist({
           productId: product.product_id?.toString(),
           name: product.product_title,
-          price: converter(
+          price: LocalCurrencyConverter(
             product.target_app_sale_price
               ? Number(product.target_app_sale_price)
-              : Number(product.target_original_price)
+              : Number(product.target_original_price),
+            "DZDUSD"
           ),
           imageUrl: product.product_main_image_url,
         })

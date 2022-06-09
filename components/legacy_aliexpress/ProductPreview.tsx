@@ -8,7 +8,7 @@ import ProductPrice from "./ProductPrice";
 import { ActionFeedback, ToDetails, ProductToWishlist } from "./ProductActions";
 import { selectUser } from "../../utils/redux/userSlice";
 
-const ProductPreview = ({ converter, product, session }: any) => {
+const ProductPreview = ({ product }: any) => {
   const t = useTranslations("AEProduct");
   const [showImage, setShowImage] = useState("/placeholder.png");
   const [error, setError] = useState("");
@@ -51,7 +51,7 @@ const ProductPreview = ({ converter, product, session }: any) => {
                 );
               })}
             </div>
-            <ProductPrice converter={converter} product={product} />
+            <ProductPrice product={product} />
             <div className="mt-4 text-center">
               {product.shipping.isAvailableForSelectedCountries ? (
                 <p className="text-green-500">{t("itemAvailable")}</p>
@@ -61,11 +61,7 @@ const ProductPreview = ({ converter, product, session }: any) => {
             </div>
             <div className="mt-4 flex">
               <ToDetails id={product.productId} />
-              <ProductToWishlist
-                product={product}
-                session={session}
-                setError={setError}
-              />
+              <ProductToWishlist product={product} setError={setError} />
             </div>
           </div>
         </div>
