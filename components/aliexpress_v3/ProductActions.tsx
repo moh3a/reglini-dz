@@ -1,12 +1,17 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useCallback, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import { SuccessDialog, DangerDialog, WarningDialog } from "../elements/Dialog";
 import { addToWishlist, addToCart } from "../../utils/redux/userAsyncActions";
 import { IAffiliateProduct } from "../../types/AETypes";
 import { IUserRedux } from "../../types";
-import { LocalCurrencyConverter } from "../../utils/methods";
+import {
+  fetchCommission,
+  fetchCurrencyRate,
+  IFinance,
+  selectFinance,
+} from "../../utils/redux/financeSlice";
 
 export interface SelectedVariation {
   imageUrl: string;
@@ -62,6 +67,28 @@ export const BuyProduct = ({
 }) => {
   const t = useTranslations("AEProduct");
   const router = useRouter();
+
+  const dispatch = useDispatch();
+  const { rate, commission }: IFinance = useSelector(selectFinance);
+
+  const LocalCurrencyConverter = useCallback(
+    (price: number, exchange: "DZDEUR" | "DZDUSD" | "DZDGBP") => {
+      let currency: number = 0;
+      if (rate && commission) {
+        const rateIndex = rate.findIndex((c) => c.exchange === exchange);
+        if (rateIndex !== -1) currency = rate[rateIndex].live.parallel.sale;
+        return (
+          Math.ceil((price * currency + price * currency * commission) / 10) *
+          10
+        );
+      } else {
+        dispatch(fetchCommission());
+        dispatch(fetchCurrencyRate());
+      }
+    },
+    [dispatch, commission, rate]
+  );
+
   const buyHandler = (e: any) => {
     let discount =
       product.discount && parseInt(product.discount) < 95
@@ -148,6 +175,26 @@ export const ProductToCart = ({
 }) => {
   const t = useTranslations("AEProduct");
   const dispatch = useDispatch();
+  const { rate, commission }: IFinance = useSelector(selectFinance);
+
+  const LocalCurrencyConverter = useCallback(
+    (price: number, exchange: "DZDEUR" | "DZDUSD" | "DZDGBP") => {
+      let currency: number = 0;
+      if (rate && commission) {
+        const rateIndex = rate.findIndex((c) => c.exchange === exchange);
+        if (rateIndex !== -1) currency = rate[rateIndex].live.parallel.sale;
+        return (
+          Math.ceil((price * currency + price * currency * commission) / 10) *
+          10
+        );
+      } else {
+        dispatch(fetchCommission());
+        dispatch(fetchCurrencyRate());
+      }
+    },
+    [dispatch, commission, rate]
+  );
+
   const addToCartHandler = (e: any) => {
     let discount =
       product.discount && parseInt(product.discount) < 95
@@ -226,7 +273,27 @@ export const ProductToWishlist = ({
   setError: any;
 }) => {
   const t = useTranslations("AEProduct");
+
   const dispatch = useDispatch();
+  const { rate, commission }: IFinance = useSelector(selectFinance);
+
+  const LocalCurrencyConverter = useCallback(
+    (price: number, exchange: "DZDEUR" | "DZDUSD" | "DZDGBP") => {
+      let currency: number = 0;
+      if (rate && commission) {
+        const rateIndex = rate.findIndex((c) => c.exchange === exchange);
+        if (rateIndex !== -1) currency = rate[rateIndex].live.parallel.sale;
+        return (
+          Math.ceil((price * currency + price * currency * commission) / 10) *
+          10
+        );
+      } else {
+        dispatch(fetchCommission());
+        dispatch(fetchCurrencyRate());
+      }
+    },
+    [dispatch, commission, rate]
+  );
 
   const addToWishlistHandler = (e: any) => {
     e.preventDefault();

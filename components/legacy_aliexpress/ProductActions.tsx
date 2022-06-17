@@ -1,13 +1,18 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useCallback, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { SuccessDialog, DangerDialog, WarningDialog } from "../elements/Dialog";
 import { addToWishlist, addToCart } from "../../utils/redux/userAsyncActions";
-import { LocalCurrencyConverter } from "../../utils/methods";
 import { useSession } from "next-auth/client";
 import { IUser } from "../../types";
+import {
+  fetchCommission,
+  fetchCurrencyRate,
+  IFinance,
+  selectFinance,
+} from "../../utils/redux/financeSlice";
 
 export const ToDetails = ({ id }: { id: string }) => {
   const t = useTranslations("AEProduct");
@@ -29,6 +34,28 @@ export const BuyProduct = ({
   const [session, loading]: [IUser | null, boolean] = useSession();
   const t = useTranslations("AEProduct");
   const router = useRouter();
+
+  const dispatch = useDispatch();
+  const { rate, commission }: IFinance = useSelector(selectFinance);
+
+  const LocalCurrencyConverter = useCallback(
+    (price: number, exchange: "DZDEUR" | "DZDUSD" | "DZDGBP") => {
+      let currency: number = 0;
+      if (rate && commission) {
+        const rateIndex = rate.findIndex((c) => c.exchange === exchange);
+        if (rateIndex !== -1) currency = rate[rateIndex].live.parallel.sale;
+        return (
+          Math.ceil((price * currency + price * currency * commission) / 10) *
+          10
+        );
+      } else {
+        dispatch(fetchCurrencyRate());
+        dispatch(fetchCommission());
+      }
+    },
+    [dispatch, commission, rate]
+  );
+
   const buyHandler = (e: any) => {
     let price, shippingPrice: any;
     if (selectedVariation.sku || selectedVariation.price.app) {
@@ -93,7 +120,28 @@ export const ProductToCart = ({
 }: any) => {
   const [session, loading]: [IUser | null, boolean] = useSession();
   const t = useTranslations("AEProduct");
+
   const dispatch = useDispatch();
+  const { rate, commission }: IFinance = useSelector(selectFinance);
+
+  const LocalCurrencyConverter = useCallback(
+    (price: number, exchange: "DZDEUR" | "DZDUSD" | "DZDGBP") => {
+      let currency: number = 0;
+      if (rate && commission) {
+        const rateIndex = rate.findIndex((c) => c.exchange === exchange);
+        if (rateIndex !== -1) currency = rate[rateIndex].live.parallel.sale;
+        return (
+          Math.ceil((price * currency + price * currency * commission) / 10) *
+          10
+        );
+      } else {
+        dispatch(fetchCommission());
+        dispatch(fetchCurrencyRate());
+      }
+    },
+    [dispatch, commission, rate]
+  );
+
   const addToCartHandler = (e: any) => {
     let price, shippingPrice;
     if (selectedVariation.sku || selectedVariation.price.app) {
@@ -150,7 +198,28 @@ export const ProductToCart = ({
 export const ProductToWishlist = ({ product, setError }: any) => {
   const [session, loading]: [IUser | null, boolean] = useSession();
   const t = useTranslations("AEProduct");
+
   const dispatch = useDispatch();
+  const { rate, commission }: IFinance = useSelector(selectFinance);
+
+  const LocalCurrencyConverter = useCallback(
+    (price: number, exchange: "DZDEUR" | "DZDUSD" | "DZDGBP") => {
+      let currency: number = 0;
+      if (rate && commission) {
+        const rateIndex = rate.findIndex((c) => c.exchange === exchange);
+        if (rateIndex !== -1) currency = rate[rateIndex].live.parallel.sale;
+        return (
+          Math.ceil((price * currency + price * currency * commission) / 10) *
+          10
+        );
+      } else {
+        dispatch(fetchCommission());
+        dispatch(fetchCurrencyRate());
+      }
+    },
+    [dispatch, commission, rate]
+  );
+
   const addToWishlistHandler = (e: any) => {
     e.preventDefault();
     if (!session) {

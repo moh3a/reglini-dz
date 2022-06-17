@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Fragment, useState } from "react";
+import { Fragment, useCallback, useState } from "react";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -16,7 +16,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../utils/redux/userSlice";
 import { addToWishlist } from "../../utils/redux/userAsyncActions";
 import { DangerDialog, SuccessDialog } from "../elements/Dialog";
-import { LocalCurrencyConverter } from "../../utils/methods";
+import {
+  fetchCommission,
+  fetchCurrencyRate,
+  IFinance,
+  selectFinance,
+} from "../../utils/redux/financeSlice";
 
 const ProductsList = ({ products }: { products: IAffiliateProduct[] }) => {
   const [error, setError] = useState("");
@@ -25,6 +30,26 @@ const ProductsList = ({ products }: { products: IAffiliateProduct[] }) => {
   const { user, status } = useSelector(selectUser);
   const t = useTranslations("Aliexpress");
   const router = useRouter();
+
+  const { rate, commission }: IFinance = useSelector(selectFinance);
+
+  const LocalCurrencyConverter = useCallback(
+    (price: number, exchange: "DZDEUR" | "DZDUSD" | "DZDGBP") => {
+      let currency: number = 0;
+      if (rate && commission) {
+        const rateIndex = rate.findIndex((c) => c.exchange === exchange);
+        if (rateIndex !== -1) currency = rate[rateIndex].live.parallel.sale;
+        return (
+          Math.ceil((price * currency + price * currency * commission) / 10) *
+          10
+        );
+      } else {
+        dispatch(fetchCommission());
+        dispatch(fetchCurrencyRate());
+      }
+    },
+    [dispatch, commission, rate]
+  );
 
   const addToWishlistHandler = (product: IAffiliateProduct) => {
     if (!user) {

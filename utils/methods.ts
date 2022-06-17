@@ -102,28 +102,28 @@ export const CancelOrderAfterTimer = async (
   }
 };
 
-import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchCommission,
-  fetchCurrencyRate,
-  IFinance,
-  selectFinance,
-} from "./redux/financeSlice";
-export const LocalCurrencyConverter = (
-  price: number,
-  exchange: "DZDEUR" | "DZDUSD" | "DZDGBP"
-) => {
-  const dispatch = useDispatch();
-  const { rate, commission }: IFinance = useSelector(selectFinance);
-  let currency: number = 0;
-  if (rate && commission) {
-    const rateIndex = rate.findIndex((c) => c.exchange === exchange);
-    if (rateIndex !== -1) currency = rate[rateIndex].live.parallel.sale;
-    return (
-      Math.ceil((price * currency + price * currency * commission) / 10) * 10
-    );
-  } else {
-    dispatch(fetchCommission());
-    dispatch(fetchCurrencyRate());
-  }
-};
+// import { useDispatch, useSelector } from "react-redux";
+// import {
+//   fetchCommission,
+//   fetchCurrencyRate,
+//   IFinance,
+//   selectFinance,
+// } from "./redux/financeSlice";
+// export const LocalCurrencyConverter = (
+//   price: number,
+//   exchange: "DZDEUR" | "DZDUSD" | "DZDGBP"
+// ) => {
+//   const dispatch = useDispatch();
+//   const { rate, commission }: IFinance = useSelector(selectFinance);
+//   let currency: number = 0;
+//   if (rate && commission) {
+//     const rateIndex = rate.findIndex((c) => c.exchange === exchange);
+//     if (rateIndex !== -1) currency = rate[rateIndex].live.parallel.sale;
+//     return (
+//       Math.ceil((price * currency + price * currency * commission) / 10) * 10
+//     );
+//   } else {
+//     dispatch(fetchCommission());
+//     dispatch(fetchCurrencyRate());
+//   }
+// };

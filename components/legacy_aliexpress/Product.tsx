@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useCallback, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
@@ -10,7 +10,12 @@ import { DangerDialog } from "../elements/Dialog";
 import { addToWishlist } from "../../utils/redux/userAsyncActions";
 import { useSession } from "next-auth/client";
 import { IUser } from "../../types";
-import { LocalCurrencyConverter } from "../../utils/methods";
+import {
+  fetchCommission,
+  fetchCurrencyRate,
+  IFinance,
+  selectFinance,
+} from "../../utils/redux/financeSlice";
 
 const Product = ({ product }: any) => {
   const [session, loading]: [IUser | null, boolean] = useSession();
@@ -18,6 +23,25 @@ const Product = ({ product }: any) => {
   const t = useTranslations("AEProduct");
   const [error, setError] = useState("");
   const dispatch = useDispatch();
+  const { rate, commission }: IFinance = useSelector(selectFinance);
+
+  const LocalCurrencyConverter = useCallback(
+    (price: number, exchange: "DZDEUR" | "DZDUSD" | "DZDGBP") => {
+      let currency: number = 0;
+      if (rate && commission) {
+        const rateIndex = rate.findIndex((c) => c.exchange === exchange);
+        if (rateIndex !== -1) currency = rate[rateIndex].live.parallel.sale;
+        return (
+          Math.ceil((price * currency + price * currency * commission) / 10) *
+          10
+        );
+      } else {
+        dispatch(fetchCurrencyRate());
+        dispatch(fetchCommission());
+      }
+    },
+    [dispatch, commission, rate]
+  );
 
   const addToWishlistHandler = (e: any) => {
     e.preventDefault();

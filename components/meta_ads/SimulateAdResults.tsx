@@ -1,11 +1,38 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { emplacement_instagram, facebook_reach } from "../../data/AdReach";
-import { LocalCurrencyConverter } from "../../utils/methods";
+import {
+  fetchCommission,
+  fetchCurrencyRate,
+  IFinance,
+  selectFinance,
+} from "../../utils/redux/financeSlice";
 
 function SimulateAdResults() {
   const [emplacement, setEmplacement] = useState("facebook");
   const [duration, setDuration] = useState(2);
   const [budget, setBudget] = useState(3);
+
+  const dispatch = useDispatch();
+  const { rate, commission }: IFinance = useSelector(selectFinance);
+
+  const LocalCurrencyConverter = useCallback(
+    (price: number, exchange: "DZDEUR" | "DZDUSD" | "DZDGBP") => {
+      let currency: number = 0;
+      if (rate && commission) {
+        const rateIndex = rate.findIndex((c) => c.exchange === exchange);
+        if (rateIndex !== -1) currency = rate[rateIndex].live.parallel.sale;
+        return (
+          Math.ceil((price * currency + price * currency * commission) / 10) *
+          10
+        );
+      } else {
+        dispatch(fetchCommission());
+        dispatch(fetchCurrencyRate());
+      }
+    },
+    [dispatch, commission, rate]
+  );
 
   return (
     <div className="my-4 mx-3">

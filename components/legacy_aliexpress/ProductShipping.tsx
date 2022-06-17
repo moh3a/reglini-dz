@@ -1,9 +1,15 @@
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
-import { LocalCurrencyConverter } from "../../utils/methods";
+import {
+  fetchCommission,
+  fetchCurrencyRate,
+  IFinance,
+  selectFinance,
+} from "../../utils/redux/financeSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProductShipping = ({ product, setSelectedShipping }: any) => {
   const router = useRouter();
@@ -12,6 +18,27 @@ const ProductShipping = ({ product, setSelectedShipping }: any) => {
   useEffect(() => {
     if (selected) setSelectedShipping(selected);
   }, [selected, setSelectedShipping]);
+
+  const dispatch = useDispatch();
+  const { rate, commission }: IFinance = useSelector(selectFinance);
+
+  const LocalCurrencyConverter = useCallback(
+    (price: number, exchange: "DZDEUR" | "DZDUSD" | "DZDGBP") => {
+      let currency: number = 0;
+      if (rate && commission) {
+        const rateIndex = rate.findIndex((c) => c.exchange === exchange);
+        if (rateIndex !== -1) currency = rate[rateIndex].live.parallel.sale;
+        return (
+          Math.ceil((price * currency + price * currency * commission) / 10) *
+          10
+        );
+      } else {
+        dispatch(fetchCommission());
+        dispatch(fetchCurrencyRate());
+      }
+    },
+    [dispatch, commission, rate]
+  );
 
   return (
     <div className={`text-left z-10 mt-4`}>

@@ -146,9 +146,11 @@ const ProductDetails = ({ product }: any) => {
                 {product.title}
               </h2>
               <ProductReviews product={product} />
-              <p className="leading-relaxed text-gray-800 dark:text-gray-100">
-                {t("category")}: {product.productCategory.name}
-              </p>
+              {product.productCategory && product.productCategory.name && (
+                <p className="leading-relaxed text-gray-800 dark:text-gray-100">
+                  {t("category")}: {product.productCategory.name}
+                </p>
+              )}
               <div className="mt-6 text-gray-800 dark:text-gray-100 pb-5 mb-5">
                 {product.properties.map((property: any) => {
                   return (
