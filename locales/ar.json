@@ -78,6 +78,7 @@
     "register": "إنشاء حساب",
     "shopNow": "تسوق الآن",
     "products": "خدمات",
+    "aliexpress": { "name": "Aliexpress", "href": "/aliexpress" },
     "community": { "name": "تواصل اجتماعي", "href": "/community" },
     "currency": { "name": "تحويل العملات", "href": "/currency" },
     "support": { "name": "الدعم", "href": "/support" },

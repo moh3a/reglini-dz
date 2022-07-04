@@ -163,38 +163,13 @@ const NavSmall = ({ open, setOpen, user, placeholder }: any) => {
               <Link href="/aliexpress" passHref>
                 <div onClick={() => setOpen(false)} className="my-3">
                   <h1 className="cursor-pointer text-lg text-black dark:text-white">
-                    Aliexpress
+                    {t("aliexpress.name")}
                   </h1>
                   <p className="hover:underline cursor-pointer text-sm">
                     Shop Now
                   </p>
                 </div>
               </Link>
-              <Link href="/meta-ads" passHref>
-                <div onClick={() => setOpen(false)} className="my-2">
-                  <h1 className="cursor-pointer text-lg text-black dark:text-white">
-                    Meta ads
-                  </h1>
-                  <p className="hover:underline text-sm">Sponsor Now</p>
-                </div>
-              </Link>
-              <div className="my-2 text-lg text-black dark:text-white">
-                APIs{" "}
-                <span className="text-xs cursor-wait rounded-lg border text-gray-600 border-gray-200 bg-gray-100 p-1">
-                  coming soon
-                </span>
-              </div>
-              <div className="my-2">
-                <h1 className="text-black dark:text-white">
-                  reglini-dz Affiliate Program{" "}
-                  <span className="text-xs cursor-wait rounded-lg border text-white border-gray-800 bg-gray-600 p-1">
-                    coming soon
-                  </span>
-                </h1>
-                <p className="hover:underline cursor-not-allowed text-sm">
-                  Join Now
-                </p>
-              </div>
             </div>
 
             <div className="border-t border-gray-200 py-6 px-4 space-y-6 z-0">

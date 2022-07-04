@@ -50,121 +50,11 @@ const NavLarge = ({ setOpen, user, placeholder }: any) => {
             {/* Flyout menus */}
             <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
               <div className="h-full flex space-x-8 z-0">
-                <Popover className="flex">
-                  {({ open }) => (
-                    <>
-                      <div className="relative flex">
-                        <Popover.Button
-                          className={classNames(
-                            open
-                              ? "border-gray-600 text-gray-600 dark:text-gray-400 dark:border-gray-200"
-                              : "border-transparent text-gray-800 hover:text-gray-400 dark:text-gray-100 dark:hover:text-gray-400",
-                            "relative z-0 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px"
-                          )}
-                        >
-                          {t("products")}
-                        </Popover.Button>
-                      </div>
-
-                      <Transition
-                        as={Fragment}
-                        enter="transition ease-out duration-200"
-                        enterFrom="opacity-0"
-                        enterTo="opacity-100"
-                        leave="transition ease-in duration-150"
-                        leaveFrom="opacity-100"
-                        leaveTo="opacity-0"
-                      >
-                        <Popover.Panel className="absolute top-full z-30 inset-x-0 text-sm text-gray-500">
-                          <div
-                            className="absolute inset-0 top-1/2 bg-white shadow"
-                            aria-hidden="true"
-                          />
-
-                          <div className="flex relative bg-white dark:bg-grim">
-                            <div className="my-4 mr-1 ml-10 w-full flex justify-around">
-                              <div>
-                                <Link href="/aliexpress" passHref>
-                                  <div className="my-3 mx-3">
-                                    <h1 className="cursor-pointer text-lg text-black dark:text-white">
-                                      Aliexpress
-                                    </h1>
-                                    <p className="hover:underline cursor-pointer text-sm">
-                                      Shop Now
-                                    </p>
-                                  </div>
-                                </Link>
-                                <Link href="/meta-ads" passHref>
-                                  <div className="my-3 mx-3">
-                                    <h1 className="cursor-pointer text-lg text-black dark:text-white">
-                                      Meta ads
-                                    </h1>
-                                    <p className="hover:underline text-sm">
-                                      Sponsor Now
-                                    </p>
-                                  </div>
-                                </Link>
-                              </div>
-                              <div>
-                                <div className="my-3 mx-3">
-                                  <h1 className="text-lg text-black dark:text-white">
-                                    APIs{" "}
-                                    <span className="text-xs cursor-wait rounded-lg border text-gray-600 border-gray-200 bg-gray-100 p-1">
-                                      coming soon
-                                    </span>
-                                  </h1>
-                                  <p className="hover:underline cursor-not-allowed text-sm">
-                                    - Parallel market currency exchange API
-                                  </p>
-                                  <p className="hover:underline cursor-not-allowed text-sm">
-                                    - Algeria&apos;s zip codes API
-                                  </p>
-                                </div>
-                                <div className="my-3 mx-3">
-                                  <h1 className="text-lg text-black dark:text-white">
-                                    reglini-dz Affiliate Program{" "}
-                                    <span className="text-xs cursor-wait rounded-lg border text-white border-gray-800 bg-gray-600 p-1">
-                                      coming soon
-                                    </span>
-                                  </h1>
-                                  <p className="hover:underline cursor-not-allowed text-sm">
-                                    Join Now
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="my-4 mx-1 w-full flex justify-around">
-                              <Link href="/aliexpress" passHref>
-                                <div className="cursor-pointer flex justify-center items-center h-40 w-40 border border-gray-200 bg-gray-100 hover:border-gray-400 dark:border-yellow-200 dark:bg-grim dark:hover:border-yellow-400 rounded-lg relative mt-2 mb-6">
-                                  <div className="w-20 h-20">
-                                    <img
-                                      src="/aliexpress-icon.png"
-                                      alt="aliexpress logo"
-                                    />
-                                  </div>
-                                  <div className="absolute w-full top-40 text-center">
-                                    Aliexpress
-                                  </div>
-                                </div>
-                              </Link>
-                              <Link href="/meta-ads" passHref>
-                                <div className="cursor-pointer flex justify-center items-center h-40 w-40 border border-gray-200 hover:border-gray-400 bg-gray-100 dark:border-blue-400 dark:bg-grim rounded-lg dark:hover:border-blue-600 relative mt-2 mb-6">
-                                  <div className="w-40 h-40">
-                                    <img src="/meta-icon.png" alt="meta logo" />
-                                  </div>
-                                  <div className="absolute w-full top-40 text-center">
-                                    Meta Ads
-                                  </div>
-                                </div>
-                              </Link>
-                            </div>
-                          </div>
-                        </Popover.Panel>
-                      </Transition>
-                    </>
-                  )}
-                </Popover>
-
+                <Link href={t("aliexpress.href")} passHref>
+                  <a className="flex items-center text-sm font-medium text-gray-800 hover:text-gray-400 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
+                    {t("aliexpress.name")}
+                  </a>
+                </Link>
                 <Link href={t("community.href")} passHref>
                   <a className="flex items-center text-sm font-medium text-gray-800 hover:text-gray-400 dark:text-gray-100 hover:text-grim dark:hover:text-gray-400">
                     {t("community.name")}
@@ -192,9 +82,6 @@ const NavLarge = ({ setOpen, user, placeholder }: any) => {
               <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                 {placeholder ? (
                   <div className="hidden md:block">
-                    {/* <div className="ml-4 flex items-center md:ml-6">
-                      user data
-                    </div> */}
                     <svg
                       role="status"
                       className="mr-2 w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"

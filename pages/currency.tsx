@@ -19,11 +19,12 @@ const CurrencyView = ({ currency }: any) => {
   );
 };
 
+import CurrencyModel from "../models/Currency";
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
-  const { data } = await axios.get(`${process.env.NEXTAUTH_URL}/api/currency`);
+  const currency = await CurrencyModel.find().select("live exchange -_id");
   return {
     props: {
-      currency: data.data,
+      currency,
       messages: require(`../locales/${locale}.json`),
     },
   };

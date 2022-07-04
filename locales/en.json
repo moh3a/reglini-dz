@@ -78,6 +78,7 @@
     "register": "Create account",
     "shopNow": "Shop Now",
     "products": "Products",
+    "aliexpress": { "name": "Aliexpress", "href": "/aliexpress" },
     "community": { "name": "Community", "href": "/community" },
     "currency": { "name": "Currency exchange", "href": "/currency" },
     "support": { "name": "Support", "href": "/support" },

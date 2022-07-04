@@ -19,10 +19,6 @@ import {
   editUsername,
   submitPayment,
   submitFeedback,
-  demandAccessRequest,
-  deleteFacebookPageAccess,
-  validateFacebookPageAccess,
-  createAdRequest,
 } from "./userAsyncActions";
 import { signOut } from "next-auth/client";
 import { IAuth } from "../../types";
@@ -311,62 +307,8 @@ export const userSlice = createSlice({
       .addCase(submitFeedback.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error;
-      })
-      //========================================================================================
-      .addCase(demandAccessRequest.pending, (state, action) => {
-        state.status = "loading";
-        state.message = "";
-      })
-      .addCase(demandAccessRequest.fulfilled, (state, action) => {
-        state.status = "complete";
-        state.user = action.payload.data;
-        state.message = action.payload.message;
-      })
-      .addCase(demandAccessRequest.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.error;
-      })
-      //========================================================================================
-      .addCase(deleteFacebookPageAccess.pending, (state, action) => {
-        state.status = "loading";
-        state.message = "";
-      })
-      .addCase(deleteFacebookPageAccess.fulfilled, (state, action) => {
-        state.status = "complete";
-        state.user = action.payload.data;
-        state.message = action.payload.message;
-      })
-      .addCase(deleteFacebookPageAccess.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.error;
-      }) //========================================================================================
-      .addCase(validateFacebookPageAccess.pending, (state, action) => {
-        state.status = "loading";
-        state.message = "";
-      })
-      .addCase(validateFacebookPageAccess.fulfilled, (state, action) => {
-        state.status = "complete";
-        state.user = action.payload.data;
-        state.message = action.payload.message;
-      })
-      .addCase(validateFacebookPageAccess.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.error;
-      })
-      //========================================================================================
-      .addCase(createAdRequest.pending, (state, action) => {
-        state.status = "loading";
-        state.message = "";
-      })
-      .addCase(createAdRequest.fulfilled, (state, action) => {
-        state.status = "complete";
-        state.user = action.payload.data;
-        state.message = action.payload.message;
-      })
-      .addCase(createAdRequest.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.error;
       });
+    //========================================================================================
   },
 });
 
