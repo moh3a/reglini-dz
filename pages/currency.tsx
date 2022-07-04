@@ -19,8 +19,10 @@ const CurrencyView = ({ currency }: any) => {
   );
 };
 
+import dbConnect from "../config/db";
 import CurrencyModel from "../models/Currency";
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  await dbConnect();
   const currency = await CurrencyModel.find().select("live exchange -_id");
   return {
     props: {
