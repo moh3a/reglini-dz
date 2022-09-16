@@ -144,7 +144,7 @@ const NavLarge = ({ setOpen, user, placeholder }: any) => {
                             {user.role === "admin" && (
                               <Menu.Item>
                                 {({ active }) => (
-                                  <Link href="/admin">
+                                  <Link href="https://admin.reglini-dz.com">
                                     <a
                                       className={classNames(
                                         active

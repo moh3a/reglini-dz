@@ -85,22 +85,6 @@ const AliexpressSearch = () => {
         </>
       )}
 
-      {/* user log in to ae */}
-      {user && (!user.aeCredentials || !user.aeCredentials.token) && (
-        <div className="px-5 py-6 flex flex-col justify-center items-center">
-          <h2>
-            You can connect to your AliExpress account to get custom results
-            from AliExpress tailored for you.
-          </h2>
-          <button
-            onClick={callaeauth}
-            type="button"
-            className="border border-aliexpress bg-aliexpress text-white px-3 py-1"
-          >
-            Connect to Aliexpress
-          </button>
-        </div>
-      )}
     </>
   );
 };

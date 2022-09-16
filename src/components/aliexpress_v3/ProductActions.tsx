@@ -133,10 +133,9 @@ export const BuyProduct = ({
                 carrierId: selectedShipping.service_name,
                 shippingPrice: LocalCurrencyConverter(shippingPrice, "DZDUSD"),
                 totalPrice:
-                  (LocalCurrencyConverter(
-                    price + shippingPrice,
-                    "DZDUSD"
-                  ) as number) * selectedVariation.quantity,
+                  (LocalCurrencyConverter(price, "DZDUSD") as number) *
+                    selectedVariation.quantity +
+                  (LocalCurrencyConverter(shippingPrice, "DZDUSD") as number),
               },
             ])
           );
@@ -237,10 +236,9 @@ export const ProductToCart = ({
               carrierId: selectedShipping.service_name,
               shippingPrice: LocalCurrencyConverter(shippingPrice, "DZDUSD"),
               totalPrice:
-                (LocalCurrencyConverter(
-                  price + shippingPrice,
-                  "DZDUSD"
-                ) as number) * selectedVariation.quantity,
+                (LocalCurrencyConverter(price, "DZDUSD") as number) *
+                  selectedVariation.quantity +
+                (LocalCurrencyConverter(shippingPrice, "DZDUSD") as number),
             })
           );
         } else {

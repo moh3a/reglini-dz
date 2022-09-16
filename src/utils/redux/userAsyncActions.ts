@@ -1,12 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import {
-  IUserRedux,
-  IWished,
-  ICartItem,
-  IFacebookPage,
-  IFacebookPageAd,
-} from "../../types";
+import { IUserRedux, IWished, ICartItem } from "../../types";
 
 export const getUser = createAsyncThunk(
   "user/getUser",

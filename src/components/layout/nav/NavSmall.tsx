@@ -90,7 +90,7 @@ const NavSmall = ({ open, setOpen, user, placeholder }: any) => {
                   </div>
                   {user.role === "admin" && (
                     <div className="flow-root">
-                      <Link href="/admin" passHref>
+                      <Link href="https://admin.reglini-dz.com" passHref>
                         <a
                           onClick={() => setOpen(false)}
                           className="-m-2 p-2 pl-4 max-w-xs rounded-full font-medium block  text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800"
