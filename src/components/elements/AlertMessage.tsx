@@ -1,28 +1,20 @@
-import { useState, useEffect } from "react";
+interface AlertMessageProps {
+  type?: "success" | "warning" | "error";
+  message?: string;
+}
 
-const AlertMessage = ({
-  type,
-  message,
-}: {
-  type: "success" | "warning" | "error";
-  message: string;
-}) => {
-  const [bg, setBg] = useState("");
-  useEffect(() => {
-    if (type === "success") {
-      setBg("bg-green-500");
-    } else if (type === "warning") {
-      setBg("bg-yellow-500");
-    } else if (type === "error") {
-      setBg("bg-red-500");
-    } else {
-      setBg("bg-grim");
-    }
-  }, [type]);
-
+const AlertMessage = ({ type, message }: AlertMessageProps) => {
   return (
     <div
-      className={`fixed top-12 w-full z-100 my-3 text-sm text-left text-white ${bg} h-12 flex items-center p-5`}
+      className={`w-full z-100 my-3 text-sm text-left text-white ${
+        type === "success"
+          ? "bg-green-500"
+          : type === "warning"
+          ? "bg-yellow-500"
+          : type === "error"
+          ? "bg-red-500"
+          : "bg-grim"
+      } h-12 flex items-center p-5`}
       role="alert"
     >
       <svg

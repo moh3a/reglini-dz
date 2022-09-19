@@ -11,6 +11,7 @@ const AliexpressProduct = () => {
   const router = useRouter();
   const { id } = router.query;
 
+  const [message, setMessage] = useState("");
   const [product, setProduct] = useState<IAffiliateProduct>();
 
   const fetchProduct = useCallback(async () => {
@@ -26,7 +27,12 @@ const AliexpressProduct = () => {
     } else if (!data.success && data.redirect) {
       router.push(data.redirect);
     } else if (!data.success && !data.redirect) {
-      router.reload();
+      if (data.message) {
+        setMessage(data.message);
+        setTimeout(() => {
+          setMessage("");
+        }, 5000);
+      } else router.reload();
     }
   }, [id, router]);
 
@@ -48,6 +54,7 @@ const AliexpressProduct = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {message && <AlertMessage type="warning" message={message} />}
       {product && <ProductDetails product={product} />}
       {!product && (
         <div className="w-full h-128 text-xl font-bold select-none flex justify-center items-center">
@@ -69,6 +76,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 };
 
 import Layout from "../../../components/layout/Layout";
+import AlertMessage from "../../../components/elements/AlertMessage";
 AliexpressProduct.getLayout = function getLayout(page: any) {
   return <Layout>{page}</Layout>;
 };

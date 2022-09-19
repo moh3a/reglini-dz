@@ -11,6 +11,7 @@ import {
   IProductProperties,
   IProductPrice,
 } from "../../../../../types/AETypes";
+import axios from "axios";
 
 const affiliateclient = new TopClient({
   appkey: process.env.ALIEXPRESS_AFFILIATE_APP_KEY,
@@ -279,8 +280,22 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
                         message: "Successfully retrieved product details.",
                       });
                     } else {
-                      console.log(errorDS);
-                      res.status(200).json({ success: false, error: errorDS });
+                      const { data: admin_res } = await axios.get(
+                        "https://admin.reglini-dz.com/api/aliexpress/auth"
+                      );
+                      if (admin_res.success) {
+                        res
+                          .status(200)
+                          .json({
+                            success: false,
+                            error: errorDS,
+                            message: "Please try again in a few minutes.",
+                          });
+                      } else {
+                        res
+                          .status(200)
+                          .json({ success: false, error: errorDS });
+                      }
                     }
                   }
                 );
